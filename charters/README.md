@@ -2,7 +2,7 @@
 
 Each HCA DCP project must have a charter that specifies its scope, responsibilities, and leadership roles.
 
-The charter process provides a simple and consistent path for new projects to be formed that align with the direction of the HCA DCP roadmap and its priorities.
+The charter process provides a simple and consistent path for new projects to be formed that align with the direction and priorities of the HCA DCP.
 
 
 ## What the process is

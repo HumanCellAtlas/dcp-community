@@ -18,6 +18,8 @@ _Describe recommended or mandated oversight from HCA Science governance to ensur
 
 ## Roles
 
+Recommended format for Roles: `[Name](mailto:username@example.com)`
+
 ### Project Lead
 
 ### Product Owner
@@ -27,8 +29,6 @@ _Describe recommended or mandated oversight from HCA Science governance to ensur
 
 ## Communication
 
-### Slack Channel(s)
-### Mailing list(s)
-### Discussion Forum(s)
+_List the Slack Channels, Mailing Lists, and/or Discussion Forums for the Project and describe their purpose._
 
 ## Github repositories
