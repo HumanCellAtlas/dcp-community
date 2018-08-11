@@ -46,7 +46,7 @@ The objective of the Data Store group is to deliver substantively complete funct
 ## Milestones
 * Mid-2018:  1000 bundle test scale, deploy as part of HCA DCP Pilot
 * EOY 2018: add checkout, collections, improved scaling/hardening, generic events to support stand-alone indexers, additional gaps identified in HCA DCP Pilot.
-* Future: native GCP support, AuthZ support for controlled-access data, additional scale/hardening, Biosphere requirements, tiered storage, content zones, FISMA moderate capabilities, single-replica deployments, et
+* Future: (not in order of precedence) native GCP support, Authorization support for controlled-access data, additional scale/hardening, Biosphere requirements, tiered storage, content zones, FISMA moderate capabilities, single-replica deployments
 
 ## Roles
 
