@@ -60,8 +60,11 @@ The objective of the Data Store group is to deliver substantively complete funct
 [Hannes Schmidt](mailto:hannes@ucsc.edu) 
 
 ## Communication
+### Slack Channels
 * HumanCellAtlas/data-store : general data store discussions
 * HumanCellAtlas/data-store-eng : development discussions
+### Mailing list(s)
+### Discussion Forum(s)
 
 ## Github repositories
 * https://github.com/HumanCellAtlas/data-store
