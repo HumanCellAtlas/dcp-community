@@ -9,7 +9,8 @@ Implementation of the Data Coordination Platform (DCP) website experience. Provi
 
 ## In-scope
 ### General
-* UX, visual and branding design with input from CZI and the GG
+* UX, visual and branding design with input from HCA leadership (GG, scientific steering committee, etc.)
+* Participation in the HCA-wide standards for Continuous Integration (CI), Continuous Delivery (CD), system logging via Google Analytics, etc.
 * Production operation of the overall Data Portal web-site (see exclusions in Out-of-scope section)
 * Implementation performance scaling
 * DevSecOps compliance as required by the HCA Security Team
@@ -30,15 +31,15 @@ Implementation of the Data Coordination Platform (DCP) website experience. Provi
 * Integration with Canny (to capture user feedback)
 ### Data Browser
 * Create (or use Data Store provided) indexes as necessary for files in the Data Store, using public DSS APIs to read the metadata
-* Browser support for multiple metadata schemas
+* Browser support for multiple metadata schemas that are supported by the schema access library maintained by the Ingest service
 * Search views of Specimens, Projects and Files
 * Browser UI to search the DSS by specifying multiple search criteria (“facets”)
 * Download selected files from the DSS via the UI and/or HCA cli (the HCA cli itself is out-of-scope for this charter)
 * AuthN for tracking users' collections, saved searches, etc.
 * Full authN/Z if the HCA stores controlled access data in the future. Leverage AuthN/Z from Data Store.
 * Browser interface with DSS Collections service to save/view/list/share/delete the query results from a search operation
-* Handoff of a Collection to tertiary portals. Expand the current prototype for handoff to FireCloud.
-* Save/view/share/update/delete search queries
+* Handoff of a Collection of search results to a tertiary portal. Provide for direct handoff of search results to FireCloud.
+* Save/view/share/update/delete search queries and personal collections
 * Search results handoff to Matrix service
 * API Documentation for portable, cloud-neutral APIs
 
@@ -72,8 +73,6 @@ Browser: [Hannes Schmidt](mailto:hannes@ucsc.edu)
 * HumanCellAtlas/data-portal-dev : data portal development discussions
 * HumanCellAtlas/content-team : data portal content development discussions
 * HumanCellAtlas/data-browser-dev : data browser development discussions
-### Mailing list(s)
-### Discussion Forum(s)
 
 ## Github repositories
 * https://github.com/HumanCellAtlas/data-portal
