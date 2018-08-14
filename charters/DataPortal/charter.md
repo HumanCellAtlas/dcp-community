@@ -2,26 +2,26 @@
 
 
 ## Description
-The Data Portal provides the overall web-site for the HCA DCP with entry point from https://www.humancellatlas.org/. It provides the user experience for scientific and general users to upload, explore, search and run analyses on human genomic data. The Data Browser ("Explore") application provides a faceted search capability to find and download subsets of this data.
+The Data Portal is a landing site for the Human Cell Atlas (HCA) Data Coordination Platform (DCP). It is hosted at https://www.data.humancellatlas.org/ with an access link from the main HCA website at https://www.humancellatlas.org/. It provides the user experience for scientific and general users to upload, explore, search, and run analyses on human genomic data. The Data Browser ("Explore") application provides a faceted search capability to find and download subsets of this data.
 
 ## Objective
-Implementation of the Data Coordination Platform (DCP) website experience. Provide the access point for scientific and general users to search all HCA genetic data in order to identify a subset of the data for download and/or further analysis, providing file/bundle search on multiple clouds at PB scale, with strong public APIs.
+Implementation of the DCP website experience. Provide the access point for scientific and general users to search all HCA genetic data in order to identify a subset of the data for download and/or further analysis, providing file/bundle search on multiple clouds at petabyte scale with public APIs.
 
 ## In-scope
 ### General
-* UX, visual and branding design with input from HCA leadership (GG, scientific steering committee, etc.)
-* Participation in the HCA-wide standards for Continuous Integration (CI), Continuous Delivery (CD), system logging via Google Analytics, etc.
-* Production operation of the overall Data Portal web-site (see exclusions in Out-of-scope section)
+* UX, visual, and branding design with input from the HCA brand working group
+* Participation in the HCA DCP community standards and best practices for Continuous Integration (CI), Continuous Delivery (CD), system logging via Google Analytics, etc.
+* Production operation of the overall Data Portal website in Amazon Web Services (AWS), with exclusions lsited in the out-of-scope section
 * Implementation performance scaling
 * DevSecOps compliance as required by the HCA Security Team
-* DevSecOps features for FISMA moderate deployments (authZ/N, logging, auditing, etc) by leveraging other projects (if this becomes a future requirement)
+* DevSecOps features for FISMA moderate deployments (authentication and authorization, logging, auditing, etc.) by leveraging other projects (if this becomes a future requirement)
 * Community engagement
    * Triage and integration of feature requests into the work queue 
    * Support plan for escalation of user reported bugs
 ### Data Portal
-* Select and deploy content management system
-* Integrate Data Browser and Data Portal UIs into a seamless UX and provide link to other groups' applications (e.g. Ingest UI)
-* Frequent updates of summary statistics (cells, organs, donors, projects, labs, etc.) on Home Page
+* Select and deploy a content management system
+* Integrate Data Browser and Data Portal UIs into a seamless UX and provide link to other groups' applications (e.g. a Data Ingestion UI)
+* Frequent updates of summary statistics (cells, organs, donors, projects, labs, etc.) on the Home Page
 * Coordinate development of user guide content (e.g. “Learn”) from multiple contributors
 * Coordinate development of developer documentation content (e.g. “Develop”) from multiple contributors. Includes API documentation and development guides.
 * Click through to Data Browser from search box and human body image
@@ -30,23 +30,23 @@ Implementation of the Data Coordination Platform (DCP) website experience. Provi
 * Integration with Vanilla Forums (discussion forum for developers)
 * Integration with Canny (to capture user feedback)
 ### Data Browser
-* Create (or use Data Store provided) indexes as necessary for files in the Data Store, using public DSS APIs to read the metadata
+* Create (or use Data Storage Service [DSS] provided) indexes to access files in the Data Store by using public DSS APIs to read the metadata
 * Browser support for multiple metadata schemas that are supported by the schema access library maintained by the Ingest service
 * Search views of Specimens, Projects and Files
 * Browser UI to search the DSS by specifying multiple search criteria (“facets”)
-* Download selected files from the DSS via the UI and/or HCA cli (the HCA cli itself is out-of-scope for this charter)
-* AuthN for tracking users' collections, saved searches, etc.
-* Full authN/Z if the HCA stores controlled access data in the future. Leverage AuthN/Z from Data Store.
-* Browser interface with DSS Collections service to save/view/list/share/delete the query results from a search operation
+* Download selected files from the DSS via the UI and/or HCA cli
+* Full authentication and authorization if the HCA stores controlled access data in the future. Leverage the authetication and authorization implementation from the Data Store.
+* Browser interface to the DSS Collections service to save, view, list, share and delete the query results from a search operation
 * Handoff of a Collection of search results to a tertiary portal. Provide for direct handoff of search results to FireCloud.
-* Save/view/share/update/delete search queries and personal collections
-* Search results handoff to Matrix service
+* Facilities to save, view, share, update, and delete search queries and personal collections on a per-user basis
+* Search results handoff to the Matrix service
 * API Documentation for portable, cloud-neutral APIs
 
 ## Out-of-scope
-* Production operation of other HCA Data Coordination Platform (DCP) components in AWS (e.g. Data Store, Ingest, Secondary Analysis, Tertiary Analysis)
-* Contribute/Ingest UI (from EBI)
-* Methods Registry providing manage/search/filter/sort visualization and methods packages in the tertiary portal (from Broad)
+* Production operation of other HCA DCP components in AWS (e.g. Data Store Service, data ingestion process, Secondary Analysis workflows, Tertiary Analysis portals, etc.)
+* Any separate data ingest application developed by The European Bioinformatics Insitute (EBI) which may replace or augment the "Contribute" tab in the Data Portal
+* Methods Registry providing management, searching, filtering, sorting, visualization, and methods packages in the tertiary portal (registry is developed and maintained by the Broad Institute)
+* The HCA cli implementation
 * Primary interface for collecting user feedback and feature/bug requests
 
 ## Milestones
@@ -68,11 +68,11 @@ Browser: [Hannes Schmidt](mailto:hannes@ucsc.edu)
 
 ## Communication
 
-### Slack Channel(s)
-* HumanCellAtlas/data-portal : general data portal discussions
-* HumanCellAtlas/data-portal-dev : data portal development discussions
-* HumanCellAtlas/content-team : data portal content development discussions
-* HumanCellAtlas/data-browser-dev : data browser development discussions
+### Slack Channels
+* HumanCellAtlas/data-portal: general data portal discussions
+* HumanCellAtlas/data-portal-dev: data portal development discussions
+* HumanCellAtlas/content-team: data portal content development discussions
+* HumanCellAtlas/data-browser-dev: data browser development discussions
 
 ## Github repositories
 * https://github.com/HumanCellAtlas/data-portal
