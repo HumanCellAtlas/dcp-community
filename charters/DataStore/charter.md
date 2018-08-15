@@ -34,10 +34,10 @@ The objective of the Data Store group is to deliver substantively complete funct
 
 ### Community engagement
 * Triage and integration of feature requests from the community into the Data Store roadmap. 
+* Review and acceptance process for third party software contributions through pull requests
 * Outreach and engagement of the community
 * Training
 * Hackathons
-
 
 ## Out-of-scope
 * Other index/query methods/engines - we should implement these as stand-alone projects against modular index/query API.
