@@ -20,31 +20,27 @@ The Query Service is an Application Programming Interface (API) for querying Hum
     * Expose event bus for bundle lifecycle event subscriptions
     * Scalable, fault-tolerant queuing mechanism: Amazon Web Services (AWS) Simple Queuing Service (SQS) push or similar
 * Query access service API and query language
-    * Define public DSS API for modular, pluggable query engines, and hand off to DSS team for long-term ownership (this includes API to trigger index/query processing, and to handle end-user queries)
-    * In collaboration with Expression Service project, determine how Query and consumer API interact and are made complementary
-    * Explore technical methods of isolating index and query systems from metadata schema evolution
+    * Public API for modular query engine plugins
+    * In collaboration with the Expression Matrix Service, determine how Query and consumer API interact and are made complementary
 * ElasticSearch search engine
-    * Migrate ES engine to pluggable interface, and factor into separate DCP service
+    * Stand-alone ES search service, integrated into search plugin interface
     * Improve isolation from metadata schema evolution
 * Structured Query Language (SQL) query engine
+    * Stand-alone SQL query service, integrated into search plugin interface
     * SQL metadata query prototype and pilot release
         * Socialize with community, investigate use cases, and determine utility of SQL query for these use cases
         * If prototype is viable, implement on the pluggable API, and launch as separate DCP service
-        * Implementation details
-            * Database service configuration and deployment infrastructure
-            * API front-end
-            * ETL layer and database schema
-            * Event handler that adds and removes bundle metadata from the index
-            * Unit, integration, and scale tests
+    * Database service configuration and deployment infrastructure
+    * ETL layer and database schema design
+* Documentation
     * Documentation for API and query language use with metadata
     * Demonstration use of service; developer example code to enable fast and easy third party adoption of API
+* UX Research and Feedback
+    * UX validation of API and query language with tertiary analysis community
     * Provide feedback to DCP about public API suitability in building layered services (e.g. can a new Query microservice be built using only public DSS API?)
 
-### Scientific "guardrails"
-* UX validation of API and query language with tertiary analysis community
-
 ## Out-of-scope
-* Search user interface (UI), search app and/or tertiary analysis work
+* Search user interface, search app and/or tertiary analysis work
 * GraphQL or other "query" languages or environments (ES and SQL should be sufficient to prove utility of design)
 * Upkeep and improvement of existing ES indexer ETL layer
 
