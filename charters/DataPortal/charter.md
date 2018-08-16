@@ -52,7 +52,7 @@ Implementation of the DCP website experience. Provide the access point for scien
 * Oct 2018:  Deploy MVP feature set as part of HCA DCP Pilot phase
 * Nov 2018:  Present Pilot phase portal to community
 * EOY 2018:  Improved scaling/hardening for additional gaps identified in HCA DCP Pilot phase
-* 1H  2019:  Save search querys and query results (using DSS Collections APIs). Handoff of Collections to the Matrix service and to tertiary portals. Vanilla Forums support. Canny support.
+* 1H  2019:  Save search queries and query results (using DSS Collections APIs). Handoff of a Collection of search results to the Matrix service and to tertiary portals. Vanilla Forums support. Canny support.
 
 ## Roles
 
