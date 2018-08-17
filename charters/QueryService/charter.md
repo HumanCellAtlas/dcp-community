@@ -3,14 +3,15 @@
 
 
 ## Description
-The Query Service is an Application Programming Interface (API) for querying Human Cell Atlas (HCA) bundle metadata with different query languages.
+The Query Service is an Application Programming Interface (API) for querying Human Cell Atlas (HCA) bundle metadata with intuitive query syntax. The first iteration of the Query Service Module will investigate [ElasticSearch (ES) Query Language](https://www.elastic.co/guide/en/elasticsearch/reference/current/_introducing_the_query_language.html) and  [Structured Query Language (SQL)](https://en.wikipedia.org/wiki/SQL).
+
+Services the Query Module provides may complement or subsume the current ES search functionality in the Data Storage Service (DSS).
 
 ## Objectives
-1. Build, operate, and maintain a metadata API query service that allows a variety of queries to be performed against bundle metadata stored in HCA Data Coordination Platform (DCP) Data Storage Service (DSS)
-1. Develop a query language specification and metadata Extract, Transform, Load (ETL) pattern to accommodate intuitive querying
+1. Build, operate, and maintain a metadata API query service that allows a variety of queries to be performed against bundle metadata stored in HCA Data Coordination Platform (DCP) DSS
+1. Develop a query language specification for intuitive querying of HCA metadata
 1. Conduct user experience (UX) research to validate query language usability, understand remaining usability gaps in DCP data searchability and discoverability
 1. Develop a scalable public API for external indexing and other DSS event consumers
-1. Migrate existing ElasticSearch (ES) query subsystem to this public API
 1. Deploy all query systems as stand-alone, modular services
 1. Make DCP index and query systems agnostic to DCP schema evolution
 
@@ -18,7 +19,7 @@ The Query Service is an Application Programming Interface (API) for querying Hum
 * Common index event bus and deployment infrastructure
     * Finalize support for multiple metadata indexers in DSS
     * Expose event bus for bundle lifecycle event subscriptions
-    * Scalable, fault-tolerant queuing mechanism: Amazon Web Services (AWS) Simple Queuing Service (SQS) push or similar
+    * Scalable, fault-tolerant queuing mechanism for loading bundle lifecycle events
 * Query access service API and query language
     * Public API for modular query engine plugins
     * In collaboration with the Expression Matrix Service, determine how Query and consumer API interact and are made complementary
@@ -38,6 +39,7 @@ The Query Service is an Application Programming Interface (API) for querying Hum
 * UX Research and Feedback
     * UX validation of API and query language with [tertiary portal](https://www.humancellatlas.org/data-sharing) community
     * Provide feedback to DCP about public API suitability in building layered services (e.g. can a new Query microservice be built using only public DSS API?)
+    * Provide feedback to the metadata group on schema changes that could support intuitive queries of the metadata
 
 ## Out-of-scope
 * Search user interface, search app and/or tertiary portal work
@@ -46,7 +48,7 @@ The Query Service is an Application Programming Interface (API) for querying Hum
 
 ## Milestones
 * **EOY 2018** - Architectural work done, pilot/preview implementation of SQL query framework; feature complete, suitable for limited use, but not scalable
-* **Early 2019** - ES migrated to public API, improved resilience to metadata schema evolution
+* **Early 2019** - DSS ES migrated to public API, improved resilience to metadata schema evolution
 * **Mid-2019** - Performant, highly scalable version, suitable for interactive data serving across entire HCA data corpus
 
 
