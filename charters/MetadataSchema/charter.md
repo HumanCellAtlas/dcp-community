@@ -41,7 +41,7 @@ During 2018/2019 The metadata charter committee will work to:
 
 * Implement a test suite to enable independent testing of the metadata schemas outside of any other infrastructure
 * Work with data contributors and consumers from the community who are conducting image based transcriptomics experiments to define metadata schema that can capture needed details of these experiments
-* Work with data contribytors and consumers from the community who are conducting single nuclei RNA-seq experiments to define metadata schema that can capture needed details of these experiments
+* Work with data contributors and consumers from the community who are conducting single nuclei RNA-seq experiments to define metadata schema that can capture needed details of these experiments
 
 ## Roles
 
