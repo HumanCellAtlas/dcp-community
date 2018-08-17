@@ -54,7 +54,7 @@ During 2018/2019 The metadata charter committee will work to:
 
 ## Communication
 
-###Slack
+### Slack
 
 HumanCellAtlas/hca-metadata - for discussions about metadata needs and conventions
 
