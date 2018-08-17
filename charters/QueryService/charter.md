@@ -24,7 +24,7 @@ The Query Service is an Application Programming Interface (API) for querying Hum
     * In collaboration with the Expression Matrix Service, determine how Query and consumer API interact and are made complementary
 * ElasticSearch search engine
     * Stand-alone ES search service, integrated into search plugin interface
-    * Improve isolation from metadata schema evolution
+    * Increase isolation from metadata schema evolution
 * Structured Query Language (SQL) query engine
     * Stand-alone SQL query service, integrated into search plugin interface
     * SQL metadata query prototype and pilot release
@@ -36,24 +36,24 @@ The Query Service is an Application Programming Interface (API) for querying Hum
     * Documentation for API and query language use with metadata
     * Demonstration use of service; developer example code to enable fast and easy third party adoption of API
 * UX Research and Feedback
-    * UX validation of API and query language with tertiary analysis community
+    * UX validation of API and query language with [tertiary portal](https://www.humancellatlas.org/data-sharing) community
     * Provide feedback to DCP about public API suitability in building layered services (e.g. can a new Query microservice be built using only public DSS API?)
 
 ## Out-of-scope
-* Search user interface, search app and/or tertiary analysis work
+* Search user interface, search app and/or tertiary portal work
 * GraphQL or other "query" languages or environments (ES and SQL should be sufficient to prove utility of design)
 * Upkeep and improvement of existing ES indexer ETL layer
 
 ## Milestones
-* **EOY 2018** - architectural work done, ES migrated to public API, improved resilience to metadata schema evolution.
-* **Early 2019** - pilot/preview implementation of SQL query framework; feature complete, suitable for limited use, but not scalable
-* **Mid-2019** - performant, highly scalable version, suitable for interactive data serving across entire HCA data corpus
+* **EOY 2018** - Architectural work done, pilot/preview implementation of SQL query framework; feature complete, suitable for limited use, but not scalable
+* **Early 2019** - ES migrated to public API, improved resilience to metadata schema evolution
+* **Mid-2019** - Performant, highly scalable version, suitable for interactive data serving across entire HCA data corpus
 
 
 ## Roles
 
 ### Project Lead
-[Genevieve Halliburton](mailto:ghaliburton@chanzuckerberg.com)
+[Genevieve Haliburton](mailto:ghaliburton@chanzuckerberg.com)
 
 ### Product Owner
 [Matt Weiden](mailto:mweiden@chanzuckerberg.com)
