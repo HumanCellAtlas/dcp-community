@@ -26,7 +26,7 @@ The HCA Metadata schema committee creates and maintains the Human Cell Atlas met
 * Working with data consumers to understand what descriptive fields they need in order to be able to analyse and visualise the HCA data.
 * Extending the schema to meet the needs of data contributors and data consumers based on the feedback they provide.
 
-### Scientific "guardrails" [Optional]
+### Scientific "guardrails" 
 
 In order for the HCA metadata schema to meet the needs of the community, the defined schema must reflect the types of data which are being generated in order to build the Human Cell Atlas. The HCA Metadata schema committee will seek guidance from the scientific leadership of the HCA to help understand and prioritize new data types for addition to the schema collection as well as collecting feedback from data contributors and data consumers.
 
