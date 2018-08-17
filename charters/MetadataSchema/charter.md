@@ -60,4 +60,4 @@ HumanCellAtlas/hca-metadata - for discussions about metadata needs and conventio
 
 ## Github repositories
 
-(https://github.com/humancellatlas/metadata-schema)[https://github.com/humancellatlas/metadata-schema]
+[https://github.com/humancellatlas/metadata-schema](https://github.com/humancellatlas/metadata-schema)
