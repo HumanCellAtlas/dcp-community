@@ -17,7 +17,7 @@ The HCA Metadata schema committee creates and maintains the Human Cell Atlas met
 
 ## In-scope
 
-* Defining the specification for the schema and the the schema itself.
+* Defining the specification for the schema and the schema itself.
 * Incorporate community feedback to extend and improve the schema.
 * Ensuring the schema is compatible with open source software packages supporting the same draft of the JSON schema.
 * Provide a test framework to enable community members to test if their proposed extensions are functional and meet our style guides.
