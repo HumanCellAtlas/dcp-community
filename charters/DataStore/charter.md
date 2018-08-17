@@ -3,7 +3,7 @@
 
 
 ## Description
-The Data Store is a scientific data sharing/publishing/distribution framework, providing file/bundle management on multiple clouds at PB scale, with strong public APIs. It provides a simple API for storage, retrieval, and subscription to events that functions transparently across multiple cloud systems such as AWS and GCP.
+The Data Store is a scientific data sharing/publishing/distribution framework, providing file/bundle management on multiple clouds at petabyte-scale. It defines public APIs for storage, retrieval, and subscription to events that functions transparently across multiple cloud systems such as AWS and GCP.
 
 ## Objective
 The objective of the Data Store group is to deliver substantively complete functionality on all of the in-scope items listed in this charter.
@@ -11,26 +11,26 @@ The objective of the Data Store group is to deliver substantively complete funct
 ## In-scope
 
 ### Interfaces
-* DSS data read and write API (PUT bundle, PUT file, GET bundle, GET file) - maintenance and extension of the implementation of the basic data access APIs.
-* Checkout service APIs - Provide continuing support for the ability to checkout the data to a local filesystem, or a personal cloud environment
-* Collections service APIs - Maintenance and extension of the ability to do basic operations on arbitrary collections of objects in the Data Store.
-* API Documentation - Programmatic APIs available for the Data Store include the REST interface and the Python bindings. Documentation and examples will be created for both of these APIs.
-* HCA DCP CLI tool - The HCA DCP CLI is a foundational tool for the DCP and its users. All subcomponents in the DCP use the same CLI system. The Data Store team will maintain the infrastructure to support the general CLI architecture as well as the CLI commands relating to the Data Store itself. Other modules such as Upload and Ingest will be responsible for implementing their respective functional components of the CLI
+* Data Store read and write APIs for data (PUT bundle, PUT file, GET bundle, GET file) - maintenance and extension of the implementation of the basic data access APIs.
+* Maintain and extend the **Checkout service API** which enables data checkout to a local filesystem or a personal cloud environment
+* Maintain and extend the **Collections service API** to do basic operations on arbitrary collections of objects in the Data Store.
+* Publish API documentation and examples for both the Data Store REST interface and Python bindings.
+* The **Command Line Interface** (CLI) is a foundational tool for interacting with the DCP. The Data Store team is responsible for the specific Data Store commands and the maintenance of the infrastructure that allows other services such as Upload and Ingest to integrate their commands into the CLI.
 
 ### Core capabilities
-* DSS data model and lifecycle (versioned bundles, etc) - Ongoing support and maintenance of the implementation of the data model. 
-* Subscriptions/Eventing - Implementation of Data lifecycle web-hooks (new bundle, new file, delete bundle, delete file). The Data Store implementation will move away from the current dependance on Elastic Search Percolate for our event subsystem. Eventing will depend instead on the AWS and GCP cloud infrastructure directly.
-* Multi-cloud replication of objects - There are three parts to this:
+* Maintain and extend the DSS data model and lifecycle (such as versioned bundles)
+* Transition Data Store Subscriptions/Eventing services from the current dependence on Elastic Search Percolate to the AWS and GCP cloud infrastructure.
+* Multi-cloud replication of objects
    1. Maintenance and improvements to the synchronization implementation between AWS and GCP
-   2. Extending the cloud support to more vendors (such as Microsoft Azure) 
-   3. Supporting multiple replicas within a single cloud.
-* Support for plug-able indexes - Provide a standard interface for connecting indexing modules to the Data Store. This interface will provide a mechanism to connect indexing subsystems to receive events about the data. 
+   2. Document interfaces to enable new cloud implementations by 3rd parties 
+   3. Supporting multiple replicas within a single cloud
+* Support for pluggable indexes - Define a standard interface to enable pluggable indexing modules to receive Data Store events
 
 ### Security
 * User authentication system implementation
 * Data access authorization system implementation 
 * DevSecOps - implementation of features required for eventual FISMA moderate deployments (authentication, authorization, logging, auditing, etc).
-* Operations for DSS - Implement and configure tools to facilitate the operation of the Data Store service in a production environment
+* Operations for Data Store - Implement and configure tools to facilitate the operation of the Data Store service in a production environment
 
 ### Community engagement
 * Triage and integration of feature requests from the community into the Data Store roadmap. 
@@ -44,9 +44,8 @@ The objective of the Data Store group is to deliver substantively complete funct
 * Matrix service API
 
 ## Milestones
-* Mid-2018:  1000 bundle test scale, deploy as part of HCA DCP Pilot
+* Mid-2018: 1000 bundle test scale, deploy as part of HCA DCP Pilot
 * EOY 2018: add checkout, collections, improved scaling/hardening, generic events to support stand-alone indexers, additional gaps identified in HCA DCP Pilot.
-* Future: (not in order of precedence) native GCP support, Authorization support for controlled-access data, additional scale/hardening, Biosphere requirements, tiered storage, content zones, FISMA moderate capabilities, single-replica deployments
 
 ## Roles
 
@@ -61,10 +60,8 @@ The objective of the Data Store group is to deliver substantively complete funct
 
 ## Communication
 ### Slack Channels
-* HumanCellAtlas/data-store : general data store discussions
-* HumanCellAtlas/data-store-eng : development discussions
-### Mailing list(s)
-### Discussion Forum(s)
+* HumanCellAtlas/data-store: general data store discussions
+* HumanCellAtlas/data-store-eng: development discussions
 
 ## Github repositories
 * https://github.com/HumanCellAtlas/data-store
