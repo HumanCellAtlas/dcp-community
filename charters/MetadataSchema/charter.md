@@ -33,7 +33,7 @@ In order for the HCA metadata schema to meet the needs of the community, the def
 ## Out-of-scope
 
 * Building interfaces to translate metadata between HCA metadata JSON and other serialization formats
-* Building services to to index or query the metadata
+* Building services to index or query the metadata
 
 ## Milestones
 
