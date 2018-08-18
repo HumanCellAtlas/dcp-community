@@ -5,7 +5,7 @@
 The Data Portal is a landing site for the Human Cell Atlas (HCA) Data Coordination Platform (DCP). It is hosted at https://www.data.humancellatlas.org/ with an access link from the main HCA website at https://www.humancellatlas.org/. It provides the user experience for scientific and general users to upload, explore, search, and run analyses on human genomic data. The Data Browser ("Explore") application provides a faceted search capability to find and download subsets of this data.
 
 ## Objective
-Implementation of the DCP website experience. Provide the access point for scientific and general users to search all HCA genetic data in order to identify a subset of the data for download and/or further analysis, providing file/bundle search on multiple clouds at petabyte scale with public APIs.
+The objective of the Data Portal is to provide the DCP website implementation. Provide the access point for scientific and general users to search all HCA genetic data in order to identify a subset of the data for download and/or further analysis, providing file/bundle search on multiple clouds at petabyte scale with public APIs.
 
 ## In-scope
 ### General
@@ -42,7 +42,7 @@ Implementation of the DCP website experience. Provide the access point for scien
 * API Documentation for portable, cloud-neutral APIs
 
 ## Out-of-scope
-* Production operation of other HCA DCP components in AWS (e.g. the DSS, data ingestion process, Secondary Analysis workflows, Tertiary Analysis portals, etc.)
+* Production operation of applications and services linked to from the Data Portal (e.g. the DSS, data ingestion service, Secondary Analysis workflows, Tertiary Analysis portals, etc.)
 * Any separate data ingest application developed by The European Bioinformatics Institute (EBI) which may replace or augment the "Contribute" tab in the Data Portal
 * Methods Registry providing management, searching, filtering, sorting, visualization, and methods packages in the tertiary portal (registry is developed and maintained by the Broad Institute)
 * Primary interface for collecting user feedback and feature/bug requests
@@ -50,7 +50,7 @@ Implementation of the DCP website experience. Provide the access point for scien
 ## Milestones
 * Oct 2018:  Deploy MVP feature set as part of HCA DCP Pilot phase
 * Nov 2018:  Present Pilot phase portal to community
-* EOY 2018:  As needed improved scaling/hardening to address any gaps identified in HCA DCP Pilot phase
+* EOY 2018:  Implement as needed improved scaling/hardening to address any gaps identified during the HCA DCP Pilot phase
 * 1H  2019:  Save search queries and query results (using DSS Collections APIs). Search results / Collections handoff to the Matrix service and to tertiary portals. Vanilla Forums support. Canny support.
 
 ## Roles
