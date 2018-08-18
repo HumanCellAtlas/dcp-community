@@ -12,14 +12,15 @@ Implementation of the DCP website experience. Provide the access point for scien
 * UX, visual, and branding design with input from the HCA brand working group
 * Adhere to the HCA DCP community best practices for Continuous Integration (CI), Continuous Delivery (CD), system logging via Google Analytics, etc.
 * Production operation of the overall Data Portal website in Amazon Web Services (AWS), with exclusions listed in the out-of-scope section
-* Implementation performance scaling
+* Meet the performance scaling objectives of the DCP
 * DevSecOps compliance as required by the HCA Security Team
+* Leverage the authentication and authorization implementation libraries from the DevSecOps team to implement login and access control for the Data Portal and Data Browser
 * Community engagement
    * Triage and integration of feature requests into the work queue 
    * Support plan for escalation of user reported bugs
 ### Data Portal
 * Select and deploy a content management system
-* Integrate Data Browser and Data Portal UIs into a seamless UX and provide link to other groups' applications (e.g. a Data Ingestion UI)
+* Integrate Data Browser and Data Portal UIs into a seamless UX and provide link to other groups' applications (e.g. the Data Ingestion UI)
 * Frequent updates of summary statistics (cells, organs, donors, projects, labs, etc.) on the Home Page
 * Coordinate development of user guide content (e.g. “Learn”) from multiple contributors
 * Coordinate development of developer documentation content (e.g. “Develop”) from multiple contributors. Includes API documentation and development guides.
@@ -32,27 +33,25 @@ Implementation of the DCP website experience. Provide the access point for scien
 * Create (or use Data Storage Service [DSS] provided) indexes to access files in the Data Store by using public DSS APIs to read the metadata
 * Browser support for multiple metadata schemas that are supported by the schema access library maintained by the Ingest service
 * Search views of Specimens, Projects and Files
-* Browser UI to search the DSS by specifying multiple search criteria (“facets”)
-* Download selected files from the DSS via the UI and/or HCA DCP Command Line Interface (CLI)
-* Leverage the authentication and authorization implementation from the Data Store
-* Browser interface to the DSS Collections service to save, view, list, share and delete the query results from a search operation
-* Handoff of a Collection of search results to a tertiary portal. Provide for direct handoff of search results to FireCloud.
-* Facilities to save, view, share, update, and delete search queries and personal collections on a per-user basis
-* Search results handoff to the Matrix service
+* Support for specifying multiple search criteria (“facets”) through the Browser UI
+* Download selected files from the Data Store via the UI and/or HCA DCP Command Line Interface (CLI)
+* Browser interface to the Date Store Collections service to save, view, list, share and delete the query results from a search operation
+* Search results / Collections handoff to a tertiary portal. Provide for direct handoff of search results to FireCloud.
+* Facilities to save, view, share, update, and delete search queries and personal Collections on a per-user basis
+* Search results / Collections handoff to the Matrix service
 * API Documentation for portable, cloud-neutral APIs
 
 ## Out-of-scope
 * Production operation of other HCA DCP components in AWS (e.g. the DSS, data ingestion process, Secondary Analysis workflows, Tertiary Analysis portals, etc.)
 * Any separate data ingest application developed by The European Bioinformatics Institute (EBI) which may replace or augment the "Contribute" tab in the Data Portal
 * Methods Registry providing management, searching, filtering, sorting, visualization, and methods packages in the tertiary portal (registry is developed and maintained by the Broad Institute)
-* The HCA DCP CLI infrastructure implementation (which is part of the DSS)
 * Primary interface for collecting user feedback and feature/bug requests
 
 ## Milestones
 * Oct 2018:  Deploy MVP feature set as part of HCA DCP Pilot phase
 * Nov 2018:  Present Pilot phase portal to community
-* EOY 2018:  Improved scaling/hardening for additional gaps identified in HCA DCP Pilot phase
-* 1H  2019:  Save search queries and query results (using DSS Collections APIs). Handoff of a Collection of search results to the Matrix service and to tertiary portals. Vanilla Forums support. Canny support.
+* EOY 2018:  As needed improved scaling/hardening to address any gaps identified in HCA DCP Pilot phase
+* 1H  2019:  Save search queries and query results (using DSS Collections APIs). Search results / Collections handoff to the Matrix service and to tertiary portals. Vanilla Forums support. Canny support.
 
 ## Roles
 
