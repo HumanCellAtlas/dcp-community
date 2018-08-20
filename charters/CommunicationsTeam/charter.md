@@ -21,7 +21,7 @@ The Human Cell Atlas (HCA) Data Coordination Platform (DCP) Communications team 
 * Develop long-term plans for HCA DCP communication and estimate the resources needed to execute these plans
 
 ### Scientific "guardrails"
-If we are communicating about any of the scientific activities of the HCA, the communication should be coordinated with the HCA project’s communications team.
+If we are communicating about any of the scientific activities of the HCA, the communication must be coordinated with the HCA project’s communications team.
 
 ## Out-of-scope
 * Any communications for the HCA related to the scientific arm of the HCA project. 
