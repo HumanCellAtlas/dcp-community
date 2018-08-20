@@ -1,12 +1,12 @@
 # Upload Service
 
 ## Description
-The Human Cell Atlas (HCA) Data Coordination Platform (DCP) Upload Service provides a file staging and validation facility. Upload Areas are created and deleted using a [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) Application Programming Interface (API), which is secured so only the DCP Ingestion Service may use it. It stages files into cloud storage and computes checksums for the files. The validation service can run arbitrary validation jobs against files.
+The Human Cell Atlas (HCA) Data Coordination Platform (DCP) Upload Service provides a file staging and validation facility. Upload Areas are created and deleted using a [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) Application Programming Interface (API), which is secured so only the DCP Ingestion Service may use it. It stages files into cloud storage and computes checksums for the files. The validation service can run user-defined validation jobs against files.
 
 ## Objectives
 1. Provide temporary storage for staging of files by submitters during ingestion into DCP Ingestion Service and subsequent storage in the Data Storage Service (DSS)
 1. Provide tools a command line interface (CLI) and API to upload files to staging areas
-1. Provide a facility to validate files by running an arbitrary workload against the file to be used by Ingest for validation
+1. Provide a facility to validate files in staging area that accepts user-defined validators that meet upload service convention
 
 ## In-scope
 * Staging Areas - provide file staging areas to be used to marshal data and metadata files
@@ -53,8 +53,8 @@ The Human Cell Atlas (HCA) Data Coordination Platform (DCP) Upload Service provi
 * Upload Service libraries for programming languages unlikely to see use within the DCP or community
 
 ## Milestones
-* EOY 2018 - Analysis can upload from GCS; scale validated with metrics set by DCP PM; (stretch) develop plan to transition Upload Service to EBI
-* EH1 2019 - Transition to EBI complete; upload from browser
+* EOY 2018 - Scale validated with metrics set by DCP PM; (stretch) develop plan to transition Upload Service to EBI
+* EH1 2019 - Transition to EBI complete
 
 ## Roles
 
