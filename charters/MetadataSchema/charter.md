@@ -3,32 +3,35 @@
 
 ## Description
 
-The HCA Metadata schema committee creates and maintains the Human Cell Atlas metadata schema in JSON format. These schema are designed to capture and provide structure for the descriptive scientific metadata associated with HCA datasets. These schemas aim to ensure the FAIRness* of the HCA data [The FAIR Guiding Principles for scientific data management and stewardship](https://www.nature.com/articles/sdata201618). 
+The Human Cell Atlas (HCA) Metadata Schema are JSON format schema. These schema are designed to capture and provide structure for the descriptive scientific metadata associated with HCA datasets. These schemas aim to ensure [the FAIRness of the HCA data](https://www.nature.com/articles/sdata201618).
 
 ## Objective
 
-1. Ensure that HCA data are findable and the schemas are computationally queryable.
-2. Ensure that HCA metadata supports reproducibility and reusability.
-3. Ensure that HCA metadata has a consistent representation and is computationally queryable.
-4. Define JSON schema which enable objectives 1 and 2.
-5. Specify the entity structure for HCA metadata schema.
-6. Define style guides and release process.
-7. Ensure the defined metadata schema provides a positive user experience for those who read and write them.
+1. Ensuring that HCA data are findable and the schemas are computationally queryable
+2. Ensuring that HCA metadata supports reproducibility and reusability
+3. Ensuring that HCA metadata has a consistent representation and can accurately represent the scientific description of a dataset in a computational readable manner
+4. Defining JSON schema which enable objectives 1 and 2
+5. Defining the semantic rules that the content follows
+6. Working with Ingest Infrastructure to specify the entity structure for HCA metadata schema
+7. Defining style guides and the release process for the schema
+8. Ensuring the defined metadata schema provides a positive user experience for those who read and write them
 
 ## In-scope
 
-* Defining the specification for the schema and the schema itself.
-* Incorporate community feedback to extend and improve the schema.
-* Ensuring the schema is compatible with open source software packages supporting the same draft of the JSON schema.
-* Provide a test framework to enable community members to test if their proposed extensions are functional and meet our style guides.
-* Providing exemplar data in the schema format.
-* Working with data contributors to understand what types of descriptive fields they can supply for their samples and experiments.
-* Working with data consumers to understand what descriptive fields they need in order to be able to analyse and visualise the HCA data.
-* Extending the schema to meet the needs of data contributors and data consumers based on the feedback they provide.
+* Defining the specification for the schema and the schema itself
+* Defining the semantic rules for metadata content of the schema
+* Incorporating community feedback to extend and improve the schema
+* Ensuring the schema is compatible with open source software packages supporting the same draft of the JSON schema
+* Providing a test framework to enable community members to test if their proposed extensions are functional and meet our style guides
+* Providing exemplar data in the schema format
+* Providing computationally readable information about depreciated and moved fields within the schema
+* Working with data contributors to understand what types of descriptive fields they can supply for their samples and experiments
+* Working with data consumers to understand what descriptive fields they need in order to be able to analyse and visualise the HCA data
+* Extending the schema to meet the needs of data contributors and data consumers based on the feedback they provide
 
-### Scientific "guardrails" 
+### Scientific "guardrails"
 
-In order for the HCA metadata schema to meet the needs of the community, the defined schema must reflect the types of data which are being generated in order to build the Human Cell Atlas. The HCA Metadata schema committee will seek guidance from the scientific leadership of the HCA to help understand and prioritize new data types for addition to the schema collection as well as collecting feedback from data contributors and data consumers.
+In order for the HCA metadata schema to meet the needs of the community, the defined schema must reflect the types of data which are being generated in order to build the Human Cell Atlas. We will seek guidance from the scientific leadership of the HCA to help understand and prioritize new data types for addition to the schema collection as well as collecting feedback from data contributors and data consumers.
 
 ## Out-of-scope
 
@@ -37,7 +40,7 @@ In order for the HCA metadata schema to meet the needs of the community, the def
 
 ## Milestones
 
-During 2018/2019 The metadata charter committee will work to:
+During 2018/2019 The metadata charter committee will work to complete the following milestones.
 
 * Implement a test suite to enable independent testing of the metadata schemas outside of any other infrastructure
 * Work with data contributors and consumers from the community who are conducting image based transcriptomics experiments to define metadata schema that can capture needed details of these experiments
