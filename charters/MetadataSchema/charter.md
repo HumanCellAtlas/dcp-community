@@ -53,7 +53,7 @@ During 2018/2019 The metadata charter committee will work to complete the follow
 ### Product Owner
 [Norman Morrison](mailto:norman@ebi.ac.uk)
 ### Technical Lead
-
+[Mark Diekhans](mailto:markd@ucsc.edu)
 
 ## Communication
 
