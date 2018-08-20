@@ -53,8 +53,8 @@ The Human Cell Atlas (HCA) Data Coordination Platform (DCP) Upload Service provi
 * Upload Service libraries for programming languages unlikely to see use within the DCP or community
 
 ## Milestones
-* EOY 2018 - Scale validated with metrics set by DCP PM; (stretch) develop plan to transition Upload Service to EBI
-* EH1 2019 - Transition to EBI complete
+* EOY 2018 - Scale validated with metrics set by DCP PM; (stretch) develop plan to transition Upload Service to Ingest Module
+* EH1 2019 - Transition to Ingest Module complete
 
 ## Roles
 
