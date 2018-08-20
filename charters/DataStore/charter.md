@@ -6,13 +6,13 @@
 The Data Store is a scientific data sharing/publishing/distribution framework, providing file/bundle management on multiple clouds at petabyte-scale. It defines public APIs for storage, retrieval, and subscription to events that functions transparently across multiple cloud systems such as AWS and GCP.
 
 ## Objective
-The objective of the Data Store group is to deliver substantively complete functionality on all of the in-scope items listed in this charter.
+The objective of the Data Store group is to deliver a versioned immutable object based data repository that is highly available and scalable. Data will be replicated to at least two commercial clouds (Amazon and Google). Data will be accessible through a variety of programatic interfaces as well as a command line interface.
 
 ## In-scope
 
 ### Interfaces
 * Data Store read and write APIs for data (PUT bundle, PUT file, GET bundle, GET file) - maintenance and extension of the implementation of the basic data access APIs.
-* Maintain and extend the **Checkout service API** which enables data checkout to a local filesystem or a personal cloud environment
+* Maintain and extend the **Checkout service API** which enables data copy to a local filesystem or a personal cloud environment
 * Maintain and extend the **Collections service API** to do basic operations on arbitrary collections of objects in the Data Store.
 * Publish API documentation and examples for both the Data Store REST interface and Python bindings.
 * The **Command Line Interface** (CLI) is a foundational tool for interacting with the DCP. The Data Store team is responsible for the specific Data Store commands and the maintenance of the infrastructure that allows other services such as Upload and Ingest to integrate their commands into the CLI.
@@ -36,8 +36,8 @@ The objective of the Data Store group is to deliver substantively complete funct
 * Triage and integration of feature requests from the community into the Data Store roadmap. 
 * Review and acceptance process for third party software contributions through pull requests
 * Outreach and engagement of the community
-* Training
-* Hackathons
+* Offer trainings on how to contribute to the Data Store project, or reuse it for a different project.
+* Host hackathons for extending the Data Store feature set. 
 
 ## Out-of-scope
 * Other index/query methods/engines - we should implement these as stand-alone projects against modular index/query API.
