@@ -17,9 +17,12 @@ the *Query Service* component.
 
 * Expression Matrix Service interface supports queries based on:
     * Bundle identifiers
+        * This query enables selection of cells from specific submissions. 
     * Metadata (*across bundles; potentially provided directly by Query Module*)
+        * These types of filters will enable users to select cells based on their biological characteristics, for example, all kidney cells, or all cells prepared using the 10x v2 assay.
     * Numerical filtering (*on gene expression values, and also QC metrics*)
-    * Compound metadata and numerical filtering
+        * These types of filters will, for example, enable users to query for cells according to their expression of key marker genes, or exclude cells with low quality scores. 
+    * Compound metadata and numerical filtering (*combinations of the above filters*)
 
 * Expression Service API and scalable backend that provides access to
 query interface
