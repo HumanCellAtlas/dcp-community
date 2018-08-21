@@ -17,11 +17,11 @@ the *Query Service* component.
 
 * Expression Matrix Service interface supports queries based on:
     * Bundle identifiers
-        * This query enables selection of cells from specific submissions. 
+        * This query enables selection of specific submissions.
     * Metadata (*across bundles; potentially provided directly by Query Module*)
         * These types of filters will enable users to select cells based on their biological characteristics, for example, all kidney cells, or all cells prepared using the 10x v2 assay.
     * Numerical filtering (*on gene expression values, and also QC metrics*)
-        * These types of filters will, for example, enable users to query for cells according to their expression of key marker genes, or exclude cells with low quality scores. 
+        * These types of filters will, for example, enable users to query for cells according to their expression of key marker genes, or exclude cells with low quality scores.
     * Compound metadata and numerical filtering (*combinations of the above filters*)
 
 * Expression Service API and scalable backend that provides access to
@@ -32,7 +32,8 @@ query interface
 * Data representation
     * Expression matrix data format for transport
     * Expression matrix data format for storage
-    * QC matrix data format for storage and transport
+    * QC matrix data format for transport
+    * QC matrix data format for storage
 
 
 * Extends HCA DCP Command Line Interface (CLI) client to support the Expression Matrix Service
@@ -48,9 +49,10 @@ query interface
     * Provide feedback in the form of architecture sessions and written UX
     reports to the DCP community about the experience of building layered services using the public API(s). (e.g., *can the expression microservice be built using only public Data Store API?*)
     * Scientific "guardrails" to warn users when executed queries produce data subsets with questionable scientific utility
+        * For example, if a user queries for the expression of only a single gene across all lung cells, this query would trigger a warning that the returned data cannot be effectively normalized
 
 * External dependencies
-    * Dependencies on Data Store, Query Service, and Secondary Analysis to enable and expose quality control metrics
+    * Dependencies on Data Store, Query Service, and Secondary Analysis to enable and expose data matrices and quality control metrics
     * ~~Decision on at-rest and transfer matrix data formats~~
     * Dependency on Query Service for join queries on metadata
 
@@ -71,7 +73,7 @@ query interface
 
 ### Project Lead
 
-[Ambrose Carr](mailto:acarr@chanzukerberg.com)
+[Ambrose Carr](mailto:acarr@chanzuckerberg.com)
 
 ### Product Owner
 
