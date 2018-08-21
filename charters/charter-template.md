@@ -4,9 +4,15 @@
 
 ## Description
 
-## Objective
+_Describe the vision of the project in **2-3** sentences. Consider this section as your "elevator pitch" to new community members._
+
+## Objectives
+
+_Describe the incremental, observable, and measurable high-level outcomes of the project_
 
 ## In-scope
+
+_Describe the boundaries of the project as defined by specific user or technical needs [**without implementation details**]_
 
 ### Scientific "guardrails" [Optional]
 
@@ -14,7 +20,11 @@ _Describe recommended or mandated oversight from HCA Science governance to ensur
 
 ## Out-of-scope
 
-## Milestones
+_Describe specific user or technical needs which are **not** addressed to clarify the boundaries of the project._
+
+## Milestones and Deliverables
+
+_Describe the major milestones and their deliverables which allow the Architecture team to assess progress towards charter completion._
 
 ## Roles
 
