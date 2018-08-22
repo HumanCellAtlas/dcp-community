@@ -53,15 +53,13 @@ query interface
 
 * External dependencies
     * Dependencies on Data Store, Query Service, and Secondary Analysis to enable and expose data matrices and quality control metrics
-    * ~~Decision on at-rest and transfer matrix data formats~~
     * Dependency on Query Service for join queries on metadata
 
 ## Out-of-scope
 
 * Data visualization portal or web application for expression matrices
 * Transformative data manipulation; analysis apps or pipelines using expression data (e.g. data normalization)
-* Standards engagement for APIs or data storage formats
- with the GA4GH Large-Scale Genomics work stream
+* Standards engagement for APIs or data storage formats with the GA4GH Large Scale Genomics work stream prior to basic completion of matrix service implementation and integration of user feedback
 
 ## Milestones
 
