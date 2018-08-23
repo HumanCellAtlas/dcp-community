@@ -11,7 +11,7 @@ The DCP Ingest Infrastructure provides a suite of services designed to facilitat
   * Generation of identifiers for data, metadata and submissions
   * Storage of submitted data to the DCP Data Store
 
-## Objective
+## Objectives
 
 Ingest Infrastructure supports data contributors in the collection, validation and submission of data and metadata at the point of generation, following endorsed community standards to ensure experimental data and analysis results are findable, accessible, interoperable and reusable for downstream consumers.
 
@@ -84,7 +84,7 @@ Ingest Infrastructure requires oversight on which data types are required within
  * Generation of lab specific spreadsheets that are not directly generated from a JSON schema endorsed by the metadata team. Additional customisations (for example, modifying column names or adding additional tabs) for individual contributors will not be supported through any mechanism other than through the use of standard configuration (i.e. which modules are to be included) or through the proposal of metadata schema changes
 
 
-## Milestones
+## Milestones and Deliverables
 
   1. _**"Wrangler-assisted"** submission phase:_
      - Provision of services to allow data contributors to deposit all required data and metadata. Process is heavily wrangler-led, with metadata exchanged manually (e.g. via spreadsheets emails to wranglers) and support provided to upload data. Contributors see very few DCP user interfaces
