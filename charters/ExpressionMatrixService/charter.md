@@ -5,7 +5,7 @@
 
 The expression matrix service enables researchers to easily access and analyze HCA expression matrix data.
 
-## Objective
+## Objectives
 
 * Build, operate, and maintain a data access API that serves expression
 matrices from the HCA DCP Data Store with options to subset data based on bundle metadata, genes, and numerical filters.
@@ -61,7 +61,7 @@ query interface
 * Transformative data manipulation; analysis apps or pipelines using expression data (e.g. data normalization)
 * Standards engagement for APIs or data storage formats with the GA4GH Large Scale Genomics work stream prior to basic completion of matrix service implementation and integration of user feedback
 
-## Milestones
+## Milestones and Deliverables
 
 **EOY 2018** - Architecture complete; implementation of API feature complete, suitable for limited use, but not scalable
 
