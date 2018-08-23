@@ -5,7 +5,7 @@
 ## Description
 The Human Cell Atlas (HCA) Data Coordination Platform (DCP) Communications team coordinates and publishes public communications through various channels for the DCP as a whole. We work with the different groups within the DCP to ensure that each group is properly represented in external communications. We work with the HCA communications representatives if/when needed to ensure that DCP communications are consistent with and support those of the HCA. We monitor the DCP Data Portal documentation and update as needed. We develop training materials and events to teach people about the HCA DCP and how to use it.
 
-## Objective
+## Objectives
 * Provide clear and accurate information to the public regarding DCP activities
 * Provide educational materials to help people to take advantage of DCP tools and HCA data
 * Function as the front line for communications between the DCP and legal or media entities, triaging requests or issues to the appropriate DCP or HCA leadership and possibly creating first drafts for their review (eg: press releases).
@@ -27,7 +27,7 @@ If we are communicating about any of the scientific activities of the HCA, the c
 * Any communications for the HCA related to the scientific arm of the HCA project. 
 * UX research that informs us about the success of the portal or desired portal engineering 
 
-## Milestones
+## Milestones and Deliverables
 * Announcement mailing list assembled
     * Pull email list form HCA registry of interest and allow people to opt-in to future emails
 * Determine whether to initiate a weekly newsletter
