@@ -4,7 +4,7 @@
 ## Description
 The Data Portal is a landing site for the Human Cell Atlas (HCA) Data Coordination Platform (DCP). It is hosted at https://www.data.humancellatlas.org/ with an access link from the main HCA website at https://www.humancellatlas.org/. It provides the user experience for scientific and general users to upload, explore, search, and run analyses on human genomic data. The Data Browser ("Explore") application provides a faceted search capability to find and download subsets of this data.
 
-## Objective
+## Objectives
 The objective of the Data Portal is to provide the DCP website implementation. It provides the access point for scientific and general users to search all HCA genetic data in order to identify a subset of the data for download and/or further analysis, and file/bundle search with public APIs at petabyte scale on public clouds.
 
 ## In-scope
@@ -45,7 +45,7 @@ The objective of the Data Portal is to provide the DCP website implementation. I
 * Methods Registry providing management, searching, filtering, sorting, visualization, and methods packages in the "Analyze" tab of the Data Portal
 * Primary interface for collecting user feedback and feature/bug requests
 
-## Milestones
+## Milestones and Deliverables
 * Oct 2018:  Deploy a minimum viable product (MVP) feature set as part of HCA DCP beta test phase
 * Nov 2018:  Present beta phase portal to the DCP community
 * EOY 2018:  Implement as needed improved scaling/hardening to address any gaps identified during the HCA DCP beta test phase
