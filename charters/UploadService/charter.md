@@ -48,7 +48,7 @@ The Upload Service enables fast, cost-effective upload, staging, and validation 
 * Validation images (these are provided by users of the system)
 * Upload Service libraries for programming languages unlikely to see use within the DCP or community
 
-## Milestones
+## Milestones and Deliverables
 * EOY 2018
     * REST HTTP API stable
     * Scale validated with metrics set by DCP PM
