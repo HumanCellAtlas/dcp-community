@@ -5,7 +5,7 @@
 
 The Human Cell Atlas (HCA) Metadata Schema are JSON format schema. These schema are designed to capture and provide structure for the descriptive scientific metadata associated with HCA datasets. These schemas aim to ensure [the FAIRness of the HCA data](https://www.nature.com/articles/sdata201618).
 
-## Objective
+## Objectives
 
 1. Ensuring that HCA data are findable and the schemas are computationally queryable
 2. Ensuring that HCA metadata supports reproducibility and reusability
@@ -38,7 +38,7 @@ In order for the HCA metadata schema to meet the needs of the community, the def
 * Building interfaces to translate metadata between HCA metadata JSON and other serialization formats
 * Building services to index or query the metadata
 
-## Milestones
+## Milestones and Deliverables
 
 During 2018/2019 The metadata charter committee will work to complete the following milestones.
 
