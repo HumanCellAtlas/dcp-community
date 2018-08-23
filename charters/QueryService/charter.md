@@ -45,7 +45,7 @@ kj
 * Search user interface, search application and/or analysis application work
 * Upkeep and improvement of existing indexers or ETL layers within DSS
 
-## Milestones
+## Milestones and Deliverables
 
 * **EOY 2018**
     * Architectural work done
