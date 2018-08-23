@@ -5,7 +5,7 @@
 ## Description
 The Data Store is a scientific data sharing/publishing/distribution framework, providing file/bundle management on multiple clouds at petabyte-scale. It defines public APIs for storage, retrieval, and subscription to events that functions transparently across multiple cloud systems such as AWS and GCP.
 
-## Objective
+## Objectives
 The objective of the Data Store group is to deliver a versioned immutable object based data repository that is highly available and scalable. Data will be replicated to at least two commercial clouds (Amazon and Google). Data will be accessible through a variety of programatic interfaces as well as a command line interface.
 
 ## In-scope
@@ -43,7 +43,7 @@ The objective of the Data Store group is to deliver a versioned immutable object
 * Other index/query methods/engines - we should implement these as stand-alone projects against modular index/query API.
 * Matrix service API
 
-## Milestones
+## Milestones and Deliverables
 * Mid-2018: 1000 bundle test scale, deploy as part of HCA DCP Pilot
 * EOY 2018: add checkout, collections, improved scaling/hardening, generic events to support stand-alone indexers, additional gaps identified in HCA DCP Pilot.
 
