@@ -29,7 +29,7 @@ If we are communicating about any of the scientific activities of the HCA, the c
 
 ## Milestones and Deliverables
 * Announcement mailing list assembled
-    * Pull email list form HCA registry of interest and allow people to opt-in to future emails
+    * Pull email list from HCA registry of interest and allow people to opt-in to future emails
 * Determine whether to initiate a weekly newsletter
 * Help desk triage person
 * DCP Twitter account
