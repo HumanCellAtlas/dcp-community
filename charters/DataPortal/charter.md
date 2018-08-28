@@ -34,9 +34,9 @@ The objective of the Data Portal is to provide the DCP website implementation. I
 * Support for specifying multiple search criteria (“facets”) through the Browser UI
 * Download of selected files from the Data Store via the UI and/or HCA DCP Command Line Interface (CLI)
 * Browser interface to the Date Store Collections Service to save, view, list, share and delete the query results from a search operation
-* Search results / Collections handoff to Analysis Applications. Provide for direct handoff of search results to FireCloud.
+* Search results / Collections interface to Analysis Applications. Provide UI for handoff of search results to FireCloud.
 * Facilities to save, view, share, update, and delete search queries and personal Collections on a per-user basis
-* Search results / Collections handoff to the Matrix service
+* Search results / Collections interface to the Matrix Service
 * API Documentation for portable, cloud-neutral APIs
 
 ## Out-of-scope
@@ -49,7 +49,7 @@ The objective of the Data Portal is to provide the DCP website implementation. I
 * Oct 2018:  Deploy a minimum viable product (MVP) feature set as part of HCA DCP beta test phase
 * Nov 2018:  Present beta phase portal to the DCP community
 * EOY 2018:  Implement as needed improved scaling/hardening to address any gaps identified during the HCA DCP beta test phase
-* 1H  2019:  Save search queries and query results (using DSS Collections APIs). Search results / Collections handoff to the Matrix Service and to Analysis Applications. Discussion forums support. User feedback application support.
+* 1H  2019:  Save search queries and query results (using DSS Collections APIs). Search results / Collections interface to the Matrix Service and to Analysis Applications. Discussion forums support. User feedback application support.
 
 ## Roles
 
