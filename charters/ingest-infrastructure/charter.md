@@ -9,7 +9,7 @@ The Data Coordination Platform (DCP) Ingestion Service provides a suite of servi
   * Interact with the DCP Upload Service to track and validate uploaded data files
   * Track submission states that describe the life-cycle of experimental data as it moves through the DCP
   * Generate identifiers for data, metadata and submissions
-  * Store of submitted data in the DCP Data Storage Service
+  * Store submitted data in the DCP Data Storage Service
 
 ## Objectives
 
