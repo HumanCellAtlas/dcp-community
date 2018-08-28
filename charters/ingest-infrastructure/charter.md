@@ -44,7 +44,7 @@ The Ingestion Service will deliver four main constituent services targeting four
  * Provide a user interface that allowa data contributors to review and repair any metadata that fails to meet validation criteria, or has been automatically modified (for example, the automatic annotation of data with ontology terms)
  * Provide services allowing ingest API clients to communicate errors they have encountered during data brokering. Clients must communicate enough information to allow a contributor to review any issues with a submission through the ingest UI, and if possible to take action to repair the erroneous contents
 
-### Spreadsheet Template generator
+### Spreadsheet Template Generator
  * Provide tools that use reference (latest) metadata schemas, defined by the metadata team, to produce template spreadsheets in a canonical spreadsheet format, such that data contributors can easily fill in their metadata
  * Provide services that allow data contributors (normally, data wranglers) to generate customised spreadsheets that target specific experiment types or data types based on a small number of screening criteria
 
@@ -75,7 +75,7 @@ The Ingestion Service requires oversight on which data types are required within
  * Searching over submitted data, beyond that required for retrieval of a given user's previous submissions
  * Dedicated views over the data, for example visualisation of all data for a particular project or from a particular tissue type
 
-### Spreadsheet Template generator
+### Spreadsheet Template Generator
  * Generation of lab specific spreadsheets that are not directly generated from a JSON schema endorsed by the metadata team. Additional customisations (for example, modifying column names or adding additional tabs) for individual contributors will not be supported through any mechanism other than through the use of standard configuration (i.e. which modules are to be included) or through the proposal of metadata schema changes
 
 ### Spreadsheet Uploader
