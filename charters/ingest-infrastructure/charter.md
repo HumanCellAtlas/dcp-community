@@ -23,7 +23,7 @@ The Ingestion Service will deliver four main constituent services targeting four
   * **Ingest API** - targeting programmatic data contributors and client applications
   * **Ingest UI** - targeting data contributors uploading data and metadata via a form-based user interface
   * **Spreadsheet Template Generator** - targeting lab-based project managers generating spreadsheets suitable for data generators to capture the details of their experiment
-  * **Spreadsheet Uploader** - targeting data generators uploading experimental metadata using a spreadsheets in the format created by the spreadsheet template generator
+  * **Spreadsheet Uploader** - targeting data generators uploading experimental metadata using spreadsheets in the format created by the spreadsheet template generator
 
 ## In-scope
 
