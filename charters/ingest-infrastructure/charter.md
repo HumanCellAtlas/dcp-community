@@ -1,9 +1,9 @@
 
-# Ingest Infrastructure
+# Ingestion Service
 
 ## Description
 
-The Data Coordination Platform (DCP) Ingest Infrastructure provides a suite of services to facilitate the contribution of data and metadata to the Human Cell Atlas (HCA). The Ingest Infrastructure allows users to:
+The Data Coordination Platform (DCP) Ingestion Service provides a suite of services to facilitate the contribution of data and metadata to the Human Cell Atlas (HCA). The Ingestion Service allows users to:
   * Upload metadata describing biological materials, data files, and the experimental processes that generated them
   * Validate metadata against endorsed community standards
   * Interact with the DCP Upload Service to track and validate uploaded data files
@@ -13,17 +13,17 @@ The Data Coordination Platform (DCP) Ingest Infrastructure provides a suite of s
 
 ## Objectives
 
-The Ingest Infrastructure supports data contributors in the collection, validation and submission of data and metadata at the point of generation.
+The Ingestion Service supports data contributors in the collection, validation and submission of data and metadata at the point of generation.
 
-The primary mission of the Ingest Infrastructure is to define an application programming interface (API) for the upload of data and metadata that will be stored in the Data Storage Service and that adheres to endorsed community standards.
+The primary mission of the Ingestion Service is to define an application programming interface (API) for the upload of data and metadata that will be stored in the Data Storage Service and that adheres to endorsed community standards.
 
-The secondary mission is to provide convenient, user-friendly methods for the upload of data and metadata to the DCP. The Ingest Infrastructure will provide user interfaces and tools suitable for a variety of data contributor profiles, and will continuously review whether these interfaces and tools adequately serve the needs of the HCA user community.
+The secondary mission is to provide convenient, user-friendly methods for the upload of data and metadata to the DCP. The Ingestion Service will provide user interfaces and tools suitable for a variety of data contributor profiles, and will continuously review whether these interfaces and tools adequately serve the needs of the HCA user community.
 
-The Ingest Infrastructure will deliver four main constituent services targeting four specific groups of users:
+The Ingestion Service will deliver four main constituent services targeting four specific groups of users:
   * **Ingest API** - targeting programmatic data contributors and client applications
   * **Ingest UI** - targeting data contributors uploading data and metadata via a form-based user interface
   * **Spreadsheet Template Generator** - targeting lab-based project managers generating spreadsheets suitable for data generators to capture the details of their experiment
-  * **Spreadsheet Uploader*** - targeting data generators uploading experimental metadata using a spreadsheets in the format created by the spreadsheet template generator
+  * **Spreadsheet Uploader** - targeting data generators uploading experimental metadata using a spreadsheets in the format created by the spreadsheet template generator
 
 ## In-scope
 
@@ -55,20 +55,20 @@ The Ingest Infrastructure will deliver four main constituent services targeting 
 
 ### Dependencies
 
-The Ingest Infrastructure will be as loosely coupled as possible to schemas defined by the metadata team. The definition of a core domain model for data and metadata is therefore in scope for the Ingest Infrastructure, as this core domain model must be shared between the Ingest Infrastructure and Metadata Schema. This core domain model defines high level concepts (e.g. 'Biomaterial', 'Protocol', 'File'), and changes to this core model must be agreed between the responsible teams.
+The Ingestion Service will be as loosely coupled as possible to schemas defined by the metadata team. The definition of a core domain model for data and metadata is therefore in scope for the Ingestion Service, as this core domain model must be shared between the Ingestion Service and Metadata Schema. This core domain model defines high level concepts (e.g. 'Biomaterial', 'Protocol', 'File'), and changes to this core model must be agreed between the responsible teams.
 
 All services and tools that are used by direct data contributors will be rigorously tested with users to ensure a high quality user experience, and will take advantage of user experience experts within the DCP team.
 
 ### Scientific "guardrails"
 
-The Ingest Infrastructure requires oversight on which data types are required within the DCP (for example, SmartSeq2 and 10x sequencing data, imaging data) and by extension which file formats are endorsed and acceptable within the DCP (e.g. FASTQ, BAM, TIFF).
+The Ingestion Service requires oversight on which data types are required within the DCP (for example, SmartSeq2 and 10x sequencing data, imaging data) and by extension which file formats are endorsed and acceptable within the DCP (e.g. FASTQ, BAM, TIFF).
 
 ## Out-of-scope
 
 ### Ingest API
  * Metadata specification definitions. Ingest will utilise metadata definitions defined by DCP-compliant JSON schemas, as defined by the metadata working group, and will ensure the Ingest API is schema-agnostic where possible, but will not actively define metadata specifications beyond the restrictions placed by the shared core domain model outlined above
- * Definition of bundle structures for the DCP datastore. Whilst the Ingest API will provide support for generating bundles in response to submissions, the Ingest Infrastructure is not responsible for the specification of bundle structures - it is expected these will be provided either by the metadata team or to address specific consumer requirements
- * Authentication services. The Ingest Infrastructure will utilise DCP-wide authentication services. Authorisation services for specific ingest requirements are likely out of scope, unless DCP-wide authorisation services cannot fulfil requirements that are overly specific to ingest
+ * Definition of bundle structures for the DCP datastore. Whilst the Ingest API will provide support for generating bundles in response to submissions, the Ingestion Service is not responsible for the specification of bundle structures - it is expected these will be provided either by the metadata team or to address specific consumer requirements
+ * Authentication services. The Ingestion Service will utilise DCP-wide authentication services. Authorisation services for specific ingest requirements are likely out of scope, unless DCP-wide authorisation services cannot fulfil requirements that are overly specific to ingest
 
 ### Ingest UI
  * Preview illustration of data, for example as it "will appear" in the data portal
@@ -118,7 +118,7 @@ The Ingest Infrastructure requires oversight on which data types are required wi
 
 ### Slack
 
-[HumanCellAtlas #ingestion-service](https://humancellatlas.slack.com/messages/ingestion-service) for all discussions on the Ingest Infrastructure
+[HumanCellAtlas #ingestion-service](https://humancellatlas.slack.com/messages/ingestion-service) for all discussions on the Ingestion Service
 
 [HumanCellAtlas #dcp-reuse](https://humancellatlas.slack.com/messages/dcp-reuse) if you are interested in using ingest, or other DCP components, in your own projects
 
@@ -127,14 +127,14 @@ The Ingest Infrastructure requires oversight on which data types are required wi
 ### Ingest Central
 
  * https://github.com/HumanCellAtlas/ingest-central
-   * ingest-central is the hub repository for the Ingest Infrastructure - use this to report issues or as the gateway to specific components and microservices
+   * ingest-central is the hub repository for the Ingestion Service - use this to report issues or as the gateway to specific components and microservices
 
-### Ingest Infrastructure Deployment
+### Ingestion Service Deployment
 
  * https://github.com/HumanCellAtlas/ingest-kube-deployment
-   * ingest-kube-deployment provides access to configurations and scripts needed to set up an entire Ingest Infrastructure environment (including `make` files for terraform and kubernetes configurations)
+   * ingest-kube-deployment provides access to configurations and scripts needed to set up an entire Ingestion Service environment (including `make` files for terraform and kubernetes configurations)
 
-### Ingest Infrastructure Microservices components
+### Ingestion Service Microservices components
 
  * https://github.com/HumanCellAtlas/ingest-core
  * https://github.com/HumanCellAtlas/ingest-ui
