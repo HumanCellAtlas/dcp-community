@@ -11,6 +11,20 @@ The Data Coordination Platform (DCP) Ingestion Service provides a suite of servi
   * Generate identifiers for data, metadata and submissions
   * Store submitted data in the DCP Data Storage Service
 
+### Definitions
+
+*Data contributor* - any user who uploads data into the DCP
+
+*Data consumer* - any user who accesses or downloads data from the DCP
+
+*Direct data contributor* - a data contributor who uploads their own data through services offered as part of the DCP in a "self-service" manner. Direct data contributors are also usually the generators of the data
+
+*Data wrangler* - a data contributor who works as part of the HCA consortium to provide assistance to biologists wanting to upload data into the DCP
+
+*Submission* - the grouping of data and metadata that makes sense to a data contributor. For example, a data contributor might typically upload all the data at once for a publication they have in preparation. This grouping does not necessarily correspond to how data is stored or displayed in the DCP and how it should be displayed to a data consumer
+
+*Bundle* - the grouping of data and metadata in the Data Storage Service
+
 ## Objectives
 
 The Ingestion Service supports data contributors in the collection, validation and submission of data and metadata at the point of generation.
@@ -150,17 +164,3 @@ The Ingestion Service requires oversight on which data types are required within
  * https://github.com/HumanCellAtlas/ingest-state-tracking
  * https://github.com/HumanCellAtlas/ingest-fastq-validator
  * https://github.com/HumanCellAtlas/ingest-staging-manager
-
-## Definitions
-
- *Data contributor* - any user who uploads data into the DCP
-
- *Data consumer* - any user who accesses or downloads data from the DCP
-
- *Direct data contributor* - a data contributor who uploads their own data through services offered as part of the DCP in a "self-service" manner. Direct data contributors are also usually the generators of the data
-
- *Data wrangler* - a data contributor who works as part of the HCA consortium to provide assistance to biologists wanting to upload data into the DCP
-
- *Submission* - the grouping of data and metadata that makes sense to a data contributor. For example, a data contributor might typically upload all the data at once for a publication they have in preparation. This grouping does not necessarily correspond to how data is stored or displayed in the DCP and how it should be displayed to a data consumer
-
- *Bundle* - the grouping of data and metadata in the Data Storage Service
