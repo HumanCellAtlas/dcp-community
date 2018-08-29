@@ -6,6 +6,10 @@
 
 _Describe the vision of the project in **2-3** sentences. Consider this section as your "elevator pitch" to new community members._
 
+## Definitions [Optional]
+
+_Define DCP-specific terminology to ensure that your charter is comprehensible to new community members._
+
 ## Objectives
 
 _Describe the incremental, observable, and measurable high-level outcomes of the project_
