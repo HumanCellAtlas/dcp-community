@@ -37,7 +37,7 @@ kj
     * Documentation for API and query language use with metadata
     * Demonstration use of service; developer example code to enable fast and easy third party adoption of API
 * UX Research and Feedback
-    * UX validation of API and query language with [analysis application](https://www.humancellatlas.org/data-sharing) community
+    * UX validation of API and query language with the analysis application community
     * Provide feedback to DCP about public API suitability in building layered services (e.g. can a new Query microservice be built using only public DSS API?)
     * Provide feedback to the metadata group on schema changes that could support intuitive queries of the metadata
 
