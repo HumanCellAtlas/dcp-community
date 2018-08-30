@@ -24,15 +24,15 @@ the *Query Service* component.
         * These types of filters will, for example, enable users to query for cells according to their expression of key marker genes, or exclude cells with low quality scores.
     * Compound metadata and numerical filtering (*combinations of the above filters*)
 
-* Expression Service API and scalable backend that provides access to
+* Expression Matrix Service API and scalable backend that provides access to
 query interface
 
 * Architecture, software design, and scale testing for scalability
 
 * Data representation
-    * Expression matrix data format for transport
+    * Multiple expression matrix data formats based on _de facto_ standards delivered by the API and the Command Line Interface (CLI)
     * Expression matrix data format for storage
-    * QC matrix data format for transport
+    * QC matrix data format delivered by the API and the Command Line Interface (CLI)
     * QC matrix data format for storage
 
 
