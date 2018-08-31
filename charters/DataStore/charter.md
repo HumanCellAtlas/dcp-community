@@ -27,25 +27,26 @@ The objective of the Data Store group is to deliver a versioned immutable object
 * Support for pluggable indexes - Define a standard interface to enable pluggable indexing modules to receive Data Store events
 
 ### Security
-* User authentication system implementation
-* Data access authorization system implementation 
-* DevSecOps - implementation of features required for eventual FISMA moderate deployments (authentication, authorization, logging, auditing, etc).
+* User authentication system implementation for the Data Store
+* Data access authorization system implementation for the Data Store
+* DevSecOps - implementation of features required to the core Data Store code to support FISMA moderate capabilities in forked code bases (authentication, authorization, logging, auditing, etc).
 * Operations for Data Store - Implement and configure tools to facilitate the operation of the Data Store service in a production environment
 
 ### Community engagement
 * Triage and integration of feature requests from the community into the Data Store roadmap. 
 * Review and acceptance process for third party software contributions through pull requests
-* Outreach and engagement of the community
-* Offer trainings on how to contribute to the Data Store project, or reuse it for a different project.
+* Outreach and engagement of the community on use/usability of the APIs
+* Provide collaboration with groups to explore what it would take to implement reuse of the Data Store.
 * Host hackathons for extending the Data Store feature set. 
 
 ## Out-of-scope
 * Other index/query methods/engines - we should implement these as stand-alone projects against modular index/query API.
-* Matrix service API
+* FISMA moderate certification for the core Data Store code base
 
 ## Milestones and Deliverables
 * Mid-2018: 1000 bundle test scale, deploy as part of HCA DCP Pilot
 * EOY 2018: add checkout, collections, improved scaling/hardening, generic events to support stand-alone indexers, additional gaps identified in HCA DCP Pilot.
+* First half of 2019: Document Data Store interfaces so that the community is enabled to deploy storage on a configurable cloud (AWS or GCP) with the system logic still running in AWS. Also document replication APIs to enable the community to implement new cloud support. 
 
 ## Roles
 
