@@ -2,7 +2,7 @@
 
 ## Description
 
-The Data Coordination Platform (DCP) PM team is responsible for the oversight of the Data Coordination Platform (DCP) *as product*, developing the shared understanding of the overall product vision, priorities, and release schedule with the community.
+The Data Coordination Platform (DCP) PM team is responsible for the oversight of the DCP *as product*, developing the shared understanding of the overall product vision, priorities, and release schedule with the community.
 
 The core team is composed of *Project Leads* and *Product Owners* from each DCP project, *DCP UX* (Voice of the Customer), and a *Science Program Manager*.
 
