@@ -22,7 +22,6 @@ the *Query Service* component.
         * These types of filters will enable users to select cells based on their biological characteristics, for example, all kidney cells, or all cells prepared using the 10x v2 assay.
     * Numerical filtering (*on gene expression values, and also QC metrics*)
         * These types of filters will, for example, enable users to query for cells according to their expression of key marker genes, or exclude cells with low quality scores.
-    * Compound metadata and numerical filtering (*combinations of the above filters*)
 
 * Expression Matrix Service API and scalable backend that provides access to
 query interface
@@ -57,6 +56,7 @@ query interface
 
 ## Out-of-scope
 
+* Compound metadata and numerical filtering (*combinations of the In-scope filters*)
 * Data visualization portal or web application for expression matrices
 * Transformative data manipulation; analysis apps or pipelines using expression data (e.g. data normalization)
 * Standards engagement for APIs or data storage formats with the GA4GH Large Scale Genomics work stream prior to basic completion of matrix service implementation and integration of user feedback
