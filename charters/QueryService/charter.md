@@ -1,6 +1,4 @@
-
 # Query Service
-
 
 ## Description
 The Query Service is an Application Programming Interface (API) for querying Human Cell Atlas (HCA) bundle metadata with intuitive query syntax.
@@ -14,7 +12,7 @@ Services the Query Module provides may complement or subsume the current search 
 1. Develop a scalable public API for external indexing and other DSS event consumers
 1. Deploy all query systems as stand-alone, modular services
 1. Make DCP index and query systems agnostic to DCP schema evolution
-kj
+
 ## In-scope
 * Common index event bus and deployment infrastructure
     * Finalize support for multiple metadata indexers in DSS
