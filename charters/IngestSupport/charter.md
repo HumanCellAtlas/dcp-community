@@ -4,7 +4,7 @@
 
 The Ingest Support team acts as a liason between labs who want to contribute data to the Human Cell Atlas (HCA) and the Data Coordination Platform (DCP). This teams works with data contributing labs, to understand each lab's data and ensure the experiments are well-represented in the platform and to support the lab writing data to the platform, working with them to resolve any issues in the process.
 
-## Definitions [Optional]
+## Definitions
 
 *Data contributor* - any user who uploads data and metadata into the DCP
 
@@ -75,8 +75,6 @@ The ingest support team will work with the HCA DCP PM team and the HCA scientifi
 
 
 ## Roles
-
-Recommended format for Roles: `[Name](mailto:username@example.com)`
 
 ### Project Lead
 
