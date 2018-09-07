@@ -2,13 +2,17 @@
 
 ## Description
 
-The Ingest Support team acts as a liaison between labs who want to contribute data to the Human Cell Atlas (HCA) and the Data Coordination Platform (DCP). This team works with data contributing labs, to understand each lab's data and ensure the experiments are well-represented in the platform and to support the lab writing data to the platform, working with them to resolve any issues in the process.
+The Ingest Support team is the liaison between the Data Coordination Platform (DCP) and labs contributing data to the Human Cell Atlas (HCA). This team closely collaborates with each data contributor to:
+
+*	Working with data contributors who are generating new data types to develop a deep understanding of their data
+* Assisting data contributors to describe their experiments in a manner that supports finability, reusability and reproducability with in the DCP ecosystem
+* Helping data contributors to submit their data to the DCP, resolving any emerging issues during the process
 
 ## Definitions
 
 *Data contributor* - any user who uploads data and metadata into the DCP
 
-*Data wrangler* - a member of the ingest support team who supports to data contributors wanting to upload data into the DCP
+*Data wrangler* - a member of the ingest support team who assists to data contributors wanting to upload data into the DCP
 
 *Submission* - the grouping of data and metadata that makes sense to a data contributor. For example, a data contributor might typically upload all the data at once for a publication they have in preparation. This grouping does not necessarily correspond to how data is stored or displayed in the DCP and how it should be displayed to a data consumer
 
@@ -22,7 +26,7 @@ The Ingest Support team acts as a liaison between labs who want to contribute da
 
 ## Objectives
 
-- Supporting data contributors uploading data and metadata to the DCP
+- Assisting data contributors uploading data and metadata to the DCP
 - Helping data contributors fix errors with their data and metadata before it can be submitted to the DCP
 - Ensuring a data contributor's experiment can be accurately represented in the DCP
 - Working with the data contributor to propose extensions to the HCA metadata schema if additional metadata fields are required
@@ -43,10 +47,10 @@ The Ingest Support team acts as a liaison between labs who want to contribute da
 
 ### For established data types
 
-- Supporting data contributors uploading data files to the platform
-- Supporting data contributors using the Ingest User interface to generate a metadata template spreadsheet
-- Supporting data contributors uploading metadata to the platform
-- Supporting data contributors who wish to use the Ingest API to submit data
+- Assisting data contributors uploading data files to the platform
+- Assisting data contributors using the Ingest User interface to generate a metadata template spreadsheet
+- Assisting data contributors uploading metadata to the platform
+- Assisting data contributors who wish to use the Ingest API to submit data
 - Working with data contributors to fix errors in their data and metadata
 
 ### User Experience
