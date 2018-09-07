@@ -49,11 +49,11 @@ The Upload Service enables fast, cost-effective upload, staging, and validation 
 * Upload Service libraries for programming languages unlikely to see use within the DCP or community
 
 ## Milestones and Deliverables
-* EOY 2018
+* End of H2 2018
     * REST HTTP API stable
     * Scale validated with metrics set by DCP PM
     * (stretch) develop plan to transition Upload Service to Ingest Module
-* EH1 2019
+* End of H1 2019
     * Transition to Ingest Module complete
 
 ## Roles
