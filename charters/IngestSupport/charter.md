@@ -32,7 +32,7 @@ The Ingest Support team is the liaison between the Data Coordination Platform (D
 - Helping data contributors address errors with their data formatting and metadata before it can be submitted to the DCP. 
 - Ensuring a data contributor's experiment can be accurately represented in the DCP
 - Working with the data contributor to understand if new metadata fields are needed to represent their data
-- Proposing enhancements to the metadata schemas following the process defined by the Metadata team
+- Proposing enhancements to the metadata schemas following the process defined by the Metadata Schema team
 - Working with the UX team to collect and provide feedback from data contributors to the Ingest Infrastructure team about how the infrastructure can be improved
 - Working with the UX team to ensure the ingest process provides a positive user experience to the data contributors
 
