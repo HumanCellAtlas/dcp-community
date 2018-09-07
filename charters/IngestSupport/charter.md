@@ -2,7 +2,7 @@
 
 ## Description
 
-The Ingest Support team is the liaison between the Data Coordination Platform (DCP) and labs contributing data to the Human Cell Atlas (HCA). This team closely collaborates with each data contributor to:
+The Ingest Support team is the liaison between the Data Coordination Platform (DCP) and labs contributing data to the Human Cell Atlas (HCA). This team is:
 
 * Working with data contributors who are generating new data types to develop a deep understanding of their data
 * Assisting data contributors to describe their experiments in a manner that supports findability, reusability and reproducability within the DCP ecosystem
@@ -22,9 +22,9 @@ The Ingest Support team is the liaison between the Data Coordination Platform (D
 
 *Established data types* - assay data types which have a history of submission and downstream use in the DCP and for which there are already many datasets of this type represented in the platform
 
-*Submission* - the grouping of data and metadata that makes sense to a data contributor to submit at once time. For example, a data contributor might upload all the data at once for a publication they have in preparation. This grouping does not necessarily correspond to how data is stored or displayed in the DCP and how it should be displayed to a data consumer
+*Submission* - the grouping of data and metadata that makes sense to a data contributor to submit one at a time. For example, a data contributor might upload all the data at once for a publication they have in preparation. This grouping does not necessarily correspond to how data is stored or displayed in the DCP and how it should be displayed to a data consumer
 
-*The PM team - the team responsible for the oversight of the DCP as the product, developing the shared understanding of the overall product vision, priorities, and release schedule with the community.
+*The PM team* - the team responsible for the oversight of the DCP as the product, developing the shared understanding of the overall product vision, priorities, and release schedule with the community.
 
 ## Objectives
 
@@ -32,8 +32,8 @@ The Ingest Support team is the liaison between the Data Coordination Platform (D
 - Helping data contributors address errors with their data formatting and metadata before it can be submitted to the DCP. 
 - Ensuring a data contributor's experiment can be accurately represented in the DCP
 - Working with the data contributor to understand if new metadata fields are needed to represent their data
-- Proposing enhancements to the metadata schemas following the process defined by the metadata team
-- Working with the UX team to collect and provide feedback from data contributors to the ingest infrastructure team about how the infrastructure can be improved
+- Proposing enhancements to the metadata schemas following the process defined by the Metadata team
+- Working with the UX team to collect and provide feedback from data contributors to the Ingest Infrastructure team about how the infrastructure can be improved
 - Working with the UX team to ensure the ingest process provides a positive user experience to the data contributors
 
 ## In-scope
@@ -51,7 +51,7 @@ The Ingest Support team is the liaison between the Data Coordination Platform (D
 - Assisting data contributors uploading data files to the platform
 - Assisting data contributors using the ingest user interface to generate a metadata template spreadsheet
 - Assisting data contributors uploading metadata to the platform
-- Assisting data contributors who wish to use the Ingest API to submit data
+- Assisting data contributors who wish to use the ingest API to submit data
 
 ### For all data contributors
 
@@ -71,7 +71,6 @@ The Ingest Support team will identify data type priorities in collaboration with
 
 ## Out-of-scope
 
-- Implementing code for the ingest infrastructure system
 - Actively submitting data on behalf of data contributors with established data types
 - Consistently reformatting data for a data contributor with an established data type when it does not meet HCA requirements
 - Updating the HCA metadata schemas 
