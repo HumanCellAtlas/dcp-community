@@ -99,7 +99,7 @@ _Coming Soon_
 
 [HumanCellAtlas/#ingestion-service](https://humancellatlas.slack.com/messages/ingestion-service) for discussions of the Ingestion service
 
-[HumanCellAtlas/data-wrangling](https://humancellatlas.slack.com/messages/data-wrangling) for discussion about the data wrangling process
+[HumanCellAtlas/#data-wrangling](https://humancellatlas.slack.com/messages/data-wrangling) for discussion about the data wrangling process
 
 ## Github repositories
 
