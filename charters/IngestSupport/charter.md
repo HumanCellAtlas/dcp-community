@@ -4,8 +4,8 @@
 
 The Ingest Support team is the liaison between the Data Coordination Platform (DCP) and labs contributing data to the Human Cell Atlas (HCA). This team closely collaborates with each data contributor to:
 
-*	Working with data contributors who are generating new data types to develop a deep understanding of their data
-* Assisting data contributors to describe their experiments in a manner that supports finability, reusability and reproducability with in the DCP ecosystem
+* Working with data contributors who are generating new data types to develop a deep understanding of their data
+* Assisting data contributors to describe their experiments in a manner that supports findability, reusability and reproducability within the DCP ecosystem
 * Helping data contributors to submit their data to the DCP, resolving any emerging issues during the process
 
 ## Definitions
@@ -20,11 +20,11 @@ The Ingest Support team is the liaison between the Data Coordination Platform (D
 
 *New data types* - assay data types which either can't already be ingested by the DCP or have only recently (~6m - 1yr) started to be ingested by the system
 
-*Established data types* - assay data types which have a history of submission and downstream use in the DCP and there are already many datasets of this type represented in the platform
+*Established data types* - assay data types which have a history of submission and downstream use in the DCP and for which there are already many datasets of this type represented in the platform
 
-*Submission* - the grouping of data and metadata that makes sense to a data contributor. For example, a data contributor might typically upload all the data at once for a publication they have in preparation. This grouping does not necessarily correspond to how data is stored or displayed in the DCP and how it should be displayed to a data consumer
+*Submission* - the grouping of data and metadata that makes sense to a data contributor to submit at once time. For example, a data contributor might upload all the data at once for a publication they have in preparation. This grouping does not necessarily correspond to how data is stored or displayed in the DCP and how it should be displayed to a data consumer
 
-*The PM team - the team responsible for the oversight of the DCP as product, developing the shared understanding of the overall product vision, priorities, and release schedule with the community.
+*The PM team - the team responsible for the oversight of the DCP as the product, developing the shared understanding of the overall product vision, priorities, and release schedule with the community.
 
 ## Objectives
 
@@ -57,7 +57,8 @@ The Ingest Support team is the liaison between the Data Coordination Platform (D
 
 - Assisting data contributors to fix errors in their data structure and metadata 
 - Responding to data contribution requests on Zendesk
-- Providing training material about how to submit data to the DCP
+- Writing/delivering training material about how to submit data to the DCP
+- Writing/maintaining documentation about how to submit data to the DCP
 
 ### User Experience
 
