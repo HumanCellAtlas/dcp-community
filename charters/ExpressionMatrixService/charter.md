@@ -63,9 +63,22 @@ query interface
 
 ## Milestones and Deliverables
 
-**EOY 2018** - Architecture complete; implementation of API feature complete, suitable for limited use, but not scalable
+**Nov 2018**: *Deploy a minimum viable product (MVP) feature set as part of HCA DCP Beta.*
 
-**Mid 2019** - Performant, highly scalable version, suitable for interactive (responsive) data serving across the entire HCA dataset
+Implementation of v0 API suitable for limited use but not scalable, includes:
+* Queries based on bundle identifiers
+* Delivery of multiple expression matrix data formats based on de facto standards
+
+**EOY 2018**: Implementation of v1 API, suitable for limited use but not scalable. Updating to include:
+* Queries based on metadata filters
+
+**Q1 2019**: Implementation of v2 API, suitable for limited use but not scalable. Updating to include:
+* Queries based on numerical filters
+* Feedback from HCA DCP Beta users
+
+**Q1 2019**: DCP Command Line Interface (CLI) extended to support Expression Matrices
+
+**Mid 2019**: API and Architecture feature complete and polished. *(Highly scalable and performant implementation suitable for responsive data serving across the entire HCA dataset)*
 
 ## Roles
 
