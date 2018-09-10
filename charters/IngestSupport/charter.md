@@ -78,7 +78,14 @@ The Ingest Support team will identify data type priorities in collaboration with
 
 ## Milestones and Deliverables
 
-_Coming Soon_
+* Contributor targeted training: How to populate spreadsheets.
+  - Delivery: **Q4 2018**
+* Requirements for imaging and scNucRNASeq metadata.
+  - Delivery: **Q1 2019**
+* Requirements for ingest infrastructure self service phase; working with UX to develop a requirements set in order to deliver full-featured user interfaces to support spreadsheet based submissions.
+  - Delivery: **Q2 2019**
+* Requirements for ingest infrastructure review and repair phase; working with UX to develop a requirements set in order to deliver user interfaces to support the review and repair of potential errors or inconsistencies in submissions.
+  - Delivery: **Q3 2019**
 
 ## Roles
 
