@@ -45,7 +45,7 @@ Any proposal that would benefit from additional review or design before being im
 - A RFC is required if a technical initiative (refactoring, major architectural change) impacts the community.
 - A RFC is required for all changes to DCP governance.  
 
-### Revising Enhancements
+### Revising RFC(s)
 
 How are RFC(s) maintained as *living documents* in an iterative development process where the original design may substantially change based on implementation experiences?
 
@@ -139,7 +139,7 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 
 **NOTE**: *The existence of an approved software RFC does not indicate any particular priority or commitment to implement the RFC, nor is an approved RFC a green light to implement. Approved RFCs simply demonstrate community agreement on a technical decision. Product priorities are managed and implementations scheduled via the DCP PM planning process.*
 
-### Shepherd:
+#### Shepherd:
 
 - Validate that the RFC pull request was successfully updated and merged
 - Include the RFC approval in *This week in DCP* status update
