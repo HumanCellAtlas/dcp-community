@@ -10,7 +10,7 @@ The data processing service is a centralized space to perform all transformative
 
 __Community pipeline:__ A pipeline that is not officially used as a standard in the HCA project but runs in the DCP and is operated by the Data Processing Service to enable community members to work with a diversity of submitted data until they have a standardized pipeline. These pipelines are not as vetted as standardized pipelines.  
 __HCA Analysis Working Group (AWG):__ A group of domain specialists that advise on and monitor scientific choices made in the Human Cell Atlas Project.  
-__HCA DCP GG:__ A working group of the Human Cell Atlas project that advises the DCP, assuring alignment of DCP development efforts with the scientific project it supports.  
+__HCA DCP Governance Group:__ A working group of the Human Cell Atlas project that advises the DCP, assuring alignment of DCP development efforts with the scientific project it supports.  
 __On-boarding:__ The process of taking an existing pipeline and engineering it to work in the HCA DCP.  
 __Scoping:__ The process of investigating the available resources and knowledge in a community around a specific assay to better understand how much work it would take to make a pipeline to process data from that assay.  
 __Standardized Pipeline:__ An official pipeline of the HCA project.  
