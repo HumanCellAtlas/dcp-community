@@ -3,7 +3,7 @@
 
 ## Description
 
-The Data Coordination Platform (DCP) Ingestion Service provides a suite of services to facilitate the contribution of data and metadata to the Human Cell Atlas (HCA). The Ingestion Service allows users to:
+The Ingestion Service provides a suite of services to facilitate the contribution of data and metadata to the Data Coordination Platform (DCP). The Ingestion Service allows users to:
   * Upload metadata describing biological materials, data files, and the experimental processes that generated them
   * Validate metadata against endorsed community standards
   * Interact with the DCP Upload Service to track and validate uploaded data files
@@ -19,9 +19,9 @@ The Data Coordination Platform (DCP) Ingestion Service provides a suite of servi
 
 *Direct data contributor* - a data contributor who uploads their own data through services offered as part of the DCP in a "self-service" manner. Direct data contributors are also usually the generators of the data
 
-*Data wrangler* - a data contributor who works as part of the HCA consortium to provide assistance to biologists wanting to upload data into the DCP
+*Data wrangler* - an individual who works on behalf of the Human Cell Atlas (HCA) consortium to provide assistance to data contributors uploading data into the DCP. From an Ingestion Service perspective, data wranglers can themselves be considered as a specialised type of data contributor
 
-*Submission* - the grouping of data and metadata that makes sense to a data contributor. For example, a data contributor might typically upload all the data at once for a publication they have in preparation. This grouping does not necessarily correspond to how data is stored or displayed in the DCP and how it should be displayed to a data consumer
+*Submission* - the grouping of data and metadata that makes sense for a data contributor to supply as part of a single interaction with the Ingestion Service. For example, a data contributor might typically upload all the data at once for a publication they have in preparation. This grouping does not necessarily correspond to how data is stored or displayed in the DCP and how it should be displayed to a data consumer
 
 *Bundle* - the grouping of data and metadata in the Data Storage Service
 
