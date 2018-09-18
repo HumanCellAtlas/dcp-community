@@ -6,7 +6,7 @@
 
 # RFC Name
 
-*This is the same as the filename*
+*This is the same as the filename.*
 
 ## Summary
 
@@ -44,7 +44,7 @@
 - *What aspects of the design do you expect to clarify further through the RFC review process?*
 - *What aspects of the design do you expect to clarify later during iterative development of this RFC?*
 
-### Drawbacks / Limitations [optional]
+### Drawbacks and Limitations [optional]
 
 *Why should this RFC **not** be implemented?*
 
@@ -55,5 +55,5 @@
 ### Alternatives [optional]
 
 *Highlight other possible approaches to delivering the value proposed in this RFC. 
-What other designs were explored and what was the rationale for rejecting them?*
+What other designs were explored? What were their advantages? What was the rationale for rejecting alternatives?*
 
