@@ -41,13 +41,11 @@ To address these needs, the DCP RFC process defines a transparent and standard m
 Any proposal that would benefit from additional review or design before being implemented is a good candidate for an RFC.
 
 - An RFC is required if the implemented design would be described in written communication to the community.
-- An RFC is required if a design impacts the scope of multiple projects.
+- An RFC is required if a design impacts multiple DCP projects.
 - An RFC is required if a technical initiative (refactoring, major architectural change) impacts the community.
 - An RFC is required for all changes to DCP governance.  
 
 ### Revising RFCs
-
-How are RFCs maintained as *living documents* in an iterative development process where the original design may substantially change based on implementation experiences?
 
 Where necessary, existing RFCs can be revised using the same process (a proposed change submitted as a RFC pull request and subject to community review and approval). **Major changes should result in a new RFC.**
 
@@ -61,7 +59,7 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 
 - **Approvers** for software RFCs are the Technical Leads from *DCP Architecture*. 
 
-- **Reviewers** are DCP community members.
+- **Reviewers** are DCP community members, including both software developers and users.
 
 - **Science Reviewer** is the *DCP Science PM* in coordination with *HCA Science Governance*.
 
@@ -82,7 +80,7 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
   - Submit a pull request.
   
       For software RFCs:
-      - Add the "rfc-proposed" and the appropriate software project name _(such as "Data Store")_ labels. When the RFC crosses the scope of software projects, then the "Architecture" label **MUST** be the project name. *If uncertain about the appropriate project name, then **_Ask a PM_** on the HCA **#dcp-project-mgmt** slack channel*
+      - Add the "rfc-proposed" and the appropriate software project name _(such as "Data Store")_ labels. When the RFC impacts multiple DCP software projects, then the "Architecture" label **MUST** be the project name. *If uncertain about the appropriate project name, then **_Ask a PM_** on the HCA **#dcp-project-mgmt** slack channel*
 
       For governance RFCs:
         
@@ -91,7 +89,7 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
   - Share a link to the RFC pull request for community review on the HumanCellAtlas **#dcp** slack channel
 
 #### DCP PM:
-- Assign a **Shepherd** by completing the *Shepherd* section in the RFC template and pushing the update. The **Shepherd** guides the RFC and its **Author(s)** through the process.
+- Assign a **Shepherd** by completing the *Shepherd* section in the RFC template and pushing the commit. The **Shepherd** guides the RFC and its **Author(s)** through the process.
 - If there is a *Scientific "guardrails"* section in the RFC, assign the **Science Reviewer** as a reviewer of the pull request and add the "science-review-required" label.
 
 #### Shepherd:
@@ -133,7 +131,7 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 #### Author(s):
 - Rename the RFC from `0000-my-feature.md` to `rfc####-my-feature.md` (with leading zeros) where `####` is the next available RFC number
 
-- Create a link between the approved RFC and its pull request by updating the *DCP PR* section in the RFC template and pushing the update.
+- Create a link between the approved RFC and its pull request by updating the *DCP PR* section in the RFC template and pushing the commit.
 
 - Merge the RFC pull request
 
