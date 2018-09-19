@@ -43,7 +43,7 @@ Any proposal that would benefit from additional review or design before being im
 - An RFC is required if the implemented design would be described in written communication to the community.
 - An RFC is required if a design impacts multiple DCP projects.
 - An RFC is required if a technical initiative (refactoring, major architectural change) impacts the community.
-- An RFC is required for all changes to DCP governance.  
+- A RFC is required for all changes to the DCP formal governance, including but not limited to oversight, decision-making, conflict resolution, and community processes such as charters and RFCs. For more background on governance, see the **Model C: Delegated Governance** section in [Organization & Structure of Open Source Software Development Initiatives](https://dash.harvard.edu/bitstream/handle/1/30805146/2017-03-24_governance.pdf).  
 
 ### Revising RFCs
 
