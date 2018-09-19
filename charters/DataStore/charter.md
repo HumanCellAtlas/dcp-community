@@ -5,21 +5,25 @@
 ## Description
 The Data Store is a scientific data sharing/publishing/distribution framework, providing file/bundle management on multiple clouds at petabyte-scale. It defines public APIs for storage, retrieval, and subscription to events that functions transparently across multiple cloud systems such as AWS and GCP.
 
+## Definitions
+**Bundle** A bundle is a list of related files along with some very basic metadata such as filenames.
+**DCP** The Data Coordination Platform is the name given to the entire system used to ingest, validate, store, analyzes, and make available the datga in the Human Cell Atlas project.
+
 ## Objectives
-The objective of the Data Store group is to deliver a versioned immutable object based data repository that is highly available and scalable. Data will be replicated to at least two commercial clouds (Amazon and Google). Data will be accessible through a variety of programatic interfaces as well as a command line interface.
+The objective of the Data Store group is to deliver a versioned immutable object based data repository that is highly available and scalable. Data will be replicated to at least two commercial clouds (Amazon and Google). Data will be accessible through a variety of programatic interfaces as well as a command line interface. 
 
 ## In-scope
 
 ### Interfaces
-* Data Store read and write APIs for data (PUT bundle, PUT file, GET bundle, GET file) - maintenance and extension of the implementation of the basic data access APIs.
-* Maintain and extend the **Checkout service API** which enables data copy to a local filesystem or a personal cloud environment
+* Data Store read and write APIs for data and metadata - maintenance and extension of the implementation of the basic data access APIs. There are two public APIs available, the **REST API** and the **Python bindings**.
+* Maintain and extend the **Checkout service API** which enables data copy to a local filesystem or a personal cloud environment.
 * Maintain and extend the **Collections service API** to do basic operations on arbitrary collections of objects in the Data Store.
 * Publish API documentation and examples for both the Data Store REST interface and Python bindings.
 * The **Command Line Interface** (CLI) is a foundational tool for interacting with the DCP. The Data Store team is responsible for the specific Data Store commands and the maintenance of the infrastructure that allows other services such as Upload and Ingest to integrate their commands into the CLI.
 
 ### Core capabilities
-* Maintain and extend the DSS data model and lifecycle (such as versioned bundles)
-* Transition Data Store Subscriptions/Eventing services from the current dependence on Elastic Search Percolate to the AWS and GCP cloud infrastructure.
+* Maintain and extend the Data Store data model and data lifecycle. The data model is represented by bundles and files of arbitrary information. The specification for the format, naming, and content of these bundles and files is out of scope for this charter.
+* Support for reliable Subscriptions/Eventing services
 * Multi-cloud replication of objects
    1. Maintenance and improvements to the synchronization implementation between AWS and GCP
    2. Document interfaces to enable new cloud implementations by 3rd parties 
@@ -42,11 +46,14 @@ The objective of the Data Store group is to deliver a versioned immutable object
 ## Out-of-scope
 * Other index/query methods/engines - we should implement these as stand-alone projects against modular index/query API.
 * FISMA moderate certification for the core Data Store code base
+* Implementation of other language bindings for the APIs other than Python
+* The specification for the format, naming, and content of bundles and files stored in the Data Store.
 
 ## Milestones and Deliverables
 * Mid-2018: 1000 bundle test scale, deploy as part of HCA DCP Pilot
 * EOY 2018: add checkout, collections, improved scaling/hardening, generic events to support stand-alone indexers, additional gaps identified in HCA DCP Pilot.
 * First half of 2019: Document Data Store interfaces so that the community is enabled to deploy storage on a configurable cloud (AWS or GCP) with the system logic still running in AWS. Also document replication APIs to enable the community to implement new cloud support. 
+* First half of 2019: Transition Data Store Subscriptions/Eventing services from the current dependence on Elastic Search Percolate to the AWS and GCP cloud infrastructure.
 
 ## Roles
 
