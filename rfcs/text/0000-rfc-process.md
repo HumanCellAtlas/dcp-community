@@ -4,7 +4,7 @@
 
 ## Summary
 
-The Human Cell Atlas Data Coordination Platform (HCA DCP) evolved informal, consensus-driven processes to coordinate and document technical decisions.
+The Human Cell Atlas Data Coordination Platform (HCA DCP) evolved informal, consensus-driven processes to coordinate and document technical and governance decisions.
 
 This early *lightweight* and *egalitarian* approach enabled the DCP to achieve rapid velocity and incorporate a diverse set of innovative design concepts.
 
