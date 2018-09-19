@@ -28,7 +28,7 @@ There are a number of limitations with our current process which need to be addr
 
   - There is no common process describing how the community reviews and approves submitted proposals.
 
-  - There is no formal assistance to guide a contributor through the RFC process. 
+  - There is no formal assistance to guide a contributor through the process. 
 
 - New community members experience difficulties when _onboarding_. There is no curated repository of up-to-date design documents to assist with learning about the software. 
 
@@ -36,30 +36,30 @@ There are a number of limitations with our current process which need to be addr
 
 To address these needs, the DCP RFC process defines a transparent and standard method for community members to propose and build consensus around substantial enhancements to DCP software or governance.
 
-### When is a RFC required?
+### When is an RFC required?
 
-Any proposal that would benefit from additional review or design before being implemented is a good candidate for a RFC.
+Any proposal that would benefit from additional review or design before being implemented is a good candidate for an RFC.
 
-- A RFC is required if the implemented design would be described in written communication to the community.
-- A RFC is required if a design impacts the scope of multiple projects.
-- A RFC is required if a technical initiative (refactoring, major architectural change) impacts the community.
-- A RFC is required for all changes to DCP governance.  
+- An RFC is required if the implemented design would be described in written communication to the community.
+- An RFC is required if a design impacts the scope of multiple projects.
+- An RFC is required if a technical initiative (refactoring, major architectural change) impacts the community.
+- An RFC is required for all changes to DCP governance.  
 
-### Revising RFC(s)
+### Revising RFCs
 
-How are RFC(s) maintained as *living documents* in an iterative development process where the original design may substantially change based on implementation experiences?
+How are RFCs maintained as *living documents* in an iterative development process where the original design may substantially change based on implementation experiences?
 
-Where necessary, existing RFCs can be revised using the same process (a proposed change submitted as a pull request and subject to community review and approval). **Major changes should result in a new RFC.**
+Where necessary, existing RFCs can be revised using the same process (a proposed change submitted as a RFC pull request and subject to community review and approval). **Major changes should result in a new RFC.**
 
 ### What are the roles in the RFC process?
 
 - **Authors** are DCP community members.
 
-- **Shepherds** are members of *DCP PM* assigned to assist the **Author(s)** and ensure that a RFC progresses to closure.
+- **Shepherds** are members of *DCP PM* assigned to assist the **Author(s)** and ensure that the RFC progresses to closure.
 
-- **Approvers** for governance RFC(s) are the Project Leads and Product Owners from *DCP PM*.
+- **Approvers** for governance RFCs are the Project Leads and Product Owners from *DCP PM*.
 
-- **Approvers** for software RFC(s) are the Technical Leads from *DCP Architecture*. 
+- **Approvers** for software RFCs are the Technical Leads from *DCP Architecture*. 
 
 - **Reviewers** are DCP community members.
 
@@ -67,7 +67,7 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 
 ## Detailed Design
 
-### Proposing RFC(s)
+### Proposing RFCs
 
 #### **Authors**:
 
@@ -75,20 +75,20 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 
   - Fork the HumanCellAtlas dcp-community repository
   - Copy `rfcs/rfc-template.md` to `rfcs/text/0000-my-feature.md`
-  *- where "my-feature" is descriptive. Don't assign a RFC number yet.*
+  *- where "my-feature" is descriptive. Don't assign an RFC number yet.*
   
   - Fill in the RFC with attention to detail
 
   - Submit a pull request.
   
-      For software RFC(s):
+      For software RFCs:
       - Add the "rfc-proposed" and the appropriate software project name _(such as "Data Store")_ labels. When the RFC crosses the scope of software projects, then the "Architecture" label **MUST** be the project name. *If uncertain about the appropriate project name, then **_Ask a PM_** on the HCA **#dcp-project-mgmt** slack channel*
 
       For governance RFCs:
         
       - Add the "rfc-proposed" and the "Governance" labels. 
 
-  - Share a link to the pull request for community review on the HumanCellAtlas **#dcp** slack channel
+  - Share a link to the RFC pull request for community review on the HumanCellAtlas **#dcp** slack channel
 
 #### DCP PM:
 - Assign a **Shepherd** by completing the *Shepherd* section in the RFC template and pushing the update. The **Shepherd** guides the RFC and its **Author(s)** through the process.
@@ -97,34 +97,34 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 #### Shepherd:
 - Include the RFC submission in *This week in DCP* status update
 
-### Reviewing RFC(s)
+### Reviewing RFCs
 
 #### Approvers:
 - May assign specific reviewers in the RFC pull request
 
 #### Reviewers:
-- Add feedback to the pull request comment thread
+- Add feedback to the RFC pull request comment thread
 
 #### Science Reviewer:
 - When the feedback from the Science review is addressed, replace the "science-review-required" label with "science-review-completed".
 
 #### Author: 
-- Revise the pull request in response to feedback and push new commits
+- Revise the RFC pull request in response to feedback and push new commits
 
-### Shepherding RFC(s)
+### Shepherding RFCs
 
 #### Shepherd:
 - Monitor the community review and ensure that issues are addressed by the **Author(s)** in a reasonable time period.
 
-- When all issues are addressed and any required Science reviews are complete, summarize the review discussion for the **Approvers** in a top-level summary comment in the pull request. Replace "rfc-proposed" with "rfc-final-review".
+- When all issues are addressed and any required Science reviews are complete, summarize the review discussion for the **Approvers** in a top-level summary comment in the RFC pull request. Replace "rfc-proposed" with "rfc-final-review".
 
-- For software RFC(s), share a link to the pull request for approval on the HumanCellAtlas **#tech-architecture** slack channel. Add the RFC as an agenda item to the next *DCP Architecture* meeting.
+- For software RFCs, share a link to the RFC pull request for approval on the HumanCellAtlas **#tech-architecture** slack channel. Add the RFC as an agenda item to the next *DCP Architecture* meeting.
 
-- For governance RFC(s), share a link to the pull request for approval on the HumanCellAtlas **#dcp-project-mgmt** slack channel. Add the RFC as an agenda item to the next *DCP PM* meeting.
+- For governance RFCs, share a link to the RFC pull request for approval on the HumanCellAtlas **#dcp-project-mgmt** slack channel. Add the RFC as an agenda item to the next *DCP PM* meeting.
 
 - Include the RFC final review in *This week in DCP* status update
 
-### Approving RFC(s)
+### Approving RFCs
 
 #### Approvers:
 
@@ -135,7 +135,7 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 
 - Create a link between the approved RFC and its pull request by updating the *DCP PR* section in the RFC template and pushing the update.
 
-- Merge RFC pull request
+- Merge the RFC pull request
 
 **NOTE**: *The existence of an approved software RFC does not indicate any particular priority or commitment to implement the RFC, nor is an approved RFC a green light to implement. Approved RFCs simply demonstrate community agreement on a technical decision. Product priorities are managed and implementations scheduled via the DCP PM planning process.*
 
@@ -144,7 +144,7 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 - Validate that the RFC pull request was successfully updated and merged
 - Include the RFC approval in *This week in DCP* status update
 
-### Rejecting RFC(s)
+### Rejecting RFCs
 
 #### Approvers:
 
@@ -154,7 +154,7 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 - Include the RFC rejection in *This week in DCP* status update
 
 #### Author:
-- If a RFC is rejected by *DCP Architecture*, then the decision may be escalated for review by *DCP PM* by sending a request to the HumanCellAtlas **#dcp-project-mgmt** slack channel
+- If an RFC is rejected by *DCP Architecture*, then the decision may be escalated for review by *DCP PM* by sending a request to the HumanCellAtlas **#dcp-project-mgmt** slack channel
 
 ### Unresolved questions
 
