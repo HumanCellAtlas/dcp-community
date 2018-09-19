@@ -67,10 +67,11 @@ query interface
 
 Implementation of v0 API suitable for limited use but not scalable, includes:
 * Queries based on bundle identifiers
-* Delivery of multiple expression matrix data formats based on de facto standards
+* Delivery of highest priority expression matrix data formats based on de facto standards
 
 **EOY 2018**: Implementation of v1 API, suitable for limited use but not scalable. Updating to include:
 * Queries based on metadata filters
+* Delivery of additional expression matrix data formats based on de facto standards
 
 **Q1 2019**: Implementation of v2 API, suitable for limited use but not scalable. Updating to include:
 * Queries based on numerical filters
