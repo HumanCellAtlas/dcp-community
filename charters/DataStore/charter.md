@@ -7,6 +7,7 @@ The Data Store is a scientific data sharing/publishing/distribution framework, p
 
 ## Definitions
 **Bundle** A bundle is a list of related files along with some very basic metadata such as filenames.
+
 **DCP** The Data Coordination Platform is the name given to the entire system used to ingest, validate, store, analyzes, and make available the datga in the Human Cell Atlas project.
 
 ## Objectives
@@ -22,7 +23,7 @@ The objective of the Data Store group is to deliver a versioned immutable object
 * The **Command Line Interface** (CLI) is a foundational tool for interacting with the DCP. The Data Store team is responsible for the specific Data Store commands and the maintenance of the infrastructure that allows other services such as Upload and Ingest to integrate their commands into the CLI.
 
 ### Core capabilities
-* Maintain and extend the Data Store data model and data lifecycle. The data model is represented by bundles and files of arbitrary information. The specification for the format, naming, and content of these bundles and files is out of scope for this charter.
+* Maintain and extend the Data Store data model and data lifecycle. The data model is represented by bundles and files of arbitrary information. The Data Store team will own the process of collecting new bundle requirements from users and assessing them against the datastore design before sending them to the metadata team for the definition of a new spec. The Data Store owns the bundle use cases and bundle type definitions, while the precise specifications will be negotiated between the Metadata and other teams.
 * Support for reliable Subscriptions/Eventing services
 * Multi-cloud replication of objects
    1. Maintenance and improvements to the synchronization implementation between AWS and GCP
@@ -33,7 +34,7 @@ The objective of the Data Store group is to deliver a versioned immutable object
 ### Security
 * User authentication system implementation for the Data Store
 * Data access authorization system implementation for the Data Store
-* DevSecOps - implementation of features required to the core Data Store code to support FISMA moderate capabilities in forked code bases (authentication, authorization, logging, auditing, etc).
+* DevSecOps - implementation of features required to the core Data Store code to support FISMA moderate capabilities in forked code bases (authentication, authorization, logging, auditing, etc). The authentication and authorization system will support all rights of data subjects as defined in [GDPR](https://gdpr-info.eu/)
 * Operations for Data Store - Implement and configure tools to facilitate the operation of the Data Store service in a production environment
 
 ### Community engagement
