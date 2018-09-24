@@ -12,13 +12,14 @@ skills and views needed for community technical decision-making.
 ## In-scope
 
 Software architecture responsibilities
+* Gather and synthesize DCP's end-to-end requirements
 * Set overall direction of architectural and software design direction for the DCP
 * Provide technical input for the PM product roadmap process
 * Review and provide final approval for technical charters for DCP projects
 * Publish Architecture Requests for Comments (RFCs) documenting technical debt that impacts delivery of DCP as an
   integrated system
 * Review and provide final approval for cross-project RFC(s)
-    * Available to mentor on all RFC designs
+    * Available to mentor on all technical RFCs
 * Develop architecture standards and best practices including, but not limited to:
     * Software platforms and frameworks
     * Distributed system design
