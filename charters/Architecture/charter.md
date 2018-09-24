@@ -46,4 +46,7 @@ HumanCellAtlas/dcp-integration: Integration *workspace*
 ## Roles
 
 ### Facilitator
-<!-- TBD -->
+
+The DCP Architecture Team Facilitator is a role that rotates among project tech leads.
+
+Current facilitator: [Sam Pierson](mailto:spierson@chanzuckerberg.com)
