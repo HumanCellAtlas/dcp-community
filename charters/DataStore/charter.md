@@ -65,7 +65,7 @@ The objective of the Data Store group is to deliver a versioned immutable object
 [Kevin Osborn](mailto:kosborn2@ucsc.edu) 
 
 ### Technical Lead 
-[Hannes Schmidt](mailto:hannes@ucsc.edu) 
+[Brian Hannafious](mailto:bhannafi@ucsc.edu) 
 
 ## Communication
 ### Slack Channels
