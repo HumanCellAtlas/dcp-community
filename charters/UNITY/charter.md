@@ -1,5 +1,4 @@
-# Project Name
-Unity Benchmarking Service
+# Unity Benchmarking Service
 
 ## Description
 
@@ -18,7 +17,7 @@ The Unity benchmarking service aims to automate benchmarking for HCA pipelines, 
 * Documentation on how to use Unity and the assumptions pipelines must meet to be ran using Unity
 * Documentation on benchmarking process and outputs
 
-### Scientific "guardrails" [Optional]
+### Scientific "guardrails"
 
 * Benchmarking pipelines are reviewed by the HCA project and treated as data processing pipelines (engineering updates do not require HCA oversight; scientific updates do).
 * Metrics and how metrics are used in the leaderboards are reviewed by the HCA project.
@@ -48,8 +47,7 @@ __2019:__ Leaderboards are created for HCA pipelines.
 [Jonathan Bistline](mailto:bistline@broadinstitute.org)
 
 ## Communication
-
-Slack channels   
+   
 __HumanCellAtlas#unity-benchmarking:__ To answer questions and get feedback on pipeline benchmarking   
 
 ## Github repositories
