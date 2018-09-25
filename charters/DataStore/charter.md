@@ -11,7 +11,7 @@ The Data Store is a scientific data sharing/publishing/distribution framework, p
 **DCP** The Data Coordination Platform is the name given to the entire system used to ingest, validate, store, analyzes, and make available the data in the Human Cell Atlas project.
 
 ## Objectives
-The objective of the Data Store group is to deliver a versioned immutable object based data repository that is highly available and scalable. Data will be replicated to at least two commercial clouds (Amazon and Google). Data will be accessible through a variety of programatic interfaces as well as a command line interface. 
+The objective of the Data Store group is to deliver a versioned immutable object based data repository that is highly available and scalable. Data will be replicated to at least two commercial clouds (Amazon and Google). Data will be accessible through a variety of programmatic interfaces as well as a command line interface. 
 
 ## In-scope
 
