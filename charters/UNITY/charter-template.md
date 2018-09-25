@@ -31,15 +31,15 @@ The Unity benchmarking service aims to automate benchmarking for HCA pipelines, 
 
 ## Milestones and Deliverables
 
-__2018:__ Infrastructure operational and secure, HCA data processing pipelines team actively using system with a pipeline.
-__2019:__ System updated to include all pipelines operational as HCA pipelines.
-__2019:__ Leaderboards are created for HCA pipelines.
+__2018:__ Infrastructure operational and secure, HCA data processing pipelines team actively using system with a pipeline.   
+__2019:__ System updated to include all pipelines operational as HCA pipelines.   
+__2019:__ Leaderboards are created for HCA pipelines.   
 
 ## Roles
 ### Project Leads
 
-[Kylee Degatano](mailto:kdegatano@broadinstitute.org)
-[Timothy Tickle](mailto:ttickle@broadinstitute.org)
+[Kylee Degatano](mailto:kdegatano@broadinstitute.org)   
+[Timothy Tickle](mailto:ttickle@broadinstitute.org)   
 
 ### Product Owner
 [Vicky Horst](mailto:vicky@broadinstitute.org)
@@ -49,8 +49,8 @@ __2019:__ Leaderboards are created for HCA pipelines.
 
 ## Communication
 
-Slack channels
-__HumanCellAtlas#unity-benchmarking:__ To answer questions and get feedback on pipeline benchmarking
+Slack channels   
+__HumanCellAtlas#unity-benchmarking:__ To answer questions and get feedback on pipeline benchmarking   
 
 ## Github repositories
 [Unity](https://github.com/HumanCellAtlas/unity): Source code for the Unity service.
