@@ -1,5 +1,4 @@
-# Project Name
-Pipeline Portability Service
+# Pipeline Portability Service
 
 ## Description
 
@@ -17,7 +16,7 @@ The portability service provides the ability to run HCA DCP pipelines
 * Documentation to describe how to submit a backend or pipeline the system
 * Documentation on portability best practices
 
-### Scientific "guardrails" [Optional]
+### Scientific "guardrails"
 
 Portability service will not comment on scientific accuracy of pipelines, with this constraint it will not need guardrails
 
@@ -50,7 +49,6 @@ __2019:__ Documentation is complete and can be used by 3rd parties.
 
 ## Communication
 
-Slack channels
 __HumanCellAtlas#portability:__ To discuss portability and access of pipelines to infrastructure outside Lira.
 
 ## Github repositories
