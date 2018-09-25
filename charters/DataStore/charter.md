@@ -3,12 +3,12 @@
 
 
 ## Description
-The Data Store is a scientific data sharing/publishing/distribution framework, providing file/bundle management on multiple clouds at petabyte-scale. It defines public APIs for storage, retrieval, and subscription to events that functions transparently across multiple cloud systems such as AWS and GCP.
+The Data Store is a scientific data sharing/publishing/distribution framework, providing file/bundle management on multiple clouds at petabyte-scale. It defines public APIs for storage, retrieval, and subscription to events that functions transparently across multiple cloud systems such as Amazon Web Service and Google Cloud Platform. The Data Store is designed to be reused in multiple projects, with HCA being the first user. 
 
 ## Definitions
 **Bundle** A bundle is a list of related files along with some very basic metadata such as filenames.
 
-**DCP** The Data Coordination Platform is the name given to the entire system used to ingest, validate, store, analyzes, and make available the datga in the Human Cell Atlas project.
+**DCP** The Data Coordination Platform is the name given to the entire system used to ingest, validate, store, analyzes, and make available the data in the Human Cell Atlas project.
 
 ## Objectives
 The objective of the Data Store group is to deliver a versioned immutable object based data repository that is highly available and scalable. Data will be replicated to at least two commercial clouds (Amazon and Google). Data will be accessible through a variety of programatic interfaces as well as a command line interface. 
@@ -34,7 +34,7 @@ The objective of the Data Store group is to deliver a versioned immutable object
 ### Security
 * User authentication system implementation for the Data Store
 * Data access authorization system implementation for the Data Store
-* DevSecOps - implementation of features required to the core Data Store code to support FISMA moderate capabilities in forked code bases (authentication, authorization, logging, auditing, etc). The authentication and authorization system will support all rights of data subjects as defined in [GDPR](https://gdpr-info.eu/)
+* DevSecOps - implementation of features required to the core Data Store code to support FISMA moderate capabilities in community reuse code bases (authentication, authorization, logging, auditing, etc). The authentication and authorization system will support all rights of data subjects as defined in [GDPR](https://gdpr-info.eu/)
 * Operations for Data Store - Implement and configure tools to facilitate the operation of the Data Store service in a production environment
 
 ### Community engagement
@@ -45,7 +45,7 @@ The objective of the Data Store group is to deliver a versioned immutable object
 * Host hackathons for extending the Data Store feature set. 
 
 ## Out-of-scope
-* Other index/query methods/engines - we should implement these as stand-alone projects against modular index/query API.
+* Other index/query methods/engines - we should implement these as stand-alone projects against a modular index/query API.
 * FISMA moderate certification for the core Data Store code base
 * Implementation of other language bindings for the APIs other than Python
 * The specification for the format, naming, and content of bundles and files stored in the Data Store.
