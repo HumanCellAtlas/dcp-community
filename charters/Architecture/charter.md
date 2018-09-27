@@ -16,10 +16,10 @@ Software architecture responsibilities
 * Set overall direction of architectural and software design direction for the DCP
 * Provide technical input for the PM product roadmap process
 * Review and provide final approval for technical charters for DCP projects
-* Publish Architecture Requests for Comments (RFCs) documenting technical debt that impacts delivery of DCP as an
-  integrated system
+* Identify risks and tech debt impacting delivery of the DCP roadmap and publish RFCs with strategies to mitigate them
 * Review and provide final approval for cross-project RFC(s)
     * Available to mentor on all technical RFCs
+* Monitor and coordinate with other large open data projects to facilitate data use
 * Develop architecture standards and best practices including, but not limited to:
     * Software platforms and frameworks
     * Distributed system design
