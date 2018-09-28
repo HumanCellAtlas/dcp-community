@@ -105,6 +105,8 @@ The Ingest Support team will identify data type priorities in collaboration with
 
 [HumanCellAtlas/#ingestion-service](https://humancellatlas.slack.com/messages/ingestion-service) for discussions of the Ingestion service
 
+[Wrangler Team email](mailto:wrangler-team@data.humancellatlas.org): wrangler-team@data.humancellatlas.org
+
 [HumanCellAtlas/#data-wrangling](https://humancellatlas.slack.com/messages/data-wrangling) for discussion about the data wrangling process
 
 ## Github repositories
