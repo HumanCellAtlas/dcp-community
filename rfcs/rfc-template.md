@@ -27,9 +27,11 @@
 
 ## Motivation
 
-*Describe the user or technical need in detail [with alignment to the DCP **Thematic Roadmap** where possible]. Reference prior community discussions to demonstrate support for this RFC.*
+*Describe the user or technical need in detail [with alignment to the DCP roadmap priorities where possible]. Link prior community discussions to demonstrate support for this RFC.*
 
-### User Stories or Use Cases [optional]
+### User Stories
+
+*Share the [User Stories](https://www.mountaingoatsoftware.com/agile/user-stories) motivating this RFC.*
 
 ## Scientific "guardrails" [optional]
 
@@ -39,7 +41,11 @@
 
 *Explain the design in sufficient detail such that the implementation and (if appropriate) the interaction with existing DCP software are both reasonably clear.*
 
-### Unresolved questions
+### Acceptance Criteria [optional]
+
+*Acceptance criteria are the conditions that a RFC must satisfy to be accepted by users or other stakeholders.* 
+
+### Unresolved Questions
 
 - *What aspects of the design do you expect to clarify further through the RFC review process?*
 - *What aspects of the design do you expect to clarify later during iterative development of this RFC?*
@@ -50,7 +56,7 @@
 
 ### Prior Art [optional]
 
-*Share references to prior art to deepen community understanding of the RFC, such as learnings or adaptations from earlier designs.*
+*Share references to prior art to deepen community understanding of the RFC, such as learnings, adaptations from earlier designs, or community standards.*
 
 ### Alternatives [optional]
 
