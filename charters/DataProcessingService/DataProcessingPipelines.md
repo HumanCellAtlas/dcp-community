@@ -7,11 +7,16 @@ The HCA Data Processing Pipelines are cloud-based and portable analysis pipeline
 The data processing service aims to develop scientific analysis pipelines for all analyses required on all scientific data types in the Human Cell Atlas Data Coordination Platform (DCP). Pipelines for additional data types, analyses, and improvements to these pipelines will be added iteratively and in collaboration with the HCA Analysis Working Group (AWG) and the community. 
 
 ## Definitions
-__Community pipeline:__ A pipeline that is not officially used as a standard in the HCA project, but runs in the DCP and is operated by the Data Processing Service to enable community members to work with a diversity of submitted data until they have a standardized pipeline. These pipelines are not as vetted as standardized pipelines.  
-__HCA Analysis Working Group (AWG):__ A group of domain specialists that advise on and monitor scientific choices made in the Human Cell Atlas Project  
+__Community pipeline:__ A pipeline that is not officially used as a standard in the HCA project, but runs in the DCP and is operated by the Data Processing Service to enable community members to work with a diversity of submitted data until they have a standardized pipeline. These pipelines are not as vetted as standardized pipelines.
+
+__HCA Analysis Working Group (AWG):__ A group of domain specialists that advise on and monitor scientific choices made in the Human Cell Atlas Project
+
 __HCA DCP Governance Group:__ A working group of the Human Cell Atlas project that advises the DCP, assuring alignment of DCP development efforts with the scientific project it supports
+
 __Onboarding:__ The process of taking an existing pipeline and engineering it to work in the HCA DCP
-__Scoping:__ The process of investigating the available resources and knowledge in a community around a specific assay to better understand how much work it would take to make a pipeline to process data from that assay 
+
+__Scoping:__ The process of investigating the available resources and knowledge in a community around a specific assay to better understand how much work it would take to make a pipeline to process data from that assay
+
 __Standardized Pipeline:__ An official pipeline of the HCA project 
 
 ## In-scope
@@ -44,8 +49,10 @@ __Standardized Pipeline:__ An official pipeline of the HCA project
 * Software engineering 3rd party tools
 
 ## Milestones and Deliverables
-__2018:__ Two data processing pipelines in production (Smart-seq2 and 10xv2 human data).  
+__2018:__ Two data processing pipelines in production (Smart-seq2 and 10xv2 human data).
+
 __2019:__ Adding at least three more data processing pipelines, including 10xv2 snRNA-seq and mouse pipelines for all current analysis pipelines. Aim to have at least one _in situ_ transcriptomics pipeline in this year. Aim for one of these pipelines to be a community pipeline. Improved automated scientific testing and benchmarking of analysis pipelines.
+
 __2020:__ Continued addition of analysis pipelines.  
 
 ## Roles
@@ -60,11 +67,15 @@ __2020:__ Continued addition of analysis pipelines.
 
 ## Communication
 [Team email](mailto:pipelines-team@data.humancellatlas.org): pipelines-team@data.humancellatlas.org
-__HumanCellAtlas#mintteam:__ team discussions, a place to directly communicate to the team, who works on the service and the pipelines, as needed  
+
+__HumanCellAtlas#mintteam:__ team discussions, a place to directly communicate to the team, who works on the service and the pipelines, as needed.
+
 __HumanCellAtlas#secondary-analysis:__ community-focused space for conversations around data processing pipelines that run in the DCP 
 
 ## Github repositories
-[scTools](https://github.com/HumanCellAtlas/sctools): Tools for single cell data processing 
-[Skylab Analysis](https://github.com/HumanCellAtlas/skylab-analysis): Analysis and benchmarking reports for Skylab pipelines 
+[scTools](https://github.com/HumanCellAtlas/sctools): Tools for single cell data processing
+
+[Skylab Analysis](https://github.com/HumanCellAtlas/skylab-analysis): Analysis and benchmarking reports for Skylab pipelines
+
 [Skylab](https://github.com/HumanCellAtlas/skylab): HCA data processing pipelines 
 
