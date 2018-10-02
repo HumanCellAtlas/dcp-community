@@ -1,5 +1,5 @@
 
-# Ingestion Service
+# [Ingestion Service](mailto:ingest-team@data.humancellatlas.org)
 
 ## Description
 
