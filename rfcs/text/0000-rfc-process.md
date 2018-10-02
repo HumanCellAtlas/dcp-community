@@ -4,16 +4,16 @@
 
 ## Summary
 
-The Human Cell Atlas Data Coordination Platform (HCA DCP) evolved informal, consensus-driven processes to coordinate and document technical and governance decisions.
+The Human Cell Atlas Data Coordination Platform (HCA DCP) evolved informal processes to coordinate and document technical and governance decisions.
 
-This early *lightweight* and *egalitarian* approach enabled the DCP to achieve rapid velocity and incorporate a diverse set of innovative design concepts.
+This early *lightweight* approach enabled the DCP to achieve rapid velocity and incorporate a diverse set of innovative design concepts.
 
-As DCP continues to mature and scale, our community can more easily contribute and learn when there is a formal and consistent **Request for Comments (RFC)** process to propose enhancements to software or governance which are then maintained in a central repository.
+As DCP continues to mature and scale, our community can more easily contribute and learn when there is a formal and consensus-driven **Request for Comments (RFC)** process to propose enhancements to software or governance which are then maintained in a central repository.
 
 ## Author(s)
 *DCP PM*
 
-**Note:** *This proposal is based on ideas from the **HCA DCP Technical Decision-Making** white paper written by Bruce Martin with contributions from Tony Burdett, Laura Clarke, Brian O’Connor, Brian Raymor, and Tim Tickle.*
+**NOTE:** *This proposal is based on ideas from the **HCA DCP Technical Decision-Making** white paper written by Bruce Martin with contributions from Tony Burdett, Laura Clarke, Brian O’Connor, Brian Raymor, and Tim Tickle.*
 
 ## Shepherd
 [Brian Raymor](brianraymor@chanzuckerberg.com)
@@ -32,18 +32,21 @@ There are a number of limitations with our current process which need to be addr
 
 - New community members experience difficulties when _onboarding_. There is no curated repository of up-to-date design documents to assist with learning about the software. 
 
-- To ensure consistency of the architectural design, senior technical leaders must monitor multiple work streams or hope that they are notified of potential technical changes - *this is a significant concern for cross-cutting issues such as security or the data model*.
+- Members cannot easily follow the decision making process for major features.
+
+  To ensure consistency of the architectural design, senior technical leaders must monitor multiple work streams which is time consuming, or hope that they are notified of potential technical changes - *this is a significant concern for cross-cutting issues such as security or the data model*.
 
 To address these needs, the DCP RFC process defines a transparent and standard method for community members to propose and build consensus around substantial enhancements to DCP software or governance.
 
 ### When is an RFC required?
 
-Any proposal that would benefit from additional review or design before being implemented is a good candidate for an RFC.
+- An RFC is required for **substantial** additions, deletions, or changes to system behavior or semantics (API, major features, data model, protocols,​ ​service guarantees, architecture). In [semver](https://semver.org/) terms, *major* changes require an RFC, while *minor* changes are often candidates (new API addition).
 
-- An RFC is required if the implemented design would be described in written communication to the community.
+    **NOTE**: *Internal-only implementation decisions, bug fixes, refactoring, and performance optimization are not substantial changes and can continue to be documented and tracked using github issues.*
+
 - An RFC is required if a design impacts multiple DCP projects.
-- An RFC is required if a technical initiative (refactoring, major architectural change) impacts the community.
-- A RFC is required for all changes to the DCP formal governance, including but not limited to oversight, decision-making, conflict resolution, and community processes such as charters and RFCs. For more background on governance, see the **Model C: Delegated Governance** section in [Organization & Structure of Open Source Software Development Initiatives](https://dash.harvard.edu/bitstream/handle/1/30805146/2017-03-24_governance.pdf).  
+
+- An RFC is required for all changes to the DCP formal governance, including but not limited to oversight, decision-making, conflict resolution, and community processes such as charters and RFCs. For more background on governance, see the **Model C: Delegated Governance** section in [Organization & Structure of Open Source Software Development Initiatives](https://dash.harvard.edu/bitstream/handle/1/30805146/2017-03-24_governance.pdf).  
 
 ### Revising RFCs
 
