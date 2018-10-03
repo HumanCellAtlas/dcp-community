@@ -52,7 +52,6 @@ The objective of the Data Store group is to deliver a versioned immutable object
 * The specification for the format, naming, and content of bundles and files stored in the Data Store.
 
 ## Milestones and Deliverables
-* Mid-2018: 1000 bundle test scale, deploy as part of HCA DCP Pilot
 * EOY 2018: add checkout, collections, improved scaling/hardening, generic events to support stand-alone indexers, additional gaps identified in HCA DCP Pilot.
 * First half of 2019: Document Data Store interfaces so that the community is enabled to deploy storage on a configurable cloud (AWS or GCP) with the system logic still running in AWS. Also document replication APIs to enable the community to implement new cloud support. 
 * First half of 2019: Transition Data Store Subscriptions/Eventing services from the current dependence on Elastic Search Percolate to the AWS and GCP cloud infrastructure.
