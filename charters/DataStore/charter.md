@@ -35,7 +35,8 @@ The objective of the Data Store group is to deliver a versioned immutable object
 * User authentication system implementation for the Data Store
 * Data access authorization system implementation for the Data Store
 * DevSecOps - implementation of features required to the core Data Store code to support FISMA moderate capabilities in community reuse code bases (authentication, authorization, logging, auditing, etc). The authentication and authorization system will support all rights of data subjects as defined in [GDPR](https://gdpr-info.eu/)
-* Operations for Data Store - Implement and configure tools to facilitate the operation of the Data Store service in a production environment
+* Operation Tooling for Data Store - Implement and configure tools to facilitate the operation of the Data Store service in a production environment
+* Operations for Data Store - Day to day operation of the Data Store production deployment including but not limited to monitoring of errors and health of intrinsic components, fielding help requests, monitoring security, and helping with the roll-out of new data into the deployment. 
 
 ### Community engagement
 * Triage and integration of feature requests from the community into the Data Store roadmap. 
