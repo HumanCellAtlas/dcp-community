@@ -101,6 +101,9 @@ Implementation of v0 API suitable for limited use but not scalable, includes:
 
 HumanCellAtlas/the-matrix-reloaded: Discussion of expression matrix service
 
+### Mailing List
+Team email: expression-matrix-team@data.humancellatlas.org
+
 ## Github repositories
 
 * https://github.com/HumanCellAtlas/matrix-service
