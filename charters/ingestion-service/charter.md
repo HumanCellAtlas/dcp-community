@@ -143,6 +143,10 @@ The Ingestion Service requires oversight on which data types are required within
 
 [HumanCellAtlas #dcp-reuse](https://humancellatlas.slack.com/messages/dcp-reuse) if you are interested in using ingest, or other DCP components, in your own projects
 
+### Mailing list
+
+Team email: ingest-team@data.humancellatlas.org
+
 ## Github repositories
 
 ### Ingest Central
