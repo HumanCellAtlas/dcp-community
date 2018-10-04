@@ -70,6 +70,8 @@ Services the Query Module provides may complement or subsume the current search 
 
 ## Communication
 
+Team email: dcp-query-service-team@data.humancellatlas.org
+
 ### Slack Channels
 HumanCellAtlas/query-service: Discussion of query service
 
