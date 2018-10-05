@@ -67,6 +67,10 @@ During 2018/2019 The metadata charter committee will work to complete the follow
 
 HumanCellAtlas/hca-metadata - for discussions about metadata needs and conventions
 
+### Mailing list
+
+[metadata-team@data.humancellatlas.org](mailto:metadata-team@data.humancellatlas.org)
+
 ## Github repositories
 
 [https://github.com/humancellatlas/metadata-schema](https://github.com/humancellatlas/metadata-schema)
