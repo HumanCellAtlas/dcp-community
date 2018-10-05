@@ -20,7 +20,7 @@ These metadata schema aim to capture more than the minimum requirements for repr
 
 ## In-scope
 
-* Defining the specification for the schema and the schema itself
+* Defining the specification for the schema and defining the schemas themselves 
 * Defining the semantic rules for metadata content of the schema
 * Incorporating community feedback to extend and improve the schema
 * Ensuring the schema is compatible with open source software packages supporting the same draft of the JSON schema
