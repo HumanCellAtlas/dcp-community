@@ -14,7 +14,7 @@ These metadata schema aim to capture more than the minimum requirements for repr
 3. Ensuring that HCA metadata has a consistent representation and can accurately represent the scientific description of a dataset in a computational readable manner
 4. Defining JSON schema which enable objectives 1 and 2
 5. Defining the semantic rules that the content follows
-6. Working with Ingest Infrastructure to specify the entity structure for HCA metadata schema
+6. Working with Ingestion Service to specify the entity structure for HCA metadata schema
 7. Defining style guides and the release process for the schema
 8. Ensuring the defined metadata schema provides a positive user experience for those who read and write them
 
