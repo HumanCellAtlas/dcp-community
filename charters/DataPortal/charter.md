@@ -44,7 +44,7 @@ The objective of the Data Portal is to provide the DCP website implementation. I
 ## Milestones and Deliverables
 * Nov 2018:  Deploy a minimum viable product (MVP) feature set as part of the HCA DCP beta test phase.
 * Q1  2019:  Implement as needed improved scaling/hardening to address any gaps identified during the HCA DCP beta test phase.
-* 1H  2019:  Discussion forums support. User feedback application support. Click through to the Ingestion Service UI.
+* 1H  2019:  Discussion forums support. User feedback application support. Click through to the Ingestion Service UI. Integration with authentication and authorization facilities.
 
 ## Roles
 
