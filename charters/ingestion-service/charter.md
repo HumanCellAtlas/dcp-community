@@ -93,7 +93,7 @@ The Ingestion Service requires oversight on which data types are required within
 
 ### Core capabilities
 
-* Metadata specification definitions. Ingest will utilise metadata definitions defined by DCP-compliant JSON schemas, as defined by the metadata working group, and will ensure the Ingest API is schema-agnostic where possible, but will not actively define metadata specifications beyond the restrictions placed by the shared core domain model outlined above
+* Metadata specification definitions. Ingest will utilise metadata definitions defined by DCP-compliant JSON schemas, as defined by the metadata team, and will ensure the Ingest API is schema-agnostic where possible, but will not actively define metadata specifications beyond the restrictions placed by the shared core domain model outlined above
 * Definition of bundle structures for the DCP datastore. Whilst the Ingest API will provide support for generating bundles in response to submissions, the Ingestion Service is not responsible for the specification of bundle structures - it is expected these will be provided either by the metadata team or to address specific consumer requirements
 * Authentication services. The Ingestion Service will utilise DCP-wide authentication services. Authorisation services for specific ingest requirements are likely out of scope, unless DCP-wide authorisation services cannot fulfil requirements that are overly specific to ingest
 * Automated conversion of "older" spreadsheets to newer versions
