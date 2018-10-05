@@ -67,7 +67,7 @@ The Ingestion Service will additionally deliver tools to support submitters usin
 ### Supporting tools
 
 * Provide tools that use reference (latest) metadata schemas, defined by the metadata team, to produce template spreadsheets in a canonical spreadsheet format, such that data contributors can easily complete this spreadsheet to capture their metadata
-* Provide tools that allow data contributors (normally, data wranglers) to generate customised spreadsheets that target specific experiment types or data types based on a small number of screening criteria
+* Provide tools that allow data contributors to generate customised spreadsheets that target specific experiment types or data types based on a small number of screening criteria
 
 ### Dependencies
 
