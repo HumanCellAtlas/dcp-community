@@ -5,6 +5,8 @@
 
 The Human Cell Atlas (HCA) Metadata Schema are JSON format schema. These schema are designed to capture and provide structure for the descriptive scientific metadata associated with HCA datasets. These schemas aim to ensure [the FAIRness of the HCA data](https://www.nature.com/articles/sdata201618).
 
+These metadata schema aim to capture more than the minimum requirements for representing the samples and experiments conducted in the context of the Human Cell Atlas project but they do not aim to be truely comprehensive and capture every single variable that could be recorded about these samples and experiments. We are aiming for a middle ground that provides data consumers with rich enough information that they can use the data to answer biological questions but to not overburden the data contributors with an expectation to record every detail of every process they run in order to generate this data.
+
 ## Objectives
 
 1. Ensuring that HCA data are findable and the schemas are computationally queryable
