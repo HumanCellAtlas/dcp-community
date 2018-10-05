@@ -2,55 +2,49 @@
 
 
 ## Description
-The Data Portal is a landing site for the Human Cell Atlas (HCA) Data Coordination Platform (DCP). It is hosted at https://www.data.humancellatlas.org/ with an access link from the main HCA website at https://www.humancellatlas.org/. It provides the user experience (UX) for users to explore cellular resolution data. The Data Browser ("Explore") application provides a faceted search capability to search and download subsets of this data.
+The Data Portal is the landing site for the Human Cell Atlas (HCA) Data Coordination Platform (DCP). It is hosted at https://www.data.humancellatlas.org/ with an access link from the main HCA website at https://www.humancellatlas.org/. It provides the user experience (UX) for users to explore cellular resolution data.
+
+## Definitions
+*DCP* The Data Coordination Platform is the name given to the entire system used to ingest, validate, store, analyzes, and make available the data in the Human Cell Atlas project.
+
+*Data Browser* A DCP application which provides a faceted search capability.
 
 ## Objectives
-The objective of the Data Portal is to provide the DCP website implementation. It provides the access point for scientific and general users to search all HCA genetic data in order to identify a subset of the data for download and/or further analysis, and file/bundle search with public APIs at petabyte scale on public clouds.
+The objective of the Data Portal is to provide the DCP website implementation. It provides the access point for users to search all HCA genetic data in order to identify a subset of the data for download and/or further analysis at petabyte scale on public clouds.
 
 ## In-scope
-### General
-* UX, visual, and branding design with input from the HCA brand working group
-* Adhere to the HCA DCP community best practices for Continuous Integration (CI), Continuous Delivery (CD), and system logging via Google Analytics, etc.
-* Production operation of the overall Data Portal website in Amazon Web Services (AWS), with exclusions listed in the out-of-scope section
-* Meet the performance scaling objectives of the DCP
-* DevSecOps compliance as required by the HCA Security Team
-* Leverage the authentication and authorization implementation libraries from the DevSecOps team to implement login and access control for the Data Portal and Data Browser
-* Community engagement:
-   * Triage and integration of feature requests into the work queue 
-   * Support plan for escalation of user reported issues
-### Data Portal
-* Select and deploy a content management system
-* Integrate the Data Browser User Interface (UI) and Data Portal UI into a seamless UX and provide links to other groups' applications (e.g. the Ingestion Service UI)
-* Frequent updates of summary statistics (cells, organs, donors, projects, labs, etc.) on the DCP home page
-* Coordinate development of user guide content (e.g. “Learn”) from multiple contributors
-* Coordinate development of developer documentation content (e.g. “Develop”) from multiple contributors. Includes API documentation and development guides.
-* Click through to Data Browser from the search box and human body image on the home page
-* Click through to the data submission UI from the Contribute section
-* Registration form for analysis portals and list of portals available with click through to hosting web site (e.g. Dockstore)
-* Integration with help desk, discussion forum, and user feedback applications
-### Data Browser
-* Create (or use Data Storage Service [DSS] provided) indexes to access files in the Data Store by using public DSS APIs to read the metadata
-* Browser support for multiple metadata schemas that are supported by the schema access library maintained by the Ingestion Service
-* Search views of Specimens, Projects and Files
-* Support for specifying multiple search criteria (\"facets\") through the Browser UI
-* Download of selected files from the Data Store via the UI and/or HCA DCP Command Line Interface (CLI)
-* Facilities to save, view, share, update, and delete search queries on a per-user basis
-* Facilities to utilize the Date Store Collections Service to save, view, list, share and delete the query results from a search operation
-* Search results / Collections interface to Analysis Applications
-* Search results / Collections interface to the Matrix Service
-* API Documentation for portable, cloud-neutral APIs
 
+### Core capabilities
+* Implement a UX, visual, and branding design with input from the HCA brand working group.
+* Maintain a content management system that meets the needs of Data Portal content developers.
+* Integrate the Data Browser User Interface (UI) and Data Portal UI into a seamless UX and provide links to other DCP applications (e.g. the Ingestion Service UI).
+* Provide for frequent (minimum daily) updates of summary statistics (cells, organs, donors, projects, etc.) on the DCP home page.
+* Coordinate the development of user guide documentation content (e.g. the UI 'Learn' section) from multiple contributors.
+* Coordinate the development of developer documentation content (e.g. the UI 'Develop' section) from multiple contributors. This includes API documentation and development guides.
+* Coordinate the wording on website pages that require written content but aren't specifically documentation (e.g. the 'About' section).
+* Click through to the Data Browser UI from the search box and human body image on the home page.
+* Click through to the Ingestion Service UI from the Contribute section.
+* Provide a registration form for analysis portals and list of portals available, with click through to the hosting web site (e.g. Dockstore).
+
+### Security
+* Leverage the authentication and authorization implementation libraries from the DevSecOps team to implement user authentication and access control for the Data Portal.
+* Implement and configure tools to facilitate the operation of the Data Portal in a production environment.
+* Provide day-to-day operation of the Data Portal production deployment including but not limited to monitoring of errors and health of intrinsic components, fielding help requests, monitoring security, and assisting with the roll-out of new components into the deployment.
+
+### Community engagement
+* Provide triage of Data Portal feature requests from the community and integration of such requests into the Data Portal roadmap.
+* Provide a support plan for the escalation of user reported issues and feature requests to the relevant component maintainers.
+* Integration with help desk, discussion forum, and user feedback applications.
+   
 ## Out-of-scope
-* Production operation of applications and services linked to from the Data Portal (e.g. the Data Storage Service, Ingestion Service, Upload Service, Data Processing Pipelines, Analysis Applications, etc.)
-* Any separate Ingestion Service application which may replace or augment the "Contribute" tab of the Data Portal
-* Methods Registry providing management, searching, filtering, sorting, visualization, and methods packages in the "Analyze" tab of the Data Portal
-
+* Production operation of applications and services linked to from the Data Portal (e.g. the Data Store, Ingestion Service, Upload Service, Data Processing Pipelines, etc.).
+* An Ingestion Service application which may replace or augment the "Contribute" tab of the Data Portal.
+* A Methods Registry providing management, searching, filtering, sorting, visualization, and methods packages in the 'Analyze' section of the Data Portal.
 
 ## Milestones and Deliverables
-* Oct 2018:  Deploy a minimum viable product (MVP) feature set as part of HCA DCP beta test phase
-* Nov 2018:  Present beta phase portal to the DCP community
-* EOY 2018:  Implement as needed improved scaling/hardening to address any gaps identified during the HCA DCP beta test phase
-* 1H  2019:  Save search queries and query results (using DSS Collections APIs). Search results / Collections interface to the Matrix Service and to Analysis Applications. Discussion forums support. User feedback application support. Click through to the data submission UI.
+* Nov 2018:  Deploy a minimum viable product (MVP) feature set as part of the HCA DCP beta test phase.
+* Q1  2019:  Implement as needed improved scaling/hardening to address any gaps identified during the HCA DCP beta test phase.
+* 1H  2019:  Discussion forums support. User feedback application support. Click through to the Ingestion Service UI.
 
 ## Roles
 
@@ -61,8 +55,7 @@ The objective of the Data Portal is to provide the DCP website implementation. I
 [Trevor Heathorn](mailto:theathor@ucsc.edu) 
 
 ### Technical Lead
-Portal: [Dave Rogers](mailto:dave@clevercanary.com)
-Browser: [Hannes Schmidt](mailto:hannes@ucsc.edu)
+[Dave Rogers](mailto:dave@clevercanary.com)
 
 ## Communication
 
@@ -70,10 +63,7 @@ Browser: [Hannes Schmidt](mailto:hannes@ucsc.edu)
 * HumanCellAtlas/data-portal: general data portal discussions
 * HumanCellAtlas/data-portal-dev: data portal development discussions
 * HumanCellAtlas/content-team: data portal content development discussions
-* HumanCellAtlas/data-browser-dev: data browser development discussions
 
 ## Github repositories
 * https://github.com/HumanCellAtlas/data-portal
 * https://github.com/HumanCellAtlas/data-portal-content
-* https://github.com/HumanCellAtlas/data-browser
-* https://github.com/DataBiosphere/azul
