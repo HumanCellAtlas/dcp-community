@@ -61,7 +61,7 @@ The Ingestion Service will additionally deliver tools to support submitters usin
 * Provide state tracking services that supply information about the current state of any given submission, allowing submitters to see where in the ingestion process their data is currently
 * Provide services for connecting metadata describing experimentally generated data files, and the locations of those data files in the cloud
 * Provide services that syntactically validate experimentally generated data files, covering commonly used and endorsed community data formats (e.g. FASTQ)
-* Provide services that allow data contributors to confirm their submissions, prompting storage data and metadata in the DCP data store
+* Provide services that allow data contributors to confirm their submissions, prompting storage of data and metadata in the DCP data store
 * Provide services for restricting access to only those submissions and their contents for which a user has either created themselves or been explicitly granted permission to view
 
 ### Supporting tools
