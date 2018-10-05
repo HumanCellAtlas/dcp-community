@@ -27,6 +27,8 @@ These metadata schema aim to capture more than the minimum requirements for repr
 * Providing a test framework to enable community members to test if their proposed extensions are functional and meet our style guides
 * Providing exemplar data in JSON format that validates against the schema 
 * Providing computationally readable information about depreciated and moved fields within the schema
+* Providing documentation to support data contributors understanding of what metadata fields exist and what their values should be
+* Providing documentation to support developers who write software using the metadata schema to understand the lifecycle and deprecation strategy of the metadata schema team and understand best practice for developing against the schema
 * Working with data contributors to understand what types of descriptive fields they can supply for their samples and experiments
 * Working with data consumers to understand what descriptive fields they need in order to be able to analyse and visualise the HCA data
 * Extending the schema to meet the needs of data contributors and data consumers based on the feedback they provide
