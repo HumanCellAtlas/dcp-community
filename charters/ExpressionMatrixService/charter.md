@@ -3,7 +3,7 @@
 
 ## Description
 
-The expression matrix service enables researchers to easily access and analyze HCA expression matrix data.
+The Human Cell Atlas (HCA) Data Coordination Platform (DCP) ingests, processes, and stores single-cell data, making that data easily available to a wide audience of researchers. The single-cell data type of most interest to researchers is the expression matrix, the cell-by-gene expression values that are the starting point for many downstream analyses. To support this data type, the Expression Matrix Service defines a public API to return expression matrices in response to queries.
 
 ## Objectives
 
