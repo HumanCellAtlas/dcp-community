@@ -41,7 +41,7 @@ The Upload Service enables fast, cost-effective upload, staging, and validation 
     * Technical UX review with data wranglers and product iteration based on feedback
 * Dependencies
     * User-defined jobs to validate files
-    * Ingestion service (or other client) to track job state, run validations, and submit data
+    * Ingestion service (or other client) to track job state, request validations, and submit data
 
 ## Out-of-scope
 * A UI that replicates the features in the DCP ingestion service
@@ -68,6 +68,8 @@ The Upload Service enables fast, cost-effective upload, staging, and validation 
 [Sam Pierson](mailto:spierson@chanzuckerberg.com)
 
 ## Communication
+
+Team email: upload-team@data.humancellatlas.org
 
 ### Slack Channels
 
