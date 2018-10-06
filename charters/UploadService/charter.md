@@ -4,15 +4,14 @@
 The Upload Service enables fast, cost-effective upload, staging, and validation of data submitted to the Human Cell Atlas (HCA) Data Coordination Platform (DCP) from across the world.
 
 ## Objectives
-1. Enable submitters to upload files quickly and cost-effectively to temporary *staging areas* for subsequent submission to the Data Storage Service (DSS)
+1. Enable submitters to upload files quickly and cost-effectively to temporary *upload areas* for subsequent submission to the Data Storage Service (DSS)
 1. Provide tools a command line interface (CLI) and APIs to upload files to staging areas
-1. Provide DCP developers the ability to validate files loaded into staging areas with user-defined validation jobs
+1. Provide a framework for validating files loaded into staging areas with user-defined validation jobs
 
 ## In-scope
-* Provide staging areas that enable fast and cost-effective data transfer between:
-    * The DCP Ingestion UI workflow and the DSS
-    * The DCP Ingestion *data wrangler* workflow and the DSS
-    * The DCP Secondary Analysis Service and the DSS
+* Provide upload areas that enables data file upload and release to the DSS upon completion of:
+    * Ingestion workflows
+    * Secondary Analysis Service workflows via an Ingestion workflow
 * Provide APIs for interacting with the upload service
     * Functionality for other DCP modules (primarily the DCP Ingestion Infrastructure)
         * Create and delete staging areas
@@ -42,6 +41,7 @@ The Upload Service enables fast, cost-effective upload, staging, and validation 
     * Technical UX review with data wranglers and product iteration based on feedback
 * Dependencies
     * User-defined jobs to validate files
+    * Ingestion service (or other client) to track job state, run validations, and submit data
 
 ## Out-of-scope
 * A UI that replicates the features in the DCP ingestion service
