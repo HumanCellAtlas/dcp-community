@@ -29,22 +29,22 @@ The Ingest Support team is the liaison between the Data Coordination Platform (D
 ## Objectives
 
 - Assisting data contributors uploading data and metadata to the DCP
-- Helping data contributors address errors with their data formatting and metadata before it can be submitted to the DCP. 
-- Ensuring a data contributor's experiment can be accurately represented in the DCP
-- Working with the data contributor to understand if new metadata fields are needed to represent their data
-- Proposing enhancements to the metadata schemas following the process defined by the Metadata Schema team
-- Working with the UX team to collect and provide feedback from data contributors to the Ingest Infrastructure team about how the infrastructure can be improved
-- Working with the UX team to ensure the ingest process provides a positive user experience to the data contributors
+- Helping data contributors address errors with data and metadata formatting before it is submitted to the DCP
+- Ensuring data contributors' experiments can be accurately represented in the DCP
+- Working with data contributors to understand if new metadata fields are needed to represent their data
+- Proposing enhancements to the metadata schema following the process defined by the Metadata Schema team
+- Working with the User Experience (UX) team to collect and provide feedback from data contributors to the Ingestion Service team about how the infrastructure can be improved
+- Working with the UX team to ensure the submission process provides a positive user experience to data contributors
 
 ## In-scope
 
 ### For new data types
 
-- Working with data contributors to define a spreadsheet template to collect their metadata
+- Working with data contributors to define a spreadsheet template to collect metadata
 - Collecting metadata from data contributors in HCA ingest spreadsheet form
 - Collecting data files from data contributors
-- Reviewing collected data files and metadata
-- Submitting data files and metadata to the DCP on behalf of a data contributor
+- Reviewing collected data files and metadata for completeness and correctness
+- Submitting data files and metadata to the DCP on behalf of data contributors
 
 ### For established data types
 
@@ -55,15 +55,15 @@ The Ingest Support team is the liaison between the Data Coordination Platform (D
 
 ### For all data contributors
 
-- Assisting data contributors to fix errors in their data structure and metadata 
+- Assisting data contributors in fixing errors in data files and metadata 
 - Responding to data contribution requests on Zendesk
-- Writing/delivering training material about how to submit data to the DCP
-- Writing/maintaining documentation about how to submit data to the DCP
+- Writing/delivering training material about how to submit data and metadata to the DCP
+- Writing/maintaining documentation about how to submit data and metadata to the DCP
 
 ### User Experience
 
 - Collecting feedback about the submission process from data contributors
-- Working with the UX team to use feedback to define new requirements for the system to be prioritized by the PM team
+- Working with the UX team to use feedback to define new system requirements to be prioritized by the PM team
 
 ### Scientific "guardrails" 
 
@@ -82,9 +82,9 @@ The Ingest Support team will identify data type priorities in collaboration with
   - Delivery: **Q4 2018**
 * Requirements for imaging and scNuc-Seq metadata.
   - Delivery: **Q1 2019**
-* Requirements for ingest infrastructure self service phase; working with UX to develop a requirements set in order to deliver full-featured user interfaces to support spreadsheet based submissions.
+* Requirements for ingest infrastructure self-service phase; working with UX team to develop a requirements set in order to deliver full-featured user interfaces to support spreadsheet-based submissions.
   - Delivery: **Q2 2019**
-* Requirements for ingest infrastructure review and repair phase; working with UX to develop a requirements set in order to deliver user interfaces to support the review and repair of potential errors or inconsistencies in submissions.
+* Requirements for ingest infrastructure review and repair phase; working with UX team to develop a requirements set in order to deliver user interfaces to support the review and repair of potential errors or inconsistencies in submissions.
   - Delivery: **Q3 2019**
 
 ## Roles
