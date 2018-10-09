@@ -5,26 +5,26 @@
 The Ingest Support team is the liaison between the Data Coordination Platform (DCP) and labs contributing data to the Human Cell Atlas (HCA). This team is:
 
 * Working with data contributors who are generating new data types to develop a deep understanding of their data
-* Assisting data contributors to describe their experiments in a manner that supports findability, reusability and reproducability within the DCP ecosystem
+* Assisting data contributors to describe their experiments in a manner that supports findability, reusability, and reproducability within the DCP ecosystem
 * Helping data contributors to submit their data to the DCP, resolving any emerging issues during the process
 
 ## Definitions
 
 *Data contributor* - any user who uploads data and metadata into the DCP
 
-*Data wrangler* -  the Ingest Support team member who assists labs contributing data to the HCA.
+*Data wrangler* -  the Ingest Support team member who assists labs contributing data to the HCA
 
 *Data* - raw data files from an experiment such as [fastq files](https://en.wikipedia.org/wiki/FASTQ_format) for sequencing experiments or tiff stacks for imaging experiments
 
-*Metadata* - descriptive information about what projects, samples and experiments are and how they were collected or conducted
+*Metadata* - descriptive information about projects, samples, and experiments and how they were collected or processed
 
-*New data types* - assay data types which either can't already be ingested by the DCP or have only recently (~6m - 1yr) started to be ingested by the system
+*New data types* - assay data types which either can't currently be ingested by the DCP or have only recently (~6m - 1yr) started to be ingested by the system
 
 *Established data types* - assay data types which have a history of submission and downstream use in the DCP and for which there are already many datasets of this type represented in the platform
 
-*Submission* - the grouping of data and metadata that makes sense to a data contributor to submit one at a time. For example, a data contributor might upload all the data at once for a publication they have in preparation. This grouping does not necessarily correspond to how data is stored or displayed in the DCP and how it should be displayed to a data consumer
+*Submission* - the grouping of data and metadata that makes sense to a data contributor to submit at one time. For example, a data contributor might upload all the data at once for a publication they have in preparation. This grouping does not necessarily correspond to how data is stored or displayed in the DCP nor how it should be displayed to a data consumer
 
-*The PM team* - the team responsible for the oversight of the DCP as the product, developing the shared understanding of the overall product vision, priorities, and release schedule with the community.
+*The PM team* - the team responsible for the oversight of the DCP as the product, developing the shared understanding of the overall product vision, priorities, and release schedule with the community
 
 ## Objectives
 
