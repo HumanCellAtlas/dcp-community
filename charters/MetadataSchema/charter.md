@@ -31,20 +31,27 @@ These metadata schema aim to capture more than the minimum requirements for repr
 
 ## In-scope
 
+### Schema Definition
+
 * Defining the specification for the schema and defining the schemas themselves 
 * Defining the semantic rules for metadata content of the schema
-* Incorporating community feedback to extend and improve the schema
 * Ensuring the schema is compatible with open source software packages supporting the same draft of the JSON schema
-* Providing a test framework to enable community members to test if their proposed extensions are functional and meet our style guides
 * Providing exemplar data in JSON format that validates against the schema 
 * Providing computationally readable information about deprecated and moved fields within the schema
-* Providing documentation to support data contributors understanding of what metadata fields exist and what their values should be
-* Providing documentation to support developers who write software using the metadata schema to understand the lifecycle and deprecation strategy of the metadata schema team and understand best practice for developing against the schema
+
+### Schema testing
+
+* Providing a test framework to enable community members to test if their proposed extensions are functional and meet our style guides
+
+### User Support
+
+* Providing support for data contributors so they can understand of what metadata fields exist and what their values should be
+* Providing support for developers who write software using the metadata schema to understand the lifecycle and deprecation strategy of the metadata schema team and understand best practice for developing against the schema
 * Working with data contributors to understand what types of descriptive fields they can supply for their samples and experiments
 * Working with data consumers to understand what descriptive fields they need in order to be able to analyse and visualise the HCA data
 * Extending the schema to meet the needs of data contributors and data consumers based on the feedback they provide
 
-### Scientific "guardrails"
+## Scientific "guardrails"
 
 In order for the HCA metadata schema to meet the needs of the community, the defined schema must reflect the types of data which are being generated in order to build the Human Cell Atlas. We will seek guidance from the scientific leadership of the HCA to help understand and prioritize new data types for addition to the schema collection as well as collecting feedback from data contributors and data consumers.
 
@@ -63,7 +70,6 @@ During 2018/2019 The metadata charter committee will work to complete the follow
   - Delivery: **Q1 2019**
 * Work with data contributors and consumers from the community who are conducting single nuclei RNA-seq experiments to define metadata schema that can capture needed details of these experiments
   - Delivery: **Q1 2019**
-
 
 ## Roles
 
