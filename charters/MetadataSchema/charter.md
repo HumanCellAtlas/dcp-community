@@ -7,6 +7,16 @@ The Human Cell Atlas (HCA) Metadata Schema are JSON format schema. These schema 
 
 These metadata schema aim to capture more than the minimum requirements for representing the samples and experiments conducted in the context of the Human Cell Atlas project but they do not aim to be truly comprehensive and capture every single variable that could be recorded about these samples and experiments. We are aiming for a middle ground that provides data consumers with rich enough information that they can use the data to answer biological questions but to not overburden the data contributors with an expectation to record every detail of every process they run in order to generate this data.
 
+## Definitions
+
+*Data contributor* - any user who uploads data into the DCP
+
+*Data consumer* - any user who accesses or downloads data from the DCP
+
+*Data wrangler* - an individual who works on behalf of the Human Cell Atlas (HCA) consortium to provide assistance to data contributors uploading data into the DCP. From a Metadata Schema perspective, data wranglers can themselves be considered as a specialised type of data contributor
+
+*Bundle* - the grouping of data and metadata in the Data Storage Service
+
 ## Objectives
 
 1. Ensuring that HCA data are findable and the schemas are computationally queryable
@@ -27,7 +37,7 @@ These metadata schema aim to capture more than the minimum requirements for repr
 * Ensuring the schema is compatible with open source software packages supporting the same draft of the JSON schema
 * Providing a test framework to enable community members to test if their proposed extensions are functional and meet our style guides
 * Providing exemplar data in JSON format that validates against the schema 
-* Providing computationally readable information about depreciated and moved fields within the schema
+* Providing computationally readable information about deprecated and moved fields within the schema
 * Providing documentation to support data contributors understanding of what metadata fields exist and what their values should be
 * Providing documentation to support developers who write software using the metadata schema to understand the lifecycle and deprecation strategy of the metadata schema team and understand best practice for developing against the schema
 * Working with data contributors to understand what types of descriptive fields they can supply for their samples and experiments
