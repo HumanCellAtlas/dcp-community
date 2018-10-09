@@ -20,7 +20,7 @@ The Ingest Support team is the liaison between the Data Coordination Platform (D
 
 *New data types* - assay data types which either can't currently be ingested by the DCP or have only recently (~6m - 1yr) started to be ingested by the system
 
-*Established data types* - assay data types which have a history of submission and downstream use in the DCP and for which there are already many datasets of this type represented in the platform
+*Established data types* - assay data types which have a history of submission and downstream use in the DCP and for which there are already many datasets of this type represented in the DCP
 
 *Submission* - the grouping of data and metadata that makes sense to a data contributor to submit at one time. For example, a data contributor might upload all the data at once for a publication they have in preparation. This grouping does not necessarily correspond to how data is stored or displayed in the DCP nor how it should be displayed to a data consumer
 
@@ -48,10 +48,10 @@ The Ingest Support team is the liaison between the Data Coordination Platform (D
 
 ### For established data types
 
-- Assisting data contributors uploading data files to the platform
+- Assisting data contributors uploading data files to the DCP
 - Assisting data contributors using the ingest user interface to generate a metadata template spreadsheet
-- Assisting data contributors uploading metadata to the platform
-- Assisting data contributors who wish to use the ingest API to submit data
+- Assisting data contributors uploading metadata to the DCP
+- Assisting data contributors who wish to use the Ingest API to submit data
 
 ### For all data contributors
 
