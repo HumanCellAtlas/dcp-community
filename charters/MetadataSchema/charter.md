@@ -39,9 +39,10 @@ These metadata schema aim to capture more than the minimum requirements for repr
 * Providing exemplar data in JSON format that validates against the schema 
 * Providing computationally readable information about deprecated and moved fields within the schema
 
-### Schema testing
+### Schema Testing
 
-* Providing a test framework to enable community members to test if their proposed extensions are functional and meet our style guides
+* Providing a test framework to enable community members to test if their proposed extensions are functional and adhere to the style guide specifications
+* Providing a framework for testing wheather schema updates adhere to depreciation and versioning guidelines
 
 ### User Support
 
