@@ -10,15 +10,15 @@ The Data Portal is the landing site for the Human Cell Atlas (HCA) Data Coordina
 *Data Browser* A DCP application which provides a faceted search capability.
 
 ## Objectives
-The objective of the Data Portal is to provide the DCP website implementation. It provides the access point for users to search all HCA genetic data in order to identify a subset of the data for download and/or further analysis at petabyte scale on public clouds.
+The objective of the Data Portal is to provide the DCP website implementation. It provides the access point for users to search, contribute to, or learn about, the HCA genetic data in order to identify a subset of the data for download and/or further analysis at petabyte scale on public clouds.
 
 ## In-scope
 
 ### Core capabilities
 * Implement a UX, visual, and branding design with input from the HCA brand working group.
 * Maintain a content management system that meets the needs of Data Portal content developers.
-* Integrate the Data Browser User Interface (UI) and Data Portal UI into a seamless UX and provide links to other DCP applications (e.g. the Ingestion Service UI).
-* Provide for frequent (minimum daily) updates of summary statistics (cells, organs, donors, projects, etc.) on the DCP home page.
+* Integrate DCP applications (e.g. the Data Browser, Ingestion Service, etc.) into a seamless UX with a common look and feel.
+* Implement frequent (minimum daily) updates of the summary statistics (e.g. cells, organs, donors, projects, etc.) on the DCP home page.
 * Coordinate the development of user guide documentation content (e.g. the UI 'Learn' section) from multiple contributors.
 * Coordinate the development of developer documentation content (e.g. the UI 'Develop' section) from multiple contributors. This includes API documentation and development guides.
 * Coordinate the wording on website pages that require written content but aren't specifically documentation (e.g. the 'About' section).
