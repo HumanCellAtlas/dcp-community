@@ -7,7 +7,7 @@ Services the Query Module provides may complement or subsume the current search 
 
 ## Objectives
 1. Build, operate, and maintain a metadata API query service that allows a variety of queries to be performed against bundle metadata stored in HCA Data Coordination Platform (DCP) DSS
-1. Develop a query language specification for intuitive querying of HCA metadata
+1. Develop a query language specification for intuitive querying of HCA metadata by DCP developers and tertiary analysis app developers
 1. Conduct user experience (UX) research to validate query language usability, understand remaining usability gaps in DCP data searchability and discoverability
 1. Develop a scalable public API for external indexing and other DSS event consumers
 1. Deploy all query systems as stand-alone, modular services
