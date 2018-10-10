@@ -53,7 +53,7 @@ Setting this plan will also better define the interaction between the metadata t
 
 ### Design Alternative #1
 
-Software development proceeds in the dev branch of each component independently. Changes are merged into integration branch of each component only through PRs which cause system-wide integration tests to run. PRs are merged automatically if tests pass (but can be reverted if downstream breakage occurs). PRs may not be merged if tests do not pass.
+Software development proceeds in the dev branch of each component independently. Changes are merged into integration branch of each component only through PRs which cause system-wide integration tests to run. PRs are merged automatically if tests pass (but can be reverted if downstream breakage occurs). PRs must not be merged if tests do not pass.
 
 ![Option 1](../images/0000-metadata-integration-test-opt1.png)
 
