@@ -18,7 +18,7 @@ The objective of the Data Portal is to provide the DCP website implementation. I
 * Implement a UX, visual, and branding design with input from the HCA brand working group.
 * Maintain a content management system that meets the needs of Data Portal content developers.
 * Integrate DCP applications (e.g. the Data Browser, Ingestion Service, etc.) into a seamless UX with a common look and feel.
-* Implement frequent (minimum daily) updates of the summary statistics (e.g. cells, organs, donors, projects, etc.) on the DCP home page.
+* Implement frequent (minimum daily) updates of the summary statistics (e.g. cells, organs, donors, projects, etc.) on the Data Portal home page.
 * Coordinate the development of user guide documentation content (e.g. the UI 'Learn' section) from multiple contributors.
 * Coordinate the development of developer documentation content (e.g. the UI 'Develop' section) from multiple contributors. This includes API documentation and development guides.
 * Coordinate the wording on website pages that require written content but aren't specifically documentation (e.g. the 'About' section).
