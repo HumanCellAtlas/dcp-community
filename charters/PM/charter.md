@@ -63,7 +63,7 @@ A **Thematic Roadmap** identifies and expresses customer needs as a small collec
 
 Strategic 
 
-* Identify and maintain a repository of user requirements, use cases, and journeys informed by *DCP UX* research
+* Identify and maintain a repository of user personas and stories informed by *DCP UX* research
 
 * Facilitate a planning process on a regular cadence to solicit input from the HCA Science and DCP communities
     * Publish a Thematic Roadmap RFC based on that input that also adddresses strategic technical objectives from the DCP Architecture team
