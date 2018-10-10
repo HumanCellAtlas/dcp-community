@@ -5,14 +5,14 @@
 The Data Browser (available via the Data Portal 'Explore' section) is an application that provides a faceted search capability allowing users to search and download subsets of cellular resolution data hosted by the Data Coordination Platform (DCP).
 
 ## Definitions
-*DCP* The Data Coordination Platform is the name given to the entire system used to ingest, validate, store, analyzes, and make available the data in the Human Cell Atlas project.
+*DCP* The Data Coordination Platform is the name given to the entire system used to ingest, validate, store, analyze, and make available the data in the Human Cell Atlas project.
 
 *Data Portal* The landing site for the Human Cell Atlas (HCA) DCP.
 
 *Analysis Applications* Third party portals listed in the 'Analyze' section of the Data Portal UI.
 
 ## Objectives
-The objective of the Data Browser is to provide an easy-to-use User Interface (UI) allowing users to search, download and analyze data stored in the DCP at petabyte scale on public clouds.
+The objective of the Data Browser is to provide an easy-to-use User Interface (UI) and RESTful API allowing users to search, download and analyze data stored in the DCP at petabyte scale on public clouds.
 
 ## In-scope
 
@@ -24,7 +24,7 @@ The objective of the Data Browser is to provide an easy-to-use User Interface (U
 * Provide for download of selected files from the Data Store via the UI and/or HCA DCP Command Line Interface (CLI).
 * Provide facilities to save, view, share, update, and delete search queries on a per-user basis.
 * Provide facilities to utilize the Date Store Collections Service to save, view, list, share and delete the query results from a search query.
-* Provide a facility to pass search results to the Matrix Service.
+* Provide a facility to pass search results to the Expression Matrix Service.
 * Provide a facility to pass search results to Analysis Applications.
 * API documentation for portable, cloud-neutral RESTful APIs for faceted search of DCP data.
 
@@ -41,8 +41,7 @@ The objective of the Data Browser is to provide an easy-to-use User Interface (U
 * Implementation of other language bindings for the APIs.
 
 ## Milestones and Deliverables
-* Nov 2018:  Deploy a minimum viable product (MVP) feature set as part of the HCA DCP beta test phase.
-* Q4  2018:  Interface to the Matrix Service.
+* Nov 2018:  Deploy a minimum viable product (MVP) feature set as part of the HCA DCP beta test phase. Interface to the Expression Matrix Service.
 * Q1  2019:  Implement as needed improved scaling/hardening to address any gaps identified during the HCA DCP beta test phase.
 * 1H  2019:  Save search queries. Pass search results to Analysis Applications. Integration with authentication and authorization facilities. API documentation.
 
