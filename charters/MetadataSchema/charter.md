@@ -42,7 +42,7 @@ These metadata schema aim to capture more than the minimum requirements for repr
 ### Schema Testing
 
 * Providing a test framework to enable community members to test if their proposed extensions are functional and adhere to the style guide specifications
-* Providing a framework for testing wheather schema updates adhere to depreciation and versioning guidelines
+* Providing a framework which tests if a schema update adhere to depreciation and versioning guidelines
 
 ### User Support
 
