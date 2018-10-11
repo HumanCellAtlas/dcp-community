@@ -13,6 +13,14 @@ Services the Query Module provides may complement or subsume the current search 
 1. Deploy all query systems as stand-alone, modular services
 1. Make DCP index and query systems agnostic to DCP schema evolution
 
+### Users
+
+Query Service features will be developed with use cases of the following users in mind.
+
+* Bioinformaticians
+* Computational Biologists
+* Portal Developers
+
 ## In-scope
 * Common index event bus and deployment infrastructure
     * Finalize support for multiple metadata indexers in DSS
@@ -21,9 +29,9 @@ Services the Query Module provides may complement or subsume the current search 
 * Provide new iteration of or replace DSS [ElasticSearch (ES)](https://www.elastic.co) index and [query language](https://www.elastic.co/guide/en/elasticsearch/reference/current/_introducing_the_query_language.html)
     * Stand-alone ES search service, integrated into search plugin interface
     * Increase isolation from metadata schema evolution
-* Investigate new index technologies that provide [Structured Query Language (SQL)](https://en.wikipedia.org/wiki/SQL)
-    * Stand-alone SQL query service, integrated into search plugin interface
-    * SQL metadata query prototype and pilot release
+* Investigate new index technologies that provide intuitive queries of HCA metadata
+    * Stand-alone query service, integrated into search plugin interface
+    * [Structured Query Language (SQL)](https://en.wikipedia.org/wiki/SQL) metadata query prototype and pilot release
         * Socialize with community, investigate use cases, and determine utility of SQL query for these use cases
         * If prototype is viable, implement on the pluggable API, and launch as separate DCP service
     * Database service configuration and deployment infrastructure
