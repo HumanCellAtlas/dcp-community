@@ -33,9 +33,15 @@ __2020:__ Generalized and reusable service infrastructure.
 [David Shiga](mailto:dshiga@broadinstitute.org)
 
 ## Communication
-[Team email](mailto:pipelines-team@data.humancellatlas.org): pipelines-team@data.humancellatlas.org
+
+### Slack Channels
+
 __HumanCellAtlas#mintteam:__ team discussions, a place to directly communicate to the team, who works on the service and the pipelines, as needed  
 __HumanCellAtlas#mintteam-ci:__ mint team continuous integration status
+
+### Mailing List
+
+Team email: pipelines-team@data.humancellatlas.org
 
 ## Github repositories
 [Cromwell Tools](https://github.com/broadinstitute/cromwell-tools): Tools (Python API) for working with the Cromwell workflow engine 
