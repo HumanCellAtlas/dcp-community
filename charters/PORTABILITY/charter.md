@@ -49,7 +49,9 @@ __2019:__ Documentation is complete and can be used by 3rd parties.
 
 ## Communication
 
-__HumanCellAtlas#portability:__ To discuss portability and access of pipelines to infrastructure outside Lira.
+### Slack Channels
+
+__HumanCellAtlas/portability:__ To discuss portability and access of pipelines to infrastructure outside Lira.
 
 ## Github repositories
 [Portability](https://github.com/HumanCellAtlas/portability):  Source code for the portability service.
