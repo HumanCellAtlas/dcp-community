@@ -115,5 +115,4 @@ Wrangler Team email: wrangler-team@data.humancellatlas.org
 
 ## Github repositories
 
-[https://github.com/HumanCellAtlas/ingest-central](https://github.com/HumanCellAtlas/ingest-central)
-ingest-central is the hub repository for the Ingestion Service - use this to report issues or request new features in the ingest service
+[https://github.com/HumanCellAtlas/ingest-central](https://github.com/HumanCellAtlas/ingest-central) is the hub repository for the Ingestion Service - use it to report issues or request new features in the Ingestion Service
