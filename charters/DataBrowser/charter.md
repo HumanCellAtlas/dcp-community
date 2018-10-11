@@ -62,5 +62,5 @@ The objective of the Data Browser is to provide an easy-to-use User Interface (U
 * [HumanCellAtlas/data-browser](https://humancellatlas.slack.com/messages/data-browser): data browser development discussions
 
 ## Github repositories
-* https://github.com/HumanCellAtlas/data-browser
-* https://github.com/DataBiosphere/azul
+* https://github.com/HumanCellAtlas/data-browser - the repository for the UI implementation. Use it to report issues and request new features for the Data Browser.
+* https://github.com/DataBiosphere/azul - the repository for the Metadata Indexer engine and Web Service RESTful API implementation.
