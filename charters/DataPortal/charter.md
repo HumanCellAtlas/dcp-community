@@ -60,9 +60,9 @@ The objective of the Data Portal is to provide the DCP website implementation. I
 ## Communication
 
 ### Slack Channels
-* HumanCellAtlas/data-portal: general data portal discussions
-* HumanCellAtlas/data-portal-dev: data portal development discussions
-* HumanCellAtlas/content-team: data portal content development discussions
+* [HumanCellAtlas/data-portal](https://humancellatlas.slack.com/messages/data-portal): general data portal discussions
+* [HumanCellAtlas/data-portal-dev](https://humancellatlas.slack.com/messages/data-portal-dev): data portal development discussions
+* [HumanCellAtlas/content-team](https://humancellatlas.slack.com/messages/content-team): data portal content development discussions
 
 ## Github repositories
 * https://github.com/HumanCellAtlas/data-portal
