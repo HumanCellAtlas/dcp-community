@@ -99,7 +99,7 @@ Implementation of v0 API suitable for limited use but not scalable, includes:
 
 ### Slack Channels
 
-HumanCellAtlas/the-matrix-reloaded: Discussion of expression matrix service
+[HumanCellAtlas/the-matrix-reloaded](https://humancellatlas.slack.com/messages/the-matrix-reloaded): Discussion of expression matrix service
 
 ### Mailing List
 Team email: expression-matrix-team@data.humancellatlas.org
