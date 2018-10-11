@@ -59,7 +59,7 @@ The objective of the Data Browser is to provide an easy-to-use User Interface (U
 ## Communication
 
 ### Slack Channels
-* HumanCellAtlas/data-browser: data browser development discussions
+* [HumanCellAtlas/data-browser](https://humancellatlas.slack.com/messages/data-browser): data browser development discussions
 
 ## Github repositories
 * https://github.com/HumanCellAtlas/data-browser
