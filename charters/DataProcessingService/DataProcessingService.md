@@ -44,8 +44,8 @@ __HumanCellAtlas/mintteam-ci:__ mint team continuous integration status
 Team email: pipelines-team@data.humancellatlas.org
 
 ## Github repositories
-[Cromwell Tools](https://github.com/broadinstitute/cromwell-tools): Tools (Python API) for working with the Cromwell workflow engine 
-[Falcon](https://github.com/HumanCellAtlas/falcon): Throttles workflows and starts queued workflows 
-[Lira](https://github.com/HumanCellAtlas/lira): Listens to storage service notifications and launches workflows
-[Pipeline Tools](https://github.com/HumanCellAtlas/pipeline-tools): Data Coordination Platform adapter pipelines and associated tools  
-[Secondary Analysis](https://github.com/HumanCellAtlas/secondary-analysis): Integration test scripts and other automation for the Data Processing Service. Contains all tickets for the prioritized work for the implementation team 
+* [Cromwell Tools](https://github.com/broadinstitute/cromwell-tools): Tools (Python API) for working with the Cromwell workflow engine 
+* [Falcon](https://github.com/HumanCellAtlas/falcon): Throttles workflows and starts queued workflows 
+* [Lira](https://github.com/HumanCellAtlas/lira): Listens to storage service notifications and launches workflows
+* [Pipeline Tools](https://github.com/HumanCellAtlas/pipeline-tools): Data Coordination Platform adapter pipelines and associated tools  
+* [Secondary Analysis](https://github.com/HumanCellAtlas/secondary-analysis): Integration test scripts and other automation for the Data Processing Service. Contains all tickets for the prioritized work for the implementation team 
