@@ -66,11 +66,14 @@ __2020:__ Continued addition of analysis pipelines.
 [David Shiga](mailto:dshiga@broadinstitute.org)
 
 ## Communication
-[Team email](mailto:pipelines-team@data.humancellatlas.org): pipelines-team@data.humancellatlas.org
 
-__HumanCellAtlas#mintteam:__ team discussions, a place to directly communicate to the team, who works on the service and the pipelines, as needed.
+## Mailing List
+Team email: pipelines-team@data.humancellatlas.org
 
-__HumanCellAtlas#secondary-analysis:__ community-focused space for conversations around data processing pipelines that run in the DCP 
+## Slack Channels
+* [HumanCellAtlas/mintteam](https://humancellatlas.slack.com/messages/mintteam): team discussions, a place to directly communicate to the team, who works on the service and the pipelines, as needed.
+
+* [HumanCellAtlas/secondary-analysis](https://humancellatlas.slack.com/messages/secondary-analysis): community-focused space for conversations around data processing pipelines that run in the DCP 
 
 ## Github repositories
 [scTools](https://github.com/HumanCellAtlas/sctools): Tools for single cell data processing
