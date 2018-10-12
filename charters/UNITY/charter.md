@@ -47,8 +47,10 @@ __2019:__ Leaderboards are created for HCA pipelines.
 [Jonathan Bistline](mailto:bistline@broadinstitute.org)
 
 ## Communication
-   
-__HumanCellAtlas#unity-benchmarking:__ To answer questions and get feedback on pipeline benchmarking   
+
+### Slack Channels
+
+[HumanCellAtlas/unity-benchmarking](https://humancellatlas.slack.com/messages/unity-benchmarking): To answer questions and get feedback on pipeline benchmarking   
 
 ## Github repositories
 [Unity](https://github.com/HumanCellAtlas/unity): Source code for the Unity service.
