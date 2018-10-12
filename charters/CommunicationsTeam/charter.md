@@ -54,9 +54,9 @@ To be assigned if/when needed.
 
 ### Slack Channels
 Currently we have the following Slack channels that are relevant to the work of this team; descriptions of each channel as posted in Slack are provided.
-* HumanCellAtlas/community-support - Defining tools and processes needed for community support. Coordinating a forum, a help desk set-up, announcements, blogs, webinars, events.
-* HumanCellAtlas/dcp-outreach - Coordination for DCP outreach
-* HumanCellsAtlas/docs-and-guides - User docs, Developer docs, and docs for APIs, CLIs, and reuse of DCP components
+* [HumanCellAtlas/community-support](https://humancellatlas.slack.com/messages/community-support) - Defining tools and processes needed for community support. Coordinating a forum, a help desk set-up, announcements, blogs, webinars, events.
+* [HumanCellAtlas/dcp-outreach](https://humancellatlas.slack.com/messages/dcp-outreach) - Coordination for DCP outreach
+* [HumanCellsAtlas/docs-and-guides](https://humancellatlas.slack.com/messages/docs-and-guides) - User docs, Developer docs, and docs for APIs, CLIs, and reuse of DCP components
 
 We may consolidate these to a single ‘#dcp-communications’ channel at a later date and/or create a private communications team-only channel.
 
