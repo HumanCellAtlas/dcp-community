@@ -65,5 +65,5 @@ The objective of the Data Portal is to provide the DCP website implementation. I
 * [HumanCellAtlas/content-team](https://humancellatlas.slack.com/messages/content-team): data portal content development discussions
 
 ## Github repositories
-* https://github.com/HumanCellAtlas/data-portal
-* https://github.com/HumanCellAtlas/data-portal-content
+* https://github.com/HumanCellAtlas/data-portal - the repository for the UI implementation. Use it to report issues and request new features for the Data Portal.
+* https://github.com/HumanCellAtlas/data-portal-content - the repository for the content pages of the Data Portal.
