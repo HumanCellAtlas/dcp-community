@@ -33,7 +33,7 @@ The primary mission of the Ingestion Service is to define a publicly accessible 
 
 The secondary mission is to provide convenient, user-friendly methods for the upload of data and metadata to the DCP. The Ingestion Service will provide user interfaces and tools suitable for a variety of data contributor profiles, and will continuously review whether these interfaces and tools adequately serve the needs of the HCA user community. As part of this secondary mission, the Ingestion Service will deliver two main interfaces that utilise the Ingest API to support ingestion of data:
 
-  * A **User Interface** targeting data contributors uploading data and metadata via a form-based user interface
+  * A **User Interface** targeting data contributors uploading data and metadata via a form-based web portal
   * A **Spreadsheet Upload** service targeting data generators uploading experimental metadata using spreadsheets in single, canonical defined spreadsheet format based on a specific Excel template (.xlsx) created by the spreadsheet template generator
 
 It is expected that other client interfaces or applications may be developed, either by lab-based data contributors or in some cases by data wranglers to assist those contributors. Such clients will utilise the Ingest API.
