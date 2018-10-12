@@ -2,7 +2,7 @@
 
 
 ## Description
-The Data Portal is the landing site for the Human Cell Atlas (HCA) Data Coordination Platform (DCP). It is hosted at https://www.data.humancellatlas.org/ with an access link from the main HCA website at https://www.humancellatlas.org/. It provides the user experience (UX) for users to explore cellular resolution data.
+The Data Portal is the landing site for the Human Cell Atlas (HCA) Data Coordination Platform (DCP). It is hosted at https://www.data.humancellatlas.org/ with an access link from the main HCA website at https://www.humancellatlas.org/. It provides users interested in the HCA with an easy and efficient way to explore and use data at cellular resolution.
 
 ## Definitions
 *DCP* The Data Coordination Platform is the name given to the entire system used to ingest, validate, store, analyze, and make available the data in the Human Cell Atlas project.
@@ -10,12 +10,16 @@ The Data Portal is the landing site for the Human Cell Atlas (HCA) Data Coordina
 *Data Browser* A DCP application which provides a faceted search capability.
 
 ## Objectives
-The objective of the Data Portal is to provide the DCP website implementation. It provides the access point for users to search, contribute to, or learn about, the HCA genetic data in order to identify a subset of the data for download and/or further analysis at petabyte scale on public clouds.
+* Provide the access point for users to search, contribute to, or learn about, the cellular resolution and other data which is part of the HCA collection, at petabyte scale on public clouds.
+* Work with the other DCP teams to provide a positive user experience for all users of the DCP website.
+* Provide a common look and feel across the entire DCP website.
+* Provide easy-to-use methods for users to identify a subset of the DCP data for download and/or further analysis.
 
 ## In-scope
 
 ### Core capabilities
-* Implement a UX, visual, and branding design with input from the HCA brand working group.
+* Implement a visual design which addresses the needs and goals of the identified main user personas. It is driven by the user experience research insights and interaction design guidelines provided by the User Experience (UX) team.
+* Implement a visual design which is in line with the HCA brand guidelines.
 * Maintain a content management system that meets the needs of Data Portal content developers.
 * Integrate DCP applications (e.g. the Data Browser, Ingestion Service, etc.) into a seamless UX with a common look and feel.
 * Implement frequent (minimum daily) updates of the summary statistics (e.g. cells, organs, donors, projects, etc.) on the Data Portal home page.
