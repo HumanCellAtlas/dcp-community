@@ -78,4 +78,4 @@ Team email: upload-team@data.humancellatlas.org
 
 ## Github repositories
 
-* https://github.com/HumanCellAtlas/upload-service
+* https://github.com/HumanCellAtlas/upload-service - main upload service repository
