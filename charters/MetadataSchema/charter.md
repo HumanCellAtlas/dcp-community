@@ -85,11 +85,11 @@ During 2018/2019 The metadata charter committee will work to complete the follow
 
 ### Slack
 
-[HumanCellAtlas/hca-metadata](https://humancellatlas.slack.com/messages/hca-metadata)) - for discussions about metadata needs and conventions
+[HumanCellAtlas/hca-metadata](https://humancellatlas.slack.com/messages/hca-metadata) - for discussions about metadata needs and conventions
 
 ### Mailing list
 
-metadata-team@data.humancellatlas.org
+metadata-team@data.humancellatlas.org - 
 
 ## Github repositories
 
