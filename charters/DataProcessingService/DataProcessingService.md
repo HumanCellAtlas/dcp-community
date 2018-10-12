@@ -36,8 +36,8 @@ __2020:__ Generalized and reusable service infrastructure.
 
 ### Slack Channels
 
-__HumanCellAtlas/mintteam:__ team discussions, a place to directly communicate to the team, who works on the service and the pipelines, as needed  
-__HumanCellAtlas/mintteam-ci:__ mint team continuous integration status
+* [HumanCellAtlas/mintteam](https://humancellatlas.slack.com/messages/mintteam): team discussions, a place to directly communicate to the team, who works on the service and the pipelines, as needed  
+* [HumanCellAtlas/mintteam-ci](https://humancellatlas.slack.com/messages/mintteam-ci): mint team continuous integration status
 
 ### Mailing List
 
