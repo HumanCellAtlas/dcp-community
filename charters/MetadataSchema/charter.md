@@ -93,4 +93,4 @@ metadata-team@data.humancellatlas.org -
 
 ## Github repositories
 
-https://github.com/humancellatlas/metadata-schema
+https://github.com/humancellatlas/metadata-schema is the repository for all HCA JSON schema definitions. This repo also contains documentation, exemplar data and the test infrastructure for these schema.
