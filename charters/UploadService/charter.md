@@ -69,11 +69,12 @@ The Upload Service enables fast, cost-effective upload, staging, and validation 
 
 ## Communication
 
+### Mailing List
 Team email: upload-team@data.humancellatlas.org
 
 ### Slack Channels
 
-* HumanCellAtlas/upload-service: Discussion of the Upload Service
+[HumanCellAtlas/upload-service](https://humancellatlas.slack.com/messages/upload-service): Discussion of the Upload Service
 
 ## Github repositories
 
