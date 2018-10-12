@@ -106,5 +106,5 @@ Team email: expression-matrix-team@data.humancellatlas.org
 
 ## Github repositories
 
-* https://github.com/HumanCellAtlas/matrix-service
-* https://github.com/HumanCellAtlas/table-testing
+* https://github.com/HumanCellAtlas/matrix-service is the developer workspace for the Expression Matrix Service.
+* https://github.com/HumanCellAtlas/table-testing is a collaborative space to specify requirements, examples, and tests for on-disk file formats used to store expression matrices arising from single-cell RNA sequencing analyses.
