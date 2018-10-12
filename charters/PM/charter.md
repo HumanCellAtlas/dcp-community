@@ -85,7 +85,7 @@ Tactical
 
 ### Slack Channels
 
-HumanCellAtlas/dcp-project-mgmt: This channel is for PM(s) to discuss coordination and logistics.
+[HumanCellAtlas/dcp-project-mgmt](https://humancellatlas.slack.com/messages/dcp-project-mgmt): This channel is for PM(s) to discuss coordination and logistics.
 
 ### Mailing List
 
