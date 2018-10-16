@@ -10,7 +10,7 @@ The core team is composed of *Project Leads* and *Product Owners* from each DCP 
 
 ### Project Lead
 
-When a DCP charter is approved, the community explictly delegates authority and leadership for a specific project and its scope to a **Project Lead**. The **Project Lead** is responsible for clearly defining and communicating the long-term vision and direction of the project.
+When a DCP charter is approved, the community explictly delegates authority and leadership for a specific project and its scope to a **Project Lead**. The **Project Lead** is responsible for clearly defining and communicating the long-term vision and direction of their project.
 
 Similar to [Mozilla module owners](https://www.mozilla.org/en-US/about/governance/policies/module-ownership/), **Project Leads** are never *tyrants*. They are chartered to make decisions for their DCP project with input from the community and in the best interests of the community. 
 
@@ -26,18 +26,9 @@ As adapted from the [Scrum process](https://www.scrumguides.org/scrum-guide.html
 
 ### Science Program Manager
 
-The **Science Program Manager** is the formal liaison between HCA Science Leadership and the DCP community. 
+The **Science Program Manager** is the formal liaison for requests between HCA Science Leadership and the DCP community. 
 
 *Current Science PM*: [Jonah Cool](jcool@chanzuckerberg.com)
-
-### Thematic Roadmap
-A **Thematic Roadmap** identifies and expresses customer needs as a small collection of themes or strategic objectives which:
-* Focuses the DCP community on a documented set of high-level customer priorities
-* Excites users about the future of DCP
-
-### Request for Comments
-
-**Request for Comments (RFC)** is the transparent process that manages all significant enhancements to the DCP software technical and governance documentation, both normative and informative
 
 ## In-scope
 
@@ -66,11 +57,11 @@ Strategic
 * Identify and maintain a repository of user personas and stories informed by *DCP UX* research
 
 * Facilitate a planning process on a regular cadence to solicit input from the HCA Science and DCP communities
-    * Publish a Thematic Roadmap RFC based on that input that also adddresses strategic technical objectives from the DCP Architecture team
+    * Publish a roadmap based on this input that also adddresses strategic technical objectives from the DCP Architecture team
 
 Tactical
 
-* Translate the customer priorities from the Thematic Roadmap RFC into actionable quarterly plans
+* Translate the customer priorities from the roadmap into actionable quarterly plans
 
 * Coordinate with the DCP Architecture team on emerging tactical requests needing to be addressed in Sprint planning priorities
 
