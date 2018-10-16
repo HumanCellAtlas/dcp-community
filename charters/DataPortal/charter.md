@@ -18,10 +18,10 @@ The Data Portal is the landing site for the Human Cell Atlas (HCA) Data Coordina
 ## In-scope
 
 ### Core capabilities
-* Implement a visual design which addresses the needs and goals of the identified main user personas. It is driven by the user experience research insights and interaction design guidelines provided by the User Experience (UX) team.
+* Implement a visual design which addresses the needs and goals of the identified main user personas. The visual design is driven by the user experience research insights and interaction design guidelines provided by the User Experience (UX) team.
 * Implement a visual design which is in line with the HCA brand guidelines.
 * Maintain a content management system that meets the needs of Data Portal content developers.
-* Integrate DCP applications (e.g. the Data Browser, Ingestion Service, etc.) into a seamless UX with a common look and feel.
+* Integrate DCP applications (e.g. the Data Browser, Ingestion Service, etc.) into a seamless UI with a common look and feel.
 * Implement frequent (minimum daily) updates of the summary statistics (e.g. cells, organs, donors, projects, etc.) on the Data Portal home page.
 * Coordinate the development of user guide documentation content (e.g. the UI 'Learn' section) from multiple contributors.
 * Coordinate the development of developer documentation content (e.g. the UI 'Develop' section) from multiple contributors. This includes API documentation and development guides.
