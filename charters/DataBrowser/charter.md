@@ -2,7 +2,7 @@
 
 
 ## Description
-The Data Browser (available via the Data Portal 'Explore' section) is an application that provides a faceted search capability allowing users to search and download subsets of cellular resolution data hosted by the Data Coordination Platform (DCP).
+The Data Browser (available via the Data Portal 'Explore' section) is an application that provides a faceted search capability allowing users to search and download subsets of cellular resolution data hosted by the Data Coordination Platform (DCP) and facilities to pass such subsets of data to the Expression Matrix Service and Analysis Applications.
 
 ## Definitions
 *DCP* The Data Coordination Platform is the name given to the entire system used to ingest, validate, store, analyze, and make available the data in the Human Cell Atlas project.
@@ -21,7 +21,7 @@ The objective of the Data Browser is to provide an easy-to-use User Interface (U
 * Support multiple metadata schemas via a shared schema access library.
 * Provide multiple search views of the DCP data such as by Projects, Files and Specimens.
 * Support for specifying multiple search criteria ('facets') through the UI.
-* Provide for download of selected files from the Data Store via the UI and/or HCA DCP Command Line Interface (CLI).
+* Provide for download of user-selected files from the Data Store via the UI and/or HCA DCP Command Line Interface (CLI).
 * Provide facilities to save, view, share, update, and delete search queries on a per-user basis.
 * Provide facilities to utilize the Date Store Collections Service to save, view, list, share and delete the query results from a search query.
 * Provide a facility to pass search results to the Expression Matrix Service.
@@ -35,7 +35,7 @@ The objective of the Data Browser is to provide an easy-to-use User Interface (U
 
 ### Community engagement
 * Provide triage of feature requests from the community and integration of such requests into the Data Browser roadmap.
-* Outreach and engagement of the community on use/usability of the APIs.
+* Outreach to, and engagement of, the DCP community on the usability of the APIs and the UI.
 
 ## Out-of-scope
 * Implementation of other language bindings for the APIs.
