@@ -6,7 +6,7 @@
 
 # RFC Name
 
-*This is the same as the filename.*
+*This is the name of the RFC. Keep it short and descriptive.*
 
 ## Summary
 
