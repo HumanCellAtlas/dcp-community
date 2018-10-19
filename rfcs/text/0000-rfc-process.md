@@ -113,7 +113,7 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 - Revise the RFC pull request in response to feedback and push new commits
 
 ### Shepherding RFCs
-
+[Shepherding RFCs]: #shepherding-rfcs
 #### Shepherd:
 - Monitor the community review and ensure that issues are addressed by the **Author(s)** in a reasonable time period.
 
@@ -146,6 +146,12 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 
 - Validate that the RFC pull request was successfully updated and merged
 - Include the RFC approval in *This week in DCP* status update
+
+### Requesting substantive changes
+
+#### Shepherd:
+
+- If substantial changes are requested during the oversight review, then replace "rfc-oversight-review" with "rfc-community-review" and return to the [community review](#shepherding-rfcs) process.
 
 ### Rejecting RFCs
 
