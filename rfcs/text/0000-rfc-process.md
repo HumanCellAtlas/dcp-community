@@ -181,9 +181,9 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 
 - Announce the approval of the RFC on the HumanCellAtlas #dcp slack channel. Include a link to the merged RFC:
 
-  EXAMPLE
+  **EXAMPLE**
 
-  @channel: *DCP PM* approved the RFC for the RFC Process - https://github.com/HumanCellAtlas/dcp-community/rfcs/blob/master/text/0001-rfc-process.md
+  ***@channel**: DCP PM approved the RFC for the RFC Process - https://github.com/HumanCellAtlas/dcp-community/rfcs/blob/master/text/0001-rfc-process.md*
 
 ### Requesting substantive changes
 
@@ -205,9 +205,9 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 
 - Announce the rejection of the RFC on the HumanCellAtlas #dcp slack channel. Include a link to the RFC pull request:
 
-  EXAMPLE
+  **EXAMPLE**
 
-  @channel: *DCP PM* declined the RFC for the RFC Process - https://github.com/HumanCellAtlas/dcp-community/pull/27
+  ***@channel**: DCP PM declined the RFC for the RFC Process - https://github.com/HumanCellAtlas/dcp-community/pull/27*
 
 ### Appealing RFC Decisions
 
