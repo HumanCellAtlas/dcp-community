@@ -179,6 +179,12 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 
 - Validate that the RFC pull request was successfully updated and merged
 
+- Announce the approval of the RFC on the HumanCellAtlas #dcp slack channel. Include a link to the merged RFC:
+
+  EXAMPLE
+
+  @channel: *DCP PM* approved the RFC for the RFC Process - https://github.com/HumanCellAtlas/dcp-community/rfcs/blob/master/text/0001-rfc-process.md
+
 ### Requesting substantive changes
 
 #### Approvers:
@@ -194,6 +200,14 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 #### Approvers:
 
 - At the *DCP PM* or *DCP Architecture* meeting, review the **Shepherd** summary. If there is rough consensus to reject the RFC, replace "rfc-oversight-review" with "rfc-declined", and close the pull request with the rationale in the comment.
+
+#### Shepherd:
+
+- Announce the rejection of the RFC on the HumanCellAtlas #dcp slack channel. Include a link to the RFC pull request:
+
+  EXAMPLE
+
+  @channel: *DCP PM* declined the RFC for the RFC Process - https://github.com/HumanCellAtlas/dcp-community/pull/27
 
 ### Appealing RFC Decisions
 
