@@ -183,7 +183,11 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 
 #### Approvers:
 
-- At the *DCP PM* or *DCP Architecture* meeting, review the **Shepherd** summary. If substantial changes are requested, then replace "rfc-oversight-review" with "rfc-community-review" and return the RFC to the [community review](#shepherding-rfcs) process.
+- At the *DCP PM* or *DCP Architecture* meeting, review the **Shepherd** summary. If substantial changes are requested, then replace "rfc-oversight-review" with "rfc-community-review".
+
+#### Authors:
+
+- The **Author(s)** must address the changes before requesting a community review and returning the RFC to the [community review](#shepherding-rfcs) process.
 
 ### Rejecting RFCs
 
@@ -193,7 +197,7 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 
 ### Appealing RFC Decisions
 
-Any DCP community member may appeal an RFC decision (approval or rejection) by sending a message to the *DCP PM* mailing list (pm-team@data.humancellatlas.org).
+Any DCP community member may appeal all RFC decisions by **Approvers** (approval, changes requested, or rejection) by sending a message to the *DCP PM* mailing list (pm-team@data.humancellatlas.org).
 
 The message should demonstrate a clear rationale for the appeal, referencing community discussion as needed to support the position.
 
