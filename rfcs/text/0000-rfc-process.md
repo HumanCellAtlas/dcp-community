@@ -89,11 +89,31 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
         
       - Add the "rfc-community-review" and the "Governance" labels. 
 
-  - Share a link to the RFC pull request for community review on the HumanCellAtlas **#dcp** slack channel
+- Add a minimum two week _last call_ for the completion of the Community review to the top-level summary comment in the RFC pull request.
+
+    **EXAMPLE**: 
+
+    **April 1**: Last call for community review
+
+- Request a Community review of the RFC on the HumanCellAtlas **#dcp** slack channel. Include a link to the RFC pull request and the last call deadline:
+
+    **EXAMPLE** 
+  
+     ***@channel**: Call for community review of the RFC process - https://github.com/HumanCellAtlas/dcp-community/pull/27 - Last call is April 1.*
 
 #### DCP PM:
 - Assign a **Shepherd** by completing the *Shepherd* section in the RFC template and pushing the commit. The **Shepherd** guides the RFC and its **Author(s)** through the process.
-- If there is a *Scientific "guardrails"* section in the RFC, assign the **Science Reviewer** as a reviewer of the pull request and add the "science-review-required" label.
+
+- If there is a *Scientific "guardrails"* section in the RFC:
+  - Assign the **Science Reviewer** as a reviewer of the pull request
+  - Add the "science-review-required" label
+  - Add a two week _last call_ for the completion of the Science review to the top-level summary comment in the RFC pull request.
+
+    **EXAMPLE**: 
+
+    **April 5**: Last call for science review
+
+   **NOTE**: The Science review occurs in parallel to the Community review. 
 
 ### Reviewing RFCs
 
@@ -114,13 +134,30 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 #### Shepherd:
 - Monitor the community review and ensure that issues are addressed by the **Author(s)** in a reasonable time period.
 
-- When all issues are addressed and any required Science reviews are complete, summarize the review discussion for the **Approvers** in a top-level summary comment in the RFC pull request. Replace "rfc-community-review" with "rfc-oversight-review".
+- When all issues are addressed and any required Science reviews are complete:
+  - Summarize the review discussion for the **Approvers** in the top-level summary comment in the RFC pull request
+  - Add a minimum one week _last call_ for the completion of the Oversight review to the top-level summary comment in the RFC pull request.
+
+    **EXAMPLE**: 
+
+    ~~**April 1**: Last call for community review~~
+    **April 22**: Last call for oversight review
+
+  - Replace "rfc-community-review" with "rfc-oversight-review"
 
   **NOTE**: Oversight review is limited to **Approvers**. Further community reviews during this period may be disregarded by the **Author(s)**.
 
-- For software RFCs, share a link to the RFC pull request for approval on the HumanCellAtlas **#tech-architecture** slack channel. Add the RFC as an agenda item to the next *DCP Architecture* meeting.
+- For software RFCs, request an Oversight review of the RFC on the HumanCellAtlas **#tech-architecture** slack channel. Include a link to the RFC pull request and the last call deadline:
 
-- For governance RFCs, share a link to the RFC pull request for approval on the HumanCellAtlas **#dcp-project-mgmt** slack channel. Add the RFC as an agenda item to the next *DCP PM* meeting.
+    **EXAMPLE** 
+  
+     ***@channel**: Call for oversight review of the RFC process - https://github.com/HumanCellAtlas/dcp-community/pull/27 - Last call is April 22.*
+
+  Add the RFC as an agenda item to the next *DCP Architecture* meeting
+
+- For governance RFCs, request an Oversight review of the RFC on the HumanCellAtlas **#dcp-project-mgmt** slack channel. Include a link to the RFC pull request and the last call deadline
+
+  Add the RFC as an agenda item to the next *DCP PM* meeting
 
 ### Approving RFCs
 
@@ -145,7 +182,7 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 
 #### Shepherd:
 
-- If substantial changes are requested during the oversight review, then replace "rfc-oversight-review" with "rfc-community-review" and return to the [community review](#shepherding-rfcs) process.
+- If substantial changes are requested during the Oversight review, then replace "rfc-oversight-review" with "rfc-community-review" and return to the [community review](#shepherding-rfcs) process.
 
 ### Rejecting RFCs
 
