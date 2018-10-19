@@ -95,9 +95,6 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 - Assign a **Shepherd** by completing the *Shepherd* section in the RFC template and pushing the commit. The **Shepherd** guides the RFC and its **Author(s)** through the process.
 - If there is a *Scientific "guardrails"* section in the RFC, assign the **Science Reviewer** as a reviewer of the pull request and add the "science-review-required" label.
 
-#### Shepherd:
-- Include the RFC submission in *This week in DCP* status update
-
 ### Reviewing RFCs
 
 #### Approvers:
@@ -125,8 +122,6 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 
 - For governance RFCs, share a link to the RFC pull request for approval on the HumanCellAtlas **#dcp-project-mgmt** slack channel. Add the RFC as an agenda item to the next *DCP PM* meeting.
 
-- Include the RFC final review in *This week in DCP* status update
-
 ### Approving RFCs
 
 #### Approvers:
@@ -145,7 +140,6 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 #### Shepherd:
 
 - Validate that the RFC pull request was successfully updated and merged
-- Include the RFC approval in *This week in DCP* status update
 
 ### Requesting substantive changes
 
@@ -158,9 +152,6 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 #### Approvers:
 
 - At the *DCP PM* or *DCP Architecture* meeting, review the **Shepherd** summary. If there is rough consensus to reject the RFC, replace "rfc-oversight-review" with "rfc-declined", and close the pull request with the rationale in the comment.
-
-#### Shepherd:
-- Include the RFC rejection in *This week in DCP* status update
 
 #### Author:
 - If an RFC is rejected by *DCP Architecture*, then the decision may be escalated for review by *DCP PM* by sending a request to the HumanCellAtlas **#dcp-project-mgmt** slack channel
