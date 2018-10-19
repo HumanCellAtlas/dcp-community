@@ -83,11 +83,11 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
   - Submit a pull request.
   
       For software RFCs:
-      - Add the "rfc-proposed" and the appropriate software project name _(such as "Data Store")_ labels. When the RFC impacts multiple DCP software projects, then the "Architecture" label **MUST** be the project name. *If uncertain about the appropriate project name, then **_Ask a PM_** on the HCA **#dcp-project-mgmt** slack channel*
+      - Add the "rfc-community-review" and the appropriate software project name _(such as "Data Store")_ labels. When the RFC impacts multiple DCP software projects, then the "Architecture" label **MUST** be the project name. *If uncertain about the appropriate project name, then **_Ask a PM_** on the HCA **#dcp-project-mgmt** slack channel*
 
       For governance RFCs:
         
-      - Add the "rfc-proposed" and the "Governance" labels. 
+      - Add the "rfc-community-review" and the "Governance" labels. 
 
   - Share a link to the RFC pull request for community review on the HumanCellAtlas **#dcp** slack channel
 
@@ -117,7 +117,7 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 #### Shepherd:
 - Monitor the community review and ensure that issues are addressed by the **Author(s)** in a reasonable time period.
 
-- When all issues are addressed and any required Science reviews are complete, summarize the review discussion for the **Approvers** in a top-level summary comment in the RFC pull request. Replace "rfc-proposed" with "rfc-final-review".
+- When all issues are addressed and any required Science reviews are complete, summarize the review discussion for the **Approvers** in a top-level summary comment in the RFC pull request. Replace "rfc-community-review" with "rfc-oversight-review".
 
 - For software RFCs, share a link to the RFC pull request for approval on the HumanCellAtlas **#tech-architecture** slack channel. Add the RFC as an agenda item to the next *DCP Architecture* meeting.
 
@@ -129,7 +129,7 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 
 #### Approvers:
 
-- At the *DCP PM* or *DCP Architecture* meeting, review the **Shepherd** summary. If there is rough consensus to approve the RFC, replace "rfc-final-review" with "rfc-approved"
+- At the *DCP PM* or *DCP Architecture* meeting, review the **Shepherd** summary. If there is rough consensus to approve the RFC, replace "rfc-oversight-review" with "rfc-approved"
 
 #### Author(s):
 - Rename the RFC from `0000-my-feature.md` to `rfc####-my-feature.md` (with leading zeros) where `####` is the next available RFC number
@@ -149,7 +149,7 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 
 #### Approvers:
 
-- At the *DCP PM* or *DCP Architecture* meeting, review the **Shepherd** summary. If there is rough consensus to reject the RFC, replace "rfc-final-review" with "rfc-declined", and close the pull request with the rationale in the comment.
+- At the *DCP PM* or *DCP Architecture* meeting, review the **Shepherd** summary. If there is rough consensus to reject the RFC, replace "rfc-oversight-review" with "rfc-declined", and close the pull request with the rationale in the comment.
 
 #### Shepherd:
 - Include the RFC rejection in *This week in DCP* status update
