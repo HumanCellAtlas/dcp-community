@@ -119,6 +119,8 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 
 - When all issues are addressed and any required Science reviews are complete, summarize the review discussion for the **Approvers** in a top-level summary comment in the RFC pull request. Replace "rfc-community-review" with "rfc-oversight-review".
 
+  **NOTE**: Oversight review is limited to **Approvers**. Further community reviews during this period may be disregarded by the **Author(s)**.
+
 - For software RFCs, share a link to the RFC pull request for approval on the HumanCellAtlas **#tech-architecture** slack channel. Add the RFC as an agenda item to the next *DCP Architecture* meeting.
 
 - For governance RFCs, share a link to the RFC pull request for approval on the HumanCellAtlas **#dcp-project-mgmt** slack channel. Add the RFC as an agenda item to the next *DCP PM* meeting.
