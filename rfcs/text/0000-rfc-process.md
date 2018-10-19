@@ -201,9 +201,11 @@ The message should demonstrate a clear rationale for the appeal, referencing com
 
 ### Unresolved questions
 
-*What aspects of the design do you expect to clarify further through the RFC review process?*
+*What aspects of the design do you expect to clarify later during iterative development of this RFC?*
 
-There is a [pending issue](https://github.com/HumanCellAtlas/dcp-community/issues/25) to define how DCP might document when an approved RFC is implemented.
+- [Adding Informational RFCs](https://github.com/HumanCellAtlas/dcp-community/issues/30)
+- [Tracking the implementation state of approved RFCs](https://github.com/HumanCellAtlas/dcp-community/issues/25)
+- [Improving community notifications for RFCs](https://github.com/HumanCellAtlas/dcp-community/issues/37)
 
 ### Drawbacks / Limitations
 
