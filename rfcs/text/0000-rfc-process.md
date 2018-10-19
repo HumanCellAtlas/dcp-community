@@ -190,8 +190,13 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 
 - At the *DCP PM* or *DCP Architecture* meeting, review the **Shepherd** summary. If there is rough consensus to reject the RFC, replace "rfc-oversight-review" with "rfc-declined", and close the pull request with the rationale in the comment.
 
-#### Author:
-- If an RFC is rejected by *DCP Architecture*, then the decision may be escalated for review by *DCP PM* by sending a request to the HumanCellAtlas **#dcp-project-mgmt** slack channel
+### Appealing RFC Decisions
+
+Any DCP community member may appeal an RFC decision (approval or rejection) by sending a message to the *DCP PM* mailing list (pm-team@data.humancellatlas.org).
+
+The message should demonstrate a clear rationale for the appeal, referencing community discussion as needed to support the position.
+
+*DCP PM* must review the appeal, resolve it in a manner of its own choosing, and respond to the original message on the *DCP PM* mailing list within two weeks.
 
 ### Unresolved questions
 
