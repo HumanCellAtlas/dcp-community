@@ -2,7 +2,7 @@
 
 
 ## Description
-The Data Portal is the landing site for the Human Cell Atlas (HCA) Data Coordination Platform (DCP). It is hosted at https://www.data.humancellatlas.org/ with an access link from the main HCA website at https://www.humancellatlas.org/. It provides users interested in the HCA with an easy and efficient way to explore and use data at cellular resolution.
+The Data Portal is the landing site for the Human Cell Atlas (HCA) Data Coordination Platform (DCP). It is hosted at https://data.humancellatlas.org/ with an access link from the main HCA website at https://www.humancellatlas.org/. It provides users interested in the HCA with an easy and efficient way to explore and use data at cellular resolution.
 
 ## Definitions
 *DCP* The Data Coordination Platform is the name given to the entire system used to ingest, validate, store, analyze, and make available the data in the Human Cell Atlas project.
