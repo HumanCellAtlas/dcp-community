@@ -185,7 +185,7 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 
   **EXAMPLE**
 
-  ***@channel**: DCP PM approved the RFC for the RFC Process - https://github.com/HumanCellAtlas/dcp-community/rfcs/blob/master/text/0001-rfc-process.md*
+  ***@channel**: DCP PM approved the RFC for the RFC Process - https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0001-rfc-process.md*
 
 ### Requesting substantive changes
 
