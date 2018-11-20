@@ -81,9 +81,12 @@ __2020:__ Continued addition of analysis pipelines
 [Rex Wang](mailto:chengche@broadinstitute.org)  
 [Saman Ehsan](mailto:sehsan@broadinstitute.org)  
 
-## Communication
+### Mailing List
 
 [Team email](mailto:pipelines-team@data.humancellatlas.org): pipelines-team@data.humancellatlas.org  
+
+### Slack Channels
+
 __HumanCellAtlas#mintteam:__ team discussions, a place to directly communicate to the team, who works on the service and the pipelines, as needed  
 __HumanCellAtlas#secondary-analysis:__ community-focused space for conversations around data processing pipelines that run in the DCP  
 
