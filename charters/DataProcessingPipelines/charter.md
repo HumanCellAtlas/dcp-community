@@ -49,16 +49,16 @@ __Transformative Analysis:__ The processing of data that changes data or creates
 
 ## Scientific "guardrails"
 
-* Initial versions of standardized pipelines are reviewed by the AWG.  
-* Changes to standardized pipelines that change the scientific output are reviewed by the AWG, engineering updates that do not change the scientific output are not reviewed by the AWG.  
-* Selection of standardized pipelines to work on are approved by the HCA DCP Governance Group (this does not apply to community pipelines, community pipelines are onboarded as a service to the scientific community). Prioritization of the work to develop selected pipelines is performed by the Data Processing Service team.  
+* Initial versions of standardized pipelines must be reviewed by the AWG.  
+* Updates to standardized pipelines that change the scientific output must be reviewed by the AWG. Engineering updates that do not change the scientific output do not require review by the AWG.  
+* Selection of standardized pipelines to develop must be approved by the HCA DCP Governance Group (Note, this does not apply to Community Pipelines which are onboarded as a service to the scientific community). The Data Processing Pipelines team is responsible for setting the development priorities for the selected pipelines.  
 
 ## Out of Scope
 
 * Educational training or user assistance on how to perform data analysis with outputs of pipelines  
 * Recommendations or demonstrations of downstream tool use beyond initial data loading  
-* Novel methodological development is not performed by the data processing team unless it is essential to the pipeline, it does not existent in community tools, and it represents minimal effort to implement  
-* Software engineering 3rd party tools  
+* Novel methodological development is not performed by the Data Processing Pipelines team unless it is essential to the pipeline, it is not available in community tools, and requires minimal effort to implement  
+* The Data Processing Piplines team preferences using 3rd party software from the community but will not maintain or perform long-term engineering for those tools.  
 
 ## Milestones and Deliverables
 
