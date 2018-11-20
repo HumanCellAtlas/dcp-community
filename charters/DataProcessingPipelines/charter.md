@@ -80,6 +80,8 @@ __2019:__ Adding at least three more data processing pipelines, including 10xv2 
 [Rex Wang](mailto:chengche@broadinstitute.org)  
 [Saman Ehsan](mailto:sehsan@broadinstitute.org)  
 
+## Communication
+
 ### Mailing List
 
 [Team email](mailto:pipelines-team@data.humancellatlas.org): pipelines-team@data.humancellatlas.org  
