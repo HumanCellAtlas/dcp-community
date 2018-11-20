@@ -64,7 +64,6 @@ __Transformative Analysis:__ The processing of data that changes data or creates
 
 __2018:__ Two data processing pipelines in production (Smart-seq2 and 10xv2 human data)  
 __2019:__ Adding at least three more data processing pipelines, including 10xv2 snRNA-seq and mouse pipelines for all current analysis pipelines Aim to have at least one _in situ_ transcriptomics pipeline in this year. Aim for one of these pipelines to be a community pipeline. Improved automated testing and benchmarking of analysis pipelines  
-__2020:__ Continued addition of analysis pipelines  
 
 ## Roles
 
