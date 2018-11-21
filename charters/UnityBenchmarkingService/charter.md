@@ -16,10 +16,10 @@ __Standardized Pipeline:__ An official pipeline of the HCA project.
 
 ## In-scope
 
-* Benchmarking for standardized HCA data processing pipelines will be automated and included in Unity
-* Data used to run pipelines during benchmarking will be standardized and enforced to promote comparable analysis runs
+* Benchmarking for standardized HCA data processing pipelines is automated and included in Unity
+* Data used to run pipelines during benchmarking is standardized and enforced to promote comparable analysis runs
 * Benchmarking data can change without notice but will be consistent in file format and file schema with previous data. If file format or schema do change (due to updates in the DCP or in standardized data processing pipelines) notice will be given to users
-* Leaderboards showing how pipelines that process the same assay differ in performance will be created as different pipelines for the same assay are collected
+* Leaderboards showing how pipelines that process the same assay differ in performance are created as different pipelines for the same assay are collected
 * Documentation for the requirements of pipelines to be benchmarked by the Unity Benchmarking Service
 * Documentation on benchmarking process and outputs
 
@@ -32,7 +32,7 @@ __Standardized Pipeline:__ An official pipeline of the HCA project.
 
 * Educational training or user assistance on how to create pipelines
 * Recommendations on how to improve pipelines based on benchmarking
-* Resources will be available in Unity to benchmark standardized HCA pipelines. These resources will be assay specific and can be reused by community pipelines processing similar data. Setting up resources in Unity specifically for community pipelines that will not be used for standardized HCA pipelines is outside the scope of the HCA Data Processing Pipelines Team.
+* Resources are available in Unity to benchmark standardized HCA pipelines. These resources are assay specific and can be reused by community pipelines processing similar data. Setting up resources in Unity specifically for community pipelines that are used for standardized HCA pipelines is outside the scope of the HCA Data Processing Pipelines Team.
 
 ## Milestones and Deliverables
 
