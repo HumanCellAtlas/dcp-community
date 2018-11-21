@@ -6,7 +6,7 @@ The Unity Benchmarking Service automates the process of running and benchmarking
 
 ## Objectives
 
-The Unity Benchmarking Service aims to automate benchmarking for data processing pipelines, enforce standards for consistent reporting for historic comparison and enable the those external to the DCP implementation team visibility and opportunity to demonstrate improvements to data processing pipelines using the same infrastructure as the HCA data processing pipelines team. The Unity Benchmarking Service will be used by those making data processing pipelines for the HCA data processing service and will be hosted in a public-facing manner; so anyone can benchmark their data processing pipelines against benchmarked pipelines in the DCP.
+The Unity Benchmarking Service automate benchmarking for data processing pipelines, enforce standards for consistent reporting for historic comparison and creates opportunity to demonstrate improvements to data processing pipelines using a common benchmarking infrastructure. The Unity Benchmarking Service is used by developers of data processing pipelines for the HCA data processing service and is hosted in a public-facing manner; so anyone can benchmark their data processing pipelines against benchmarked pipelines in the DCP.
 
 ## Definitions
 
@@ -36,7 +36,7 @@ __Standardized Pipeline:__ An official pipeline of the HCA project.
 
 ## Milestones and Deliverables
 
-__2018:__ Infrastructure operational and secure, HCA data processing pipelines team has initiated using system with a standardized HCA data processing pipeline.   
+__2018:__ Infrastructure operational and secure, HCA Data Processing Pipelines team has initiated using system with a standardized HCA data processing pipeline.   
 __2019:__ System updated to include all data processing pipelines operational as standardized HCA pipelines.   
 __2019:__ Leaderboards are created for standardized HCA pipelines.   
 
