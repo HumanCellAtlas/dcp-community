@@ -94,5 +94,5 @@ __HumanCellAtlas#secondary-analysis:__ community-focused space for conversations
 ## Github repositories
 
 [scTools](https://github.com/HumanCellAtlas/sctools): Tools for single cell data processing  
-[Skylab Analysis](https://github.com/HumanCellAtlas/skylab-analysis): Analysis and benchmarking reports for Skylab pipelines  
-[Skylab](https://github.com/HumanCellAtlas/skylab): HCA data processing pipeline  
+[Skylab Analysis](https://github.com/HumanCellAtlas/skylab-analysis): Analysis and benchmarking reports for standardized HCA pipelines  
+[Skylab](https://github.com/HumanCellAtlas/skylab): Standardized HCA data processing pipelines  
