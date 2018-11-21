@@ -31,7 +31,7 @@ __Standardized Pipeline:__ An official pipeline of the HCA project.
 
 * Educational training or user assistance on how to create pipelines
 * Recommendations on how to improve pipelines based on benchmarking
-* Resources are available in Unity to benchmark standardized HCA pipelines. These resources are assay specific and can be reused by community pipelines processing similar data. Setting up resources in Unity specifically for community pipelines that are used for standardized HCA pipelines is outside the scope of the HCA Data Processing Pipelines Team.
+* Pipelines that benchmark Community Pipelines are not required to be included in the Unity benchmarking service (but are allowed). If a Community Pipeline is related to an assay that is neither currently processed by a standardized HCA pipeline nor is being scoped by the Data Processing Pipelines team, then setting up the benchmark will require significant investments which are evaluated based on team priorities. Otherwise, community members may also benchmark Community Pipelines using data and file format standards in the system.
 
 ## Milestones and Deliverables
 
