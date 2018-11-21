@@ -4,7 +4,8 @@
 
 ## Description
 
-_Describe the vision of the project in **2-3** sentences. Consider this section as your "elevator pitch" to new community members._
+_Describe the vision of the project in **2-3** sentences. Consider this section as your "elevator pitch" to new community members. For software charters, indicate whether the project is specific to HCA DCP or has the potential for reuse by other communities: "The Data Store is designed to be reused in multiple projects, with HCA being the first user."_
+
 
 ## Definitions [Optional]
 
