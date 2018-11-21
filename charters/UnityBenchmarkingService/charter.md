@@ -18,14 +18,13 @@ __Standardized Pipeline:__ An official pipeline of the HCA project.
 
 * Benchmarking for standardized HCA data processing pipelines is automated and included in Unity
 * Data used to run pipelines during benchmarking is standardized and enforced to promote comparable analysis runs
-* Benchmarking data can change without notice but will be consistent in file format and file schema with previous data. If file format or schema do change (due to updates in the DCP or in standardized data processing pipelines) notice will be given to users
-* Leaderboards showing how pipelines that process the same assay differ in performance are created as different pipelines for the same assay are collected
+* When multiple pipelines processing the same assay are collected, leaderboards are created to compare performance
 * Documentation for the requirements of pipelines to be benchmarked by the Unity Benchmarking Service
 * Documentation on benchmarking process and outputs
 
 ### Scientific "guardrails"
 
-* Pipelines benchmarking standardized HCA data processing pipelines are reviewed by HCA scientific leadership (Analysis Working Group) and treated as standardized data processing pipelines. Changes to these specific benchmarking pipelines will directly affect how standardized HCA data processing pipelines are optimized and comment on what are better scientific results produced by the data processing pipeline they benchmark.
+* Pipelines benchmarking standardized HCA data processing pipelines must be reviewed by HCA scientific leadership (Analysis Working Group) and must be treated as standardized data processing pipelines. Changes to these specific benchmarking pipelines will directly affect how standardized HCA data processing pipelines are optimized and comment on what are better scientific results produced by the data processing pipeline they benchmark.
 * Metrics and their use in leaderboards must be reviewed by the HCA scientific leadership (Analysis Working Group).
 
 ## Out-of-scope
@@ -36,7 +35,7 @@ __Standardized Pipeline:__ An official pipeline of the HCA project.
 
 ## Milestones and Deliverables
 
-__2018:__ Infrastructure operational and secure, HCA Data Processing Pipelines team has initiated using system with a standardized HCA data processing pipeline.   
+__2018:__ Infrastructure operational and secure, HCA Data Processing Pipelines team has started using the system with a standardized HCA data processing pipeline.   
 __2019:__ System updated to include all data processing pipelines operational as standardized HCA pipelines.   
 __2019:__ Leaderboards are created for standardized HCA pipelines.   
 
