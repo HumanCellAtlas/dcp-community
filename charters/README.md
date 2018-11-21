@@ -4,6 +4,18 @@ Each HCA DCP project must have a charter that specifies its scope, responsibilit
 
 The charter process provides a simple and consistent path for new projects to be formed that align with the direction and priorities of the HCA DCP.
 
+### What are the roles in the Charter process?
+
+- **Authors** are DCP community members.
+
+- **Approvers** for charters with governance or process deliverables are the Project Leads and Product Owners from *DCP PM*.
+
+- **Approvers** for charters with software deliverables are the Technical Leads from *DCP Architecture*. 
+
+- **Reviewers** are DCP community members, including both software developers and users.
+
+- **Science Reviewer** is the *DCP Science PM* in coordination with *HCA Science Governance*.
+
 
 ## What the process is
   - Fork the HumanCellAtlas dcp-community repository
