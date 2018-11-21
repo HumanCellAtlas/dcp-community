@@ -105,19 +105,19 @@ The charter process provides a simple and consistent path for new projects to be
 
   ***@channel**: DCP Architecture approved the Data Store charter - https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/DataStore/charter.md*
 
-### Requesting substantive changes
+## Requesting substantive changes
 
-#### **Approvers**:
+### **Approvers**:
 
 - At the *DCP PM* or *DCP Architecture* meeting, review the summary comment. If substantial changes are requested, then replace "charter-oversight-review" with "charter-community-review".
 
-#### **Authors**:
+### **Authors**:
 
 - The **Author(s)** must address the changes before requesting a community review and returning the charter to the [community review](#reviewing-charters) process.
 
-### Rejecting Charters
+## Rejecting Charters
 
-#### Approvers:
+### **Approvers**:
 
 - At the *DCP PM* or *DCP Architecture* meeting, review the summary comment. If there is rough consensus to reject the charter, replace "charter-oversight-review" with "charter-rejected", and close the pull request with the rationale in the comment.
 
@@ -127,7 +127,7 @@ The charter process provides a simple and consistent path for new projects to be
 
   ***@channel**: DCP Architecture declined the Data Store charter - https://github.com/HumanCellAtlas/dcp-community/pull/8*
 
-### Appealing Charter Decisions
+## Appealing Charter Decisions
 
 Any DCP community member may appeal all charter decisions by **Approvers** (approval, changes requested, or rejection) by sending a message to the *DCP PM* mailing list (pm-team@data.humancellatlas.org).
 
