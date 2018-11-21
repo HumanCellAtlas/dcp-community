@@ -105,6 +105,10 @@ The charter process provides a simple and consistent path for new projects to be
 
   ***@channel**: DCP Architecture approved the Data Store charter - https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/DataStore/charter.md*
 
+- Ensure that the Project Lead and Product Owner for the charter are included in *DCP PM* team mailing list and are members of the HumanCellAtlas **#dcp-project-mgmt** slack channel
+
+- Ensure the Technical Lead for the charter is included in the *DCP Architecture* mailing list and is a member of the HumanCellAtlas **#tech-architecture** slack channel
+
 ## Requesting substantive changes
 
 ### **Approvers**:
