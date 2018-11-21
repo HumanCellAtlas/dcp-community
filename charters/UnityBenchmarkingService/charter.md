@@ -2,11 +2,17 @@
 
 ## Description
 
-The Unity benchmarking service automates the process of running and benchmarking data processing pipelines.
+The Unity Benchmarking Service automates the process of running and benchmarking data processing pipelines.
 
 ## Objectives
 
-The Unity benchmarking service aims to automate benchmarking for data processing pipelines, enforce standards for consistent reporting for historic comparison and enable the those external to the DCP implementation team visibility and opportunity to demonstrate improvements to data processing pipelines using the same infrastructure as the HCA data processing pipelines team. The Unity benchmarking service will be used by those making data processing pipelines for the HCA data processing service and will be hosted in a public-facing manner; so anyone can benchmark their data processing pipelines against benchmarked pipelines in the DCP.
+The Unity Benchmarking Service aims to automate benchmarking for data processing pipelines, enforce standards for consistent reporting for historic comparison and enable the those external to the DCP implementation team visibility and opportunity to demonstrate improvements to data processing pipelines using the same infrastructure as the HCA data processing pipelines team. The Unity Benchmarking Service will be used by those making data processing pipelines for the HCA data processing service and will be hosted in a public-facing manner; so anyone can benchmark their data processing pipelines against benchmarked pipelines in the DCP.
+
+## Definitions
+
+__Community pipeline:__ A pipeline that is not officially used as a standard in the HCA project, but runs in the DCP and is operated by the Data Processing Service to enable community members to work with a diversity of submitted data until they have a standardized pipeline. These pipelines are not as vetted as standardized pipelines.  
+__HCA Analysis Working Group (AWG):__ A group of domain specialists that advise on and monitor scientific choices made in the Human Cell Atlas Project.  
+__Standardized Pipeline:__ An official pipeline of the HCA project.  
 
 ## In-scope
 
@@ -20,13 +26,13 @@ The Unity benchmarking service aims to automate benchmarking for data processing
 ### Scientific "guardrails"
 
 * Pipelines benchmarking standardized HCA data processing pipelines are reviewed by HCA scientific leadership (Analysis Working Group) and treated as standardized data processing pipelines. Changes to these specific benchmarking pipelines will directly affect how standardized HCA data processing pipelines are optimized and comment on what are better scientific results produced by the data processing pipeline they benchmark.
-* Metrics and how metrics are used in the leaderboards are reviewed by the HCA scientific leadership (Analysis Working Group).
+* Metrics and their use in leaderboards must be reviewed by the HCA scientific leadership (Analysis Working Group).
 
 ## Out-of-scope
 
 * Educational training or user assistance on how to create pipelines
 * Recommendations on how to improve pipelines based on benchmarking
-* Pipelines benchmarking community data processing pipelines are not required to be included in the Unity benchmarking service (but are allowed). Community members may benchmark community pipelines using data and file format standards in the system. If community pipelines process assays not currently processed by standard HCA pipelines or assays not being scoped by the team, setting up the system will require a significant amount of work and will be evaluated given team bandwidth
+* Resources will be available in Unity to benchmark standardized HCA pipelines. These resources will be assay specific and can be reused by community pipelines processing similar data. Setting up resources in Unity specifically for community pipelines that will not be used for standardized HCA pipelines is outside the scope of the HCA Data Processing Pipelines Team.
 
 ## Milestones and Deliverables
 
