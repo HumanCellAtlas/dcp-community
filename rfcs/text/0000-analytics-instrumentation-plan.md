@@ -4,7 +4,7 @@
 
 ## Summary
 
-To support collection of the Human Cell Altas Data Coordination Platform (HCA DCP) user metrics desired by the DCP
+To support collection of the Human Cell Altas (HCA) Data Coordination Platform (DCP) user metrics desired by the DCP
 development team, the HCA DCP service must be instrumented with a user tracking solution. This document describes the
 goals for the tracking solution and a proposal for instrumenting HCA DCP service components.
 
@@ -31,8 +31,8 @@ evolve as a product. The following goals address this need.
 
 ### User Stories or Use Cases
 
-* As an HCA PM, I want to analyze quantitative metrics of user actions on DCP, to make informed decisions on product
-  direction.
+* As an [HCA program, product or project manager](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/PM/charter.md)
+  (PM), I want to analyze quantitative metrics of user actions on DCP, to make informed decisions on product direction.
 * As an HCA UX researcher, I want to analyze quantitative metrics of user actions on DCP, to draw insights on our users'
   needs and experiences using the DCP.
 
