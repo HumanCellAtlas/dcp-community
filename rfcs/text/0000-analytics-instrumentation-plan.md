@@ -16,6 +16,8 @@ goals for the tracking solution and a proposal for instrumenting HCA DCP service
 
 ## Shepherd
 
+[Trevor Heathorn](mailto:theathor@ucsc.edu)
+
 ## Motivation
 
 The development team needs quantitative data on application usage to drive informed decisions on how HCA DCP should
