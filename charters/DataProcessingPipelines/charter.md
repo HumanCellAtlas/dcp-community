@@ -11,6 +11,7 @@ The HCA Data Processing Pipelines team develops all pipelines required by the HC
 ## Definitions
 
 __Community pipeline:__ A pipeline that is not officially used as a standard in the HCA project, but runs in the DCP and is operated by the Data Processing Service to enable community members to work with a diversity of submitted data until they have a standardized pipeline. These pipelines are not as vetted as standardized pipelines.  
+__Data Processing Service:__ A service that executes data processing pipelines on DCP data in the Data Storage Service.
 __HCA Analysis Working Group (AWG):__ A group of domain specialists that advise on and monitor scientific choices made in the Human Cell Atlas Project.  
 __HCA DCP Governance Group:__ A working group of the Human Cell Atlas project that advises the DCP, assuring alignment of DCP development efforts with the scientific project it supports.  
 __Onboarding:__ The process of taking an existing pipeline and engineering it to work in the HCA DCP.  
@@ -25,7 +26,7 @@ __Transformative Analysis:__ The processing of data that changes data or creates
 * Scoping or review of scoping for new pipelines  
 * Suggesting, but not selection of, new standardized pipelines for the HCA DCP  
 * Creating all standardized HCA pipelines and documenting them  
-* Reviewing, on-boarding, and potentially creating community pipelines  
+* Reviewing, onboarding, and potentially creating community pipelines  
 * Reviewing community tools for use in data processing pipelines  
 * Working with the community to provide feedback on metadata standards for raw data in the HCA DCP to provide the required information to enable processing of the raw data  
 * Evaluating and adopting file formats and associated standards for outputs of pipelines, ensuring the data is accessible with standard tools and interoperable with downstream processes  
@@ -63,7 +64,7 @@ __Transformative Analysis:__ The processing of data that changes data or creates
 ## Milestones and Deliverables
 
 __2018:__ Two data processing pipelines in production (Smart-seq2 and 10xv2 human data)  
-__2019:__ Adding at least three more data processing pipelines, including 10xv2 snRNA-seq and mouse pipelines for all current analysis pipelines Aim to have at least one _in situ_ transcriptomics pipeline in this year. Aim for one of these pipelines to be a community pipeline. Improved automated testing and benchmarking of analysis pipelines  
+__2019:__ Add at least three more data processing pipelines, including 10xv2 snRNA-seq and mouse pipelines for all current analysis pipelines. Support at least one in situ transcriptomics pipeline and at least one community pipeline. Improved automated testing and benchmarking of analysis pipelines  
 
 ## Roles
 
@@ -83,13 +84,11 @@ __2019:__ Adding at least three more data processing pipelines, including 10xv2 
 ## Communication
 
 ### Mailing List
-
-[Team email](mailto:pipelines-team@data.humancellatlas.org): pipelines-team@data.humancellatlas.org  
+Team email: pipelines-team@data.humancellatlas.org
 
 ### Slack Channels
-
-__HumanCellAtlas#mintteam:__ team discussions, a place to directly communicate to the team, who works on the service and the pipelines, as needed  
-__HumanCellAtlas#secondary-analysis:__ community-focused space for conversations around data processing pipelines that run in the DCP  
+ * [HumanCellAtlas/mintteam](https://humancellatlas.slack.com/messages/mintteam): team discussions, a place to directly communicate to the team, who works on the service and the pipelines, as needed.
+ * [HumanCellAtlas/secondary-analysis](https://humancellatlas.slack.com/messages/secondary-analysis): community-focused space for conversations around data processing pipelines that run in the DCP 
 
 ## Github repositories
 
