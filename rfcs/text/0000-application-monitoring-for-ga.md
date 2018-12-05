@@ -106,6 +106,20 @@ System status and availability monitoring is provided by a [Status API](https://
 
 ### Alternatives
 
-* Have no centralized monitoring tooling; leave it up to teams as to how they want to monitor their applications.
+* Have no centralized monitoring tooling and leave it up to individual teams as to how they want to monitor their applications.
+  * Pros
+    * No centralized decisionmaking
+    * Less communication overhead
+    * More choice in what monitoring tools are used
+  * Cons
+    * Teams will likely waste effort building similar tooling for monitoring or not monitor in the first place.
+    * Teams will not easily be able to view metrics from linked systems in one go. They will likely have to jump from cloud account to cloud account to debug issues. This can lead to increased downtime in debugging system failures.
+    * Cetralized alerting systems and shared oncall schedules would be very difficult to organize.
 * Due to the heterogeneity of data sources in DCP, there is a strong argument to use metric exporters to export all metric data to a single metrics server. There would then be true, global metric aggregation and a single metric query language.
+  * Pros
+    * Teams would only have to learn one metrics database query language
+    * Better standardization of metric types
+  * Cons
+    * The metrics system would be more complex.
+    * Adding a layer between developers and the native cloud metrics system could introduce room for more failures and interpolation issues.
 
