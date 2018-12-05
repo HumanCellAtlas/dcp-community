@@ -22,13 +22,13 @@ Monitoring the distributed systems [enables operators](https://landing.google.co
 ### User Stories
 
 * As a DCP operator, I want to compare experiments against a baseline, so that I can compare design alternatives.
-* As a DCP operator, I want to conduct retropsective analysis on systems, so that I can debug systems.
+* As a DCP operator, I want to conduct retrospective analysis on systems, so that I can debug systems.
 * As a DCP operator, I want to analyze long-term trends in system performance, so that I can estimate changes in cost and performance.
 * As a DCP operator, I want to be alerted of system failure, so that I know when something goes wrong and can keep the system available for our users.
 
 ## Detailed Design
 
-In summary, each user-critical system in DCP should have the following.
+In summary, each system critical to user-facing features in DCP should have the following.
 
 * Black-box availability monitoring using a health check
 * White-box monitoring of core system infrastructure
@@ -47,16 +47,16 @@ Currently, the following tooling is in place to help DCP operators monitor their
 | Visualization layer that can plot metrics from any datasource | Grafana | [dev/integration/staging](https://metrics.dev.data.humancellatlas.org/), [prod](https://metrics.data.humancellatlas.org/) | adopt as best practice |
 | Metrics for AWS applications and managed services | [CloudWatch Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Metric) | [console](https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#metricsV2:) | adopt as best practice for AWS |
 | Metrics for GCP applications and managed services | [Stackdriver Metrics](https://cloud.google.com/monitoring/api/metrics) | [console](https://console.cloud.google.com/monitoring) | adopt as best practice for GCP |
-| Alerting based on CloudWatch Metrics | [CloudWatch Alarm](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#CloudWatchAlarms) | [github+terraform](https://github.com/HumanCellAtlas/dcp-monitoring) | adopt as best practice |
+| Alerting based on CloudWatch Metrics | [CloudWatch Alarms](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#CloudWatchAlarms) | [github+terraform](https://github.com/HumanCellAtlas/dcp-monitoring) | adopt as best practice |
 | Metrics based on operational log indices | [Elasticsearch Metrics](http://docs.grafana.org/features/datasources/elasticsearch/) | [dev/integration/staging](https://logs.dev.data.humancellatlas.org/), [prod](https://logs.data.humancellatlas.org/) | use not recommended, but sometimes necessary |
 | Build statuses, system health, and availability reporting | [Status API](https://github.com/HumanCellAtlas/status-api) | [dev/integration/staging](https://status.dev.data.humancellatlas.org/), [prod](https://status.data.humancellatlas.org/) | use optional |
-| Public presentation of build statuses, system health, and availability reporting | [DCP Status Page](https://github.com/HumanCellAtlas/humancellatlas.github.io) | [https://humancellatlas.github.io/](https://humancellatlas.github.io/) | temporary until formal status page is built
+| Public presentation of build statuses, system health, and availability reporting | [DCP Status Page](https://github.com/HumanCellAtlas/humancellatlas.github.io) | [https://humancellatlas.github.io/](https://humancellatlas.github.io/) | temporary until formal status page is built |
 
 ### Black-box monitoring
 
 Black-box monitoring attempts to test system behavior as a user would see it.
 
-To estimate and check this behavior, implement an HTTP health check endpoint for your service, a [Route53 health check](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-health-check) in the [dcp-monitoring](https://github.com/HumanCellAtlas/dcp-monitoring) repository.
+To estimate and check this behavior, implement an HTTP health check endpoint for your service and configure a [Route53 health check](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-health-check) in the [dcp-monitoring](https://github.com/HumanCellAtlas/dcp-monitoring) repository.
 
 Your system's health check should aggregate the health status of its API and any infrastructure it depends on. For example, if your service is a HTTP REST API that holds state in a database, the health check endpoint would return a healthy status if the API was working and a basic query, such as `SELECT 1`, could be performed against the database and an unhealthy status otherwise.
 
