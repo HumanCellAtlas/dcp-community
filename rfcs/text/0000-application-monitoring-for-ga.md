@@ -49,7 +49,7 @@ Currently, the following tooling is in place to help DCP operators monitor their
 | Metrics for GCP applications and managed services | [Stackdriver Metrics](https://cloud.google.com/monitoring/api/metrics) | [console](https://console.cloud.google.com/monitoring) | adopt as best practice for GCP |
 | Alerting based on CloudWatch Metrics | [CloudWatch Alarms](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#CloudWatchAlarms) | [github+terraform](https://github.com/HumanCellAtlas/dcp-monitoring) | adopt as best practice |
 | Metrics based on operational log indices | [Elasticsearch Metrics](http://docs.grafana.org/features/datasources/elasticsearch/) | [dev/integration/staging](https://logs.dev.data.humancellatlas.org/), [prod](https://logs.data.humancellatlas.org/) | use not recommended, but sometimes necessary |
-| Build statuses, system health, and availability reporting | [Status API](https://github.com/HumanCellAtlas/status-api) | [dev/integration/staging](https://status.dev.data.humancellatlas.org/), [prod](https://status.data.humancellatlas.org/) | use optional |
+| Build statuses, system health, and availability reporting | [Status API](https://github.com/HumanCellAtlas/status-api) | [dev/integration/staging](https://status.dev.data.humancellatlas.org/), [prod](https://status.data.humancellatlas.org/) | adopt as best practice |
 | Public presentation of build statuses, system health, and availability reporting | [DCP Status Page](https://github.com/HumanCellAtlas/humancellatlas.github.io) | [https://humancellatlas.github.io/](https://humancellatlas.github.io/) | temporary until formal status page is built |
 
 ### Black-box monitoring
