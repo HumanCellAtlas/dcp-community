@@ -6,7 +6,7 @@ The Unity Benchmarking Service automates and standardizes the process of running
 
 ## Objectives
 
-The Unity Benchmarking Service automates benchmarking for data processing pipelines, enforces standards for consistent reporting for historic comparison and creates opportunity to demonstrate improvements to data processing pipelines using a common benchmarking infrastructure. The Unity Benchmarking Service is used by developers of data processing pipelines for the Human Cell Atlas (HCA) data processing service and is hosted in a public-facing manner; so anyone can benchmark their [data processing pipelines](https://github.com/HumanCellAtlas/dcp-community/tree/master/charters/DataProcessingPipelines/charter.md) against benchmarked pipelines in the Data Coordination Platform (DCP).
+The Unity Benchmarking Service automates benchmarking for data processing pipelines, enforces standards for consistent reporting for historic comparison and creates opportunity to demonstrate improvements to data processing pipelines using a common benchmarking infrastructure. The Unity Benchmarking Service is used by developers of data processing pipelines for the Human Cell Atlas (HCA) data processing service and is publicly hosted; so anyone can benchmark their [data processing pipelines](https://github.com/HumanCellAtlas/dcp-community/tree/master/charters/DataProcessingPipelines/charter.md) against benchmarked pipelines in the Data Coordination Platform (DCP).
 
 ## Definitions
 
