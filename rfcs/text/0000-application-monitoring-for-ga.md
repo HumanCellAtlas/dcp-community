@@ -41,16 +41,21 @@ The following subsections recommend concrete implementations of each requirement
 
 Currently, the following tooling is in place to help DCP operators monitor their systems. Further, it indicates whether use of the tool should be adopted as a best practice within DCP as part of this proposal.
 
-| Purpose | Tool/framework | Deployments | Roadmap |
-|------|---------|-------------|--------------|
-| Centralized configuration for health checks, custom metrics, alerts, and dashboards | [dcp-monitoring](https://github.com/HumanCellAtlas/dcp-monitoring) | [github+terraform](https://github.com/HumanCellAtlas/dcp-monitoring) | adopt as best practice |
-| Visualization layer that can plot metrics from any datasource | Grafana | [dev/integration/staging](https://metrics.dev.data.humancellatlas.org/), [prod](https://metrics.data.humancellatlas.org/) | adopt as best practice |
-| Metrics for AWS applications and managed services | [CloudWatch Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Metric) | [console](https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#metricsV2:) | adopt as best practice for AWS |
-| Metrics for GCP applications and managed services | [Stackdriver Metrics](https://cloud.google.com/monitoring/api/metrics) | [console](https://console.cloud.google.com/monitoring) | adopt as best practice for GCP |
-| Alerting based on CloudWatch Metrics | [CloudWatch Alarms](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#CloudWatchAlarms) | [github+terraform](https://github.com/HumanCellAtlas/dcp-monitoring) | adopt as best practice |
-| Metrics based on operational log indices | [Elasticsearch Metrics](http://docs.grafana.org/features/datasources/elasticsearch/) | [dev/integration/staging](https://logs.dev.data.humancellatlas.org/), [prod](https://logs.data.humancellatlas.org/) | use not recommended, but sometimes necessary |
-| Build statuses, system health, and availability reporting | [Status API](https://github.com/HumanCellAtlas/status-api) | [dev/integration/staging](https://status.dev.data.humancellatlas.org/), [prod](https://status.data.humancellatlas.org/) | adopt as best practice |
-| Public presentation of build statuses, system health, and availability reporting | [DCP Status Page](https://github.com/HumanCellAtlas/humancellatlas.github.io) | [https://humancellatlas.github.io/](https://humancellatlas.github.io/) | temporary until formal status page is built |
+| Purpose | Category |  Tool/framework | Deployments | Roadmap |
+|------|-------------|-------------|--------------|------------|
+| Centralized log ingestion | white-box | [humancellatlas/logs](https://github.com/HumanCellAtlas/logs) | [dev/integration/staging](https://allspark.dev.data.humancellatlas.org/HumanCellAtlas/logs/pipelines), [prod](https://allspark-prod.data.humancellatlas.org/HumanCellAtlas/logs) | adopt as best practice |
+| Centralized log storage | white-box | [CloudWatch Logs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html) | [console](https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#logs:) | adopt as best practice |
+| Centralized log indexing and search | white-box | [humancellatlas/logs](https://github.com/HumanCellAtlas/logs) (Elasticsearch + Kibana) | [dev/integration/staging](https://logs.dev.data.humancellatlas.org), [prod](https://logs.data.humancellatlas.org) | deprecate soon, use [CloudWatch Logs Insights](https://aws.amazon.com/blogs/aws/new-amazon-cloudwatch-logs-insights-fast-interactive-log-analytics/) instead |
+| Centralized log indexing and search | white-box | [CloudWatch Logs Insights](https://aws.amazon.com/blogs/aws/new-amazon-cloudwatch-logs-insights-fast-interactive-log-analytics/) | [console](https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#logs-insights:) | trial period |
+| Centralized configuration for health checks, custom metrics, alerts, and dashboards | white+black-box | [dcp-monitoring](https://github.com/HumanCellAtlas/dcp-monitoring) | [github+terraform](https://github.com/HumanCellAtlas/dcp-monitoring) | adopt as best practice |
+| Metrics for AWS applications and managed services | white+black-box | [CloudWatch Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Metric) | [console](https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#metricsV2:) | adopt as best practice for AWS |
+| Metrics for GCP applications and managed services | white+black-box | [Stackdriver Metrics](https://cloud.google.com/monitoring/api/metrics) | [console](https://console.cloud.google.com/monitoring) | adopt as best practice for GCP |
+| Metrics based on operational log indices | white+black-box | [Elasticsearch Metrics](http://docs.grafana.org/features/datasources/elasticsearch/) | [dev/integration/staging](https://logs.dev.data.humancellatlas.org/), [prod](https://logs.data.humancellatlas.org/) | use not recommended, but sometimes necessary |
+| Visualization layer that can plot metrics from any datasource | dashboard | [Grafana](https://grafana.com/) | [dev/integration/staging](https://metrics.dev.data.humancellatlas.org/), [prod](https://metrics.data.humancellatlas.org/) | adopt as best practice |
+| Alerting based on CloudWatch Metrics | alerts | [CloudWatch Alarms](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#CloudWatchAlarms) | [github+terraform](https://github.com/HumanCellAtlas/dcp-monitoring) | adopt as best practice |
+| Alert visibility in slack | alerts | [humancellatlas/logs](https://github.com/HumanCellAtlas/logs/tree/master/apps/cwl_to_slack) (slack notifier) | [dev/integration/staging](https://allspark.dev.data.humancellatlas.org/HumanCellAtlas/logs/pipelines), [prod](https://allspark-prod.data.humancellatlas.org/HumanCellAtlas/logs) | adopt as best practice |
+| Build statuses, system health, and availability reporting | black-box | [Status API](https://github.com/HumanCellAtlas/status-api) | [dev/integration/staging](https://status.dev.data.humancellatlas.org/), [prod](https://status.data.humancellatlas.org/) | adopt as best practice |
+| Public presentation of build statuses, system health, and availability reporting | black-box | [DCP Status Page](https://github.com/HumanCellAtlas/humancellatlas.github.io) | [https://humancellatlas.github.io/](https://humancellatlas.github.io/) | temporary until formal status page is built |
 
 ### Black-box monitoring
 
@@ -62,11 +67,11 @@ Your system's health check should aggregate the health status of its API and any
 
 ### White-box monitoring
 
-In order to diagnose problems, critical application logic and infrastructure that each system depends on must be monitored. To illustrate, consider an API that depends on AWS S3 and Elasticsearch. If the API goes down and its logs are not informative, there is no way of telling what infrastructure component failed unless there is separate monitoring of each component.
+In order to diagnose problems, critical application logic and infrastructure that each system depends on must be monitored and logged. To illustrate, consider an API that depends on AWS S3 and Elasticsearch. If the API goes down, there is no way of telling what infrastructure component failed unless there is separate monitoring and logging of each.
 
- Use [CloudWatch Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Metric), [Stackdriver Metrics](https://cloud.google.com/monitoring/api/metrics), or log-based metrics ([AWS](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogsConcepts.html), [GCP](https://cloud.google.com/logging/docs/logs-based-metrics/), [Elasticsearch](http://docs.grafana.org/features/datasources/elasticsearch/)) to white-box monitor your critical application logic and infrastructure. 
+ Use operational logs to `stdout`, [CloudWatch Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Metric), [Stackdriver Metrics](https://cloud.google.com/monitoring/api/metrics), or log-based metrics ([AWS](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogsConcepts.html), [GCP](https://cloud.google.com/logging/docs/logs-based-metrics/), [Elasticsearch](http://docs.grafana.org/features/datasources/elasticsearch/)) to white-box monitor your critical application logic and infrastructure. 
  
- If you do not know what to monitor in your application, review the [four golden signals](https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/#xref_monitoring_golden-signals). Many of these metrics are provided out-of-the-box by AWS and GCP managed services.
+ If you do not know what metrics to monitor for your application, review the [four golden signals](https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/#xref_monitoring_golden-signals). Many of these metrics are provided out-of-the-box by AWS and GCP managed services.
  
  Your monitoring coverage should be as "[simple as possible, no simpler](https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/#as-simple-as-possible-no-simpler-lqskHx)" to diagnose common failure modes of your system. Some common examples are included below.
  
@@ -98,6 +103,18 @@ System status and availability monitoring is provided by a [Status API](https://
 ### Leadership
 
 The future DevSecOps group at the Broad Institute will lead program management for the monitoring effort.
+
+
+### Example implementation
+
+The DCP's Data Storage Service (DSS) is well-monitored. It has:
+
+* Operational logs that are [propagated to CloudWatch Logs](https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#logs:prefix=/aws/lambda/dss)
+* A [health API endpoint](https://github.com/HumanCellAtlas/data-store/blob/fd45e57953a4b6ad7075aec9397756f41db6192f/chalice/app.py#L225-L230) that enables reports the health of the service
+* Black-box monitoring via a health check [configured in dcp-monitoring](https://github.com/HumanCellAtlas/dcp-monitoring/blob/467830de4fd4a54b44d84b5b7a03cff7c1b761e8/terraform/modules/env-alerts/dss.tf#L1-L26)
+* [An alert](https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#alarm:alarmFilter=ANY;name=dss-dev) on that black-box health check [configured in dcp-monitoring](https://github.com/HumanCellAtlas/dcp-monitoring/blob/32fd359d0ea671205a5a973f537267bad65cca30/terraform/modules/env-alerts/dss.tf#L1-L25)
+* Alerts on critical white-box components [configured in dcp-monitoring](https://github.com/HumanCellAtlas/dcp-monitoring/blob/467830de4fd4a54b44d84b5b7a03cff7c1b761e8/terraform/modules/env-alerts/dss.tf#L28-L82): Elasticsearch [JVM memory pressure](https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#alarm:alarmFilter=ANY;name=dss-es-jvm-memory-pressure-dev) and [shard free storage space](https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#alarm:alarmFilter=ANY;name=dss-es-storage-space-dev)
+* A dashboard with white and black box metrics that is [templated in dcp-monitoring](https://github.com/HumanCellAtlas/dcp-monitoring/blob/467830de4fd4a54b44d84b5b7a03cff7c1b761e8/terraform/modules/env-dashboards/dss-dashboard.tf) and redeployed for the [`dev`](https://metrics.dev.data.humancellatlas.org/d/dss-dev/dss-dev?refresh=1m&orgId=1), [`integration`](https://metrics.dev.data.humancellatlas.org/d/dss-integration/dss-integration?refresh=1m&orgId=1), [`staging`](https://metrics.dev.data.humancellatlas.org/d/dss-staging/dss-staging?refresh=1m&orgId=1), and [`prod`](https://metrics.data.humancellatlas.org/d/dss-prod/dss-prod?refresh=1m&orgId=1) deployment environments
 
 ### Unresolved Questions
 
