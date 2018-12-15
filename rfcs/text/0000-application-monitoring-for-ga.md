@@ -95,6 +95,10 @@ Create and host dashboards for your service using our [Grafana deployments](http
 
 System status and availability monitoring is provided by a [Status API](https://github.com/HumanCellAtlas/status-api), which then can be summarized on a [status page](https://humancellatlas.github.io/).
 
+### Leadership
+
+The future DevSecOps group at the Broad Institute will lead program management for the monitoring effort.
+
 ### Unresolved Questions
 
 * The specific lists of white-box infrastructure to be monitored for each component
