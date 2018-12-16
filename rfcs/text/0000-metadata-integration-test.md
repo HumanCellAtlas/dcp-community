@@ -48,6 +48,7 @@ Data with the new schema version should not be uploaded into the `integration` o
 
 * May introduce another deployment stage
 * Treats metadata schema integration differently from other DCP projects
+* Requires test data to that use the new schema features
 
 ## Alternative design
 
@@ -73,6 +74,26 @@ Data with the new schema version should not be uploaded into the `integration` o
 
 * May be difficult to revert test versions of components and metadata (not all infra deployments are easily reversible)
 * Requires "serializing" the dcp-wide integration test so that one PR can run after another
+* Requires test data to that use the new schema features
+
+### Version filtering
+
+Version numbering of individual schemas can be used as an isolation mechanism to prevent software from failing on incompatible schema changes. Upstream portions of the DCP pipeline can accept data with downstream software ignoring it until it is ready and passing tests.
+
+Software only accesses compatible schemas based major versions.  A list of relevant schema and major version is maintained based on the last set that has been verified by testing. A subset of functionality can be enabled by adding dynamic version checking.  For instance, a data browser can display a limited subset of information for incompatible schemas.
+
+This approach is a fast-path that complements the above designed for simple, incompatible changes.
+
+
+#### Pros:
+* Easy to implement, especially for metadata developers.
+* Good fit for the serial nature of the pipeline.
+* Works very will for simple changes that can be done quickly
+
+#### Cons:
+* Require serial integration of metadata changes in version number order, requiring quick response to incompatibilities.
+* Complex, time consuming changes could stall unrelated metadata updates from being published.
+
 
 ### Unresolved questions
 
