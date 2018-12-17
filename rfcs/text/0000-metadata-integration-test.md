@@ -48,8 +48,9 @@ Data with the new schema version should not be uploaded into the `integration` o
 
 * May introduce another deployment stage
 * Treats metadata schema integration differently from other DCP projects
+* Requires test data to that use the new schema features
 
-## Alternative design
+## Automatic merge alternative
 
 Software development proceeds in the dev branch of each component independently. Changes are merged into integration branch of each component only through PRs which cause system-wide integration tests to run. PRs are merged automatically if tests pass (but can be reverted if downstream breakage occurs). PRs must not be merged if tests do not pass.
 
@@ -73,6 +74,28 @@ Data with the new schema version should not be uploaded into the `integration` o
 
 * May be difficult to revert test versions of components and metadata (not all infra deployments are easily reversible)
 * Requires "serializing" the dcp-wide integration test so that one PR can run after another
+* Requires test data to that use the new schema features
+
+### Version filtering alternative
+
+Version numbering of individual schemas can be used as an isolation mechanism to prevent software from failing on incompatible schema changes. Upstream portions of the DCP pipeline can accept data with downstream software ignoring it until it is ready and passing tests.  It remains queued until supported. Once support for all metadata versions in the submission is integrated, it will be automatically processed.
+
+Software only accesses compatible schemas based major versions.  A list of relevant schema and major version is maintained based on the last set that has been verified by testing. A subset of functionality can be enabled by adding dynamic version checking.  For instance, a data browser can display a limited subset of information for incompatible schemas.
+
+Testing is done independently on each component.  Once the components test pass with the updated metadata, it's version list is automatically updated and queued submissions are processed.
+
+This approach is a fast-path that complements the above designed for simple, incompatible changes.
+
+
+#### Pros:
+* Easy to implement, especially for metadata developers.
+* Good fit for the serial nature of the pipeline.
+* Works very will for simple changes that can be done quickly
+
+#### Cons:
+* Require serial integration of metadata changes in version number order, requiring quick response to incompatibilities.
+* Complex, time consuming changes could stall unrelated metadata updates from being published.
+
 
 ### Unresolved questions
 
