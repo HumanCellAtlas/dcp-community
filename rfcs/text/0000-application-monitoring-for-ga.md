@@ -17,7 +17,7 @@ The term monitoring is used here as defined in the [Google Site Reliability Engi
 
 ## Motivation
 
-Monitoring the distributed systems [enables operators](https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/#why-monitor-pWsBTZ) to analyze long-term trends in system performance, compare experiments against a baseline, alert on failures, and conduct retrospective analysis on systems (debugging). These abilities are critical to keeping software correct and available.
+Monitoring distributed systems [enables operators](https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/#why-monitor-pWsBTZ) to analyze long-term trends in system performance, compare experiments against a baseline, alert on failures, and conduct retrospective analysis on systems (debugging). These abilities are critical to keeping software correct and available.
 
 ### User Stories
 
