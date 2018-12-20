@@ -14,6 +14,7 @@ The term monitoring is used here as defined in the [Google Site Reliability Engi
 
 ## Shepherd
 
+[Jodi Hirschman](mailto:jhirsch@broadinstitute.org)
 
 ## Motivation
 
