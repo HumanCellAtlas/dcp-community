@@ -8,9 +8,9 @@ This RFC describes the first standard revision for monitoring the distributed sy
 
 The term monitoring is used here as defined in the [Google Site Reliability Engineering (SRE)](https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/) program. This document borrows heavily from SRE.
 
-## Author(s)
+## Author
 
-* [Matthew Weiden](mailto:mweiden@chanzuckerberg.com)
+[Matthew Weiden](mailto:mweiden@chanzuckerberg.com)
 
 ## Shepherd
 
