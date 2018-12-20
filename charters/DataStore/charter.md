@@ -69,8 +69,9 @@ The objective of the Data Store group is to deliver a versioned immutable object
 
 ## Communication
 ### Slack Channels
-* HumanCellAtlas/data-store: Discuss design specs and prototypes for the replicated data store
-* HumanCellAtlas/data-store-eng: Discussions regarding ongoing data store development efforts
+* [HumanCellAtlas/data-store](https://humancellatlas.slack.com/messages/data-store): Discuss design specs and prototypes for the replicated data store
+* [HumanCellAtlas/data-store-eng](https://humancellatlas.slack.com/messages/data-store-eng): Discussions regarding ongoing data store development efforts
+
 
 ### Mailing List
 Team email: dss-team@data.humancellatlas.org
