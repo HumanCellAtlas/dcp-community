@@ -8,6 +8,8 @@ This RFC describes the first standard revision for monitoring the distributed sy
 
 The term monitoring is used here as defined in the [Google Site Reliability Engineering (SRE)](https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/) program. This document borrows heavily from SRE.
 
+Key words to indicate requirement levels in this document follow [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
+
 ## Author
 
 [Matthew Weiden](mailto:mweiden@chanzuckerberg.com)
@@ -18,9 +20,11 @@ The term monitoring is used here as defined in the [Google Site Reliability Engi
 
 ## Motivation
 
-Monitoring distributed systems [enables operators](https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/#why-monitor-pWsBTZ) to analyze long-term trends in system performance, compare experiments against a baseline, alert on failures, and conduct retrospective analysis on systems (debugging). These abilities are critical to keeping software correct and available.
+Monitoring distributed systems [enables operators](https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/#why-monitor-pWsBTZ) to analyze long-term trends in system performance, compare experiments (configuration, code, or usage changes) against a baseline, alert on failures, and conduct retrospective analysis on systems (debugging). These abilities are critical to keeping software correct and available.
 
 ### User Stories
+
+The following user stories are written from the perspective of "DCP operators." DCP operators are people who develop DCP applications and operate deployments of those applications for the HCA.
 
 * As a DCP operator, I want to compare experiments against a baseline, so that I can compare design alternatives.
 * As a DCP operator, I want to conduct retrospective analysis on systems, so that I can debug systems.
@@ -29,7 +33,7 @@ Monitoring distributed systems [enables operators](https://landing.google.com/sr
 
 ## Detailed Design
 
-In summary, each system critical to user-facing features in DCP should have the following.
+In summary, each system critical to user-facing data submission and consumption features in DCP should have the following.
 
 * Black-box availability monitoring using a health check
 * White-box monitoring of core system infrastructure
@@ -62,6 +66,8 @@ Currently, the following tooling is in place to help DCP operators monitor their
 
 Black-box monitoring attempts to test system behavior as a user would see it.
 
+All teams must have black-box monitoring.
+
 To estimate and check this behavior, implement an HTTP health check endpoint for your service and configure a [Route53 health check](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-health-check) in the [dcp-monitoring](https://github.com/HumanCellAtlas/dcp-monitoring) repository.
 
 Your system's health check should aggregate the health status of its API and any infrastructure it depends on. For example, if your service is a HTTP REST API that holds state in a database, the health check endpoint would return a healthy status if the API was working and a basic query, such as `SELECT 1`, could be performed against the database and an unhealthy status otherwise.
@@ -69,6 +75,8 @@ Your system's health check should aggregate the health status of its API and any
 ### White-box monitoring
 
 In order to diagnose problems, critical application logic and infrastructure that each system depends on must be monitored and logged. To illustrate, consider an API that depends on AWS S3 and Elasticsearch. If the API goes down, there is no way of telling what infrastructure component failed unless there is separate monitoring and logging of each.
+
+While all teams should have white-box monitoring, it is left up to each team's discretion on how best to do this for their applications.
 
  Use operational logs to `stdout`, [CloudWatch Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Metric), [Stackdriver Metrics](https://cloud.google.com/monitoring/api/metrics), or log-based metrics ([AWS](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogsConcepts.html), [GCP](https://cloud.google.com/logging/docs/logs-based-metrics/), [Elasticsearch](http://docs.grafana.org/features/datasources/elasticsearch/)) to white-box monitor your critical application logic and infrastructure. 
  
