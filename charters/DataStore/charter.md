@@ -69,16 +69,18 @@ The objective of the Data Store group is to deliver a versioned immutable object
 
 ## Communication
 ### Slack Channels
-* HumanCellAtlas/data-store: general data store discussions
-* HumanCellAtlas/data-store-eng: development discussions
+* [HumanCellAtlas/data-store](https://humancellatlas.slack.com/messages/data-store): Discuss design specs and prototypes for the replicated data store
+* [HumanCellAtlas/data-store-eng](https://humancellatlas.slack.com/messages/data-store-eng): Discussions regarding ongoing data store development efforts
+
 
 ### Mailing List
 Team email: dss-team@data.humancellatlas.org
 
 ## Github repositories
-* https://github.com/HumanCellAtlas/data-store
-* https://github.com/HumanCellAtlas/dcp-cli
-* https://github.com/HumanCellAtlas/metadata-api
-* https://github.com/chanzuckerberg/cloud-blobstore
-* https://github.com/HumanCellAtlas/checksumming_io
+* https://github.com/HumanCellAtlas/data-store: main code repository for the data store
+* https://github.com/HumanCellAtlas/dcp-cli: Data Coordination Platform Command Line Interface
+* https://github.com/HumanCellAtlas/metadata-api: Library abstraction layer for the JSON metadata in HCA data bundles
+* https://github.com/chanzuckerberg/cloud-blobstore: Simple API that abstracts out differences between the blobstores across different cloud providers
+* https://github.com/HumanCellAtlas/checksumming_io: Library that provides basic read and write checksum utilities
+* https://github.com/HumanCellAtlas/kharon: AWS infrastructure definitions and procedures to carry out data deletions in the Data Storage System
 
