@@ -1,10 +1,10 @@
 ### DCP PR:
 
-# System monitoring for General Availability
+# System monitoring for production systems
 
 ## Summary
 
-This RFC describes the first standard revision for monitoring the distributed systems of the Human Cell Atlas (HCA) Data Coordination Platform (DCP). The standard is scoped to the minimum viable set of monitoring infrastructure the DCP will need to reach General Availability (GA). We anticipate that future revisions will be needed to meet our Service Level Objectives (SLOs) as DCP matures.
+This RFC is the first standard for monitoring the production systems of the Human Cell Atlas (HCA) Data Coordination Platform (DCP). It describes the minimum viable monitoring infrastructure DCP production systems should have before serving user-facing features or supporting systems that do. We anticipate that future revisions of this standard will be needed to meet our Service Level Objectives (SLOs) as DCP matures.
 
 The term monitoring is used here as defined in the [Google Site Reliability Engineering (SRE)](https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/) program. This document borrows heavily from SRE.
 
