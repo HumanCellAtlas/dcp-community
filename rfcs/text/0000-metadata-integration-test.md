@@ -18,7 +18,7 @@ This document details a integration test design for metadata schema changes in t
 
 ## Motivation
 
-Currently breakages to DCP systems caused by metadata schema changes are detected at runtime upon data upload. This forces data wranglers, DCP operators, and data consumers to react to unpredictable runtime failures rather than detecting problems before the code is merged and deployed.
+Currently breakages to DCP systems caused by metadata schema changes are detected at runtime upon data (bundle) upload. This forces data wranglers, DCP operators, and data consumers to react to unpredictable runtime failures rather than detecting problems before the code is merged and deployed.
 
 To alleviate this issue, the DCP development team can use an metadata schema integration test to test whether it is safe to release data downstream of the Data Storage Service (DSS), past which point applications start to depend on the schema. The benefits of this approach are that it will:
 
@@ -29,73 +29,59 @@ To alleviate this issue, the DCP development team can use an metadata schema int
 
 ## Detailed Design
 
-Software development proceeds in the dev branch of each component independently.
-When a metadata schema version has passed unit tests in `dev` and its committers wish to promote it, they make a PR against their integration branch. The PR triggers a dcp-wide test in the integration environment.
-Metadata schema changes can be merged from `dev` to `integration` only if the integration test suite passes.
+In this design we will use the following terms:
+ 
+ * "schema integration test system" - an automated CI/CD pipeline used to check that downstream systems can handle bundles with a new schema
+ * "new schema label" - anything that indicates that the schema has changes that have not yet been tested against downstream systems: potentially a JSON field, git tag, or git branch
 
-![Option 2](../images/0000-metadata-integration-test-opt2.png)
+Design
 
-Data with the new schema version should not be uploaded into the `integration` or subsequent deployment stages until the test passes and the `master` branch is promoted to `integration`.
+1. Bundles with new metadata schema changes are uploaded to the production environment with a new schema label
+1. Observing the new schema label, the DSS stores the new bundles and makes them available with the `GET /v1/bundles` endpoint with the bundle `uuid` or `(uuid, version)`, but does not index nor does it release subscription notifications for them.
+1. Via a schema integration test system, a sample of the uploaded bundles are copied from the production DSS to the integration DSS testing environment.
+1. The integration DSS deployment does not filter the new bundles based on the new schema label as the production DSS did, it releases the bundles to downstream systems in the integration environment with subscription events.
+1. The schema integration test checks the results and passes if systems downstream of the integration DSS have correctly processed the new bundles; it fails otherwise.
+1. If the schema integration test passes, the new bundles in the production DSS can be released downstream by issuing a new bundle version of each without the new schema label. This process could be automated.
+1. If the schema test does not pass, the data is not released and development teams are notified to resolve the issue and rerun the test.
 
-#### Pros
+### Pros:
 
-* "Test then merge"
-* PR status will not require wranglers to know about downstream systems
-* Small non-breaking changes can be merged quickly and with confidence
-* Greatly reduces probability of deployment stages past `dev` breaking
+* Bundles only have to be uploaded once
+* Bundles can be uploaded directly to the production environment
+* Tests exactly what bundles downstream systems will see; does not require complicated fake metadata generation code in tests
+* Data in storage is immediately available after upload via the `GET /v1/bundles` endpoint
+* Downstream systems are protected from new schema changes until it can be confirmed that they are able to handle the changes
+* Does not require replaying subscription notifications
 
-#### Cons
+### Cons:
 
-* May introduce another deployment stage
-* Treats metadata schema integration differently from other DCP projects
-* Requires test data to that use the new schema features
+* Does not test new bundles against the ingestion pipeline, this is assumed to "just work"
+* Does not cover third party systems, which may be consuming from the DSS
+* There is no hard guarantee that downstream production systems will be able to handle new bundles: there could be critical updates in the integration environment which have not yet reached production
+* In the case that the integration test does not pass, developers and wranglers will have to exercise care in propagating fixes to production before releasing the new bundles downstream of the production DSS
 
-## Automatic merge alternative
+## Alternative detailed design: version filtering
 
-Software development proceeds in the dev branch of each component independently. Changes are merged into integration branch of each component only through PRs which cause system-wide integration tests to run. PRs are merged automatically if tests pass (but can be reverted if downstream breakage occurs). PRs must not be merged if tests do not pass.
+Version numbering of individual schemas can be used as an isolation mechanism to prevent software from failing on incompatible schema changes. Upstream portions of the DCP pipeline can accept data with downstream software ignoring it until it is ready and passing tests. It remains queued until supported. Once support for all metadata versions in the submission is integrated, it will be automatically processed.
 
-![Option 1](../images/0000-metadata-integration-test-opt1.png)
+Software only accesses compatible schemas based major versions. A list of relevant schema and major version is maintained based on the last set that has been verified by testing. A subset of functionality can be enabled by adding dynamic version checking. For instance, a data browser can display a limited subset of information for incompatible schemas.
 
-*Here DSS Dev is shown as an example of other components following the same process.*
-
-Data with the new schema version should not be uploaded into the `integration` or subsequent deployment stages until the test passes and the `master` branch is promoted to `integration`.
-
-#### Pros
-
-* "Test then merge"
-* PR status will not require wranglers to know about downstream systems
-* Small non-breaking changes can be merged quickly (out-of-order) and with confidence
-* Greatly reduces probability of deployment stages past integration breaking
-* More certainty for developers on behavior of the system
-* Issues caused by metadata changes are surfaced early
-* All DCP projects are integrated in the same way
-
-#### Cons
-
-* May be difficult to revert test versions of components and metadata (not all infra deployments are easily reversible)
-* Requires "serializing" the dcp-wide integration test so that one PR can run after another
-* Requires test data to that use the new schema features
-
-### Version filtering alternative
-
-Version numbering of individual schemas can be used as an isolation mechanism to prevent software from failing on incompatible schema changes. Upstream portions of the DCP pipeline can accept data with downstream software ignoring it until it is ready and passing tests.  It remains queued until supported. Once support for all metadata versions in the submission is integrated, it will be automatically processed.
-
-Software only accesses compatible schemas based major versions.  A list of relevant schema and major version is maintained based on the last set that has been verified by testing. A subset of functionality can be enabled by adding dynamic version checking.  For instance, a data browser can display a limited subset of information for incompatible schemas.
-
-Testing is done independently on each component.  Once the components test pass with the updated metadata, it's version list is automatically updated and queued submissions are processed.
+Testing is done independently on each component. Once the components test pass with the updated metadata, it's version list is automatically updated and queued submissions are processed.
 
 This approach is a fast-path that complements the above designed for simple, incompatible changes.
 
 
-#### Pros:
-* Easy to implement, especially for metadata developers.
-* Good fit for the serial nature of the pipeline.
+### Pros:
+
+* Easy to implement, especially for metadata developers
+* Good fit for the serial nature of the pipeline
 * Works very will for simple changes that can be done quickly
 
-#### Cons:
-* Require serial integration of metadata changes in version number order, requiring quick response to incompatibilities.
-* Complex, time consuming changes could stall unrelated metadata updates from being published.
+### Cons:
 
+* Requires serial integration of metadata changes in version number order, requiring quick response to incompatibilities
+* Complex, time consuming changes could stall unrelated metadata updates from being published
+* Would require replaying subscription notifications that elapse the DSS reliable notification TTL
 
 ### Unresolved questions
 
