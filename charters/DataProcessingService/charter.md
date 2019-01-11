@@ -2,11 +2,15 @@
 
 ## Description
 
-The Data Processing Service is a service that executes data processing pipelines on DCP data in the Data Storage Service. It can be used in any instance of the Data Coordination Platform (DCP). 
+The Data Processing Service is a service that executes data processing pipelines containing scientific analysis on scientific data in the Data Coordination Platform (DCP).  
 
 ## Objectives
 
-The Data Processing Service aims to develop the infrastructure to run pipelines reliably and at-scale for the DCP. The team working on the service will also operate the infrastructure for the Human Cell Atlas. 
+The Data Processing Service develops the infrastructure to run pipelines reliably and at-scale for the DCP. The team implementing the service also operates the pipeline infrastructure for the Human Cell Atlas project. 
+
+## Definitions
+
+__pipeline:__ A collection of one or more functional tasks that operate on input data and, from that, make an output that is transformed input data, or features generated to interpret the input data.
 
 ## In-scope
 
@@ -15,12 +19,12 @@ The Data Processing Service aims to develop the infrastructure to run pipelines 
 ### Operations
 
 * Operating the instance of the HCA DCP Data Processing Service
-* Initiation and management of the execution of all data processing pipelines that run in the HCA DCP  
-* Establishing and operating automated practices around engineering testing of pipelines in the HCA DCP  
+* Initiation and management of the execution of all data processing pipelines that run on scientific data in the HCA DCP  
+* Establishing and operating automated practices around engineering testing of pipelines executed in the HCA DCP Date Processing Service   
 
 ### Documentation
 
-* Creating and outputting metadata on the transformations done to the data in accordance with the HCA DCP Metadata Schema  
+* Creating and outputting metadata on the operations done to the data in accordance with the HCA DCP Metadata Schema  
 * Documentation on the Data Processing Service and guides on using the service  
 * Creating documentation and scripting around the deployment of the Data Processing Service
 
@@ -58,8 +62,8 @@ __HumanCellAtlas#mintteam-ci:__ mint team continuous integration status
 
 ## Github repositories
 
-[Cromwell Tools](https://github.com/broadinstitute/cromwell-tools): Tools (Python API) for working with the Cromwell workflow engine  
-[Falcon](https://github.com/HumanCellAtlas/falcon): Throttles workflows and starts queued workflows  
+[Cromwell Tools](https://github.com/broadinstitute/cromwell-tools): Tools (Python API) for working with the [Cromwell workflow engine](https://github.com/broadinstitute/cromwell) - a scientific workflow engine designed for simplicity and scalability_  
+[Falcon](https://github.com/HumanCellAtlas/falcon): Queueing system that (after launching) throttles and inititates workflows  
 [Lira](https://github.com/HumanCellAtlas/lira): Listens to storage service notifications and launches workflows  
-[Pipeline Tools](https://github.com/HumanCellAtlas/pipeline-tools): Data Coordination Platform adapter pipelines and associated tools  
-[Secondary Analysis](https://github.com/HumanCellAtlas/secondary-analysis): Integration test scripts and other automation for the Data Processing Service. Contains all tickets for the prioritized work for the implementation team  
+[Pipeline Tools](https://github.com/HumanCellAtlas/pipeline-tools): Contains data Coordination Platform adapter pipelines and associated tools  
+[Secondary Analysis](https://github.com/HumanCellAtlas/secondary-analysis): Integration test scripts and other automation for the Data Processing Service (contains all tickets for the prioritized work for the implementation team)  
