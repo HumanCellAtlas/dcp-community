@@ -104,7 +104,7 @@ Dashboards answer basic, frequently-asked questions about your service. Ideally,
 
 Create and host dashboards for your service using our [Grafana deployments](https://github.com/HumanCellAtlas/metrics). You can template your dashboards to generalize to multiple deployments of your software using [dcp-monitoring](https://github.com/HumanCellAtlas/dcp-monitoring).
 
-![](../images/0000-dashboard.png)
+![](../images/0002-dashboard.png)
 *An example dashboard visualizing white-box metrics for an HTTP API backed by an Elasticsearch cluster to store state. The performance of the HTTP API is monitored in the first row with HTTP request rates, statuses, and latencies. The second row monitors the metrics that would predict system failure due to Elasticsearch cluster overload.*
 
 ### Status and availability monitoring
