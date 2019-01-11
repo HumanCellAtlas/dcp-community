@@ -2,7 +2,7 @@
 
 [dcp-community/rfc2](https://github.com/HumanCellAtlas/dcp-community/pull/53)
 
-# System monitoring for production systems
+# Monitoring for production systems
 
 ## Summary
 
