@@ -213,6 +213,7 @@ uses the info from the deletion table to removes tombstones and deletion marks i
 bundles will receive a notification that a new bundle has arrived.
 
 Deletion Table Entry:
+
 |Bundle.Version|admin|reason|AWS Deletion Markers|GCP Previous Generations|
 
 A bundle is restored in AWS by deleting the deletion marker and the tombstone for each files in the bundle.
