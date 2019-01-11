@@ -214,7 +214,9 @@ bundles will receive a notification that a new bundle has arrived.
 
 Deletion Table Entry:
 
-|Bundle.Version|admin|reason|AWS Deletion Markers|GCP Previous Generations|
+|Bundle.Version|admin|reason|AWS Deletion Markers (key,ID)|GCP Previous Generations (key, previous generation)|
+|--------------|-----|------|--------------------|------------------------|
+|1234-2134-3145|admin@email.com|consent|(file.obj, 1234), ...| (file.obj, 4321), ...|
 
 A bundle is restored in AWS by deleting the deletion marker and the tombstone for each files in the bundle.
 In GCS a bundle can be restored by by storing a copy of the orginal files in the bucket with the same name, and deleting 
