@@ -2,7 +2,7 @@
 
 ## Description
 
-Reproducibilty of analysis by others is a cornerstone of science. To satisfy this need, HCA data processing pipelines should be able to be executed by others in other projects and infrastructure. The Portability Service confirmations that pipelines developed for the HCA DCP can be successfully executed outside of the HCA DCP. Confirmation that HCA data processing pipelines can execute internally in the DCP is not assessed by this service but such confirmation is a part of our standard development and testing practices.
+Reproducibility of analysis by others is a cornerstone of science. To satisfy this need, HCA data processing pipelines should be able to be executed by others in other projects and infrastructure. The Portability Service confirmations that pipelines developed for the HCA DCP can be successfully executed outside of the HCA DCP. Confirmation that HCA data processing pipelines can execute internally in the DCP is not assessed by this service but such confirmation is a part of our standard development and testing practices.
 
 ## Objectives
 
