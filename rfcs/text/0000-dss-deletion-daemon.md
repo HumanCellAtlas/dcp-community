@@ -228,8 +228,8 @@ the tombstones.
 * [Amazon DynamoDB TTL](https://aws.amazon.com/about-aws/whats-new/2017/02/amazon-dynamodb-now-supports-automatic-item-expiration-with-time-to-live-ttl/)
 * [GCS Object Versioning](https://cloud.google.com/storage/docs/object-versioning),
 * [GCS Object Lifecycle Management](https://cloud.google.com/storage/docs/lifecycle)
-
-
+* [HumanCellAtlas/data-store#1662 Explore Bucket Versioning for Deletion](https://github.com/HumanCellAtlas/data-store/issues/1662)
+* [HumanCellAtlas/data-store#1663 Deletion Daemon Design](https://github.com/HumanCellAtlas/data-store/issues/1663)
 ### Open Issues
 
 TODO: remove support for `all-versions` tombstone in Data Store
