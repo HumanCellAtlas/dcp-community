@@ -24,7 +24,7 @@ __Transformative Analysis:__ The processing of data that changes data or creates
 ### Pipeline Creation
 
 * Scoping or review of scoping for new pipelines  
-* Suggesting, but not selection of, new standardized pipelines for the HCA DCP  
+* Proposing, but not selection of, new standardized pipelines for the HCA DCP  
 * Creating all standardized HCA pipelines and documenting them  
 * Reviewing, onboarding, and potentially creating community pipelines  
 * Reviewing community tools for use in data processing pipelines  
