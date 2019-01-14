@@ -16,6 +16,7 @@ Establish a secure and controlled process for deleting data from the Data Store.
 *Recommended format for Authors:*
 
  `[Trent Smith](mailto:tsmith12@ucsc.edu)`
+ 
  `[Hannes Schmidt](mailto:hannes@ucsc.edu)`
 
 ## Shepherd
@@ -49,6 +50,7 @@ specified in section 2.
 ### User Stories
 
 *Share the [User Stories](https://www.mountaingoatsoftware.com/agile/user-stories) motivating this RFC.*
+As an operator of the DSS, I found unconsented data in the DSS that must be removed, to protect user's privacy.
 
 ## Scientific "guardrails" [optional]
 
@@ -57,8 +59,6 @@ specified in section 2.
 ## Detailed Design
 
 *Explain the design in sufficient detail such that the implementation and (if appropriate) the interaction with existing DCP software are both reasonably clear.*
-
-## Detailed Design
 
 ### Reasons
 
@@ -184,6 +184,7 @@ The administrator can initiate a consistency check against a storage replica to
 list dangling bundles. The administrator can then issue more `DELETE /bundles`
 requests for those dangling bundles.
 
+
 ### Secondary indexes
 
 The Data Store can optionally notify subscribers about the creation of a bundle
@@ -233,6 +234,7 @@ the tombstones.
 * [GCS Object Lifecycle Management](https://cloud.google.com/storage/docs/lifecycle)
 * [HumanCellAtlas/data-store#1662 Explore Bucket Versioning for Deletion](https://github.com/HumanCellAtlas/data-store/issues/1662)
 * [HumanCellAtlas/data-store#1663 Deletion Daemon Design](https://github.com/HumanCellAtlas/data-store/issues/1663)
+
 ### Open Issues
 
 TODO: remove support for `all-versions` tombstone in Data Store
@@ -253,7 +255,12 @@ Removed `Bundle/Delete` API from DSS.
 
 ### Acceptance Criteria [optional]
 
-*Acceptance criteria are the conditions that a RFC must satisfy to be accepted by users or other stakeholders.* 
+*Acceptance criteria are the conditions that a RFC must satisfy to be accepted by users or other stakeholders.*
+
+* When a bundle is tombstoned it is made immediately unavailable to users using search.
+* Maintainers of external indices shall removed deleted data from its index when a bundle tombstone notification is received.
+* Bundle files are still available until the deletion daemon has run.
+* Bundles are not completely removed from the DSS until after the grace period has elapsed.
 
 ### Unresolved Questions
 
@@ -267,13 +274,3 @@ Removed `Bundle/Delete` API from DSS.
 * Permanently deletion does not occur until after the grace period has elapsed. This could
   be problematic if files need to be removed sooner. 
 * If two bundles share files and only one bundle is deleted, this leads to inconsistencies in the bundles.
-
-### Prior Art [optional]
-
-*Share references to prior art to deepen community understanding of the RFC, such as learnings, adaptations from earlier designs, or community standards.*
-
-### Alternatives [optional]
-
-*Highlight other possible approaches to delivering the value proposed in this RFC. 
-What other designs were explored? What were their advantages? What was the rationale for rejecting alternatives?*
-
