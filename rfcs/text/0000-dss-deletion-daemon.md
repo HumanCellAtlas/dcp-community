@@ -47,6 +47,8 @@ bundles that contain them.
 *Share the [User Stories](https://www.mountaingoatsoftware.com/agile/user-stories) motivating this RFC.*
 As an operator of the DSS, I found unconsented data in the DSS that must be removed, to protect user's privacy.
 
+As a user of the DSS, I would like to know what bundles have been tombstoned, so I can keep my personal index up-to-date. 
+
 ## Scientific "guardrails" [optional]
 
 *Describe recommended or mandated review from HCA Science governance to ensure that the RFC addresses the needs of the scientific community.*
@@ -128,7 +130,8 @@ procedure takes place:
    not immediately affected by the deletion and remain accessible. The bundle and associated files are added to 
    the deletion daemons queue. The deletion queue is an AWS SQS.
    
-   A notification is sent out to subscribers of datastore deletions when a bundle is tombstoned.
+   A notification is sent out to subscribers of datastore deletions when a bundle is tombstoned, so they can update
+   their index appropriately.
 
 4) The deletion daemon is an AWS Lambda with privilages to deleted files from the replicas. An administrator 
    may manually invoke the deletion daemon or wait for it run on  CRON job once daily.
