@@ -269,4 +269,4 @@ TODO: Remove `Bundle/Delete` API from DSS.
 * There is no limit on the amount of data that can be rapidly permanently deleted.
 * Permanently deletion does not occur until after the grace period has elapsed. This could
   be problematic if files need to be removed sooner. 
-* If two bundles share files and only one bundle is deleted, this leads to inconsistencies in the bundles.
+* If two bundles share files and only one bundle is deleted, this causes the remaining bundle to be incomplete.
