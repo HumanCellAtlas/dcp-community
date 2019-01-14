@@ -4,7 +4,7 @@
 
 `[dcp-community/rfc#](https://github.com/HumanCellAtlas/dcp-community/pull/<PR#>)`
 
-# RFC Deletion and deprecation of data in the DCP
+# RFC Deletion of data in the DCP
 
 
 ## Summary
@@ -41,11 +41,6 @@ Under certain circumstances however, the *physical deletion* of a file version
 is required. The first section of this specification describes the
 circumstances and mechanisms for logical and physical deletion of files and the
 bundles that contain them.
-
-Independently, it may be required to discourage the use of (meta)data managed
-by the DCP, be it for replication, analysis or aggregation, without actually
-preventing that use. The DCP handles this by *deprecating* the (meta)data as
-specified in section 2.
 
 ### User Stories
 
@@ -248,10 +243,8 @@ TODO: implement delete_bundle.py
 TODO: implement restore_bundle.py
 
 TODO: enable bucket versioning and lifecycle rules for replicas.
- 
-## 2. Deprecation
 
-Removed `Bundle/Delete` API from DSS.
+TODO: Remove `Bundle/Delete` API from DSS.
 
 ### Acceptance Criteria [optional]
 
