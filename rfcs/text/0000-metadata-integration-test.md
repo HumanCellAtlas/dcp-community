@@ -40,14 +40,14 @@ Design
 1. Bundles with new metadata schema changes are uploaded to the production environment with a new schema label
 1. Observing the new schema label, the DSS stores the new bundles and makes them available with the `GET /v1/bundles` endpoint with the bundle `uuid` or `(uuid, version)`, but does not index nor does it release subscription notifications for them.
 1. Via a schema integration test system, a sample of the uploaded bundles are copied from the production DSS to the integration DSS testing environment.
-1. The integration DSS deployment does not filter the new bundles based on the new schema label as the production DSS did, it releases the bundles to downstream systems in the integration environment with subscription events.
+1. The integration DSS deployment stores the bundles, indexes their metadata, and releases bundle events to downstream systems in the integration environment with subscriptions.
 1. The schema integration test checks the results and passes if systems downstream of the integration DSS have correctly processed the new bundles; it fails otherwise.*
 1. If the schema integration test passes, the new bundles in the production DSS can be released downstream by issuing a new bundle version of each without the new schema label. This process could be automated.
 1. If the schema test does not pass, the data is not released and development teams are notified to resolve the issue and rerun the test.
 
 ![Integration test design](../images/0000-integration-test.png)
 
-*Integration test design - test path is shown in red, production release in blue, integration tooling in dashed lines; edges are labeled with corresponding step numbers*
+*Integration test data flow: test path is shown in red, production release in blue, integration tooling in dashed lines; edges are labeled with corresponding step numbers in the design above*
 
 \* To estimate the impact of schema changes on third party applications, the schema integration test system could run critical [data consumer vignettes](https://github.com/HumanCellAtlas/data-consumer-vignettes).
 
