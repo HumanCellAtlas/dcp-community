@@ -76,7 +76,3 @@ Using the major version number of the last passing test for a component could wo
 
 The proposed approaches to decoupling metadata changes from the application
 [Sustainable Development Over Metadata](https://docs.google.com/document/d/1KpgPXqqnWCDqXDHMr1whmmCaT8XC2F7ddrDc0RPnyt4/edit?ts=5b9ac30c#heading=h.irkib9r22q8v) may limit the test failures and make a more granular approach unnecessary.
-
-
-
-
