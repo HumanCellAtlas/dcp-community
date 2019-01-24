@@ -47,7 +47,7 @@ bundles that contain them.
 *Share the [User Stories](https://www.mountaingoatsoftware.com/agile/user-stories) motivating this RFC.*
 As an operator of the DSS, I found unconsented data in the DSS that must be removed, to protect user's privacy.
 
-As a user of the DSS, I would like to know what bundles have been tombstoned, so I can keep my personal index up-to-date. 
+As a user of the DSS, I would like to know what bundles have been deleted, so I can keep my personal index up-to-date. 
 
 ## Scientific "guardrails" [optional]
 
@@ -114,8 +114,8 @@ procedure takes place:
 
    ```
 
-3) **Logical Deletion:** The DSS places a tombstone in the
-   underlying storage (S3 or GCP bucket). The tombstones's content is as follows:
+3) **Logical Deletion:** The DSS places a **bundle tombstone** in the
+   underlying storage (S3 or GCP bucket). The tombstone's content is as follows:
    ```JSON
    { "reason": "<reason>",
      "details": "<additional info>",
@@ -128,29 +128,26 @@ procedure takes place:
    also return a 404. The same applies to HEAD requests, both versioned and
    unversioned. The file versions referenced by the deleted bundle version are
    not immediately affected by the deletion and remain accessible. The bundle and associated files are added to 
-   the deletion daemons queue. The deletion queue is an AWS SQS.
+   a deletion queue for regularly schedule **Physical Deletion**.
    
-   A notification is sent out to subscribers of datastore deletions when a bundle is tombstoned, so they can update
-   their index appropriately.
+   A notification is sent out to subscribers of datastore deletions when a new bundle tombstone is created, so they can 
+   update their index appropriately.
 
-4) The deletion daemon is an AWS Lambda with privilages to deleted files from the replicas. An administrator 
-   may manually invoke the deletion daemon or wait for it run on  CRON job once daily.
+4) On a regular schedule the deletion queue is processed by code running within a secure boundary. An administrator 
+   may manually invoke the deletion process or wait for it run at it's scheduled time once daily.
    The deletion daemon is responsible for performing **Physical Deletes** of data from the deletion queue. 
-   A physical delete involves placing a file deletion marker for every file version and file blob referenced by
-   the deleted bundle version. This will make HEAD and GET requests against
-   those file versions return a 404. 
+   A physical delete makes all files associated with a bundle or bundle version inaccessible. This will make HEAD and 
+   GET requests against those file versions return a 404.
    
    A log entry is produced when ever the deletion daemon is run. It contains information on what bundles and files
    have been logically deleted, the reason, the admin who executed the deletion, and info about the deletion markers. 
-   The same information is stored in the **Deletion Table** in dynamoDB.
-   The Deletion Table contains the information needed to reverse Physical Deletes before the data is 
-   Permanently deleted.
+   The same information is stored in the **Deletion Table**. The deletion table tracks all bundles and files currently
+   pending permanent deletion. The Deletion Table contains enough information to reverse Physical Deletes before 
+   the data is Permanently deleted.
 
 5) Data that has been physical deleted remain in the bucket for 7 days before being permanently deleted from the bucket.
-   This grace period allows the deletion to be reversed within that time period.
-   After the grace period the bucket life cycle rules on the replica will automatically delete any data with an expired
-   deletion marker. The entry in the deletion table associated with the bundle is also removed when the bundles 
-   is permanently deleted.
+   This grace period allows the deletion to be reversed within that time period. After the grace period the data will 
+   be permanently deleted.
    
 ### Primary indexes
 
@@ -182,7 +179,6 @@ The administrator can initiate a consistency check against a storage replica to
 list dangling bundles. The administrator can then issue more `DELETE /bundles`
 requests for those dangling bundles.
 
-
 ### Secondary indexes
 
 The Data Store can optionally notify subscribers about the creation of a bundle
@@ -208,10 +204,10 @@ tiered storage system such as AWS glacier.
 ### Undoing logical deletions
 
 A bundle can be restored using `restore_bundle.py <uuid.<version>` if has not been physically deleted. This process
-uses the info from the deletion table to removes tombstones and deletion marks in the replicas. Subscribers of new 
+uses the info from the deletion table to removes tombstones, and prevent permanent deletion. Subscribers of new 
 bundles will receive a notification that a new bundle has arrived.
 
-Deletion Table Entry:
+Deletion Table Entry Example:
 
 |Bundle.Version|admin|reason|AWS Deletion Markers (key,ID)|GCP Previous Generations (key, previous generation)|
 |--------------|-----|------|--------------------|------------------------|
@@ -255,7 +251,7 @@ TODO: Remove `Bundle/Delete` API from DSS.
 
 * When a bundle is tombstoned it is made immediately unavailable to users using search.
 * Maintainers of external indices shall removed deleted data from its index when a bundle tombstone notification is received.
-* Bundle files are still available until the deletion daemon has run.
+* Bundle files are still available until the deletion process has run.
 * Bundles are not completely removed from the DSS until after the grace period has elapsed.
 
 ### Unresolved Questions
