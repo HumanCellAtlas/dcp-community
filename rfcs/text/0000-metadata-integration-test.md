@@ -16,6 +16,8 @@ This document details an integration test design for metadata schema changes in 
 
 ## Shepherd
 
+[Norman Morrison](mailto:norman@ebi.ac.uk)
+
 ## Motivation
 
 Currently breakages to DCP systems caused by metadata schema changes are detected at runtime upon data (bundle) upload. This forces data wranglers, DCP operators, and data consumers to react to unpredictable runtime failures rather than detecting problems before the code is merged and deployed.
