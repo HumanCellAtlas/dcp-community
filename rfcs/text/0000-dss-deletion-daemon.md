@@ -10,9 +10,9 @@ Establish a secure and controlled process for deleting data from the Data Store.
 
 ## Author(s)
 
- `[Trent Smith](mailto:tsmith12@ucsc.edu)`
+ [Trent Smith](mailto:tsmith12@ucsc.edu)
  
- `[Hannes Schmidt](mailto:hannes@ucsc.edu)`
+ [Hannes Schmidt](mailto:hannes@ucsc.edu)
 
 ## Shepherd
  `[Name](mailto:username@example.com)`
