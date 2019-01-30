@@ -1,11 +1,8 @@
 ### DCP PR:
 
-***Leave this blank until the RFC is approved** then the **Author(s)** must create a link between the assigned RFC number and this pull request in the format:*
-
 `[dcp-community/rfc#](https://github.com/HumanCellAtlas/dcp-community/pull/<PR#>)`
 
 # RFC Deletion of data in the DCP
-
 
 ## Summary
 Establish a secure and controlled process for deleting data from the Data Store.
@@ -13,22 +10,14 @@ Establish a secure and controlled process for deleting data from the Data Store.
 
 ## Author(s)
 
-*Recommended format for Authors:*
-
  `[Trent Smith](mailto:tsmith12@ucsc.edu)`
  
  `[Hannes Schmidt](mailto:hannes@ucsc.edu)`
 
 ## Shepherd
-***Leave this blank.** This role is assigned by DCP PM to guide the **Author(s)** through the RFC process.*
-
-*Recommended format for Shepherds:*
-
  `[Name](mailto:username@example.com)`
 
 ## Motivation
-
-*Describe the user or technical need in detail [with alignment to the DCP roadmap priorities where possible]. Link prior community discussions to demonstrate support for this RFC.*
 
 One of the DCP's primary objectives is to ensure the durability of the
 (meta)data it contains and to maintain a complete record of the changes made to
@@ -44,18 +33,11 @@ bundles that contain them.
 
 ### User Stories
 
-*Share the [User Stories](https://www.mountaingoatsoftware.com/agile/user-stories) motivating this RFC.*
-As an operator of the DSS, I found unconsented data in the DSS that must be removed, to protect user's privacy.
+* As a user of the DSS, I would like to know what bundles have been deleted, so I can keep my personal index up-to-date. 
 
-As a user of the DSS, I would like to know what bundles have been deleted, so I can keep my personal index up-to-date. 
-
-## Scientific "guardrails" [optional]
-
-*Describe recommended or mandated review from HCA Science governance to ensure that the RFC addresses the needs of the scientific community.*
+* As a data wrangler of the DSS, I need to remove data from the DSS, because there was no consent from the donor to share the data.
 
 ## Detailed Design
-
-*Explain the design in sufficient detail such that the implementation and (if appropriate) the interaction with existing DCP software are both reasonably clear.*
 
 ### Reasons
 
@@ -246,8 +228,6 @@ TODO: enable bucket versioning and lifecycle rules for replicas.
 TODO: Remove `Bundle/Delete` API from DSS.
 
 ### Acceptance Criteria [optional]
-
-*Acceptance criteria are the conditions that a RFC must satisfy to be accepted by users or other stakeholders.*
 
 * When a bundle is tombstoned it is made immediately unavailable to users using search.
 * Maintainers of external indices shall removed deleted data from its index when a bundle tombstone notification is received.
