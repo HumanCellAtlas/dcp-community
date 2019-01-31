@@ -56,7 +56,7 @@ __HumanCellAtlas#pipelines-ci:__ mint team continuous integration status
 
 ## Github repositories
 
-[Cromwell Tools](https://github.com/broadinstitute/cromwell-tools): Tools (Python API) for working with the [Cromwell workflow engine](https://github.com/broadinstitute/cromwell) - a scientific workflow engine designed for simplicity and scalability_  
+[Cromwell Tools](https://github.com/broadinstitute/cromwell-tools): Tools (Python API) for working with the [Cromwell workflow engine](https://github.com/broadinstitute/cromwell) - a scientific workflow engine designed for simplicity and scalability  
 [Falcon](https://github.com/HumanCellAtlas/falcon): Queueing system that (after launching) throttles and inititates workflows  
 [Lira](https://github.com/HumanCellAtlas/lira): Listens to storage service notifications and launches workflows  
 [Pipeline Tools](https://github.com/HumanCellAtlas/pipeline-tools): Contains data Coordination Platform adapter pipelines and associated tools  
