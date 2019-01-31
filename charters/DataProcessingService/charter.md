@@ -22,7 +22,7 @@ __pipeline:__ A collection of one or more functional tasks that operate on input
 
 ### Documentation
 
-* Creating and outputting metadata on the operations done to the data in accordance with the HCA DCP Metadata Schema  
+* Creating and outputting metadata on the operations applied to the data in accordance with the HCA DCP Metadata Schema  
 * Documentation on the Data Processing Service and guides on using the service  
 * Creating documentation and scripting around the deployment of the Data Processing Service
 
