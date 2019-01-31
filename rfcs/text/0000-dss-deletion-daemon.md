@@ -23,7 +23,7 @@ One of the DCP's primary objectives is to ensure the durability of the
 (meta)data it contains and to maintain a complete record of the changes made to
 it. The DCP achieves this by never overwriting a (meta)data file but instead
 treating an update to such a file as the addition of a new version of that
-file. And instead of physically removing a file version, the DCP hides that
+file. Instead of physically removing a file version, the DCP hides that
 file version behind a deletion marker.
 
 Under certain circumstances however, the *physical deletion* of a file version
@@ -41,7 +41,7 @@ bundles that contain them.
 
 ### Reasons
 
-Reasons for deletion of (meta)data are
+Possible reasons for deletion of (meta)data are
 
 * consent to share (meta)data derived from a donor's specimens is withdrawn by
   that donor after the (meta)data was submitted to DCP
@@ -57,51 +57,126 @@ Reasons for deletion of (meta)data are
   laws or regulations in a jurisdiction applicable to the DCP or the (meta)data
   it stores
 
+This is not an exhaustive list, and more reason maybe discovered later.
+ 
 Whether any of the reasons require a physical or logical deletion is at the
 discretion of the administrator performing the deletion. That discretion is
 guided by a standard operating procedure (SOP).
 
 ### Process
 
-Once it is determined that a (meta)data file needs to be physically deleted –
+Once it is determined that a (meta)data file needs to be deleted –
 the details of this determination are the scope of an SOP – the following
 procedure takes place:
 
-1) An administrator identifies the Data Store file versions to be deleted. The
+1) An user identifies the Data Store file versions to be deleted. The
    administrator then identifies the Data Store bundle versions referencing
    those file versions.
 
-2) The administrator runs the admin CLI tool to queue the bundle for deletion using the bundles UUID and version.
-   The bundle UUID and version is required for deletion. The admin CLI will return a list of files that will be 
-   deleted and bundles that are effected by this deletion. Bundles may be affected if they share files or are derived 
-   from the deleted bundle.
-   
-   ```bash
-   delete_bundle.py <uuid>.<version> --reason [consent_withdrawn, consent_absent, service_disruption, legal] 
-    --type [logical, physical] --details "<additional info>"
-   
-   Files to be deleted:
-   <fileblobs>
-   .
-   .
-   .
+2) The user makes a request that follows this format specified in swagger:
+   ```yml
+      /bundle/{uuid}:
+        delete:
+          security:
+            - dcpAuth: []
+          summary: Delete a bundle version
+          description: >
+            Delete the bundle with the given UUID. This deletion is applied across all replicas.
+          parameters:
+            - name: uuid
+              in: path
+              description: A RFC4122-compliant ID for the bundle.
+              required: true
+              type: string
+              pattern: "[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}"
+            - name: replica
+              in: query
+              description: Replica to write to first.
+              required: false
+              type: string
+              enum: [aws, gcp]
+              default: aws
+            - name: version
+              in: query
+              description: Timestamp of bundle creation in DSS_VERSION format.
+              required: true
+              type: string
+            - name: physical
+              in: query
+              require: true
+              description: True for a physical deletion and false for a logical deletion
+              type: bool
+            - name: json_request_body
+              in: body
+              required: true
+              schema:
+                type: object
+                properties:
+                  reason:
+                    description: the reason for the deletion.
+                    type: string
+                    enum: [consent_withdrawn, consent_absent, service_disruption, legal]
+                  details
+                    description: User-friendly reason for the bundle or timestamp-specfic bundle deletion.
+                    type: string
+                required:
+                  - reason
+      responses:
+        200:
+          description: Deletion pending
+          schema:
+            type: object
+              properties:
+                files:
+                  type: array
+                  description: list of files effected by deletion
+                  items:
+                    type: string
+                bundles:
+                  type: array
+                  description: list of bundles effected by deletion
+                  items:
+                  type: string
+                confirmation:
+                  type: string
+                  description: a key used to confirm the deletion operation
+        201:
+          description: Deletion confirmed
+          schema:
+            type: object
+              properties:
+                files:
+                  type: array
+                  description: list of files effected by deletion
+                  items:
+                    type: string
+                bundles:
+                  type: array
+                  description: list of bundles effected by deletion
+                  items:
+                  type: string
+        401:
+          description: Unauthorized user it attempting this action.
+            ...
+    ```
 
-   Effected Bundles:
-   <uuid>.<version>
-   .
-   .
-   .
+    All deletions require two request to `delete/bundle` to perform. The return value is different depending on the 
+    type of deletion requested. For **physical deletion** the first request 
+    returns a list of file and bundles that will be physically deleted from the DSS and a confirmation key. For 
+    **logical deletion** the first request returns the bundles that will be effected by the deletion and a confirmation key.
+    The second request to `bundle/delete` is the same as the first except for the addition of the confirmation key. A
+    response of 201 is returned when the deletion was successful. It is the responsibility of the user to determine how to 
+    handle the affected bundles and files before and after confirming the deletion. A bundle that was logically deleted
+    can be physically deleted using this same process.
+    
 
-   confirm (yes or no)?
-
-   ```
-
-3) **Logical Deletion:** The DSS places a **bundle tombstone** in the
+3) **Logical Deletion**: After the deletion request has been confirmed the DSS places a **bundle tombstone** in the
    underlying storage (S3 or GCP bucket). The tombstone's content is as follows:
    ```JSON
    { "reason": "<reason>",
      "details": "<additional info>",
-     "admin_email": "<admin>"
+     "email": "<requester's email>",
+     "physical": "<logical or physical>"
    }
    ```
    The tombstone causes `GET /bundle/{uuid}` to return a 404. If `{version}` 
@@ -109,28 +184,35 @@ procedure takes place:
    identified by `{uuid}`, requests for `GET /bundle/{uuid}` without a version
    also return a 404. The same applies to HEAD requests, both versioned and
    unversioned. The file versions referenced by the deleted bundle version are
-   not immediately affected by the deletion and remain accessible. The bundle and associated files are added to 
-   a deletion queue for regularly schedule **Physical Deletion**.
+   not immediately affected by the deletion and remain accessible.
    
    A notification is sent out to subscribers of datastore deletions when a new bundle tombstone is created, so they can 
-   update their index appropriately.
+   update their index appropriately. If the the bundle was logically deleted and later physically deleted a second
+   identical notification will be sent to subscribers. The subscribers must be able to handle these notifications 
+   idempotently. 
+   
+   If the bundle is marked for physical deletion then the bundle and associated files are also added to 
+   a deletion queue for regularly schedule **Physical Deletion**.
 
-4) On a regular schedule the deletion queue is processed by code running within a secure boundary. An administrator 
+4) **Physical Deletion**: On a regular schedule the deletion queue is processed by code running within a secure boundary. An administrator 
    may manually invoke the deletion process or wait for it run at it's scheduled time once daily.
    The deletion daemon is responsible for performing **Physical Deletes** of data from the deletion queue. 
    A physical delete makes all files associated with a bundle or bundle version inaccessible. This will make HEAD and 
    GET requests against those file versions return a 404.
    
    A log entry is produced when ever the deletion daemon is run. It contains information on what bundles and files
-   have been logically deleted, the reason, the admin who executed the deletion, and info about the deletion markers. 
+   have been logically deleted, the reason, the administrator who executed the deletion, and info about the deletion markers. 
    The same information is stored in the **Deletion Table**. The deletion table tracks all bundles and files currently
    pending permanent deletion. The Deletion Table contains enough information to reverse Physical Deletes before 
    the data is Permanently deleted.
+   
+   A daily digest of bundles and files that are scheduled for deletion are sent to DCP administrator 24 hours prior to the data
+   being permanently deleted.
 
 5) Data that has been physical deleted remain in the bucket for 7 days before being permanently deleted from the bucket.
    This grace period allows the deletion to be reversed within that time period. After the grace period the data will 
    be permanently deleted.
-   
+ 
 ### Primary indexes
 
 Bundle tombstones are indexed verbatim by the Data Store. The JSON schema
@@ -146,9 +228,9 @@ When a bundle is deleted it is removed from all replicas.
 
 ### Consistency
 
-It is the administrator's responsibility to enumerate all bundles referring to
+It is the users's responsibility to enumerate all bundles referring to
 a file that is to be deleted and issue a delete requests for each of
-them. If the administrator misses such a bundle (a *dangling bundle*), users
+them. If the users misses such a bundle (a *dangling bundle*), users
 requesting `GET /bundle` for a dangling bundle will be able to retrieve its
 manifest. Likewise, `POST /search` requests will return the metadata for
 dangling bundles. Secondary indexes like the Data Browser (Orange Box) will
@@ -213,7 +295,7 @@ the tombstones.
 
 ### Open Issues
 
-TODO: remove support for `all-versions` tombstone in Data Store
+TODO: remove support for `all-versions` tombstone in Data Store.
 
 TODO: implement consistency check for dangling bundles
 
@@ -225,7 +307,6 @@ TODO: implement restore_bundle.py
 
 TODO: enable bucket versioning and lifecycle rules for replicas.
 
-TODO: Remove `Bundle/Delete` API from DSS.
 
 ### Acceptance Criteria [optional]
 
