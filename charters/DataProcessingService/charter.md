@@ -10,7 +10,7 @@ The Data Processing Service develops the infrastructure to run pipelines reliabl
 
 ## Definitions
 
-__pipeline:__ A collection of one or more functional tasks that operate on input data and, from that, make an output that is transformed input data, or features often used to interpret the input data. In a high throughput setting, these tasks are often automated to be performed in a batch setting.
+__pipeline:__ A collection of one or more functional tasks that operate on input data and, from that, make an output that is transformed input data, or derive features often used to interpret the input data. In a high throughput setting, these tasks are often automated to be performed in a batch setting.
 
 ## In-scope
 
@@ -51,13 +51,13 @@ __2020:__ Generalized and reusable service infrastructure
 
 [Team email](mailto:pipelines-team@data.humancellatlas.org): pipelines-team@data.humancellatlas.org 
  
-__HumanCellAtlas#data-pipelines-team:__ team discussions, a place to directly communicate to the team, who works on the service and the pipelines, as needed  
-__HumanCellAtlas#pipelines-ci:__ mint team continuous integration status  
+__HumanCellAtlas#data-pipelines-team:__ team discussions, a place to directly communicate to the team that works on the service and pipelines  
+__HumanCellAtlas#pipelines-ci:__ Data Processing Service continuous integration status  
 
 ## Github repositories
 
 [Cromwell Tools](https://github.com/broadinstitute/cromwell-tools): Tools (Python API) for working with the [Cromwell workflow engine](https://github.com/broadinstitute/cromwell) - a scientific workflow engine designed for simplicity and scalability  
 [Falcon](https://github.com/HumanCellAtlas/falcon): Queueing system that (after launching) throttles and inititates workflows  
 [Lira](https://github.com/HumanCellAtlas/lira): Listens to storage service notifications and launches workflows  
-[Pipeline Tools](https://github.com/HumanCellAtlas/pipeline-tools): Contains data Coordination Platform adapter pipelines and associated tools  
+[Pipeline Tools](https://github.com/HumanCellAtlas/pipeline-tools): Contains Data Coordination Platform adapter pipelines and associated tools  
 [Secondary Analysis](https://github.com/HumanCellAtlas/secondary-analysis): Integration test scripts and other automation for the Data Processing Service (contains all tickets for the prioritized work for the implementation team)  
