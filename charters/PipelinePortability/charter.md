@@ -11,7 +11,7 @@ To confirm there are no technical barriers to executing pipelines outside of the
 ## Definitions
 
 __3rd party:__ A developer outside of the team implementing the portability service.  
-__3rd party backend:__ An execution environment or storage platform that could be used to execute data processing pipelines but is not officially used or supported by the DCP  
+__3rd party backend:__ An execution environment or storage platform that could be used to execute data processing pipelines but is not officially used or supported by the DCP.  
 __HCA DCP:__ The Human Cell Atlas Data Coordination Platform is the data center for the HCA.  
 
 ## In-scope
