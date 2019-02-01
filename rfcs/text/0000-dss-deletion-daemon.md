@@ -403,7 +403,7 @@ to communicate the deletion of a bundle:
       ...
       responses:
         409:
-          description: Returned when a bundle ior bundle tombstone with the same UUID and version already exists.
+          description: Returned when a bundle or bundle tombstone with the same UUID and version already exists.
 ```
 
 ### Get Deleted File API
