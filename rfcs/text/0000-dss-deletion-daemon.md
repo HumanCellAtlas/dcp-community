@@ -29,16 +29,15 @@ file version behind a deletion marker.
 Under certain circumstances however, the *physical deletion* of a file version
 is required. The first section of this specification describes the
 circumstances and mechanisms for logical and physical deletion of files and the
-bundles that contain them. The second section details the process of deleting data from the DSS.
+bundles containing them. The second section details the changes to the API required to manage the deletion process.
+The final section details the process of deleting data from the DSS, and design details.
 
 ### User Stories
 
 * As a user of the DSS, I would like to know what bundles have been deleted, so I can keep my personal index up-to-date. 
 * As a data wrangler of the DSS, I need to remove data from the DSS, because there was no consent from the donor to share the data.
 
-## Detailed Design
-
-### Reasons
+## Reasons
 
 Possible reasons for deletion of (meta)data are
 
@@ -61,6 +60,8 @@ This is not an exhaustive list, and more reason maybe discovered later.
 Whether any of the reasons require a physical or logical deletion is at the
 discretion of the administrator performing the deletion. That discretion is
 guided by a standard operating procedure (SOP).
+
+## API Changes
 
 ### File Deletion API
 
@@ -261,7 +262,97 @@ bundle the user must have explicit permission to **physically delete** files and
 (!) The deletion of a bundle does not handle the deletion of secondary analysis bundles referencing this bundle via the 
 links metadata field.
 
-### Process
+### Restore API [WIP]
+
+
+```yml
+      /restore/files/{uuid}:
+        put:
+          security:
+            - dcpAuth: []
+          summary: Restore a file version
+          description: >
+            Restore the file with the given UUID and version. The restoration is applied across all replicas. 
+          parameters:
+            - name: uuid
+              in: path
+              description: A RFC4122-compliant ID for the bundle.
+              required: true
+              type: string
+              pattern: "[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}"
+            - name: version
+              in: query
+              description: Timestamp of file creation in DSS_VERSION format.
+              required: true
+              type: string
+            - cc:
+              in: query
+              description: the confirmation code that must be return to confirm the deletion of a file.
+              required: false
+              type: string
+      responses:
+        200:
+          description: restoration deleted file
+          schema:
+            type: object
+              properties:
+                confirmation:
+                  type: string
+                  description: a key used to confirm the deletion operation
+        201:
+          description: restoration confirmed
+        403:
+          description: Unauthorized user it attempting this action.
+        404:
+          description: the file cannot be restored because it was never deleted or it has been permanently deleted.
+```
+
+
+```yml
+      /restore/bundles/{uuid}:
+        put:
+          security:
+            - dcpAuth: []
+          summary: Restore a bundle version
+          description: >
+            Restore a physically deleted bundle with the given UUID and version. The restoration is applied across all 
+            replicas. Bundles that have been logically deleted can be restored by uploading a new version of the bundle.
+          parameters:
+            - name: uuid
+              in: path
+              description: A RFC4122-compliant ID for the bundle.
+              required: true
+              type: string
+              pattern: "[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}"
+            - name: version
+              in: query
+              description: Timestamp of bundle creation in DSS_VERSION format.
+              required: true
+              type: string
+            - cc:
+              in: query
+              description: the confirmation code that must be return to confirm the deletion of a bundle.
+              required: false
+              type: string
+      responses:
+        200:
+          description: restoration deleted bundle
+          schema:
+            type: object
+              properties:
+                confirmation:
+                  type: string
+                  description: a key used to confirm the deletion operation
+        201:
+          description: restoration confirmed
+        403:
+          description: Unauthorized user it attempting this action.
+        404:
+          description: the bundle cannot be restored because it was never deleted, logically deleted, or it has been 
+          permanently deleted.
+```
+
+## Deletion Process
 
 Once it is determined that a (meta)data file needs to be deleted –
 the details of this determination are the scope of an SOP – the following
