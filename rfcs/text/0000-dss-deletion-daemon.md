@@ -38,6 +38,13 @@ The final section details the process of deleting data from the DSS, and design 
 * As a data wrangler of the DSS, I need to remove data from the DSS, because there was no consent from the donor to share the data.
 * As a user of the DSS, I would like the API to return a status indicating bundle deletion, so that I know what happened to a bundle that I used previously.
 
+
+### Terminology
+
+**Tombstone** - a marker placed in the DSS to indicate data that previously existed has been removed.
+**Logical Deletion** - data is made unavailable to users through the API.
+**Physical Deletion** - data is removed from the DSS storage system.
+
 ## Reasons
 
 Possible reasons for deletion of (meta)data are
