@@ -70,7 +70,7 @@ request will return the bundles that will be **logically deleted**
 as a side effect and a confirmation code. The second request must include the confirmation code in order to begin the
 deletion process. The request follows this swagger:
 
-```yml
+```yaml
       /file/{uuid}:
         delete:
           security:
@@ -161,7 +161,7 @@ by the logical deletion of a bundle. For a **physical deletion** a list of affec
 The second request must include the confirmation code in order to begin the deletion process. The request follows this 
 swagger:
 
-```yml
+```yaml
       /bundle/{uuid}:
         delete:
           security:
@@ -262,10 +262,9 @@ bundle the user must have explicit permission to **physically delete** files and
 (!) The deletion of a bundle does not handle the deletion of secondary analysis bundles referencing this bundle via the 
 links metadata field.
 
-### Restore API [WIP]
+### Restore/File API [WIP]
 
-
-```yml
+```yaml
       /restore/files/{uuid}:
         put:
           security:
@@ -307,8 +306,9 @@ links metadata field.
           description: the file cannot be restored because it was never deleted or it has been permanently deleted.
 ```
 
+### Restore/Bundle/API
 
-```yml
+```yaml
       /restore/bundles/{uuid}:
         put:
           security:
