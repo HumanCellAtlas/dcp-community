@@ -286,7 +286,7 @@ procedures takes place:
    A bundle version tombstone will cause `GET /bundle/{uuid}` to return a 404 for that bundle version. If the tombstoned
    bundle is the latest version then a request for `GET /bundle/{uuid}` without a version will
    also returns a 404. If bundle tombstone does not specify a bundle then all request for `GET /bundle/{uuid}` will
-   return 404. The same applies to HEAD requests, both versioned and
+   return 404. The same applies to `HEAD /bundle/{uuid}` requests, both versioned and
    unversioned. The file versions referenced by the deleted bundle version are
    not immediately affected by the deletion and remain accessible.
    
@@ -304,8 +304,8 @@ procedures takes place:
 4) **Physical Deletion**: On a regular schedule the deletion queue is processed by code running within a secure boundary. An administrator 
    may manually invoke the deletion process or wait for it run at it's scheduled time once daily.
    The deletion daemon is responsible for performing **Physical Deletes** of data from the deletion queue. 
-   A physical delete makes all files associated with a bundle or bundle version inaccessible. This will make HEAD and 
-   GET requests against those file versions return a 404.
+   A physical delete makes all files associated with a bundle or bundle version inaccessible. This will make `HEAD /files/{uuid}` and 
+   `GET /files/{uuid}` requests against those file versions return a 404.
    
    A log entry is produced when ever the deletion daemon is run. It contains information on what bundles and files
    have been logically deleted, the reason, the administrator who executed the deletion, and info about the deletion markers. 
