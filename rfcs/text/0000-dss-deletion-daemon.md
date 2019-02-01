@@ -471,10 +471,10 @@ procedures takes place:
    }
    ```
    
-   A versioned bundle tombstone will cause `GET /bundle/{uuid}` to return a 409 for that bundle version. If the tombstoned
+   A versioned bundle tombstone will cause `GET /bundle/{uuid}` to return a 410 for that bundle version. If the tombstoned
    bundle is the latest version then a request for `GET /bundle/{uuid}` without a version will
-   also returns a 409. If bundle tombstone does not specify a bundle version then all request for `GET /bundle/{uuid}` will
-   return 409 even if version is specified in the request. The same applies to `HEAD /bundle/{uuid}` requests, both versioned and
+   also returns a 410. If bundle tombstone does not specify a bundle version then all request for `GET /bundle/{uuid}` will
+   return 410 even if version is specified in the request. The same applies to `HEAD /bundle/{uuid}` requests, both versioned and
    unversioned. The same applied for `GET /files/{uuid}` and `HEAD /files/{uuid}`. Bundles that have an 
    associated tombstone are inaccessible through the API and are considered **logically deleted**. Files with an 
    associated tombstone or not logically delete. User with a direct URL to the file can still access the data.
