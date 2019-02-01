@@ -333,22 +333,11 @@ Elasticsearch's dynamic mapping is enabled.
 
 When a bundle or file is deleted it is removed from all replicas.
 
-### **WIP** Consistency
+### Consistency
 
-It is the users's responsibility to enumerate all bundles referring to
-a file that is to be deleted and issue a delete requests for each of
-them. If the users misses such a bundle (a *dangling bundle*), users
-requesting `GET /bundle` for a dangling bundle will be able to retrieve its
-manifest. Likewise, `POST /search` requests will return the metadata for
-dangling bundles. Secondary indexes like the Data Browser (Orange Box) will
-continue to hand out (meta)data for dangling bundles. If users request `GET
-/files` for a file contained in a dangling bundle and the requested file was
-referenced by another already logically (physically) deleted bundle, the Data
-Store will respond with a 404 (500) status code.
-
-The administrator can initiate a consistency check against a storage replica to
-list dangling bundles. The administrator can then issue more `DELETE /bundles`
-requests for those dangling bundles.
+Race conditions with Elasticsearch can arise when deleting files or bundles. The confirmation code is used to ensure
+that the state of the index has not changes between deletion requests. If the state has changed another request to delete
+should be made and the effected files an bundles should be verified before sending the confirmation to delete.
 
 ### Secondary indexes
 
