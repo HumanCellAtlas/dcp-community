@@ -391,15 +391,7 @@ the tombstones.
 
 ### Open Issues
 
-TODO: remove support for `all-versions` tombstone in Data Store.
-
-TODO: implement consistency check for dangling bundles
-
 TODO: implement object deletion and restoration for AWS anf GCP
-
-TODO: implement delete_bundle.py
-
-TODO: implement restore_bundle.py
 
 TODO: enable bucket versioning and lifecycle rules for replicas.
 
