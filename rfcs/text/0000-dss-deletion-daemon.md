@@ -140,9 +140,13 @@ deletion process. The request follows this swagger:
                   description: list of bundles effected by deletion
                   items:
                   type: string
-        401:
+        403:
           description: Unauthorized user it attempting this action.
-            ...
+          ...
+        409:
+          description: The confimation code used is invalid. Either the confirmation code was incorrect, or an effected
+            bundle has changed state since the original request.
+          ...
 ```
 
 A user must have explicit permission to perform the file deletion operation.
@@ -242,9 +246,13 @@ swagger:
                   description: list of bundles effected by deletion
                   items:
                   type: string
-        401:
+        403:
           description: Unauthorized user it attempting this action.
-            ...
+          ...
+        409:
+          description: The confimation code used is invalid. Either the confirmation code was incorrect, or an effected
+            bundle or file has changed state since the original request.
+          ...
 ```
     
 A user must have explicit permission to perform a **logical deletion** of a bundle. For a **physcial deletion** of a
