@@ -125,40 +125,40 @@ deletion process. The request follows this swagger document:
                     type: string
                 required:
                   - reason
-      responses:
-        200:
-          description: Deletion pending
-          schema:
-            type: object
-              properties:
-                bundles:
-                  type: array
-                  description: list of bundles effected by deletion
-                  items:
-                    type: string
-                confirmation:
-                  type: string
-                  description: a key used to confirm the deletion operation
-        201:
-          description: Deletion confirmed
-          schema:
-            type: object
-              properties:
-                files:
-                  description: The file uuid and version requested to be deleted.               
-                  type: string
-                bundles:
-                  type: array
-                  description: list of bundle uuid and versions effected by deletion
-                  items:
-                    type: string
-        403:
-          description: Unauthorized user it attempting this action.
-        404:
-          description: the files has already been deleted.
-        409:
-          description: The confimation code used is invalid. Either the confirmation code was incorrect, or an effected
-            bundle has changed state since the original request.
+          responses:
+            200:
+              description: Deletion pending
+              schema:
+                type: object
+                  properties:
+                    bundles:
+                      type: array
+                      description: list of bundles effected by deletion
+                      items:
+                        type: string
+                    confirmation:
+                      type: string
+                      description: a key used to confirm the deletion operation
+            201:
+              description: Deletion confirmed
+              schema:
+                type: object
+                  properties:
+                    files:
+                      description: The file uuid and version requested to be deleted.               
+                      type: string
+                    bundles:
+                      type: array
+                      description: list of bundle uuid and versions effected by deletion
+                      items:
+                        type: string
+            403:
+              description: Unauthorized user it attempting this action.
+            404:
+              description: the files has already been deleted.
+            409:
+              description: The confimation code used is invalid. Either the confirmation code was incorrect, or an effected
+                bundle has changed state since the original request.
 ```
 
 A user must have explicit permission to perform the file deletion operation.
@@ -226,47 +226,47 @@ swagger document:
                     type: string
                 required:
                   - reason
-      responses:
-        200:
-          description: Deletion pending
-          schema:
-            type: object
-              properties:
-                files:
-                  type: array
-                  description: list of file uuids and versions effected by deletion
-                  items:
-                    type: string
-                bundles:
-                  type: array
-                  description: list of bundle uuid and versions effected by deletion
-                  items:
-                    type: string
-                confirmation:
-                  type: string
-                  description: a key used to confirm the deletion operation
-        201:
-          description: Deletion confirmed
-          schema:
-            type: object
-              properties:
-                files:
-                  type: array
-                  description: list of file uuids and versions effected by deletion
-                  items:
-                    type: string
-                bundles:
-                  type: array
-                  description: list of bundle uuid and versions effected by deletion
-                  items:
-                    type: string
-        403:
-          description: Unauthorized user it attempting this action.
-        404:
-          description: the bundle has already been deleted.
-        409:
-          description: The confimation code used is invalid. Either the confirmation code was incorrect, or an effected
-            bundle or file has changed state since the original request.
+          responses:
+            200:
+              description: Deletion pending
+              schema:
+                type: object
+                  properties:
+                    files:
+                      type: array
+                      description: list of file uuids and versions effected by deletion
+                      items:
+                        type: string
+                    bundles:
+                      type: array
+                      description: list of bundle uuid and versions effected by deletion
+                      items:
+                        type: string
+                    confirmation:
+                      type: string
+                      description: a key used to confirm the deletion operation
+            201:
+              description: Deletion confirmed
+              schema:
+                type: object
+                  properties:
+                    files:
+                      type: array
+                      description: list of file uuids and versions effected by deletion
+                      items:
+                        type: string
+                    bundles:
+                      type: array
+                      description: list of bundle uuid and versions effected by deletion
+                      items:
+                        type: string
+            403:
+              description: Unauthorized user it attempting this action.
+            404:
+              description: the bundle has already been deleted.
+            409:
+              description: The confimation code used is invalid. Either the confirmation code was incorrect, or an effected
+                bundle or file has changed state since the original request.
 ```
     
 A user must have explicit permission to perform a **logical deletion** of a bundle. For a **physical deletion** of a
@@ -304,21 +304,21 @@ This is a new endpoint `PUT /restore/file/{uuid}` added to the DSS API which fol
               description: the confirmation code that must be return to confirm the deletion of a file.
               required: false
               type: string
-      responses:
-        200:
-          description: restoration deleted file
-          schema:
-            type: object
-              properties:
-                confirmation:
-                  type: string
-                  description: a key used to confirm the deletion operation
-        201:
-          description: restoration confirmed
-        403:
-          description: Unauthorized user it attempting this action.
-        404:
-          description: the file cannot be restored because it was never deleted or it has been permanently deleted.
+          responses:
+            200:
+              description: restoration deleted file
+              schema:
+                type: object
+                  properties:
+                    confirmation:
+                      type: string
+                      description: a key used to confirm the deletion operation
+            201:
+              description: restoration confirmed
+            403:
+              description: Unauthorized user it attempting this action.
+            404:
+              description: the file cannot be restored because it was never deleted or it has been permanently deleted.
 ```
 
 A user must have explicit permission to perform a restore files request. This endpoint does not restore
@@ -354,23 +354,23 @@ This is a new endpoint `PUT /restore/bundle/{uuid}` added to the DSS API which f
               description: the confirmation code that must be return to confirm the deletion of a bundle.
               required: false
               type: string
-      responses:
-        200:
-          description: The deleted bundle and associated files can be restored.
-          schema:
-            type: object
-              properties:
-                confirmation:
-                  type: string
-                  description: a key used to confirm the deletion operation
-        201:
-          description: the deleted bundle and associated file restoration process has been confirmed.
-        403:
-          description: Unauthorized user it attempting this action.
-        404:
-          description: the bundle cannot be restored because it was never deleted, or was logically deleted. This can
-          also occur if the restoration cannot be completed succesfully because some of the files associated with the 
-          bundle have been deleted.
+          responses:
+            200:
+              description: The deleted bundle and associated files can be restored.
+              schema:
+                type: object
+                  properties:
+                    confirmation:
+                      type: string
+                      description: a key used to confirm the deletion operation
+            201:
+              description: the deleted bundle and associated file restoration process has been confirmed.
+            403:
+              description: Unauthorized user it attempting this action.
+            404:
+              description: the bundle cannot be restored because it was never deleted, or was logically deleted. This can
+              also occur if the restoration cannot be completed succesfully because some of the files associated with the 
+              bundle have been deleted.        
 ```
 
 A user must have explicit permission to restore file and bundles. This endpoint will attempt
