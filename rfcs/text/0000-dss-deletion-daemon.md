@@ -358,7 +358,7 @@ them.
 
 Physical deletion of blobs is effective across all tiered storage classes in
 the underlying blob store. Additional cost may be incurred for deleting data recently moved to a
-slower access storage tier. Deletion occur There is no additional delays cause when deleting from a 
+slower access storage tier. There is no additional delays cause when deleting from a 
 tiered storage system such as AWS glacier.
 
 ### Undoing logical deletions
