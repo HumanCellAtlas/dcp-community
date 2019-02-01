@@ -513,12 +513,12 @@ Tombstones are markers places in the DSS to indicate previously existing data ha
 files and bundles stored in the DSS. Tombstones come in two varieties, versioned and unversioned tombstones. A 
 version tombstone marks the deletion of a specific version of a file or bundle. This prevents that same version of data 
 from being reuploaded or retrieved. An unversioned tombstone does not specify a version and prevent a file or bundle 
-using the same UUID from being reuploaded or retrieved. Whether a tombstone is version or unversioned is determined when
+using the same UUID from being reuploaded or retrieved. Whether a tombstone is version or unversioned is determined
 during a deletion request. If the version parameter is present in the request, then a versioned tombstone is created. If
-no version is specified then an unversion tombstone is created. A versioned tombstone is created for all bundles and 
-files that are logically or physically deleted as a side affect of a deletion operations. Unversioned tombstones should 
-be used with caution for they effectively retired an existing UUID prevent users from uploaded a corrected version of 
-the data in the future.
+no version is specified then an unversioned tombstone is created that is applied to all the bundles with that UUID. A 
+versioned tombstone is created for all bundles and files that are logically or physically deleted as a side affect of a 
+deletion operations. Unversioned tombstones should be used with caution for they effectively retired an existing UUID 
+prevent users from uploaded a corrected version of the data in the future.
 
 ### Primary indexes
 
