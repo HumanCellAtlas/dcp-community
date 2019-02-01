@@ -67,7 +67,7 @@ Query Service features will be developed with use cases of the following users i
 ## Roles
 
 ### Project Lead
-[Genevieve Haliburton](mailto:ghaliburton@chanzuckerberg.com)
+[T.J. Chen](mailto:tj.chen@chanzuckerberg.com)
 
 ### Product Owner
 [Matt Weiden](mailto:mweiden@chanzuckerberg.com)
