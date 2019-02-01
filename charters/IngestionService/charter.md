@@ -133,7 +133,7 @@ The Ingestion Service requires oversight on which data types are required within
 
 ### Technical Lead
 
-[Justin Clark-Casey](mailto:justincc@ebi.ac.uk@ebi.ac.uk)
+[Justin Clark-Casey](mailto:justincc@ebi.ac.uk)
 
 ## Communication
 
