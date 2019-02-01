@@ -578,6 +578,17 @@ A bundle is restored in AWS by deleting the deletion marker and the tombstone fo
 In GCS a bundle can be restored by by storing a copy of the orginal files in the bucket with the same name, and deleting 
 the tombstones.
 
+### Monitoring and Alerts
+
+Deletion operations will be strictly logged and monitored to detect and prevent the rapid destruction of data from the 
+DSS. An alert system will be created to monitor the number of deletion operations executed and the scope of a deletion
+request. A large number of deletion requests over a short period of time would raise an alarm. A single deletion request
+that affects a large number of files and bundles will also raise an alarm. 
+
+A deletion digest log will be produced once a day when files or bundles have been or will be deleted from the DSS. This 
+includes **logical deletes**, **physical deletes**, data that is 24 hours aways from being permanently deleted, and 
+data that was permanently deleted over the previous 24 hours.
+
 ### Resources
 
 * [AWS S3 Versioning](https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html),
