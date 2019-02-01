@@ -26,7 +26,7 @@ treating an update to such a file as the addition of a new version of that
 file. Instead of physically removing a file version, the DCP hides that
 file version behind a deletion marker.
 
-Under certain circumstances however, the *physical deletion* of a file version
+Under certain circumstances however, the **physical deletion** of a file version
 is required. The first section of this specification describes the
 circumstances and mechanisms for logical and physical deletion of files and the
 bundles containing them. The second section details the changes to the API required to manage the deletion process.
@@ -71,12 +71,17 @@ guided by a standard operating procedure (SOP).
 
 ## API Changes
 
+The following are changes proposed to the DSS API to facility the deletion and restoration operations of data from the 
+DCP.
+
 ### File Deletion API
+
+This is a new addition to the DSS API.
 
 Only **physical deletes** exist for the file deletion API. The file deletion API is a two part process. The first 
 request will return the bundles that will be **logically deleted**
 as a side effect and a confirmation code. The second request must include the confirmation code in order to begin the
-deletion process. The request follows this swagger:
+deletion process. The request follows this swagger document:
 
 ```yaml
       /file/{uuid}:
@@ -130,7 +135,7 @@ deletion process. The request follows this swagger:
                   type: array
                   description: list of bundles effected by deletion
                   items:
-                  type: string
+                    type: string
                 confirmation:
                   type: string
                   description: a key used to confirm the deletion operation
@@ -140,15 +145,13 @@ deletion process. The request follows this swagger:
             type: object
               properties:
                 files:
-                  type: array
-                  description: list of files effected by deletion
-                  items:
-                    type: string
+                  description: The file uuid and version requested to be deleted.               
+                  type: string
                 bundles:
                   type: array
-                  description: list of bundles effected by deletion
+                  description: list of bundle uuid and versions effected by deletion
                   items:
-                  type: string
+                    type: string
         403:
           description: Unauthorized user it attempting this action.
         404:
@@ -162,12 +165,14 @@ A user must have explicit permission to perform the file deletion operation.
 
 ### Bundle Deletion API
 
+This would be a modification to the existing [Delete /bundle/{uuid}](https://github.com/HumanCellAtlas/data-store/blob/3d73935692f2030e7c19e4ec3b074a15361d33ca/dss-api.yml#L1450-L1541).
+
 The bundle deletion API is a two part process. The first request will return the bundle and files that will be affect 
-as a consequence of this opertion, and a confirmation code. Both logical and physical deletions can be performed through
+as a consequence of this operation, and a confirmation code. Both logical and physical deletions can be performed through
 this API. For **logical deletions** only a list bundles of bundles is returned in the response since files are unaffected
 by the logical deletion of a bundle. For a **physical deletion** a list of affected files and bundles is returned.
 The second request must include the confirmation code in order to begin the deletion process. The request follows this 
-swagger:
+swagger document:
 
 ```yaml
       /bundle/{uuid}:
@@ -229,14 +234,14 @@ swagger:
               properties:
                 files:
                   type: array
-                  description: list of files effected by deletion
+                  description: list of file uuids and versions effected by deletion
                   items:
                     type: string
                 bundles:
                   type: array
-                  description: list of bundles effected by deletion
+                  description: list of bundle uuid and versions effected by deletion
                   items:
-                  type: string
+                    type: string
                 confirmation:
                   type: string
                   description: a key used to confirm the deletion operation
@@ -247,14 +252,14 @@ swagger:
               properties:
                 files:
                   type: array
-                  description: list of files effected by deletion
+                  description: list of file uuids and versions effected by deletion
                   items:
                     type: string
                 bundles:
                   type: array
-                  description: list of bundles effected by deletion
+                  description: list of bundle uuid and versions effected by deletion
                   items:
-                  type: string
+                    type: string
         403:
           description: Unauthorized user it attempting this action.
         404:
@@ -264,13 +269,15 @@ swagger:
             bundle or file has changed state since the original request.
 ```
     
-A user must have explicit permission to perform a **logical deletion** of a bundle. For a **physcial deletion** of a
-bundle the user must have explicit permission to **physically delete** files and bundles.
+A user must have explicit permission to perform a **logical deletion** of a bundle. For a **physical deletion** of a
+bundle, the user must have explicit permission to **physically delete** files and bundles.
 
 (!) The deletion of a bundle does not handle the deletion of secondary analysis bundles referencing this bundle via the 
 links metadata field.
 
-### Restore/File API [WIP]
+### Restore File API
+
+This is a new endpoint `PUT /restore/file/{uuid}` added to the DSS API which follows this swagger:
 
 ```yaml
       /restore/files/{uuid}:
@@ -314,7 +321,12 @@ links metadata field.
           description: the file cannot be restored because it was never deleted or it has been permanently deleted.
 ```
 
-### Restore/Bundle/API
+A user must have explicit permission to perform a restore files request. This endpoint does not restore
+the bundles that were associated with that file.
+
+### Restore Bundle API
+
+This is a new endpoint `PUT /restore/bundle/{uuid}` added to the DSS API which follows this swagger:
 
 ```yaml
       /restore/bundles/{uuid}:
@@ -344,7 +356,7 @@ links metadata field.
               type: string
       responses:
         200:
-          description: restoration deleted bundle
+          description: The deleted bundle and associated files can be restored.
           schema:
             type: object
               properties:
@@ -352,59 +364,135 @@ links metadata field.
                   type: string
                   description: a key used to confirm the deletion operation
         201:
-          description: restoration confirmed
+          description: the deleted bundle and associated file restoration process has been confirmed.
         403:
           description: Unauthorized user it attempting this action.
         404:
-          description: the bundle cannot be restored because it was never deleted, logically deleted, or it has been 
-          permanently deleted.
+          description: the bundle cannot be restored because it was never deleted, or was logically deleted. This can
+          also occur if the restoration cannot be completed succesfully because some of the files associated with the 
+          bundle have been deleted.
+```
+
+A user must have explicit permission to restore file and bundles. This endpoint will attempt
+to restore the file associated with this bundle and fail if it cannot.
+
+### Get Deleted Bundle API
+
+The following swagger document proposes modification of the existing path 
+[/bundle/{uuid}](https://github.com/HumanCellAtlas/data-store/blob/3d73935692f2030e7c19e4ec3b074a15361d33ca/dss-api.yml#L1189-L1449).
+to communicate the deletion of a bundle:
+```yaml
+  /bundles/{uuid}:
+    get:
+      summary: Retrieve a bundle given a UUID and optionally a version.
+      ...
+      responses:
+        410:
+          description: the bundle has be deleted
+            schema:
+              type: object
+              properties:
+                reason:
+                  description: the reason for the deletion.
+                  type: string
+                details:
+                  description: User-friendly reason for the bundle or timestamp-specfic bundle deletion.
+                  type: string
+    put:
+      summary: Create a bundle
+      ...
+      responses:
+        409:
+          description: Returned when a bundle ior bundle tombstone with the same UUID and version already exists.
+```
+
+### Get Deleted File API
+
+The following swagger document proposes modification of the existing path 
+[/file/{uuid}](https://github.com/HumanCellAtlas/data-store/blob/3d73935692f2030e7c19e4ec3b074a15361d33ca/dss-api.yml#L237-L547)
+to communicate the deletion of a file:
+```yaml
+  /files/{uuid}:
+    head:
+      summary: Retrieve a file's metadata given an UUID and optionally a version.
+        ...
+      responses:
+        410:
+          description: The file has been deleted.
+    get:
+      summary: Retrieve a file given a UUID and optionally a version.
+      responses:
+        410:
+          description: The file has been deleted.
+          schema:
+            type: object
+            properties:
+              reason:
+                description: the reason for the deletion.
+                type: string
+              details
+                description: User-friendly reason for the bundle or timestamp-specfic bundle deletion.
+                type: string
+    put:
+      summary: Create a new version of a file
+      ...
+      responses:
+        409:
+          description: > 
+            Returned when a file or file tombstone with the same UUID and/or version already exists.
+          
 ```
 
 ## Deletion Process
 
-Once it is determined that a (meta)data file needs to be deleted –
+The following process describes the process for deleting data from the DSS. The same process is shared for both file and
+bundle deletes. It will be explicitly mentioned in areas where the processes diverge.
+
+Once it is determined that (meta)data needs to be deleted –
 the details of this determination are the scope of an SOP – the following
 procedures takes place: 
 
 1) A user identifies the Data Store file or bundle bundle to be deleted.
 
-2) The user makes a request to the appropriate API to retrieve the confirmation code. A list of bundles and files
+2) The user makes a request to the appropriate API to retrieve the confirmation code. A list of bundles and/or files
    affected is also returned in the request.
 
 3) The users makes a second request that included the confirmation code. This starts the deletion process.
 
-4) **Logical Deletion**: After the deletion request has been confirmed the DSS places a **bundle tombstone** in the
-   underlying storage system(S3 or GCP bucket) for all bundles listed in the orignal request. The tombstone's content is
-    as follows:
+4) After the deletion request has been confirmed the DSS places **tombstones** in the
+   underlying storage system(S3 or GCP bucket). For a **logical deletion** request, tombstones are placed for all bundles
+   mentioned in the requests response. For **physical deletion** requests, tombstones are placed for all files and 
+   bundles mentioned in the request response. The tombstone's content is
+   as follows:
    ```JSON
    { "reason": "<reason>",
      "details": "<additional info>",
      "email": "<requester's email>"
    }
    ```
-   A bundle version tombstone will cause `GET /bundle/{uuid}` to return a 404 for that bundle version. If the tombstoned
+   
+   A versioned bundle tombstone will cause `GET /bundle/{uuid}` to return a 409 for that bundle version. If the tombstoned
    bundle is the latest version then a request for `GET /bundle/{uuid}` without a version will
-   also returns a 404. If bundle tombstone does not specify a bundle then all request for `GET /bundle/{uuid}` will
-   return 404. The same applies to `HEAD /bundle/{uuid}` requests, both versioned and
-   unversioned. The file versions referenced by the deleted bundle version are
-   not immediately affected by the deletion and remain accessible.
+   also returns a 409. If bundle tombstone does not specify a bundle version then all request for `GET /bundle/{uuid}` will
+   return 409 even if version is specified in the request. The same applies to `HEAD /bundle/{uuid}` requests, both versioned and
+   unversioned. The same applied for `GET /files/{uuid}` and `HEAD /files/{uuid}`. Bundles that have an 
+   associated tombstone are inaccessible through the API and are considered **logically deleted**. Files with an 
+   associated tombstone or not logically delete. User with a direct URL to the file can still access the data.
    
    A notification is sent out to subscribers of datastore deletions when a new bundle tombstone is created, so they can 
    update their index appropriately. If the the bundle was logically deleted and later physically deleted a second
    identical notification will be sent to subscribers. The subscribers must be able to handle these notifications 
-   idempotently. 
+   idempotently.
    
-   If the bundle is marked for physical deletion then the bundle and associated files are also added to 
-   a deletion queue for regularly schedule **Physical Deletion**. 
-   
-   If a file is marked for **physical deletion** then it is placed in the deletion queue and all associated bundles are 
-   **logically deleted**.
+   A **physical deletion** request of a bundles results in the bundle associated files being added to 
+   the deletion queue for regularly schedule **Physical Deletion**. A **physical deletion** request of a file result in 
+   that file being added to the to deletion queue
 
-4) **Physical Deletion**: On a regular schedule the deletion queue is processed by code running within a secure boundary. An administrator 
+5) On a regular schedule the deletion queue is processed by code running within a secure boundary. An administrator 
    may manually invoke the deletion process or wait for it run at it's scheduled time once daily.
-   The deletion daemon is responsible for performing **Physical Deletes** of data from the deletion queue. 
-   A physical delete makes all files associated with a bundle or bundle version inaccessible. This will make `HEAD /files/{uuid}` and 
-   `GET /files/{uuid}` requests against those file versions return a 404.
+   The deletion daemon is responsible for performing **physical deletes** of data from the deletion queue. 
+   A physical delete makes all files associated with a bundle or bundle version inaccessible. This will cause direct
+   urls to a deleted file to fail.
    
    A log entry is produced when ever the deletion daemon is run. It contains information on what bundles and files
    have been logically deleted, the reason, the administrator who executed the deletion, and info about the deletion markers. 
@@ -415,10 +503,23 @@ procedures takes place:
    A daily digest of bundles and files that are scheduled for deletion are sent to DCP administrator 24 hours prior to the data
    being permanently deleted.
 
-5) Data that has been physical deleted remain in the bucket for 7 days before being permanently deleted from the bucket.
+6) Data that has been physical deleted remain in the bucket for 7 days before being permanently deleted from the bucket.
    This grace period allows the deletion to be reversed within that time period. After the grace period the data will 
    be permanently deleted.
  
+### Tombstones
+
+Tombstones are markers places in the DSS to indicate previously existing data has been removed. Tombstones exist for
+files and bundles stored in the DSS. Tombstones come in two varieties, versioned and unversioned tombstones. A 
+version tombstone marks the deletion of a specific version of a file or bundle. This prevents that same version of data 
+from being reuploaded or retrieved. An unversioned tombstone does not specify a version and prevent a file or bundle 
+using the same UUID from being reuploaded or retrieved. Whether a tombstone is version or unversioned is determined when
+during a deletion request. If the version parameter is present in the request, then a versioned tombstone is created. If
+no version is specified then an unversion tombstone is created. A versioned tombstone is created for all bundles and 
+files that are logically or physically deleted as a side affect of a deletion operations. Unversioned tombstones should 
+be used with caution for they effectively retired an existing UUID prevent users from uploaded a corrected version of 
+the data in the future.
+
 ### Primary indexes
 
 Bundle tombstones are indexed verbatim by the Data Store. The JSON schema
@@ -436,7 +537,7 @@ When a bundle or file is deleted it is removed from all replicas.
 
 Race conditions with Elasticsearch can arise when deleting files or bundles. The confirmation code is used to ensure
 that the state of the index has not changes between deletion requests. If the state has changed another request to delete
-should be made and the effected files an bundles should be verified before sending the confirmation to delete.
+should be made and the effected files and bundles should be verified before sending the confirmation to delete.
 
 ### Secondary indexes
 
@@ -462,15 +563,16 @@ tiered storage system such as AWS glacier.
 
 ### Undoing logical deletions
 
-A bundle can be restored using `restore_bundle.py <uuid.<version>`**WIP** if has not been physically deleted. This process
-uses the info from the deletion table to removes tombstones, and prevent permanent deletion. Subscribers of new 
-bundles will receive a notification that a new bundle has arrived.
+A data can be restored using the `PUT restore/file/{uuid}` or `PUT restore/bundle/{uuid}` if data has been logically 
+deleted or the grace period for physically deleted data has not elapsed. Subscribers of 
+bundles will receive a notification that a new bundle has arrived when a bundle is restored.
 
-Deletion Table Entry Example:
+Within the DSS the process for restoring data uses the info from the deletion table to removes tombstones, and prevent 
+permanent deletion.cDeletion Table Entry Example:
 
-|Bundle.Version|admin|reason|AWS Deletion Markers (key,ID)|GCP Previous Generations (key, previous generation)|
-|--------------|-----|------|--------------------|------------------------|
-|1234-2134-3145|admin@email.com|consent|(file.obj, 1234), ...| (file.obj, 4321), ...|
+|Bundle.Version|admin|reason|AWS Deletion Markers (key,ID)|GCP Previous Generations (key, previous generation)| Expiration|
+|--------------|-----|------|--------------------|------------------------|--------------------|
+|1234-2134-3145|admin@email.com|consent|(file.obj, 1234), ...| (file.obj, 4321), ...| 01-01-01T120000|
 
 A bundle is restored in AWS by deleting the deletion marker and the tombstone for each files in the bundle.
 In GCS a bundle can be restored by by storing a copy of the orginal files in the bucket with the same name, and deleting 
@@ -490,17 +592,17 @@ the tombstones.
 
 ### Open Issues
 
-TODO: implement object deletion and restoration for AWS anf GCP
-
-TODO: enable bucket versioning and lifecycle rules for replicas.
-
+* TODO: implement object deletion and restoration for AWS and GCP
+* TODO: implement tombstones for files
+* TODO: enable bucket versioning and lifecycle rules for replicas.
 
 ### Acceptance Criteria [optional]
 
 * When a bundle is tombstoned it is made immediately unavailable to users using search.
 * Maintainers of external indices shall removed deleted data from its index when a bundle tombstone notification is received.
 * Bundle files are still available until the deletion process has run.
-* Bundles are not completely removed from the DSS until after the grace period has elapsed.
+* Bundles and files are not completely removed from the DSS until after the grace period has elapsed.
+* Deleting a file results in the deletion of all bundles referencing that file.
 
 ### Unresolved Questions
 
