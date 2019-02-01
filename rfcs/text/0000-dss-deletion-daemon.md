@@ -36,6 +36,7 @@ The final section details the process of deleting data from the DSS, and design 
 
 * As a user of the DSS, I would like to know what bundles have been deleted, so I can keep my personal index up-to-date. 
 * As a data wrangler of the DSS, I need to remove data from the DSS, because there was no consent from the donor to share the data.
+* As a user of the DSS, I would like the API to return a status indicating bundle deletion, so that I know what happened to a bundle that I used previously.
 
 ## Reasons
 
