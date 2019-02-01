@@ -15,7 +15,7 @@ Establish a secure and controlled process for deleting data from the Data Store.
  [Hannes Schmidt](mailto:hannes@ucsc.edu)
 
 ## Shepherd
- `[Name](mailto:username@example.com)`
+ [Rhian Anthony](mailto:ranthony@broadinstitute.org)
 
 ## Motivation
 
