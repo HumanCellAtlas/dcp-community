@@ -564,8 +564,8 @@ tiered storage system such as AWS glacier.
 ### Undoing logical deletions
 
 A data can be restored using the `PUT restore/file/{uuid}` or `PUT restore/bundle/{uuid}` if data has been logically 
-deleted or the grace period for physically deleted data has not elapsed. Subscribers of 
-bundles will receive a notification that a new bundle has arrived when a bundle is restored.
+deleted. Physically deleted files and bundles can be restored using the restore API if the grace period for the data has
+not elapsed. Subscribers of bundles will receive a notification that a new bundle has arrived when a bundle is restored.
 
 Within the DSS the process for restoring data uses the info from the deletion table to removes tombstones, and prevent 
 permanent deletion.cDeletion Table Entry Example:
