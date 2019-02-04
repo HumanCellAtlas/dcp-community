@@ -139,171 +139,94 @@ links metadata field.
 
 ### Restore File API
 
-This is a new endpoint `PUT /restore/file/{uuid}` added to the DSS API which follows this swagger:
+Restores a file that has been deleted from the DSS if possible.
+This is a new endpoint added to the DSS API. This will restore a file that has been physically
+deleted from the DSS. The restoration will apply across all replicas.
 
-```yaml
-      /restore/files/{uuid}:
-        put:
-          security:
-            - dcpAuth: []
-          summary: Restore a file version
-          description: >
-            Restore the file with the given UUID and version. The restoration is applied across all replicas. 
-          parameters:
-            - name: uuid
-              in: path
-              description: A RFC4122-compliant ID for the bundle.
-              required: true
-              type: string
-              pattern: "[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}"
-            - name: version
-              in: query
-              description: Timestamp of file creation in DSS_VERSION format.
-              required: true
-              type: string
-            - cc:
-              in: query
-              description: the confirmation code that must be return to confirm the deletion of a file.
-              required: false
-              type: string
-          responses:
-            200:
-              description: restoration deleted file
-              schema:
-                type: object
-                  properties:
-                    confirmation:
-                      type: string
-                      description: a key used to confirm the deletion operation
-            201:
-              description: restoration confirmed
-            403:
-              description: Unauthorized user it attempting this action.
-            404:
-              description: the file cannot be restored because it was never deleted or it has been permanently deleted.
-```
+**Path**: `PUT /restore/file/{uuid}`
+
+| Parameter | Description |
+|-----------|------------|
+|uuid| A RFC4122-compliant ID for the file.|
+|version|Timestamp of file creation in DSS_VERSION format.|
+|Confirmation Code| A code used to confirm a deletion operation.|
+
+|Response Code| Description|
+|--------------|------------|
+|200| Restore delete file possible. A confirmation code is returned to confirm the deletion in the second request.|
+|201| Restoration confirmed with confirmation code. |
+|403| Unauthorized user is attempting this action.|
+|404| The file cannot be restored because it was never deleted or it has been permanently deleted.|
 
 A user must have explicit permission to perform a restore files request. This endpoint does not restore
 the bundles that were associated with that file.
 
 ### Restore Bundle API
 
-This is a new endpoint `PUT /restore/bundle/{uuid}` added to the DSS API which follows this swagger:
+Restore a physically deleted bundle with the given UUID and version. The restoration is applied across all replicas. 
+Bundles that have been logically deleted should be  be restored by uploading a new version of the bundle. This is a new 
+endpoint added to the DSS API.
 
-```yaml
-      /restore/bundles/{uuid}:
-        put:
-          security:
-            - dcpAuth: []
-          summary: Restore a bundle version
-          description: >
-            Restore a physically deleted bundle with the given UUID and version. The restoration is applied across all 
-            replicas. Bundles that have been logically deleted can be restored by uploading a new version of the bundle.
-          parameters:
-            - name: uuid
-              in: path
-              description: A RFC4122-compliant ID for the bundle.
-              required: true
-              type: string
-              pattern: "[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}"
-            - name: version
-              in: query
-              description: Timestamp of bundle creation in DSS_VERSION format.
-              required: true
-              type: string
-            - cc:
-              in: query
-              description: the confirmation code that must be return to confirm the deletion of a bundle.
-              required: false
-              type: string
-          responses:
-            200:
-              description: The deleted bundle and associated files can be restored.
-              schema:
-                type: object
-                  properties:
-                    confirmation:
-                      type: string
-                      description: a key used to confirm the deletion operation
-            201:
-              description: the deleted bundle and associated file restoration process has been confirmed.
-            403:
-              description: Unauthorized user it attempting this action.
-            404:
-              description: the bundle cannot be restored because it was never deleted, or was logically deleted. This can
-              also occur if the restoration cannot be completed succesfully because some of the files associated with the 
-              bundle have been deleted.        
-```
+**Path**: `PUT /restore/bundle/{uuid}`
+
+| Parameter | Description |
+|-----------|------------|
+|uuid| A RFC4122-compliant ID for the file.|
+|version|Timestamp of file creation in DSS_VERSION format.|
+|Confirmation Code| A code used to confirm a deletion operation.|
+
+|Response Code| Description|
+|--------------|------------|
+|200| The deleted bundle and associated files can be restored. A confirmation code is returned to confirm the deletion in the second request.|
+|201| Restoration confirmed with confirmation code. |
+|403| Unauthorized user is attempting this action.|
+|404| the bundle cannot be restored because it was never deleted, or was logically deleted. This can also occur if the restoration cannot be completed succesfully because some of the files associated with the bundle have been deleted. |
 
 A user must have explicit permission to restore file and bundles. This endpoint will attempt
 to restore the file associated with this bundle and fail if it cannot.
 
 ### Get Deleted Bundle API
 
-The following swagger document proposes modification of the existing path 
+The following table proposes modification of the existing path 
 [/bundle/{uuid}](https://github.com/HumanCellAtlas/data-store/blob/3d73935692f2030e7c19e4ec3b074a15361d33ca/dss-api.yml#L1189-L1449).
 to communicate the deletion of a bundle:
-```yaml
-  /bundles/{uuid}:
-    get:
-      summary: Retrieve a bundle given a UUID and optionally a version.
-      ...
-      responses:
-        410:
-          description: the bundle has be deleted
-            schema:
-              type: object
-              properties:
-                reason:
-                  description: the reason for the deletion.
-                  type: string
-                details:
-                  description: User-friendly reason for the bundle or timestamp-specfic bundle deletion.
-                  type: string
-    put:
-      summary: Create a bundle
-      ...
-      responses:
-        409:
-          description: Returned when a bundle or bundle tombstone with the same UUID and version already exists.
-```
+
+**Path**: `GET /bundles/{uuid}`
+
+|Response Code| Description|
+|--------------|------------|
+|410| The bundle has been deleted. The reason and details for the deletion are returned. |
+
+**Path**: `PUT /bundles/{uuid}`
+
+|Response Code| Description|
+|--------------|------------|
+|409| A bundle or bundle tombstone with the same UUID and version already exists. |
 
 ### Get Deleted File API
 
-The following swagger document proposes modification of the existing path 
+The following proposes modification of the existing path 
 [/file/{uuid}](https://github.com/HumanCellAtlas/data-store/blob/3d73935692f2030e7c19e4ec3b074a15361d33ca/dss-api.yml#L237-L547)
 to communicate the deletion of a file:
-```yaml
-  /files/{uuid}:
-    head:
-      summary: Retrieve a file's metadata given an UUID and optionally a version.
-        ...
-      responses:
-        410:
-          description: The file has been deleted.
-    get:
-      summary: Retrieve a file given a UUID and optionally a version.
-      responses:
-        410:
-          description: The file has been deleted.
-          schema:
-            type: object
-            properties:
-              reason:
-                description: the reason for the deletion.
-                type: string
-              details
-                description: User-friendly reason for the bundle or timestamp-specfic bundle deletion.
-                type: string
-    put:
-      summary: Create a new version of a file
-      ...
-      responses:
-        409:
-          description: > 
-            Returned when a file or file tombstone with the same UUID and/or version already exists.
-          
-```
+
+**Path**: `HEAD /file/{uuid}`
+
+|Response Code| Description|
+|--------------|------------|
+|410| The file has been deleted. The reason and details for the deletion are returned. |
+
+**Path**: `GET /file/{uuid}`
+
+|Response Code| Description|
+|--------------|------------|
+|410| The file has been deleted. The reason and details for the deletion are returned. |
+
+**Path**: `PUT /bundles/{uuid}`
+
+|Response Code| Description|
+|--------------|------------|
+|409| Returned when a file or file tombstone with the same UUID and/or version already exists.|
+
 
 ## Deletion Process
 
