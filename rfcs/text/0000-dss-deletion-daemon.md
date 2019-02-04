@@ -83,191 +83,53 @@ request will return the bundles that will be **logically deleted**
 as a side effect and a confirmation code. The second request must include the confirmation code in order to begin the
 deletion process. The request follows this swagger document:
 
-```yaml
-      /file/{uuid}:
-        delete:
-          security:
-            - dcpAuth: []
-          summary: Delete a file version
-          description: >
-            Delete the file with the given UUID and version. This deletion is applied across all replicas.
-          parameters:
-            - name: uuid
-              in: path
-              description: A RFC4122-compliant ID for the bundle.
-              required: true
-              type: string
-              pattern: "[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}"
-            - name: replica
-              in: query
-              description: Replica to write to first.
-              required: false
-              type: string
-              enum: [aws, gcp]
-              default: aws
-            - name: version
-              in: query
-              description: Timestamp of bundle creation in DSS_VERSION format.
-              required: true
-              type: string
-            - name: json_request_body
-              in: body
-              required: true
-              schema:
-                type: object
-                properties:
-                  reason:
-                    description: the reason for the deletion.
-                    type: string
-                    enum: [consent_withdrawn, consent_absent, service_disruption, legal]
-                  details
-                    description: User-friendly reason for the bundle or timestamp-specfic bundle deletion.
-                    type: string
-                required:
-                  - reason
-          responses:
-            200:
-              description: Deletion pending
-              schema:
-                type: object
-                  properties:
-                    bundles:
-                      type: array
-                      description: list of bundles effected by deletion
-                      items:
-                        type: string
-                    confirmation:
-                      type: string
-                      description: a key used to confirm the deletion operation
-            201:
-              description: Deletion confirmed
-              schema:
-                type: object
-                  properties:
-                    files:
-                      description: The file uuid and version requested to be deleted.               
-                      type: string
-                    bundles:
-                      type: array
-                      description: list of bundle uuid and versions effected by deletion
-                      items:
-                        type: string
-            403:
-              description: Unauthorized user it attempting this action.
-            404:
-              description: the files has already been deleted.
-            409:
-              description: The confimation code used is invalid. Either the confirmation code was incorrect, or an effected
-                bundle has changed state since the original request.
-```
+**Path**: `DELETE /file/{uuid}`
+
+| Parameter | Description |
+|-----------|------------|
+|uuid| A RFC4122-compliant ID for the bundle.|
+|version|Timestamp of bundle creation in DSS_VERSION format.|
+|reason| the reason for the deletion.|
+|details| User-friendly reason for the bundle or timestamp-specfic bundle deletion.|
+|Confirmation Code| A code used to confirm a deletion operation.|
+
+|Response Code| Description|
+|--------------|------------|
+|200| Deletion pending. A confirmation code is returned to confirm the deletion in the second request. A list of affect files and bundles is also returned |
+|201| Deletion Confirmed with confirmation code. |
+|403| Unauthorized user it attempting this action.|
+|404| The files has already been deleted.|
+|409| The confimation code used is invalid. Either the confirmation code was incorrect, or an effected bundle has changed state since the original request.|
 
 A user must have explicit permission to perform the file deletion operation.
 
 ### Bundle Deletion API
 
-This would be a modification to the existing [Delete /bundle/{uuid}](https://github.com/HumanCellAtlas/data-store/blob/3d73935692f2030e7c19e4ec3b074a15361d33ca/dss-api.yml#L1450-L1541).
-
 The bundle deletion API is a two part process. The first request will return the bundle and files that will be affect 
 as a consequence of this operation, and a confirmation code. Both logical and physical deletions can be performed through
 this API. For **logical deletions** only a list bundles of bundles is returned in the response since files are unaffected
 by the logical deletion of a bundle. For a **physical deletion** a list of affected files and bundles is returned.
-The second request must include the confirmation code in order to begin the deletion process. The request follows this 
-swagger document:
+The second request must include the confirmation code in order to begin the deletion process. A deletion request applies
+across all replicas. The following table describes the request:
 
-```yaml
-      /bundle/{uuid}:
-        delete:
-          security:
-            - dcpAuth: []
-          summary: Delete a bundle version
-          description: >
-            Delete the bundle with the given UUID and version. This deletion is applied across all replicas.
-          parameters:
-            - name: uuid
-              in: path
-              description: A RFC4122-compliant ID for the bundle.
-              required: true
-              type: string
-              pattern: "[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}"
-            - name: replica
-              in: query
-              description: Replica to write to first.
-              required: false
-              type: string
-              enum: [aws, gcp]
-              default: aws
-            - name: version
-              in: query
-              description: Timestamp of bundle creation in DSS_VERSION format.
-              required: true
-              type: string
-            - name: physical
-              in: query
-              require: true
-              description: True for a physical deletion and false for a logical deletion
-              type: bool
-            - cc:
-              in: query
-              description: the confirmation code that must be return to confirm the deletion of a file.
-              required: false
-              type: string
-            - name: json_request_body
-              in: body
-              required: true
-              schema:
-                type: object
-                properties:
-                  reason:
-                    description: the reason for the deletion.
-                    type: string
-                    enum: [consent_withdrawn, consent_absent, service_disruption, legal]
-                  details
-                    description: User-friendly reason for the bundle or timestamp-specfic bundle deletion.
-                    type: string
-                required:
-                  - reason
-          responses:
-            200:
-              description: Deletion pending
-              schema:
-                type: object
-                  properties:
-                    files:
-                      type: array
-                      description: list of file uuids and versions effected by deletion
-                      items:
-                        type: string
-                    bundles:
-                      type: array
-                      description: list of bundle uuid and versions effected by deletion
-                      items:
-                        type: string
-                    confirmation:
-                      type: string
-                      description: a key used to confirm the deletion operation
-            201:
-              description: Deletion confirmed
-              schema:
-                type: object
-                  properties:
-                    files:
-                      type: array
-                      description: list of file uuids and versions effected by deletion
-                      items:
-                        type: string
-                    bundles:
-                      type: array
-                      description: list of bundle uuid and versions effected by deletion
-                      items:
-                        type: string
-            403:
-              description: Unauthorized user it attempting this action.
-            404:
-              description: the bundle has already been deleted.
-            409:
-              description: The confimation code used is invalid. Either the confirmation code was incorrect, or an effected
-                bundle or file has changed state since the original request.
-```
+**Path**: `DELETE /bundle/{uuid}`
+
+| Parameter | Description |
+|-----------|------------|
+|uuid| A RFC4122-compliant ID for the bundle.|
+|version|Timestamp of bundle creation in DSS_VERSION format.|
+|physical| Determines if the deletion is physical or logical.|
+|reason| the reason for the deletion.|
+|details| User-friendly reason for the bundle or timestamp-specfic bundle deletion.|
+|Confirmation Code| A code used to confirm a deletion operation.|
+
+|Response Code| Description|
+|--------------|------------|
+|200| Deletion pending. A confirmation code is returned to confirm the deletion in the second request. A list of affect files and bundles is also returned |
+|201| Deletion Confirmed with confirmation code. |
+|403| Unauthorized user is attempting this action.|
+|404| The bundle has already been deleted.|
+|409| The confirmation code used is invalid. Either the confirmation code was incorrect, or an effected bundle has changed state since the original request.|
     
 A user must have explicit permission to perform a **logical deletion** of a bundle. For a **physical deletion** of a
 bundle, the user must have explicit permission to **physically delete** files and bundles.
