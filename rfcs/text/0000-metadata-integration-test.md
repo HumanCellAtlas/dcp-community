@@ -40,7 +40,7 @@ In this design we will use the following terms:
 Design
 
 1. Bundles with new metadata schema changes are uploaded to the production environment with a new schema label
-1. Observing the new schema label, the DSS stores the new bundles and makes them available with the `GET /v1/bundles` endpoint with the bundle `uuid` or `(uuid, version)`, but does not index nor does it release subscription notifications for them.
+1. Observing the new schema label, the DSS stores the new data and makes it available with the `GET /v1/bundles` endpoint with the bundle `uuid` or `(uuid, version)`, but does not index nor does it release subscription notifications for these bundles.
 1. Via a schema integration test system, a sample of the uploaded bundles are copied from the production DSS to the integration DSS testing environment. Bundles in the sample are selected for unique experimental graph shapes and fields that may have changed.
 1. The integration DSS deployment stores the bundles, indexes their metadata, and releases bundle events to downstream systems in the integration environment with subscriptions.
 1. The schema integration test checks the results and passes if systems downstream of the integration DSS have correctly processed the new bundles; it fails otherwise.*
