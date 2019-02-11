@@ -55,7 +55,7 @@ Design
 
 ### Pros:
 
-* Bundles only have to be uploaded once
+* Submissions only have to be ingested once
 * Bundles can be uploaded directly to the production environment
 * Tests exactly what bundles downstream systems will see; does not require complicated fake metadata generation code in tests
 * Data in storage is immediately available after upload via the `GET /v1/bundles` endpoint
