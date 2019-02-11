@@ -56,7 +56,7 @@ Design
 ### Pros:
 
 * Submissions only have to be ingested once
-* Bundles can be uploaded directly to the production environment
+* Bundles can be pushed directly to the DSS in the production environment
 * Tests exactly what bundles downstream systems will see; does not require complicated fake metadata generation code in tests
 * Data in storage is immediately available after upload via the `GET /v1/bundles` endpoint
 * Downstream systems are protected from new schema changes until it can be confirmed that they are able to handle the changes
