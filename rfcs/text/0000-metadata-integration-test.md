@@ -20,7 +20,7 @@ This document details an integration test design for metadata schema changes in 
 
 ## Motivation
 
-Currently breakages to DCP systems caused by metadata schema changes are detected at runtime upon data (bundle) upload. This forces data wranglers, DCP operators, and data consumers to react to unpredictable runtime failures rather than detecting problems before the code is merged and deployed.
+Currently, breakages to DCP systems caused by metadata schema changes are detected at runtime upon data upload. This forces data wranglers, DCP operators, and data consumers to react to unpredictable runtime failures rather than detecting problems before metadata schema changes are merged and deployed.
 
 To alleviate this issue, the DCP development team can use a metadata schema integration test to test whether it is safe to release data downstream of the Data Storage Service (DSS), past which point applications start to depend on the schema. The benefits of this approach are that it will:
 
@@ -39,11 +39,11 @@ In this design we will use the following terms:
 
 Design
 
-1. Bundles with new metadata schema changes are uploaded to the production environment with a new schema label
-1. Observing the new schema label, the DSS stores the new data and makes it available with the `GET /v1/bundles` endpoint with the bundle `uuid` or `(uuid, version)`, but does not index nor does it release subscription notifications for these bundles.
-1. Via a schema integration test system, a sample of the uploaded bundles are copied from the production DSS to the integration DSS testing environment. Bundles in the sample are selected for unique experimental graph shapes and fields that may have changed.
+1. Data files ingested with new metadata schema changes are uploaded to the production upload service with a new schema label
+1. Observing the new schema label, the DSS stores the new bundles and makes them available with the `GET /v1/bundles` endpoint with the bundle `uuid` or `(uuid, version)`, but does not index nor does it release subscription notifications for them by default.<sup>1</sup>
+1. Via a schema integration test system, a sample of the new bundles in the production DSS are copied to the integration DSS testing environment. Bundles in the sample are selected for unique experimental graph shapes and fields that may have changed.
 1. The integration DSS deployment stores the bundles, indexes their metadata, and releases bundle events to downstream systems in the integration environment with subscriptions.
-1. The schema integration test checks the results and passes if systems downstream of the integration DSS have correctly processed the new bundles; it fails otherwise.*
+1. The schema integration test checks the results and passes if systems downstream of the integration DSS have correctly processed the new bundles; it fails otherwise.<sup>2</sup>
 1. If the schema integration test passes, the new bundles in the production DSS can be released downstream by issuing a new bundle version of each without the new schema label. This process could be automated.
 1. If the schema test does not pass, the data is not released and development teams are notified to resolve the issue and rerun the test.
 
@@ -51,13 +51,14 @@ Design
 
 *Integration test data flow: test path is shown in red, production release in blue, integration tooling in dashed lines; edges are labeled with corresponding step numbers in the design above*
 
-\* To estimate the impact of schema changes on third party applications, the schema integration test system could run critical [data consumer vignettes](https://github.com/HumanCellAtlas/data-consumer-vignettes).
+1. The DSS subscription API should enable clients to opt into receiving events with unsupported metadata schema versions. Notably, this would enable the data browser to display data with unsupported metadata schema versions even if analysis cannot yet process it.
+1. To estimate the impact of schema changes on third party applications, the schema integration test system could run critical [data consumer vignettes](https://github.com/HumanCellAtlas/data-consumer-vignettes).
 
 ### Pros:
 
-* Submissions only have to be ingested once
-* Bundles can be pushed directly to the DSS in the production environment
-* Tests exactly what bundles downstream systems will see; does not require complicated fake metadata generation code in tests
+* Data files only have to be uploaded once
+* Data files can be uploaded directly to the production environment
+* Tests exactly what data downstream systems will see; does not require complicated fake metadata generation code in tests
 * Data in storage is immediately available after upload via the `GET /v1/bundles` endpoint
 * Downstream systems are protected from new schema changes until it can be confirmed that they are able to handle the changes
 * Does not require replaying subscription notifications
@@ -66,8 +67,8 @@ Design
 
 * Does not test the effect of schema changes on the data contribution pipeline, it is assumed a sibling integration test will exist for contribution of data and metadata
 * Does not cover third party systems, which may be consuming from the DSS
-* New bundles are not available in the data browser until tests for the entire system have passed
-* There is no hard guarantee that downstream production systems will be able to handle new bundles: there could be critical updates in the integration environment which have not yet reached production
+* New data is not available in the data browser until tests for the entire system have passed
+* There is no hard guarantee that downstream production systems will be able to handle new metadata schema changes: there could be critical updates in the integration environment which have not yet reached production
 * In the case that the integration test does not pass, developers and wranglers will have to exercise care in propagating fixes to production before releasing the new bundles downstream of the production DSS
 
 ## Discussion:
