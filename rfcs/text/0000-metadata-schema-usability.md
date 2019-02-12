@@ -18,11 +18,11 @@ An approach to generating a user-friendly version of the metadata JSON schema fr
 
 *Recommended format for Authors:*
 
- `[Mark Diekhans](mailto:markd@ucsc.edu)`
- `[Simon Jupp](mailto:jupp@ebi.ac.uk)`
- `[Mallory Freeberg>](mailto:mfreeberg@ebi.ac.uk)`
- `[Dani Welter](mailto:dwelter@ebi.ac.uk)`
- `[Tony Burdett](mailto:tburdett@ebi.ac.uk)`
+ [Mark Diekhans](mailto:markd@ucsc.edu).
+ [Simon Jupp](mailto:jupp@ebi.ac.uk),
+ [Mallory Freeberg](mailto:mfreeberg@ebi.ac.uk),
+ [Dani Welter](mailto:dwelter@ebi.ac.uk),
+ [Tony Burdett](mailto:tburdett@ebi.ac.uk)
 
 ## Shepherd
 ***Leave this blank.** This role is assigned by DCP PM to guide the **Author(s)** through the RFC process.*
@@ -35,25 +35,25 @@ An approach to generating a user-friendly version of the metadata JSON schema fr
 
 *Describe the user or technical need in detail [with alignment to the DCP roadmap priorities where possible]. Link prior community discussions to demonstrate support for this RFC.*
 
-Consumers of the HCA metadata JSON Schema have found that the module structure makes the schema difficult to understand, even for experienced programmers. Currently, To support 26 different instance types, there are 78 JSON Schema files.  While not an overly large number of modules, the composition model of JSON schema does not match any standard type paradigm, making it difficult to explain.  With no tools available for visualizing or understanding JSON Schema, this makes the HCA data model opaque.
+Consumers of the HCA metadata JSON Schema have found that the module structure makes the schema difficult to understand, even for experienced programmers. Currently, to support 26 different instance types, there are 78 JSON Schema files.  While not an overly large number of modules, the composition model of JSON schema does not match any common paradigm, making it difficult to explain.  With no tools available for visualizing or understanding JSON Schema, which makes the HCA data model opaque.
 
 Another result of the module structure is that field names and descriptions defined in modules don't match the concrete class.  This makes schema-driven users interfaces confusing.
 
-However, the module structure adds value in making the schema easier to create, maintain, and keep consistent.
+However, the module structure adds value in making the schema easier to create, maintain, and keep consistent by avoiding redundant specifications of fields. 
 
 
 ### User Stories
 
 *Share the [User Stories](https://www.mountaingoatsoftware.com/agile/user-stories) motivating this RFC.*
 
-* 
+* As a user
 
 ## Detailed Design
 
 *Explain the design in sufficient detail such that the implementation and (if appropriate) the interaction with existing DCP software are both reasonably clear.*
 
 
-
+* As a 
 
 
 ### Acceptance Criteria [optional]
