@@ -10,7 +10,7 @@ Establish a secure and controlled process for deleting data from the Data Store.
 
 ## Author(s)
 
- [Trent Smith](mailto:tsmith12@ucsc.edu)
+ [Trent Smith](mailto:trent.smith@chanzuckerberg.com)
  
  [Hannes Schmidt](mailto:hannes@ucsc.edu)
 
