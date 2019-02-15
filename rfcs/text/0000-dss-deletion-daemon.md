@@ -34,7 +34,7 @@ The final section details the process of deleting data from the DSS, and design 
 
 ### User Stories
 
-* As a secondary index of the DSS, I would like to know what bundles have been deleted, so I can keep my personal index up-to-date. 
+* As an operator of a secondary index, I would like to know what bundles have been deleted, so I can keep my personal index up-to-date. 
 * As a data contributor, I need to remove data from the DSS as I have realised the consent it was collected under does not allow it to be hosted by the DCP.
 * As a data consumer of the DSS, I would like the API to return a status indicating bundle deletion, so that I know what happened to a bundle that I used previously.
 
@@ -63,7 +63,7 @@ Possible reasons for deletion of (meta)data are
   laws or regulations in a jurisdiction applicable to the DCP or the (meta)data
   it stores
 
-This is not an exhaustive list, and more reason maybe discovered later.
+This is not an exhaustive list, and more reasons may be discovered later.
  
 Whether any of the reasons require a physical or logical deletion is at the
 discretion of the administrator performing the deletion. That discretion is
@@ -105,7 +105,7 @@ A user must have explicit permission to perform the file deletion operation.
 
 ### Bundle Deletion API
 
-The bundle deletion API is a two part process. The first request will return the bundle and files that will be affect 
+The bundle deletion API is a two part process. The first request will return the bundle and files that will be affected 
 as a consequence of this operation, and a confirmation code. Both logical and physical deletions can be performed through
 this API. For **logical deletions** only a list bundles of bundles is returned in the response since files are unaffected
 by the logical deletion of a bundle. For a **physical deletion** a list of affected files and bundles is returned.
@@ -256,25 +256,25 @@ procedures takes place:
    }
    ```
    
-   A versioned bundle tombstone will cause `GET /bundle/{uuid}` to return a 410 for that bundle version. If the tombstoned
+   A versioned bundle tombstone will cause `GET /bundle/{uuid}` to return a 410 status code for that bundle version. If the tombstoned
    bundle is the latest version then a request for `GET /bundle/{uuid}` without a version will
-   also returns a 410. If bundle tombstone does not specify a bundle version then all request for `GET /bundle/{uuid}` will
-   return 410 even if version is specified in the request. The same applies to `HEAD /bundle/{uuid}` requests, both versioned and
-   unversioned. The same applied for `GET /files/{uuid}` and `HEAD /files/{uuid}`. Bundles that have an 
+   also return a 410 status code. If bundle tombstone does not specify a bundle version then all requests for `GET /bundle/{uuid}` will
+   return 410 status code even if version is specified in the request. The same applies to `HEAD /bundle/{uuid}` requests, both versioned and
+   unversioned. The same applies for `GET /files/{uuid}` and `HEAD /files/{uuid}`. Bundles that have an 
    associated tombstone are inaccessible through the API and are considered **logically deleted**. Files with an 
-   associated tombstone or not logically delete. User with a direct URL to the file can still access the data.
+   associated tombstone are not considered logically deleted, because user with a direct URL to the file can still access the data.
    
    A notification is sent out to subscribers of datastore deletions when a new bundle tombstone is created, so they can 
    update their index appropriately. If the the bundle was logically deleted and later physically deleted a second
    identical notification will be sent to subscribers. The subscribers must be able to handle these notifications 
    idempotently.
    
-   A **physical deletion** request of a bundles results in the bundle associated files being added to 
-   the deletion queue for regularly schedule **Physical Deletion**. A **physical deletion** request of a file result in 
+   A **physical deletion** request of a bundle results in the bundle associated files being added to 
+   the deletion queue for regularly scheduled **Physical Deletion**. A **physical deletion** request of a file result in 
    that file being added to the to deletion queue
 
 5) On a regular schedule the deletion queue is processed by code running within a secure boundary. An administrator 
-   may manually invoke the deletion process or wait for it run at it's scheduled time once daily.
+   may manually invoke the deletion process or wait for it to run at its scheduled time once daily.
    The deletion daemon is responsible for performing **physical deletes** of data from the deletion queue. 
    A physical delete makes all files associated with a bundle or bundle version inaccessible. This will cause direct
    urls to a deleted file to fail.
@@ -321,7 +321,7 @@ When a bundle or file is deleted it is removed from all replicas.
 ### Consistency
 
 Race conditions with Elasticsearch can arise when deleting files or bundles. The confirmation code is used to ensure
-that the state of the index has not changes between deletion requests. If the state has changed another request to delete
+that the state of the index has not changed between deletion requests. If the state has changed another request to delete
 should be made and the effected files and bundles should be verified before sending the confirmation to delete.
 
 ### Secondary indexes
@@ -343,17 +343,17 @@ them.
 
 Physical deletion of blobs is effective across all tiered storage classes in
 the underlying blob store. Additional cost may be incurred for deleting data recently moved to a
-slower access storage tier. There is no additional delays cause when deleting from a 
+slower access storage tier. There is no additional time delay caused when deleting from a 
 tiered storage system such as AWS glacier.
 
 ### Undoing Deletions
 
-A bundles can be restored using `PUT restore/bundle/{uuid}` if bundle has been logically 
+A bundle can be restored using `PUT restore/bundle/{uuid}` if bundle has been logically 
 deleted. Physically deleted bundles and files can be restored using the restore API if the grace period for the data 
 has not elapsed. Subscribers of bundles will receive a notification that a new bundle has arrived when a bundle is restored.
 
 Within the DSS the process for restoring data uses the info from the deletion table to removes tombstones, and prevent 
-permanent deletion.cDeletion Table Entry Example:
+permanent deletion. Deletion Table Entry Example:
 
 |Bundle.Version|admin|reason|AWS Deletion Markers (key,ID)|GCP Previous Generations (key, previous generation)| Expiration|
 |--------------|-----|------|--------------------|------------------------|--------------------|
@@ -395,7 +395,7 @@ data that was permanently deleted over the previous 24 hours.
 ### Acceptance Criteria [optional]
 
 * When a bundle is tombstoned it is made immediately unavailable to users using search.
-* Maintainers of external indices shall removed deleted data from its index when a bundle tombstone notification is received.
+* Maintainers of external indices shall remove deleted data from its index when a bundle tombstone notification is received.
 * Bundle files are still available until the deletion process has run.
 * Bundles and files are not completely removed from the DSS until after the grace period has elapsed.
 * Deleting a file results in the deletion of all bundles referencing that file.
