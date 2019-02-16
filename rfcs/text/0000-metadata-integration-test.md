@@ -1,6 +1,6 @@
 ### DCP PR:
 
-# Metadata integration testing
+# Integration testing for metadata schema changes
 
 ## Summary
 
@@ -20,7 +20,7 @@ This document details an integration test design for metadata schema changes in 
 
 ## Motivation
 
-Currently, breakages to DCP systems caused by metadata schema changes are detected at runtime upon data upload. This forces data wranglers, DCP operators, and data consumers to react to unpredictable runtime failures rather than detecting problems before metadata schema changes are merged and deployed.
+Currently, metadata with new metadata schema changes can be released to DCP components that depend on the schema before those changes are supported. Consequently, processing failures from metadata changes are detected at runtime. Data wranglers, DCP operators, and Data Storage Service (DSS) API clients react to runtime failures rather than detecting problems before metadata schema changes are merged and new metadata is submitted.
 
 To alleviate this issue, the DCP development team can use a metadata schema integration test to test whether it is safe to release data downstream of the Data Storage Service (DSS), past which point applications start to depend on the schema. The benefits of this approach are that it will:
 
