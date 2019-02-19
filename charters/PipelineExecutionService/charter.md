@@ -49,7 +49,7 @@ __2020:__ Generalized and reusable service infrastructure
 
 ## Communication
 
-[Team email](mailto:pipelines-team@data.humancellatlas.org): pipelines-team@data.humancellatlas.org 
+Team email: pipelines-team@data.humancellatlas.org 
  
 [HumanCellAtlas/data-pipelines-team](https://humancellatlas.slack.com/messages/data-pipelines-team): team discussions, a place to directly communicate to the team that works on the service and pipelines  
 [HumanCellAtlas/data-pipelines-ci](https://humancellatlas.slack.com/messages/data-pipelines-ci): Data Processing Service continuous integration status  
