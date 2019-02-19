@@ -1,12 +1,12 @@
-# [Data Processing Service](mailto:pipelines-team@data.humancellatlas.org)
+# [Pipeline Execution Service](mailto:pipelines-team@data.humancellatlas.org)
 
 ## Description
 
-The Data Processing Service is a service that executes data processing pipelines containing analysis tasks performed on scientific data in the Data Coordination Platform (DCP). The outputs of these pipelines are used for scientific analysis and interpretation.  
+The Pipeline Execution Service executes data processing pipelines containing analysis tasks performed on scientific data in the Data Coordination Platform (DCP). The outputs of these pipelines are used for scientific analysis and interpretation.  
 
 ## Objectives
 
-The Data Processing Service develops the infrastructure to run pipelines reliably and at-scale for the DCP. The team implementing the service also operates the pipeline infrastructure for the Human Cell Atlas project. 
+The Pipeline Execution Service runs pipelines reliably and at-scale for the DCP. The team implementing the service also operates the pipeline infrastructure for the Human Cell Atlas project. 
 
 ## Definitions
 
@@ -51,8 +51,8 @@ __2020:__ Generalized and reusable service infrastructure
 
 [Team email](mailto:pipelines-team@data.humancellatlas.org): pipelines-team@data.humancellatlas.org 
  
-__HumanCellAtlas#data-pipelines-team:__ team discussions, a place to directly communicate to the team that works on the service and pipelines  
-__HumanCellAtlas#pipelines-ci:__ Data Processing Service continuous integration status  
+[HumanCellAtlas/data-pipelines-team](https://humancellatlas.slack.com/messages/data-pipelines-team): team discussions, a place to directly communicate to the team that works on the service and pipelines  
+[HumanCellAtlas/data-pipelines-ci](https://humancellatlas.slack.com/messages/data-pipelines-ci): Data Processing Service continuous integration status  
 
 ## Github repositories
 
