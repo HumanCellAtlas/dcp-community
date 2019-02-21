@@ -16,19 +16,19 @@ __pipeline:__ A collection of one or more functional tasks that operate on input
 
 ### Operations
 
-* Operating the instance of the HCA DCP Data Processing Service
+* Operating the instance of the HCA DCP Pipeline Execution Service  
 * Initiation and management of the execution of all data processing pipelines that run on scientific data in the HCA DCP  
-* Establishing and operating automated practices around engineering testing of pipelines executed in the HCA DCP Data Processing Service   
+* Establishing and operating automated practices around engineering testing of pipelines executed in the HCA DCP Pipeline Execution Service 
 
 ### Documentation
 
 * Creating and outputting metadata on the operations applied to the data in accordance with the HCA DCP Metadata Schema  
-* Documentation on the Data Processing Service and guides on using the service  
-* Creating documentation and scripting around the deployment of the Data Processing Service
+* Documentation on the Pipeline Execution Service and guides on using the service  
+* Creating documentation and scripting around the deployment of the Pipeline Execution Service
 
 ## Milestones and Deliverables
 
-__2018:__ Create operational and secure infrastructure, add ability to throttle and queue  
+__2018:__ Create operational and secure infrastructure, add ability to throttle and queue the executions of data processing pipelines/workflows  
 __2019:__ Add ability to reanalyze data, notification filtering to save costs, improve testing, logging, and deployment  
 __2020:__ Generalized and reusable service infrastructure  
 
@@ -51,13 +51,13 @@ __2020:__ Generalized and reusable service infrastructure
 
 Team email: pipelines-team@data.humancellatlas.org 
  
-[HumanCellAtlas/data-pipelines-team](https://humancellatlas.slack.com/messages/data-pipelines-team): team discussions, a place to directly communicate to the team that works on the service and pipelines  
-[HumanCellAtlas/data-pipelines-ci](https://humancellatlas.slack.com/messages/data-pipelines-ci): Data Processing Service continuous integration status  
+[HumanCellAtlas/data-pipelines-team](https://humancellatlas.slack.com/messages/data-pipelines-team): team discussions, a place to directly communicate to the team that works on the execution service and scientific pipelines  
+[HumanCellAtlas/data-pipelines-ci](https://humancellatlas.slack.com/messages/data-pipelines-ci): Pipeline Execution Service continuous integration status  
 
 ## Github repositories
 
-[Cromwell Tools](https://github.com/broadinstitute/cromwell-tools): Tools (Python API) for working with the [Cromwell workflow engine](https://github.com/broadinstitute/cromwell) - a scientific workflow engine designed for simplicity and scalability  
+[Cromwell Tools](https://github.com/broadinstitute/cromwell-tools): A collection of Python clients and accessory scripts for interacting with the [Cromwell workflow execution engine](https://github.com/broadinstitute/cromwell) - a scientific workflow engine designed for simplicity and scalability  
 [Falcon](https://github.com/HumanCellAtlas/falcon): Queueing system that (after launching) throttles and inititates workflows  
 [Lira](https://github.com/HumanCellAtlas/lira): Listens to storage service notifications and launches workflows  
 [Pipeline Tools](https://github.com/HumanCellAtlas/pipeline-tools): Contains Data Coordination Platform adapter pipelines and associated tools  
-[Secondary Analysis](https://github.com/HumanCellAtlas/secondary-analysis): Integration test scripts and other automation for the Data Processing Service (contains all tickets for the prioritized work for the implementation team)  
+[Secondary Analysis](https://github.com/HumanCellAtlas/secondary-analysis): Integration test scripts and other automation for the Pipeline Execution Service (contains all tickets for the prioritized work for the implementation team)  
