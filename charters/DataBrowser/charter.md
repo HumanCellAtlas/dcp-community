@@ -60,6 +60,7 @@ The objective of the Data Browser is to provide an easy-to-use User Interface (U
 
 ### Slack Channels
 * [HumanCellAtlas/data-browser](https://humancellatlas.slack.com/messages/data-browser): data browser development discussions
+* [HumanCellAtlas/azul-dev](https://humancellatlas.slack.com/messages/azul-dev): metadata indexer engine and web service development discussions
 
 ## Github repositories
 * https://github.com/HumanCellAtlas/data-browser - The repository for the UI implementation. Use it to report issues and request new features for the Data Browser.
