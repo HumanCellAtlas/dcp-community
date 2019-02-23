@@ -56,7 +56,7 @@ Based on the broad adoption of Scrum variations across the DCP community, the ex
 
 Exceptions to Scrum (colloquially known as [ScrumButs](https://www.scrum.org/resources/what-scrumbut) in that community) are described below. 
 
-As idenfified by charters, the DCP **Product Owners** (with guidance from **UXR**) are the **!** **Scrum** Product Owners in violation of Scrum’s *"the product owner is one person, not a committee"*.)
+As identified by charters, the DCP **Product Owners** (with guidance from **UXR**) are the **!** **Scrum** Product Owners in violation of Scrum’s *"the product owner is one person, not a committee"*.)
 
 There is also no formal DCP **Scrum Master**.
 
@@ -93,7 +93,7 @@ DCP Product Backlog items  are modeled as:
 
 The [*researcher with a keyboard*](https://docs.google.com/drawings/d/1Li9o_uVkEZDZHbkQv86I49FG8I0zGSgHYkKabp7piEs/edit) and [*researcher with a pipette*](https://docs.google.com/drawings/d/1o6I5BLtJuRJ1vUdb7dHCkFbo0XiaxKDBiVAogqnUowU/edit) journeys are the initial source of user stories that  are modeled as epics in the *dcp* repo,  reflecting the narrative flow of the product. Further refinement by the Product Owners is required to both develop and  extend the high-level set of user activities. 
 
-Since journeys may vary per persona personas MUST be identified for an epic by assigning a documented GitHub label such as "keyboard", "pipette", or "road-builder".  An epic MAY support multiple personas.
+Since journeys may vary per persona, personas MUST be identified for an epic by assigning a documented GitHub label such as "keyboard", "pipette", or "road-builder".  An epic MAY support multiple personas.
 
 #### Technical and Operational Requirements
 Product-wide technical or operational requirements are defined by **Technical Architecture** and modeled as epics in the *dcp* repo.
@@ -165,7 +165,7 @@ During Sprints, **Technical Architecture** MAY schedule Scrums on a regular cade
 
 ### Sprint Review
 
-**Every four weeks**. On the penultimate day of the Sprint, there is a one hour meeting for the Sprint Review open to the entire DCP commmunity led by *PM*. Major product increments selected by **Technical Leads** are demonstrated to key stakeholders.
+**Every four weeks**. On the penultimate day of the Sprint, there is a one hour meeting for the Sprint Review open to the entire DCP commmunity led by **PM**. Major product increments selected by **Technical Leads** are demonstrated to key stakeholders.
 
 (See *Sprint Review* in [*Scrum Guide*](https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf) and *Nexus Sprint Review* in [*Nexus Guide*](http://scrumorg-website-prod.s3.amazonaws.com/drupal/2018-01/2018-Nexus-Guide-English_0.pdf) for additional details.)
  
