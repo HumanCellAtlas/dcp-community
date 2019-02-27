@@ -4,9 +4,7 @@
 
 `[dcp-community/rfc#](https://github.com/HumanCellAtlas/dcp-community/pull/<PR#>)`
 
-# RFC Name
-
-Metadata schema usability
+# Metadata schema usability
 
 ## Summary
 
@@ -21,6 +19,7 @@ An approach to generating a user-friendly version of the metadata JSON schema fr
  [Mark Diekhans](mailto:markd@ucsc.edu).
  [Simon Jupp](mailto:jupp@ebi.ac.uk),
  [Mallory Freeberg](mailto:mfreeberg@ebi.ac.uk),
+ [Matt Green](mailto:hewgreen@ebi.ac.uk),
  [Dani Welter](mailto:dwelter@ebi.ac.uk),
  [Tony Burdett](mailto:tburdett@ebi.ac.uk)
 
@@ -39,21 +38,34 @@ Consumers of the HCA metadata JSON Schema have found that the module structure m
 
 Another result of the module structure is that field names and descriptions defined in modules don't match the concrete class.  This makes schema-driven users interfaces confusing.
 
-However, the module structure adds value in making the schema easier to create, maintain, and keep consistent by avoiding redundant specifications of fields. 
+There are no rules governing module usage so it is not clear to metadata developers when modules should be created. For this reason modules are used in different ways throughout the metadata schemas. 
 
+However, the module structure adds value in making the schema easier to create, maintain, and keep consistent by avoiding redundant specifications of fields.
 
 ### User Stories
 
 *Share the [User Stories](https://www.mountaingoatsoftware.com/agile/user-stories) motivating this RFC.*
 
-* As a user
+* As a consumers of the HCA metadata JSON Schema I want to be able to be able intuitively interpret schema based on common paradigms so that I can easily maintain and extend them.
+* As a metadata schema developer I want to be able to interpret schemas locally without reading other documents so that I can easily maintain and extend them.
+* As a metadata schema developer I want schemas to have no duplicated fields so that I don't have to edit a field in multiple places when making a change.
+
 
 ## Detailed Design
 
 *Explain the design in sufficient detail such that the implementation and (if appropriate) the interaction with existing DCP software are both reasonably clear.*
 
+One option is to fully expand schemas so that we only publish 'type' schemas. Core fields would be copied into these type schemas based on the `schema_type` and module objects would be expanded in-place. This would mean that core and module fields would exist in multiple copies in different type schema documents.
 
-* As a 
+An example of these schemas can be found here https://github.com/HumanCellAtlas/metadata-schema/tree/demod/json_schema/demod
+
+This implementation makes schemas easier to interpret without needing to look in other referenced core and module schema documents. However, editing field that exist in multiple documents would be more difficult and would require tooling to prevent errors.
+
+In order to align and manage module usage, the current modules should be revised in order to meet the following criteria:
+
+1. By default nothing is a module.
+1. A group of fields can become a module if they are used in more than three places (e.g. the timecourse module). This rule also applies to fields that are semantically identical but differ in name due to the context in which they are used (e.g. ${VARIABLE}_id -> donor_organism_id).
+1. Related fields that require multiple values should be nested arrays in the schema, but they should be expanded in the type document rather than made into a separate module.
 
 
 ### Acceptance Criteria [optional]
@@ -62,12 +74,19 @@ However, the module structure adds value in making the schema easier to create, 
 
 ### Unresolved Questions
 
-- *What aspects of the design do you expect to clarify further through the RFC review process?*
-- *What aspects of the design do you expect to clarify later during iterative development of this RFC?*
+- *Should ontology modules remain as is or should they also be expanded in-place?*
+
+
 
 ### Drawbacks and Limitations [optional]
 
 *Why should this RFC **not** be implemented?*
+
+**Schemas are much larger**
+However, this is not likely to make schemas harder to interpret.
+
+**Duplication of fields**
+We would require tooling for updating fields that exist in multiple places.
 
 ### Prior Art [optional]
 
@@ -78,3 +97,10 @@ However, the module structure adds value in making the schema easier to create, 
 *Highlight other possible approaches to delivering the value proposed in this RFC. 
 What other designs were explored? What were their advantages? What was the rationale for rejecting alternatives?*
 
+
+Core, type and module schemas could be maintained in separate documents for authoring but could be compiled as described above when they are published. This would provide two views of the schema. One for metadata developers and one for users and components trying to interpret the schema.
+
+This solution was discounted for the following reasons:
+1. Tooling would be required to implement this solution
+1. The implementation would be even more complex than the current one.
+1. How would module and core versions be tracked if they weren't published.
