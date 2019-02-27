@@ -56,7 +56,7 @@ Based on the broad adoption of Scrum variations across the DCP community, the ex
 
 Exceptions to Scrum (colloquially known as [ScrumButs](https://www.scrum.org/resources/what-scrumbut) in that community) are described below. 
 
-As identified by charters, the DCP **Product Owners** (with guidance from **UXR**) are the **!** **Scrum** Product Owners in violation of Scrum’s *"the product owner is one person, not a committee"*.
+As identified by [charters](https://github.com/HumanCellAtlas/dcp-community/tree/master/charters), the DCP **Product Owners** (with guidance from **UXR**) are the **!** **Scrum** Product Owners in violation of Scrum’s *"the product owner is one person, not a committee"*.
 
 There is also no formal DCP **Scrum Master**.
 
@@ -119,7 +119,7 @@ Each Sprint MUST be assigned a ZenHub *Milestone* with a due date by the **Produ
 
 New items appear in the ZenHub *New* pipeline and must be triaged into the *Product Backlog* pipeline, the *Icebox* pipeline, or the *Closed* pipeline.
 
-**NOTE**: *To avoid maintenance overhead due to duplicate or incomplete issues, the creation of new items SHOULD be limited to **DCP PM** or a facilitator from the **Architecture Team**.*
+**NOTE**: *To avoid maintenance overhead due to duplicate or incomplete issues, the creation of new items SHOULD be limited to [**DCP PM**](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/PM/charter.md) or a facilitator from the **Architecture Team**.*
 
 The ZenHub *Product Backlog* pipeline is the DCP product backlog which is ordered during Refinement.
 
