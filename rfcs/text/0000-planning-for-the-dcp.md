@@ -44,7 +44,7 @@ To best serve our users and address the concerns of HCA Science Governance, our 
 
 ## Scientific "guardrails" 
 
-As key stackholders, the *Oversight Committee* MUST attend Sprint Reviews on a quarterly basis to offer feedback. 
+As key stakeholders, the *Oversight Committee* MUST attend Sprint Reviews on a quarterly basis to offer feedback. 
 
 ## Detailed Design or _Scrum meets ZenHub_
 
@@ -56,7 +56,7 @@ Based on the broad adoption of Scrum variations across the DCP community, the ex
 
 Exceptions to Scrum (colloquially known as [ScrumButs](https://www.scrum.org/resources/what-scrumbut) in that community) are described below. 
 
-As identified by charters, the DCP **Product Owners** (with guidance from **UXR**) are the **!** **Scrum** Product Owners in violation of Scrum’s *"the product owner is one person, not a committee"*.)
+As identified by charters, the DCP **Product Owners** (with guidance from **UXR**) are the **!** **Scrum** Product Owners in violation of Scrum’s *"the product owner is one person, not a committee"*.
 
 There is also no formal DCP **Scrum Master**.
 
@@ -72,7 +72,7 @@ DCP SHOULD NOT duplicate the ZenHub DCP board in other documents or spreadsheets
 * Spikes → Issues with a "Spike" GitHub label
 * Epics → Epics
 * Sprint → Milestone
-* Product backlog → Issues without a Milestone in the *Product Backlog* pipeline
+* Product Backlog → Issues without a Milestone in the *Product Backlog* pipeline
 * Sprint Backlog → Issues with a Milestone in the *Sprint Backlog* pipeline
 
 ### DCP Product Backlog
