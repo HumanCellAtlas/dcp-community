@@ -38,7 +38,7 @@ As a starting point, DCP should think *outside-the-box* and adopt one of the [pr
 
 Historically, ownership of the DCP software has been distributed across our canonical architectural diagram with its colorful *think-inside-the-boxes* (components). As a result, DCP planning and development have also been distributed to a high degree, resulting in questions or confusion about DCP priorities relative to component priorities with a subsequent lack of alignment for delivery of product increments, unless externally imposed by requests from HCA Science Governance. 
 
-For example, how does a developer know whether to prioritize research for an operational scoping task assigned by **Technical Architecture**, collaborate on a cross-component RFC surfaced at a DCP quarterly meeting, or develop a component-specific feature? 
+For example, how does a developer know whether to prioritize research for an operational scoping task assigned by the [**Architecture Team**](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/Architecture/charter.md), collaborate on a cross-component RFC surfaced at a DCP quarterly meeting, or develop a component-specific feature? 
 
 To best serve our users and address the concerns of HCA Science Governance, our plans must focus on the needs and priorities of DCP *data as a service* rather than the individual *Chartreuse* or *Polka Dot* components. This requires a DCP-wide project management process with clear priorities and product increments delivered on a regular cadence. 
 
@@ -96,7 +96,7 @@ The [*researcher with a keyboard*](https://docs.google.com/drawings/d/1Li9o_uVkE
 Since journeys may vary per persona, personas MUST be identified for an epic by assigning a documented GitHub label such as "keyboard", "pipette", or "road-builder".  An epic MAY support multiple personas.
 
 #### Technical and Operational Requirements
-Product-wide technical or operational requirements are defined by **Technical Architecture** and modeled as epics in the *dcp* repo.
+Product-wide technical or operational requirements are defined by the **Architecture Team** and modeled as epics in the *dcp* repo.
 
 #### Owners
 
@@ -119,7 +119,7 @@ Each Sprint MUST be assigned a ZenHub *Milestone* with a due date by the **Produ
 
 New items appear in the ZenHub *New* pipeline and must be triaged into the *Product Backlog* pipeline, the *Icebox* pipeline, or the *Closed* pipeline.
 
-**NOTE**: *To avoid maintenance overhead due to duplicate or incomplete issues, the creation of new items SHOULD be limited to **DCP PM** or a facilitator from **Technical Architecture**.*
+**NOTE**: *To avoid maintenance overhead due to duplicate or incomplete issues, the creation of new items SHOULD be limited to **DCP PM** or a facilitator from the **Architecture Team**.*
 
 The ZenHub *Product Backlog* pipeline is the DCP product backlog which is ordered during Refinement.
 
@@ -147,7 +147,7 @@ The number of items selected is solely up to the Development Team.
 - Research and prototyping tasks SHOULD be modeled as Spikes.
 - Dependencies between components within a Sprint MUST be communicated between the respective teams and surfaced using [ZenHub Dependencies](https://help.zenhub.com/support/solutions/articles/43000010349). 
 
-At the start of the Sprint, the single DCP Sprint Backlog can be reviewed by **PM** and **Technical Architecture** in their oversight roles.
+At the start of the Sprint, the single DCP Sprint Backlog can be reviewed by **PM** and the **Architecture Team** in their oversight roles.
 
 ### Sprint(ing)
 
@@ -159,7 +159,7 @@ If rejected, the item returns to *In Progress*; otherwise, it is deployed in Dev
 
 Items that are *Done* are moved to the *Closed* pipeline when verified in Dev or Integration. 
 
-During Sprints, **Technical Architecture** MAY schedule Scrums on a regular cadence for the DCP Development Team *"to identify if any integration issues exist."* (See *Daily Scrum* in [**Scrum Nexus**](http://scrumorg-website-prod.s3.amazonaws.com/drupal/2018-01/2018-Nexus-Guide-English_0.pdf) for guidance)
+During Sprints, the **Architecture Team** MAY schedule Scrums on a regular cadence for the DCP Development Team *"to identify if any integration issues exist."* (See *Daily Scrum* in [**Scrum Nexus**](http://scrumorg-website-prod.s3.amazonaws.com/drupal/2018-01/2018-Nexus-Guide-English_0.pdf) for guidance)
 
 **PM** monitors progress using ZenHub charts and reports.
 
@@ -185,7 +185,7 @@ This process will be under continuous community introspection and improvement th
 
 This RFC proposes specific weekdays to start (Thursday) and end (Wednesday) Sprints, but we may need to use a doodle poll to reach consensus. Monday is best avoided due to the number of holidays. 
 
-#### Requested Guidance from Technical Architecture
+#### Requested Guidance from the Architecture Team
 - What is the recommended *interpretation* of story points for DCP developers? What does "1" mean? Consider [Engineering Estimates](https://producthabits.com/engineering-estimates/) as an example.
 
 - Once existing technical debt epics are addressed, how should operational requirements  be defined and then modeled in ZenHub for new stories (for example as standard Acceptance Criteria)?
