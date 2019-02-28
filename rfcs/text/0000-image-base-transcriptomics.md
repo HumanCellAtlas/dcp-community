@@ -8,14 +8,14 @@ minimum set of deliverables that must be prioritized and completed for
 the DCP to be able to (1) store and (2) process image-based single-cell
 transcriptomics experiments. The following assumptions are made:
 
-1.  > Support for an image-based transcriptomics assay in the early
-    > iteration phase should be added to the DCP
+1.  Support for an image-based transcriptomics assay in the early
+    iteration phase should be added to the DCP
 
-2.  > The current state of the starfish ecosystem is sufficient to
-    > fulfill this need and will be selected by the AWG.
+2.  The current state of the starfish ecosystem is sufficient to
+    fulfill this need and will be selected by the AWG.
 
-3.  > This instantiation will require limited scale (low hundreds of
-    > datasets over several years)
+3.  This instantiation will require limited scale (low hundreds of
+    datasets over several years)
 
 ## **Author(s)**
 
@@ -70,52 +70,52 @@ right assay class to prototype imaging support in the DCP, their current
 scientific state, the standardization of imaging file formats, and a
 longer-term view of support for single-cell imaging assays. In brief:
 
-  - > Support for image-based transcriptomics can be added without need
-    > to construct any additional DCP services, and should not require
-    > significant generalization of existing ones.
+  - Support for image-based transcriptomics can be added without need
+    to construct any additional DCP services, and should not require
+    significant generalization of existing ones.
 
-  - > Image-based transcriptomics is the right class of assay to
-    > initiate imaging support in the DCP because of their similarity to
-    > existing DCP sequencing assays and the abundance of labs using
-    > single-molecule FISH assays to clarify spatial distributions of
-    > cell types identified in RNA-seq experiments.
+  - Image-based transcriptomics is the right class of assay to
+    initiate imaging support in the DCP because of their similarity to
+    existing DCP sequencing assays and the abundance of labs using
+    single-molecule FISH assays to clarify spatial distributions of
+    cell types identified in RNA-seq experiments.
 
-  - > If desired, *all* key validation, specification, and analysis
-    > deliverables can be provided by *starfish* and OME engineers,
-    > minimizing load on DCP engineering teams.
+  - If desired, *all* key validation, specification, and analysis
+    deliverables can be provided by *starfish* and OME engineers,
+    minimizing load on DCP engineering teams.
 
-  - > A draft metadata schema has already been built by EBI via
-    > collaboration with the SpaceTx consortium, who have delivered
-    > image-based transcriptomics datasets which the ingestion service
-    > is beginning to test.
+  - A draft metadata schema has already been built by EBI via
+    collaboration with the SpaceTx consortium, who have delivered
+    image-based transcriptomics datasets which the ingestion service
+    is beginning to test.
 
-  - > Based on [<span class="underline">delivery timelines for
-    > pre-requisite
-    > work</span>](https://docs.google.com/document/d/1RQcj450v0WHGUvSm7YwwFQ7sRFoPAOCjRbo63UzyQd0/edit?ts=5c40d3f1#heading=h.4qbf4q96id16),
-    > implementation of support for image-based transcriptomics could
-    > begin as early as Q2-Q3 2019.
+  - Based on [<span class="underline">delivery timelines for
+    pre-requisite
+    work</span>](https://docs.google.com/document/d/1RQcj450v0WHGUvSm7YwwFQ7sRFoPAOCjRbo63UzyQd0/edit?ts=5c40d3f1#heading=h.4qbf4q96id16),
+    implementation of support for image-based transcriptomics could
+    begin as early as Q2-Q3 2019.
 
-  - > While image-based transcriptomics data can be ingested and stored
-    > without a visualization capability, significant user demand can be
-    > expected similar to that for count matrices.
+  - While image-based transcriptomics data can be ingested and stored
+    without a visualization capability, significant user demand can be
+    expected similar to that for count matrices.
 
 ### **User Stories**
 
-  - > As a submitter, I want to upload directories of files representing
-    > an imaging experiment for storage in the DCP.
+  - As a submitter, I want to upload directories of files representing
+    an imaging experiment for storage in the DCP.
 
-  - > As a user with a keyboard, I want to identify images with a given
-    > gene for download.
+  - As a user with a keyboard, I want to identify images with a given
+    gene for download.
 
-  - > As a user with a keyboard, I want to see spots overlayed on an
-    > image for QC.
+  - As a user with a keyboard, I want to see spots overlayed on an
+    image for QC.
 
-  - > As a user with a keyboard, I want to see cells overlayed on an
-    > image for QC.
+  - As a user with a keyboard, I want to see cells overlayed on an
+    image for QC.
 
-  - > As a user with a keyboard, I want to generate a gene x cell matrix
-    > for biological analysis of my data and combination with sequencing
-    > assays.
+  - As a user with a keyboard, I want to generate a gene x cell matrix
+    for biological analysis of my data and combination with sequencing
+    assays.
 
 ## **Scientific "guardrails"**
 
@@ -458,18 +458,18 @@ code changes and their impact.
 
 ### **Unresolved Questions**
 
-  - > Who are the intended beta users for imaging support and what
-    > functionality is being targeted?
+  - Who are the intended beta users for imaging support and what
+    functionality is being targeted?
 
-  - > Are there other roadblocks for imaging support in the DCP?
+  - Are there other roadblocks for imaging support in the DCP?
 
-  - > What, if any, additional automation may be needed in the DCP to
-    > support imaging?
+  - What, if any, additional automation may be needed in the DCP to
+    support imaging?
 
-  - > What is the appropriate separation of metadata in the SpaceTx
-    > Format and the HCA metadata schema?
+  - What is the appropriate separation of metadata in the SpaceTx
+    Format and the HCA metadata schema?
 
-  - > How should imaging metadata be validated?
+  - How should imaging metadata be validated?
 
 ### **Drawbacks and Limitations**
 
@@ -478,41 +478,41 @@ standardization across the community. As such, flexibility around
 updating and upgrading formats and pipelines will be necessary.
 Specifically:
 
-1.  > The development of a chunked image file format\[1\] that supports
-    > cloud workflows for data at the scale that will become common over
-    > the next 10 years is in an early stage. Working prototypes from
-    > genomics, imaging, astronomy, and geosciences exist and a process
-    > is beginning to unify formats. However, this process will evolve
-    > over time, and it will be necessary to upgrade the data,
-    > potentially multiple times, as backwards-incompatible changes are
-    > made. To mitigate this risk, the OME and *starfish* teams are
-    > willing to be responsible for producing containerized scripts to
-    > upgrade data when this is necessary, and to adhere to schedules
-    > that limit the frequencies of these updates.
+1.  The development of a chunked image file format\[1\] that supports
+    cloud workflows for data at the scale that will become common over
+    the next 10 years is in an early stage. Working prototypes from
+    genomics, imaging, astronomy, and geosciences exist and a process
+    is beginning to unify formats. However, this process will evolve
+    over time, and it will be necessary to upgrade the data,
+    potentially multiple times, as backwards-incompatible changes are
+    made. To mitigate this risk, the OME and *starfish* teams are
+    willing to be responsible for producing containerized scripts to
+    upgrade data when this is necessary, and to adhere to schedules
+    that limit the frequencies of these updates.
 
 <!-- end list -->
 
-2.  > The analysis of image-based transcriptomics assays are not yet
-    > fully automated, and therefore during the pilot phase, support of
-    > imaging data will rely on user-supplied parameterizations of
-    > *starfish*-based workflows. This will mean that initial datasets
-    > may contain batch effects and be difficult to (absolutely) compare
-    > to one another. However, while parameter selection decisions could
-    > bias the absolute abundance of detected spots, the relative
-    > abundances of spots within datasets should be consistent, and
-    > presentations at recent single-cell genomics, keystone, and HCA
-    > science meetings have demonstrated the utility of integrating
-    > image data with single-cell RNA-seq data, and the fields appetite
-    > to engage in these experiments. The *starfish* team sees a path
-    > towards automating parameter selection for these assays, which can
-    > be expedited by accumulating data in the DCP and building
-    > community consensus around image data processing. This is a strong
-    > argument for adding support now, and implies that there will be a
-    > point in the future when these pipelines are updated, at which
-    > point it will be necessary to reanalyze the data. If the
-    > standardized pipelines are built with *starfish*, the *starfish*
-    > team will commit to ensuring that those pipelines are DCP
-    > compatible.
+2.  The analysis of image-based transcriptomics assays are not yet
+    fully automated, and therefore during the pilot phase, support of
+    imaging data will rely on user-supplied parameterizations of
+    *starfish*-based workflows. This will mean that initial datasets
+    may contain batch effects and be difficult to (absolutely) compare
+    to one another. However, while parameter selection decisions could
+    bias the absolute abundance of detected spots, the relative
+    abundances of spots within datasets should be consistent, and
+    presentations at recent single-cell genomics, keystone, and HCA
+    science meetings have demonstrated the utility of integrating
+    image data with single-cell RNA-seq data, and the fields appetite
+    to engage in these experiments. The *starfish* team sees a path
+    towards automating parameter selection for these assays, which can
+    be expedited by accumulating data in the DCP and building
+    community consensus around image data processing. This is a strong
+    argument for adding support now, and implies that there will be a
+    point in the future when these pipelines are updated, at which
+    point it will be necessary to reanalyze the data. If the
+    standardized pipelines are built with *starfish*, the *starfish*
+    team will commit to ensuring that those pipelines are DCP
+    compatible.
 
 ### **Prior Art and Alternatives**
 
@@ -533,36 +533,36 @@ prioritized based on the scientific
 
 #### File Formats
 
-  - > [<span class="underline">OME-TIFF</span>](https://www.openmicroscopy.org/site/support/ome-model/ome-tiff/specification.html)
+  - [<span class="underline">OME-TIFF</span>](https://www.openmicroscopy.org/site/support/ome-model/ome-tiff/specification.html)
 
-  - > [<span class="underline">N5</span>](https://github.com/saalfeldlab/n5)
+  - [<span class="underline">N5</span>](https://github.com/saalfeldlab/n5)
 
-  - > [<span class="underline">HDF5</span>](https://www.hdfgroup.org/solutions/hdf5/)
+  - [<span class="underline">HDF5</span>](https://www.hdfgroup.org/solutions/hdf5/)
 
-  - > [<span class="underline">Zarr</span>](https://zarr.readthedocs.io)
+  - [<span class="underline">Zarr</span>](https://zarr.readthedocs.io)
 
 #### Analysis Platforms/Pipelines
 
-  - > [<span class="underline">ImageJ</span>](https://imagej.net)
+  - [<span class="underline">ImageJ</span>](https://imagej.net)
 
-  - > [<span class="underline">ilastik</span>](https://ilastik.org)
+  - [<span class="underline">ilastik</span>](https://ilastik.org)
 
-  - > [<span class="underline">QuPath</span>](https://qupath.github.io/)
+  - [<span class="underline">QuPath</span>](https://qupath.github.io/)
 
-  - > [<span class="underline">Orbit</span>](https://www.orbit.bio/)
+  - [<span class="underline">Orbit</span>](https://www.orbit.bio/)
 
-  - > [<span class="underline">CellProfiler</span>](http://cellprofiler.org)
+  - [<span class="underline">CellProfiler</span>](http://cellprofiler.org)
 
 #### Visualization Platforms
 
-  - > [<span class="underline">IDR</span>](https://idr.openmicroscopy.org/about/)
+  - [<span class="underline">IDR</span>](https://idr.openmicroscopy.org/about/)
 
-  - > [<span class="underline">OMERO</span>](https://www.openmicroscopy.org/omero)
+  - [<span class="underline">OMERO</span>](https://www.openmicroscopy.org/omero)
 
-  - > [<span class="underline">Cytomine</span>](http://www.cytomine.be)
+  - [<span class="underline">Cytomine</span>](http://www.cytomine.be)
 
-  - > [<span class="underline">PathViewer
-    > (Commercial)</span>](https://glencoesoftware.com/products/pathviewer/)
+  - [<span class="underline">PathViewer
+    (Commercial)</span>](https://glencoesoftware.com/products/pathviewer/)
 
 ## **External contributors**
 
