@@ -60,13 +60,13 @@ As identified by [charters](https://github.com/HumanCellAtlas/dcp-community/tree
 
 There is also no formal DCP **Scrum Master**.
 
-### ZenHub
+### ZenHub for Project Management
 
-[ZenHub](https://www.zenhub.com/) has been partially adopted in the DCP community. This proposal commits the community to validating whether ZenHub can become our *one source of truth* for project management. If not, then it should be replaced with a more suitable alternative.
+The [ZenHub](https://www.zenhub.com/) project management application has been partially adopted in the DCP community. This RFC fully commits the community to ZenHub as our *one source of truth* for project management.
 
 DCP SHOULD NOT duplicate the ZenHub DCP board in other documents or spreadsheets. The board and its reports represent the definitive list of DCP prioritized tasks (Product Backlog) and their state.
 
-### ! Scrum → ZenHub Secret Decoder Ring
+#### ! Scrum → ZenHub Secret Decoder Ring
 
 * Backlog items → Issues with User Stories
 * Spikes → Issues with a "Spike" GitHub label
@@ -81,6 +81,8 @@ The DCP ZenHub board is the ordered **!** **Scrum** Product Backlog for DCP.
 
 The top-level *dcp* repo MUST contain **all** significant features that are important to the DCP community as a whole and require visibility and prioritization. This includes  issues or epics describing user features or product-wide technical requirements (e.g. “components should have logs...“). 
 
+To avoid maintenance overhead due to duplicate or incomplete issues, the creation of new items in the *dcp* repo SHOULD be limited to the [**PM Team**](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/PM/charter.md) or a facilitator from the **Architecture Team**.
+
 All component repos that will assign items to a DCP Milestone MUST be added to the ZenHub *DCP Backlogs* workspace.
 
 DCP Product Backlog items  are modeled as:
@@ -91,9 +93,9 @@ DCP Product Backlog items  are modeled as:
 
 #### User Stories
 
-The [*researcher with a keyboard*](https://docs.google.com/drawings/d/1Li9o_uVkEZDZHbkQv86I49FG8I0zGSgHYkKabp7piEs/edit) and [*researcher with a pipette*](https://docs.google.com/drawings/d/1o6I5BLtJuRJ1vUdb7dHCkFbo0XiaxKDBiVAogqnUowU/edit) journeys are the initial source of user stories that  are modeled as epics in the *dcp* repo,  reflecting the narrative flow of the product. Further refinement by the Product Owners is required to both develop and  extend the high-level set of user activities. 
+The [*researcher with a keyboard*](https://docs.google.com/drawings/d/1Li9o_uVkEZDZHbkQv86I49FG8I0zGSgHYkKabp7piEs/edit) and [*researcher with a pipette*](https://docs.google.com/drawings/d/1o6I5BLtJuRJ1vUdb7dHCkFbo0XiaxKDBiVAogqnUowU/edit) journeys are the initial source of user stories that  are modeled as epics in the *dcp* repo,  reflecting the narrative flow of the product. Further refinement by the **Product Owners** is required to both develop and  extend the high-level set of user activities. 
 
-Since journeys may vary per persona, personas MUST be identified for an epic by assigning a documented GitHub label such as "keyboard", "pipette", or "road-builder".  An epic MAY support multiple personas.
+Since journeys may vary per persona, personas MUST be identified for an epic by assigning a standard GitHub label such as "keyboard", "pipette", or "road-builder".  An epic MAY support multiple personas.
 
 #### Technical and Operational Requirements
 Product-wide technical or operational requirements are defined by the **Architecture Team** and modeled as epics in the *dcp* repo.
@@ -102,7 +104,7 @@ Product-wide technical or operational requirements are defined by the **Architec
 
 A DCP owner MUST be assigned to each issue or epic in the *Product Backlog* in the *dcp* repo to shepherd and coordinate progress. This owner is responsible for ensuring that related issues are created in component repo(s) and linked to epics in the *dcp* repo.
 
-For example, an implementation task for a specific component resides in its own ZenHub repo and is linked to the relevant epic in the *dcp* repo.
+For example, an implementation task for a specific component resides in its own repo and is linked to the relevant epic in the *dcp* repo.
 
 * No component-specific GitHub labels such as "Data Store" MUST be assigned to an epic in the *dcp* repo. The link documents the relationship.
 
@@ -110,36 +112,38 @@ For example, an implementation task for a specific component resides in its own 
 
  **Four week sprints**. There MUST be one DCP Sprint and Sprint Backlog, not a separate Sprint and Sprint Backlog for each component team. Each DCP Sprint starts on Thursday and ends on Wednesday.  
  
-Each Sprint MUST be assigned a ZenHub *Milestone* with a due date by the **Product Owners**.
+Each Sprint MUST be assigned a ZenHub *Milestone* with a due date set by the **Product Owners**.
 
  All Scrum events are scheduled on the DCP calendar at a regular cadence. For example:
 ![](../images/0000-scrum-calendar.png)
 
 ### Refinement
 
-New items appear in the ZenHub *New* pipeline and must be triaged into the *Product Backlog* pipeline, the *Icebox* pipeline, or the *Closed* pipeline.
+### Refinement
 
-**NOTE**: *To avoid maintenance overhead due to duplicate or incomplete issues, the creation of new items SHOULD be limited to [**DCP PM**](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/PM/charter.md) or a facilitator from the **Architecture Team**.*
+**Every two weeks**. There is a one hour meeting for **Product Owners**, **UXR**, and **Technical Leads** to collaborate on adding detail, owners, and order (but not estimates) to the items in the _dcp_ Product Backlog to reflect DCP priorities and address emerging issues. Dependencies between components are also clearly identified. (Refinement may also occur during the Sprint Review.)
+
+Questions or disagreements about priorities MUST be referred to the **Project Leads** on the [DCP PM Team mailing list](pm-team@data.humancellatlas.org) for resolution. They may resolve it in a manner of their own choosing, and respond to the original message on the DCP PM mailing list within two business days.
+
+***NOTE**: In the future, DCP roadmaps will be a source for a shared understanding of DCP priorities.*
+
+After this meeting, the **Product Owner** and **Technical Lead** for each component MUST ensure that the *Product Backlog* in their repo is refined and aligned to the DCP priorities.
+
+(See *Refinement* in [*Scrum Guide*](https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf) and [*Nexus Guide*](http://scrumorg-website-prod.s3.amazonaws.com/drupal/2018-01/2018-Nexus-Guide-English_0.pdf) for guidance.)
+
+#### Refinement and ZenHub Pipelines
+
+New items appear in the ZenHub *New* pipeline and MUST be triaged into the *Product Backlog* pipeline, the *Icebox* pipeline, or the *Closed* pipeline.
 
 The ZenHub *Product Backlog* pipeline is the DCP product backlog which is ordered during Refinement.
 
 The ZenHub *Icebox* pipeline SHOULD be used with great constraint in the *dcp* repo. It's not a pipeline for avoiding hard decisions during Refinement. It's intended to document potential *futures* from the DCP roadmap. Individual component repo(s) MAY use the *Icebox* pipeline in a manner of their own choosing.
 
-***QUESTION**: During the PM whiteboard session, there was agreement that dcp Epics would follow the normal pipeline lifecycle. Is this still true?*
-
 No issues in the *dcp* repo MUST be assigned to the *Epic* pipeline. It will also be hidden in the dashboard. Individual component repo(s) MAY use the *Epic* pipeline in a manner of their own choosing.
-
-**Every two weeks**. There is a one hour meeting for **Product Owners**, **UXR**, and **Technical Leads** to collaborate on refining the *dcp* repo *Product Backlog* to reflect DCP priorities and address emerging issues. (Refinement may also occur during the Sprint Review)
-
-Questions or disagreements about priorities MUST be referred to the **Project Leads** on the [DCP PM mailing list](pm-team@data.humancellatlas.org) for resolution. They may resolve it in a manner of their own choosing, and respond to the original message on the DCP PM mailing list within two business days.
-
-***NOTE**: DCP roadmaps will be a source for a shared understanding of DCP priorities in the future.*
-
-After this meeting, the **Product Owner** and **Technical Lead** for each component MUST ensure that the *Product Backlog* in their repo is refined and aligned to the DCP priorities.
 
 ### Sprint Planning
 
-Prior to the start of the DCP Sprint, component teams identify their *Sprint Backlog* - a slice of items from the the ZenHub *Product Backlog* pipeline in their repo which are assigned to the ZenHub Milestone for the Sprint and moved to the ZenHub *Sprint Backlog* pipeline.
+Prior to the start of the DCP Sprint, component teams MUST identify their *Sprint Backlog* - a slice of items from the the ZenHub *Product Backlog* pipeline in their repo which are assigned to the ZenHub Milestone for the Sprint and moved to the ZenHub *Sprint Backlog* pipeline.
 
 The number of items selected is solely up to the Development Team. 
 - [ZenHub story points](https://help.zenhub.com/support/solutions/articles/43000034282) MUST be assigned to all *Sprint Backlog* items. (Story points are required to enable [ZenHub burndown charts](https://help.zenhub.com/support/solutions/articles/43000010356-track-sprint-progress-with-burndown-charts) to track the progress of a Sprint.)
@@ -147,7 +151,7 @@ The number of items selected is solely up to the Development Team.
 - Research and prototyping tasks SHOULD be modeled as Spikes.
 - Dependencies between components within a Sprint MUST be communicated between the respective teams and surfaced using [ZenHub Dependencies](https://help.zenhub.com/support/solutions/articles/43000010349). 
 
-At the start of the Sprint, the single DCP Sprint Backlog can be reviewed by **PM** and the **Architecture Team** in their oversight roles.
+At the start of the Sprint, the single DCP Sprint Backlog can be reviewed by the **PM Team** and **Architecture Team** in their oversight roles.
 
 ### Sprint(ing)
 
@@ -155,33 +159,35 @@ During Development, individual developers assign items from the ZenHub *Sprint B
 
 When there is a pull request in review for an *In Progress* item, the item is moved to the *QA/Review* pipeline. 
 
-If rejected, the item returns to *In Progress*; otherwise, it is deployed in Dev for verification and moves to *Done* pipeline.
+If rejected, the item returns to *In Progress*; otherwise, it is deployed in Dev for verification and moves to the *Done* pipeline.
 
 Items that are *Done* are moved to the *Closed* pipeline when verified in Dev or Integration. 
 
-During Sprints, the **Architecture Team** MAY schedule Scrums on a regular cadence for the DCP Development Team *"to identify if any integration issues exist."* (See *Daily Scrum* in [**Scrum Nexus**](http://scrumorg-website-prod.s3.amazonaws.com/drupal/2018-01/2018-Nexus-Guide-English_0.pdf) for guidance)
+During Sprints, the **Architecture Team** MAY schedule Scrums on a regular cadence for the DCP Development Team *"to identify if any integration issues exist."* (See *Daily Scrum* in [*Scrum Nexus*](http://scrumorg-website-prod.s3.amazonaws.com/drupal/2018-01/2018-Nexus-Guide-English_0.pdf) for guidance)
 
-**PM** monitors progress using ZenHub charts and reports.
+THe **PM Team** monitors progress using ZenHub charts and reports.
 
 ### Sprint Review
 
-**Every four weeks**. On the penultimate day of the Sprint, there is a one hour meeting for the Sprint Review open to the entire DCP commmunity led by **PM**. Major product increments selected by **Technical Leads** are demonstrated to key stakeholders.
+**Every four weeks**. On the penultimate day of the Sprint, there is a one hour meeting for the Sprint Review open to the entire DCP commmunity led by the **PM Team**. Major product increments selected by **Technical Leads** are demonstrated to key stakeholders.
 
 (See *Sprint Review* in [*Scrum Guide*](https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf) and *Nexus Sprint Review* in [*Nexus Guide*](http://scrumorg-website-prod.s3.amazonaws.com/drupal/2018-01/2018-Nexus-Guide-English_0.pdf) for additional details.)
  
 ### Sprint Retrospective
 
-**Every four weeks**. On the final day of the Sprint, there is a one hour meeting for the Sprint Retrospective open to the entire DCP commmunity led by **PM**.
+**Every four weeks**. On the final day of the Sprint, there is a one hour meeting for the Sprint Retrospective open to the entire DCP commmunity led by the **PM Team**.
  
 The Scrum Retrospective identifies opportunities to improve the planning process in future iterations. 
 
-(See *Sprint Retrospective* in [*Scrum Guide*](https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf) and *Nexus Sprint Retrospective* in [*Nexus Guide*](http://scrumorg-website-prod.s3.amazonaws.com/drupal/2018-01/2018-Nexus-Guide-English_0.pdf) for additional details.)
+(See *Sprint Retrospective* in [*Scrum Guide*](https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf) and *Nexus Sprint Retrospective* in [*Nexus Guide*](http://scrumorg-website-prod.s3.amazonaws.com/drupal/2018-01/2018-Nexus-Guide-English_0.pdf) for guidance.)
 
 ### Acceptance Criteria
 
-This process will be under continuous community introspection and improvement through the Sprint Retrospective. If the process fails to deliver product increments with high confidence after three Sprints, then more radical alternatives should be pursued that satisfy the requirements from our key stakeholders in HCA Science Governance.
+This process will be under continuous community introspection and improvement through the Sprint Retrospective. If the process fails to deliver product increments with high confidence after three Sprints, then more radical alternatives should be pursued that satisfy the requirements from our key stakeholders in HCA Science Governance. We should also assess whether ZenHub is meeting our needs for a common project management application. 
 
 ### Unresolved Questions
+
+*What aspects of the design do you expect to clarify further through the RFC review process?*
 
 This RFC proposes specific weekdays to start (Thursday) and end (Wednesday) Sprints, but we may need to use a doodle poll to reach consensus. Monday is best avoided due to the number of holidays. 
 
