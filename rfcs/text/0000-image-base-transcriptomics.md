@@ -19,9 +19,9 @@ transcriptomics experiments. The following assumptions are made:
 
 ## **Author(s)**
 
-\[Ambrose Carr\](mailto:acarr@chanzuckerberg.com)
+[Ambrose Carr](mailto:acarr@chanzuckerberg.com)
 
-\[Josh Moore\](mailto:j.a.moore@dundee.ac.uk)
+[Josh Moore](mailto:j.a.moore@dundee.ac.uk)
 
 ## **Shepherd**
 
