@@ -38,6 +38,12 @@ evolve as a product. The following goals address this need.
 * As an HCA UX researcher, I want to analyze quantitative metrics of user actions on DCP, to draw insights on our users'
   needs and experiences using the DCP.
 
+## Data Privacy
+
+This plan has been reviewed and approved by the HCA GDPR Task Force.
+
+To make the plan GDPR compliant, a amended privacy policy will be deployed to the data portal when the analytics framework.
+
 ## Detailed Design
 
 We’ve selected Google Analytics (GA) as our tracking solution. We briefly considered alternatives, like building our own
