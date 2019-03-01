@@ -10,7 +10,7 @@ The Pipeline Execution Service runs pipelines reliably and at-scale for the DCP.
 
 ## Definitions
 
-__pipeline:__ A collection of one or more functional tasks that operate on input data and, from that, make an output that is transformed input data, or derive features often used to interpret the input data. In a high throughput setting, these tasks are often automated to be performed in a batch setting.
+__pipeline:__ A collection of one or more functional tasks that operate on input data and, from that, transform the input data, or derive features often used to interpret the input data. In a high throughput setting, these tasks are often automated to be performed in a batch setting.
 
 ## In-scope
 
@@ -61,3 +61,4 @@ Team email: pipelines-team@data.humancellatlas.org
 [Lira](https://github.com/HumanCellAtlas/lira): Listens to storage service notifications and launches workflows  
 [Pipeline Tools](https://github.com/HumanCellAtlas/pipeline-tools): Contains Data Coordination Platform adapter pipelines and associated tools  
 [Secondary Analysis](https://github.com/HumanCellAtlas/secondary-analysis): Integration test scripts and other automation for the Pipeline Execution Service (contains all tickets for the prioritized work for the implementation team)  
+[Secondary Analysis Deploy](https://github.com/HumanCellAtlas/secondary-analysis-deploy): Contains the deployment configuration and scripts for the Pipeline Execution Service.   
