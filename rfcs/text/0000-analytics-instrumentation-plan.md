@@ -42,7 +42,7 @@ evolve as a product. The following goals address this need.
 
 This plan has been reviewed and approved by the HCA GDPR Task Force.
 
-To make the plan GDPR compliant, a amended privacy policy will be deployed to the data portal when the analytics framework.
+To make the plan GDPR compliant, an amended privacy policy will be deployed to the data portal when the analytics framework ships.
 
 ## Detailed Design
 
