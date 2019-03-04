@@ -23,8 +23,8 @@ One of the DCP's primary objectives is to ensure the durability of the
 (meta)data it contains and to maintain a complete record of the changes made to
 it. The DCP achieves this by never overwriting a (meta)data file but instead
 treating an update to such a file as the addition of a new version of that
-file. Instead of physically removing a file version, the DCP hides that
-file version behind a deletion marker.
+file. Instead of physically removing a file version during a logical deletion, the DCP hides that
+file version behind a deletion marker. Physical deletion is only used as a last resort.
 
 Under certain circumstances however, the **physical deletion** of a file version
 is required. The first section of this specification describes the
