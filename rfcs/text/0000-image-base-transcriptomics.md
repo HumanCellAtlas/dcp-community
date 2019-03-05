@@ -24,6 +24,7 @@ transcriptomics experiments. The following assumptions are made:
 [Josh Moore](mailto:j.a.moore@dundee.ac.uk)
 
 ## **Shepherd**
+[Brian Raymor](mailto:braymor@chanzuckerberg.com)
 
 ## **Motivation**
 
