@@ -331,7 +331,7 @@ code changes and their impact.
 | Analysis Pipelines                                    	| Broad                    	| Q2 2019         	| ?             	|
 | Analysis & Adapter Pipelines                          	| Broad                    	| Q2 2019         	| A. Carr       	|
 | Lira subscription                                     	| Broad                    	| TBD             	| S. Ehsan      	|
-| Data Analysis Service starfish Pipeline Tests         	| Broad                    	| Q2 2019         	| R. Wang       	|
+| Data Analysis Service starfish Pipeline Tests         	| Broad                    	| Q2 2019         	| G. Grant      	|
 | Specification for input format                        	| starfish                 	| Complete        	| J. Moore      	|
 | Specification for output format                       	| starfish                 	| Q1 2019         	| A. Carr       	|
 | Input validation tool                                 	| starfish, OME            	| Q3 2019         	| J. Moore      	|
