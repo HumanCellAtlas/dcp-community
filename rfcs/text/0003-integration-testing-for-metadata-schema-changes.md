@@ -1,5 +1,7 @@
 ### DCP PR:
 
+[dcp-community/rfc3](https://github.com/HumanCellAtlas/dcp-community/pull/58)
+
 # Integration testing for metadata schema changes
 
 ## Summary
