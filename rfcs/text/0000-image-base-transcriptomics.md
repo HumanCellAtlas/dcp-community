@@ -323,139 +323,28 @@ following deliverables. They will coordinate and collaborate with DCP
 partners ("contact person") to validate design correctness and minimize
 code changes and their impact.
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Component/Deliverable</strong></th>
-<th><strong>Responsible Team/Service</strong></th>
-<th><strong>No earlier than</strong></th>
-<th><p><strong>Contact</strong></p>
-<p><strong>Person </strong></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>HCA Metadata Draft</td>
-<td>EBI</td>
-<td>Complete</td>
-<td>Z. Perova</td>
-</tr>
-<tr class="even">
-<td>Test Datasets Available</td>
-<td><em>starfish</em></td>
-<td>Complete</td>
-<td>A. Carr</td>
-</tr>
-<tr class="odd">
-<td>Submission Datasets Available</td>
-<td><em>starfish</em></td>
-<td>Q2 2019</td>
-<td>A. Carr</td>
-</tr>
-<tr class="even">
-<td>Analysis Pipelines</td>
-<td>Broad</td>
-<td>Q2 2019</td>
-<td>?</td>
-</tr>
-<tr class="odd">
-<td>Analysis &amp; Adapter Pipelines</td>
-<td>Broad</td>
-<td>Q2 2019</td>
-<td>A. Carr</td>
-</tr>
-<tr class="even">
-<td>Lira subscription</td>
-<td>Broad</td>
-<td>TBD</td>
-<td>S. Ehsan</td>
-</tr>
-<tr class="odd">
-<td>Data Analysis Service <em>starfish</em> Pipeline Tests</td>
-<td>Broad</td>
-<td>Q2 2019</td>
-<td>R. Wang</td>
-</tr>
-<tr class="even">
-<td>Specification for input format</td>
-<td><em>starfish</em></td>
-<td>Complete</td>
-<td>J. Moore</td>
-</tr>
-<tr class="odd">
-<td>Specification for output format</td>
-<td><em>starfish</em></td>
-<td>Q1 2019</td>
-<td>A. Carr</td>
-</tr>
-<tr class="even">
-<td>Input validation tool</td>
-<td><em>starfish</em>, OME</td>
-<td>Q3 2019</td>
-<td>J. Moore</td>
-</tr>
-<tr class="odd">
-<td>Output validation tool</td>
-<td><em>starfish</em>, OME</td>
-<td>Q2 2019</td>
-<td>A. Carr</td>
-</tr>
-<tr class="even">
-<td>Ingest support for the nested arrays of channels</td>
-<td>EBI</td>
-<td>?</td>
-<td>?</td>
-</tr>
-<tr class="odd">
-<td><a href="https://github.com/HumanCellAtlas/metadata-schema/issues/623"><span class="underline">Ability to describe files that belong together</span></a></td>
-<td>?</td>
-<td>?</td>
-<td>?</td>
-</tr>
-<tr class="even">
-<td><a href="https://github.com/HumanCellAtlas/data-store/issues/1885"><span class="underline">Upload and download of subdirectories</span></a></td>
-<td>?</td>
-<td>?</td>
-<td>?</td>
-</tr>
-<tr class="odd">
-<td>DSS spatial data bundle (or bund<em>less</em>) specification</td>
-<td>UCSC</td>
-<td>?</td>
-<td>B. Hannafious</td>
-</tr>
-<tr class="even">
-<td>DSS scale testing</td>
-<td>UCSC / DCP</td>
-<td>TBD</td>
-<td>B. Hannafious</td>
-</tr>
-<tr class="odd">
-<td>Data Browser facets for spatial data</td>
-<td>UCSC</td>
-<td>TBD</td>
-<td>H. Schmidt</td>
-</tr>
-<tr class="even">
-<td>Matrix service integration</td>
-<td><em>starfish</em></td>
-<td>TBD</td>
-<td>M. Kinsella</td>
-</tr>
-<tr class="odd">
-<td>Upload Bundle for 1M+ files</td>
-<td>?</td>
-<td>?</td>
-<td>P. Shah</td>
-</tr>
-<tr class="even">
-<td>Image file download latency testing</td>
-<td>?</td>
-<td>?</td>
-<td>?</td>
-</tr>
-</tbody>
-</table>
+| Component/Deliverable                                 	| Responsible Team/Service 	| No earlier than 	| Contact Person	|
+|-------------------------------------------------------	|--------------------------	|-----------------	|---------------	|
+| HCA Metadata Draft                                    	| EBI                      	| Complete        	| Z. Perova     	|
+| Test Datasets Available                               	| starfish                 	| Complete        	| A. Carr       	|
+| Submission Datasets Available                         	| starfish                 	| Q2 2019         	| A. Carr       	|
+| Analysis Pipelines                                    	| Broad                    	| Q2 2019         	| ?             	|
+| Analysis & Adapter Pipelines                          	| Broad                    	| Q2 2019         	| A. Carr       	|
+| Lira subscription                                     	| Broad                    	| TBD             	| S. Ehsan      	|
+| Data Analysis Service starfish Pipeline Tests         	| Broad                    	| Q2 2019         	| R. Wang       	|
+| Specification for input format                        	| starfish                 	| Complete        	| J. Moore      	|
+| Specification for output format                       	| starfish                 	| Q1 2019         	| A. Carr       	|
+| Input validation tool                                 	| starfish, OME            	| Q3 2019         	| J. Moore      	|
+| Output validation tool                                	| starfish, OME            	| Q2 2019         	| A. Carr       	|
+| Ingest support for the nested arrays of channels      	| EBI                      	| ?               	| ?             	|
+| [Ability to describe files that belong together][a]   	| ?                        	| ?               	| ?             	|
+| [Upload and download of subdirectories][b]             	| ?                        	| ?               	| ?             	|
+| DSS spatial data bundle (or bundless) specification   	| UCSC                     	| ?               	| B. Hannafious 	|
+| DSS scale testing                                     	| UCSC / DCP               	| TBD             	| B. Hannafious 	|
+| Data Browser facets for spatial data                  	| UCSC                     	| TBD             	| H. Schmidt    	|
+| Matrix service integration                            	| starfish                 	| TBD             	| M. Kinsella   	|
+| Upload Bundle for 1M+ files                           	| ?                        	| ?               	| P. Shah       	|
+| Image file download latency testing                   	| ?                        	| ?               	| ?             	|
 
 ### **Unresolved Questions**
 
@@ -599,3 +488,6 @@ data.
 1.  A [<span class="underline">Long-Term
     Vision</span>](https://docs.google.com/document/d/1wVYfBRL_omsnlWqUBc72kOm-GLdxPa97vBuV-OxyAcY/edit)
     document contains a fuller discussion on the needs of this format.
+
+[a]: https://github.com/HumanCellAtlas/metadata-schema/issues/623
+[b]: https://github.com/HumanCellAtlas/data-store/issues/1885
