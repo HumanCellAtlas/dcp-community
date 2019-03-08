@@ -2,7 +2,8 @@
 
 ## **Summary**
 
-The GG has requested that the DCP prioritize the incorporation of an
+The Human Cell Atlas (HCA) Governance Group (GG) has requested that the
+Data Coordination Platform (DCP) prioritize the incorporation of an
 image-based transcriptomics assay into the DCP. This RFC describes the
 minimum set of deliverables that must be prioritized and completed for
 the DCP to be able to (1) store and (2) process image-based single-cell
@@ -91,7 +92,7 @@ longer-term view of support for single-cell imaging assays. In brief:
     is beginning to test.
 
   - Based on [<span class="underline">delivery timelines for
-    pre-requisite
+    prerequisite
     work</span>](https://docs.google.com/document/d/1RQcj450v0WHGUvSm7YwwFQ7sRFoPAOCjRbo63UzyQd0/edit?ts=5c40d3f1#heading=h.4qbf4q96id16),
     implementation of support for image-based transcriptomics could
     begin as early as Q2-Q3 2019.
@@ -167,8 +168,8 @@ To avoid writing a large amount of microscope-specific code at the
 outset, *starfish* requests that users carry out basic pre-processing of
 their data to fix registration or chromatic errors. More details on the
 specific requests made of users can be found
-[<span class="underline">here</span>](https://drive.google.com/a/chanzuckerberg.com/open?id=1x516WMMWkEKKQwLrqqBsKmsPEDNjFYugqxm400D2NjY).The
-exact specification of the image data format will depend upon the
+[<span class="underline">here</span>](https://drive.google.com/a/chanzuckerberg.com/open?id=1x516WMMWkEKKQwLrqqBsKmsPEDNjFYugqxm400D2NjY).
+The exact specification of the image data format will depend upon the
 delivery date that the DCP requests for this prototype.
 
 ##### Pipeline Recipes
