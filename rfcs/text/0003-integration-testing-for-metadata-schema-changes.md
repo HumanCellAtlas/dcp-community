@@ -49,7 +49,7 @@ Design
 1. If the schema integration test passes, the new bundles in the production DSS can be released downstream by issuing a new bundle version of each without the new schema label. This process could be automated.
 1. If the schema test does not pass, the data is not released and development teams are notified to resolve the issue and rerun the test.
 
-![Integration test design](../images/0000-integration-test.png)
+![Integration test design](../images/0003-integration-test.png)
 
 *Integration test data flow: test path is shown in red, production release in blue, integration tooling in dashed lines; edges are labeled with corresponding step numbers in the design above*
 
