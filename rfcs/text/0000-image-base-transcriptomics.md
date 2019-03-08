@@ -201,7 +201,7 @@ contain full provenance records of the analysis environment, versions of
 starfish and key dependencies, algorithms that were run, and their
 parameters.
 
-##### [<span class="underline">IntensityTable</span>](https://spacetx-starfish.readthedocs.io/en/ajc-output-specifications/sptx-format/output_formats/IntensityTable/index.html)
+##### [IntensityTable]
 
 Image-based transcriptomics experiments image the same tissue using
 multiple color channels, and after subjecting the tissue to different
@@ -212,7 +212,7 @@ of detecting and decoding spots contains significant possibilities for
 error, and the IntensityTable supports analysis and QC for this
 process.
 
-##### [<span class="underline">SegmentationMask</span>](https://spacetx-starfish.readthedocs.io/en/ajc-output-specifications/sptx-format/output_formats/SegmentationMask/index.html)
+##### [SegmentationMask]
 
 In order to assign the spots identified above to individual cells, the
 locations of cells within the images must be identified. Compressed
@@ -221,7 +221,7 @@ store, for each cell, the portion of the image that is attributed to
 that
 cell.
 
-##### [<span class="underline">ExpressionMatrix</span>](https://spacetx-starfish.readthedocs.io/en/ajc-output-specifications/sptx-format/output_formats/ExpressionMatrix/index.html)
+##### [ExpressionMatrix]
 
 *starfish* combines spot calls from the IntensityTable with cell areas
 in the SegmentationMask to produce expression matrices. These are saved
@@ -491,3 +491,7 @@ data.
 
 [a]: https://github.com/HumanCellAtlas/metadata-schema/issues/623
 [b]: https://github.com/HumanCellAtlas/data-store/issues/1885
+
+[ExpressionMatrix]: https://spacetx-starfish.readthedocs.io/en/latest/sptx-format/output_formats/ExpressionMatrix/
+[IntensityTable]: https://spacetx-starfish.readthedocs.io/en/latest/sptx-format/output_formats/IntensityTable/
+[SegmentationMask]: https://spacetx-starfish.readthedocs.io/en/latest/sptx-format/output_formats/SegmentationMask/
