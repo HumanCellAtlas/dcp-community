@@ -219,8 +219,7 @@ In order to assign the spots identified above to individual cells, the
 locations of cells within the images must be identified. Compressed
 segmentation masks are a compact way to represent these data, which
 store, for each cell, the portion of the image that is attributed to
-that
-cell.
+that cell.
 
 ##### [ExpressionMatrix]
 
