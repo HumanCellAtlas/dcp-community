@@ -151,13 +151,23 @@ At the start of the Sprint, the single DCP Sprint Backlog SHOULD be reviewed by 
 
 ### Sprint(ing)
 
-During Development, the Development Team assigns items from the ZenHub *Sprint Backlog* pipeline and move to the *In Progress* pipeline. 
+During Development, the Development Team assigns issues from the ZenHub *Sprint Backlog* pipeline and move to the *In Progress* pipeline. 
 
-When there is a pull request in review for an *In Progress* item, the item is moved to the *QA/Review* pipeline. 
+When a pull request is filed and in review for an *In Progress* item, the issue is moved to the *Review* pipeline. 
 
-If rejected, the item returns to *In Progress*; otherwise, it is deployed in Dev for verification and moves to the *Done* pipeline.
+If the pull request is rejected, the issue returns to *In Progress*.
 
-Items that are *Done* are moved to the *Closed* pipeline when verified in Dev or Integration. 
+Otherwise, the pipeline tracks the issue through the DCP [promotion sequence](https://allspark.dev.data.humancellatlas.org/dcp-ops/docs/wikis/SOP:%20Releasing%20new%20Versions%20of%20DCP%20Software).
+
+The approved pull request is merged to the default branch, deployed to Development, and the issue moves to the *Development* pipeline.
+
+When the changes are promoted to Integration, the issue moves to the *Integration* pipeline.
+
+When the changes are promoted to Staging, the issue moves to the *Staging* pipeline.
+
+When the changes are promoted to Production, the issue moves to the *Production* pipeline.
+
+When the original author verifies the changes in Production, the issue then moves to the *Closed* pipeline. 
 
 During Sprints, the **Architecture Team** MAY schedule Scrums on a regular cadence for the DCP Development Team *"to identify if any integration issues exist."* (See *Daily Scrum* in [*Scrum Nexus*](http://scrumorg-website-prod.s3.amazonaws.com/drupal/2018-01/2018-Nexus-Guide-English_0.pdf) for guidance)
 
