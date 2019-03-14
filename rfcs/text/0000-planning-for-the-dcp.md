@@ -83,7 +83,7 @@ The top-level *dcp* repo MUST contain **all** significant features that are impo
 
 To avoid maintenance overhead due to duplicate or incomplete issues, the creation of new items in the *dcp* repo SHOULD be limited to the [**PM Team**](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/PM/charter.md) or a facilitator from the **Architecture Team**.
 
-DCP Product Backlog items  are modeled as:
+DCP Product Backlog items are modeled as:
 - [User Stories](http://agiledictionary.com/277/user-story/) with acceptance criteria
 - [Epics](http://agiledictionary.com/309/epic/) contain a related set of smaller User Stories required to complete an objective.
 - [Spikes](http://agiledictionary.com/209/spike/) adopted from eXtreme Programming to answer design questions.
@@ -151,7 +151,7 @@ At the start of the Sprint, the single DCP Sprint Backlog SHOULD be reviewed by 
 
 ### Sprint(ing)
 
-During Development, individual developers assign items from the ZenHub *Sprint Backlog* pipeline and move to the *In Progress* pipeline. 
+During Development, the Development Team assigns items from the ZenHub *Sprint Backlog* pipeline and move to the *In Progress* pipeline. 
 
 When there is a pull request in review for an *In Progress* item, the item is moved to the *QA/Review* pipeline. 
 
@@ -161,7 +161,7 @@ Items that are *Done* are moved to the *Closed* pipeline when verified in Dev or
 
 During Sprints, the **Architecture Team** MAY schedule Scrums on a regular cadence for the DCP Development Team *"to identify if any integration issues exist."* (See *Daily Scrum* in [*Scrum Nexus*](http://scrumorg-website-prod.s3.amazonaws.com/drupal/2018-01/2018-Nexus-Guide-English_0.pdf) for guidance)
 
-THe **PM Team** monitors progress using ZenHub charts and reports.
+The **PM Team** monitors progress using ZenHub charts and reports.
 
 ### Sprint Review
 
