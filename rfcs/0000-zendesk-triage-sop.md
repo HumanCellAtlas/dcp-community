@@ -11,13 +11,13 @@ This process RFC describes how the DCP handles technical support requests throug
 
 ## Author(s)
 
-`[Kevin Osborn\]([<span class="underline">mailto:kosborn2@ucsc.edu</span>](mailto:kosborn2@ucsc.edu))`
+`[Kevin Osborn](mailto:kosborn2@ucsc.edu)`
 
-`[Jodi Hirschman\]([<span class="underline">mailto:jhirsch@broadinstitute.org</span>](mailto:jhirsch@broadinstitute.org))`
+`[Jodi Hirschman](mailto:jhirsch@broadinstitute.org)`
 
-`[Matthew Spier\]([<span class="underline">mailto:mspeir@ucsc.edu</span>](mailto:mspeir@ucsc.edu))`
+`[Matthew Spier](mailto:mspeir@ucsc.edu)`
 
-`[Mallory Freeberg\]([<span class="underline">mailto:mfreeberg@ebi.ac.uk</span>](http://mfreeberg@ebi.ac.uk))`
+`[Mallory Freeberg](mailto:mfreeberg@ebi.ac.uk)`
 
 ## Shepherd
 
@@ -121,7 +121,7 @@ base
 
 ### **Acceptance Criteria \[optional\]**
 
-## *Acceptance criteria are the conditions that a RFC must satisfy to be accepted by users or other stakeholders.*
+*Acceptance criteria are the conditions that a RFC must satisfy to be accepted by users or other stakeholders.*
 
 ### **Unresolved Questions**
 
@@ -142,12 +142,12 @@ increase significantly.
 
 ### **Drawbacks and Limitations \[optional\]**
 
-## *Why should this RFC not be implemented?*
+*Why should this RFC not be implemented?*
 
 ### **Prior Art \[optional\]**
 
-## *Share references to prior art to deepen community understanding of the RFC, such as learnings, adaptations from earlier designs, or community standards.*
+*Share references to prior art to deepen community understanding of the RFC, such as learnings, adaptations from earlier designs, or community standards.*
 
 ### **Alternatives \[optional\]**
 
-## *Highlight other possible approaches to delivering the value proposed in this RFC. What other designs were explored? What were their advantages? What was the rationale for rejecting alternatives?*
+*Highlight other possible approaches to delivering the value proposed in this RFC. What other designs were explored? What were their advantages? What was the rationale for rejecting alternatives?*
