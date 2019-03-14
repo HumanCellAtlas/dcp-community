@@ -1,51 +1,36 @@
-### **DCP PR:**
+### DCP PR:
+***Leave this blank until the RFC is approved then the Author(s) must create a link between the assigned RFC number and this pull request in the format:*
 
-## *Leave this blank until the RFC is approved then the Author(s) must create a link between the assigned RFC number and this pull request in the format:*
+`[dcp-community/rfc\#\](https://github.com/HumanCellAtlas/dcp-community/pull/\<PR\#\>)`
 
-## \[dcp-community/rfc\#\](https://github.com/HumanCellAtlas/dcp-community/pull/\<PR\#\>)
+# Technical Support SOP
 
-# **Technical Support SOP**
+## Summary
 
-## **Summary**
+This process RFC describes how the DCP handles technical support requests through the use of the Zendesk application and other processes.
 
-## This process RFC describes how the DCP handles technical support requests through the use of the Zendesk application and other processes.
+## Author(s)
 
-## **Author(s)**
+`[Kevin Osborn\]([<span class="underline">mailto:kosborn2@ucsc.edu</span>](mailto:kosborn2@ucsc.edu))`
 
-## *Recommended format for Authors:*
+`[Jodi Hirschman\]([<span class="underline">mailto:jhirsch@broadinstitute.org</span>](mailto:jhirsch@broadinstitute.org))`
 
-## \[Kevin Osborn\]([<span class="underline">mailto:kosborn2@ucsc.edu</span>](mailto:kosborn2@ucsc.edu))
+`[Matthew Spier\]([<span class="underline">mailto:mspeir@ucsc.edu</span>](mailto:mspeir@ucsc.edu))`
 
-## \[Jodi Hirschman\]([<span class="underline">mailto:jhirsch@broadinstitute.org</span>](mailto:jhirsch@broadinstitute.org))
+`[Mallory Freeberg\]([<span class="underline">mailto:mfreeberg@ebi.ac.uk</span>](http://mfreeberg@ebi.ac.uk))`
 
-## \[Matthew Spier\]([<span class="underline">mailto:mspeir@ucsc.edu</span>](mailto:mspeir@ucsc.edu))
+## Shepherd
 
-## \[Mallory Freeberg\]([<span class="underline">mailto:mfreeberg@ebi.ac.uk</span>](http://mfreeberg@ebi.ac.uk))
+***Leave this blank. This role is assigned by DCP PM to guide the Author(s) through the RFC process.*
 
-## **Shepherd**
-
-## *Leave this blank. This role is assigned by DCP PM to guide the Author(s) through the RFC process.*
-
-## *Recommended format for Shepherds:*
-
-## \[Name\](mailto:username@example.com)
-
-## **Motivation**
+## Motivation
 
 Beta 2 testing will begin soon and we’ve decided to collect feedback
 through our Zendesk ticketing system. We therefore need to quickly
 determine a process for handling larger numbers of Zendesk tickets than
 we have received to date. Several of us have been thinking about this
 for awhile and drew up an initial SOP that we refined at the last DCP
-F2F (Feb. 2019); we present it here as this RFC. We also included user
-support via Zendesk in the Communications Team
-[<span class="underline">Statement of
-Need</span>](https://docs.google.com/document/d/1c6v_MBWspHsYNty4Fs-ZyD65bZDzsdjJMuRqtvh0GFc/edit#)
-to highlight its importance and the fact that there is currently no
-staff in the DCP whose priority is user
-support.
-
-## *Describe the user or technical need in detail \[with alignment to the DCP roadmap priorities where possible\]. Link prior community discussions to demonstrate support for this RFC.*
+F2F (Feb. 2019); we present it here as this RFC. 
 
 ### **User Stories**
 
@@ -60,14 +45,10 @@ support.
 3.  > As a DCP team member, I would like to know whether or not I should
     > be responding to a Zendesk ticket so that I can either respond in
     > a timely manner or be assured that someone else is responding in a
-    > timely
-manner.
+    > timely manner.
 
-## *Share the [<span class="underline">User Stories</span>](https://www.mountaingoatsoftware.com/agile/user-stories) motivating this RFC.*
+## Scientific "guardrails" \[optional\]
 
-## **Scientific "guardrails" \[optional\]**
-
-## *Describe recommended or mandated review from HCA Science governance to ensure that the RFC addresses the needs of the scientific community.*
 
 ## **Detailed Design**
 
@@ -138,8 +119,6 @@ should be rare, and all answers will be archived and added to the
 knowledge
 base
 
-## *Explain the design in sufficient detail such that the implementation and (if appropriate) the interaction with existing DCP software are both reasonably clear.*
-
 ### **Acceptance Criteria \[optional\]**
 
 ## *Acceptance criteria are the conditions that a RFC must satisfy to be accepted by users or other stakeholders.*
@@ -160,11 +139,6 @@ increase significantly.
 > 1 point person per box (4-5 people) - this should be at least 25% of
 > their time, and there should be a backup person for each box
 
-  - > *What aspects of the design do you expect to clarify further
-    > through the RFC review
-    process?*
-
-  - ## *What aspects of the design do you expect to clarify later during iterative development of this RFC?*
 
 ### **Drawbacks and Limitations \[optional\]**
 
