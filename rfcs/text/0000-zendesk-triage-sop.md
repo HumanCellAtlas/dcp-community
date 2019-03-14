@@ -55,7 +55,9 @@ F2F (Feb. 2019); we present it here as this RFC.
 This section describes the flow of an issue through the support state
 diagram presented below.
 
-![](../images/Zendesk-triage-SOP-diagram.jpg)
+![](../images/0002-dashboard.png)
+
+![](../images/0000-Zendesk-triage-SOP-diagram.jpeg)
 
 ## Issue Creation
 
