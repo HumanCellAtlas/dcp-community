@@ -1,6 +1,6 @@
 ### DCP PR:
 
-`[dcp-community/rfc#](https://github.com/HumanCellAtlas/dcp-community/pull/<PR#>)`
+`[dcp-community/rfc4](https://github.com/HumanCellAtlas/dcp-community/pull/57)`
 
 # RFC Deletion of data in the DCP
 
