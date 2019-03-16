@@ -117,7 +117,7 @@ longer-term view of support for single-cell imaging assays. In brief:
 
   - As a user with a keyboard, I want to generate a gene x cell matrix
     for biological analysis of my data and combination with sequencing
-    assays.
+    assays so that I can use these data to answer biological questions.
 
 ## **Scientific "guardrails"**
 
