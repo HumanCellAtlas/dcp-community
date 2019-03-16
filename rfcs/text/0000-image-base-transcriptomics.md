@@ -123,7 +123,7 @@ longer-term view of support for single-cell imaging assays. In brief:
 
 Image-based transcriptomics assays are still in active development, and
 benchmarking and characterization of these data types is in process. As
-such we expect to utilize community feedback to iterate on scientific
+such starfish and the Data Processing Pipelines team expect to utilize community feedback to iterate on scientific
 quality of the pipelines, and will seek governance approval for the
 inclusion of data from these pipelines in release only when the
 technologies are more mature.
