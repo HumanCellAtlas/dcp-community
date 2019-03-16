@@ -60,7 +60,7 @@ processing pipelines that comply with DCP requirements where possible.
 These characteristics make this assay class a good choice for
 prototyping image support in the DCP as it presents the smallest scale
 challenge, the majority of the major deliverables can be provided by
-DCP-extrinsic developers, and it requires generalization of the fewest
+DCP-extrinsic developers, and it requires the fewest modifications of
 DCP components. Implementation of support for these assays is likely to
 generalize to additional areas of interest to the HCA community such as
 multiplexed antibody imaging and thick-section volumetric imaging for
