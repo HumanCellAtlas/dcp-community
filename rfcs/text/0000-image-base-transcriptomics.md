@@ -155,7 +155,7 @@ To prototype the use of imaging data in the DCP, the *starfish* and OME
 teams propose that the DCP use [<span class="underline">SpaceTx
 Format</span>](https://spacetx-starfish.readthedocs.io/en/latest/sptx-format/index.html),
 a format that groups and indexes a potentially very large number of two
-dimensional images, forming 5-dimensional tensors over (time, channel,
+dimensional images, forming 5-dimensional tensors over (time, fluorescence channel,
 z, y, x). These dimensions are fairly consistent across imaging domains
 and will likely generalize to other use cases. SpaceTx created this
 format because they were unable to find an existing format that
