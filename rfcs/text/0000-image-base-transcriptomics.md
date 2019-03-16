@@ -103,7 +103,7 @@ longer-term view of support for single-cell imaging assays. In brief:
 
 ### **User Stories**
 
-  - As a submitter, I want to upload directories of files representing
+  - As a submitter, I want to upload directories of files in SpaceTx Format representing
     an imaging experiment for storage in the DCP.
 
   - As a user with a keyboard, I want to identify images with a given
