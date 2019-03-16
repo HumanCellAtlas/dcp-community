@@ -305,8 +305,9 @@ existing Matrix Service specifications and can be served "as is" for the
 imaging prototype. Additional information on cellular geometries and QC
 will be provided as a supplementary metadata zarr archive.
 
-However, other imaging experiments will likely require a generalization
-of the internal namespace of the DCP. Currently, the DCP standardizes
+However, other imaging experiments will likely require extending how
+features (genes) are named to support a broader set of features
+(eg. proteins and cellular components). Currently, the DCP standardizes
 around GENCODE gene IDs and HGNC gene symbols. Image based proteomics
 will require protein identifiers such as UNIPROT, and other use cases
 that measure sub-cellular components will likely require more general
