@@ -375,8 +375,6 @@ Specifically:
     upgrade data when this is necessary, and to adhere to schedules
     that limit the frequencies of these updates.
 
-<!-- end list -->
-
 2.  The analysis of image-based transcriptomics assays are not yet
     fully automated, and therefore during the pilot phase, support of
     imaging data will rely on user-supplied parameterizations of
@@ -413,8 +411,7 @@ The initial benefit of the SpaceTx format, library, and consortium,
 however, is the on-going generation of initial datasets by individuals
 already involved in the HCA, making it an ideal and low-cost prototype
 for how imaging can work in the DCP. Additional options can be
-prioritized based on the scientific
-    > “guardrails”.
+prioritized based on the scientific "guardrails".
 
 #### File Formats
 
