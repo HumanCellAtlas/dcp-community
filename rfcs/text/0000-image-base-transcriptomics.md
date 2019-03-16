@@ -110,7 +110,7 @@ longer-term view of support for single-cell imaging assays. In brief:
     gene for download.
 
   - As a user with a keyboard, I want to see spots overlayed on an
-    image for QC.
+    image for QC to convince myself that the data have been properly processed.
 
   - As a user with a keyboard, I want to see cells overlayed on an
     image for QC to confirm that cells have been properly segmented.
