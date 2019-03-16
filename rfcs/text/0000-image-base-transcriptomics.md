@@ -113,7 +113,7 @@ longer-term view of support for single-cell imaging assays. In brief:
     image for QC.
 
   - As a user with a keyboard, I want to see cells overlayed on an
-    image for QC.
+    image for QC to confirm that cells have been properly segmented.
 
   - As a user with a keyboard, I want to generate a gene x cell matrix
     for biological analysis of my data and combination with sequencing
