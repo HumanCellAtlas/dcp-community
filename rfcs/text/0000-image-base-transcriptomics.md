@@ -311,10 +311,7 @@ features (genes) are named to support a broader set of features
 around GENCODE gene IDs and HGNC gene symbols. Image based proteomics
 will require protein identifiers such as UNIPROT, and other use cases
 that measure sub-cellular components will likely require more general
-cellular component information (e.g. "endoplasmic reticulum"). These use
-cases could be supported by switching identifiers from, e.g. "ACTB" to
-"HGNC:ACTB" by prepending the namespace of the IDs being used in a given
-assay.
+cellular component information (e.g. "endoplasmic reticulum").
 
 ### **Acceptance Criteria**
 
