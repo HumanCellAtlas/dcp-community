@@ -336,7 +336,7 @@ code changes and their impact.
 | Specification for output format                       	| starfish                 	| Q1 2019         	| A. Carr       	|
 | Input validation tool                                 	| starfish, OME            	| Q3 2019         	| J. Moore      	|
 | Output validation tool                                	| starfish, OME            	| Q2 2019         	| A. Carr       	|
-| Ingest support for the nested arrays of channels      	| EBI                      	| ?               	| ?             	|
+| Ingest support for the nested arrays of channels      	| EBI                      	| ?               	| Z. Perova             	|
 | [Ability to describe files that belong together][a]   	| ?                        	| ?               	| ?             	|
 | [Upload and download of subdirectories][b]             	| ?                        	| ?               	| ?             	|
 | DSS spatial data bundle (or bundless) specification   	| UCSC                     	| ?               	| B. Hannafious 	|
