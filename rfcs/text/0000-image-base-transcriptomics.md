@@ -107,7 +107,7 @@ longer-term view of support for single-cell imaging assays. In brief:
     an imaging experiment for storage in the DCP.
 
   - As a user with a keyboard, I want to identify images with a given
-    gene for download.
+    gene for download so that I can visualize the gene's spatial patterning.
 
   - As a user with a keyboard, I want to see spots overlayed on an
     image for QC to convince myself that the data have been properly processed.
