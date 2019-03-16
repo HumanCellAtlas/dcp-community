@@ -356,9 +356,6 @@ code changes and their impact.
   - What, if any, additional automation may be needed in the DCP to
     support imaging?
 
-  - What is the appropriate separation of metadata in the SpaceTx
-    Format and the HCA metadata schema?
-
   - How should imaging metadata be validated?
 
 ### **Drawbacks and Limitations**
