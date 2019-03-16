@@ -363,7 +363,16 @@ standardization across the community. As such, flexibility around
 updating and upgrading formats and pipelines will be necessary.
 Specifically:
 
-1.  The development of a chunked image file format\[1\] that supports
+1.  Currently, little to no imaging data is _acquired_ in the SpaceTx
+    Format and the conversion of datasets into SpaceTx Format is outside
+    the scope of this RFC. Submitters with the help of wranglers must
+    convert their data before upload. The *starfish* library, however,
+    provides a scripting mechanism for converting simple formats into
+    SpaceTx Format. An example of this is provided in the [ISS Vignette].
+    For more complicated and opaque data, use of the [Bio-Formats] library
+    will work for any of the formats on the [Supported Formats] list.
+
+2.  The development of a widel-supported chunked image file format\[1\] that supports
     cloud workflows for data at the scale that will become common over
     the next 10 years is in an early stage. Working prototypes from
     genomics, imaging, astronomy, and geosciences exist and a process
@@ -375,7 +384,7 @@ Specifically:
     upgrade data when this is necessary, and to adhere to schedules
     that limit the frequencies of these updates.
 
-2.  The analysis of image-based transcriptomics assays are not yet
+3.  The analysis of image-based transcriptomics assays are not yet
     fully automated, and therefore during the pilot phase, support of
     imaging data will rely on user-supplied parameterizations of
     *starfish*-based workflows. This will mean that initial datasets
@@ -484,6 +493,9 @@ data.
 [a]: https://github.com/HumanCellAtlas/metadata-schema/issues/623
 [b]: https://github.com/HumanCellAtlas/data-store/issues/1885
 
+[Bio-Formats]: https://www.openmicroscopy.org/bio-formats
 [ExpressionMatrix]: https://spacetx-starfish.readthedocs.io/en/latest/sptx-format/output_formats/ExpressionMatrix/
 [IntensityTable]: https://spacetx-starfish.readthedocs.io/en/latest/sptx-format/output_formats/IntensityTable/
+[ISS Vignette]: https://spacetx-starfish.readthedocs.io/en/stable/usage/iss/iss_vignette.html
 [SegmentationMask]: https://spacetx-starfish.readthedocs.io/en/latest/sptx-format/output_formats/SegmentationMask/
+[Supported Formats]: https://j.mp/bio-formats-list
