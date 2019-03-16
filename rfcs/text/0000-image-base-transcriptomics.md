@@ -13,7 +13,7 @@ transcriptomics experiments. The following assumptions are made:
     iteration phase should be added to the DCP
 
 2.  The current state of the starfish ecosystem is sufficient to
-    fulfill this need and will be selected by the AWG.
+    process image-based transcriptomics experiments and will be selected by the AWG.
 
 3.  This instantiation will require limited scale (low hundreds of
     datasets over several years)
