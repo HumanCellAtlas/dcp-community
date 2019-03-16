@@ -228,7 +228,7 @@ in the SegmentationMask to produce expression matrices. These are saved
 in zarr format and look identical to the matrices emitted by the Data
 Analysis Service pipelines, with the exception that each cell is
 additionally annotated with metadata that specify the x, y, and z
-location of the data.
+location of the data. Feature names will be consistent with DCP standards.
 
 ##### Processed Images
 
