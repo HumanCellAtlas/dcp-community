@@ -349,7 +349,7 @@ code changes and their impact.
   - Who are the intended beta users for imaging support and what
     functionality is being targeted?
 
-  - Are there other roadblocks for imaging support in the DCP?
+  - Clearly define a wrangling process for imaging data.
 
   - What, if any, additional automation may be needed in the DCP to
     support imaging?
