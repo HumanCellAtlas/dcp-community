@@ -336,7 +336,7 @@ code changes and their impact.
 | Output validation tool                                	| starfish, OME            	| Q2 2019         	| A. Carr       	|
 | Ingest support for the nested arrays of channels      	| EBI                      	| ?               	| Z. Perova             	|
 | [Ability to describe files that belong together][a]   	| ?                        	| ?               	| ?             	|
-| [Upload and download of subdirectories][b]             	| ?                        	| ?               	| ?             	|
+| [Upload and download of subdirectories][b]             	| ?                        	| ?               	| H. Schmidt             	|
 | DSS spatial data bundle (or bundless) specification   	| UCSC                     	| ?               	| B. Hannafious 	|
 | DSS scale testing                                     	| UCSC / DCP               	| TBD             	| B. Hannafious 	|
 | Data Browser facets for spatial data                  	| UCSC                     	| TBD             	| H. Schmidt    	|
