@@ -300,10 +300,10 @@ changes that specify the particular assay in question.
 
 #### Matrices
 
-As mentioned above, image-based transcriptomics output data adhere to
-existing Matrix Service specifications and can be served "as is" for the
-imaging prototype. Additional information on cellular geometries and QC
-will be provided as a supplementary metadata zarr archive.
+As mentioned above, image-based transcriptomics output data
+include a gene expression matrix and related metadata that are
+compatible with matrix service requirements and should be no
+more difficult to convert than the output of a sequencing assay
 
 However, other imaging experiments will likely require extending how
 features (genes) are named to support a broader set of features
