@@ -342,7 +342,7 @@ code changes and their impact.
 | Data Browser facets for spatial data                  	| UCSC                     	| TBD             	| H. Schmidt    	|
 | Matrix service integration                            	| starfish                 	| TBD             	| M. Kinsella   	|
 | Upload Bundle for 1M+ files                           	| ?                        	| ?               	| P. Shah       	|
-| Image file download latency testing                   	| ?                        	| ?               	| ?             	|
+| Image file download latency testing                   	| ?                        	| ?               	| B. Hannafious             	|
 
 ### **Unresolved Questions**
 
