@@ -168,7 +168,7 @@ To avoid writing a large amount of microscope-specific code at the
 outset, *starfish* requests that users carry out basic pre-processing of
 their data to fix registration or chromatic errors. More details on the
 specific requests made of users can be found
-[<span class="underline">here</span>](https://drive.google.com/a/chanzuckerberg.com/open?id=1x516WMMWkEKKQwLrqqBsKmsPEDNjFYugqxm400D2NjY).
+[<span class="underline">here</span>](https://spacetx-starfish.readthedocs.io/en/latest/usage/index.html).
 The exact specification of the image data format will depend upon the
 delivery date that the DCP requests for this prototype.
 
