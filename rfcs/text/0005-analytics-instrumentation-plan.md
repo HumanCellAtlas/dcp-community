@@ -1,5 +1,7 @@
 ### DCP PR:
 
+[dcp-community/rfc5](https://github.com/HumanCellAtlas/dcp-community/pull/51)
+
 # Analytics instrumentation plan
 
 ## Summary
