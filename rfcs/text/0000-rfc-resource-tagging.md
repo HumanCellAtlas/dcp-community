@@ -12,11 +12,9 @@ Resource Tagging
 
 Define a standard for Cloud Resource tagging to allow normilzation of data for Cost analysis.
 
-*Describe the vision of the RFC in 2-3 sentences. Consider this section as your "elevator pitch" or "release note" to the community.*
 
 ## Author(s)
 
-*Recommended format for Authors:*
 
  `[Amar Jandu](mailto:ajandu@ucsc.edu)`
 
@@ -29,22 +27,17 @@ Define a standard for Cloud Resource tagging to allow normilzation of data for C
 
 ## Motivation
 
-*Describe the user or technical need in detail [with alignment to the DCP roadmap priorities where possible]. Link prior community discussions to demonstrate support for this RFC.*
+
 
 AWS Cost Explorer requires managment for allowing tags to track and show to PMs/Admins. Fragmented tag sets create unneccessary overhead for the admin team, as well as present issues with filtering the information downstream. 
 
 ### User Stories
 
-*Share the [User Stories](https://www.mountaingoatsoftware.com/agile/user-stories) motivating this RFC.*
+
 As a DCP Admin, I would like to see costs for a given project/service, so that i can track costs.
 
-## Scientific "guardrails" [optional]
-
-*Describe recommended or mandated review from HCA Science governance to ensure that the RFC addresses the needs of the scientific community.*
 
 ## Detailed Design
-
-*Explain the design in sufficient detail such that the implementation and (if appropriate) the interaction with existing DCP software are both reasonably clear.*
 
 For Cloud Resources that are [allowed](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/custom-tags.html#allocation-how) to be tagged, it should be encuraged that they are, however a subset of the resources should have tagging as a requirement.
 
@@ -117,14 +110,10 @@ Once a tag set for a resource has been established it should be updated within t
 
 ### Acceptance Criteria [optional]
 
-*Acceptance criteria are the conditions that a RFC must satisfy to be accepted by users or other stakeholders.*
-
 A set of tags/labels is defined and required for Cloud resources to have.
 
 ### Unresolved Questions
 
-- *What aspects of the design do you expect to clarify further through the RFC review process?*
-- *What aspects of the design do you expect to clarify later during iterative development of this RFC?*
 Are there other tags that we need to have?
 Are there other resources that should have tags become required for them.
 
@@ -135,15 +124,6 @@ Are there other resources that should have tags become required for them.
 if we want the admins to not like the devs.
 
 
-### Prior Art [optional]
-
-*Share references to prior art to deepen community understanding of the RFC, such as learnings, adaptations from earlier designs, or community standards.*
-
-
-
 ### Alternatives [optional]
-
-*Highlight other possible approaches to delivering the value proposed in this RFC. 
-What other designs were explored? What were their advantages? What was the rationale for rejecting alternatives?*
 
 Services have independent tags that are posted within the Resource Tagging wiki, and admins have to track them down.
