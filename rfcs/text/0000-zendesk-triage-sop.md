@@ -25,6 +25,7 @@ This process RFC describes how the DCP handles technical support requests throug
 
 ## Motivation
 
+### beta 2 
 Beta 2 testing will begin soon and we’ve decided to collect feedback
 through our Zendesk ticketing system. We therefore need to quickly
 determine a process for handling larger numbers of Zendesk tickets than
