@@ -63,9 +63,12 @@ diagram presented below.
 Issues in Zendesk originate from users of the DCP. These users could
 include data contributors, researchers trying to use the data in the
 DCP, software developers trying to leverage the DCP API. Any user of the
-DCP can file an issue. Problems identified from the internal DCP staff
-can be filed on Zendesk too, or directly in the applicable development
-repository if the reporter is sure of which one to use. Once an issue is
+DCP can file an issue. 
+
+While problems identified by an internal DCP staff member could be filed on Zendesk too, we favor a plan in which those issues are directly added to the applicable development
+repository, where they can be addressed directly. This plan eliminates the extra work for the triager of managing internally-generated tickets.
+
+Once an issue is
 created in Zendesk there is a tiered support network that kicks in to
 resolve the question.
 
