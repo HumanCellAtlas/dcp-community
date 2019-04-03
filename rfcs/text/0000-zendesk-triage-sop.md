@@ -25,13 +25,13 @@ This process RFC describes how the DCP handles technical support requests throug
 
 ## Motivation
 
-### beta 2 
-Beta 2 testing will begin soon and we’ve decided to collect feedback
-through our Zendesk ticketing system. We therefore need to quickly
-determine a process for handling larger numbers of Zendesk tickets than
-we have received to date. Several of us have been thinking about this
-for awhile and drew up an initial SOP that we refined at the last DCP
-F2F (Feb. 2019); we present it here as this RFC. 
+### Immediate Need 
+Beta 2 testing, to be done by 30-40 users representing three of our six use cases, will begin soon and we’ve decided to collect feedback through our Zendesk ticketing systm. Because this group of testers is larger and represents more diverse needs for data than the Beta 1 testers, we anticipate an up-tick in the number of Zendesk tickets we'll receive. We therefore need to quickly determine a process for handling these tickets. 
+
+### Sustainability Through the GA
+Upon general release, the full range of use cases will come into play and we anticipate a large increase in both the nubmer of tickets and diversity of questions asked by users. Addressing these tickets will require a big time committment, so we need an efficient system in place and a team well-versed in the DCP and its scientific applications. 
+
+This RFC describes an SOP that we think will satisfy both the Beta2 test phase and the early days of the GA. As we grown in our understanding of user support needs, this SOP will likely need revision to address long-term sustainability.
 
 ### **User Stories**
 
