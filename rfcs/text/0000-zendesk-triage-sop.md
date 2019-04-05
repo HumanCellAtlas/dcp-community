@@ -74,35 +74,40 @@ resolve the question.
 
 ## Primary Support
 
-The triage person, or team, is responsible for receiving the initial
+The triage person, or triage team, is responsible for receiving initial
 support requests from end users, and monitors the Zendesk system daily
-for new tickets. The triager takes ownership of each open ticket, sends
-out a canned response noting that we’ve received the user’s message, and
-looks to see if there is enough information in the ticket to inform the
-response. They will go back to the user for any obvious omissions. Next,
-the triage person will look through the knowledge base for answers to
-known problems. Note that the knowledge base is available to end users,
-and includes the documentation and also FAQs accessible from the Help
-page. If the answer resolves the problem then the issue is closed. If
-not, then the triager needs to ask for help from the secondary support
-team, which includes members from each DCP component or service. It may
+for new tickets. Note that the Zendesk system automatically sends out an initial canned response to the user, indicating that the request was received and is being reviewed by our support staff. 
+
+The Service Level Objective is to respond to the user with a solution no later than 48 business hours after it is filed.
+
+The triager takes ownership of each open ticket and does the following to develop a response:
+
+1. Evaluate whether there is enough information in the ticket to inform the
+response. If not, write back to the user and ask for the missing information. 
+
+2. Search the data portal documentation and FAQ for answers to the question. If the triage person can find an answer that resolves the problem, a repsonse is sent to the user and the issue is closed. 
+
+3. If an answer is not evident from searching the knowledge base in the data portal, the triager needs to ask for help from the secondary support team, which includes members from each DCP component or service. It may
 be obvious which team should receive the ticket; if so, then it can be
 assigned directly. If it’s not obvious, there can be some internal
 discussion with the secondary support staff about who should receive the
 ticket.
 
-The triage process will also include tagging the question with basic
-tags (data store/ingest/contribution/etc.). The secondary support person
-to whom the triager asks for help is encouraged to add additional tags
-and to make Github tickets for issues like: new/updated docs,
-new/updated FAQs, code examples, bug reports, etc.
+4. At this point the ticket becomes the responsibility of the secondary support person, who should repond to the user and bring the ticket to an eventual close. 
 
-The triager(s) will also work with the secondary support team to create
-and maintain canned responses (how to connect/get involved with the HCA;
-how to submit data, etc.)
 
-The Service Level Objective is to respond to the initial problem
-submission no later than 48 business hours after it is filed.
+In order to improve our User Support the triager will also work with the secondary support team to:
+
+1. tag each ticket with basic tags (data store/ingest/contribution/etc.) that help DCP staff categorize it for later retrieval. In addition, Github tickets should be made for issues like: updating docs or writing new documentation and improving our FAQs, code examples, bug reports, etc. As much as possible, issues should be turned into documentation or short FAQs and made available for users to access from the portal.
+
+2. create and maintain canned responses (how to connect/get involved with the HCA;
+how to submit data, etc.) that can be quickly sent to users who have written with those questions.
+
+3. document discussions and decisions that arise from particular tickets, so that it's clear who should respond to similar questions in the future and what the response should be.
+
+4. As much as possible 
+
+
 
 ## Secondary Support
 
