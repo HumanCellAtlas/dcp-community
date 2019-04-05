@@ -31,7 +31,7 @@ Beta 2 testing, to be done by 30-40 users representing three of our six use case
 ### Sustainability Through the GA
 Upon general release, the full range of use cases will come into play and we anticipate a large increase in both the nubmer of tickets and diversity of questions asked by users. Addressing these tickets will require a big time committment, so we need an efficient system in place and a team well-versed in the DCP and its scientific applications. 
 
-This RFC describes an SOP that we think will satisfy both the Beta2 test phase and the early days of the GA. As we grown in our understanding of user support needs, this SOP will likely need revision to address long-term sustainability.
+This RFC describes an SOP that we think will satisfy both the Beta2 test phase and the early days of the GA. As we grow in our understanding of user support needs, this SOP will likely need revision to address long-term sustainability.
 
 ### **User Stories**
 
@@ -104,9 +104,6 @@ In order to improve our User Support the triager will also work with the seconda
 how to submit data, etc.) that can be quickly sent to users who have written with those questions.
 
 3. document discussions and decisions that arise from particular tickets, so that it's clear who should respond to similar questions in the future and what the response should be.
-
-4. As much as possible 
-
 
 
 ## Secondary Support
