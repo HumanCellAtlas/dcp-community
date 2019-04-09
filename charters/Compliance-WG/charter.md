@@ -59,19 +59,17 @@ The Compliance Working Group will deliver:
 ## Roles
 
 ### Project Lead
-Sarah Tahiri (stahiri@broadinstitute.org)
+The Project Lead is responsible for driving strategic objectives. Sarah Tahiri (stahiri@broadinstitute.org)
 
 ### Product Owner
-The Compliance working Group __Product Owner__ is expected to rotate based on current objectives.
+The Product Owner drives tactical execution of strategic objectives by managing the Product Backlog for the DCP project. This role is not applicable to the Compliance Working Group as it is a body responsive to the priorities assigned to it.
 
-Current Product Owner: Sarah Tahiri (stahiri@broadinstitute.org)
-
-__NOTE__: The responsibilities of the __Project Lead__ and __Product Owner__ are tightly intertwined. At an overly simplistic level, the __Project Lead__ is more responsible for strategic objectives while the __Product Owner__ drives tactical execution. In actual practice, it is a close partnership when planning and coordinating development with other projects.
+The __Project Lead__ is more responsible for strategic objectives while the __Product Owner__ drives tactical execution. In actual practice, it is a close partnership when planning and coordinating development with other projects.
 
 ## Communication
 
 ### Slack Channels
-[HumanCellAtlas/dcp-security](https://humancellatlas.slack.com/messages/dcp-security): This private channel is used to discuss compliance strategy and operational security needs.
+[HumanCellAtlas/dcp-security](https://humancellatlas.slack.com/messages/dcp-security): This private channel is used to discuss compliance strategy and operational security needs. If you believe you should have access to this channel, please contact the Project Lead.
 
 ### Mailing List
 Working Group email: compliance-wg@data.humancellatlas.org
