@@ -59,7 +59,7 @@ The Compliance Working Group will deliver:
 ## Roles
 
 ### Project Lead
-The Project Lead is responsible for driving strategic objectives. Sarah Tahiri (stahiri@broadinstitute.org)
+Sarah Tahiri (stahiri@broadinstitute.org)
 
 ### Product Owner
 The Product Owner drives tactical execution of strategic objectives by managing the Product Backlog for the DCP project. This role is not applicable to the Compliance Working Group as it is a body responsive to the priorities assigned to it.
