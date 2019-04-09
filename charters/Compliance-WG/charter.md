@@ -64,8 +64,6 @@ The Project Lead is responsible for driving strategic objectives. Sarah Tahiri (
 ### Product Owner
 The Product Owner drives tactical execution of strategic objectives by managing the Product Backlog for the DCP project. This role is not applicable to the Compliance Working Group as it is a body responsive to the priorities assigned to it.
 
-The __Project Lead__ is more responsible for strategic objectives while the __Product Owner__ drives tactical execution. In actual practice, it is a close partnership when planning and coordinating development with other projects.
-
 ## Communication
 
 ### Slack Channels
