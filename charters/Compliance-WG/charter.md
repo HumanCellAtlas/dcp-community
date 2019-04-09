@@ -62,7 +62,11 @@ The Compliance Working Group will deliver:
 Sarah Tahiri (stahiri@broadinstitute.org)
 
 ### Product Owner
+The Compliance working Group __Product Owner__ is expected to rotate based on current objectives.
 
+Current Product Owner: Sarah Tahiri (stahiri@broadinstitute.org)
+
+__NOTE__: The responsibilities of the __Project Lead__ and __Product Owner__ are tightly intertwined. At an overly simplistic level, the __Project Lead__ is more responsible for strategic objectives while the __Product Owner__ drives tactical execution. In actual practice, it is a close partnership when planning and coordinating development with other projects.
 
 ## Communication
 
