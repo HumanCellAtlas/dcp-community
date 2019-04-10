@@ -3,11 +3,11 @@
 
 `[dcp-community/rfc\#\](https://github.com/HumanCellAtlas/dcp-community/pull/\<PR\#\>)`
 
-# Technical Support SOP
+# User Support SOP
 
 ## Summary
 
-This process RFC describes how the DCP handles technical support requests through the use of the Zendesk application and other processes.
+This process RFC describes how the DCP handles user support requests through the use of the Zendesk application and other processes.
 
 ## Author(s)
 
