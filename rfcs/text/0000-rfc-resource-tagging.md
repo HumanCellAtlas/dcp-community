@@ -6,17 +6,19 @@
 
 # RFC Name
 
-Resource Tagging
+IaaS Resource Tagging for and Cost Monitoring and Auditing
 
 ## Summary
 
-Define a standard for Cloud Resource tagging to allow normilzation of data for Cost analysis.
+Define mandatory tagging and auditability requirements for DCP cloud (IaaS) resources and operator identities, to be used for:
 
+- Cost accounting, analysis, and monitoring;
+- Security auditing of administrative and operator actions.
 
 ## Author(s)
 
-
- `[Amar Jandu](mailto:ajandu@ucsc.edu)`
+* [Amar Jandu](mailto:ajandu@ucsc.edu)
+* [Andrey Kislyuk](mailto:akisilyuk@chanzuckerberg.com)
 
 ## Shepherd
 ***Leave this blank.** This role is assigned by DCP PM to guide the **Author(s)** through the RFC process.*
@@ -27,23 +29,47 @@ Define a standard for Cloud Resource tagging to allow normilzation of data for C
 
 ## Motivation
 
+A substantial component of the HCA DCP budget is IaaS (cloud infrastructure) cost (specifically, AWS and GCP costs). We
+would like to monitor the sources of these costs on a service and component level. The separation of development and
+production IaaS accounts naturally allows us to track the cost breakdown on that dimension. AWS and GCP also provide
+a way to track costs by underlying IaaS service (such as S3 vs. EC2). However, we have no comprehensive way to separate
+costs by DCP service (such as Ingest Service vs. Data Store), development environment (dev vs. staging), or service component
+(such as DSS sync daemon vs. DSS checkout daemon).
 
-
-AWS Cost Explorer requires managment for allowing tags to track and show to PMs/Admins. Fragmented tag sets create unneccessary overhead for the admin team, as well as present issues with filtering the information downstream. 
+Monitoring costs by service and component will allow us to track down cost drivers among our components, prioritize
+engineering efforts to optimize our use of underlying cloud infrastructure, empower our developers to get daily feedback about
+the consequences of their serivce architecture design decisions, identify cost anomalies indicating possible abuse or security
+issues, and provide cost reporting, forecasting, and accountability to our funders.
 
 ### User Stories
 
-
-As a DCP Admin, I would like to see costs for a given project/service, so that i can track costs.
-
+* As a DCP developer, I would like to see how much a particular component of my service is costing in a particular test
+  environment, such as a routine scale test.
+* As a DCP operator, I would like to keep an eye on the running costs incurred by DCP services, to identify unexpected
+  cost increases or service availability issues.
+* As a DCP security lead, I would like to identify resource provisioning actions performed in the production account and
+  track them by operator identity and service.
 
 ## Detailed Design
 
-For Cloud Resources that are [allowed](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/custom-tags.html#allocation-how) to be tagged, it should be encuraged that they are, however a subset of the resources should have tagging as a requirement.
+We will use
+[AWS cost allocation tags](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/custom-tags.html#allocation-how)
+and [GCP labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels) to tag all resources that can
+be tagged. Resources that support tagging/labeling and constitute a significant portion of the IaaS budget (over 1%), tagging
+will be required. For other resources that support tagging/labeling, it is encouraged, but not required.
 
-Required Resource Tags for AWS these include `lambda, apigateway, s3, ec2, rds, elasticsearch service, elb, ecs`. There are othere related technologie that may also beifit from tagging such as `vpc,ebs` for `ec2`, resources such as these may also benifit from tagging to further clarify ownership.
+#### AWS Services that Require Resource Tags
 
-Required labels for GCP include ``
+AWS services that specifically require tagging because they have been previously identified as cost drivers are:
+
+* AWS Lambda
+* API Gateway
+* S3
+* EC2 (including all subcomponents that are cost drivers)
+* RDS
+* Elasticsearch Service
+* ELB
+* ECS
 
 ## Proposed Tag Keys:
    **NOTE** : keys and values are case-sensitive
