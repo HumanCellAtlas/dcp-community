@@ -55,8 +55,8 @@ issues, and provide cost reporting, forecasting, and accountability to our funde
 We will use
 [AWS cost allocation tags](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/custom-tags.html#allocation-how)
 and [GCP labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels) to tag all resources that can
-be tagged. Resources that support tagging/labeling and constitute a significant portion of the IaaS budget (over 1%), tagging
-will be required. For other resources that support tagging/labeling, it is encouraged, but not required.
+be tagged. For resources that support tagging/labeling and constitute a significant portion of the IaaS budget (over 1%),
+tagging will be required. For other resources that support tagging/labeling, it is encouraged, but not required.
 
 #### AWS Services that Require Resource Tags
 
@@ -71,28 +71,53 @@ AWS services that specifically require tagging because they have been previously
 * ELB
 * ECS
 
-## Proposed Tag Keys:
+## Standard Cost Control Tag/Label Keys
+
+The following tags (AWS) or labels (GCP) **MUST** be set on all HCA DCP assets for which the following conditions apply:
+
+* Their underlying services support tagging/labeling
+* Their underlying services amount to 1% or greater cumulative IaaS spend in the HCA DCP budget in the prior calendar month
+
    **NOTE** : keys and values are case-sensitive
 
-### project:
-    The value for the project key shall be `dcp`
+Name        | Description
+------------|-------------------------------
+`project`   | The value for the project key shall be `dcp`
+`env`       | The value for the env key shall be the stage that the resource applies to, this can be `{dev,staging,integration,prod}`
+`owner`     | The email of a team or individual responsible for operating the asset, for example: dss-team@data.humancellatlas.org
+`service`   | The name of the HCA DCP service that manages the resource, for example: DSS, IngestService
+`Name`      | A human-readable name for the asset. This can be a custom name or a combination of other tags, such as `dss-notify-dev` (service-subcomponent-env). The name should identify the service subcomponent that the asset belongs to, if any.
+`managedBy` | The name of a deployment management tool managing this asset, for example: `terraform`, `cloudformation`, `chalice`
 
-### env:
-    The value for the env key shall be the stage that the resource applies to, this can be;
-    `{dev,staging,integration,prod}`
 
-### owner:
-    The value for the owner key shall be the email address attached from the role_session_name that was defined within the aws config file. Please note that this also applies to IAM users/configureations that any Coninuous Deployment is also using. See the [wiki](https://allspark.dev.data.humancellatlas.org/dcp-ops/docs/wikis/Setting%20up%20the%20AWS%20Console%20and%20AWS%20CLI%20to%20work%20with%20HCA%20DCP) for information regarding the role_session_name.
+### Termination policy
+Assets that are not tagged in accordance with the above are subject to termination.
 
-### service:
-    The value for the service key shall be the service that manages the resource.
+* After this RFC takes effect, a 90 day grace period will apply, in which all DCP services are expected to implement tagging.
+* After the grace period, an automated "reaper" process will periodically flag untagged assets and announce this in the
+  `#dcp-ops-alerts` channel on the HCA Slack.
+* Any resources mentioned in such an announcement that cost over $100/day will be subject to immediate termination.
+* Any other resources mentioned in such an announcement will be terminated after a 7 day grace period elapses.
 
-## name:
-   the value for the name key shall be the values for the keys `project,env,service` separated by `-`. 
+## Role session name (AWS only)
+To facilitate auditing of operator actions, all operators **MUST** configure a `role_session_name` parameter in their AWS CLI
+configuration.
 
-## Tagging with Terraform:
-The following is an example of a defualt set of tags that can be applied to an AWS Resource in Terraform.
-Using this local.common_tags allows these tags to be defined in one section for the variables, and be used multiple times, if a resource requires and additional intependent tag, this can also be achieved.
+* See the
+  [HCA DCP Ops Wiki](https://allspark.dev.data.humancellatlas.org/dcp-ops/docs/wikis/Setting%20up%20the%20AWS%20Console%20and%20AWS%20CLI%20to%20work%20with%20HCA%20DCP)
+  for more information regarding `role_session_name`.
+* The [AWS-managed tag `aws:createdBy`](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/aws-tags.html)
+  incorporates the resulting principal name, and can be used to track resources in AWS auditing tools, including the
+  Cost Explorer.
+* After this RFC takes effect, a 90 day grace period will apply, in which all DCP developers and operators are expected to
+  configure AWS role session names for their accounts.
+* After the grace period, access may be denied when executing AssumeRole without an identifiable session name.
+
+## Tagging with Terraform
+The following is an example of a default set of tags that can be applied to an AWS Resource in Terraform.
+Using this local.common_tags allows these tags to be defined in one section for the variables, and be used multiple times.
+If a resource requires an additional independent tag, this can also be achieved.
+
 ```
 // variables.tf
 locals {
@@ -108,7 +133,7 @@ locals {
 ```
 
 ```
-// only the defualt tags
+// only the default tags
 resource aws_s3_bucket dss_s3_bucket_test_fixtures {
   count = "${var.DSS_DEPLOYMENT_STAGE == "dev" ? 1 : 0}"
   bucket = "${var.DSS_S3_BUCKET_TEST_FIXTURES}"
@@ -129,7 +154,7 @@ resource aws_elasticsearch_domain elasticsearch {
 }
 ```
 
-Once a tag set for a resource has been established it should be updated within the [DCP Resource Tagging wiki](https://allspark.dev.data.humancellatlas.org/dcp-ops/docs/wikis/Resource%20Tagging) so possible configureations can be seen.
+Once a tag set for a resource has been established it should be updated within the [DCP Resource Tagging wiki](https://allspark.dev.data.humancellatlas.org/dcp-ops/docs/wikis/Resource%20Tagging) so possible configurations can be seen.
 
  // TODO : amar: see if the cost explorer allows all values for the Tag Key to be added to the fitler vs having the add them manually by the admin.
 
@@ -138,15 +163,19 @@ Once a tag set for a resource has been established it should be updated within t
 
 A set of tags/labels is defined and required for Cloud resources to have.
 
+A role name policy is defined and required for DCP operators and developers to use.
+
 ### Unresolved Questions
 
 Are there other tags that we need to have?
-Are there other resources that should have tags become required for them.
+
+Are there other resources that should have tags become required for them?
 
 
 ### Drawbacks and Limitations [optional]
 
 *Why should this RFC **not** be implemented?*
+
 if we want the admins to not like the devs.
 
 
