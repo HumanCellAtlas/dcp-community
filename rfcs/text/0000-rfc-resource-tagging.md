@@ -86,7 +86,7 @@ Name        | Description
 `env`       | The value for the env key shall be the stage that the resource applies to, this can be `{dev,staging,integration,prod}`
 `owner`     | The email of a team or individual responsible for operating the asset, for example: dss-team@data.humancellatlas.org
 `service`   | The name of the HCA DCP service that manages the resource, for example: DSS, IngestService
-`Name`      | A human-readable name for the asset. This can be a custom name or a combination of other tags, such as `dss-notify-dev` (service-subcomponent-env). The name should identify the service subcomponent that the asset belongs to, if any.
+`Name`      | A human-readable name for the asset. This can be a custom name or a combination of other tags, such as `dss-notify-dev` (service-subcomponent-env). The name should identify the service subcomponent that the asset belongs to, if any. (The value of this tag shows up as the asset name in the AWS Console UI.)
 `managedBy` | The name of a deployment management tool managing this asset, for example: `terraform`, `cloudformation`, `chalice`
 
 
