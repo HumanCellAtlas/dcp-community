@@ -70,7 +70,8 @@ AWS services that specifically require tagging because they have been previously
 * Elasticsearch Service
 * ELB
 * ECS
-
+* DynamoDB
+ 
 ## Standard Cost Control Tag/Label Keys
 
 The following tags (AWS) or labels (GCP) **MUST** be set on all HCA DCP assets for which the following conditions apply:
@@ -124,22 +125,34 @@ locals {
   common_tags = "${map(
     "managedBy" , "terraform",
     "Name"      , "${var.project}-${var.env}-${var.service}",
-    "project"   , "${var.project}", // DCP
-    "env"       , "${var.env}" // Stage {dev,integration,staging,prod}
-    "service"   , "${var.service}", 
-    "owner"     , "${var.owner}" email, should be populated from aws sts.idenity
+    "project"   , "${var.project}", // dcp
+    "env"       , "${var.env}" // stage {dev,integration,staging,prod}
+    "service"   , "${var.service}", // dss 
+    "owner"     , "${var.owner}" // Team/Memeber contact email
   )}"   
 }
 ```
 
 ```
-// only the default tags
+// only the default tags AWS
 resource aws_s3_bucket dss_s3_bucket_test_fixtures {
   count = "${var.DSS_DEPLOYMENT_STAGE == "dev" ? 1 : 0}"
   bucket = "${var.DSS_S3_BUCKET_TEST_FIXTURES}"
   tags = "${local.common_tags}"
 }
 ```
+
+```
+// only the default tags GCP
+resource google_storage_bucket dss_gs_bucket {
+  name          = "${var.DSS_GS_BUCKET}"
+  provider      = "google"
+  location      = "US"
+  storage_class = "MULTI_REGIONAL"
+  labels = "${local.common_tags}"
+}
+```
+
 
 ```
 // default tags and resource-specific tags
@@ -155,9 +168,6 @@ resource aws_elasticsearch_domain elasticsearch {
 ```
 
 Once a tag set for a resource has been established it should be updated within the [DCP Resource Tagging wiki](https://allspark.dev.data.humancellatlas.org/dcp-ops/docs/wikis/Resource%20Tagging) so possible configurations can be seen.
-
- // TODO : amar: see if the cost explorer allows all values for the Tag Key to be added to the fitler vs having the add them manually by the admin.
-
 
 ### Acceptance Criteria [optional]
 
@@ -176,7 +186,7 @@ Are there other resources that should have tags become required for them?
 
 *Why should this RFC **not** be implemented?*
 
-if we want the admins to not like the devs.
+
 
 
 ### Alternatives [optional]
