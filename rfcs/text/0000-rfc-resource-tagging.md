@@ -4,9 +4,7 @@
 
 `[dcp-community/rfc#](https://github.com/HumanCellAtlas/dcp-community/pull/<PR#>)`
 
-# RFC Name
-
-IaaS Resource Tagging for and Cost Monitoring and Auditing
+# IaaS Resource Tagging for and Cost Monitoring and Auditing
 
 ## Summary
 
@@ -100,7 +98,7 @@ Assets that are not tagged in accordance with the above are subject to terminati
 * Any resources mentioned in such an announcement that cost over $100/day will be subject to immediate termination.
 * Any other resources mentioned in such an announcement will be terminated after a 7 day grace period elapses.
 
-### Role session name (AWS only)
+#### Role session name (AWS only)
 To facilitate auditing of operator actions, all operators **MUST** configure a `role_session_name` parameter in their AWS CLI
 configuration.
 
