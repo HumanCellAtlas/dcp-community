@@ -72,7 +72,7 @@ AWS services that specifically require tagging because they have been previously
 * ECS
 * DynamoDB
  
-## Standard Cost Control Tag/Label Keys
+#### Standard Cost Control Tag/Label Keys
 
 The following tags (AWS) or labels (GCP) **MUST** be set on all HCA DCP assets for which the following conditions apply:
 
@@ -91,7 +91,7 @@ Name        | Description
 `managedBy` | The name of a deployment management tool managing this asset, for example: `terraform`, `cloudformation`, `chalice`
 
 
-### Termination policy
+#### Termination policy
 Assets that are not tagged in accordance with the above are subject to termination.
 
 * After this RFC takes effect, a 90 day grace period will apply, in which all DCP services are expected to implement tagging.
@@ -100,7 +100,7 @@ Assets that are not tagged in accordance with the above are subject to terminati
 * Any resources mentioned in such an announcement that cost over $100/day will be subject to immediate termination.
 * Any other resources mentioned in such an announcement will be terminated after a 7 day grace period elapses.
 
-## Role session name (AWS only)
+### Role session name (AWS only)
 To facilitate auditing of operator actions, all operators **MUST** configure a `role_session_name` parameter in their AWS CLI
 configuration.
 
@@ -114,7 +114,7 @@ configuration.
   configure AWS role session names for their accounts.
 * After the grace period, access may be denied when executing AssumeRole without an identifiable session name.
 
-## Tagging with Terraform
+#### Example: Tagging with Terraform
 The following is an example of a default set of tags that can be applied to an AWS Resource in Terraform.
 Using this local.common_tags allows these tags to be defined in one section for the variables, and be used multiple times.
 If a resource requires an additional independent tag, this can also be achieved.
@@ -169,7 +169,23 @@ resource aws_elasticsearch_domain elasticsearch {
 
 Once a tag set for a resource has been established it should be updated within the [DCP Resource Tagging wiki](https://allspark.dev.data.humancellatlas.org/dcp-ops/docs/wikis/Resource%20Tagging) so possible configurations can be seen.
 
-### Acceptance Criteria [optional]
+#### Example: Querying the AWS Resource Group Tagging API
+The following script showcases how consistent resource tagging can be leveraged for automatic reporting.
+```bash
+#!/bin/bash
+  
+set -euo pipefail
+
+service=$1
+resource_type=$2
+
+aws resourcegroupstaggingapi get-resources --tag-filters Key=service,Values=${service} \
+    | jq --arg parn "arn:aws:${resource_type}" '.ResourceTagMappingList[] | select(.ResourceARN | contains($parn))' \
+    | jq -r .ResourceARN
+```
+Example invocation of the script: `find_resources.sh dss s3`
+
+### Acceptance Criteria
 
 A set of tags/labels is defined and required for Cloud resources to have.
 
@@ -181,14 +197,6 @@ Are there other tags that we need to have?
 
 Are there other resources that should have tags become required for them?
 
-
-### Drawbacks and Limitations [optional]
-
-*Why should this RFC **not** be implemented?*
-
-
-
-
-### Alternatives [optional]
+### Alternatives
 
 Services have independent tags that are posted within the Resource Tagging wiki, and admins have to track them down.
