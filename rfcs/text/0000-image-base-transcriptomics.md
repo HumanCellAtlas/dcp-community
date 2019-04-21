@@ -328,7 +328,6 @@ code changes and their impact.
 | HCA Metadata Draft                                    	| EBI                      	| Complete        	| Z. Perova     	|
 | Test Datasets Available                               	| starfish                 	| Complete        	| A. Carr       	|
 | Submission Datasets Available                         	| starfish                 	| Q2 2019         	| A. Carr       	|
-| Analysis Pipelines                                    	| Broad                    	| Q2 2019         	| ?             	|
 | Analysis & Adapter Pipelines                          	| Broad                    	| Q2 2019         	| A. Carr       	|
 | Lira subscription                                     	| Broad                    	| TBD             	| S. Ehsan      	|
 | Data Analysis Service starfish Pipeline Tests         	| Broad                    	| Q2 2019         	| G. Grant      	|
@@ -336,9 +335,8 @@ code changes and their impact.
 | Specification for output format                       	| starfish                 	| Q1 2019         	| A. Carr       	|
 | Input validation tool                                 	| starfish, OME            	| Q3 2019         	| J. Moore      	|
 | Output validation tool                                	| starfish, OME            	| Q2 2019         	| A. Carr       	|
-| Ingest support for the nested arrays of channels      	| EBI                      	| ?               	| Z. Perova             	|
-| [Ability to describe files that belong together][a]   	| ?                        	| ?               	| ?             	|
-| [Upload and download of subdirectories][b]             	| ?                        	| ?               	| H. Schmidt             	|
+| Ingest support for the nested arrays of channels      	| EBI                      	| ?               	| Z. Perova           |
+| [Upload and download of subdirectories][b]             	| ?                        	| ?               	| H. Schmidt           |
 | DSS spatial data bundle (or bundless) specification   	| UCSC                     	| ?               	| B. Hannafious 	|
 | DSS scale testing                                     	| UCSC / DCP               	| TBD             	| B. Hannafious 	|
 | Data Browser facets for spatial data                  	| UCSC                     	| TBD             	| H. Schmidt    	|
