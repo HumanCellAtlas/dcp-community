@@ -4,8 +4,10 @@
 
 The Human Cell Atlas (HCA) Governance Group (GG) has requested that the
 Data Coordination Platform (DCP) prioritize the incorporation of an
-image-based transcriptomics assay into the DCP. This RFC describes the
-minimum set of deliverables that must be prioritized and completed for
+image-based transcriptomics assay into the DCP. This RFC is intended to 
+serve as an informational RFC, as suggested by 
+https://github.com/HumanCellAtlas/dcp-community/issues/30, and describes the
+minimum set of deliverables that would need to be prioritized and completed for
 the DCP to be able to (1) store and (2) process image-based single-cell
 transcriptomics experiments. The following assumptions are made:
 
@@ -13,7 +15,7 @@ transcriptomics experiments. The following assumptions are made:
     iteration phase should be added to the DCP
 
 2.  The current state of the starfish ecosystem is sufficient to
-    process image-based transcriptomics experiments and will be selected by the AWG.
+    process image-based transcriptomics experiments.
 
 3.  This instantiation will require limited scale (low hundreds of
     datasets over several years)
