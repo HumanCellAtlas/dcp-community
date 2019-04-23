@@ -57,7 +57,7 @@ Read more on the general user experience background for this work: [User Experie
 
 ## Scientific "guardrails"
 
-The proposed design has consequences for end users where different types of updates will have different impact on how data is visible in the DCP. Updates and additions which are in scope for this solution will have provanance trails which could be displayed to users but other updates such as those which change the experimental design representation or require reanalysis will still use the old update process and won't have any provanance reflected inside the DCP. 
+The proposed design has consequences for end users where different types of updates will have different impact on how data is visible in the DCP. Updates and additions which are in scope for this solution will have provenance trails which could be displayed to users but other updates such as those which change the experimental design representation or require reanalysis will still use the old update process and won't have any provanance reflected inside the DCP. 
 
 We propose the UX team work with the community and the DCP Oversight Committee, building on the existing research to understand our data consumers assumptions around updates and to guide how we display updates to consumers in the data browser and other consumer services both now and in the future.  
 
