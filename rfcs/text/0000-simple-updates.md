@@ -14,10 +14,10 @@ This RFC proposes the scope and design to allow simple metadata additions and up
 
 ## Author(s)
 
-[Laura Clarke](laura@ebi.ac.uk)  
-[Justin Clark-Casey](justincc@ebi.ac.uk)  
-[Mallory Freeberg]([mfreeberg@ebi.ac.uk](mailto:mfreeberg@ebi.ac.uk)  
-[Norman Morrison](norman@ebi.ac.uk)
+[Laura Clarke](mailto:laura@ebi.ac.uk)  
+[Justin Clark-Casey](mailto:justincc@ebi.ac.uk)  
+[Mallory Freeberg](mailto:mfreeberg@ebi.ac.uk)  
+[Norman Morrison](mailto:norman@ebi.ac.uk)
 
 ## Shepherd
 
@@ -74,46 +74,51 @@ We will create automated monitoring to check if new analysis outputs get associa
 
 ### Ingest
 
-**MISSING DIAGRAM**
 
+![](../images/0000-simple-updates-ingest-flow.png)
 
 These are the steps that a wrangler will follow to perform a primary metadata update.
 
 
-#### Step 1 - Wrangler finds submission
+* **Step 1 - Wrangler finds submission**
 
 The wrangler finds the project page in the ingest UI by searching over project names and descriptions. Ingest will provide the search capability.
 
 The project page will list all the submissions for that project (at the moment all our projects have only one submission). They will navigate to this submission page.
 
 
-#### Step 2 - Wrangler retrieves spreadsheet
+* **Step 2 - Wrangler retrieves spreadsheet**
 
 The wrangler will retrieve a spreadsheet for that submission by clicking a “Download metadata” button or similar on the submission page. The spreadsheet they receive will be the original spreadsheet they submitted plus a column at the end containing the UUIDs of all entities. This column exists only to allow ingest to identify how the rows in the spreadsheet relate to existing metadata when the updated spreadsheet is submitted. They should not be edited by wranglers.
 
 
-#### Step 3 - Wrangler edits the spreadsheet with their change
+* **Step 3 - Wrangler edits the spreadsheet with their change**
 
 The wrangler edits the spreadsheet. They can change any metadata cell apart from the ones containing the UUIDs that ingest added. They can add and remove entries from tabs that contain array/module data. For this RFC, they must not add or remove whole entities (e.g. biomaterials, protocols) or change the linking between entities. Both these are instances of experimental graph change.
 
-#### Step 4 - Wrangler submits spreadsheet
 
-The wrangler will submit a spreadsheet containing an update through a “Submit update” button or similar on the submission page. For each submission, we will allow only one update to be submitted and processed at a time. For this RFC, the wrangler can only submit an updated spreadsheet that validates against the current schemas.
+* **Step 4 - Wrangler submits spreadsheet**
 
-#### Step 5 - Ingest shows the diff to the wrangler for approval
+The wrangler will submit a spreadsheet containing an update through a “Submit update” button or similar on the submission page. For each submission, we will allow only one update to be submitted and processed at a time. For this RFC, the wrangler can only submit an updated spreadsheet that validates against the current schemas. 
 
-The wrangler will be shown the difference between their updates and the existing submission in the ingest UI. They will have the option either to approve the update, in which case ingest will start submitting it to the datastore, or cancel it, in which case the update will be removed from ingest and they can return to step 3.
 
-#### Step 6 - Ingest uploads new versions of metadata files and bundles to the datastore.
+* **Step 5 - Ingest shows the diff to the wrangler for approval**
+
+The wrangler will be shown the difference between their updates and the existing submission in the ingest UI. They will also be shown any validation errors. If there are no validation errors then they will have the option either to approve the update, in which case ingest will start submitting it to the datastore, or cancel it, in which case the update will be removed from ingest and they can return to step 3. If there are validation errors then the wrangler can only cancel the update and submit a new update spreadsheet.
+
+
+* **Step 6 - Ingest uploads new versions of metadata files and bundles to the datastore**
 
 For this RFC, ingest will calculate the bundle updates and submit these to the datastore. If this proves to be a performance problem we will need to consider that problem in a future RFC.
 
 ### Cross-DCP
 
-**MISSING DIAGRAM**
+![](../images/0000-simple-updates-dcp-flow.png)
 
 
-Once the bundles are updated, the datastore will send update notifications to all listeners. The query service, data browser and matrix service all need to deal with these notifications appropriately. The analysis service **MUST NOT **submit new or updated analyses to ingest for assays that have previously had analysis submitted. [Secondary analysis ticket #606](https://github.com/HumanCellAtlas/secondary-analysis/issues/606) requests a t-shirt estimate for this aspect of the design. For simple updates ingest will update secondary bundles with primary data (copy forward) at the same time that it updates the primary bundles.
+Once the bundles are updated (1 & 2), the datastore will send update notifications to all listeners (3). The query service, data browser and matrix service must all process these notifications to provide the updated metadata to consumers as required. The analysis service **MUST NOT ** submit new or updated analyses to ingest for assays that have previously had analysis submitted. 
+
+For simple updates, ingest will update secondary bundles with primary data (copy forward) at the same time that it updates the primary bundles. It does not rely on a signal from the analysis component. This may change in future iterations of the update process, outside of this RFC.
 
 
 ### Acceptance Criteria
