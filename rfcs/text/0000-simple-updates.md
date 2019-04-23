@@ -57,13 +57,9 @@ Read more on the general user experience background for this work: [User Experie
 
 ## Scientific "guardrails"
 
-The design proposed in this RFC puts *updates that trigger an analysis pipeline run out of scope*. This means we need some guardrails which ensure we don’t create duplicate analysis results which will confuse our consumers.
+The proposed design has consequences for end users where different types of updates will have different impact on how data is visible in the DCP. Updates and additions which are in scope for this solution will have provanance trails which could be displayed to users but other updates such as those which change the experimental design representation or require reanalysis will still use the old update process and won't have any provanance reflected inside the DCP. 
 
-There will be both technical and documentation/process driven guardrails.
-
-The first is that the pipeline execution service will check if a pipeline has already been run for a given input data bundle. If it has, the pipeline execution will stop and no new analysis files will be produced. If it has not, the pipeline execution will continue as though it was a brand new input data bundle.
-
-The second is documentary, some updates will change the specific pipeline or the parameters which should be fed to the pipeline that would run. The proposed solution means there is no computational functionality to notify and act appropriately in these circumstances. This means the wranglers who manage updates must understand if an update would trigger such a scenario. This will be acheived by the data processing pipelines team providing clear documentation on what triggers a pipeline run and what metadata fields are used as part of their parameters. The wranglers will use the old update process for any update which falls in this class.
+We propose the UX team work with the community and the DCP Oversight Committee, building on the existing research to understand our data consumers assumptions around updates and to guide how we display updates to consumers in the data browser and other consumer services both now and in the future.  
 
 ## Detailed Design
 
