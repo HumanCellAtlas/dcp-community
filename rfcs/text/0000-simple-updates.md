@@ -67,12 +67,11 @@ The second is documentary, some updates will change the specific pipeline or the
 
 ## Detailed Design
 
-### Ingest
-
-
-![](../images/0000-simple-updates-ingest-flow.png)
+### User Interactions
 
 These are the steps that a wrangler will follow to perform a primary metadata update.
+
+![](../images/0000-simple-updates-ingest-flow.png)
 
 * **Step 1 - Wrangler finds submission**
 
@@ -101,30 +100,30 @@ The wrangler will be shown the difference between their updates and the existing
 
 For this solution, ingest will calculate the bundle updates and submit these to the datastore. This represents a risk to the scalability of this solution. If performance problems emerge we will need to consider solutions in a future RFC.
 
-### Cross-DCP
+### DCP Flow of Updates
 
 ![](../images/0000-simple-updates-dcp-flow.png)
 
+Once the bundles are updated (1 & 2), the datastore will send update notifications to all listeners (3). The query service, data browser and matrix service **MUST** all process these notifications to provide the updated metadata to consumers as required. The data processing pipeline execution service **MUST NOT** submit new or updated analyses to ingest for assays that have previously had analysis submitted. This solution requires the data processing pipeline execution service to capture and check if notification has already triggered a pipeline run and stop the run if it has.
 
-Once the bundles are updated (1 & 2), the datastore will send update notifications to all listeners (3). The query service, data browser and matrix service must all process these notifications to provide the updated metadata to consumers as required. The data processing pipeline execution service **MUST NOT** submit new or updated analyses to ingest for assays that have previously had analysis submitted. This solution requires the data processing pipeline execution service to capture and check if notification has already triggered a pipeline run and stop the run if it has.
-
-For simple updates, ingest will update secondary bundles with primary data (copy forward) at the same time that it updates the primary bundles. It does not rely on a signal from the analysis component. This may change in future iterations of the update process.
+For simple updates, ingest will update secondary bundles with primary data (copy forward) at the same time that it updates the primary bundles. It does not rely on a signal from the analysis component. This should change in future iterations of the update process.
 
 ### Acceptance Criteria
 
-*   The wranglers have documentation which allows them to determine if an update will trigger a new pipeline or the same pipeline with different parameters.
-*   The wranglers can access the spreadsheet for a particular submission via the ingest UI. The returned spreadsheet will contain all the relevant information to enable the ingest service to carry out the ingest and will use the schema of the original submission.
-*   The wranglers can see what documents in a submission have changed via an ingest UI view.
-*   A data contributor can see the updated version reflected in downstream services which use that metadata field such as the data browser and the matrix service.
-*   A data consumer will have a consistent view of the most recent metadata associated with raw data and secondary analysis bundles presented in services like the data browser or matrix service.
-*   A data consumer will not receive duplicate analysis results due to an update.
+* A data consumer will have a consistent view of the most recent metadata associated with raw data and secondary analysis bundles presented in services like the data browser or matrix service.
+* A data consumer will not receive duplicate analysis results due to an update.
+* A data contributor can see the updated version reflected in downstream services which use that metadata field such as the data browser and the matrix service.
+* The wranglers have documentation which allows them to determine if an update will trigger a new pipeline or the same pipeline with different parameters.
+* The wranglers can access the spreadsheet for a particular submission via the ingest UI. The returned spreadsheet will contain all the relevant information to enable the ingest service to carry out the ingest and will use the schema of the original submission.
+* The wranglers can see what documents in a submission have changed via an ingest UI view. 
+
 
 ### Unresolved Questions
 
 This RFC does not represent a complete solution to the Addition and Update functionality that is needed by the DCP. There are a number of unresolved questions and missing functionality that will be left for future RFCs to address.
 
 *   How is the provenance of data and metadata made clear to consumers?
-*   How are data retracted without creating meaningless 404 errors for consumers who had used it? The [0004-dss-deletion-process.md]([https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0004-dss-deletion-process.md](https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0004-dss-deletion-process.md)) considers some of this challenge.
+*   How are data retracted without creating meaningless 404 errors for consumers who had used it? [RFC4: Deletion of Data in the DCP]([https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0004-dss-deletion-process.md](https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0004-dss-deletion-process.md)) considers some of this challenge.
 *   How do we update files as opposed to metadata?
 *   How do we make the update process through Ingest more straightforward?
 *   What logic is needed to make decisions about rerunning data processing pipelines? Where should that logic live? Can that decision be automated?
