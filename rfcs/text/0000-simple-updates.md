@@ -67,8 +67,6 @@ The first is that the pipeline execution service will check if a pipeline has al
 
 The second is documentary, some updates will change the specific pipeline or the parameters which should be fed to the pipeline that would run. This solution puts the ability to capture updated analysis and the logic needed to decide if an analysis should be rerun out of scope. The wranglers who are managing the update process will need a document will need a solid understanding of the metadata fields that the data processing pipelines use when running a pipeline both in the notification query and as parameters for the pipeline execution. This will ensure that they don’t use the proposed solution for updates that would require reanalysis. The data processing pipelines team will provide this documentation.
 
-We will create automated monitoring to check if new analysis outputs get associated with an existing input data bundle that already has associated analysis outputs reduce the risk of inadvertent pipeline runs confusing data consumers.
-
 
 ## Detailed Design
 
