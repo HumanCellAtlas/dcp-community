@@ -159,12 +159,12 @@ The update process has been discussed broadly by the DCP in the drafting process
 
 Useful outputs from those discussions include:
 
-[Use cases] (https://docs.google.com/document/d/1rI8PCASomdAHznyWQceRJGv4-wtg-P5Rm-rI_uJLjtE/edit)
+[Use cases](https://docs.google.com/document/d/1rI8PCASomdAHznyWQceRJGv4-wtg-P5Rm-rI_uJLjtE/edit)
 
-[Pre RFC] (https://docs.google.com/document/d/1XeAw05RAJe20Q1XDF7eLWLGF3gCme4-8l-ZfhtDWOLg/edit?ts=5beda8b0)
+[Pre RFC](https://docs.google.com/document/d/1XeAw05RAJe20Q1XDF7eLWLGF3gCme4-8l-ZfhtDWOLg/edit?ts=5beda8b0)
 
 [Ingest High-Level Design for Updates](https://docs.google.com/document/d/1XeAw05RAJe20Q1XDF7eLWLGF3gCme4-8l-ZfhtDWOLg/edit?ts=5beda8b0) 
 
-[AUDR breakout session in the Feb 2019 F2F] (https://docs.google.com/document/d/1LVRqeGqUjLaprLhojCLwL0PiVuv20f7B7W5S59GlBDM/edit)
+[AUDR breakout session in the Feb 2019 F2F](https://docs.google.com/document/d/1LVRqeGqUjLaprLhojCLwL0PiVuv20f7B7W5S59GlBDM/edit)
 
-[User Experience Problem Space - Top task “Update my project”] (https://docs.google.com/document/d/1FP6kJa3f9NkOHTLqmkNYztls7soZLgeGefxdgR81ONE/)
+[User Experience Problem Space - Top task “Update my project”](https://docs.google.com/document/d/1FP6kJa3f9NkOHTLqmkNYztls7soZLgeGefxdgR81ONE/)
