@@ -34,8 +34,16 @@ Collecting data and metadata to submit to the HCA DCP is a time-consuming proces
 
 For these reasons, the DCP must support additions, updates, deletions, and retractions of data and metadata in submitted projects including: adding a publication 1 year after a dataset was submitted, updating descriptive fields due to improvements in understanding and ontological modeling of anatomy or cellular identity, fixing metadata errors or relationships between entities, removing unconsented data.
 
-This RFC proposes a simple technical design to support the simplest metadata updates and additions, recognizing that this is the first step towards a complete solution which will require significant engineering effort.
+This RFC proposes a simple technical design to support the simplest metadata updates and additions, recognizing that this is the first step towards a complete solution.
 
+### Definitions
+
+***Addition*** - adding a metadata field:value pair to a metadata document where the metadata field existed in the schema version described by the metadata document  
+***Update*** - changing the value of an existing metadata field in a metadata document
+***Old update process*** - the current update process which involves adding the existing project to an exclusion list and re-ingesting the entire project - with updates - from scratch as a new submission  
+***Data wrangler*** - member of the DCP team who interacts with data contributors to collect metadata updates and additions and drives the process of submitting them to the DCP  
+***Experimental design representation*** - the connected set of entities which the DCP uses to represent the experimental design of a project  
+***Bundles*** - The data store representation of a logical set of data and metadata. There are two types of bundles input and analysis. Input bundles represent a single set of experimental data such as a lane or plex of sequencing and are defined by ingest as a biomaterial to file transition, connected by an assay process and all entities upwards in the experimental design from that point. Analysis bundles are all the analysis results from a single run of an analysis pipeline on a single input bundle and are defined by ingest as a file to file transition as defined by an analysis process and all entities upwards in the experimental design from that point.
 
 ### User Stories
 
@@ -47,26 +55,15 @@ As a data wrangler, I would like to update organ system metadata to reflect an i
 
 Read more on the general user experience background for this work: [User Experience Problem Space - Top task “Update my project”](https://docs.google.com/document/d/1FP6kJa3f9NkOHTLqmkNYztls7soZLgeGefxdgR81ONE/edit)
 
-### Definitions
-
-***Addition*** - adding a metadata field:value pair to a metadata document where the metadata field existed in the schema version described by the metadata document  
-***Update*** - changing the value of an existing metadata field in a metadata document
-***Old update process*** - the current update process which involves adding the existing project to an exclusion list and re-ingesting the entire project - with updates - from scratch as a new submission  
-***Data wrangler*** - member of the DCP team who interacts with data contributors to collect metadata updates and additions and drives the process of submitting them to the DCP  
-***Experimental design representation*** - the connected set of entities which the DCP uses to represent the experimental design of a project  
-***Bundles*** - The data stores a representation of logical sets of data and metadata. There are input and analysis bundles. Input bundles should represent a single set of experimental data such as a lane or plex of sequencing and are defined by ingest as a biomaterial to file transition, connected by an assay process and all entities upwards in the experimental design from that point. Analysis bundles are all the analysis results from a single run of an analysis pipeline on a single input bundle and are defined by ingest as a file to file transition as defined by an analysis process and all entities upwards in the experimental design from that point.
-
-
 ## Scientific "guardrails"
 
-The design proposed in this RFC puts updates triggering an analysis pipeline run out of scope we need some guardrails which ensure we don’t create duplicate analysis results which will confuse our consumers.
+The design proposed in this RFC puts *updates that trigger an analysis pipeline run out of scope*. This means we need some guardrails which ensure we don’t create duplicate analysis results which will confuse our consumers.
 
 There will be both technical and documentation/process driven guardrails.
 
-The first is that the pipeline execution service will check if a pipeline has already been run for a given input data bundle. If it has, the pipeline execution will stop. If it has not, the pipeline execution will continue as though it was a brand new input data bundle.
+The first is that the pipeline execution service will check if a pipeline has already been run for a given input data bundle. If it has, the pipeline execution will stop and no new analysis files will be produced. If it has not, the pipeline execution will continue as though it was a brand new input data bundle.
 
-The second is documentary, some updates will change the specific pipeline or the parameters which should be fed to the pipeline that would run. This solution puts the ability to capture updated analysis and the logic needed to decide if an analysis should be rerun out of scope. The wranglers who are managing the update process will need a document will need a solid understanding of the metadata fields that the data processing pipelines use when running a pipeline both in the notification query and as parameters for the pipeline execution. This will ensure that they don’t use the proposed solution for updates that would require reanalysis. The data processing pipelines team will provide this documentation.
-
+The second is documentary, some updates will change the specific pipeline or the parameters which should be fed to the pipeline that would run. The proposed solution means there is no computational functionality to notify and act appropriately in these circumstances. This means the wranglers who manage updates must understand if an update would trigger such a scenario. This will be acheived by the data processing pipelines team providing clear documentation on what triggers a pipeline run and what metadata fields are used as part of their parameters. The wranglers will use the old update process for any update which falls in this class.
 
 ## Detailed Design
 
@@ -77,47 +74,41 @@ The second is documentary, some updates will change the specific pipeline or the
 
 These are the steps that a wrangler will follow to perform a primary metadata update.
 
-
 * **Step 1 - Wrangler finds submission**
 
 The wrangler finds the project page in the ingest UI by searching over project names and descriptions. Ingest will provide the search capability.
 
 The project page will list all the submissions for that project (at the moment all our projects have only one submission). They will navigate to this submission page.
 
-
 * **Step 2 - Wrangler retrieves spreadsheet**
 
-The wrangler will retrieve a spreadsheet for that submission by clicking a “Download metadata” button or similar on the submission page. The spreadsheet they receive will be the original spreadsheet they submitted plus a column at the end containing the UUIDs of all entities. This column exists only to allow ingest to identify how the rows in the spreadsheet relate to existing metadata when the updated spreadsheet is submitted. They should not be edited by wranglers.
+The wrangler will retrieve a spreadsheet for that submission by clicking a “Download metadata” button or similar on the submission page. The spreadsheet they receive will be the original spreadsheet they submitted plus a column at the end containing the UUIDs of all entities. This column exists only to allow ingest to identify how the rows in the spreadsheet relate to existing metadata when the updated spreadsheet is submitted. It should not be edited by wranglers.
 
 
 * **Step 3 - Wrangler edits the spreadsheet with their change**
 
-The wrangler edits the spreadsheet. They can change any metadata cell apart from the ones containing the UUIDs that ingest added. They can add and remove entries from tabs that contain array/module data. For this RFC, they must not add or remove whole entities (e.g. biomaterials, protocols) or change the linking between entities. Both these are instances of experimental graph change.
-
+The wrangler edits the spreadsheet. They can change any metadata cell apart from the ones containing the UUIDs that ingest added. They can add and remove entries from tabs that contain array/module data. For this solution, they must not add or remove whole entities (e.g. biomaterials, protocols) or change the linking between entities. Both these are instances of experimental design representation changes and are out of scope.
 
 * **Step 4 - Wrangler submits spreadsheet**
 
-The wrangler will submit a spreadsheet containing an update through a “Submit update” button or similar on the submission page. For each submission, we will allow only one update to be submitted and processed at a time. For this RFC, the wrangler can only submit an updated spreadsheet that validates against the current schemas. 
-
+The wrangler will submit a spreadsheet containing an update through a “Submit update” button or similar on the submission page. For each submission, we will allow only one update to be submitted and processed at a time. For this solution, the wrangler can only submit an updated spreadsheet that validates against the current schemas. 
 
 * **Step 5 - Ingest shows the diff to the wrangler for approval**
 
 The wrangler will be shown the difference between their updates and the existing submission in the ingest UI. They will also be shown any validation errors. If there are no validation errors then they will have the option either to approve the update, in which case ingest will start submitting it to the datastore, or cancel it, in which case the update will be removed from ingest and they can return to step 3. If there are validation errors then the wrangler can only cancel the update and submit a new update spreadsheet.
 
-
 * **Step 6 - Ingest uploads new versions of metadata files and bundles to the datastore**
 
-For this RFC, ingest will calculate the bundle updates and submit these to the datastore. If this proves to be a performance problem we will need to consider that problem in a future RFC.
+For this solution, ingest will calculate the bundle updates and submit these to the datastore. This represents a risk to the scalability of this solution. If performance problems emerge we will need to consider solutions in a future RFC.
 
 ### Cross-DCP
 
 ![](../images/0000-simple-updates-dcp-flow.png)
 
 
-Once the bundles are updated (1 & 2), the datastore will send update notifications to all listeners (3). The query service, data browser and matrix service must all process these notifications to provide the updated metadata to consumers as required. The analysis service **MUST NOT ** submit new or updated analyses to ingest for assays that have previously had analysis submitted. 
+Once the bundles are updated (1 & 2), the datastore will send update notifications to all listeners (3). The query service, data browser and matrix service must all process these notifications to provide the updated metadata to consumers as required. The data processing pipeline execution service **MUST NOT** submit new or updated analyses to ingest for assays that have previously had analysis submitted. This solution requires the data processing pipeline execution service to capture and check if notification has already triggered a pipeline run and stop the run if it has.
 
-For simple updates, ingest will update secondary bundles with primary data (copy forward) at the same time that it updates the primary bundles. It does not rely on a signal from the analysis component. This may change in future iterations of the update process, outside of this RFC.
-
+For simple updates, ingest will update secondary bundles with primary data (copy forward) at the same time that it updates the primary bundles. It does not rely on a signal from the analysis component. This may change in future iterations of the update process.
 
 ### Acceptance Criteria
 
