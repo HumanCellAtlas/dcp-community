@@ -45,7 +45,7 @@ This RFC proposes a simple technical design to support the simplest metadata upd
 ***Experimental design representation*** - the connected set of entities which the DCP uses to represent the experimental design of a project  
 ***Bundles*** - The data store representation of a logical set of data and metadata. There are two types of bundles input and analysis. Input bundles represent a single set of experimental data such as a lane or plex of sequencing and are defined by ingest as a biomaterial to file transition, connected by an assay process and all entities upwards in the experimental design from that point. Analysis bundles are all the analysis results from a single run of an analysis pipeline on a single input bundle and are defined by ingest as a file to file transition as defined by an analysis process and all entities upwards in the experimental design from that point.
 
-### User Stories
+## User Stories
 
 As a data contributor, I would like to add the details of a scientific publication to my submission to the DCP to broaden knowledge of the work.
 
@@ -131,7 +131,7 @@ This RFC does not represent a complete solution to the Addition and Update funct
 *   How do we carry out updates which change our representation of the experimental design and change the number or types of entities which are available as part of a submission?
 *   What is the interaction between metadata schema changes and updates?
 
-### Drawbacks and Limitations *
+### Drawbacks and Limitations 
 
 There are many types of updates which are not supported by this solution including:
 
