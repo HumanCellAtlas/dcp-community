@@ -59,7 +59,59 @@ However, the module structure adds value in making the schema easier to create, 
 
 We are prpopsoing to fully expand schemas at publishing times so consumers are only exposed to 'type' schemas. Core fields would be copied into these type schemas based on the `schema_type` and module objects would be expanded in-place. Consumers would see all the infomration in one place without having to de-references sections of the schema. 
 
-An example of these schemas can be found here https://github.com/HumanCellAtlas/metadata-schema/tree/demod/json_schema/demod
+### Current JSON schema example
+
+
+The `donor.json` schema is a type schema that has a `$ref` to a `biomaterial_core` module. 
+```
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "properties": {
+        "biomaterial_core" : {
+            "type": "object",
+            "$ref": "core/biomaterial/biomaterial_core.json",
+            "user_friendly": "Donor"
+        }
+    }
+}
+```
+
+Here's a snippet from the `biomaterial_core.json` module
+```
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "properties": {
+        "biomaterial_id":{
+            "description": "A unique ID for the ${id}.",
+            "type": "string",
+            "user_friendly": "${id} ID"
+        }
+      }
+}
+
+```
+
+### Proposed JSON schema after running the publishing script 
+
+The `biomaterial_core.json` module is never published to users and users just see a `donor.json` schema. The `user_friendly` 
+name and `description` has been contextualised as part of the publishing script. 
+
+```
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "properties": {
+      "biomaterial_core" : {
+        "properties": {
+          "biomaterial_id":{
+              "description": "A unique ID for the Donor.",
+              "type": "string",
+              "user_friendly": "Donor ID"
+          }
+          }
+      }
+    }
+}
+```
 
 This implementation makes schemas easier to interpret without needing to look in other referenced core and module schema documents. The source schema representation would be reserved for editors (like source code), and would still allow for modularisation to avoid duplication. Tooling would be required that compiled to the schemas into a published format that is designed to be more user friendly. The comliation process would allow for additonal manipulation of the schema to produce context specific user friendly names and descriptions for fields. For example, presenting the `biomaterial_id` field in the donor schema as "Donor id" in user facing tools such as spreadsheets and the data browser.  
 
