@@ -152,9 +152,3 @@ We would require tooling for updating fields that exist in multiple places.
 What other designs were explored? What were their advantages? What was the rationale for rejecting alternatives?*
 
 
-Core, type and module schemas could be maintained in separate documents for authoring but could be compiled as described above when they are published. This would provide two views of the schema. One for metadata developers and one for users and components trying to interpret the schema.
-
-This solution was discounted for the following reasons:
-1. Tooling would be required to implement this solution
-1. The implementation would be even more complex than the current one.
-1. How would module and core versions be tracked if they weren't published.
