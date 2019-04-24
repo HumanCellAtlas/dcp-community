@@ -10,7 +10,7 @@
 
 *Describe the vision of the RFC in 2-3 sentences. Consider this section as your "elevator pitch" or "release note" to the community.*
 
-An approach to generating a user-friendly version of the metadata JSON schema from the modularized source is proposed.  These *demodularized* schemas will be built from the current source and be the standard user view of the data modle.   This addresses issues with the schema structure being difficult to understand and with field names and descriptions defined in modules not reflecting the user-visible instance data type.
+An approach to generating a user-friendly version of the metadata JSON schema from the modularized source is proposed.  These *demodularized* schemas will be built from the current source and be the standard user view of the data model.   This addresses issues with the schema structure being difficult to understand and with field names and descriptions defined in modules not reflecting the user-visible instance data type.
 
 ## Author(s)
 
@@ -36,7 +36,9 @@ An approach to generating a user-friendly version of the metadata JSON schema fr
 
 Consumers of the HCA metadata JSON Schema have found that the module structure makes the schema difficult to understand, even for experienced programmers. Currently, to support 26 different instance types, there are 78 JSON Schema files.  While not an overly large number of modules, the composition model of JSON schema does not match any common paradigm, making it difficult to explain.  With no tools available for visualizing or understanding JSON Schema, which makes the HCA data model opaque.
 
-Another result of the module structure is that field names and descriptions defined in modules don't match the concrete class.  This makes schema-driven users interfaces confusing.
+Another result of the module structure is that field names and descriptions defined in modules don't match the concrete class.  This makes schema-driven users interfaces confusing. 
+
+JSON schema does not support inheritence, so any modules that would ideally be inhereted by all schemas and contain intrinsict properties, are currently referenced using a nested property. This mostly applies to all `*_core` modules that should be inhereted by schemas rather than referenced using a nested property. 
 
 There are no rules governing module usage so it is not clear to metadata developers when modules should be created. For this reason modules are used in different ways throughout the metadata schemas. 
 
@@ -55,11 +57,11 @@ However, the module structure adds value in making the schema easier to create, 
 
 *Explain the design in sufficient detail such that the implementation and (if appropriate) the interaction with existing DCP software are both reasonably clear.*
 
-One option is to fully expand schemas so that we only publish 'type' schemas. Core fields would be copied into these type schemas based on the `schema_type` and module objects would be expanded in-place. This would mean that core and module fields would exist in multiple copies in different type schema documents.
+We are prpopsoing to fully expand schemas at publishing times so consumers are only exposed to 'type' schemas. Core fields would be copied into these type schemas based on the `schema_type` and module objects would be expanded in-place. Consumers would see all the infomration in one place without having to de-references sections of the schema. 
 
 An example of these schemas can be found here https://github.com/HumanCellAtlas/metadata-schema/tree/demod/json_schema/demod
 
-This implementation makes schemas easier to interpret without needing to look in other referenced core and module schema documents. However, editing field that exist in multiple documents would be more difficult and would require tooling to prevent errors.
+This implementation makes schemas easier to interpret without needing to look in other referenced core and module schema documents. The source schema representation would be reserved for editors (like source code), and would still allow for modularisation to avoid duplication. Tooling would be required that compiled to the schemas into a published format that is designed to be more user friendly. The comliation process would allow for additonal manipulation of the schema to produce context specific user friendly names and descriptions for fields. For example, presenting the `biomaterial_id` field in the donor schema as "Donor id" in user facing tools such as spreadsheets and the data browser.  
 
 In order to align and manage module usage, the current modules should be revised in order to meet the following criteria:
 
