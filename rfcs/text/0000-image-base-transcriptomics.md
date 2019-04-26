@@ -161,7 +161,7 @@ dimensional images, forming 5-dimensional tensors over (time, fluorescence chann
 z, y, x) -- dimensions which are fairly consistent across imaging domains
 and will likely generalize to other use cases.
 
-A SpaceTx-formatted fileset represents the output from one acquisition session on a specimen
+A SpaceTx-formatted fileset represents the output from one continuous acquisition of a specimen
 and as a unit is called an "experiment". An experiment typically consists of one primary image
 as well as auxillary images, such as dots or nuclei. These images are acquired as multiple
 possibly overlapping fields-of-view, the 5-dimensional tensors described above.
