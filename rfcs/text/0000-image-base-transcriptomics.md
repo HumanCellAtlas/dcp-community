@@ -158,10 +158,16 @@ teams propose that the DCP use [<span class="underline">SpaceTx
 Format</span>](https://spacetx-starfish.readthedocs.io/en/latest/help_and_reference/spacetx-format/index.html),
 a format that groups and indexes a potentially very large number of two
 dimensional images, forming 5-dimensional tensors over (time, fluorescence channel,
-z, y, x). These dimensions are fairly consistent across imaging domains
-and will likely generalize to other use cases. SpaceTx created this
-format because they were unable to find an existing format that
-satisfied our cloud compute and data visualization use cases. *starfish*
+z, y, x) -- dimensions which are fairly consistent across imaging domains
+and will likely generalize to other use cases.
+
+A SpaceTx-formatted fileset represents the output from one acquisition session on a specimen
+and as a unit is called an "experiment". An experiment typically consists of one primary image
+as well as auxillary images, such as dots or nuclei. These images are acquired as multiple
+possibly overlapping fields-of-view, the 5-dimensional tensors described above.
+
+SpaceTx created this format because they were unable to find an existing format
+that satisfied our cloud compute and data visualization use cases. *starfish*
 and OME have since become aware of contemporaneous development of
 projects that aim to satisfy similar use cases and are working towards
 unification, where possible across scientific disciplines and languages.
@@ -257,9 +263,9 @@ formed the draft can be found
 
 #### Input Data validation
 
-SpaceTx Format consists of a json file that specifies how to compose a
-dataset from a set of two-dimensional images. As a result, it is
-possible to rapidly validate that a file is complete and internally
+SpaceTx Format consists of a set of json files which describe a
+further set of two-dimensional image files. As a result, it is
+possible to rapidly validate that a fileset is complete and internally
 consistent. In addition, SpaceTx Format stores per-chunk checksum
 information, enabling the data to be checked for integrity. It is
 possible to carry out additional, more data-specific checks, such as
