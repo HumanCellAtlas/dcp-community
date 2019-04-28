@@ -233,8 +233,8 @@ that cell.
 
 *starfish* combines spot calls from the IntensityTable with cell areas
 in the SegmentationMask to produce expression matrices. These are saved
-in zarr format and look identical to the matrices emitted by the Data
-Analysis Service pipelines, with the exception that each cell is
+in zarr format and look identical to the matrices emitted by the HCA data 
+processing pipelines, with the exception that each cell is
 additionally annotated with metadata that specify the x, y, and z
 location of the data. Feature names will be consistent with DCP standards.
 
@@ -336,7 +336,7 @@ code changes and their impact.
 | Submission Datasets Available                         	| starfish                 	| Q2 2019         	| A. Carr       	|
 | Analysis & Adapter Pipelines                          	| Broad                    	| Q2 2019         	| A. Carr       	|
 | Lira subscription                                     	| Broad                    	| TBD             	| S. Ehsan      	|
-| Data Analysis Service starfish Pipeline Tests         	| Broad                    	| Q2 2019         	| G. Grant      	|
+| Data Processing Pipelines Tests                        	| Broad                    	| Q2 2019         	| G. Grant      	|
 | Specification for input format                        	| starfish                 	| Complete        	| J. Moore      	|
 | Specification for output format                       	| starfish                 	| Q1 2019         	| A. Carr       	|
 | Input validation tool                                 	| starfish, OME            	| Q3 2019         	| J. Moore      	|
