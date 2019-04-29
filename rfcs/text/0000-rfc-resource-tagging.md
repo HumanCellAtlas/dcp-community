@@ -4,7 +4,7 @@
 
 `[dcp-community/rfc#](https://github.com/HumanCellAtlas/dcp-community/pull/<PR#>)`
 
-# IaaS Resource Tagging for and Cost Monitoring and Auditing
+# Infrastructure as a Service (IaaS) Resource Tagging for Cost Monitoring and Auditing
 
 ## Summary
 
@@ -19,11 +19,8 @@ Define mandatory tagging and auditability requirements for DCP cloud (IaaS) reso
 * [Andrey Kislyuk](mailto:akisilyuk@chanzuckerberg.com)
 
 ## Shepherd
-***Leave this blank.** This role is assigned by DCP PM to guide the **Author(s)** through the RFC process.*
 
-*Recommended format for Shepherds:*
-
- `[Name](mailto:username@example.com)`
+ * [Matt Weiden](mailto:mweiden@chanzuckerberg.com)
 
 ## Motivation
 
@@ -69,6 +66,13 @@ AWS services that specifically require tagging because they have been previously
 * ELB
 * ECS
 * DynamoDB
+
+#### GCP Services that Require Resource Labels
+
+GCP services that specifically require labels because they have been previously identified as cost drivers are:
+
+* GS Buckets
+* Cloud Functions
  
 #### Standard Cost Control Tag/Label Keys
 
@@ -78,6 +82,10 @@ The following tags (AWS) or labels (GCP) **MUST** be set on all HCA DCP assets f
 * Their underlying services amount to 1% or greater cumulative IaaS spend in the HCA DCP budget in the prior calendar month
 
    **NOTE** : keys and values are case-sensitive
+   
+   **NOTE** : keys and values for GCP Resources are lowercase and have special characters ommitted due to [constraints](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+
+##### AWS
 
 Name        | Description
 ------------|-------------------------------
@@ -87,6 +95,18 @@ Name        | Description
 `service`   | The name of the HCA DCP service that manages the resource, for example: DSS, IngestService
 `Name`      | A human-readable name for the asset. This can be a custom name or a combination of other tags, such as `dss-notify-dev` (service-subcomponent-env). The name should identify the service subcomponent that the asset belongs to, if any. (The value of this tag shows up as the asset name in the AWS Console UI.)
 `managedBy` | The name of a deployment management tool managing this asset, for example: `terraform`, `cloudformation`, `chalice`
+
+##### GCP
+	
+Name        | Description
+------------|-------------------------------
+`project`   | The value for the project key shall be `dcp`
+`env`       | The value for the env key shall be the stage that the resource applies to, this can be `{dev,staging,integration,prod}`
+`owner`     | The local-part of an email for the team or individual responsible for operating the asset, for example: dss-team
+`service`   | The name of the HCA DCP service that manages the resource, for example: DSS, IngestService
+`name`      | A human-readable name for the asset. This can be a custom name or a combination of other tags, such as `dss-notify-dev` (service-subcomponent-env). The name should identify the service subcomponent that the asset belongs to, if any. (The value of this tag shows up as the asset name in the AWS Console UI.)
+`managed-by` | The name of a deployment management tool managing this asset, for example: `terraform`, `cloudformation`, `chalice`
+
 
 
 #### Termination policy
@@ -120,14 +140,22 @@ If a resource requires an additional independent tag, this can also be achieved.
 ```
 // variables.tf
 locals {
-  common_tags = "${map(
+  aws_tags = "${map(
     "managedBy" , "terraform",
     "Name"      , "${var.project}-${var.env}-${var.service}",
     "project"   , "${var.project}", // dcp
     "env"       , "${var.env}" // stage {dev,integration,staging,prod}
     "service"   , "${var.service}", // dss 
     "owner"     , "${var.owner}" // Team/Memeber contact email
-  )}"   
+  )}"  
+  gcp_tags = "${map(
+    "managed-by" , "terraform",
+    "name"      , "${var.project}-${var.env}-${var.service}",
+    "project"   , "${var.project}", // dcp
+    "env"       , "${var.env}" // stage {dev,integration,staging,prod}
+    "service"   , "${var.service}", // dss 
+    "owner"     , "${var.owner}" // Team/Memeber contact email local-part
+  )}"    
 }
 ```
 
@@ -136,7 +164,7 @@ locals {
 resource aws_s3_bucket dss_s3_bucket_test_fixtures {
   count = "${var.DSS_DEPLOYMENT_STAGE == "dev" ? 1 : 0}"
   bucket = "${var.DSS_S3_BUCKET_TEST_FIXTURES}"
-  tags = "${local.common_tags}"
+  tags = "${local.aws_tags}"
 }
 ```
 
@@ -147,7 +175,7 @@ resource google_storage_bucket dss_gs_bucket {
   provider      = "google"
   location      = "US"
   storage_class = "MULTI_REGIONAL"
-  labels = "${local.common_tags}"
+  labels = "${local.gcp_tags}"
 }
 ```
 
@@ -157,7 +185,7 @@ resource google_storage_bucket dss_gs_bucket {
 
 resource aws_elasticsearch_domain elasticsearch {
     tags = "${merge(
-        local.common_tags,
+        local.aws_tags,
         map(
            "Domain", "${var.DSS_ES_DOMAIN}"
         )
