@@ -24,6 +24,8 @@ __Managed access data__ - Data which can be released only to the individuals who
 
 __Data Access Committee__ - A committee of researchers who can make access right decisions about a dataset
 
+__DevSecOps Team___ - DCP will soon charter a DevSecOps team that will be responsible for ensuring that application and infrastructure security are considered throughout each phase of the software development lifecycle and that DCP compliance, security operations, and development operations are in alignment.
+
 ## In-scope
 
 _Governance_
