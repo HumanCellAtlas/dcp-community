@@ -68,6 +68,7 @@ We propose the UX team work with the community and the DCP Oversight Committee, 
 These are the steps that a wrangler will follow to perform a primary metadata update.
 
 ![](../images/0000-simple-updates-ingest-flow.png)
+[source](https://www.lucidchart.com/invitations/accept/67e4b9af-39ca-402c-a1b6-ebcd254174a7)
 
 * **Step 1 - Wrangler finds submission**
 
@@ -99,6 +100,7 @@ For this solution, ingest will calculate the bundle updates and submit these to 
 ### DCP Flow of Updates
 
 ![](../images/0000-simple-updates-dcp-flow.png)
+[source](https://www.lucidchart.com/invitations/accept/67e4b9af-39ca-402c-a1b6-ebcd254174a7)
 
 Once the bundles are updated (1 & 2), the datastore will send update notifications to all listeners (3). The query service, data browser and matrix service **MUST** all process these notifications to provide the updated metadata to consumers as required. The data processing pipeline execution service **MUST NOT** submit new or updated analyses to ingest for assays that have previously had analysis submitted. This solution requires the data processing pipeline execution service to capture and check if notification has already triggered a pipeline run and stop the run if it has.
 
