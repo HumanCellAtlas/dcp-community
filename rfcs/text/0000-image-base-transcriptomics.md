@@ -335,7 +335,7 @@ code changes and their impact.
 | Test Datasets Available                               	| starfish                 	| Complete        	| A. Carr       	|
 | Submission Datasets Available                         	| starfish                 	| Q2 2019         	| A. Carr       	|
 | Analysis & Adapter Pipelines                          	| Broad                    	| Q2 2019         	| A. Carr       	|
-| Lira subscription                                     	| Broad                    	| TBD             	| S. Ehsan      	|
+| Lira subscription                                     	| Broad                    	| ?             	| S. Ehsan      	|
 | Data Processing Pipelines Tests                        	| Broad                    	| Q2 2019         	| G. Grant      	|
 | Specification for input format                        	| starfish                 	| Complete        	| J. Moore      	|
 | Specification for output format                       	| starfish                 	| Q1 2019         	| A. Carr       	|
@@ -344,9 +344,9 @@ code changes and their impact.
 | Ingest support for the nested arrays of channels      	| EBI                      	| ?               	| Z. Perova           |
 | [Upload and download of subdirectories][b]             	| ?                        	| ?               	| H. Schmidt           |
 | DSS spatial data bundle (or bundless) specification   	| UCSC                     	| ?               	| B. Hannafious 	|
-| DSS scale testing                                     	| UCSC / DCP               	| TBD             	| B. Hannafious 	|
-| Data Browser facets for spatial data                  	| UCSC                     	| TBD             	| H. Schmidt    	|
-| Matrix service integration                            	| starfish                 	| TBD             	| M. Kinsella   	|
+| DSS scale testing                                     	| UCSC / DCP               	| ?             	| B. Hannafious 	|
+| Data Browser facets for spatial data                  	| UCSC                     	| ?             	| H. Schmidt    	|
+| Matrix service integration                            	| starfish                 	| ?             	| M. Kinsella   	|
 | Upload Bundle for 1M+ files                           	| ?                        	| ?               	| P. Shah       	|
 | Image file download latency testing                   	| ?                        	| ?               	| B. Hannafious             	|
 
