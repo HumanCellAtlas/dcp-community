@@ -311,7 +311,7 @@ changes that specify the particular assay in question.
 As mentioned above, image-based transcriptomics output data
 include a gene expression matrix and related metadata that are
 compatible with matrix service requirements and should be no
-more difficult to convert than the output of a sequencing assay
+more difficult to convert than the output of a sequencing assay.
 
 However, other imaging experiments will likely require extending how
 features (genes) are named to support a broader set of features
@@ -329,38 +329,27 @@ following deliverables. They will coordinate and collaborate with DCP
 partners ("contact person") to validate design correctness and minimize
 code changes and their impact.
 
-| Component/Deliverable                                 	| Responsible Team/Service 	| No earlier than 	| Contact Person	|
-|-------------------------------------------------------	|--------------------------	|-----------------	|---------------	|
-| HCA Metadata Draft                                    	| EBI                      	| Complete        	| Z. Perova     	|
-| Test Datasets Available                               	| starfish                 	| Complete        	| A. Carr       	|
-| Submission Datasets Available                         	| starfish                 	| Q2 2019         	| A. Carr       	|
-| Analysis & Adapter Pipelines                          	| Broad                    	| Q2 2019         	| A. Carr       	|
-| Lira subscription                                     	| Broad                    	| ?             	| S. Ehsan      	|
-| Data Processing Pipelines Tests                        	| Broad                    	| Q2 2019         	| G. Grant      	|
-| Specification for input format                        	| starfish                 	| Complete        	| J. Moore      	|
-| Specification for output format                       	| starfish                 	| Q1 2019         	| A. Carr       	|
-| Input validation tool                                 	| starfish, OME            	| Q3 2019         	| J. Moore      	|
-| Output validation tool                                	| starfish, OME            	| Q2 2019         	| A. Carr       	|
-| Ingest support for the nested arrays of channels      	| EBI                      	| ?               	| Z. Perova           |
-| [Upload and download of subdirectories][b]             	| ?                        	| ?               	| H. Schmidt           |
-| DSS spatial data bundle (or bundless) specification   	| UCSC                     	| ?               	| B. Hannafious 	|
-| DSS scale testing                                     	| UCSC / DCP               	| ?             	| B. Hannafious 	|
-| Data Browser facets for spatial data                  	| UCSC                     	| ?             	| H. Schmidt    	|
-| Matrix service integration                            	| starfish                 	| ?             	| M. Kinsella   	|
-| Upload Bundle for 1M+ files                           	| ?                        	| ?               	| P. Shah       	|
-| Image file download latency testing                   	| ?                        	| ?               	| B. Hannafious             	|
-
-### **Unresolved Questions**
-
-  - Who are the intended beta users for imaging support and what
-    functionality is being targeted?
-
-  - Clearly define a wrangling process for imaging data.
-
-  - What, if any, additional automation may be needed in the DCP to
-    support imaging?
-
-  - How should imaging metadata be validated?
+| Component/Deliverable                                 	| Responsible Team/Service 	| Contact Person	|
+|-------------------------------------------------------	|--------------------------	|---------------	|
+| HCA Metadata Draft                                    	| EBI                      	| Z. Perova     	|
+| Test Datasets Available                               	| starfish                 	|  A. Carr       	|
+| Submission Datasets Available                         	| starfish                 	|  A. Carr       	|
+| Analysis & Adapter Pipelines                          	| Broad                    	|  A. Carr       	|
+| Lira subscription                                     	| Broad                    	|  S. Ehsan      	|
+| Data Processing Pipelines Tests                        	| Broad                    	|  G. Grant      	|
+| Specification for input format                        	| starfish                 	|  J. Moore      	|
+| Specification for output format                       	| starfish                 	|  A. Carr       	|
+| Input validation tool                                 	| starfish, OME            	|  J. Moore      	|
+| Output validation tool                                	| starfish, OME            	|  A. Carr       	|
+| Ingest support for the nested arrays of channels      	| EBI                      	|  Z. Perova        |
+| [Upload and download of subdirectories][b]             	| ?                        	|  H. Schmidt       |
+| DSS spatial data bundle (or bundless) specification   	| UCSC                     	|  B. Hannafious 	|
+| DSS scale testing                                     	| UCSC / DCP               	|  B. Hannafious 	|
+| Data Browser facets for spatial data                  	| UCSC                     	|  H. Schmidt    	|
+| Matrix service integration                            	| starfish                 	|  M. Kinsella   	|
+| Upload Bundle for 1M+ files                           	| ?                        	|  P. Shah       	|
+| Image file download latency testing                   	| ?                        	|  B. Hannafious  	|
+| Image wrangling process                                   | EBI/UCSC                  |  Z. Perova        |
 
 ### **Drawbacks and Limitations**
 
