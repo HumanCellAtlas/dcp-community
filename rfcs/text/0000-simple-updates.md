@@ -57,7 +57,7 @@ Read more on the general user experience background for this work: [User Experie
 
 ## Scientific "guardrails"
 
-The proposed design has consequences for end users where different types of updates will have different impact on how data is visible in the DCP. Updates and additions which are in scope for this solution will have provenance trails which could be displayed to users but other updates such as those which change the experimental design representation or require reanalysis will still use the old update process and won't have any provanance reflected inside the DCP. 
+The proposed design has consequences for end users where different types of updates will have different impact on how data is visible in the DCP. Updates and additions which are in scope for this solution will have provenance trails which could be displayed to users. Other updates such as those which change the experimental design representation or require reanalysis will still use the old update process and won't have any provenance reflected inside the DCP. 
 
 We propose the UX team work with the community and the DCP Oversight Committee, building on the existing research to understand our data consumers assumptions around updates and to guide how we display updates to consumers in the data browser and other consumer services both now and in the future.  
 
@@ -141,7 +141,7 @@ There are many types of updates which are not supported by this solution includi
 7. Redacting data (in the sense of completely purging it/hard deleting it from the system)
 8. Updating metadata on unsubmitted datasets.
 
-Implementing all of these features will take the DCP time and we feel that the proposed design represents a step forward in the update and additional process and is valuable even if not complete. One important issue this design allows us to address which the old update process does not is it will give us an auditable trail of edits to bundles which can be displayed to users, improving their experience of and trust in the platform.
+Implementing all of these features will take time, but the proposed design represents a step forward in the update and additional process and is valuable even if incomplete. Unlike the current update process, this design offers provenance for edits to bundles which can be presented to users; improving their experience of and trust in the platform.
 
 
 ### Prior Art
