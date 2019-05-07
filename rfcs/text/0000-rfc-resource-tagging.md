@@ -73,6 +73,7 @@ GCP services that specifically require labels because they have been previously 
 
 * GS Buckets
 * Cloud Functions
+* Google Compute Engine
  
 #### Standard Cost Control Tag/Label Keys
 
