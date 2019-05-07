@@ -121,7 +121,7 @@ For simple updates, ingest will update secondary bundles with primary data (copy
 This RFC does not represent a complete solution to the Addition and Update functionality that is needed by the DCP. There are a number of unresolved questions and missing functionality that will be left for future RFCs to address.
 
 *   How is the provenance of data and metadata made clear to consumers?
-*   How are data retracted without creating meaningless 404 errors for consumers who had used it? [RFC4: Deletion of Data in the DCP]([https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0004-dss-deletion-process.md](https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0004-dss-deletion-process.md)) considers some of this challenge.
+*   How are data retracted without creating meaningless 404 errors for consumers who had used it? [RFC4: Deletion of Data in the DCP](https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0004-dss-deletion-process.md)considers some of this challenge.
 *   How do we update files as opposed to metadata?
 *   How do we make the update process through Ingest more straightforward?
 *   What logic is needed to make decisions about rerunning data processing pipelines? Where should that logic live? Can that decision be automated?
