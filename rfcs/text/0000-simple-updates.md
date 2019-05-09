@@ -97,6 +97,12 @@ The wrangler will be shown the difference between their updates and the existing
 
 For this solution, ingest will calculate the bundle updates and submit these to the datastore. This represents a risk to the scalability of this solution. If performance problems emerge we will need to consider solutions in a future RFC.
 
+### API
+
+The Ingest Service API provides a key capability for data wranglers to provide wrangling portals (interfaces) appropriate for their specific user or data modality needs, as well as for automation of bulk/batch data submission, data QC and status monitoring. The Ingest Service API also provides programmatic access for the analysis pipeline execution manager (however, metadata updates from analysis pipelines are beyond the scope of this RFC).
+
+The Ingest Service API and its attendant developer resources (documentation and API client) will be updated to accommodate metadata update functionality as described in this RFC. The design of these API updates is beyond the scope of this RFC, and will be addressed in a future RFC.
+
 ### DCP Flow of Updates
 
 ![](../images/0000-simple-updates-dcp-flow.png)
