@@ -21,13 +21,9 @@ This RFC proposes the scope and design to allow simple metadata additions and up
 
 ## Shepherd
 
-_Leave this blank. This role is assigned by DCP PM to guide the Author(s) through the RFC process._
+[Norman Morrison](mailto:norman@ebi.ac.uk)
 
-_Recommended format for Shepherds:_
-
-```
-[Name](mailto:username@example.com)
-```  
+ 
 ## Motivation
 
 Collecting data and metadata to submit to the HCA DCP is a time-consuming process which runs in parallel to conducting scientific experiments. This means that all of the data and metadata for a project might not be submitted at the same time. Additionally, as the HCA pushes for data to be submitted as soon as possible, to expedite its availability to the community, there is an increased risk of the project needing updates or new data and metadata being added.
