@@ -141,15 +141,10 @@ increase significantly.
 > 1 point person per box (4-5 people) - this should be at least 25% of
 > their time, and there should be a backup person for each box
 
+### **Prior Art**
 
-### **Drawbacks and Limitations \[optional\]**
+Zendesk is already being used for our support mechanism. This RFC formalizes our processes.
 
-*Why should this RFC not be implemented?*
+### **Alternatives**
 
-### **Prior Art \[optional\]**
-
-*Share references to prior art to deepen community understanding of the RFC, such as learnings, adaptations from earlier designs, or community standards.*
-
-### **Alternatives \[optional\]**
-
-*Highlight other possible approaches to delivering the value proposed in this RFC. What other designs were explored? What were their advantages? What was the rationale for rejecting alternatives?*
+No other alternatives have been proposed.
