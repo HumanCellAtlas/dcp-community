@@ -26,7 +26,7 @@ This process RFC describes how the DCP handles user support requests through the
 ## Motivation
 
 ### Immediate Need 
-Beta 2 testing, to be done by 30-40 users representing three of our six use cases, will begin soon and we’ve decided to collect feedback through our Zendesk ticketing systm. Because this group of testers is larger and represents more diverse needs for data than the Beta 1 testers, we anticipate an up-tick in the number of Zendesk tickets we'll receive. We therefore need to quickly determine a process for handling these tickets. 
+Users must have a stadard way to guve feedback and request help. There will be a general up-tick on support demand every time we release a new feature or roll out a new type of data. Having a basic ticketing system in place will help assure that no problems are missed. Understanding the needs of the DCP users is paramount. 
 
 ### Sustainability Through the GA
 Upon general release, the full range of use cases will come into play and we anticipate a large increase in both the nubmer of tickets and diversity of questions asked by users. Addressing these tickets will require a big time committment, so we need an efficient system in place and a team well-versed in the DCP and its scientific applications. 
@@ -124,10 +124,6 @@ may be called on to answer it. However, the need for Tertiary support
 should be rare, and all answers will be archived and added to the
 knowledge
 base
-
-### **Acceptance Criteria \[optional\]**
-
-*Acceptance criteria are the conditions that a RFC must satisfy to be accepted by users or other stakeholders.*
 
 ### **Unresolved Questions**
 
