@@ -119,11 +119,7 @@ base
 
 ### **Unresolved Questions**
 
-We suggest that funding be sought to hire one or two part or full-time
-triagers who would grow into the position as we move toward GA, and be
-able to handle primary triage as well as some of the more difficult
-questions by the time of the GA, when we expect support needs to
-increase significantly.
+We suggest that funding be sought to hire one or two part- or full-time triage person(s) who would grow into the position. They should be able to handle primary triage early on as well as answer some of the more difficult questions especially as the need for support increases over time.
 
 > 2 triage agents - could be 50% of their job as they would trade off
 > being point for this job. Duties would include the grooming of the FAQ
