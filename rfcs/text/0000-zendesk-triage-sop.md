@@ -26,7 +26,7 @@ This process RFC describes how the DCP handles user support requests through the
 ## Motivation
 
 ### Immediate Need 
-Users must have a stadard way to guve feedback and request help. There will be a general up-tick on support demand every time we release a new feature or roll out a new type of data. Having a basic ticketing system in place will help assure that no problems are missed. Understanding the needs of the DCP users is paramount. 
+Users must have a standard way to give feedback and request help. There will be a general up-tick on support demand every time we release a new feature or roll out a new type of data. Having a basic ticketing system in place will help assure that no problems are missed. Understanding the needs of the DCP users is paramount. 
 
 ### Sustainability Through the GA
 Upon general release, the full range of use cases will come into play and we anticipate a large increase in both the nubmer of tickets and diversity of questions asked by users. Addressing these tickets will require a big time committment, so we need an efficient system in place and a team well-versed in the DCP and its scientific applications. 
