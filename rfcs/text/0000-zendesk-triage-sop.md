@@ -29,7 +29,7 @@ This process RFC describes how the DCP handles user support requests through the
 Users must have a standard way to give feedback and request help. There will be a general up-tick on support demand every time we release a new feature or roll out a new type of data. Having a basic ticketing system in place will help assure that no problems are missed. Understanding the needs of the DCP users is paramount. 
 
 ### Sustainability Through the GA
-Upon general release, the full range of use cases will come into play and we anticipate a large increase in both the nubmer of tickets and diversity of questions asked by users. Addressing these tickets will require a big time committment, so we need an efficient system in place and a team well-versed in the DCP and its scientific applications. 
+Upon general release, the full range of use cases will come into play and a large increase in both the number of tickets and diversity of questions is anticipated. Addressing these tickets will require a big time commitment, so we need an efficient system in place and a team well-versed in the DCP and its scientific applications. 
 
 This RFC describes an SOP that we think will satisfy both the Beta2 test phase and the early days of the GA. As we grow in our understanding of user support needs, this SOP will likely need revision to address long-term sustainability.
 
@@ -60,13 +60,9 @@ diagram presented below.
 
 ## Issue Creation
 
-Issues in Zendesk originate from users of the DCP. These users could
-include data contributors, researchers trying to use the data in the
-DCP, software developers trying to leverage the DCP API. Any user of the
-DCP can file an issue. 
+Issues in Zendesk originate from users of the DCP. These users could include data contributors, researchers trying to use the data in the DCP, and software developers trying to leverage the DCP API. Any user of the DCP can file an issue. 
 
-While problems identified by an internal DCP staff member could be filed on Zendesk too, we favor a plan in which those issues are directly added to the applicable development
-repository, where they can be addressed directly. This plan eliminates the extra work for the triager of managing internally-generated tickets.
+While problems identified by an internal DCP staff member could be filed on Zendesk too, we favor a plan in which those issues are directly added to the applicable development repository, where they can be addressed directly. This plan eliminates the extra work for the triager of managing internally-generated tickets.
 
 Once an issue is
 created in Zendesk there is a tiered support network that kicks in to
