@@ -81,13 +81,9 @@ The triager takes ownership of each open ticket and does the following to develo
 1. Evaluate whether there is enough information in the ticket to inform the
 response. If not, write back to the user and ask for the missing information. 
 
-2. Search the data portal documentation and FAQ for answers to the question. If the triage person can find an answer that resolves the problem, a repsonse is sent to the user and the issue is closed. 
+2. Search the data portal documentation and FAQ for answers to the question. If the triage person can find an answer that resolves the problem, a response is sent to the user and the issue is closed. 
 
-3. If an answer is not evident from searching the knowledge base in the data portal, the triager needs to ask for help from the secondary support team, which includes members from each DCP component or service. It may
-be obvious which team should receive the ticket; if so, then it can be
-assigned directly. If it’s not obvious, there can be some internal
-discussion with the secondary support staff about who should receive the
-ticket.
+3. If an answer is not evident from searching the knowledge base in the data portal, the triage person needs to ask for help from the secondary support team, which includes members from each DCP component or service. It may be obvious which team should receive the ticket; if so, then it can be assigned directly. If it’s not obvious, there can be some internal discussion with the secondary support staff about who should receive the ticket.
 
 4. At this point the ticket becomes the responsibility of the secondary support person, who should repond to the user and bring the ticket to an eventual close. 
 
