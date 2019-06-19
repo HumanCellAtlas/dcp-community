@@ -112,10 +112,11 @@ __Step 1__: Personnel identifying the suspected or confirmed incident (Incident 
 1. Assign the ticket to the DCP IRT Coordinator
 1. Date of discovery of the suspected or confirmed incident
 1. Brief description of suspected or confirmed incident
+1. Estimated incident severity rating
 1. If known, also include:
    1. Date incident occurred
    1. Date incident was discovered
-   1. Affected system(s) and application(s)
+   1. Affected system(s) and application(s), with associated version information
    1. Number of users affected
    1. Data types involved
 
@@ -125,7 +126,7 @@ Example: A suspected or confirmed incident has been identified and is being trac
 
 __Step 3__: DCP IRT will immediately review the submitted ticket and, with assistance from Incident Handlers, conduct a preliminary investigation of the event to determine if the event constitutes a security incident.
 * __Step 3.1__: If the DCP IRT determines that the event does not constitute a security incident or is a false positive, the DCP IRT Coordinator will document the determination and supporting evidence within the ticket and close the ticket. No further action is required.
-* __Step 3.2__: If the DCP IRT confirms that the event does constitute a security incident, the DCP IRT Coordinator will collaborate with the Incident Handler to save all evidence and complete an Incident Report (see Appendix B).
+* __Step 3.2__: If the DCP IRT confirms that the event does constitute a security incident, the DCP IRT will verify or update the incident severity rating and the DCP IRT Coordinator will collaborate with the Incident Handler to save all evidence and complete an Incident Report (see Appendix B).
 
 __Step 4__: The DCP IRT Coordinator will update the incident’s ticket to include a link to the completed Incident Report and notify the following that the report has been completed:
 * HumanCellAtlas/dcp-security Slack channel 
