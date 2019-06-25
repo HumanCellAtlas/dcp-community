@@ -1,7 +1,5 @@
 ### DCP PR:
 
-***Leave this blank until the RFC is approved** then the **Author(s)** must create a link between the assigned RFC number and this pull request in the format:*
-
 [dcp-community/rfc0008](https://github.com/HumanCellAtlas/dcp-community/pull/77)
 
 # Simple Metadata Updates
