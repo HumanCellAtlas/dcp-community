@@ -68,6 +68,10 @@ The Data Portal is the landing site for the Human Cell Atlas (HCA) Data Coordina
 * [HumanCellAtlas/data-portal-dev](https://humancellatlas.slack.com/messages/data-portal-dev): data portal development discussions
 * [HumanCellAtlas/content-team](https://humancellatlas.slack.com/messages/content-team): data portal content development discussions
 
+## Mailing List
+
+[Data Portal](mailto:data-portal-team@data.humancellatlas.org): Team mailing list
+
 ## Github repositories
 * https://github.com/HumanCellAtlas/data-portal - the repository for the UI implementation. Use it to report issues and request new features for the Data Portal.
 * https://github.com/HumanCellAtlas/data-portal-content - the repository for the content pages of the Data Portal.

@@ -78,10 +78,13 @@ Query Service features will be developed with use cases of the following users i
 
 ## Communication
 
-Team email: dcp-query-service-team@data.humancellatlas.org
-
 ### Slack Channels
-HumanCellAtlas/query-service: Discussion of query service
+[HumanCellAtlas/query-service](https://humancellatlas.slack.com/messages/query-service): Discussion of query service
+
+### Mailing Lists
+
+Team email: query-service-team@data.humancellatlas.org
 
 ## Github repositories
-* https://github.com/HumanCellAtlas/query-service
+
+https://github.com/HumanCellAtlas/query-service
