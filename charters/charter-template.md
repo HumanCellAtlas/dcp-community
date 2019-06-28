@@ -60,4 +60,4 @@ _Recommended format for Mailing Lists:_
 
 Recommended format for Repositories:
 
-`https://github.com/HumanCellAtlas/repository: Purpose of repository`
+`[Name](https://github.com/HumanCellAtlas/repository): Purpose of repository`
