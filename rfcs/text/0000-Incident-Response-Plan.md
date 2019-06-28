@@ -18,7 +18,7 @@ Sarah Tahiri [stahiri@broadinstitute.org]
 
 Security incident response has become increasingly important as cybersecurity attacks have become more frequent, diverse, and damaging. Though preventive security measures can reduce the frequency of incidents, they cannot stop them all in their tracks. It is therefore necessary for DCP to have a documented Incident Response Plan that guides us in identifying, investigating, containing, mitigating, recovering from, and reporting an incident.
 
-Additionally, we want the DCP system to be secure and reliable for all stakeholders, including engineering teams, program governance, and, above all, end users. In order to assure that we are following security best practices, and to help us attest to that fact in the future, we are working toward compliance with the NIST SP 800-53 Rev 4 security framework. Incident response is one of the requirements of this framework.
+Additionally, we want the DCP system to be secure and reliable for all stakeholders, including engineering teams, program governance, and, above all, end users. In order to assure that we are following security best practices, and to help us attest to that fact in the future, we are working toward compliance with the [NIST SP 800-53 Rev 4](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf) security framework. Incident response is one of the requirements of this framework.
 
 ### User Stories
 
