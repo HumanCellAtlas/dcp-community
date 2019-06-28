@@ -169,7 +169,7 @@ Where necessary, existing RFCs can be revised using the same process (a proposed
 - At the *DCP PM* or *DCP Architecture* meeting, review the **Shepherd** summary. If there is rough consensus to approve the RFC, replace "rfc-oversight-review" with "rfc-approved"
 
 #### Author(s):
-- Rename the RFC from `0000-my-feature.md` to `rfc####-my-feature.md` (with leading zeros) where `####` is the next available RFC number
+- Rename the RFC from `0000-my-feature.md` to `####-my-feature.md` (with leading zeros) where `####` is the next available RFC number
 
 - Create a link between the approved RFC and its pull request by updating the *DCP PR* section in the RFC template and pushing the commit.
 
