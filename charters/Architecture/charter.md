@@ -37,20 +37,15 @@ Operational responsibilities
     * Operational techniques and processes, including software release standard operating procedures
     * Security policies
 
-### Slack Channels
-
-HumanCellAtlas/tech-architecture: Technical implementation details of DCP projects
-and integration between them
-HumanCellAtlas/dcp-integration: Integration *workspace*
-
-## Roles
-
-### Facilitator
-
-The DCP Architecture Team Facilitator is a role that rotates among project tech leads.
-
-Current facilitator: [Sam Pierson](mailto:spierson@chanzuckerberg.com)
-
 ## Communication
 
-Team email: dcp-architecture-team@data.humancellatlas.org
+### Slack Channels
+
+[HumanCellAtlas/tech-architecture](https://humancellatlas.slack.com/messages/tech-architecture): Technical implementation details of DCP projects
+and integration between them
+
+[HumanCellAtlas/dcp-integration](https://humancellatlas.slack.com/messages/dcp-integration): Integration *workspace*
+
+### Mailing Lists
+
+[Architecture](mailto:architecture-team@data.humancellatlas.org): Team mailing list
