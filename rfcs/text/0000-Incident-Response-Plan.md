@@ -13,6 +13,7 @@ Sarah Tahiri [stahiri@broadinstitute.org]
 
 ## Shepherd
 
+Sarah Tahiri [stahiri@broadinstitute.org]
 
 ## Motivation
 
