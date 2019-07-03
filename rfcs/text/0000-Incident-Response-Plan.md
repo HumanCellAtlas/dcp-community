@@ -108,7 +108,7 @@ Follow-up occurs in this phase. DCP IRT completes a report of the incident, subs
 #### Incident Response Procedures
 Anyone can declare an incident. Follow the procedure outlined below if you suspect or have confirmed that an incident has occurred.
 
-__Step 1__: Personnel identifying the suspected or confirmed incident (Incident Handler) will alert the DCP IRT by submitting a ticket to the to-be-created humancellatlas/dcp-security private GitHub repo. The ticket will include the following information to ensure appropriate triage:
+__Step 1__: Personnel identifying the suspected or confirmed incident (Incident Handler) will alert the DCP IRT by submitting a ticket to the [humancellatlas/dcp-security](https://github.com/HumanCellAtlas/dcp-security) private GitHub repo. The ticket will include the following information to ensure appropriate triage:
 1. Assign the ticket to the DCP IRT Coordinator
 1. Date of discovery of the suspected or confirmed incident
 1. Brief description of suspected or confirmed incident
@@ -119,6 +119,8 @@ __Step 1__: Personnel identifying the suspected or confirmed incident (Incident 
    1. Affected system(s) and application(s), with associated version information
    1. Number of users affected
    1. Data types involved
+   
+If an Incident Handler is, for any reason, unable to access the dcp-security GitHub repo, please submit the same information to [data-help@humancellatlas.org](mailto:data-help@humancellatlas.org).
 
 __Step 2__: Incident Handler will post an incident notification to the HumanCellAtlas/dcp-security Slack channel. The notification should not contain detailed information; instead, it should link to the incident’s tracking ticket. 
 
