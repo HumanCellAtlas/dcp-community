@@ -21,9 +21,13 @@ Specifically, the following charters will be supported:
 *Recommended format for Authors:*
 
  `[Mallory Freeberg](mailto:mfreeberg@ebi.ac.uk)`
+ 
  `[Brian Hannafious](mailto:bhannafi@ucsc.edu)`
+ 
  `[Hannes Schmidt](mailto:hannes@ucsc.edu)`
+ 
  `[Andrey Kislyuk](mailto:akislyuk@chanzuckerberg.com)`
+ 
  `[Query service person](mailto:)`
 
 ## Shepherd
@@ -77,11 +81,11 @@ Definitions:
 
 | Type | Definition | Target consumer | Use cases | Detailed specification |
 |:-|:-|:-|:-|:-|
-| Primary bundle | A bundle that contains primary (raw) data files and all related metadata files. | Data processing pipelines; Data Browser; Query Service; computational biologists | | Well-based: type = sequence; Droplet-based: type = sequence; Imaging: type = image |
-| Secondary bundle | A bundle that contains secondary (processed, expression) data files produced by the Data Processing Pipelines, input primary data files, and all related metadata files. | Data Browser; Query Service; Matrix Service; computational biologists | | Sequencing: type = [alignment, expression]; Imaging: type = [expression, ?] |
-| Tertiary bundle | A bundle that contain tertiary (expression) data files produced by the Matrix Service, input primary and secondary data files, and all related metadata files. | Data Browser; Query Service; computational biologists | | type = [expression, ?] |
-| Project bundle | A bundle that contains project-level metadata files, but not data files. | ? | ? | ? |
-| Resource/Reference bundle | A bundle that contain reference data file and all related metadata files. | ? | ? | ? |
+| Primary bundle | A bundle that contains primary (raw) data files and all related metadata files. | computational biologists; Data Processing Pipelines; Data Browser; Query Service | 1 | Sequencing: type = sequence; Imaging: type = image |
+| Secondary bundle | A bundle that contains secondary (alignment, expression) data files produced by the Data Processing Pipelines, input primary data files, and all related metadata files. | computational biologists; Data Browser; Query Service; Matrix Service | 2, 3 | Sequencing: type = [alignment, expression]; Imaging: type = [expression, ?] |
+| Tertiary bundle | A bundle that contains tertiary (expression) data files produced by the Matrix Service, input primary and secondary data files, and all related metadata files. | computational biologists; biologists; Data Browser; Query Service | 2, 3 | type = [expression, ?] |
+| Project bundle | A bundle that contains project-level metadata files. This bundle does not contain data files. | computational biologists; biologists; | 1, 2, 3, 4 | ? |
+| Resource/Reference bundle | A bundle that contains reference data files and all related metadata files. | computational biologists; Data Processing Pipelines; | 4 | ? |
 
 
 
