@@ -73,11 +73,11 @@ In the HCA DCP, a bundle is defined as:
 Bundle types, definitions, consumers, and specifications are outlined below. Use cases from above are indicated where supported by a specific bundle type.
 
 #### Table header definitions
-- **Type**: The high-level type of bundle (See Bundle Type RFC)
+- **Type**: The name of the bundle type
 - **Definition**: What is and is not in this bundle type
-- **Target consumer**: Who will be consuming this bundle
-- **Use cases**: Which Users Stores from above are supported by this bundle type
-- **Specification**: Details about the bundle type
+- **Target consumer**: Who will be consuming this bundle type
+- **Use cases**: Which Users Stories are supported by this bundle type
+- **Specification**: Technical details about the bundle type
 
 | Type | Definition | Target consumer | Use cases | Specification |
 |:-|:-|:-|:-|:-|
