@@ -8,7 +8,7 @@
 
 ## Summary
 
-There are currently no documented definitions for what a “bundle” is in the HCA DCP, including no definitions of what they are, what they contain, or who they support. Lack of clarity causes confusion for data consumers about how the data and metadata in the DCP are structured and organized. Here we propose to formalize bundle types, definitions, target users and consumers, and specific use cases in order to support the needs of data consumers.
+There are currently no documented definitions for what a "bundle" is in the HCA DCP, including no definitions of what they are, what they contain, or who they support. Lack of clarity causes confusion for data consumers about how the data and metadata in the DCP are structured and organized. Here we propose to formalize bundle types, definitions, target users and consumers, and specific use cases in order to support the needs of data consumers.
 
 Specifically, the following charters will be supported:
 - the Data Store (DSS) [charter](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/DataStore/charter.md#core-capabilities) ("The Data Store owns the bundle use cases and bundle type definitions, while the precise specifications will be negotiated between the Metadata and other teams.");
@@ -41,7 +41,7 @@ Specifically, the following charters will be supported:
 
 *Describe the user or technical need in detail [with alignment to the DCP roadmap priorities where possible]. Link prior community discussions to demonstrate support for this RFC.*
 
-There are currently no documented definitions for what a "bundle" is in the HCA DCP, including no definitions of what they are, what they contain, or who they support. Lack of clarity causes confusion for DCP developers and data consumers about how the data and metadata in the DCP are structured and organized. At the June 2019 DCP F2F meeting in Cambridge, a breakout session was held to discuss "What is a bundle?", and a lot of useful discussion occurred. 
+There are currently no documented definitions for what a "bundle" is in the HCA DCP, including no definitions of what they are, what they contain, or who they support. Lack of clarity causes confusion for DCP developers and data consumers about how the data and metadata in the DCP are structured and organized. At the June 2019 DCP F2F meeting in Cambridge, a breakout session was held to discuss "What is a bundle?", and a lot of useful discussion occurred. **MORE**
 
 ### User Stories
 
@@ -106,7 +106,7 @@ Should we call it "Resource" or "Reference"? Describe here...
 *Acceptance criteria are the conditions that a RFC must satisfy to be accepted by users or other stakeholders.* 
 
 1. Data consumers can make use of data from the DCP without knowing what a bundle is.
-1. DCP developers know what a "bundle" is including what is in a bundle and how bundles relate to one another.
+1. DCP developers have a shared understanding of what a bundle is, including what is in a bundle and how bundles relate to one another.
 
 ### Unresolved Questions
 
@@ -134,4 +134,4 @@ Should we call it "Resource" or "Reference"? Describe here...
 *Highlight other possible approaches to delivering the value proposed in this RFC. 
 What other designs were explored? What were their advantages? What was the rationale for rejecting alternatives?*
 
-Status quo: No one *really* knows what a bundle is or there are many different ideas about what a bundle is.
+Status quo: No one *really* knows what a bundle is or there are many different ideas about what a bundle is. Chaos ensues.
