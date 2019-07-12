@@ -48,7 +48,7 @@ There are currently no documented definitions for what a "bundle" is in the HCA 
 *Share the [User Stories](https://www.mountaingoatsoftware.com/agile/user-stories) motivating this RFC.*
 
 1. As a data consumer who develops data processing tools (*e.g.* a sequence read aligner), I would like to browse, query, and get primary data from the DSS so that I can use it as testing data during development.
-1. As a data consumer who develops analysis tools (*e.g.* a clustering algorithm), I would like to browse, query, and get processed data from the DSS so that I can use it as testing data during development.
+1. As a data consumer who develops analysis tools (*e.g.* a clustering algorithm), I would like to browse, query, and get alignment data from the DSS so that I can use it as testing data during development.
 1. As a data consumer who is a computational biologist, I would like to get expression matrices from the DSS so that I can compare against data I already have.
 1. As a data consumer who is a biologist, I would like to get expression matrices from the DSS so that I can see the expression profile of <my gene of interest> in <cell type(s) or organ(s) of interest>.
 1. As a data consumer who is a computational biologist, I would like to know what reference data was used to generate processed data in the DSS and I would like to be able to get it for myself so that I can compare with my own research.
