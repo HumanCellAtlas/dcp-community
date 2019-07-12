@@ -72,7 +72,7 @@ In the HCA DCP, a bundle is defined as:
 
 Bundle types, definitions, consumers, and specifications are outlined below. Use cases from above are indicated where supported by a specific bundle type.
 
-Definitions:
+#### Table header definitions
 - **Type**: The high-level type of bundle (See Bundle Type RFC)
 - **Definition**: What is and is not in this bundle type
 - **Target consumer**: Who will be consuming this bundle
@@ -87,21 +87,34 @@ Definitions:
 | Project bundle | A bundle that contains project-level metadata files. This bundle does not contain data files. | computational biologists; biologists; | 1, 2, 3, 4 | ? |
 | Resource/Reference bundle | A bundle that contains reference data files used by the Data Processing Pipelines(?) and all related metadata files. | computational biologists; Data Processing Pipelines; | 4 | ? |
 
+The only bundle types that currently exist in the DSS are Primary and Secondary bundles. The remaining bundle types are proposed based on user needs and are described in more detail below.
 
+#### New Tertiary bundle
+
+Describe here...
+
+#### New Project bundle
+
+Describe here...
+
+#### New Resource/Reference bundle
+
+Should we call it "Resource" or "Reference"? Describe here...
 
 ### Acceptance Criteria [optional]
 
 *Acceptance criteria are the conditions that a RFC must satisfy to be accepted by users or other stakeholders.* 
 
-1. DCP developers know what a "bundle" is including what is in a bundle and how bundles relate to one another.
 1. Data consumers can make use of data from the DCP without knowing what a bundle is.
+1. DCP developers know what a "bundle" is including what is in a bundle and how bundles relate to one another.
 
 ### Unresolved Questions
 
-- *What aspects of the design do you expect to clarify further through the RFC review process?*
+*What aspects of the design do you expect to clarify further through the RFC review process?*
 1. What is the process for adding or adopting new bundle types? Changing current bundle types?
+1. What other bundle specifications should be included here, especially in light of the bundle type design RFC?
 
-- *What aspects of the design do you expect to clarify later during iterative development of this RFC?*
+*What aspects of the design do you expect to clarify later during iterative development of this RFC?*
 1. Does this informational RFC depend on mechanics of copy-forward?
 
 
