@@ -68,6 +68,8 @@ In the HCA DCP, a bundle is defined as:
 1. a transaction of files that belong together for scientific reasons - **OR** - 
 1. an association between a set of files (*e.g.* data, metadata)
 
+> These two definitions came out of the F2F bundle session and were generally agreed to make sense by different groups. Should we go with just one of these? Do we merge them together? Do we accept both? Should there be a vote?
+
 ### Bundle types and their definitions
 
 Bundle types, definitions, consumers, and specifications are outlined below. Use cases from above are indicated where supported by a specific bundle type.
