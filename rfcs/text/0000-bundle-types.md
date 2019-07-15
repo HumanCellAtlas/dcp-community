@@ -45,8 +45,8 @@ about how the data and metadata in the DCP are structured and organized.
 1. As an external user of the DSS who is developing analysis tools, I would like to browse, query, and get raw and
    processed data based on some rough criteria so that I can understand what the data are and develop my tool.
 
-1. As an Azul developer I want to be able to distinguish between different types of bundles in order to know which
-   bundle to index, link, etc.
+1. As an Azul or Query Service developer I want to be able to distinguish between different types of bundles in order to
+   know which bundle to index, link, etc. or to provide bundle types to users as a search criterion.
 
 1. As a computational biologist, I would like to know where the reference data is.
 
