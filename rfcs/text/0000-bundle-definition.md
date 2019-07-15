@@ -88,9 +88,13 @@ Bundle types, definitions, consumers, and specifications are outlined below. Use
 | Project bundle* | A bundle that contains project-level metadata files. This bundle type does not contain data files. | computational biologists; biologists; | 1, 2, 3, 4 |
 | Resource/Reference bundle* | A bundle that contains reference data files used by the Data Processing Pipelines(?) and all related metadata files. This bundle type does not contain data files. | computational biologists; Data Processing Pipelines; | 4 |
 
-> Asterisk (*) indicates bundles types that do not currently exist in the DCP, but have been discussed as being future bundle types for supporting data consumers.
+> Asterisk (*) indicates bundles types that do not currently exist in the DCP but have been discussed as potential future bundle types to support data consumers.
 
-The only bundle types that currently exist in the DSS are Primary and Secondary bundles. The remaining bundle types are proposed based on user needs and are described in more detail below.
+### New bundle types and their definitions
+
+> **NB**: The following new bundle types might actually belong in their own design RFC, but they are included here as they were a natural extension of defining the current two bundle types. 
+
+The only bundle types that currently exist in the DSS are Primary and Secondary bundles. The remaining bundle types are proposed based on data consumer needs and are described in more detail below.
 
 #### New Tertiary bundle
 
