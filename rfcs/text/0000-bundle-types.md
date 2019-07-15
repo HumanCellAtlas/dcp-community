@@ -52,8 +52,8 @@ about how the data and metadata in the DCP are structured and organized.
 
 ## Detailed Design
 
-Introduce a new field, `bundle-type`, in the DSS bundle manifest (the response to `GET bundle` in DSS). The field value
-is a string formatted in a similar manner
+A new field, `bundle-type`, will be introduced to the DSS bundle manifest (the response to `GET bundle` in DSS). The
+field value is a string formatted in a similar manner
 to [DCP Media Types](https://docs.google.com/document/d/1TqihrgXjct9aDmTJO52_gE2WlpFysB1OkG9C8exmWTw) and consistent
 with the syntax defined in [RFC 7231](https://tools.ietf.org/html/rfc7231#section-3.1.1.1). DSS must require the bundle
 type to be specified when creating a new bundle, but should not enforce the vocabulary. DSS must allow subscriptions
