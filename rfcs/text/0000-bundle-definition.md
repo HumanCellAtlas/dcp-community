@@ -92,7 +92,7 @@ Bundle types, definitions, consumers, and specifications are outlined below. Use
 
 ### New bundle types and their definitions
 
-> **NB**: The following new bundle types might actually belong in their own design RFC, but they are included here as they were a natural extension of defining the current two bundle types. 
+> **NB**: Describing and defining new bundle types probably belong in their own design RFC, but they are included here as they were a natural extension of defining the current two bundle types. Consider moving the "New bundle types and their definitions" section to a new design RFC.
 
 The only bundle types that currently exist in the DSS are Primary and Secondary bundles. The remaining bundle types are proposed based on data consumer needs and are described in more detail below.
 
