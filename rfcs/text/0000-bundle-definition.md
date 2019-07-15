@@ -79,15 +79,14 @@ Bundle types, definitions, consumers, and specifications are outlined below. Use
 - **Definition**: What is and is not in this bundle type
 - **Target consumer**: Who will be consuming this bundle type
 - **Use cases**: Which Users Stories are supported by this bundle type
-- **Specification**: Technical details about the bundle type (**MAY BE OUT OF SCOPE FOR THIS RFC**)
 
-| Type | Definition | Target consumer | Use cases | Specification |
-|:-|:-|:-|:-|:-|
-| Primary bundle | A bundle that contains primary (raw) data files and all related metadata files. | computational biologists; Data Processing Pipelines; Data Browser; Query Service | 1 | Sequencing: type = sequence; Imaging: type = image |
-| Secondary bundle | A bundle that contains secondary (alignment, expression) data files produced by the Data Processing Pipelines, input primary data files, and all related metadata files. | computational biologists; Data Browser; Query Service; Matrix Service | 2, 3 | Sequencing: type = [alignment, expression]; Imaging: type = [expression, ?] |
-| Tertiary bundle | A bundle that contains tertiary (expression) data files produced by the Matrix Service, input primary and secondary data files, and all related metadata files. | computational biologists; biologists; Data Browser; Query Service | 2, 3 | type = [expression, ?] |
-| Project bundle | A bundle that contains project-level metadata files. This bundle does not contain data files. | computational biologists; biologists; | 1, 2, 3, 4 | ? |
-| Resource/Reference bundle | A bundle that contains reference data files used by the Data Processing Pipelines(?) and all related metadata files. | computational biologists; Data Processing Pipelines; | 4 | ? |
+| Type | Definition | Target consumer | Use cases |
+|:-|:-|:-|:-|
+| Primary bundle | A bundle that contains primary (raw) data files and all related metadata files. | computational biologists; Data Processing Pipelines; Data Browser; Query Service | 1 |
+| Secondary bundle | A bundle that contains secondary (alignment, expression) data files produced by the Data Processing Pipelines, input primary data files, and all related metadata files. | computational biologists; Data Browser; Query Service; Matrix Service | 2, 3 |
+| Tertiary bundle | A bundle that contains tertiary (expression) data files produced by the Matrix Service, input primary and secondary data files, and all related metadata files. | computational biologists; biologists; Data Browser; Query Service | 2, 3 |
+| Project bundle | A bundle that contains project-level metadata files. This bundle does not contain data files. | computational biologists; biologists; | 1, 2, 3, 4 |
+| Resource/Reference bundle | A bundle that contains reference data files used by the Data Processing Pipelines(?) and all related metadata files. | computational biologists; Data Processing Pipelines; | 4 |
 
 The only bundle types that currently exist in the DSS are Primary and Secondary bundles. The remaining bundle types are proposed based on user needs and are described in more detail below.
 
