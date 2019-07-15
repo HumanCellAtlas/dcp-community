@@ -51,7 +51,7 @@ There are currently no documented definitions for what a "bundle" is in the HCA 
 1. As a data consumer who develops analysis tools (*e.g.* a clustering algorithm), I would like to browse, query, and get alignment data from the DSS so that I can use it as testing data during development.
 1. As a data consumer who is a computational biologist, I would like to get expression matrices from the DSS so that I can compare against data I already have.
 1. As a data consumer who is a biologist, I would like to get expression matrices from the DSS so that I can see the expression profile of &lt;my gene of interest&gt; in &lt;my cell type(s) or organ(s) of interest&gt;.
-1. As a data consumer who is a computational biologist, I would like to know what reference data was used to generate processed data in the DSS and I would like to be able to get it for myself so that I can compare with my own research.
+1. As a data consumer who is a computational biologist, I would like to know what reference data was used to generate processed data in the DSS and I would like to be able to get it for myself so that I can process/analyze my own data with the same references as HCA DCP data.
 
 
 ## Scientific "guardrails" [optional]
@@ -83,10 +83,10 @@ Bundle types, definitions, consumers, and specifications are outlined below. Use
 | Type | Definition | Target consumer | Use cases |
 |:-|:-|:-|:-|
 | Primary bundle | A bundle that contains primary (raw) data files and all related metadata files. | computational biologists; Data Processing Pipelines; Data Browser; Query Service | 1 |
-| Secondary bundle | A bundle that contains secondary (alignment, expression) data files produced by the Data Processing Pipelines, input primary data files, and all related metadata files. | computational biologists; Data Browser; Query Service; Matrix Service | 2, 3 |
-| Tertiary bundle* | A bundle that contains tertiary (expression) data files produced by the Matrix Service, input primary and secondary data files, and all related metadata files. | computational biologists; biologists; Data Browser; Query Service | 2, 3 |
+| Secondary bundle | A bundle that contains secondary (alignment, expression) data files produced by the Data Processing Pipelines, input primary data files, and all related metadata files. | computational biologists; Data Browser; Query Service; Matrix Service | 2, 3, 4(?) |
+| Tertiary bundle* | A bundle that contains tertiary (expression) data files produced by the Matrix Service, input primary and secondary data files, and all related metadata files. | computational biologists; biologists; Data Browser; Query Service | 3, 4 |
 | Project bundle* | A bundle that contains project-level metadata files. This bundle type does not contain data files. | computational biologists; biologists; | 1, 2, 3, 4 |
-| Resource/Reference bundle* | A bundle that contains reference data files used by the Data Processing Pipelines(?) and all related metadata files. This bundle type does not contain data files. | computational biologists; Data Processing Pipelines; | 4 |
+| Resource/Reference bundle* | A bundle that contains reference data files used by the Data Processing Pipelines(?) and all related metadata files. This bundle type does not contain data files. | computational biologists; Data Processing Pipelines; | 2, 3, 4, 5 |
 
 > Asterisk (*) indicates bundles types that do not currently exist in the DCP but have been discussed as potential future bundle types to support data consumers.
 
