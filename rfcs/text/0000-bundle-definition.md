@@ -8,9 +8,9 @@
 
 ## Summary
 
-There are currently no documented definitions for what a "bundle" is in the HCA DCP, including no definitions of what they are, what they contain, or who they support. Lack of clarity causes confusion for data consumers about how the data and metadata in the DCP are structured and organized. Here we propose to formalize bundle types, definitions, target users and consumers, and specific use cases in order to support the needs of data consumers.
+There are currently no documented definitions for what a "bundle" is in the HCA DCP, including no definitions of what they are, what they contain, or who they support. Lack of clarity causes confusion for data consumers about how the data and metadata in the DCP are structured and organized. Here we propose to formalize a bundle definition, bundle type definitions, target users and consumers, and specific use cases in order to support the needs of data consumers.
 
-Specifically, the following charters will be supported:
+Specifically, the following charters will be supported by this RFC:
 - the Data Store (DSS) [charter](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/DataStore/charter.md#core-capabilities) ("The Data Store owns the bundle use cases and bundle type definitions, while the precise specifications will be negotiated between the Metadata and other teams.");
 - the Ingestion Service [charter](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/IngestionService/charter.md#dependencies) ("The Ingestion Service has a dependency on the Data Store team to provide new bundle requirements, and the Metadata Schema team to provide the definition of bundle specifications, in order to support the generation of bundles from submitted data and metadata."); and
 - the Metadata Schema [charter](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/MetadataSchema/charter.md#objectives) ("Working with the Data Store to receive new bundle structure requirements and defining a new specification to be implemented by the Ingestion Service team."). 
@@ -28,7 +28,7 @@ Specifically, the following charters will be supported:
  
  `[Andrey Kislyuk](mailto:akislyuk@chanzuckerberg.com)`
  
- `[Query service person](mailto:)`
+ `[Query service team member](mailto:)`
 
 ## Shepherd
 ***Leave this blank.** This role is assigned by DCP PM to guide the **Author(s)** through the RFC process.*
@@ -41,7 +41,7 @@ Specifically, the following charters will be supported:
 
 *Describe the user or technical need in detail [with alignment to the DCP roadmap priorities where possible]. Link prior community discussions to demonstrate support for this RFC.*
 
-There are currently no documented definitions for what a "bundle" is in the HCA DCP, including no definitions of what they are, what they contain, or who they support. Lack of clarity causes confusion for DCP developers and data consumers about how the data and metadata in the DCP are structured and organized. At the June 2019 DCP F2F meeting in Cambridge, a breakout session was held to discuss "What is a bundle?", and a lot of useful discussion occurred. **MORE**
+There are currently no documented definitions for what a "bundle" is in the HCA DCP, including no definitions of what they are, what they contain, or who they support. Lack of clarity causes confusion for data consumers (and DCP developers) about how the data and metadata in the DCP are structured and organized. At the June 2019 DCP F2F meeting in Cambridge, a breakout session was held to discuss "What is a bundle?", and a lot of useful discussion occurred. This *informational RFC* is an attempt to have formal documentation that clarifies what a bundle is, anchoring the definition on how bundles support HCA DCP data consumers.
 
 ### User Stories
 
