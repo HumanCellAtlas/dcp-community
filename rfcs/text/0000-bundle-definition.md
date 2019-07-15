@@ -77,7 +77,7 @@ Bundle types, definitions, consumers, and specifications are outlined below. Use
 - **Definition**: What is and is not in this bundle type
 - **Target consumer**: Who will be consuming this bundle type
 - **Use cases**: Which Users Stories are supported by this bundle type
-- **Specification**: Technical details about the bundle type
+- **Specification**: Technical details about the bundle type (**MAY BE OUT OF SCOPE FOR THIS RFC**)
 
 | Type | Definition | Target consumer | Use cases | Specification |
 |:-|:-|:-|:-|:-|
