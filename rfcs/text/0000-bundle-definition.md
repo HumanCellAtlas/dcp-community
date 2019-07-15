@@ -84,9 +84,11 @@ Bundle types, definitions, consumers, and specifications are outlined below. Use
 |:-|:-|:-|:-|
 | Primary bundle | A bundle that contains primary (raw) data files and all related metadata files. | computational biologists; Data Processing Pipelines; Data Browser; Query Service | 1 |
 | Secondary bundle | A bundle that contains secondary (alignment, expression) data files produced by the Data Processing Pipelines, input primary data files, and all related metadata files. | computational biologists; Data Browser; Query Service; Matrix Service | 2, 3 |
-| Tertiary bundle | A bundle that contains tertiary (expression) data files produced by the Matrix Service, input primary and secondary data files, and all related metadata files. | computational biologists; biologists; Data Browser; Query Service | 2, 3 |
-| Project bundle | A bundle that contains project-level metadata files. This bundle does not contain data files. | computational biologists; biologists; | 1, 2, 3, 4 |
-| Resource/Reference bundle | A bundle that contains reference data files used by the Data Processing Pipelines(?) and all related metadata files. | computational biologists; Data Processing Pipelines; | 4 |
+| Tertiary bundle* | A bundle that contains tertiary (expression) data files produced by the Matrix Service, input primary and secondary data files, and all related metadata files. | computational biologists; biologists; Data Browser; Query Service | 2, 3 |
+| Project bundle* | A bundle that contains project-level metadata files. This bundle type does not contain data files. | computational biologists; biologists; | 1, 2, 3, 4 |
+| Resource/Reference bundle* | A bundle that contains reference data files used by the Data Processing Pipelines(?) and all related metadata files. This bundle type does not contain data files. | computational biologists; Data Processing Pipelines; | 4 |
+
+> Asterisk (*) indicates bundles types that do not currently exist in the DCP, but have been discussed as being future bundle types for supporting data consumers.
 
 The only bundle types that currently exist in the DSS are Primary and Secondary bundles. The remaining bundle types are proposed based on user needs and are described in more detail below.
 
