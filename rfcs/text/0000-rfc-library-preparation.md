@@ -163,7 +163,7 @@ For cellular resolution experiments, the library preparation entity will have a 
 ---
 
 Figure 5 below shows the current metadata model representing a plate-based experiment sequencing three single cell suspensions to produce three sets of two files (Fig. 5A). From this experimental design, it is clear that each set of files represents one logical unit (red, blue, and magenta outlines). The experimental design and logical units are equally as clear under the new proposed metadata model (Fig. 5B). For plate-based sequencing, each cell goes through a library construction protocol to produce a library preparation. These library preparations are then pooled, sequenced, and demultiplexed such that per-cell suspension sequence files are provided.<br/>
-.
+
 
 ---
 
@@ -280,7 +280,7 @@ Data contributors will supply a project-wide unique ID for each library preparat
  
 | FILE NAME (Required) | *INPUT* CELL SUSPENSION ID (*Required*) | INPUT LIBRARY PREPARATION ID (Required) | *NCBI TAXON ID (Required)* |
 |:-|:-|:-|:-|
-| `sequence_file.file_core. file_name` | `cell_suspension.biomaterial_core. biomaterial_id` | *`library_preparation.biomaterial_core. biomaterial_id`* | *`library_preparation.biomaterial_core. ncbi_taxon_id`* |
+| `sequence_file.file_core. file_name` | `cell_suspension.biomaterial_ core.biomaterial_id` | *`library_preparation.biomaterial_ core.biomaterial_id`* | *`library_preparation.biomaterial_ core.ncbi_taxon_id`* |
 | SRR7159837_1.fastq.gz | cell_suspension_1 | library_preparation_1 | *9606* |
 | SRR7159837_2.fastq.gz | cell_suspension_1 | library_preparation_1 | *9606* |
 | SRR7159838_1.fastq.gz | cell_suspension_1 | library_preparation_2 | *9606* |
