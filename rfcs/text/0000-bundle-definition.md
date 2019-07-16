@@ -27,8 +27,8 @@ Specifically, the following charters will be supported by this RFC:
  `[Hannes Schmidt](mailto:hannes@ucsc.edu)`
  
  `[Andrey Kislyuk](mailto:akislyuk@chanzuckerberg.com)`
- 
- `[Query service team member](mailto:)`
+
+> Replace Mallory with Zina P and Chris V.
 
 ## Shepherd
 ***Leave this blank.** This role is assigned by DCP PM to guide the **Author(s)** through the RFC process.*
@@ -41,7 +41,7 @@ Specifically, the following charters will be supported by this RFC:
 
 *Describe the user or technical need in detail [with alignment to the DCP roadmap priorities where possible]. Link prior community discussions to demonstrate support for this RFC.*
 
-There are currently no documented definitions for what a "bundle" is in the HCA DCP, including no definitions of what they are, what they contain, or who they support. Lack of clarity causes confusion for data consumers (and DCP developers) about how the data and metadata in the DCP are structured and organized. At the June 2019 DCP F2F meeting in Cambridge, a breakout session was held to discuss "What is a bundle?", and a lot of useful discussion occurred. This *informational RFC* is an attempt to have formal documentation that clarifies what a bundle is, anchoring the definition on how bundles support HCA DCP data consumers.
+There are currently no documented definitions for what a "bundle" is in the HCA DCP, including no definitions of what they are, what they contain, or who they support. Lack of clarity causes confusion for data consumers (and DCP developers) about how the data and metadata in the DCP are structured and organized. At the June 2019 DCP F2F meeting in Cambridge, a breakout session was held to discuss "What is a bundle?", and a lot of useful discussion occurred. This RFC will formally document what a bundle is, anchoring the definition on how bundles support HCA DCP data consumers. This RFC will also describe new bundles types that could be supported by the HCA DCP.
 
 ### User Stories
 
@@ -100,13 +100,23 @@ The only bundle types that currently exist in the DSS are Primary and Secondary 
 
 Describe here...
 
+- Produced by Matrix Service. *Will anyone else be producing expression data files using the output of Data Processing Pipelines as input?*
+- In the first instance will contain expression data files representing one project. In the future, will contain expression data files representing partials projects or multiple projects.
+- 
+
 #### New Project bundle
 
 Describe here...
 
+- Will contain project-level metadata only. 
+- Unclear how this bundle will be used by data consumers.
+
 #### New Resource/Reference bundle
 
-Should we call it "Resource" or "Reference"? Describe here...
+Describe here...
+
+- Should we call it "Resource" or "Reference" bundle?
+- Who will generate/maintain these? Data Processing Pipelines?
 
 ### Acceptance Criteria [optional]
 
