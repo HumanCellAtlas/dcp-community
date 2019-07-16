@@ -276,9 +276,9 @@ Adding a new first-class biomaterial entity has the potential to add a lot of co
 
 Data contributors will supply a project-wide unique ID for each library preparation in the Sequence file tab using the `library_preparation.biomaterial_core.biomaterial_id` field in place of the current `sequence_file.library_prep_id` field. When the spreadsheet is imported, the Ingestion Service will generate a globally unique UUID for each library preparation entity. Unlike other biomaterials, there would not be a separate spreadsheet tab for library preparation entities for two reasons. 1. Adding a spreadsheet tab adds considerable complexity for data contributors. 2. There are only two fields that need to be supplied by the data contributor for which generating a whole new tab creates high overhead, especially considering one of the fields replaces a field already in the Sequence file tab. Without the ability to automatically infer `library_preparation.biomaterial_core.ncbi_taxon_id`, this field would need to be added to the Sequence file tab and would need to be filled in by contributors. For example:
  
-| FILE NAME (Required) | *INPUT* CELL SUSPENSION ID (*Required*) | INPUT LIBRARY PREPARATION ID (Required) | *NCBI TAXON ID (Required)* |
+| FILE NAME (Required) | INPUT CELL SUSPENSION ID (*Required*) | *INPUT* LIBRARY PREPARATION ID (Required) | *NCBI TAXON ID (Required)* |
 |:-|:-|:-|:-|
-| `sequence_file.file_core. file_name` | `cell_suspension.biomaterial_ core.biomaterial_id` | *`library_preparation.biomaterial_ core.biomaterial_id`* | *`library_preparation.biomaterial_ core.ncbi_taxon_id`* |
+| `sequence_file.file_ core.file_name` | `cell_suspension.biomaterial_ core.biomaterial_id` | *`library_preparation.bio material_core.biomaterial_id`* | *`library_preparation.bio material_core.ncbi_taxon_id`* |
 | SRR7159837_1.fastq.gz | cell_suspension_1 | library_preparation_1 | *9606* |
 | SRR7159837_2.fastq.gz | cell_suspension_1 | library_preparation_1 | *9606* |
 | SRR7159838_1.fastq.gz | cell_suspension_1 | library_preparation_2 | *9606* |
