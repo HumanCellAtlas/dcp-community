@@ -53,7 +53,7 @@ From a cell suspension, one (Fig. 1A) or more (Fig. 1B) libraries can be prepare
 
 ---
 
-[Slides](https://drive.google.com/open?id=1vyw6N7qn24qBFAMoKL3nXLHcqpqYFq3Y) prepared by Nick Barkus (particularly slides 13-15) from the June 2019 DCP F2F describe why all sequence data files derived from one library preparation must be processed together. Briefly, a library preparation starts with a set of UMI barcodes attached to transcripts (1 barcode per transcript) and then everything gets amplified (potentially unevenly) and sequenced (Fig. 2A). Sequenced reads are potentially split between different sets of files if the library preparation is sequenced more than once. During processing, unique UMI barcodes are collapsed - meaning identical copies are only counted once - to reflect the original count (Fig. 2B). If files from the same library preparation are processed separately, a collapsed UMI barcode might appear in each set of files, thus inflating the count and leading to the wrong original count (Fig. 2C). 
+[Slides](https://drive.google.com/open?id=1vyw6N7qn24qBFAMoKL3nXLHcqpqYFq3Y) prepared by Nick Barkus (particularly slides 13-15) from the June 2019 DCP F2F describe why all sequence data files derived from one library preparation must be processed together. Briefly, a library preparation starts with a set of UMI barcodes attached to transcripts (1 barcode per transcript) and then everything gets amplified (potentially unevenly) and sequenced (Fig. 2A). Reads are potentially split between different sets of files if the library preparation is sequenced more than once. During processing, unique UMI barcodes are collapsed - identical copies are only counted once - to calculate the original count (Fig. 2B). If files from the same library preparation are processed separately, a collapsed UMI barcode might appear in each set of files, thus inflating the count and leading to the wrong original count (Fig. 2C). 
 
 ---
 
@@ -71,11 +71,9 @@ The current HCA metadata standard does not represent a library preparation as an
 
 When data contributors supply metadata for their sequence files, they can enter a value for the `sequence_file.library_prep_id` field to indicate which sequence files were generated from the same library preparation. This value must be unique within the spreadsheet (and therefore project since 1 spreadsheet = 1 project), but it does not need to be globally unique (unique within the entire HCA DCP). 
  
----
-
 | FILE NAME (Required) | INPUT CELL SUSPENSION ID (Required) | LIBRARY PREPARATION ID (Optional) |
 |:-|:-|:-|
-| `sequence_file.file_core.file_name` | `cell_suspension.biomaterial_core.biomaterial_id` | `sequence_file.library_prep_id` |
+| `sequence_file.file_core. file_name` | `cell_suspension.biomaterial_core. biomaterial_id` | `sequence_file.library_prep_id` |
 | SRR7159837_1.fastq.gz | cell_suspension_1 | library_preparation_1 |
 | SRR7159837_2.fastq.gz | cell_suspension_1 | library_preparation_1 |
 | SRR7159838_1.fastq.gz | cell_suspension_1 | library_preparation_1 |
@@ -274,12 +272,10 @@ The required fields for the library preparation entity will be:
 Adding a new first-class biomaterial entity has the potential to add a lot of complexity to the metadata model. One area we want to avoid adding complexity is in the metadata spreadsheet, which is already quite complex for data contributors to fill out. Given that there are only two required (user-supplied) metadata fields proposed for library preparation entities, it is possible to keep the metadata spreadsheet relatively unchanged. 
 
 Data contributors will supply a project-wide unique ID for each library preparation in the Sequence file tab using the `library_preparation.biomaterial_core.biomaterial_id` field in place of the current `sequence_file.library_prep_id` field. When the spreadsheet is imported, the Ingestion Service will generate a globally unique UUID for each library preparation entity. Unlike other biomaterials, there would not be a separate spreadsheet tab for library preparation entities for two reasons. 1. Adding a spreadsheet tab adds considerable complexity for data contributors. 2. There are only two fields that need to be supplied by the data contributor for which generating a whole new tab creates high overhead, especially considering one of the fields replaces a field already in the Sequence file tab. Without the ability to automatically infer `library_preparation.biomaterial_core.ncbi_taxon_id`, this field would need to be added to the Sequence file tab and would need to be filled in by contributors. For example:
-
----
  
 | FILE NAME (Required) | INPUT CELL SUSPENSION ID (Required) | INPUT LIBRARY PREPARATION ID (Required) | NCBI TAXON ID (Required) |
 |:-|:-|:-|:-|
-| `sequence_file.file_core.file_name` | `cell_suspension.biomaterial_core.biomaterial_id` | `library_preparation.biomaterial_core.biomaterial_id` | `library_preparation.biomaterial_core.ncbi_taxon_id` |
+| `sequence_file.file_core. file_name` | `cell_suspension.biomaterial_core. biomaterial_id` | `library_preparation.biomaterial_core. biomaterial_id` | `library_preparation.biomaterial_core. ncbi_taxon_id` |
 | SRR7159837_1.fastq.gz | cell_suspension_1 | library_preparation_1 | 9606 |
 | SRR7159837_2.fastq.gz | cell_suspension_1 | library_preparation_1 | 9606 |
 | SRR7159838_1.fastq.gz | cell_suspension_1 | library_preparation_2 | 9606 |
@@ -322,11 +318,9 @@ Data consumers will benefit from the metadata model now aligning with INSDC “e
 - Library preparation is equivalent to an INSDC experiment
 - Single set of files from a library preparation is equivalent to an INSDC run
 
----
-
 | FILE NAME | INPUT LIBRARY PREPARATION ID | INSDC EXPERIMENT ACCESSION | INSDC RUN ACCESSIONS |
 |:-|:-|:-|:-|
-| `sequence_file.file_core.file_name` | `library_preparation.biomaterial_core.biomaterial_id` | `process.insdc_experiment.insdc_experiment_accession` | `sequence_file.insdc_run_accessions` |
+| `sequence_file.file_core. file_name` | `library_preparation.biomaterial_core. biomaterial_id` | `process.insdc_experiment. insdc_experiment_accession` | `sequence_file. insdc_run_accessions` |
 | SRR7159837_1.fastq.gz | library_preparation_1 | SRX3364233 | SRR7159837 |
 | SRR7159837_2.fastq.gz | library_preparation_1 | SRX3364233 | SRR7159837 |
 | SRR7159838_1.fastq.gz | library_preparation_1 | SRX3364233 | SRR7159838 |
