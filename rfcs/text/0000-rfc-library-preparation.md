@@ -45,14 +45,17 @@ The current HCA DCP metadata standard explicitly represents cell suspensions: si
 
 From a cell suspension, one (Fig. 1A) or more (Fig. 1B) libraries can be prepared and sequenced. Each library preparation contains cDNA molecules representing a distinct and non-overlapping set of cells. The same library preparation can be sequenced more than once (Fig. 1C), each time producing a unique set of data files. For example, a library preparation can be sequenced on multiple flowcell lanes or a library preparation can be re-sequenced at a later time to generate more data. Regardless of how many times a library preparation was sequenced, **all of the sequence data files derived from one library preparation represent the same set of cells and therefore must be processed together**. Stated another way, **the logical unit of data should be based on a library preparation, all of the sequence files that come from it, and all of the biomaterials, protocols, and processes that generated it**.
 
+---
 
-![Figure 1](../images/0000-lib_prep_rfc_fig1.png)
+![Figure 1](/rfcs/images/0000-lib_prep_rfc_fig1.png)
 
 **Figure 1**: Possible droplet-based sequencing experimental designs. A) An experiment where one library preparation was made from a cell suspension and then sequenced once. B) An experiment where two library preparations were made from the same cell suspension and then each library preparation was sequenced once. C) An experiment where two library preparations were made from the same cell suspension and then each library preparation was sequenced twice. Red boxes indicate the set of data files that need to be processed together.
 
 ---
 
 [Slides](https://drive.google.com/open?id=1vyw6N7qn24qBFAMoKL3nXLHcqpqYFq3Y) prepared by Nick Barkus (particularly slides 13-15) from the June 2019 DCP F2F describe why all sequence data files derived from one library preparation must be processed together. Briefly, a library preparation starts with a set of UMI barcodes attached to transcripts (1 barcode per transcript) and then everything gets amplified (potentially unevenly) and sequenced (Fig. 2A). Sequenced reads are potentially split between different sets of files if the library preparation is sequenced more than once. During processing, unique UMI barcodes are collapsed - meaning identical copies are only counted once - to reflect the original count (Fig. 2B). If files from the same library preparation are processed separately, a collapsed UMI barcode might appear in each set of files, thus inflating the count and leading to the wrong original count (Fig. 2C). 
+
+---
 
 ![Figure 2](/rfcs/images/0000-lib_prep_rfc_fig2.png)
 
@@ -68,10 +71,11 @@ The current HCA metadata standard does not represent a library preparation as an
 
 When data contributors supply metadata for their sequence files, they can enter a value for the `sequence_file.library_prep_id` field to indicate which sequence files were generated from the same library preparation. This value must be unique within the spreadsheet (and therefore project since 1 spreadsheet = 1 project), but it does not need to be globally unique (unique within the entire HCA DCP). 
  
-| FILE NAME
-(Required) | INPUT CELL SUSPENSION ID (Required) | LIBRARY PREPARATION ID (Optional) |
+---
+
+| FILE NAME (Required) | INPUT CELL SUSPENSION ID (Required) | LIBRARY PREPARATION ID (Optional) |
 |:-|:-|:-|
-| sequence_file.file_core.file_name | cell_suspension.biomaterial_core.biomaterial_id | sequence_file.library_prep_id|
+| `sequence_file.file_core.file_name` | `cell_suspension.biomaterial_core.biomaterial_id` | `sequence_file.library_prep_id` |
 | SRR7159837_1.fastq.gz | cell_suspension_1 | library_preparation_1 |
 | SRR7159837_2.fastq.gz | cell_suspension_1 | library_preparation_1 |
 | SRR7159838_1.fastq.gz | cell_suspension_1 | library_preparation_1 |
@@ -89,9 +93,13 @@ It is important to consider that, currently, if a valid spreadsheet with the met
 
 Assuming a data wrangler or data contributor has filled in the `process_id` field such that each process is assigned a unique identifier, anchoring a logical unit (bundle) on the ultimate process in the graph results in two bundles (Fig. 3A) which means that each bundle does not contain all the data files from the same library preparation. Ideally, logical units are anchored on the library preparation (Fig. 3B) such that all data files from the same library preparation are logically grouped together.
 
-![Figure 3](images/0000-lib_prep_rfc_fig3.png)
+---
+
+![Figure 3](/rfcs/images/0000-lib_prep_rfc_fig3.png)
 
 **Figure 3**: Current and ideal grouping of logical units. A) Logical unit is anchored on ultimate process in the experimental graph, resulting in two bundles which each contain a subset of the data files produced from the same library preparation (not ideal). B) Logical unit is anchored on the library preparation entity, resulting in one logical unit that contains all the data files produced from the same library preparation (ideal).
+
+---
 
 #### Data consumer perspective
 
@@ -144,17 +152,19 @@ We will resolve the challenges described above by **creating a first-class libra
 
 For cellular resolution experiments, the library preparation entity will have a cell suspension entity as input and sequence file entities as outputs. For bulk cell experiments, the library preparation entity will have a specimen (or organoid or cell line) entity as input and sequence file entities as outputs. Figure 3 below shows the current metadata model representing a droplet-based experiment sequencing a single cell suspension to produce two sets of two files (Fig. 4A). From this experimental design, it is not known whether the two sets of files represent one logical unit or two logical units. If the sequence files were produced from the same library preparation (Fig. 4B), then they represent one logical unit and must be processed together. If the sequence files were produced from different library preparation (Fig. 4C), then they represent two logical units and must be processed separately.
 
-![Figure 4](images/0000-lib_prep_rfc_fig4.png)
+---
 
-**Figure 4**: Determining logical units from droplet-based experimental designs. A) An experiment modeled using the current metadata model which depicts four sequence files derived from one cell suspension. It is unclear what the logical units are. B) An experiment modeled using the proposed metadata model which depicts four sequence files derived from one library preparation. It is clear that these four files represent one logical unit (red outline). C) An experiment modeled using the proposed metadata model which depicts four sequence files derived from two library preparation. It is clear that these four files represent two logical units (one red outline, one blue outline).
+![Figure 4](/rfcs/images/0000-lib_prep_rfc_fig4.png)
 
-Arrows in graphs represent processes. Note that in B), two processes were used to derive the two sets of files. Both processes belong to this one logical unit.
+**Figure 4**: Determining logical units from droplet-based experimental designs. A) An experiment modeled using the current metadata model which depicts four sequence files derived from one cell suspension. It is unclear what the logical units are. B) An experiment modeled using the proposed metadata model which depicts four sequence files derived from one library preparation. It is clear that these four files represent one logical unit (red outline). C) An experiment modeled using the proposed metadata model which depicts four sequence files derived from two library preparation. It is clear that these four files represent two logical units (one red outline, one blue outline). Arrows in graphs represent processes. Note that in B), two processes were used to derive the two sets of files. Both processes belong to this one logical unit.
 
 ---
 
 Figure 5 below shows the current metadata model representing a plate-based experiment sequencing three single cell suspensions to produce three sets of two files (Fig. 5A). From this experimental design, it is clear that each set of files represents one logical unit (red, blue, and magenta outlines). The experimental design and logical units are equally as clear under the new proposed metadata model (Fig. 5B). For plate-based sequencing, each cell goes through a library construction protocol to produce a library preparation. These library preparations are then pooled, sequenced, and demultiplexed such that per-cell suspension sequence files are provided.
 
-![Figure 5](images/0000-lib_prep_rfc_fig5.png)
+---
+
+![Figure 5](/rfcs/images/0000-lib_prep_rfc_fig5.png)
 
 **Figure 5**: Determining logical units from plate-based experimental designs. A) An experiment modeled using the current metadata model which depicts six sequence files derived from three single cell suspension. Logical units are indicated (red, blue, and magenta outlines). B) An experiment modeled using the proposed metadata model which depicts six sequence files derived from three single cell library preparations. Logical units are indicated (red, blue, and magenta outlines). Arrows in graphs represent processes. 
  
@@ -213,13 +223,14 @@ Where the `biomaterial_core.json` schema contains the following properties:
 "supplementary_files": {
     "description": "A list of filenames of biomaterial-level supplementary files.",
 },
-"genotype": {
+"genotype*": {
     "description": "Genotype of the biomaterial.",
 },
-"HDBR_accession": {
+"HDBR_accession*": {
     "description": "A Human Developmental Biology Resource (HDBR) sample accession.",
 }
 ```
+> *Consider removing `genotype` and `HDBR_accession` from core as they don't make sense here and in other biomaterials.
 
 And the `provenance.json` schema contains the following properties (all supplied by Ingestion Service):
 
@@ -264,10 +275,11 @@ Adding a new first-class biomaterial entity has the potential to add a lot of co
 
 Data contributors will supply a project-wide unique ID for each library preparation in the Sequence file tab using the `library_preparation.biomaterial_core.biomaterial_id` field in place of the current `sequence_file.library_prep_id` field. When the spreadsheet is imported, the Ingestion Service will generate a globally unique UUID for each library preparation entity. Unlike other biomaterials, there would not be a separate spreadsheet tab for library preparation entities for two reasons. 1. Adding a spreadsheet tab adds considerable complexity for data contributors. 2. There are only two fields that need to be supplied by the data contributor for which generating a whole new tab creates high overhead, especially considering one of the fields replaces a field already in the Sequence file tab. Without the ability to automatically infer `library_preparation.biomaterial_core.ncbi_taxon_id`, this field would need to be added to the Sequence file tab and would need to be filled in by contributors. For example:
 
+---
  
 | FILE NAME (Required) | INPUT CELL SUSPENSION ID (Required) | INPUT LIBRARY PREPARATION ID (Required) | NCBI TAXON ID (Required) |
 |:-|:-|:-|:-|
-| sequence_file.file_core.file_name | cell_suspension.biomaterial_core.biomaterial_id | library_preparation.biomaterial_core.biomaterial_id | library_preparation.biomaterial_core.ncbi_taxon_id |
+| `sequence_file.file_core.file_name` | `cell_suspension.biomaterial_core.biomaterial_id` | `library_preparation.biomaterial_core.biomaterial_id` | `library_preparation.biomaterial_core.ncbi_taxon_id` |
 | SRR7159837_1.fastq.gz | cell_suspension_1 | library_preparation_1 | 9606 |
 | SRR7159837_2.fastq.gz | cell_suspension_1 | library_preparation_1 | 9606 |
 | SRR7159838_1.fastq.gz | cell_suspension_1 | library_preparation_2 | 9606 |
@@ -310,10 +322,11 @@ Data consumers will benefit from the metadata model now aligning with INSDC “e
 - Library preparation is equivalent to an INSDC experiment
 - Single set of files from a library preparation is equivalent to an INSDC run
 
+---
 
 | FILE NAME | INPUT LIBRARY PREPARATION ID | INSDC EXPERIMENT ACCESSION | INSDC RUN ACCESSIONS |
 |:-|:-|:-|:-|
-| sequence_file.file_core.file_name | library_preparation.biomaterial_core.biomaterial_id | process.insdc_experiment.insdc_experiment_accession | sequence_file.insdc_run_accessions |
+| `sequence_file.file_core.file_name` | `library_preparation.biomaterial_core.biomaterial_id` | `process.insdc_experiment.insdc_experiment_accession` | `sequence_file.insdc_run_accessions` |
 | SRR7159837_1.fastq.gz | library_preparation_1 | SRX3364233 | SRR7159837 |
 | SRR7159837_2.fastq.gz | library_preparation_1 | SRX3364233 | SRR7159837 |
 | SRR7159838_1.fastq.gz | library_preparation_1 | SRX3364233 | SRR7159838 |
@@ -335,9 +348,13 @@ Data consumers will benefit from the metadata model now aligning with INSDC “e
     - Process_0 <-> Sequencing protocol
     - Declare rules about linking
     
-![Figure 6](images/0000-lib_prep_rfc_fig6.png)
+---
+    
+![Figure 6](/rfcs/images/0000-lib_prep_rfc_fig6.png)
 
-Figure 5: Diagram of how protocol linking will change with new library preparation entity. A) Current metadata model showing that links to Sequencing protocol and Library preparation protocol entities are generated from the last process (arrow) in the graph. B) New metadata model showing that a link to the Sequencing protocol is generated from the ultimate process (process_0) in the graph, and a link to the Library preparation protocol is generated from the penultimate process (process_1) in the graph.
+Figure 6: Diagram of how protocol linking will change with new library preparation entity. A) Current metadata model showing that links to Sequencing protocol and Library preparation protocol entities are generated from the last process (arrow) in the graph. B) New metadata model showing that a link to the Sequencing protocol is generated from the ultimate process (process_0) in the graph, and a link to the Library preparation protocol is generated from the penultimate process (process_1) in the graph.
+
+---
 
 #### Data Storage Service
 
