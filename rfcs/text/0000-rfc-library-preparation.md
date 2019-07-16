@@ -95,10 +95,11 @@ Assuming a data wrangler or data contributor has filled in the `process_id` fiel
 
 <img src="/rfcs/images/0000-lib_prep_rfc_fig3.png" align="left" height="300" />
 
-**Figure 3**: Current and ideal grouping of logical units. A) Logical unit is anchored on ultimate process in the experimental graph, resulting in two bundles which each contain a subset of the data files produced from the same library preparation (not ideal). B) Logical unit is anchored on the library preparation entity, resulting in one logical unit that contains all the data files produced from the same library preparation (ideal).
-.
-.
-.
+**Figure 3**: Current and ideal grouping of logical units. A) Logical unit is anchored on ultimate process in the experimental graph, resulting in two bundles which each contain a subset of the data files produced from the same library preparation (not ideal). B) Logical unit is anchored on the library preparation entity, resulting in one logical unit that contains all the data files produced from the same library preparation (ideal).\
+<br/>
+<br/>
+<br/>
+<br/>
 
 ---
 
@@ -157,7 +158,7 @@ For cellular resolution experiments, the library preparation entity will have a 
 
 <img src="/rfcs/images/0000-lib_prep_rfc_fig4.png" align="left" height="500" />
 
-**Figure 4**: Determining logical units from droplet-based experimental designs. A) An experiment modeled using the current metadata model which depicts four sequence files derived from one cell suspension. It is unclear what the logical units are. B) An experiment modeled using the proposed metadata model which depicts four sequence files derived from one library preparation. It is clear that these four files represent one logical unit (red outline). C) An experiment modeled using the proposed metadata model which depicts four sequence files derived from two library preparation. It is clear that these four files represent two logical units (one red outline, one blue outline). Arrows in graphs represent processes. Note that in B), two processes were used to derive the two sets of files. Both processes belong to this one logical unit.
+**Figure 4: Determining logical units from droplet-based experimental designs**. A) An experiment modeled using the current metadata model which depicts four sequence files derived from one cell suspension. It is unclear what the logical units are. B) An experiment modeled using the proposed metadata model which depicts four sequence files derived from one library preparation. It is clear that the four files represent one logical unit (red outline). C) An experiment modeled using the proposed metadata model which depicts four sequence files derived from two library preparations. It is clear that the four files represent two logical units. Arrows in graphs represent processes. Note that in B), two processes were used to derive the two sets of files. Both processes belong to this one logical unit.
 
 ---
 
@@ -166,7 +167,7 @@ Figure 5 below shows the current metadata model representing a plate-based exper
 
 ---
 
-<img src="/rfcs/images/0000-lib_prep_rfc_fig5.png" align="left" height="450" />
+<img src="/rfcs/images/0000-lib_prep_rfc_fig5.png" align="left" height="460" />
 
 **Figure 5**: Determining logical units from plate-based experimental designs. A) An experiment modeled using the current metadata model which depicts six sequence files derived from three single cell suspension. Logical units are indicated (red, blue, and magenta outlines). B) An experiment modeled using the proposed metadata model which depicts six sequence files derived from three single cell library preparations. Logical units are indicated (red, blue, and magenta outlines). Arrows in graphs represent processes. 
  
