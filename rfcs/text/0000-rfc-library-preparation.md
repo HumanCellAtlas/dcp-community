@@ -162,7 +162,7 @@ For cellular resolution experiments, the library preparation entity will have a 
 
 ---
 
-Figure 5 below shows the current metadata model representing a plate-based experiment sequencing three single cell suspensions to produce three sets of two files (Fig. 5A). From this experimental design, it is clear that each set of files represents one logical unit (red, blue, and magenta outlines). The experimental design and logical units are equally as clear under the new proposed metadata model (Fig. 5B). For plate-based sequencing, each cell goes through a library construction protocol to produce a library preparation. These library preparations are then pooled, sequenced, and demultiplexed such that per-cell suspension sequence files are provided.\
+Figure 5 below shows the current metadata model representing a plate-based experiment sequencing three single cell suspensions to produce three sets of two files (Fig. 5A). From this experimental design, it is clear that each set of files represents one logical unit (red, blue, and magenta outlines). The experimental design and logical units are equally as clear under the new proposed metadata model (Fig. 5B). For plate-based sequencing, each cell goes through a library construction protocol to produce a library preparation. These library preparations are then pooled, sequenced, and demultiplexed such that per-cell suspension sequence files are provided.<br/>
 
 .
 
