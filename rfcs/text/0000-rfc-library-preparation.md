@@ -14,9 +14,9 @@ The current HCA DCP metadata model explicitly represents cell suspensions (singl
 
 *Recommended format for Authors:*
 
- `[Mallory Freeberg](mailto:mfreeberg@ebi.ac.uk)`
+ [Mallory Freeberg](mailto:mfreeberg@ebi.ac.uk)
 
- `[Laura Clark](mailto:laura@ebi.ac.uk)`
+ [Laura Clark](mailto:laura@ebi.ac.uk)
 
  `[Name](mailto:username@example.com)`
 
