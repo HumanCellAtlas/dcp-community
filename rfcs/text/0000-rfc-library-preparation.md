@@ -46,7 +46,7 @@ The current HCA DCP metadata standard explicitly represents cell suspensions: si
 From a cell suspension, one (Fig. 1A) or more (Fig. 1B) libraries can be prepared and sequenced. Each library preparation contains cDNA molecules representing a distinct and non-overlapping set of cells. The same library preparation can be sequenced more than once (Fig. 1C), each time producing a unique set of data files. For example, a library preparation can be sequenced on multiple flowcell lanes or a library preparation can be re-sequenced at a later time to generate more data. Regardless of how many times a library preparation was sequenced, **all of the sequence data files derived from one library preparation represent the same set of cells and therefore must be processed together**. Stated another way, **the logical unit of data should be based on a library preparation, all of the sequence files that come from it, and all of the biomaterials, protocols, and processes that generated it**.
 
 
-![alt text](images/0000-lib_prep_rfc_fig1.png)
+![Figure 1](../images/0000-lib_prep_rfc_fig1.png)
 
 **Figure 1**: Possible droplet-based sequencing experimental designs. A) An experiment where one library preparation was made from a cell suspension and then sequenced once. B) An experiment where two library preparations were made from the same cell suspension and then each library preparation was sequenced once. C) An experiment where two library preparations were made from the same cell suspension and then each library preparation was sequenced twice. Red boxes indicate the set of data files that need to be processed together.
 
@@ -54,7 +54,7 @@ From a cell suspension, one (Fig. 1A) or more (Fig. 1B) libraries can be prepare
 
 [Slides](https://drive.google.com/open?id=1vyw6N7qn24qBFAMoKL3nXLHcqpqYFq3Y) prepared by Nick Barkus (particularly slides 13-15) from the June 2019 DCP F2F describe why all sequence data files derived from one library preparation must be processed together. Briefly, a library preparation starts with a set of UMI barcodes attached to transcripts (1 barcode per transcript) and then everything gets amplified (potentially unevenly) and sequenced (Fig. 2A). Sequenced reads are potentially split between different sets of files if the library preparation is sequenced more than once. During processing, unique UMI barcodes are collapsed - meaning identical copies are only counted once - to reflect the original count (Fig. 2B). If files from the same library preparation are processed separately, a collapsed UMI barcode might appear in each set of files, thus inflating the count and leading to the wrong original count (Fig. 2C). 
 
-![alt text](images/0000-lib_prep_rfc_fig2.png)
+![Figure 2](/rfcs/images/0000-lib_prep_rfc_fig2.png)
 
 **Figure 2**: Processing data files separately inflates UMI counts. A) Two transcripts - each with a unique UMI barcode - for gene A are amplified during library preparation, and the library preparation is sequenced twice to produce two sets of files. B) Files are processed together, and UMI barcodes are collapsed to produce a count of 2 for gene A. C) Files are processed separately, and UMI barcodes are collapsed separately to produce a count of 1 for gene A in the first set of files and 2 for gene A in the second set of files, resulting in an overall count of 3 for gene A (overestimation).
 
@@ -89,7 +89,7 @@ It is important to consider that, currently, if a valid spreadsheet with the met
 
 Assuming a data wrangler or data contributor has filled in the `process_id` field such that each process is assigned a unique identifier, anchoring a logical unit (bundle) on the ultimate process in the graph results in two bundles (Fig. 3A) which means that each bundle does not contain all the data files from the same library preparation. Ideally, logical units are anchored on the library preparation (Fig. 3B) such that all data files from the same library preparation are logically grouped together.
 
-![alt text](images/0000-lib_prep_rfc_fig3.png)
+![Figure 3](images/0000-lib_prep_rfc_fig3.png)
 
 **Figure 3**: Current and ideal grouping of logical units. A) Logical unit is anchored on ultimate process in the experimental graph, resulting in two bundles which each contain a subset of the data files produced from the same library preparation (not ideal). B) Logical unit is anchored on the library preparation entity, resulting in one logical unit that contains all the data files produced from the same library preparation (ideal).
 
@@ -144,7 +144,7 @@ We will resolve the challenges described above by **creating a first-class libra
 
 For cellular resolution experiments, the library preparation entity will have a cell suspension entity as input and sequence file entities as outputs. For bulk cell experiments, the library preparation entity will have a specimen (or organoid or cell line) entity as input and sequence file entities as outputs. Figure 3 below shows the current metadata model representing a droplet-based experiment sequencing a single cell suspension to produce two sets of two files (Fig. 4A). From this experimental design, it is not known whether the two sets of files represent one logical unit or two logical units. If the sequence files were produced from the same library preparation (Fig. 4B), then they represent one logical unit and must be processed together. If the sequence files were produced from different library preparation (Fig. 4C), then they represent two logical units and must be processed separately.
 
-![alt text](images/0000-lib_prep_rfc_fig4.png)
+![Figure 4](images/0000-lib_prep_rfc_fig4.png)
 
 **Figure 4**: Determining logical units from droplet-based experimental designs. A) An experiment modeled using the current metadata model which depicts four sequence files derived from one cell suspension. It is unclear what the logical units are. B) An experiment modeled using the proposed metadata model which depicts four sequence files derived from one library preparation. It is clear that these four files represent one logical unit (red outline). C) An experiment modeled using the proposed metadata model which depicts four sequence files derived from two library preparation. It is clear that these four files represent two logical units (one red outline, one blue outline).
 
@@ -154,7 +154,7 @@ Arrows in graphs represent processes. Note that in B), two processes were used t
 
 Figure 5 below shows the current metadata model representing a plate-based experiment sequencing three single cell suspensions to produce three sets of two files (Fig. 5A). From this experimental design, it is clear that each set of files represents one logical unit (red, blue, and magenta outlines). The experimental design and logical units are equally as clear under the new proposed metadata model (Fig. 5B). For plate-based sequencing, each cell goes through a library construction protocol to produce a library preparation. These library preparations are then pooled, sequenced, and demultiplexed such that per-cell suspension sequence files are provided.
 
-![alt text](images/0000-lib_prep_rfc_fig5.png)
+![Figure 5](images/0000-lib_prep_rfc_fig5.png)
 
 **Figure 5**: Determining logical units from plate-based experimental designs. A) An experiment modeled using the current metadata model which depicts six sequence files derived from three single cell suspension. Logical units are indicated (red, blue, and magenta outlines). B) An experiment modeled using the proposed metadata model which depicts six sequence files derived from three single cell library preparations. Logical units are indicated (red, blue, and magenta outlines). Arrows in graphs represent processes. 
  
@@ -335,7 +335,7 @@ Data consumers will benefit from the metadata model now aligning with INSDC “e
     - Process_0 <-> Sequencing protocol
     - Declare rules about linking
     
-![alt text](images/0000-lib_prep_rfc_fig6.png)
+![Figure 6](images/0000-lib_prep_rfc_fig6.png)
 
 Figure 5: Diagram of how protocol linking will change with new library preparation entity. A) Current metadata model showing that links to Sequencing protocol and Library preparation protocol entities are generated from the last process (arrow) in the graph. B) New metadata model showing that a link to the Sequencing protocol is generated from the ultimate process (process_0) in the graph, and a link to the Library preparation protocol is generated from the penultimate process (process_1) in the graph.
 
