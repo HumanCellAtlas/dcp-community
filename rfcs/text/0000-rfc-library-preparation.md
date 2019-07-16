@@ -8,9 +8,7 @@
 
 ## Summary
 
-The current HCA DCP metadata model explicitly represents cell suspensions (single cells or multiple cells suspended in some media) but not the sequencing library preparations derived from them. This is creating challenges for contributors, consumers, and DCP implementation teams when submitting, processing, and interpreting sequencing data. 
-
-Here we propose a solution for explicitly identifying library preparation biomaterials in a sequencing experiment by making them a first-class biomaterial type entity in the metadata schema alongside donor, cell suspension, imaged specimen, etc.
+The current HCA DCP metadata model explicitly represents cell suspensions (single cells or multiple cells suspended in some media) but not the sequencing library preparations derived from them. This is creating challenges for contributors, consumers, and DCP implementation teams when submitting, processing, and interpreting sequencing data. Here we propose a solution for explicitly identifying library preparation biomaterials in a sequencing experiment by making them a first-class biomaterial type entity in the metadata standard.
 
 ## Author(s)
 
@@ -53,7 +51,7 @@ From a cell suspension, one (Fig. 1A) or more (Fig. 1B) libraries can be prepare
 
 ---
 
-[Slides](https://drive.google.com/open?id=1vyw6N7qn24qBFAMoKL3nXLHcqpqYFq3Y) prepared by Nick Barkus (particularly slides 13-15) from the June 2019 DCP F2F describe why all sequence data files derived from one library preparation must be processed together. Briefly, a library preparation starts with a set of UMI barcodes attached to transcripts (1 barcode per transcript) and then everything gets amplified (potentially unevenly) and sequenced (Fig. 2A). Reads are potentially split between different sets of files if the library preparation is sequenced more than once. During processing, unique UMI barcodes are collapsed - identical copies are only counted once - to calculate the original count (Fig. 2B). If files from the same library preparation are processed separately, a collapsed UMI barcode might appear in each set of files, thus inflating the count and leading to the wrong original count (Fig. 2C). 
+[Slides](https://drive.google.com/open?id=1vyw6N7qn24qBFAMoKL3nXLHcqpqYFq3Y) by Nick Barkus (particularly slides 13-15) from the June 2019 DCP F2F describe why all sequence data files derived from one library preparation must be processed together. Briefly, a library preparation starts with a set of UMI barcodes attached to transcripts (1 barcode per transcript), and then everything gets amplified (potentially unevenly) and sequenced (Fig. 2A). Reads are potentially split between different sets of files if the library preparation is sequenced more than once. During processing, unique UMI barcodes are collapsed - identical copies are only counted once - to calculate the original count (Fig. 2B). If files from the same library preparation are processed separately, a collapsed UMI barcode might appear in each set of files, thus inflating the count and leading to an inaccurate original count (Fig. 2C). 
 
 ---
 
@@ -175,7 +173,7 @@ Figure 5 below shows the current metadata model representing a plate-based exper
 
 ---
 
-This proposal will require modifications to some DCP components (see “Implementation changes for DCP components” section below for more details). Importantly, with a new library preparation entity, the logical unit of data should be anchored on the library preparation, not the ultimate process used to generate a sequence file (colloquially referred to as the “assay process” in the Ingestion Service).
+This proposal will require modifications to some DCP components (see "Implementation changes for DCP components" section below for more details). Importantly, with a new library preparation entity, the logical unit of data should be anchored on the library preparation, not the ultimate process used to generate a sequence file (colloquially referred to as the "assay process" in the Ingestion Service).
 
 ### Metadata schema for library preparation entity
 
@@ -316,22 +314,22 @@ Data consumers will be able to find all data that need to be processed together 
 will return all bundles (primary and secondary) that contain the specified library preparation.
 
 Data consumers will not need to depend on multi-bundle notifications for processing all data files from the same library preparation.. All data files from a single library preparation will be put in the same logical unit if submitted at one time (in one submission envelope). Caveats:
-1. Still unclear what the logical unit for an imaging experiments will be. More details under “Unresolved questions”.
+1. Still unclear what the logical unit for an imaging experiments will be. More details under "Unresolved questions".
 1. Still unclear how to create logical units if data files from the same library preparation are submitted at different times (in more than one submission envelope). Is this a complex update to an existing logical unit? Or a new logical unit that re-uses many metadata files?
 
-Data consumers will benefit from the metadata model now aligning with INSDC “experiments” and “runs”. This alignment will also make archiving to ENA/SRA more straightforward.
+Data consumers will benefit from the metadata model now aligning with INSDC experiments and runs. This alignment will also make archiving to ENA/SRA more straightforward.
 - Library preparation is equivalent to an INSDC experiment
 - Single set of files from a library preparation is equivalent to an INSDC run
 
 | FILE NAME | INPUT LIBRARY PREPARATION ID | INSDC EXPERIMENT ACCESSION | INSDC RUN ACCESSIONS |
 |:-|:-|:-|:-|
-| `sequence_file.file_core. file_name` | `library_preparation.biomaterial_core. biomaterial_id` | `process.insdc_experiment. insdc_experiment_accession` | `sequence_file. insdc_run_accessions` |
+| `sequence_file.file_core. file_name` | `library_preparation.biomaterial_ core.biomaterial_id` | `process.insdc_experiment. insdc_experiment_accession` | `sequence_file. insdc_run_accessions` |
 | SRR7159837_1.fastq.gz | library_preparation_1 | SRX3364233 | SRR7159837 |
 | SRR7159837_2.fastq.gz | library_preparation_1 | SRX3364233 | SRR7159837 |
 | SRR7159838_1.fastq.gz | library_preparation_1 | SRX3364233 | SRR7159838 |
 | SRR7159838_2.fastq.gz | library_preparation_1 | SRX3364233 | SRR7159838 |
 
-**Table 3**: An example set of sequence file metadata based on Fig. 1B experimental design showing how INSDC experiment accession aligns with library preparation ID and how INSDC run accession aligns with individual sets of files (i.e. a “run”). User-friendly field names in row 1; fully-qualified programmatic field names in row 2. **NB**: The `process.insdc_experiment.insdc_experiment_accession` field can be moved to the library preparation entity. 
+**Table 3**: An example set of sequence file metadata based on Fig. 1B experimental design showing how INSDC experiment accession aligns with library preparation ID and how INSDC run accession aligns with individual sets of files (i.e. a run). User-friendly field names in row 1; fully-qualified programmatic field names in row 2. **NB**: The `process.insdc_experiment.insdc_experiment_accession` field can be moved to the library preparation entity. 
 
 ---
 
@@ -367,12 +365,12 @@ Data consumers will benefit from the metadata model now aligning with INSDC “e
 #### Data Processing Pipelines
 
 - Subscription queries will reference a library preparation entity instead of cell suspension entity, where appropriate.
-- If multiple-bundles:1-workflow remains a use case, pipelines can query for all “bundles” with a particular library preparation UUID in order to trigger a single workflow.
+- If multiple-bundles:1-workflow remains a use case, pipelines can query for all bundles with a particular library preparation UUID in order to trigger a single workflow.
 
 #### Data Brower
 
 - Is anything coded against cell suspension?
-- How will this affect displaying rows in “Sample” view?
+- How will this affect displaying rows in Sample view?
 
 #### Matrix Service
 
@@ -395,12 +393,12 @@ Data consumers will benefit from the metadata model now aligning with INSDC “e
 
 #### To solve during RFC process
 - How will the DCP enforce the requirement of having the library preparation entity in every logical unit (i.e. bundle)?
-- How will current production sequencing datasets be updated? All of the current datasets will need to be updated as all of them will need to have library preparation entities added. This is a complex update - change in “bundle” structure by adding a library_preparation_0.json entity - so it can not be done with simple AUDR. If the update happens after GA but before complex AUDR, the UUIDs will have to be maintained somehow.
+- How will current production sequencing datasets be updated? All of the current datasets will need to be updated as all of them will need to have library preparation entities added. This is a complex update - change in "bundle" structure by adding a `library_preparation_0.json` entity - so it can not be done with simple AUDR. If the update happens after GA but before complex AUDR, the UUIDs will have to be maintained somehow.
 
 #### To solve at future date
 
-- How might per-plate logical units be defined? The plate ID field is currently in the cell suspension schema. Creating a logical unit of “all data per plate” will not be made easier or harder if this proposal is accepted.
-- Could this approach work in an analogous way for imaging experiments? I.e. anchor the logical unit on imaged specimen? It sounds like we don’t yet know yet what the “logical” unit is for image-based experiments. One option to anchor on the imaged specimen, but there are also other options.
+- How might per-plate logical units be defined? The plate ID field is currently in the cell suspension schema. Creating a logical unit of "all data per plate" will not be made easier or harder if this proposal is accepted.
+- Could this approach work in an analogous way for imaging experiments? I.e. anchor the logical unit on imaged specimen? It sounds like we do not yet know yet what the "logical" unit is for image-based experiments. One option to anchor on the imaged specimen, but there are also other options.
 - What are the naming conventions for user-supplied IDs and system-supplied, globally unique UUIDs? What are the rules for the names of the fields themselves? What are the rules for what values are valid for these fields? Related to metadata-schema issue [#733](https://github.com/HumanCellAtlas/metadata-schema/issues/733).
 
 ### Drawbacks and Limitations [optional]
@@ -411,9 +409,9 @@ This RFC is based on the current bundle structure and DCP design. If bundle stru
 
 ### Prior Art [optional]
 
-Previous [Library preparation entity RFC draft](https://docs.google.com/document/d/15-UkjbAlGDGhOPw1Zu09YdoaGw2Zeq5Y3uDlGsrz6pw/edit)
-[Slides](https://drive.google.com/open?id=1vyw6N7qn24qBFAMoKL3nXLHcqpqYFq3Y) from June 2019 DCP F2F meeting outlining library preparation issue from data processing pipelines perspective.
-[Slides](https://docs.google.com/presentation/d/1aV7Lrq8SWNxp3Jy98RxUh2SJrLiFPO4Y6AyaH3F1EUI/edit#slide=id.g599322258d_0_8) from June 2019 DCP F2F meeting outlining what is contained in bundles (logical units).
+- Previous [Library preparation entity RFC draft](https://docs.google.com/document/d/15-UkjbAlGDGhOPw1Zu09YdoaGw2Zeq5Y3uDlGsrz6pw/edit)
+- [Slides](https://drive.google.com/open?id=1vyw6N7qn24qBFAMoKL3nXLHcqpqYFq3Y) from June 2019 DCP F2F meeting outlining library preparation issue from data processing pipelines perspective.
+- [Slides](https://docs.google.com/presentation/d/1aV7Lrq8SWNxp3Jy98RxUh2SJrLiFPO4Y6AyaH3F1EUI/edit#slide=id.g599322258d_0_8) from June 2019 DCP F2F meeting outlining what is contained in bundles (logical units).
 
 ### Alternatives [optional]
 
