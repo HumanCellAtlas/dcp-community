@@ -49,7 +49,7 @@ From a cell suspension, one (Fig. 1A) or more (Fig. 1B) libraries can be prepare
 
 ![Figure 1](/rfcs/images/0000-lib_prep_rfc_fig1.png)
 
-**Figure 1**: Possible droplet-based sequencing experimental designs. A) An experiment where one library preparation was made from a cell suspension and then sequenced once. B) An experiment where two library preparations were made from the same cell suspension and then each library preparation was sequenced once. C) An experiment where two library preparations were made from the same cell suspension and then each library preparation was sequenced twice. Red boxes indicate the set of data files that need to be processed together.
+**Figure 1: Possible droplet-based sequencing experimental designs**. A) An experiment where one library preparation was made from a cell suspension and then sequenced once. B) An experiment where two library preparations were made from the same cell suspension and then each library preparation was sequenced once. C) An experiment where two library preparations were made from the same cell suspension and then each library preparation was sequenced twice. Red boxes indicate the set of data files that need to be processed together.
 
 ---
 
@@ -59,7 +59,7 @@ From a cell suspension, one (Fig. 1A) or more (Fig. 1B) libraries can be prepare
 
 ![Figure 2](/rfcs/images/0000-lib_prep_rfc_fig2.png)
 
-**Figure 2**: Processing data files separately inflates UMI counts. A) Two transcripts - each with a unique UMI barcode - for gene A are amplified during library preparation, and the library preparation is sequenced twice to produce two sets of files. B) Files are processed together, and UMI barcodes are collapsed to produce a count of 2 for gene A. C) Files are processed separately, and UMI barcodes are collapsed separately to produce a count of 1 for gene A in the first set of files and 2 for gene A in the second set of files, resulting in an overall count of 3 for gene A (overestimation).
+**Figure 2: Processing data files separately inflates UMI counts**. A) Two transcripts - each with a unique UMI barcode - for gene A are amplified during library preparation, and the library preparation is sequenced twice to produce two sets of files. B) Files are processed together, and UMI barcodes are collapsed to produce a count of 2 for gene A. C) Files are processed separately, and UMI barcodes are collapsed separately to produce a count of 1 for gene A in the first set of files and 2 for gene A in the second set of files, resulting in an overall count of 3 for gene A (overestimation).
 
 ---
 
@@ -95,7 +95,7 @@ Assuming a data wrangler or data contributor has filled in the `process_id` fiel
 
 <img src="/rfcs/images/0000-lib_prep_rfc_fig3.png" align="left" height="300" />
 
-**Figure 3**: Current and ideal grouping of logical units. A) Logical unit is anchored on ultimate process in the experimental graph, resulting in two bundles which each contain a subset of the data files produced from the same library preparation (not ideal). B) Logical unit is anchored on the library preparation entity, resulting in one logical unit that contains all the data files produced from the same library preparation (ideal).\
+**Figure 3: Current and ideal grouping of logical units**. A) Logical unit is anchored on ultimate process in the experimental graph, resulting in two bundles which each contain a subset of the data files produced from the same library preparation (not ideal). B) Logical unit is anchored on the library preparation entity, resulting in one logical unit that contains all the data files produced from the same library preparation (ideal).\
 <br/>
 <br/>
 <br/>
@@ -169,7 +169,7 @@ Figure 5 below shows the current metadata model representing a plate-based exper
 
 <img src="/rfcs/images/0000-lib_prep_rfc_fig5.png" align="left" height="460" />
 
-**Figure 5**: Determining logical units from plate-based experimental designs. A) An experiment modeled using the current metadata model which depicts six sequence files derived from three single cell suspension. Logical units are indicated (red, blue, and magenta outlines). B) An experiment modeled using the proposed metadata model which depicts six sequence files derived from three single cell library preparations. Logical units are indicated (red, blue, and magenta outlines). Arrows in graphs represent processes. 
+**Figure 5: Determining logical units from plate-based experimental designs**. A) An experiment modeled using the current metadata model which depicts six sequence files derived from three single cell suspension. Logical units are indicated (red, blue, and magenta outlines). B) An experiment modeled using the proposed metadata model which depicts six sequence files derived from three single cell library preparations. Logical units are indicated (red, blue, and magenta outlines). Arrows in graphs represent processes. 
  
 **NB**: An experimental design where the same library preparation is sequenced more than once is not shown here. This is either (1) not even feasible or (2) highly unlikely to occur given that there isn’t a lot of material to sequence the same cell more than once.
 
@@ -351,7 +351,7 @@ Data consumers will benefit from the metadata model now aligning with INSDC “e
     
 ![Figure 6](/rfcs/images/0000-lib_prep_rfc_fig6.png)
 
-**Figure 6**: Diagram of how protocol linking will change with new library preparation entity. A) Current metadata model showing that links to Sequencing protocol and Library preparation protocol entities are generated from the last process (arrow) in the graph. B) New metadata model showing that a link to the Sequencing protocol is generated from the ultimate process (process_0) in the graph, and a link to the Library preparation protocol is generated from the penultimate process (process_1) in the graph.
+**Figure 6: Diagram of how protocol linking will change with new library preparation entity**. A) Current metadata model showing that links to Sequencing protocol and Library preparation protocol entities are generated from the last process (arrow) in the graph. B) New metadata model showing that a link to the Sequencing protocol is generated from the ultimate process (process_0) in the graph, and a link to the Library preparation protocol is generated from the penultimate process (process_1) in the graph.
 
 ---
 
