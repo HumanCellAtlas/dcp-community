@@ -337,16 +337,16 @@ Data consumers will benefit from the metadata model now aligning with INSDC “e
 - Logical units will be anchored on a library preparation entity UUID (or possibly the process entity that is input to the library preparation entity) in the experimental graph (exporter).
 - Schema template generator will be modified to (1) put the library preparation entity fields in the Sequence file tab, and (2) exclude all the library preparation entity fields except the required ones. 
 - Experimental graph (instantiated by links.json) will represent that (1) a library preparation protocol is followed to produce a library preparation from a cell suspension (or other biomaterial for bulk sequencing) and that (2) a sequencing protocol is followed to produce sequence file(s) from a library preparation. Users of the ingest-api will supply these links during programmatic submission. Otherwise, Ingestion Service (ingest-broker) will create the following links from metadata in the Sequence file tab and some graph assumptions (Fig. 6):
-    - Cell suspension <-> Process_1 <-> Library preparation <-> Process_0 <-> Sequence file
-    - Process_1 <-> Library preparation protocol
-    - Process_0 <-> Sequencing protocol
+    - Cell suspension :left_right_arrow: Process_1 :left_right_arrow: Library preparation :left_right_arrow: Process_0 :left_right_arrow: Sequence file
+    - Process_1 :left_right_arrow: Library preparation protocol
+    - Process_0 :left_right_arrow: Sequencing protocol
     - Declare rules about linking
     
 ---
     
 ![Figure 6](/rfcs/images/0000-lib_prep_rfc_fig6.png)
 
-Figure 6: Diagram of how protocol linking will change with new library preparation entity. A) Current metadata model showing that links to Sequencing protocol and Library preparation protocol entities are generated from the last process (arrow) in the graph. B) New metadata model showing that a link to the Sequencing protocol is generated from the ultimate process (process_0) in the graph, and a link to the Library preparation protocol is generated from the penultimate process (process_1) in the graph.
+**Figure 6**: Diagram of how protocol linking will change with new library preparation entity. A) Current metadata model showing that links to Sequencing protocol and Library preparation protocol entities are generated from the last process (arrow) in the graph. B) New metadata model showing that a link to the Sequencing protocol is generated from the ultimate process (process_0) in the graph, and a link to the Library preparation protocol is generated from the penultimate process (process_1) in the graph.
 
 ---
 
