@@ -163,9 +163,8 @@ For cellular resolution experiments, the library preparation entity will have a 
 ---
 
 Figure 5 below shows the current metadata model representing a plate-based experiment sequencing three single cell suspensions to produce three sets of two files (Fig. 5A). From this experimental design, it is clear that each set of files represents one logical unit (red, blue, and magenta outlines). The experimental design and logical units are equally as clear under the new proposed metadata model (Fig. 5B). For plate-based sequencing, each cell goes through a library construction protocol to produce a library preparation. These library preparations are then pooled, sequenced, and demultiplexed such that per-cell suspension sequence files are provided.<br/>
-
 .
-
+
 ---
 
 <img src="/rfcs/images/0000-lib_prep_rfc_fig5.png" align="left" height="460" />
@@ -279,19 +278,19 @@ Adding a new first-class biomaterial entity has the potential to add a lot of co
 
 Data contributors will supply a project-wide unique ID for each library preparation in the Sequence file tab using the `library_preparation.biomaterial_core.biomaterial_id` field in place of the current `sequence_file.library_prep_id` field. When the spreadsheet is imported, the Ingestion Service will generate a globally unique UUID for each library preparation entity. Unlike other biomaterials, there would not be a separate spreadsheet tab for library preparation entities for two reasons. 1. Adding a spreadsheet tab adds considerable complexity for data contributors. 2. There are only two fields that need to be supplied by the data contributor for which generating a whole new tab creates high overhead, especially considering one of the fields replaces a field already in the Sequence file tab. Without the ability to automatically infer `library_preparation.biomaterial_core.ncbi_taxon_id`, this field would need to be added to the Sequence file tab and would need to be filled in by contributors. For example:
  
-| FILE NAME (Required) | INPUT CELL SUSPENSION ID (Required) | INPUT LIBRARY PREPARATION ID (Required) | NCBI TAXON ID (Required) |
+| FILE NAME (Required) | *INPUT* CELL SUSPENSION ID (*Required*) | INPUT LIBRARY PREPARATION ID (Required) | *NCBI TAXON ID (Required)* |
 |:-|:-|:-|:-|
-| `sequence_file.file_core. file_name` | `cell_suspension.biomaterial_core. biomaterial_id` | `library_preparation.biomaterial_core. biomaterial_id` | `library_preparation.biomaterial_core. ncbi_taxon_id` |
-| SRR7159837_1.fastq.gz | cell_suspension_1 | library_preparation_1 | 9606 |
-| SRR7159837_2.fastq.gz | cell_suspension_1 | library_preparation_1 | 9606 |
-| SRR7159838_1.fastq.gz | cell_suspension_1 | library_preparation_2 | 9606 |
-| SRR7159838_2.fastq.gz | cell_suspension_1 | library_preparation_2 | 9606 |
-| SRR7159839_1.fastq.gz | cell_suspension_1 | library_preparation_3 | 9606 |
-| SRR7159839_2.fastq.gz | cell_suspension_1 | library_preparation_3 | 9606 |
-| SRR7159840_1.fastq.gz | cell_suspension_1 | library_preparation_4 | 9606 |
-| SRR7159840_2.fastq.gz | cell_suspension_1 | library_preparation_4 | 9606 |
+| `sequence_file.file_core. file_name` | `cell_suspension.biomaterial_core. biomaterial_id` | *`library_preparation.biomaterial_core. biomaterial_id`* | *`library_preparation.biomaterial_core. ncbi_taxon_id`* |
+| SRR7159837_1.fastq.gz | cell_suspension_1 | library_preparation_1 | *9606* |
+| SRR7159837_2.fastq.gz | cell_suspension_1 | library_preparation_1 | *9606* |
+| SRR7159838_1.fastq.gz | cell_suspension_1 | library_preparation_2 | *9606* |
+| SRR7159838_2.fastq.gz | cell_suspension_1 | library_preparation_2 | *9606* |
+| SRR7159839_1.fastq.gz | cell_suspension_1 | library_preparation_3 | *9606* |
+| SRR7159839_2.fastq.gz | cell_suspension_1 | library_preparation_3 | *9606* |
+| SRR7159840_1.fastq.gz | cell_suspension_1 | library_preparation_4 | *9606* |
+| SRR7159840_2.fastq.gz | cell_suspension_1 | library_preparation_4 | *9606* |
 
-**Table 2**: An example set of sequence file metadata based on Fig. 1B experimental design. User-friendly field names in row 1; fully-qualified programmatic field names in row 2. Text in red indicates spreadsheet differences between Table 1 and Table 2.
+**Table 2**: An example set of sequence file metadata based on Fig. 1B experimental design. User-friendly field names in row 1; fully-qualified programmatic field names in row 2. Italicized text indicates spreadsheet differences between Table 1 and Table 2.
 
 ---
 
