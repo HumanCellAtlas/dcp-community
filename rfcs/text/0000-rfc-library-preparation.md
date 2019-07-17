@@ -287,7 +287,7 @@ Data contributors will supply a project-wide unique ID for each library preparat
  
 | FILE NAME (Required) | INPUT CELL SUSPENSION ID (*Required*) | *INPUT* LIBRARY PREPARATION ID (Required) | *NCBI TAXON ID (Required)* |
 |:-|:-|:-|:-|
-| `sequence_file.file_ core.file_name` | `cell_suspension.biomaterial_ core.biomaterial_id` | *`library_preparation.bio material_core.biomaterial_id`* | *`library_preparation.bio material_core.ncbi_taxon_id`* |
+| `sequence_file.file_ core.file_name` | `cell_suspension.biomat erial_core.biomaterial_id` | *`library_preparation.biomat erial_core.biomaterial_id`* | *`library_preparation.biomat erial_core.ncbi_taxon_id`* |
 | SRR7159837_1.fastq.gz | cell_suspension_1 | library_preparation_1 | *9606* |
 | SRR7159837_2.fastq.gz | cell_suspension_1 | library_preparation_1 | *9606* |
 | SRR7159838_1.fastq.gz | cell_suspension_1 | library_preparation_2 | *9606* |
@@ -332,7 +332,7 @@ Data consumers will benefit from the metadata model now aligning with INSDC expe
 
 | FILE NAME | INPUT LIBRARY PREPARATION ID | INSDC EXPERIMENT ACCESSION | INSDC RUN ACCESSIONS |
 |:-|:-|:-|:-|
-| `sequence_file.file_core. file_name` | `library_preparation.biomaterial_ core.biomaterial_id` | `process.insdc_experiment. insdc_experiment_accession` | `sequence_file. insdc_run_accessions` |
+| `sequence_file.file_ core.file_name` | `library_preparation.biomat erial_core.biomaterial_id` | `process.insdc_experiment. insdc_experiment_accession` | `sequence_file. insdc_run_accessions` |
 | SRR7159837_1.fastq.gz | library_preparation_1 | SRX3364233 | SRR7159837 |
 | SRR7159837_2.fastq.gz | library_preparation_1 | SRX3364233 | SRR7159837 |
 | SRR7159838_1.fastq.gz | library_preparation_1 | SRX3364233 | SRR7159838 |
