@@ -177,7 +177,9 @@ This proposal will require modifications to some DCP components (see "Implementa
 
 ### Metadata schema for library preparation entity
 
-**Standard biomaterial fields**. The new `library_preparation.json` schema will follow the schema structure indicated in the Metadata Schema Style Guide and will include the standard properties (fields) for biomaterial type schemas, including:
+#### Standard biomaterial fields 
+
+The new `library_preparation.json` schema will follow the schema structure indicated in the Metadata Schema Style Guide and will include the standard properties (fields) for biomaterial type schemas, including:
 
 ```
 "describedBy":  {
@@ -268,7 +270,14 @@ The required fields for the library preparation entity will be:
 - `library_preparation.biomaterial_core.biomaterial_id`
 - `library_preparation.biomaterial_core.ncbi_taxon_id`
 
-**New library preparation-specific fields**. The new `library_preparation.json` schema will additionally include a field for capturing INSDC experiment accessions if the project is already archived. This field (`process.insdc_experiment.insdc_experiment_accession`) generally represents a single library preparation in the archives (ENA, SRA, DDJB), and currently lives awkwardly in a process module for historical reasons. Additional library preparation-specific fields could be added in the future.
+#### Added/changed library preparation-specific fields
+
+The new `library_preparation.json` schema will include a field for capturing INSDC experiment accessions if the project is already archived. This field (`process.insdc_experiment.insdc_experiment_accession`) generally represents a single library preparation in the archives (ENA, SRA, DDJB). This field currently lives awkwardly in a process module for historical reasons and should be moved to the new library preparation schema. 
+
+The current `sequence_file.library_prep_id` field will be removed. It is no longer needed because the user-supplied `library_preparation.biomaterial_core.biomaterial_id` field captures this information.
+
+Additional library preparation-specific fields could be added in the future to support data contributors and consumers.
+
 
 ### Projection of library preparation entity in metadata spreadsheet
 
