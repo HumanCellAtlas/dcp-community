@@ -1,44 +1,26 @@
-<!----- Conversion time: 1.837 seconds.
+### DCP PR:
 
+***Leave this blank until the RFC is approved** then the **Author(s)** must create a link between the assigned RFC number and this pull request in the format:*
 
-Using this Markdown file:
-
-1. Cut and paste this output into your source file.
-2. See the notes and action items below regarding this conversion run.
-3. Check the rendered output (headings, lists, code blocks, tables) for proper
-   formatting and use a linkchecker before you publish this page.
-
-Conversion notes:
-
-* Docs to Markdown version 1.0β17
-* Wed Jul 17 2019 11:12:42 GMT-0700 (PDT)
-* Source doc: https://docs.google.com/a/broadinstitute.org/open?id=1akc8WrjxllNRkIAKcFD-8H3PsbrZQZjTZfgTI8KWuOI
------>
-
+`[dcp-community/rfc#](https://github.com/HumanCellAtlas/dcp-community/pull/<PR#>)`
 
 
 # Processing Datasets that Span Multiple Data Collection Runs
 
 
 ## Summary
-
 This RFC proposes a design solution to allow datasets that span multiple data collection runs to be processed in unison as per the scientific requirements. The proposal generalizes to multiple data type modalities, but also provides specific details for 10X V2 3’ single-cell data as an example and to address an immediate need for a data processing solution.
 
 
 ## Author(s)
-
-Nick Barkas
-
+[Nick Barkas](mailto:barkasn@broadinstitute.org)
 Mark Diekhans
 
 
 ## Shepherd
-
-Nick Barkas
-
+[Nick Barkas](mailto:barkasn@broadinstitute.org)
 
 ## Motivation
-
 Correct data processing requires the initiation of data processing pipelines with all the appropriate input data. The current mechanism of bundle notifications is not effective when data spans multiple bundles because there is no clear set of rules to identify the bundles that need to be co-processed. An immediate need to process 10X V2 scRNA-seq datasets that span multiple bundles exists. The need for co-processing multiple bundles is not however limited to this scenario and extends to any other NGS modality that involves repeated sequencing of the same library. Furthermore the need to co-process data may extend to other data modalities that the project will accept in the future.
 
 We, therefore, aim to establish a general framework for co-processing bundles and provide a specific use case example for co-processing 10X V2 scRNA-seq datasets.
@@ -67,14 +49,15 @@ As a data consumer, I want to be able to find all data files that need to be pro
 
 As a data consumer, I want to be confident that the HCA DCP has correctly processed all data files that belong together so that I know the matrices I receive have been generated correctly.
 
+## Scientific "guardrails" [optional]
 
-## Proposed Changes
+*Describe recommended or mandated review from HCA Science governance to ensure that the RFC addresses the needs of the scientific community.*
 
+## Detailed Design
 
 ### Component Notification Changes
 
 This RFC proposes no longer using bundle-level search-based notifications on primary bundles for initiating pipelines. Instead, we propose that a **specific trigger** is used to initiate analysis pipelines. This document lists the requirements for such notifications to be actionable by analysis and makes recommendations on overall implementation paradigm with specific examples for 10X and SS2 datasets.
-
 
 ### Notification Requirements
 
@@ -194,21 +177,15 @@ We propose that the metadata required to automatically identify the triplets (Ta
   </tr>
 </table>
 
-
-
 ## Metadata Requirements for SS2 scRNA-seq datasets and provision for plate-based analyses
 
 The above metadata requirements are also compatible with SS2 analyses and can support plate based-analyses. Cells that have been sequenced more than once (a rare, but plausible scenario for SS2) can be identified by using a library identifier as presented in this RFC, currently under review.
 
 Furthermore, this approach can be extended to support plate-based processing. By ensuring that a plate field is provided for each cell, multiple cell bundles can be aggregated into a single plate-based workflow. A DAPS can contain one or more plates. Provision must be made for any cells not associated with a plate identifier, or otherwise the plate identifier must be a compulsory field.
 
-
 ## Pros and Cons of DAPS Approach
 
 Pros
-
-
-
 *   Avoids potentially very expensive run-away queries
 *   Ensures that analyses are triggered once with the appropriate datasets
 *   Is flexible and can accommodate all foreseeable data modalities
@@ -220,19 +197,13 @@ Pros
 *   Provides a natural place to provide analysis-specific parameters
 
 Cons
-
-
-
 *   Analysis need to modify pipeline initiation scripts
 *   Initial implementation has human time cost of triggering the pipeline runs
 *   Requires the human who is triggering the pipeline to know what criteria need to be satisfied in order to trigger (i.e. project is complete)
 
-
 ## Alternative Approaches 
 
 The following section summarizes possible alternative approaches for ensuring correct processing, along with the pros and cons of each. These approaches are not recommended by this RFC, but are listed for comparison purposes.
-
-
 
 *   Placing all the data that needs to be co-processed in a single bundle and continue to use bundle notifications
     *   Pros
@@ -270,9 +241,10 @@ The following section summarizes possible alternative approaches for ensuring co
         *   Ingest needs a new notification mechanism and declarations from components as to what will be a trigger. Some duplication of data store notifications.
         *   Ingest ends up talking directly to analysis and future non-primary components where this doesn’t happen currently. Complicates system architecture.
 
-_Things to add to this document_
+### Unresolved Questions
 
-
+- *What aspects of the design do you expect to clarify further through the RFC review process?*
+- *What aspects of the design do you expect to clarify later during iterative development of this RFC?*
 
 *   How does this framework interact with new modalities we are likely to encounter in the future. A good example of this is imaging data. Ambrose will be able to contribute here.
 *   Additional definitions?
@@ -280,5 +252,3 @@ _Things to add to this document_
 *   Link to Library Prep RFC: [https://docs.google.com/document/d/1PdJAd4q775jwnDoavJE_7XajXm0e7a5SGvP2k7DRJHc/edit#heading=h.5ildwmh2beeb](https://docs.google.com/document/d/1PdJAd4q775jwnDoavJE_7XajXm0e7a5SGvP2k7DRJHc/edit#heading=h.5ildwmh2beeb)
 *   Alternative: project or dataset bundles with rigidly defined bundle types
 *   Alternative: bundle lifecycle (unpublished/in progress vs. published/finished bundles)
-
-<!-- Docs to Markdown version 1.0β17 -->
