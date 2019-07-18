@@ -4,9 +4,7 @@
 
 `[dcp-community/rfc#](https://github.com/HumanCellAtlas/dcp-community/pull/<PR#>)`
 
-
 # Processing Datasets that Span Multiple Data Collection Runs
-
 
 ## Summary
 This RFC proposes a design solution to allow datasets that span multiple data collection runs to be processed in unison as per the scientific requirements. The proposal generalizes to multiple data type modalities, but also provides specific details for 10X V2 3’ single-cell data as an example and to address an immediate need for a data processing solution.
@@ -14,8 +12,7 @@ This RFC proposes a design solution to allow datasets that span multiple data co
 
 ## Author(s)
 [Nick Barkas](mailto:barkasn@broadinstitute.org)
-Mark Diekhans
-
+[Mark Diekhans](mailto:markd@ucsc.edu)
 
 ## Shepherd
 [Nick Barkas](mailto:barkasn@broadinstitute.org)
@@ -25,15 +22,15 @@ Correct data processing requires the initiation of data processing pipelines wit
 
 We, therefore, aim to establish a general framework for co-processing bundles and provide a specific use case example for co-processing 10X V2 scRNA-seq datasets.
 
-
 ### Definitions
 
 **Data Aggregation and Processing Set (DAPS)**: A representation identifying data in the DSS that need to be co-processed. The term deliberately does not impose an implementation, to allow for future flexibility.
 
-**Unique Library Identifiers**: A unique identifier (string or numeric) that globally identifies each library preparation for sequencing data. Most frequently this corresponds to the pre-amplification library.
+**Unique Library Identifiers**: A unique identifier (string or numeric) that globally identifies each library preparation for sequencing data.
 
-**MR**: Metadata requirement
+**Co-processing (of data)**: Providing data as input to a single pipeline invocation
 
+**MR**: Metadata Requirement. The term refers to specific metadata requirements for bundles to be able to process in analysis.
 
 ## User Stories
 
@@ -41,13 +38,15 @@ As a data contributor, I want to maintain flexibility in the laboratory approach
 
 As a data-wrangler, I want to be able to succinctly enter the metadata I receive from the data contributor and have a clear understanding of what I need to do to ensure correct processing.
 
-As a schema dev, I want to ensure we are capturing and requiring, the metadata from a contributor to ensuring the pipelines can run appropriately.
+As a schema developer, I want to ensure we are capturing and requiring, the metadata from a contributor to ensuring the pipelines can run appropriately.
 
 As a member of the pipelines team, I want to ensure that the pipelines process the correct datasets and I can easily access the metadata required to trigger the pipelines.
 
 As a data consumer, I want to be able to find all data files that need to be processed together so that I can run my own data processing pipeline. 
 
 As a data consumer, I want to be confident that the HCA DCP has correctly processed all data files that belong together so that I know the matrices I receive have been generated correctly.
+
+**TODO: Expand with more cases**
 
 ## Scientific "guardrails" [optional]
 
@@ -56,77 +55,68 @@ As a data consumer, I want to be confident that the HCA DCP has correctly proces
 ## Detailed Design
 
 ### Component Notification Changes
-
 This RFC proposes no longer using bundle-level search-based notifications on primary bundles for initiating pipelines. Instead, we propose that a **specific trigger** is used to initiate analysis pipelines. This document lists the requirements for such notifications to be actionable by analysis and makes recommendations on overall implementation paradigm with specific examples for 10X and SS2 datasets.
 
 ### Notification Requirements
-
 In order for a notification to be actionable by analysis it must fulfill specific requirements. Specifically, the notification must include information about the bundles/data that belong to the same sequencing set and potentially need to be co-processed.
 
 We propose the term **Data Aggregation and Processing Set (DAPS)** to encompass all the different alternative representations of such sets. Example representations of DAPS can be:
 
-
-
 *   A listing of all relevant bundles along with versions
-*   A search query accompanied by a timestamp in order to guarantee reproducibility
-*   Other future representation as project needs evolve
+*   A search query accompanied by a timestamp (in order to guarantee reproducibility)
+*   Other future representation as project needs evolve (e.g. linking to a particular project bundle version)
 
-Critically, the submitted DAPS will not explicitly dictate the files that have to be co-processed in pipeline instances as this would require specialized knowledge of the pipelines by the submitter. Instead, _a DAPS indicates that aggregation of data must be performed only from the list of data provided (submission envelope), but the actual aggregation is delegated to the process of analysis initiation, **subject to well defined modality-specific metadata requirements**_. The imposition of specific requirements to metadata is part of this RFC proposal and a key component of the proposed DAPS solution.
+Critically, the submitted DAPS will not explicitly dictate the files that have to be co-processed in pipeline instances as this would require specialized knowledge of the pipelines by the submitter. Instead, **a DAPS indicates that aggregation of data must be performed only from the list of data provided (submission envelope), but the actual aggregation is delegated to the process of analysis initiation, subject to well defined modality-specific metadata requirements**. 
 
-This approach provides a generalized signaling mechanism suitable for all foreseeable data types while accounting for data type specific requirements. For example, the same mechanism can be used to submit imaging data for analysis.
+The imposition of specific requirements to metadata is part of this RFC proposal and a key component of the proposed DAPS solution.
+
+This approach provides a generalized signaling mechanism suitable for all foreseeable data types while accounting for data type specific requirements.
 
 The DAPS approach has common elements with project-level bundles that have been proposed in other contexts, but differs in the following ways:
 
-
-
-1. It does not impose any specific aggregation level on the data allowing for more flexibility and accommodating future **unforeseen processing scenarios** as well as **partial reanalysis of arbitrary data subsets**
+1. It does not impose any specific aggregation level on the data allowing for more flexibility and accommodating future unforeseen processing scenarios
 2. Allows specification of bundles included in a DAPS in many alternative different ways (listing, search, etc…)
 3. Does not impose the creation of a new bundle type that is tied to a specific data modality
 4. Dictates specific metadata requirements that guarantee correct processing of all foreseeable data modalities
-
+5. Decouples analysis initiation from data representation allowing for future flexbility
 
 ## General Metadata Requirements
+In the above framework, analysis pipelines will receive a set of bundles that _potentially_ need to be co-processed. As aforementioned, this signal will not explicitly identify the bundles that need to be co-processed in a single pipeline, instead, it will serve as a notification **indicating that any co-processing is to be done only within the boundaries of this set of files (submission envelope). **
 
-In the above framework, analysis pipelines will receive a set of bundles that potentially need to be co-processed. As aforementioned, this signal will not explicitly identify the bundles that need to be co-processed in a single pipeline, instead, it will serve as a notification **indicating that any co-processing is to be done only within the boundaries of this set of files (submission envelope). **
+As a result analysis can initiate multiple pipeline invocations as a result of a single DAPS being submitted.
 
-The actual grouping of the files is to be performed by analysis via a search in the metadata of the bundles submitted. For this reason, the metadata must satisfy the following metadata requirements (MR):
+The actual grouping of the files is to be performed by analysis via a search in the metadata of the bundles submitted following well-defined modality specific set of rules. For this reason, the metadata must satisfy the following metadata requirements (MR):
 
-
-
-1. The data modality of each bundle included in the DAPS must be clearly identifiable
-2. Data that need to be processed together must be clearly identifiable by a modality-specific set of metadata variables that will group the files according to processing requirements.
-3. Among the data that needs to be processed together, the metadata must provide sufficient information to correctly order, pair or otherwise establish correspondence and type of the input files.
-
+1. The data modality of each bundle included in the DAPS must be clearly identifiable (MR1)
+2. Data that need to be processed together must be clearly identifiable by a modality-specific set of metadata variables that will group the files according to processing requirements. (MR2)
+3. Among the data that needs to be processed together, the metadata must provide sufficient information to correctly order, pair or otherwise establish correspondence and type of the input files. (MR3)
 
 ## Proposed Signalling Implementation
-
 The DAPS proposal above only sets specific requirements for the signal to initiate data analysis and minimum requirements for the associated metadata. We hereby provide a specific recommendation for implementation via bundle notifications.
 
-We recommend that the data store (DSS) is used to store DAPS as a new bundle type of “DAPS Manifest”, and that the current search-based notification system is adjusted so that instead of listening for new primary bundles, analysis listens for new DAPS bundles that are exclusively used for the initiation of pipelines. This implementation has two major advantages: (1) the DAPS are permanently saved at the main storage site for the HCA project (DSS) so the analyses can be reproducibly triggered and (2) The existing notification mechanisms are reused, avoiding the need for implementation of a new out-of-band notification system.
+We recommend that the data store (DSS) is used to store DAPS as a new bundle type of **“DAPS Manifest”**, and that the current search-based notification system is adjusted so that instead of listening for new primary bundles, analysis listens for new DAPS bundles that are exclusively used for the initiation of pipelines. This implementation has two major advantages: (1) the DAPS are permanently saved at the main storage site for the HCA project (DSS) so the analyses can be reproducibly triggered and (2) The existing notification mechanisms are reused, avoiding the need for implementation of a new out-of-band notification system.
 
-We propose that as an initial implementation approach DAPS are used at set data aggregation levels (e.g. project) but critically the implementation must be flexible to arbitrary data aggregation levels to accommodate future project needs. We propose that triggering is initially done manually by data wranglers and/or ingest, but we envisage transition to automatic triggering in the future.
-
+We propose that as an initial implementation approach DAPS are used at set data aggregation levels (e.g. sample, project) but critically the implementation must be flexible to arbitrary data aggregation levels to accommodate future project needs. We propose that triggering is initially done manually by data wranglers and/or ingest, but we envisage transition to automatic triggering in the future.
 
 ## Example: Analysis Implementation for a DAPS
-
+**TODO: Expand this to outline how analysis receives the signal**
 The following pseudocode presents a proposed implementation of the processing of an incoming DAPS by analysis:
-
-
 ```
 Partition the datasets by data modality (MR1)
 For each data modality:
-    Use the modality-specific criteria to identify pipeline invocations(MR2)
+    Use the modality-specific criteria to identify pipeline invocations (MR2)
     For each invocation:
-        order the data as required (MR3) and launch pipelines 
-        retaining information about the information co-processed and the DAPS that triggered this analysis in the output bundle
+        order the data as required (MR3) and launch pipeline invocation
 ```
 
+Note that the above approach does not require all the data in a submitted DAPS to be of the same modality to be processed correctly. For example a DAPS at the project level can contain imaging and 10X datasets and these will be correctly processed in an independent manner. 
 
-Note that the above approach does not require all the data in a submitted DAPS to be of the same modality to be processed correctly. For example a DAPS at the project level can contain imaging and 10X datasets and these will be correctly processed in an independent manner. Furthermore if part of the data submitted in a DAPS has already been processed the Analysis infrastructure will only re-process the parts that have not been modified.
+Furthermore if part of the data submitted in a DAPS has already been processed the Analysis infrastructure will only re-process the parts that have not been modified.
 
+## Example:
+**TODO: Provide specific examples of how this fits into the current project workflow**
 
 ## Metadata Requirements for 10X V2 3’ scRNA-seq datasets
-
 The specific implementation of the above metadata requirements for 10X V2 3’ RNA-seq datasets is presented here as an initial use case and an example. 10X V2 3’ data are the most common type of data currently deposited in the DSS and therefore represent a widely applicable use case.
 
 Requirement (1) above can be satisfied by having a globally unique ‘Library ID’ variable in the metadata that identifies the Illumina sequencing library from which each input file originates from. More details on the requirements and a specific implementation of this solution can be found currently under consideration here: [PR](https://github.com/HumanCellAtlas/dcp-community/pull/87), [document](https://github.com/HumanCellAtlas/dcp-community/blob/mfreeberg-rfc-library-preparation/rfcs/text/0000-rfc-library-preparation.md).
@@ -136,8 +126,6 @@ Requirement (2) can be satisfied in two alternative ways: (a) sufficient metadat
 We propose that the metadata required to automatically identify the triplets (Table 1) is made optional and users are encouraged to submit these fields as it can help identify errors and also can in some cases provide important covariates for scientific analyses.
 
 **Table 1: Fields required for identification of fastq file correspondence**
-
-
 <table>
   <tr>
    <td><strong>Required Fields</strong>
@@ -178,7 +166,6 @@ We propose that the metadata required to automatically identify the triplets (Ta
 </table>
 
 ## Metadata Requirements for SS2 scRNA-seq datasets and provision for plate-based analyses
-
 The above metadata requirements are also compatible with SS2 analyses and can support plate based-analyses. Cells that have been sequenced more than once (a rare, but plausible scenario for SS2) can be identified by using a library identifier as presented in this RFC, currently under review.
 
 Furthermore, this approach can be extended to support plate-based processing. By ensuring that a plate field is provided for each cell, multiple cell bundles can be aggregated into a single plate-based workflow. A DAPS can contain one or more plates. Provision must be made for any cells not associated with a plate identifier, or otherwise the plate identifier must be a compulsory field.
