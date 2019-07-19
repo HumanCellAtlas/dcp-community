@@ -48,24 +48,18 @@ As a data consumer, I want to be able to find all data files that need to be pro
 
 As a data consumer, I want to be confident that the HCA DCP has correctly processed all data files that belong together so that I know the matrices I receive have been generated correctly.
 
-**TODO: Expand with more cases [markd: suggest added more detail to the above rather than more cases]**
-
-## Scientific "guardrails" [optional]
-
-*Describe recommended or mandated review from HCA Science governance to ensure that the RFC addresses the needs of the scientific community.*
-
 ## Detailed Design
 
 ### Component Notification Changes
 This RFC proposes no longer using bundle-level search-based notifications on primary bundles for initiating pipelines. Instead, we propose that a **specific trigger** is used to initiate analysis pipelines. This document lists the requirements for such notifications to be actionable by analysis and makes recommendations on overall implementation paradigm with specific examples for 10X and SS2 datasets.
 
 ### Notification Requirements
-For a notification to beff actionable by analysis, it must fulfill specific requirements. Specifically, the notification must include information about the bundles/data that belong to the same sequencing set and potentially need to be co-processed.
+For a notification to be actionable by analysis, it must fulfill specific requirements. Specifically, the notification must include information about the bundles/data that belong to the same sequencing set and potentially need to be co-processed.
 
-We propose the term **Data Aggregation and Processing Set (DAPS)** to encompass all the different alternative representations of such sets. Example representations of DAPS can be:
+We propose the term **Data Aggregation and Processing Set (DAPS)** to encompass all the different alternative representations of such sets. The only requirement imposed on such these representations is to be reproducible and resolvable to an immutable sets of data. Example representations of DAPS can be:
 
 *   A listing of all relevant bundles along with versions
-*   A search query accompanied by a timestamp (to guarantee reproducibility)
+*   A search query accompanied by a timestamp (to guarantee reproducibility and immutability)
 *   Other future representations as project needs evolve (e.g. linking to a particular project bundle version)
 
 Critically, the submitted DAPS will not explicitly dictate the files that have to be co-processed in pipeline instances as this would require specialized knowledge of the pipelines by the submitter. Instead, **a DAPS indicates that aggregation of data must be performed only from the list of data provided (submission envelope), but the actual aggregation is delegated to the process of analysis initiation, subject to well defined modality-specific metadata requirements**. 
@@ -91,7 +85,7 @@ The actual grouping of the files is to be performed by analysis via a search in 
 
 Furthermore, if part of the data submitted in a DAPS has already been processed the Analysis infrastructure will only re-process the parts that have not been modified.
 
-1. The data modality of each bundle included in the DAPS must be clearly identifiable (MR1)
+1. The data modality of each data file included in the DAPS must be clearly identifiable (MR1)
 2. Data that need to be processed together must be clearly identifiable by a modality-specific set of metadata variables that will group the files according to processing requirements. (MR2)
 3. Among the data that needs to be processed together, the metadata must provide sufficient information to correctly order, pair or otherwise establish correspondence and type of the input files. (MR3)
 
@@ -103,7 +97,6 @@ We recommend that the data store (DSS) is used to store DAPS as a new bundle typ
 We propose that as an initial implementation approach DAPS are used at set data aggregation levels (e.g. sample, project) but critically the implementation must be flexible to arbitrary data aggregation levels to accommodate future project needs. We propose that triggering is initially done manually by data wranglers and/or ingest, but we envisage transition to automatic triggering in the future.
 
 ## Example: Analysis Implementation for a DAPS
-**TODO: Expand this to outline how analysis receives the signal**
 The following pseudocode presents a proposed implementation of the processing of an incoming DAPS by analysis:
 ```
 Partition the datasets by data modality (MR1)
@@ -116,9 +109,6 @@ For each data modality:
 Note that the above approach does not require all the data in a submitted DAPS to be of the same modality to be processed correctly. For example a DAPS at the project level can contain imaging and 10X datasets and these will be correctly processed in an independent manner. 
 
 Furthermore if part of the data submitted in a DAPS has already been processed the Analysis infrastructure will only re-process the parts that have not been modified.
-
-## Example:
-**TODO: Provide specific examples of how this fits into the current project workflow**
 
 ## Metadata Requirements for 10X V2 3’ scRNA-seq datasets
 The specific implementation of the above metadata requirements for 10X V2 3’ RNA-seq datasets is presented here as an initial use case and an example. 10X V2 3’ data are the most common type of data currently deposited in the DSS and therefore represent a widely applicable use case.
@@ -237,9 +227,7 @@ The following section summarizes possible alternative approaches for ensuring co
 - *What aspects of the design do you expect to clarify further through the RFC review process?*
 - *What aspects of the design do you expect to clarify later during iterative development of this RFC?*
 
-*   How does this framework interact with new modalities we are likely to encounter in the future. A good example of this is imaging data. Ambrose will be able to contribute here.
-*   Additional definitions?
-*   Link to material from the F2F meeting
-*   Link to Library Prep RFC: [https://docs.google.com/document/d/1PdJAd4q775jwnDoavJE_7XajXm0e7a5SGvP2k7DRJHc/edit#heading=h.5ildwmh2beeb](https://docs.google.com/document/d/1PdJAd4q775jwnDoavJE_7XajXm0e7a5SGvP2k7DRJHc/edit#heading=h.5ildwmh2beeb)
-*   Alternative: project or dataset bundles with rigidly defined bundle types
-*   Alternative: bundle lifecycle (unpublished/in progress vs. published/finished bundles)
+*   How does this framework interact with new modalities we are likely to encounter in the future. A good example of this is imaging data? (Feedback by Ambrose Requested)
+*   Link to [Library Prep RFC)(https://docs.google.com/document/d/1PdJAd4q775jwnDoavJE_7XajXm0e7a5SGvP2k7DRJHc/edit#heading=h.5ildwmh2beeb)
+*   Possible alternative/Synergistic solution: project or dataset bundles with rigidly defined bundle types
+*   Possible alternative/Synergistic solution: bundle lifecycle (unpublished/in progress vs. published/finished bundles)
