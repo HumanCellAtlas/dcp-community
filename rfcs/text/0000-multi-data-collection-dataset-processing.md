@@ -15,7 +15,7 @@ This RFC proposes a design solution to allow datasets that span multiple data co
 [Mark Diekhans](mailto:markd@ucsc.edu)
 
 ## Shepherd
-***Leave this blank.** This role is assigned by DCP PM to guide the **Author(s)** through the RFC process.*
+-[Nick Barkas](mailto:barkasn@broadinstitute.org)
 
 ## Motivation
 Correct data processing requires the initiation of data processing pipelines with all the appropriate input data. The current mechanism of bundle notifications is not effective when data spans multiple bundles because there is no clear set of rules to identify the bundles that need to be co-processed.  Limiting the downstream process to the scope of a single bundle requires the submitter to define the scope of the processing without any foreknowledge of future processes needs.
@@ -85,11 +85,37 @@ The DAPS approach has common elements with project-level bundles that have been 
 ## General Metadata Requirements
 In the above framework, analysis pipelines will receive a set of bundles that _potentially_ need to be co-processed. As aforementioned, this signal will not explicitly identify the bundles that need to be co-processed in a single pipeline, instead, it will serve as a notification **indicating that any co-processing is to be done only within the boundaries of this set of files (submission envelope). **
 
-As a result, analysis can initiate multiple pipeline invocations as a result of a single DAPS being submitted.
+Analysis can initiate multiple pipeline invocations as a result of a single DAPS being submitted.
 
 The actual grouping of the files is to be performed by analysis via a search in the metadata of the bundles submitted following well-defined modality-specific set of rules. For this reason, the metadata must satisfy the following metadata requirements (MR):
 
 Furthermore, if part of the data submitted in a DAPS has already been processed the Analysis infrastructure will only re-process the parts that have not been modified.
+
+1. The data modality of each bundle included in the DAPS must be clearly identifiable (MR1)
+2. Data that need to be processed together must be clearly identifiable by a modality-specific set of metadata variables that will group the files according to processing requirements. (MR2)
+3. Among the data that needs to be processed together, the metadata must provide sufficient information to correctly order, pair or otherwise establish correspondence and type of the input files. (MR3)
+
+## Proposed Signalling Implementation
+The DAPS proposal above only sets specific requirements for the signal to initiate data analysis and minimum requirements for the associated metadata. We hereby provide a specific recommendation for implementation via bundle notifications.
+
+We recommend that the data store (DSS) is used to store DAPS as a new bundle type of **“DAPS Manifest”**, and that the current search-based notification system is adjusted so that instead of listening for new primary bundles, analysis listens for new DAPS bundles that are exclusively used for the initiation of pipelines. This implementation has two major advantages: (1) the DAPS are permanently saved at the main storage site for the HCA project (DSS) so the analyses can be reproducibly triggered and (2) The existing notification mechanisms are reused, avoiding the need for implementation of a new out-of-band notification system.
+
+We propose that as an initial implementation approach DAPS are used at set data aggregation levels (e.g. sample, project) but critically the implementation must be flexible to arbitrary data aggregation levels to accommodate future project needs. We propose that triggering is initially done manually by data wranglers and/or ingest, but we envisage transition to automatic triggering in the future.
+
+## Example: Analysis Implementation for a DAPS
+**TODO: Expand this to outline how analysis receives the signal**
+The following pseudocode presents a proposed implementation of the processing of an incoming DAPS by analysis:
+```
+Partition the datasets by data modality (MR1)
+For each data modality:
+    Use the modality-specific criteria to identify pipeline invocations (MR2)
+    For each invocation:
+        order the data as required (MR3) and launch pipeline invocation
+```
+
+Note that the above approach does not require all the data in a submitted DAPS to be of the same modality to be processed correctly. For example a DAPS at the project level can contain imaging and 10X datasets and these will be correctly processed in an independent manner. 
+
+Furthermore if part of the data submitted in a DAPS has already been processed the Analysis infrastructure will only re-process the parts that have not been modified.
 
 ## Example:
 **TODO: Provide specific examples of how this fits into the current project workflow**
