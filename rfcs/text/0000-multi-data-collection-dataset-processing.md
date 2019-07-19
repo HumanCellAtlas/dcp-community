@@ -11,7 +11,7 @@ This RFC proposes a design solution to allow datasets that span multiple data co
 
 
 ## Author(s)
-[Nick Barkas](mailto:barkasn@broadinstitute.org),2
+[Nick Barkas](mailto:barkasn@broadinstitute.org),
 [Mark Diekhans](mailto:markd@ucsc.edu)
 
 ## Shepherd
