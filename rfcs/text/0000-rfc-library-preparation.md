@@ -312,7 +312,7 @@ Data consumers will be able to find all data that need to be processed together 
   "es_query": {
     "query": {
       "match": {
-        "files.library_preparation_0_json.provenance.document_id": "fd420633-6b3d-4361-ac0d-b57b8d9214d7"
+        "files.library_preparation_json.provenance.document_id": "fd420633-6b3d-4361-ac0d-b57b8d9214d7"
       }
     }
   }
