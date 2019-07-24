@@ -10,7 +10,7 @@ Data processing robustness and integrity
 
 ## Summary
 
-This document describes requirements for individual DCP components related to robust against incorrect, corrupt, or unexpected data.  It also lays out expectations for data integrity and error handling for DCP software.  If does not specify implementation details or specific technology.
+This document describes requirements for individual DCP components related to robust against incorrect, corrupt, or unexpected data.  It also lays out expectations for data integrity and error handling for DCP software.  It does not specify implementation details or technology.
 
 ## Author(s)
 
@@ -26,36 +26,34 @@ This document describes requirements for individual DCP components related to ro
 
 ## Motivation
 
-As with most biological data processing systems, the HCA DCP is a data-driven where the input is generated from external sources with a high amount of variability.  This poses challenges for processing software that need to handle problematic data in a predictable manner.
+As with most biological data processing systems, the HCA DCP is driven by input generated from external sources.  This data can be highly variable as well as error-prone. This poses challenges for processing software that need to handle problematic data in a predictable manner.
 
-Metadata describes and is part of the data, not part of the system APIs.  Metadata  will change independently of processing software as different types of experiments are consumed and new requirements are developed.  In addition to format changes in the metadata,  it may differed in other ways, such as graph structure, from the assumptions of processing software.
+Metadata is part of the data, not part of the system's APIs.  Metadata will change as different types of experiments are consumed and new requirements are developed.  In addition to format changes in the metadata,  it may differ in other ways, such as graph structure, from the assumptions of processing software.  These differences are not necessarily described by the metadata schema.
 
-*TODO: add data integrity motivation*
+Data integrity for biological data sets goes beyond ensuring the integrity of individual files.  It involves the consistency of all data in a data set.  The partitioned nature of many single-cell experiments, along with the continuous processing design of the DCP, makes the definition of a *complete data set* difficult.
 
 
 ### User Stories
 
 - As a DCP developer, I don't want to make urgent fixes to software due to differences or errors in data, so development can be managed in a focused manner.
-- As a DCP submitter, I want to get data ingested in a timely manner, without waiting for DCP developers to make modifications to handle my experiment, so that my lab can move on to other tasks.
-- As a data consumer, I don't want to receive incorrect data caused by developers attempting to work around problematic data, so that I can spend my time on actual research.
+- As a DCP submitter, I want to get data ingested promptly, without waiting for DCP developers to make modifications to handle my experiment, so that my lab can move on to other tasks.
+- As a DCP data consumer, I don't want to receive incorrect or incomplete data caused by developers attempting to work around problematic data, so that I can spend my time on actual research.
 
 ## Detailed Design
 
 As part of normal operations, all components in the system are responsible for:
-1. Skipping experimental data when it is erroneous or unexpected rather than failing.
-1. Capturing these errors in a way the they can be detected and corrected.
-1. Reprocess failed data when the problems are corrected.
-1. Ensure completeness and consistency of data produced.
+- Skip process experimental data when it is erroneous or unexpected rather than failing.
+- Capturing errors in a way they can be analyzed and corrected.
+- Reprocess failed data when the problems are corrected.
+- Ensure the completeness and consistency of data produced.
 
-This requirements can be summarized as *log and continue* and *recover after
-repair*.
+These requirements can be summarized as:
+1. *log and continue*
+2. *recover after repair*
+3. *define completeness* 
 
-
-*Explain the design in sufficient detail such that the implementation and (if appropriate) the interaction with existing DCP software are both reasonably clear.*
 
 ### Unresolved Questions
-
-1. How to evaluate conformance??
 
 - *What aspects of the design do you expect to clarify further through the RFC review process?*
 - *What aspects of the design do you expect to clarify later during iterative development of this RFC?*
