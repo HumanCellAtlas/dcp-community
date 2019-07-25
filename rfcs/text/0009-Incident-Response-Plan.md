@@ -10,11 +10,11 @@ DCP needs a clear process for handling incidents that may occur in the system an
 
 ## Author(s)
 
-Sarah Tahiri [stahiri@broadinstitute.org]
+[Sarah Tahiri](stahiri@broadinstitute.org)
 
 ## Shepherd
 
-Sarah Tahiri [stahiri@broadinstitute.org]
+[Sarah Tahiri](stahiri@broadinstitute.org)
 
 ## Motivation
 
