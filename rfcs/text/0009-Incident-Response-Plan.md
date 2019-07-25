@@ -73,7 +73,7 @@ The severity scale is determined by three general criteria:
 #### Incident Response Lifecycle Overview
 The DCP IRT follows the incident response lifecycle described below.
 
-![Incident Response Lifecycle](https://drive.google.com/uc?export=view&id=1cTXM31emPeS2RiaSI6p8yLfyZG8a6_R3)
+![Incident Response Lifecycle](../images/0009-incident-response-lifecycle.png)
 
 ##### Phase 1: Preparation
 Preventing incidents from occurring is a part of preparation. DCP personnel implement appropriate security controls as part of the overall DevSecOps program. Preparation activities related to incident response are as follows:
