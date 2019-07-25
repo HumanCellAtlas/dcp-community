@@ -33,7 +33,7 @@ The current HCA DCP metadata model explicitly represents cell suspensions (singl
 
 **Logical unit** - a set of metadata and data files that are consumed together to provide a context for understanding, processing, and interpreting data. In the HCA DCP, a logical unit is instantiated by a primary or secondary “bundle”, although the meaning of bundle is not stable or clearly defined at the moment.
 
-**Library preparation** (biomaterial) - A collection of DNA fragments that have been prepared for sequencing from a single biological sample. DNA fragments can be prepared from genomic DNA or transcribed from RNA and are usually ligated to adapter and barcode oligonucleotides.
+**Library preparation** (biomaterial) - A collection of DNA fragments that have been prepared for sequencing. DNA fragments can be prepared from genomic DNA or transcribed from RNA and are usually ligated to adapter and barcode oligonucleotides.
 
 **Library preparation protocol** - A protocol followed that converts endogenous RNA or DNA molecules into a form (cDNA) that can be sequenced. Often this protocol involves transcribing RNA to cDNA and ligating adapter and barcode oligonucleotides to the cDNA.
 
