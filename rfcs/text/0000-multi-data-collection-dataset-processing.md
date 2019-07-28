@@ -4,10 +4,14 @@
 
 `[dcp-community/rfc#](https://github.com/HumanCellAtlas/dcp-community/pull/<PR#>)`
 
-# Processing Datasets that Span Multiple Data Collection Runs
+# Processing Datasets that Span Multiple Bundles
 
 ## Summary
-This RFC proposes a design solution to allow datasets that span multiple data collection runs to be processed in unison as per the scientific requirements. The proposal generalizes to multiple data type modalities, but also provides specific details for 10X V2 3’ single-cell data as an example and to address an immediate need for a data processing solution.
+This RFC proposes a solution to allow processing of datasets that span multiple bundles. It address the general problem that the current DCP data model contains no representation of data set completeness beyond individual bundles.
+
+By providing a general method for grouping bundles, this proposal provides a mechanism for addressing various task that cross bundle boundaries.  This impacts flexible analysis pipelines, algorithmic complexity, data consistency, and data set quality control.
+
+The current bundle grouping under consideration is a submission to a project.  However, the concept is generalize in a manner that other groupings can be defined.
 
 
 ## Author(s)
@@ -18,21 +22,34 @@ This RFC proposes a design solution to allow datasets that span multiple data co
 -[Nick Barkas](mailto:barkasn@broadinstitute.org)
 
 ## Motivation
-Correct data processing requires the initiation of data processing pipelines with all the appropriate input data. The current mechanism of bundle notifications is not effective when data spans multiple bundles because there is no clear set of rules to identify the bundles that need to be co-processed.  Limiting the downstream process to the scope of a single bundle requires the submitter to define the scope of the processing without any foreknowledge of future processes needs.
+The current DCP model or process has a scope of one bundle, which contain a single an assay or analysis.  The is no mechanism to know when a group of bundles that need to be processed together have been ingested or to trigger that processing.  This restriction that data processing is linear and independent based on ingestion packaging causes multiple problems,
+as outline in this section.
 
-An immediate need to process 10X V2 scRNA-seq datasets that span multiple bundles exists. The need for co-processing multiple bundles is not however limited to this scenario and extends to any other NGS modality that involves repeated sequencing of the same library. Furthermore the need to co-process data may extend to other data modalities that the project will accept in the future.
 
-We, therefore, aim to establish a general framework for co-processing bundles and provide a specific use case example for co-processing 10X V2 scRNA-seq datasets.
+### Multi-input analysis 
+Analysis pipelines may require input from multiple different assays. In order to run such analysis, they must be triggered while all input data is available.  The current mechanism of bundle notifications is not effective when data spans multiple bundles because there is no clear set of rules to identify the bundles that need to be co-processed.  Limiting the downstream process to the scope of a single bundle requires the ingest process to define the scope of the processing without any foreknowledge of future processes needs.
 
-### Definitions
+An immediate need to for analysis pipelines to process 10X V2 scRNA-seq datasets that span multiple bundles exists. The need for co-processing multiple bundles is not however limited to this scenario and extends to any other NGS modality that involves repeated sequencing of the same library. Furthermore the need to co-process data may extend to other data modalities that the project will accept in the future.
 
-**Data Aggregation and Processing Set (DAPS)**: A representation identifying data in the DSS that need to be co-processed. The term deliberately does not impose an implementation, to allow for future flexibility.
+In the future, there maybe a need to run analysis processes that were input sets span multiple projects.  A mechanism to specify processing data collections that are not restricted to a single project or submissions will be required to implement this type of analysis.
 
-**Unique Library Identifiers**: A unique identifier (string or numeric) that globally identifies each library preparation for sequencing data.
+### Algorithmic complexity and performance
 
-**Co-processing (of data)**: Providing data as input to a single pipeline invocation
+Producing combined metadata or data from multiple assay bundles using the bundle event system results in O(N^2) algorithmic complexity.  As each bundle event arrives, it must be combined with accumulated metadata from previous bundles.  Additionally, there is a race condition on reading and writing the accumulated the results that must be handled.
 
-**MR**: Metadata Requirement. The term refers to specific metadata requirements for bundles to be able to process in analysis.
+ This impacts the data browser creating project metadata TSVs and normalized JSON files, and the matrix service creating pre-built project matrices.
+
+*[TODO: is query service impacted?]*
+
+
+### Data consistency
+
+Consistency and completeness across a data set is an important attribute of an atlas.  An incomplete data set may result in misinterpretation of data or missed discoveries.  Currently,
+the DCP has no way to indicate data completeness beyond a bundle. The consumer API and data browser don't have the knowledge to indicate a project submissions is still incomplete.  This information is only available within ingest, with no way to communicate submission status to other components.
+
+### Data set quality control
+
+An approach to quality control is to run a partial or full analysis on an subset of the data before doing a full analysis.  This requires defining an analyzable subset of the data to pass on to the processing pipelines. This subset must meet the criteria of the  
 
 ## User Stories
 
@@ -48,7 +65,19 @@ As a data consumer, I want to be able to find all data files that need to be pro
 
 As a data consumer, I want to be confident that the HCA DCP has correctly processed all data files that belong together so that I know the matrices I receive have been generated correctly.
 
+As a data consumer, I need to know which data sets and incomplete, so that I don't download and use incomplete data.
+
 ## Detailed Design
+
+### Definitions
+
+**Data Aggregation and Processing Set (DAPS)**: A representation identifying data in the DSS that need to be co-processed. The term deliberately does not impose an implementation, to allow for future flexibility.
+
+**Unique Library Identifiers**: A unique identifier (string or numeric) that globally identifies each library preparation for sequencing data.
+
+**Co-processing (of data)**: Providing data as input to a single pipeline invocation
+
+**MR**: Metadata Requirement. The term refers to specific metadata requirements for bundles to be able to process in analysis.
 
 ### Component Notification Changes
 This RFC proposes no longer using bundle-level search-based notifications on primary bundles for initiating pipelines. Instead, we propose that a **specific trigger** is used to initiate analysis pipelines. This document lists the requirements for such notifications to be actionable by analysis and makes recommendations on overall implementation paradigm with specific examples for 10X and SS2 datasets.
