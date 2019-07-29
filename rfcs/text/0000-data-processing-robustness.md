@@ -6,7 +6,7 @@
 
 # RFC Name
 
-Data processing robustness and integrity
+DCP data processing robustness principles
 
 ## Summary
 
