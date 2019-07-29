@@ -20,15 +20,15 @@ Specifically, the following charters will be supported by this RFC:
 
 *Recommended format for Authors:*
 
- `[Mallory Freeberg](mailto:mfreeberg@ebi.ac.uk)`
+ [Mallory Freeberg](mailto:mfreeberg@ebi.ac.uk)
  
- `[Brian Hannafious](mailto:bhannafi@ucsc.edu)`
+ [Brian Hannafious](mailto:bhannafi@ucsc.edu)
  
- `[Hannes Schmidt](mailto:hannes@ucsc.edu)`
+ [Hannes Schmidt](mailto:hannes@ucsc.edu)
  
- `[Andrey Kislyuk](mailto:akislyuk@chanzuckerberg.com)`
+ [Andrey Kislyuk](mailto:akislyuk@chanzuckerberg.com)
 
-> Replace Mallory with Zina P and Chris V.
+> Replace Mallory with Zina P and/or Chris V.
 
 ## Shepherd
 ***Leave this blank.** This role is assigned by DCP PM to guide the **Author(s)** through the RFC process.*
@@ -87,6 +87,7 @@ Bundle types, definitions, consumers, and specifications are outlined below. Use
 | Tertiary bundle* | A bundle that contains tertiary (expression) data files produced by the Matrix Service, input primary and secondary data files, and all related metadata files. | computational biologists; biologists; Data Browser; Query Service | 3, 4 |
 | Project bundle* | A bundle that contains project-level metadata files. This bundle type does not contain data files or metadata files related to biomaterials, protocols, processes, or files. | computational biologists; biologists; | ? |
 | Resource/Reference bundle* | A bundle that contains reference data files used by the Data Processing Pipelines(?) and all related metadata files. This bundle type does not contain data files or metadata files related to biomaterials, protocols, processes(, or projects?). | computational biologists; Data Processing Pipelines; | 2, 3, 5 |
+| DAPS bundle | ? | ? | ? |
 
 > Asterisk (*) indicates bundles types that do not currently exist in the DCP but have been discussed as potential future bundle types to support data consumers.
 
