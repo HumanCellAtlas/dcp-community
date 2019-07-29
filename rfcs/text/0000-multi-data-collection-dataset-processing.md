@@ -39,17 +39,17 @@ Producing combined metadata or data from multiple assay bundles using the bundle
 
  This impacts the data browser creating project metadata TSVs and normalized JSON files, and the matrix service creating pre-built project matrices.
 
-*[TODO: is query service impacted?]*
+*[TODO: is the query service impacted?]*
 
 
 ### Data consistency
 
 Consistency and completeness across a data set is an important attribute of an atlas.  An incomplete data set may result in misinterpretation of data or missed discoveries.  Currently,
-the DCP has no way to indicate data completeness beyond a bundle. The consumer API and data browser don't have the knowledge to indicate a project submissions is still incomplete.  This information is only available within ingest, with no way to communicate submission status to other components.
+the DCP has no way to indicate data completeness beyond a bundle. The consumer API and data browser don't have the knowledge to indicate a project submissions is incomplete.  This information is only available within ingest, with no way to communicate submission status to other components.
 
 ### Data set quality control
 
-An approach to quality control is to run a partial or full analysis on an subset of the data before doing a full analysis.  This requires defining an analyzable subset of the data to pass on to the processing pipelines. This subset must meet the criteria of the  
+An approach to quality control (QC) is to run a partial or full analysis on an subset of the data before doing a full analysis.  This requires defining an analyzable subset of the data to pass on to the processing pipelines. A QC data subset must meet the criteria to that allows the QC analysis to run.
 
 ## User Stories
 
@@ -59,19 +59,40 @@ As a data-wrangler, I want to be able to succinctly enter the metadata I receive
 
 As a schema developer, I want to ensure we are capturing and requiring, the metadata from a contributor to ensuring the pipelines can run appropriately.
 
-As a member of the pipelines team, I want to ensure that the pipelines process the correct datasets and I can easily access the metadata required to trigger the pipelines.  I do not want to be restricted in designing analysis based on how data was submitted.
+As a member of the pipelines team, I want to ensure that the pipelines process the correct data sets and I can easily access the metadata required to trigger the pipelines.  I do not want to be restricted in designing analysis based on how data was submitted.
 
 As a data consumer, I want to be able to find all data files that need to be processed together so that I can run my data processing pipeline.   I do not want to be restricted in designing analysis based on how data was submitted.
 
 As a data consumer, I want to be confident that the HCA DCP has correctly processed all data files that belong together so that I know the matrices I receive have been generated correctly.
 
-As a data consumer, I need to know which data sets and incomplete, so that I don't download and use incomplete data.
+As a data consumer, I need to know that a data set is incomplete, so that I don't download and use it until it is complete.
 
-## Detailed Design
+## Design
+
+A new concept of *data group* is added to the DCP data model to address these issues.  A data group is define as a set of specific versions of metadata and data that is defined as complete and consistent in by a specified criteria.  Events are generated when a *data group* is create, updated, or deleted.
+
+A data group has a symbolic scope type that specifies what is represented by the group.  Most of the above uses cases will requires a *project submission* scope that is indicates a submission to a project is complete.
+
+Data groups are implemented as a new bundle type that contains a JSON file listing the FQIDs (UUIDs with versions) of all bundles that part of the data groups. 
+
+A new schema *data_group* will be create that contains the fields:
+- *scope* - Symbolic name of the scope, for example *PROJECT_SUBMISSION*.
+- *bundle_fqids* - List of FQIDs of bundles that are in the group.
+
+[TODO add diagram here]
+
+
+* TODO: 
+- How updates to project submissions work data groups with needs to be defined.
+- Are analysis submissions a different project scope than primary data submissions?
+
+
+
+## Example 
+*[MODIFY AND SIMPLIFY THE BELOW TEXT TO BE AN EXAMPLE]*
+
 
 ### Definitions
-
-**Data Aggregation and Processing Set (DAPS)**: A representation identifying data in the DSS that need to be co-processed. The term deliberately does not impose an implementation, to allow for future flexibility.
 
 **Unique Library Identifiers**: A unique identifier (string or numeric) that globally identifies each library preparation for sequencing data.
 
@@ -80,6 +101,7 @@ As a data consumer, I need to know which data sets and incomplete, so that I don
 **MR**: Metadata Requirement. The term refers to specific metadata requirements for bundles to be able to process in analysis.
 
 ### Component Notification Changes
+[this implies that DAPS is not a bundle]
 This RFC proposes no longer using bundle-level search-based notifications on primary bundles for initiating pipelines. Instead, we propose that a **specific trigger** is used to initiate analysis pipelines. This document lists the requirements for such notifications to be actionable by analysis and makes recommendations on overall implementation paradigm with specific examples for 10X and SS2 datasets.
 
 ### Notification Requirements
