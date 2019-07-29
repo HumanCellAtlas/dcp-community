@@ -214,7 +214,7 @@ Where the `biomaterial_core.json` schema contains the following properties:
 "biomaterial_description": {
     "description": "A general description of the biomaterial.",
 },
-"ncbi_taxon_id" : {
+"ncbi_taxon_id‡" : {
     "description": "A taxonomy ID (taxonID) from NCBI.",
 },
 "biosamples_accession": {
@@ -234,6 +234,8 @@ Where the `biomaterial_core.json` schema contains the following properties:
 }
 ```
 > *Consider removing `genotype` and `HDBR_accession` from core as they don't make sense here and in other biomaterials.
+
+> ‡The field `ncbi_taxon_id` will remain required as per this RFC. In the future, we can develop tooling that will automatically populate this field from, e.g., the value entered for `ncbi_taxon_id` in the `donor_organism.json` schema.
 
 And the `provenance.json` schema contains the following properties (all supplied by Ingestion Service):
 
