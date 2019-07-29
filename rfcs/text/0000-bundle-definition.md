@@ -87,7 +87,7 @@ Bundle types, definitions, consumers, and specifications are outlined below. Use
 | Tertiary bundle* | A bundle that contains tertiary (expression) data files produced by the Matrix Service, input primary and secondary data files, and all related metadata files. | computational biologists; biologists; Data Browser; Query Service | 3, 4 |
 | Project bundle* | A bundle that contains project-level metadata files. This bundle type does not contain data files or metadata files related to biomaterials, protocols, processes, or files. | computational biologists; biologists; | ? |
 | Resource/Reference bundle* | A bundle that contains reference data files used by the Data Processing Pipelines(?) and all related metadata files. This bundle type does not contain data files or metadata files related to biomaterials, protocols, processes(, or projects?). | computational biologists; Data Processing Pipelines; | 2, 3, 5 |
-| DAPS bundle | ? | ? | ? |
+| DAPS bundle* | ? | ? | ? |
 
 > Asterisk (*) indicates bundles types that do not currently exist in the DCP but have been discussed as potential future bundle types to support data consumers.
 
@@ -129,11 +129,12 @@ Describe here...
 ### Unresolved Questions
 
 *What aspects of the design do you expect to clarify further through the RFC review process?*
-1. What is the process for adding or adopting new bundle types? Changing current bundle types?
-1. What other bundle specifications should be included here, especially in light of the bundle type design RFC?
+1. What is the process for adding or adopting new bundle types? Changing definition of current bundle types?
+1. What other bundle specifications should be included here, especially in light of the bundle type design RFC ([PR link](https://github.com/HumanCellAtlas/dcp-community/pull/86))?
 
 *What aspects of the design do you expect to clarify later during iterative development of this RFC?*
 1. Does this informational RFC depend on mechanics of copy-forward?
+1. What bundle types should be defined in this RFC? What types should be defined in future RFCs?
 
 
 ### Drawbacks and Limitations [optional]
