@@ -27,11 +27,11 @@ This covers [use cases](https://docs.google.com/document/d/1rI8PCASomdAHznyWQceR
 Wranglers consider the **bolded** use cases in red to be critical for general availability.
 
 ## Detailed Design
-A primary metadata update triggers a datastore notification. Per pipeline, Analysis performs:
+A primary metadata update triggers a datastore notification. Per pipeline, Analysis determines what should happen:
 
 * **Update analysis.** The [meta]data change is in a file or parameter that updates an existing analysis (a “consequential” change).
-* **New analysis.** The [meta]data change creates a new analysis. For example, the species changes from mouse to human and there is a pipeline for human on this data but not one for mouse. It may be that an analysis from a different pipeline already exists and this should not be superseded by the new analysis.
-* **No update.** There is an existing analysis for this pipeline but the [meta]data change does not alter the analysis (an “inconsequential” change). For example, a change in the project description.
+* **New analysis.** The [meta]data change should create a new analysis. For example, the species changes from mouse to human and there is a pipeline for human on this data but not one for mouse. It may be that an analysis from a different pipeline already exists and this should not be superseded by the new analysis.
+* **No update.** There is an existing analysis for this pipeline but the [meta]data change does not affect it (an “inconsequential” change). For example, a change in the project description.
 
 The **update analysis** and **new analysis** scenarios can occur without a primary update. For example, a pipeline bug may be fixed which requires updates of the analyses it performed. Or a new pipeline may be created that can be run on existing data, where the existing analyses from other pipelines are still valid and so should not be superseded.
 
