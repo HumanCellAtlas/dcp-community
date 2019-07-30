@@ -75,13 +75,17 @@ A new schema *data_group* will be create that contains the fields:
 - *scope* - Symbolic name of the scope, for example *PROJECT_SUBMISSION*.
 - *bundle_fqids* - List of FQIDs of bundles that are in the group.
 
+The *data_group* implementation shall be flexible so as to allow addition of further fields for future use without breaking current functionality.
+
 [TODO add diagram here]
 
+### Updates to project groups
+
+Updates to project submissions will result in automatic updating of all the associated *data groups* when reprocessing is required (for example the *data group* is of type *PROJECT_SUBMISSION*, however this will not be the case in all type and should be possible to disable on a per *data group* basis, for example in the case of QC *data groups*).
 
 * TODO: 
 - How updates to project submissions work with data groups with needs to be defined. {NB: There could be an auto-update flag}
 - Are analysis submissions a different project scope than primary data submissions? {NB: Do you mean tertiary analyses?}
-
 
 
 ## Example 
@@ -90,6 +94,8 @@ A new schema *data_group* will be create that contains the fields:
 
 ### Definitions
 
+**Data modality**: A type of data in the HCA, for example NGS scRNA-seq or a particular type of imaging.
+
 **Unique Library Identifiers**: A unique identifier (string or numeric) that globally identifies each library preparation for sequencing data.
 
 **Co-processing (of data)**: Providing data as input to a single pipeline invocation
@@ -97,17 +103,13 @@ A new schema *data_group* will be create that contains the fields:
 **MR**: Metadata Requirement. The term refers to specific metadata requirements for bundles to be able to process in analysis.
 
 ### Component Notification Changes
-[this implies that DAPS is not a bundle]
-This RFC proposes no longer using bundle-level search-based notifications on primary bundles for initiating pipelines. Instead, we propose that a **specific trigger** is used to initiate analysis pipelines. This document lists the requirements for such notifications to be actionable by analysis and makes recommendations on overall implementation paradigm with specific examples for 10X and SS2 datasets.
+This RFC proposes no longer using bundle-level search-based notifications for initiating pipelines. Instead pipelines will be triggered exclusively on events on bundles of type *data group*.
 
 ### Notification Requirements
-For a notification to be actionable by analysis, it must fulfill specific requirements. Specifically, the notification must include information about the bundles/data that belong to the same sequencing set and potentially need to be co-processed.
+In order for the *data group* to be actionable by analysis, it must fulfill specific requirements. Specifically, the notification must provide a list of *bundle_fqids* that belong to the same sequencing set and _potentially_ need to be co-processed. We envisage that in the future other bundle specifications might be possible (e.g. search based, as long as they are resolvable to an immutable list of *bundle_fqids*).
 
-We propose the term **Data Aggregation and Processing Set (DAPS)** to encompass all the different alternative representations of such sets. The only requirement imposed on such these representations is to be reproducible and resolvable to an immutable sets of data. Example representations of DAPS can be:
+The *data group* will not force co-processing of data, it will merely indicate that data to be co-processed should be identified within the *data group* and that that group fulfills completeness requirements as per the *data group* type. Co-processing will be initiated by pipelines on the basis of a well defined and pre-agreed ruleset that is modality specific.
 
-*   A listing of all relevant bundles along with versions
-*   A search query accompanied by a timestamp (to guarantee reproducibility and immutability)
-*   Other future representations as project needs evolve (e.g. linking to a particular project bundle version)
 
 Critically, the submitted DAPS will not explicitly dictate the files that have to be co-processed in pipeline instances as this would require specialized knowledge of the pipelines by the submitter. Instead, **a DAPS indicates that aggregation of data must be performed only from the list of data provided (submission envelope), but the actual aggregation is delegated to the process of analysis initiation, subject to well defined modality-specific metadata requirements**. 
 
