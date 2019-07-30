@@ -13,23 +13,22 @@ By providing a general method for grouping bundles, this proposal provides a mec
 
 The current bundle grouping under consideration is a submission to a project.  However, the concept is generalize in a manner that other groupings can be defined.
 
-
 ## Author(s)
-[Nick Barkas](mailto:barkasn@broadinstitute.org),
-[Mark Diekhans](mailto:markd@ucsc.edu)
+- [Nick Barkas](mailto:barkasn@broadinstitute.org)
+- [Mark Diekhans](mailto:markd@ucsc.edu)
 
 ## Shepherd
 -[Nick Barkas](mailto:barkasn@broadinstitute.org)
 
 ## Motivation
-The current DCP model or process has a scope of one bundle, which contain a single assay or analysis.  The is no mechanism to know when a group of bundles that need to be processed together have been ingested or to trigger that processing.  This restriction that data processing is linear and independent based on ingestion packaging causes multiple problems, as outlined in this section.
+The current DCP model or process has a scope of one bundle, which contain a single assay or analysis.  The is no mechanism to know when a group of bundles that need to be processed together have been ingested or to trigger that processing.  This restriction that data processing is linear and based on ingestion packaging causes multiple problems, as outlined in this section.
 
 ### Multi-input analysis 
-Analysis pipelines may require input from multiple different assays. In order to run such analyses, they must be triggered only when all input data is available.  The current mechanism of bundle notifications is not effective when data spans multiple bundles because there is no clear set of rules to identify the bundles that need to be co-processed.  Limiting the downstream process to the scope of a single bundle requires the ingest process to define the scope of the processing without any foreknowledge of future processes needs.
+Analysis pipelines may require input from multiple different assays. In order to perform such analyses, they must be triggered only when all input data is available. The current mechanism of bundle notifications is not effective when data spans multiple bundles because there is no clear set of rules to identify the bundles that need to be co-processed.  Limiting the downstream process to the scope of a single bundle requires the ingest process to define the scope of the processing without any foreknowledge of future processes needs.
 
 An immediate need to for analysis pipelines to process 10X V2 scRNA-seq datasets that span multiple bundles exists. The need for co-processing multiple bundles is not however limited to this scenario and extends to any other NGS modality that involves repeated sequencing of the same library. Furthermore, the need to co-process data may extend to other data modalities that the project will accept in the future.
 
-In the future, there may be a need to run analysis processes where input sets span multiple projects.  A mechanism to specify processing data collections that are not restricted to a single project or submissions will be required to implement this type of analysis.
+In the future, there may be a need to run analysis processes where input sets span multiple projects. A mechanism to specify processing data collections that are not restricted to a single project or submissions will be required to implement this type of analysis.
 
 ### Algorithmic complexity and performance
 
