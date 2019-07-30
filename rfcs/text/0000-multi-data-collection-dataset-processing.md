@@ -78,6 +78,15 @@ A new schema *data_group* will be create that contains the fields:
 The *data_group* implementation shall be flexible so as to allow addition of further fields for future use without breaking current functionality.
 
 [TODO add diagram here]
+### Handling of alternative *data set* scopes
+
+Different *data set* scopes will have different life-cycles and processing requirements. We initially propose the use of two types of scopes. These can later be extended as per project requirements.
+
+*PROJECT_SUBMISSION* Scope
+*Data groups* of scope *PROJECT_SUBMISSION* will indicate that the entirety of a single project submission is complete as indicated by the submitters and all data in the project submission should be processed.
+
+*QC* scope
+The QC scope indicates that a small dataset that will form part of the project submission is to be processed in order to assess data quality. The resulting bundle should be marked so as to indicate that it is not complete and only to be used for QC purposes.
 
 ### Updates to project groups
 
