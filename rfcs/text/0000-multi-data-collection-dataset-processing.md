@@ -30,7 +30,6 @@ An immediate need to for analysis pipelines to process 10X V2 scRNA-seq datasets
 
 In the future, there may be a need to run analysis processes where input sets span multiple projects. A mechanism to specify processing data collections that are not restricted to a single project or submissions will be required to implement this type of analysis.
 
-
 ### Algorithmic complexity and performance
 
 Producing combined metadata or data from multiple assay bundles using the bundle event system results in O(N^2) algorithmic complexity.  As each bundle event arrives, it must be combined with accumulated metadata from previous bundles.  Additionally, there is a race condition on reading and writing the accumulated the results that must be handled.
@@ -89,7 +88,7 @@ Different *data set* scopes will have different life-cycles and processing requi
 *QC* scope
 The QC scope indicates that a small dataset that will form part of the project submission is to be processed in order to assess data quality. The resulting bundle should be marked so as to indicate that it is not complete and only to be used for QC purposes.
 
-### Updates to data groups
+### Updates to *data groups*
 
 Different data groups may handle updates in different ways.
 
@@ -150,6 +149,10 @@ The actual grouping of the files is to be performed by analysis via a search in 
 We propose that as an initial implementation approach *data groups* are used at set data aggregation levels (e.g. sample, project) but critically the implementation must be flexible to arbitrary data aggregation levels to accommodate future project needs. Ingest is responsible for creating *data groups* after the relevant bundles have been created. A *data group* that references bundles that do not exist is invalid and analysis is not required to process it.
 
 ## Example: Analysis Implementation for a *data group*
+
+{NB to MD: This algorithm works fine for primary data bundles but will not work as well for higher level bundles and more complex analysis. The original idea was to have handlers that would capture data as they see fit. Should be codify this here? Also, what if in a dataset we need to define specific parameters or attributes to each input. For example we have an analysis that maps ss RNA-seq onto spatial transcriptomics but we need to have a way of saying 'map dataset X to dataset Y'. I have described above extenstion to metadata in the *data group* that would allow that, but what at what level should be give flexibility to capture datasets for downstream differently. I would propose top level i.e. all of the following is the default handler, but other handlers can be registered and they can have very different implementation. what are your thoughts?}
+
+
 The following pseudocode presents a proposed implementation of the processing of an incoming *data group* by analysis:
 ```
 Partition the datasets by data modality (MR1)
