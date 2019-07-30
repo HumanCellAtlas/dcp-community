@@ -9,7 +9,7 @@
 ## Summary
 This RFC proposes a solution to allow processing of datasets that span multiple bundles. It address the general problem that the current DCP data model contains no representation of data set completeness beyond individual bundles.
 
-By providing a general method for grouping bundles, this proposal provides a mechanism for addressing various task that cross bundle boundaries.  This impacts flexible analysis pipelines, algorithmic complexity, data consistency, and data set quality control.
+By providing a general method for grouping bundles, this proposal provides a mechanism for addressing various tasks that cross bundle boundaries.  This impacts flexible analysis pipelines, algorithmic complexity, data consistency, and data set quality control.
 
 The current bundle grouping under consideration is a submission to a project.  However, the concept is generalize in a manner that other groupings can be defined.
 
@@ -22,30 +22,27 @@ The current bundle grouping under consideration is a submission to a project.  H
 -[Nick Barkas](mailto:barkasn@broadinstitute.org)
 
 ## Motivation
-The current DCP model or process has a scope of one bundle, which contain a single an assay or analysis.  The is no mechanism to know when a group of bundles that need to be processed together have been ingested or to trigger that processing.  This restriction that data processing is linear and independent based on ingestion packaging causes multiple problems,
-as outline in this section.
-
+The current DCP model or process has a scope of one bundle, which contain a single assay or analysis.  The is no mechanism to know when a group of bundles that need to be processed together have been ingested or to trigger that processing.  This restriction that data processing is linear and independent based on ingestion packaging causes multiple problems, as outlined in this section.
 
 ### Multi-input analysis 
-Analysis pipelines may require input from multiple different assays. In order to run such analysis, they must be triggered while all input data is available.  The current mechanism of bundle notifications is not effective when data spans multiple bundles because there is no clear set of rules to identify the bundles that need to be co-processed.  Limiting the downstream process to the scope of a single bundle requires the ingest process to define the scope of the processing without any foreknowledge of future processes needs.
+Analysis pipelines may require input from multiple different assays. In order to run such analyses, they must be triggered only when all input data is available.  The current mechanism of bundle notifications is not effective when data spans multiple bundles because there is no clear set of rules to identify the bundles that need to be co-processed.  Limiting the downstream process to the scope of a single bundle requires the ingest process to define the scope of the processing without any foreknowledge of future processes needs.
 
-An immediate need to for analysis pipelines to process 10X V2 scRNA-seq datasets that span multiple bundles exists. The need for co-processing multiple bundles is not however limited to this scenario and extends to any other NGS modality that involves repeated sequencing of the same library. Furthermore the need to co-process data may extend to other data modalities that the project will accept in the future.
+An immediate need to for analysis pipelines to process 10X V2 scRNA-seq datasets that span multiple bundles exists. The need for co-processing multiple bundles is not however limited to this scenario and extends to any other NGS modality that involves repeated sequencing of the same library. Furthermore, the need to co-process data may extend to other data modalities that the project will accept in the future.
 
-In the future, there maybe a need to run analysis processes that were input sets span multiple projects.  A mechanism to specify processing data collections that are not restricted to a single project or submissions will be required to implement this type of analysis.
+In the future, there may be a need to run analysis processes where input sets span multiple projects.  A mechanism to specify processing data collections that are not restricted to a single project or submissions will be required to implement this type of analysis.
 
 ### Algorithmic complexity and performance
 
 Producing combined metadata or data from multiple assay bundles using the bundle event system results in O(N^2) algorithmic complexity.  As each bundle event arrives, it must be combined with accumulated metadata from previous bundles.  Additionally, there is a race condition on reading and writing the accumulated the results that must be handled.
 
- This impacts the data browser creating project metadata TSVs and normalized JSON files, and the matrix service creating pre-built project matrices.
+This impacts the data browser creating project metadata TSVs and normalized JSON files, and the matrix service creating pre-built project matrices.
 
 *[TODO: is the query service impacted?]*
 
 
 ### Data consistency
 
-Consistency and completeness across a data set is an important attribute of an atlas.  An incomplete data set may result in misinterpretation of data or missed discoveries.  Currently,
-the DCP has no way to indicate data completeness beyond a bundle. The consumer API and data browser don't have the knowledge to indicate a project submissions is incomplete.  This information is only available within ingest, with no way to communicate submission status to other components.
+Consistency and completeness across a data set is an important attribute of an atlas.  An incomplete data set may result in misinterpretation of data or missed discoveries.  Currently, the DCP has no way to indicate data completeness beyond a bundle. The consumer API and data browser don't have the knowledge to indicate a project submissions is incomplete.  This information is only available within ingest, with no way to communicate submission status to other components.
 
 ### Data set quality control
 
@@ -61,7 +58,7 @@ As a schema developer, I want to ensure we are capturing and requiring, the meta
 
 As a member of the pipelines team, I want to ensure that the pipelines process the correct data sets and I can easily access the metadata required to trigger the pipelines.  I do not want to be restricted in designing analysis based on how data was submitted.
 
-As a data consumer, I want to be able to find all data files that need to be processed together so that I can run my data processing pipeline.   I do not want to be restricted in designing analysis based on how data was submitted.
+As a data consumer, I want to be able to find all data files that need to be processed together so that I can run my data processing pipeline. I do not want to be restricted in designing analysis based on how data was submitted.
 
 As a data consumer, I want to be confident that the HCA DCP has correctly processed all data files that belong together so that I know the matrices I receive have been generated correctly.
 
@@ -69,7 +66,7 @@ As a data consumer, I need to know that a data set is incomplete, so that I don'
 
 ## Design
 
-A new concept of *data group* is added to the DCP data model to address these issues.  A data group is define as a set of specific versions of metadata and data that is defined as complete and consistent in by a specified criteria.  Events are generated when a *data group* is create, updated, or deleted.
+A new concept of *data group* is added to the DCP data model to address these issues.  A data group is defined as a set of specific versions of metadata and data that is annotated as complete and consistent by specified criteria.  Events are generated when a *data group* is created, updated, or deleted.
 
 A data group has a symbolic scope type that specifies what is represented by the group.  Most of the above uses cases will requires a *project submission* scope that is indicates a submission to a project is complete.
 
@@ -83,8 +80,8 @@ A new schema *data_group* will be create that contains the fields:
 
 
 * TODO: 
-- How updates to project submissions work data groups with needs to be defined.
-- Are analysis submissions a different project scope than primary data submissions?
+- How updates to project submissions work with data groups with needs to be defined. {NB: There could be an auto-update flag}
+- Are analysis submissions a different project scope than primary data submissions? {NB: Do you mean tertiary analyses?}
 
 
 
@@ -128,7 +125,7 @@ The DAPS approach has common elements with project-level bundles that have been 
 5. Decouples analysis initiation from data representation allowing for future flexibility
 
 ## General Metadata Requirements
-In the above framework, analysis pipelines will receive a set of bundles that _potentially_ need to be co-processed. As aforementioned, this signal will not explicitly identify the bundles that need to be co-processed in a single pipeline, instead, it will serve as a notification **indicating that any co-processing is to be done only within the boundaries of this set of files (submission envelope). **
+In the above framework, analysis pipelines will receive a set of bundles that _potentially_ need to be co-processed. As aforementioned, this signal will not explicitly identify the bundles that need to be co-processed in a single pipeline, instead, it will serve as a notification **indicating that any co-processing is to be done only within the boundaries of this set of files.**
 
 Analysis can initiate multiple pipeline invocations as a result of a single DAPS being submitted.
 
