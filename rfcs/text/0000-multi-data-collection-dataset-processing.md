@@ -94,12 +94,14 @@ Updates to project submissions will result in automatic updating of all the asso
 
 * TODO: 
 - How updates to project submissions work with data groups with needs to be defined. {NB: There could be an auto-update flag}
-- Are analysis submissions a different project scope than primary data submissions? {NB: Do you mean tertiary analyses?}
+{markd: how would the auto-update flag work?}
+- Are analysis submissions a different project scope than primary data submissions? {NB: Do you mean tertiary analyses?} {markd: no, secondary analysis;  tertiary would be one user, also probably the data browser}
 
 
 ## Example 
 *[MODIFY AND SIMPLIFY THE BELOW TEXT TO BE AN EXAMPLE]*
 
+{markd: I think this explanation is still too complex and resident with mallory's RFC} 
 
 ### Definitions
 
@@ -136,6 +138,7 @@ The actual grouping of the files is to be performed by analysis via a search in 
 
 ## Signalling Implementation
 *Data groups* will be implemented as data store (DSS) bundles of a specific type. The existing seach-based notification system will be modified so as to listen for bundles of this specific type only. This implementation has two major advantages: (1) the *data groups* are permanently saved at the main storage site for the HCA project (DSS) (2) The existing notification mechanisms are reused, avoiding the need for implementation of a new out-of-band notification system.
+{markd: I think this is redundant to the description in design}
 
 We propose that as an initial implementation approach *data groups* are used at set data aggregation levels (e.g. sample, project) but critically the implementation must be flexible to arbitrary data aggregation levels to accommodate future project needs. Ingest is responsible for creating *data groups* after the relevant bundles have been created. A *data group* that references bundles that do not exist is invalid and analysis is not required to process it.
 
@@ -208,6 +211,7 @@ The above metadata requirements are also compatible with SS2 analyses and can su
 Furthermore, this approach can be extended to support plate-based processing. By ensuring that a plate field is provided for each cell, multiple cell bundles can be aggregated into a single plate-based workflow. A *data group* can contain one or more plates. Provision must be made for any cells not associated with a plate identifier, or otherwise, the plate identifier must be a compulsory field.
 
 ## Pros and Cons of *data group* Approach
+{I would probably dump this section as well and see what comes out of the discussion}.
 
 Pros
 *   Avoids potentially very expensive run-away queries
