@@ -4,7 +4,7 @@
 
 `[dcp-community/rfc#](https://github.com/HumanCellAtlas/dcp-community/pull/<PR#>)`
 
-# RFC Name
+# \<RFC Name\>
 
 *This is the name of the RFC. Keep it short and descriptive.*
 
