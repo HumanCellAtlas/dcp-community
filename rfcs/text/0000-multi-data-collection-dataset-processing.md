@@ -30,6 +30,7 @@ An immediate need to for analysis pipelines to process 10X V2 scRNA-seq datasets
 
 In the future, there may be a need to run analysis processes where input sets span multiple projects. A mechanism to specify processing data collections that are not restricted to a single project or submissions will be required to implement this type of analysis.
 
+
 ### Algorithmic complexity and performance
 
 Producing combined metadata or data from multiple assay bundles using the bundle event system results in O(N^2) algorithmic complexity.  As each bundle event arrives, it must be combined with accumulated metadata from previous bundles.  Additionally, there is a race condition on reading and writing the accumulated the results that must be handled.
@@ -88,10 +89,16 @@ Different *data set* scopes will have different life-cycles and processing requi
 *QC* scope
 The QC scope indicates that a small dataset that will form part of the project submission is to be processed in order to assess data quality. The resulting bundle should be marked so as to indicate that it is not complete and only to be used for QC purposes.
 
-### Updates to project groups
+### Updates to data groups
 
-Updates to project submissions will result in automatic updating of all the associated *data groups* when reprocessing is required (for example the *data group* is of type *PROJECT_SUBMISSION*, however this will not be the case in all type and should be possible to disable on a per *data group* basis, for example in the case of QC *data groups*).
+Different data groups may handle updates in different ways.
 
+Updates to project submissions must result in updating of the associated *data groups* in order to trigger reprocessing. When part or the entirety of a project submission is updated the associated data group must be identified and updated with the new bundle versions, if bundles have been replaced and/or with additional new bundles. This is the responsibility of ingest.
+
+Different types of data groups may optionally not be updated when bundles that they entail are updated. This is the case for example for QC data groups that should not be updated upon each submission. Upon update of a submission all relevant *data groups* can be identified via a search and updated in the DSS. Optionally a *data group* specific flag 'auto_update' could be set to FALSE to indicate that a *data group* is not to be updated. This can be useful in the case of QC bundles or other bundles where processing at a single point in time is useful.
+
+
+{NB: I think these are answered, but leaving for reference}
 * TODO: 
 - How updates to project submissions work with data groups with needs to be defined. {NB: There could be an auto-update flag}
 {markd: how would the auto-update flag work?}
