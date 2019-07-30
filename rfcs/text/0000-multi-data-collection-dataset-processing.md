@@ -110,43 +110,28 @@ In order for the *data group* to be actionable by analysis, it must fulfill spec
 
 The *data group* will not force co-processing of data, it will merely indicate that data to be co-processed should be identified within the *data group* and that that group fulfills completeness requirements as per the *data group* type. Co-processing will be initiated by pipelines on the basis of a well defined and pre-agreed ruleset that is modality specific.
 
-
-Critically, the submitted DAPS will not explicitly dictate the files that have to be co-processed in pipeline instances as this would require specialized knowledge of the pipelines by the submitter. Instead, **a DAPS indicates that aggregation of data must be performed only from the list of data provided (submission envelope), but the actual aggregation is delegated to the process of analysis initiation, subject to well defined modality-specific metadata requirements**. 
-
-The imposition of specific requirements to metadata is part of this RFC proposal and a key component of the proposed DAPS solution.
+The imposition of specific requirements to metadata is part of this RFC proposal and a key component of the proposed *data group* solution.
 
 This approach provides a generalized signaling mechanism suitable for all foreseeable data types while accounting for data type-specific requirements.
 
-The DAPS approach has common elements with project-level bundles that have been proposed in other contexts, but differs in the following ways:
+## Metadata Requirements
+Using *data groups* analysis pipelines will receive a group of bundles that _potentially_ need to be co-processed. As aforementioned, this signal will not explicitly identify the bundles that need to be co-processed in a single pipeline, instead, it will serve as a notification **indicating that any co-processing is to be done only within the boundaries of this set of files.**
 
-1. It does not impose any specific aggregation level on the data allowing for more flexibility and accommodating future unforeseen processing scenarios
-2. Allows specification of bundles included in a DAPS in many alternative different ways (listing, search, etc…)
-3. Does not impose the creation of a new bundle type that is tied to a specific data modality
-4. Dictates specific metadata requirements that guarantee the correct processing of all foreseeable data modalities
-5. Decouples analysis initiation from data representation allowing for future flexibility
+Analysis can initiate multiple pipeline invocations as a result of a single *data group* being submitted, depending on what actually needs to be co-processed within the *data group* and what pipelines are available. For example if a *data group* contains multiple SSII bundles that are all part of a single plate a pipeline for plate processing exists, only one pipeline invocation per plate would be initiated.
 
-## General Metadata Requirements
-In the above framework, analysis pipelines will receive a set of bundles that _potentially_ need to be co-processed. As aforementioned, this signal will not explicitly identify the bundles that need to be co-processed in a single pipeline, instead, it will serve as a notification **indicating that any co-processing is to be done only within the boundaries of this set of files.**
+The actual grouping of the files is to be performed by analysis via a search in the metadata of the bundles submitted following well-defined modality-specific set of rules. For this reason, the metadata must satisfy the following metadata requirements (MR). These requirements are general and abstract, however if specific instances of these exist for a given modality analysis will be able to process the datasets correctly.
 
-Analysis can initiate multiple pipeline invocations as a result of a single DAPS being submitted.
-
-The actual grouping of the files is to be performed by analysis via a search in the metadata of the bundles submitted following well-defined modality-specific set of rules. For this reason, the metadata must satisfy the following metadata requirements (MR):
-
-Furthermore, if part of the data submitted in a DAPS has already been processed the Analysis infrastructure will only re-process the parts that have not been modified.
-
-1. The data modality of each data file included in the DAPS must be clearly identifiable (MR1)
+1. The data modality of each data file included in the *data group* must be clearly identifiable (MR1)
 2. Data that need to be processed together must be clearly identifiable by a modality-specific set of metadata variables that will group the files according to processing requirements. (MR2)
 3. Among the data that needs to be processed together, the metadata must provide sufficient information to correctly order, pair or otherwise establish correspondence and type of the input files. (MR3)
 
-## Proposed Signalling Implementation
-The DAPS proposal above only sets specific requirements for the signal to initiate data analysis and minimum requirements for the associated metadata. We hereby provide a specific recommendation for implementation via bundle notifications.
+## Signalling Implementation
+*Data groups* will be implemented as data store (DSS) bundles of a specific type. The existing seach-based notification system will be modified so as to listen for bundles of this specific type only. This implementation has two major advantages: (1) the *data groups* are permanently saved at the main storage site for the HCA project (DSS) (2) The existing notification mechanisms are reused, avoiding the need for implementation of a new out-of-band notification system.
 
-We recommend that the data store (DSS) is used to store DAPS as a new bundle type of **“DAPS Manifest”**, and that the current search-based notification system is adjusted so that instead of listening for new primary bundles, analysis listens for new DAPS bundles that are exclusively used for the initiation of pipelines. This implementation has two major advantages: (1) the DAPS are permanently saved at the main storage site for the HCA project (DSS) so the analyses can be reproducibly triggered and (2) The existing notification mechanisms are reused, avoiding the need for implementation of a new out-of-band notification system.
+We propose that as an initial implementation approach *data groups* are used at set data aggregation levels (e.g. sample, project) but critically the implementation must be flexible to arbitrary data aggregation levels to accommodate future project needs. Ingest is responsible for creating *data groups* after the relevant bundles have been created. A *data group* that references bundles that do not exist is invalid and analysis is not required to process it.
 
-We propose that as an initial implementation approach DAPS are used at set data aggregation levels (e.g. sample, project) but critically the implementation must be flexible to arbitrary data aggregation levels to accommodate future project needs. We propose that triggering is initially done manually by data wranglers and/or ingest, but we envisage transition to automatic triggering in the future.
-
-## Example: Analysis Implementation for a DAPS
-The following pseudocode presents a proposed implementation of the processing of an incoming DAPS by analysis:
+## Example: Analysis Implementation for a *data group*
+The following pseudocode presents a proposed implementation of the processing of an incoming *data group* by analysis:
 ```
 Partition the datasets by data modality (MR1)
 For each data modality:
@@ -155,9 +140,9 @@ For each data modality:
         order the data as required (MR3) and launch pipeline invocation
 ```
 
-Note that the above approach does not require all the data in a submitted DAPS to be of the same modality to be processed correctly. For example a DAPS at the project level can contain imaging and 10X datasets and these will be correctly processed in an independent manner. 
+Note that the above approach does not require all the data in a submitted *data group* to be of the same modality to be processed correctly. For example a *data group* at the project level can contain imaging and 10X datasets and these will be correctly processed in an independent manner, by initiating separate pipeline invocations.
 
-Furthermore if part of the data submitted in a DAPS has already been processed the Analysis infrastructure will only re-process the parts that have not been modified.
+Furthermore if part of the data submitted in a *data group* has already been processed the Analysis infrastructure can only re-process the parts that have not been modified. The outputs of each pipeline must reference the *data group* that triggered tha analysis of the given set for providence purposes.
 
 ## Metadata Requirements for 10X V2 3’ scRNA-seq datasets
 The specific implementation of the above metadata requirements for 10X V2 3’ RNA-seq datasets is presented here as an initial use case and an example. 10X V2 3’ data are the most common type of data currently deposited in the DSS and therefore represent a widely applicable use case.
@@ -166,7 +151,7 @@ Requirement (1) above can be satisfied by having a globally unique ‘Library ID
 
 Requirement (2) can be satisfied in two alternative ways: (a) sufficient metadata can be provided as outlined in table 1 below to identify all file triplets, or (b) a globally unique triplet field can be used to identify file correspondence by the submitter. We propose the latter approach as collecting all the required metadata may not be feasible in all cases and places an undue burden on the submitter in the common scenarios where only one triplet is submitted.
 
-We propose that the metadata required to automatically identify the triplets (Table 1) is made optional and users are encouraged to submit these fields as it can help identify errors and also can in some cases provide important covariates for scientific analyses.
+We propose that the metadata required to automatically identify the triplets (Table 1) is made optional and users are encouraged to submit these fields as it can help identify errors and also can in some cases provide important covariates for scientific analyses. 
 
 **Table 1: Fields required for identification of fastq file correspondence**
 <table>
@@ -211,9 +196,9 @@ We propose that the metadata required to automatically identify the triplets (Ta
 ## Metadata Requirements for SS2 scRNA-seq datasets and provision for plate-based analyses
 The above metadata requirements are also compatible with SS2 analyses and can support plate based-analyses. Cells that have been sequenced more than once (a rare, but plausible scenario for SS2) can be identified by using a library identifier as presented in this RFC, currently under review.
 
-Furthermore, this approach can be extended to support plate-based processing. By ensuring that a plate field is provided for each cell, multiple cell bundles can be aggregated into a single plate-based workflow. A DAPS can contain one or more plates. Provision must be made for any cells not associated with a plate identifier, or otherwise, the plate identifier must be a compulsory field.
+Furthermore, this approach can be extended to support plate-based processing. By ensuring that a plate field is provided for each cell, multiple cell bundles can be aggregated into a single plate-based workflow. A *data group* can contain one or more plates. Provision must be made for any cells not associated with a plate identifier, or otherwise, the plate identifier must be a compulsory field.
 
-## Pros and Cons of DAPS Approach
+## Pros and Cons of *data group* Approach
 
 Pros
 *   Avoids potentially very expensive run-away queries
@@ -230,46 +215,6 @@ Cons
 *   Analysis need to modify pipeline initiation scripts
 *   Initial implementation has human time cost of triggering the pipeline runs
 *   Requires the human who is triggering the pipeline to know what criteria need to be satisfied to trigger (i.e. the project is complete)
-
-## Alternative Approaches 
-
-The following section summarizes possible alternative approaches for ensuring correct processing, along with the pros and cons of each. These approaches are not recommended by this RFC but are listed for comparison purposes.
-
-*   Placing all the data that needs to be co-processed in a single bundle and continue to use bundle notifications
-    *   Pros
-        *   Essentially no extra work from infrastructure required
-    *   Cons
-        *   Wranglers are required to package data in such a way to satisfy the requirements of the analysis, the details of which they should not be aware
-        *   Additional strain is placed on wranglers to ensure that the correct partition of the data is archived
-        *   If new ways of aggregating data are needed bundles would have to be reshaped
-        *   This does not support the need to be able to support multiple potential aggregations or shapes of bundles at one time
-*   Use a search-based approach to identify and co-process bundles
-    *   Pros
-        *   Additional work limited to adding a query
-        *   Uses existing query mechanisms and emerging such as query service
-        *   Removes human interference and allows metadata to dictate the analysis
-    *   Cons
-        *   The query can be very complex and there is no easy way to verify that the results are correct in the long run
-        *   Analysis has to implement a completely different approach that will allow them to keep track of which workflows have been submitted
-        *   There is no direct control on when analyses are triggered, its possible that run-away queries due to errors in the metadata trigger wrong but very expensive analyses
-        *   The cost of these searches will increase over time as each bundle addition will require searching the entire project
-*   Multi-bundle notifications. Analysis can subscribe to notifications that there is a set of bundles that meets certain criteria (e.g. that 50 analysis bundles were expected and 50 have been received.
-    *   Pros
-        *   Little additional work by analysis to trigger pipelines over multiple bundles
-        *   Automated solution rather than manual
-    *   Cons
-        *   Ingest needs to pass some information (through the bundle manifest rather than the metadata?) which says there are n bundles and this is bundle i of n.
-        *   Unclear how this would work with updates. If 1 bundle of 50 needs to be updated then how do we know to retrigger the notification?
-        *   Data store/query service/someone else will need to implement a multi-bundle notification
-*   Ingest notifies. For a particular submission, ingest knows how many bundles are generated and when they go in the data store. In principle, ingest could generate a notification for a group of bundles ingested together
-    *   Pros
-        *   Not too much additional work by analysis to trigger pipelines over multiple bundles (receive notification from ingest rather than through the datastore)
-        *   Automated solution rather than manual
-        *   No need for additional bundle manifest information or metadata in the bundles
-    *   Cons
-        *   Unclear how this would work with updates. If 1 bundle of 50 needs to be updated then how do we know to retrigger the notification?
-        *   Ingest needs a new notification mechanism and declarations from components as to what will be a trigger. Some duplication of data store notifications.
-        *   Ingest ends up talking directly to analysis and future non-primary components where this doesn’t happen currently. Complicates system architecture.
 
 ### Unresolved Questions
 
