@@ -5,7 +5,6 @@ number and this pull request in the format:*
 `[dcp-community/rfc#](https://github.com/HumanCellAtlas/dcp-community/pull/<PR#>)`
 
 # RFC Name
-AUDR Analysis Updates
 
 ## Summary
 Enable analysis to update previous analyses and add new analyses alongside existing analyses.
