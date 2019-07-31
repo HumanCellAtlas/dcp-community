@@ -69,8 +69,6 @@ are a collection of User Stories required to complete an objective.
 
 **Releases** are composed of three milestones and occur on a quarterly cadence.
 
-The **Product Backlog** is the set of User Stories and Spikes scheduled for the next Release based on Roadmap priorities. The **Engineering Plan** is another term for the Product Backlog, and is used interchangeably.
-
 ## Detailed Design for Roadmaps
 
 The Product Roadmap creates a shared understanding across the DCP community and Users of the DCP for investments and direction for the next year. The Roadmap process MUST occur on an annual basis. 
