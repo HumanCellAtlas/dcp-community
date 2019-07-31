@@ -205,13 +205,14 @@ We propose that the metadata required to automatically identify the triplets (Ta
   </tr>
 </table>
 
-## Metadata Requirements for SS2 scRNA-seq datasets and provision for plate-based analyses
+## Example 2: Metadata Requirements for SS2 scRNA-seq datasets and provision for plate-based analyses
 The above metadata requirements are also compatible with SS2 analyses and can support plate based-analyses. Cells that have been sequenced more than once (a rare, but plausible scenario for SS2) can be identified by using a library identifier as presented in this RFC, currently under review.
 
 Furthermore, this approach can be extended to support plate-based processing. By ensuring that a plate field is provided for each cell, multiple cell bundles can be aggregated into a single plate-based workflow. A *data group* can contain one or more plates. Provision must be made for any cells not associated with a plate identifier, or otherwise, the plate identifier must be a compulsory field.
 
 ## Pros and Cons of *data group* Approach
 {I would probably dump this section as well and see what comes out of the discussion}.
+{NB: I'm a bit reluctant to dump this}
 
 Pros
 *   Avoids potentially very expensive run-away queries
