@@ -215,7 +215,7 @@ DCP SHOULD NOT duplicate the ZenHub DCP Board in other documents or spreadsheets
 
 The DCP ZenHub board is the Product Backlog for DCP. All DCP component repos that will assign items to a DCP Release and Milestone MUST be added to the ZenHub *DCP Backlogs* workspace. The [DCP PM Team](https://github.com/orgs/HumanCellAtlas/teams/dcp-pm-team) in the Human Cell Atlas GitHub organization MUST have write access to all the repo(s) in the *DCP workspace*.
 
-The top-level *dcp* repo MUST contain **all** significant work that is important to the DCP community as a whole and require visibility and prioritization. This includes Roadmap objectives and product-wide technical requirements (e.g. “components should have logs...“). 
+The top-level *dcp* repo MUST contain **all** significant work that is important to the DCP community and requires visibility and prioritization. This includes Roadmap objectives and product-wide technical requirements (e.g. “components should have logs...“). 
 
 If Institutions are using other project management applications such as Jira for internal requirements and reporting, then all DCP related issues in a Release MUST be *projected* into ZenHub for transparency and finer granularity for tracking progress.
 
