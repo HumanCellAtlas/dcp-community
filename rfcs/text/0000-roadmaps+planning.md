@@ -152,7 +152,9 @@ The Shepherd is responsible for:
 
 Project Leads MUST independently create Themes by utilizing the input provided in the Science Roadmap, DCP User Survey, and Roadmap Retrospective.
 
-To create the draft Product Roadmap, the Roadmap Shepherd copies `rfcs/roadmap-template.md` to `rfcs/text/0000-roadmap-YYYY.md` - where "YYYY" is the target year for the roadmap. 
+To create the draft Product Roadmap, the Roadmap Shepherd:
+- Forks the *HumanCellAtlas dcp-community* repository
+- Copies `rfcs/roadmap-template.md` to `rfcs/text/0000-roadmap-YYYY.md` - where "YYYY" is the target year for the roadmap. 
 
 The Roadmap Shepherd MUST collate all themes into the draft which is an Informational RFC. 
 
