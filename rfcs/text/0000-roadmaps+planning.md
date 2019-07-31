@@ -298,7 +298,7 @@ If an Objective is *well-understood*, then the Product Owner, in consultation wi
 
 Based on rough costing, Technical Leads and their engineering teams SHOULD provide an initial assessment for "fit" - whether any proposed Epics need to be cut or reduced in scope for the Release.
 
-It is strongly RECOMMENDED that engineering teams buffer 15% capacity for emerging issues during a Release.
+It is strongly RECOMMENDED that engineering teams buffer a **minimum of 15%** capacity for responding to emerging issues during a Release, supporting DCP community reviews for RFC(s), time-off, regular DCP meetings, transitioning developers on or off a team, etc.
 
 #### Modeling Objectives Requiring Further Research
 
