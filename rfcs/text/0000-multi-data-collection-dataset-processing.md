@@ -11,7 +11,7 @@ This RFC proposes a solution to allow processing of datasets that span multiple 
 
 By providing a general method for grouping bundles, this proposal provides a mechanism for addressing various tasks that cross bundle boundaries.  This impacts flexible analysis pipelines, algorithmic complexity, data consistency, and data set quality control.
 
-The current bundle grouping under consideration is a submission to a project.  However, the concept is generalize in a manner that other groupings can be defined.
+The current bundle grouping under consideration is a submission to a project.  However, the concept is generalizes in a manner that other groupings can be defined to accomodate future needs.
 
 ## Author(s)
 - [Nick Barkas](mailto:barkasn@broadinstitute.org)
@@ -37,7 +37,6 @@ Producing combined metadata or data from multiple assay bundles using the bundle
 This impacts the data browser creating project metadata TSVs and normalized JSON files, and the matrix service creating pre-built project matrices.
 
 *[TODO: is the query service impacted?]*
-
 
 ### Data consistency
 
@@ -67,11 +66,11 @@ As a data consumer, I need to know that a data set is incomplete, so that I don'
 
 A new concept of *data group* is added to the DCP data model to address these issues.  A data group is defined as a set of specific versions of metadata and data that is annotated as complete and consistent by specified criteria.  Events are generated when a *data group* is created, updated, or deleted.
 
-A data group has a symbolic scope type that specifies what is represented by the group.  Most of the above uses cases will requires a *project submission* scope that is indicates a submission to a project is complete.
+A data group has a symbolic scope type that specifies what is represented by the group.  Most of the above use cases will requires a *project submission* scope that is indicates a submission to a project is complete.
 
-Data groups are implemented as a new bundle type that contains a JSON file listing the FQIDs (UUIDs with versions) of all bundles that part of the data groups. 
+Data groups are implemented as a new bundle type that contains a JSON file listing the FQIDs (UUIDs with versions) of all bundles that part of the data groups.
 
-A new schema *data_group* will be create that contains the fields:
+A new schema *data_group* will be created that contains the fields:
 - *scope* - Symbolic name of the scope, for example *PROJECT_SUBMISSION*.
 - *bundle_fqids* - List of FQIDs of bundles that are in the group.
 
@@ -80,19 +79,19 @@ The *data_group* implementation shall be flexible so as to allow addition of fur
 [TODO add diagram here]
 ### Handling of alternative *data set* scopes
 
-Different *data set* scopes will have different life-cycles and processing requirements. We initially propose the use of two types of scopes. These can later be extended as per project requirements.
+Different *data set* scopes will have different life-cycles and processing requirements. We initially propose the use of two types of scopes. Further types can be added in the future as required.
 
 *PROJECT_SUBMISSION* Scope
-*Data groups* of scope *PROJECT_SUBMISSION* will indicate that the entirety of a single project submission is complete as indicated by the submitters and all data in the project submission should be processed.
+*Data groups* of scope *PROJECT_SUBMISSION* will indicate that the entirety of a single project submission is complete as indicated by the submitters and all data in the project submission should be processed by Analysis. The *PROJECT_SUBMISSION* scope is specifically intended for use with data that is to be analysed by secondary pipelines.
 
-*QC* scope
-The QC scope indicates that a small dataset that will form part of the project submission is to be processed in order to assess data quality. The resulting bundle should be marked so as to indicate that it is not complete and only to be used for QC purposes.
+*QUALITY_CONTROL* scope
+The QC scope indicates that a small dataset that will form part of the project submission is to be processed in order to assess data quality. The resulting bundle should be marked so as to indicate that it is not complete and only to be used for QC purposes. Analysis bundles resulting from QUALITY_CONTROL scoped *data sets* should not be displayed on the browser as regular datasets.
 
 ### Updates to *data groups*
 
 Different data groups may handle updates in different ways.
 
-Updates to project submissions must result in updating of the associated *data groups* in order to trigger reprocessing. When part or the entirety of a project submission is updated the associated data group must be identified and updated with the new bundle versions, if bundles have been replaced and/or with additional new bundles. This is the responsibility of ingest.
+Updates to PROJECT_SUBMISSIONS must result in updating of the associated *data groups* in order to trigger reprocessing. When part or the entirety of a project submission is updated the associated data group must be identified and updated with the new bundle versions, if bundles have been replaced and/or with additional new bundles if bundles have been added. This is the responsibility of Ingest.
 
 Different types of data groups may optionally not be updated when bundles that they entail are updated. This is the case for example for QC data groups that should not be updated upon each submission. Upon update of a submission all relevant *data groups* can be identified via a search and updated in the DSS. Optionally a *data group* specific flag 'auto_update' could be set to FALSE to indicate that a *data group* is not to be updated. This can be useful in the case of QC bundles or other bundles where processing at a single point in time is useful.
 
@@ -131,7 +130,7 @@ The imposition of specific requirements to metadata is part of this RFC proposal
 
 This approach provides a generalized signaling mechanism suitable for all foreseeable data types while accounting for data type-specific requirements.
 
-## Metadata Requirements
+## Metadata Requirements 
 Using *data groups* analysis pipelines will receive a group of bundles that _potentially_ need to be co-processed. As aforementioned, this signal will not explicitly identify the bundles that need to be co-processed in a single pipeline, instead, it will serve as a notification **indicating that any co-processing is to be done only within the boundaries of this set of files.**
 
 Analysis can initiate multiple pipeline invocations as a result of a single *data group* being submitted, depending on what actually needs to be co-processed within the *data group* and what pipelines are available. For example if a *data group* contains multiple SSII bundles that are all part of a single plate a pipeline for plate processing exists, only one pipeline invocation per plate would be initiated.
