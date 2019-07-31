@@ -87,7 +87,7 @@ Bundle types, definitions, consumers, and specifications are outlined below. Use
 | Tertiary bundle* | A bundle that contains tertiary (expression) data files produced by the Matrix Service, input primary and secondary data files, and all related metadata files. | computational biologists; biologists; Data Browser; Query Service | 3, 4 |
 | Project bundle* | A bundle that contains project-level metadata files. This bundle type does not contain data files or metadata files related to biomaterials, protocols, processes, or files. | computational biologists; biologists; | ? |
 | Resource/Reference bundle* | A bundle that contains reference data files used by the Data Processing Pipelines(?) and all related metadata files. This bundle type does not contain data files or metadata files related to biomaterials, protocols, processes(, or projects?). | computational biologists; Data Processing Pipelines; | 2, 3, 5 |
-| DAPS bundle* | ? | ? | ? |
+| DAPS bundle* | Definition discussion ongoing in [PR #88](https://github.com/HumanCellAtlas/dcp-community/pull/88). | ? | ? |
 
 > Asterisk (*) indicates bundles types that do not currently exist in the DCP but have been discussed as potential future bundle types to support data consumers.
 
