@@ -45,7 +45,9 @@ To best serve our users and address the concerns of HCA Science Governance, this
 
 **Users of the DCP** include: Computational and non-computational consumers of the DCP, scientific data contributors to the DCP, and methods and application developers.
 
-**Project Leads**, **Product Owners**, and **Technical Leads** are roles identified in DCP [charters](https://github.com/HumanCellAtlas/dcp-community/tree/master/charters) with further details available in the [PM](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/PM/charter.md) and [Architecture](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/Architecture/charter.md) charters.
+**Project Leads**, **Product Owners**, and **User Experience** are members of the PM team as described in its [charter](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/PM/charter.md). Individual Project Leads and Product Owners are identified in [component charters](https://github.com/HumanCellAtlas/dcp-community/tree/master/charters).
+
+**Technical Leads** are core members of the Architecture Team as described in its  [charter](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/Architecture/charter.md). Individual Technical Leads are identified in [component charters](https://github.com/HumanCellAtlas/dcp-community/tree/master/charters).
 
 **Themes** represent a discrete user or stakeholder need that delivers on the long term vision of the HCA. A Theme motivates a collection of work performed by the DCP.
 
