@@ -31,7 +31,6 @@ An immediate need to for analysis pipelines to process 10X V2 scRNA-seq datasets
 In the future, there may be a need to run analysis processes where input sets span multiple projects. A mechanism to specify processing data collections that are not restricted to a single project or submissions will be required to implement this type of analysis.
 
 ### Algorithmic complexity and performance
-
 Producing combined metadata or data from multiple assay bundles using the bundle event system results in O(N^2) algorithmic complexity.  As each bundle event arrives, it must be combined with accumulated metadata from previous bundles.  Additionally, there is a race condition on reading and writing the accumulated the results that must be handled.
 
 This impacts the data browser creating project metadata TSVs and normalized JSON files, and the matrix service creating pre-built project matrices.
@@ -39,15 +38,12 @@ This impacts the data browser creating project metadata TSVs and normalized JSON
 *[TODO: is the query service impacted?]*
 
 ### Data consistency
-
 Consistency and completeness across a data set is an important attribute of an atlas.  An incomplete data set may result in misinterpretation of data or missed discoveries.  Currently, the DCP has no way to indicate data completeness beyond a bundle. The consumer API and data browser don't have the knowledge to indicate a project submissions is incomplete.  This information is only available within ingest, with no way to communicate submission status to other components.
 
 ### Data set quality control
-
 An approach to quality control (QC) is to run a partial or full analysis on an subset of the data before doing a full analysis.  This requires defining an analyzable subset of the data to pass on to the processing pipelines. A QC data subset must meet the criteria to that allows the QC analysis to run.
 
 ## User Stories
-
 As a data contributor, I want to maintain flexibility in the laboratory approaches I can use to perform top-up sequencing, library multiplexing and arrange replicates on flowcells in a way that minimizes overall cost, while being assured that the processing will be correct.
 
 As a data-wrangler, I want to be able to succinctly enter the metadata I receive from the data contributor and have a clear understanding of what I need to do to ensure correct processing.
@@ -62,7 +58,7 @@ As a data consumer, I want to be confident that the HCA DCP has correctly proces
 
 As a data consumer, I need to know that a data set is incomplete, so that I don't download and use it until it is complete.
 
-## Design
+## Detailed Design
 
 A new concept of *data group* is added to the DCP data model to address these issues.  A data group is defined as a set of specific versions of metadata and data that is annotated as complete and consistent by specified criteria.  Events are generated when a *data group* is created, updated, or deleted.
 
@@ -78,7 +74,6 @@ The *data_group* implementation shall be flexible so as to allow addition of fur
 
 [TODO add diagram here]
 ### Handling of alternative *data set* scopes
-
 Different *data set* scopes will have different life-cycles and processing requirements. We initially propose the use of two types of scopes. Further types can be added in the future as required.
 
 *PROJECT_SUBMISSION* Scope
@@ -88,13 +83,11 @@ Different *data set* scopes will have different life-cycles and processing requi
 The QC scope indicates that a small dataset that will form part of the project submission is to be processed in order to assess data quality. The resulting bundle should be marked so as to indicate that it is not complete and only to be used for QC purposes. Analysis bundles resulting from QUALITY_CONTROL scoped *data sets* should not be displayed on the browser as regular datasets.
 
 ### Updates to *data groups*
-
 Different data groups may handle updates in different ways.
 
 Updates to PROJECT_SUBMISSIONS must result in updating of the associated *data groups* in order to trigger reprocessing. When part or the entirety of a project submission is updated the associated data group must be identified and updated with the new bundle versions, if bundles have been replaced and/or with additional new bundles if bundles have been added. This is the responsibility of Ingest. Analysis must handle the update to the *data group* by initiating only the pipelines that have been affected by the update and ensuring that the output bundles of these analysis are updates to existing bundles. {NB: It might actually be difficult to establish 1:1 correspondence in some cases}
 
 Different types of data groups may optionally not be updated when bundles that they entail are updated. This is the case for example for QC data groups that should not be updated upon each submission. Upon update of a submission all relevant *data groups* can be identified via a search and updated in the DSS. Optionally a *data group* specific flag 'auto_update' could be set to FALSE to indicate that a *data group* is not to be updated. This can be useful in the case of QC bundles or other bundles where processing at a single point in time is useful.
-
 
 {NB: I think these are answered, but leaving for reference}
 * TODO: 
@@ -102,21 +95,6 @@ Different types of data groups may optionally not be updated when bundles that t
 {markd: how would the auto-update flag work?}
 - Are analysis submissions a different project scope than primary data submissions? {NB: Do you mean tertiary analyses?} {markd: no, secondary analysis;  tertiary would be one user, also probably the data browser}
 
-
-## Example 
-*[MODIFY AND SIMPLIFY THE BELOW TEXT TO BE AN EXAMPLE]*
-
-{markd: I think this explanation is still too complex and resident with mallory's RFC} 
-
-### Definitions
-
-**Data modality**: A type of data in the HCA, for example NGS scRNA-seq or a particular type of imaging.
-
-**Unique Library Identifiers**: A unique identifier (string or numeric) that globally identifies each library preparation for sequencing data.
-
-**Co-processing (of data)**: Providing data as input to a single pipeline invocation
-
-**MR**: Metadata Requirement. The term refers to specific metadata requirements for bundles to be able to process in analysis.
 
 ### Component Notification Changes
 This RFC proposes no longer using bundle-level search-based notifications for initiating pipelines. Instead pipelines will be triggered exclusively on events on bundles of type *data group*.
@@ -147,12 +125,25 @@ The actual grouping of the files is to be performed by analysis via a search in 
 
 We propose that as an initial implementation approach *data groups* are used at set data aggregation levels (e.g. sample, project) but critically the implementation must be flexible to arbitrary data aggregation levels to accommodate future project needs. Ingest is responsible for creating *data groups* after the relevant bundles have been created. A *data group* that references bundles that do not exist is invalid and analysis is not required to process it.
 
-## Example: Analysis Implementation for a *data group*
+## Example: Analysis Implementation for a *data group* 
+*[MODIFY AND SIMPLIFY THE BELOW TEXT TO BE AN EXAMPLE]*
+{markd: I think this explanation is still too complex and resident with mallory's RFC} 
+
+This section outlines an example implementation for a *data group* through-out it's lifecycle.
+
+{NB: markd, can you please correct this as needed}
+
+- The wranglers prepare a submission and submit via ingest.
+- Ingest places the data in bundles
+- Bundle notifications are fired but _NOBODY LISTENS FOR THEM_
+- After all the data is confirmed to be available and correct a *data set* bundle is created in the DSS of type *PROJECT_SUBMISSION* is created. This consititues the signal for analysis initiation
+- Analysis receives a bundle notifiation for the *data set*
+- Analysis recovers the metadata for all the bundles in the *data set*
+- Analysis maintains a list of registed *data set* handers and executes each handler (this is for future extensibility)
+- The default handler executes as follows:
 
 {NB to MD: This algorithm works fine for primary data bundles but will not work as well for higher level bundles and more complex analysis. The original idea was to have handlers that would capture data as they see fit. Should be codify this here? Also, what if in a dataset we need to define specific parameters or attributes to each input. For example we have an analysis that maps ss RNA-seq onto spatial transcriptomics but we need to have a way of saying 'map dataset X to dataset Y'. I have described above extenstion to metadata in the *data group* that would allow that, but what at what level should be give flexibility to capture datasets for downstream differently. I would propose top level i.e. all of the following is the default handler, but other handlers can be registered and they can have very different implementation. what are your thoughts?}
 
-
-The following pseudocode presents a proposed implementation of the processing of an incoming *data group* by analysis:
 ```
 Partition the datasets by data modality (MR1)
 For each data modality:
@@ -247,3 +238,13 @@ Cons
 *   Link to [Library Prep RFC)(https://docs.google.com/document/d/1PdJAd4q775jwnDoavJE_7XajXm0e7a5SGvP2k7DRJHc/edit#heading=h.5ildwmh2beeb)
 *   Possible alternative/Synergistic solution: project or dataset bundles with rigidly defined bundle types
 *   Possible alternative/Synergistic solution: bundle lifecycle (unpublished/in progress vs. published/finished bundles)
+
+
+## Definitions
+**Data modality**: A type of data in the HCA, for example NGS scRNA-seq or a particular type of imaging.
+
+**Unique Library Identifiers**: A unique identifier (string or numeric) that globally identifies each library preparation for sequencing data.
+
+**Co-processing (of data)**: Providing data as input to a single pipeline invocation
+
+**MR**: Metadata Requirement. The term refers to specific metadata requirements for bundles to be able to process in analysis.
