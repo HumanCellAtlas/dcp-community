@@ -339,9 +339,9 @@ The Release Shepherd MUST validate accurate modeling of Objectives for the Relea
 
 This Epic represents the Engineering Plan which MUST be sent to the DCP PM mailing list for review and approval, noting any Objectives that were cut or reduced in scope due to engineering capacity. The Project Leads MUST respond to the original message within two days and MAY negotiate changes to the Engineering Plan. 
 
-**Next Release Milestone 1 Week 3**. Further refinements for Milestone 2 are completely modeled. All Milestone 1 issues that will slip to Milestone 2 MUST be identified.
+***Next Release Milestone 1 Week 3***. Further refinements for Milestone 2 are completely modeled. All Milestone 1 issues that will slip to Milestone 2 MUST be identified.
 
-**Next Release Milestone 2 Week 3**. Further refinements for Milestone 3 are completely modeled. All Milestone 2 issues that will slip to Milestone 3 MUST be identified.
+***Next Release Milestone 2 Week 3***. Further refinements for Milestone 3 are completely modeled. All Milestone 2 issues that will slip to Milestone 3 MUST be identified.
 
 ***Next Release Milestone 3 Week 3***.
 All Milestone 3 issues that will slip to the next Release MUST be identified.
@@ -383,7 +383,7 @@ When all changes are verified in [Production](https://allspark.dev.data.humancel
 
 ### Release Demonstration and Retrospective
 
-**At Release Completion**. The Release Shepherd MUST schedule and faciliate a Release Demonstration and Retrospective meeting with the DCP Community and Oversight. It is RECOMMENDED that this occur during a DCP F2F when schedules align. 
+***At Release Completion***. The Release Shepherd MUST schedule and faciliate a Release Demonstration and Retrospective meeting with the DCP Community and Oversight. It is RECOMMENDED that this occur during a DCP F2F when schedules align. 
 
 The intent of the meeting is to demonstrate the Release deliverables as documented in the Roadmap Objectives, to share learnings, and identify opportunities to improve the planning process for future Releases. 
 
