@@ -233,11 +233,13 @@ For example, an implementation task for a specific component resides in its own 
 
 User stories are often in the form of simple templates such as:
 
->As a \<type of user>
-I want to \<action>
-so that \<result>
- 
+`As a <type of user>
+I want to <action>
+so that <result>`
+
 DCP issues SHOULD include a User Story, Acceptance Criteria ("Definition of Done"), and a Deliverable to be demonstrated during the Release Retrospective to Oversight.
+
+The `<type of user>` MUST be specific and reference [HCA Personas](https://docs.google.com/presentation/d/1bsu8q9CzRXv3Y8c1p8NENi3p8KlxC4scp2tJkHO3Jeo/edit#slide=id.g3cf4e46e8f_0_38) when appropriate.
 
 *As a data wrangler working on the DCP, I want to adapt the metadata schema quickly in order to respond to developments in experimental approaches and new assays.*
 
