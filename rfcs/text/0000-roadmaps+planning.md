@@ -117,7 +117,7 @@ Project Leads MUST clarify outstanding questions about the Science Roadmap with 
 
 #### Technical Architecture Objectives 
 
-Through a process of their own choosing, the Technical Architecture team MAY document critical architectural issues and technical debt in a Technical Objectives Informational RFC for consideration during each Release. The RFC SHOULD outline technical strategies and estimate cost (such as two engineers at 20%) to realize its objectives. 
+Through a process of their own choosing, the Technical Architecture team MUST document critical architectural issues and technical debt in a Technical Objectives Informational RFC for consideration during each Release. The RFC SHOULD outline technical strategies and estimate cost (such as two engineers at 20%) to realize its objectives. 
 
 The RFC MUST be approved prior to [Clarifying the Next Release](#clarifying-the-next-release) for consideration.
 
