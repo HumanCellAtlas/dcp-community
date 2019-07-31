@@ -158,7 +158,7 @@ To create the draft Product Roadmap, the Roadmap Shepherd:
 
 The Roadmap Shepherd MUST collate all themes into the draft which is an Informational RFC. 
 
-Project Leads MUST review the Themes as a collective and distill the revised list to a lesser number of themes. This is achieved through a consensus building process, which will be implemented by the Roadmap Shepherd and occur during specifically noted Project Lead meetings, outlined below:
+Project Leads MUST review the Themes as a collective and distill the revised list to a lesser number of themes. This is achieved through a consensus building process, which is implemented by the Roadmap Shepherd and occurs during specifically noted Project Lead meetings, outlined below:
 
 * Explore the Themes, search for commonalities, and document concerns and issues 
 * Identify potential consolidated or alternative Themes, resolution for concerns and issues, and action items required for further understanding
