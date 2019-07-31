@@ -81,7 +81,7 @@ All timeboxes are noted as business days. Business days are included regardless 
 
 Overlapping timeboxes denote concurrent work.
 
-Time boxes with a range of days indicate that the work MAY be completed at any point during the timebox, but MUST be completed no later than the final day of the timebox.
+Timeboxes with a range of days indicate that the work MAY be completed at any point during the timebox, but MUST be completed no later than the final day of the timebox.
 
 **Note**: *Input from the Technical Architecture team is integrated on a quarterly basis during Release planning.*
 
