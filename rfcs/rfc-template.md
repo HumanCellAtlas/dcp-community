@@ -6,7 +6,7 @@
 
 # RFC Name
 
-*This is the name of the RFC. Keep it short and descriptive.*
+*Replace "RFC Name" above with the name of your RFC. Keep it short and descriptive.*
 
 ## Summary
 
