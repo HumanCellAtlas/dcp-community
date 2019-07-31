@@ -256,20 +256,15 @@ The DCP community members SHOULD respond to requests related to Release planning
 
 #### Timebox for Planning and Execution
 
-All timeboxes are noted as business days. Business days are included regardless of national holidays.
+Work MAY be completed at any point during the timeboxes below but MUST be completed no later than the final day of the timebox.
 
-Overlapping timeboxes denote concurrent work.
-
-Timeboxes with a range of days indicate that the work MAY be completed at any point 
-during the time box, but MUST be completed no later than the final day of the time box.
-
-Day 1 in the Release planning timeline begins in the third Week of the third Milestone of the current Release. For example Q4 planning begins in Q3M3W3 and continues into Q4M1. To reiterate, Planning continues into Milestone 1 of a Release as needed.
+Release planning begins in the third Week of the third Milestone of the current Release. For example Q4 planning begins in Q3M3W3 and continues into Q4M1. To reiterate, Planning continues into Milestone 1 of a Release as needed.
 
 * Prerequisite: Product Roadmap
-* Prerequisite: Optional Technical Objectives RFC
-* Day 1: Clarifying the Next Release
-* Day 1-15: Sketching the Release
-* Day 1-20: Creating the Engineering Plan
+* Prerequisite: Technical Objectives RFC
+* Previous Release Milestone 3 Week 3: [Clarifying the Next Release](#clarifying-the-next-release)
+* Next Release Milestone 1 Week 1: [Sketching the Release](#sketching-the-release)
+* Next Release Milestone 1 Week 2: [Creating the Engineering Plan](#creating-the-engineering-plan)
 
 #### Clarifying the Next Release
 [Clarifying the Next Release]:#clarifying-the-next-release
@@ -285,6 +280,7 @@ The dates for the next ZenHub Release and Milestones MUST be assigned or updated
 DCP PM MUST assign a rotating Release Shepherd to help the Product Owners and Technical Leads observe the processes and practices for the Release as outlined in this RFC. 
 
 #### Sketching the Release
+[Sketching the Release]:#sketching-the-release
 
 ***Next Release Milestone 1 Week 1.*** For each Objective in the Release, its Product Owner MUST create one or more Epics in the *dcp* repo that document User Stories, Acceptance Criteria, and the Deliverable to Demonstrate.
 
