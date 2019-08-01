@@ -18,9 +18,12 @@ The current bundle grouping under consideration is a submission to a project.  H
 - [Mark Diekhans](mailto:markd@ucsc.edu)
 
 ## Shepherd
--[Nick Barkas](mailto:barkasn@broadinstitute.org)
+- [Nick Barkas](mailto:barkasn@broadinstitute.org)
 
 ## Motivation
+
+*Describe the user or technical need in detail [with alignment to the DCP roadmap priorities where possible]. Link prior community discussions to demonstrate support for this RFC.*
+
 The current DCP model of processing has a scope of one bundle, which contain a single assay or analysis.  There is no mechanism to know when a group of bundles that need to be processed together have been ingested or to trigger that processing.  This restriction that data processing is linear and based on ingestion packaging causes multiple problems, as outlined in this section.
 
 #### Multi-input analysis 
@@ -42,6 +45,9 @@ Consistency and completeness across a data set is an important attribute of an a
 An approach to quality control (QC) is to run a partial or full analysis on an subset of the data before doing a full analysis.  This requires defining an analyzable subset of the data to pass on to the processing pipelines. A QC data subset must meet the criteria to that allows the QC analysis to run.
 
 ## User Stories
+
+*Share the [User Stories](https://www.mountaingoatsoftware.com/agile/user-stories) motivating this RFC.*
+
 As a data contributor, I want to maintain flexibility in the laboratory approaches I can use to perform top-up sequencing, library multiplexing and arrange replicates on flowcells in a way that minimizes overall cost, while being assured that the processing will be correct.
 
 As a data-wrangler, I want to be able to succinctly enter the metadata I receive from the data contributor and have a clear understanding of what I need to do to ensure correct processing.
@@ -55,6 +61,10 @@ As a data consumer, I want to be able to find all data files that need to be pro
 As a data consumer, I want to be confident that the HCA DCP has correctly processed all data files that belong together so that I know the matrices I receive have been generated correctly.
 
 As a data consumer, I need to know that a data set is incomplete, so that I don't download and use it until it is complete.
+
+## Scientific "guardrails" [optional]
+
+*Describe recommended or mandated review from HCA Science governance to ensure that the RFC addresses the needs of the scientific community.*
 
 ## Detailed Design
 A new concept of *data group* is added to the DCP data model to address these issues.  A data group is defined as a set of specific versions of metadata and data that is annotated as complete and consistent by specified criteria.  Events are generated when a *data group* is created, updated, or deleted.
@@ -143,11 +153,25 @@ Furthermore, this approach can be extended to support plate-based processing. By
 
 ### Unresolved Questions
 *   How does this framework interact with new modalities we are likely to encounter in the future. A good example of this is imaging data? (Feedback by Ambrose Requested)
-*   Link to [Library Prep RFC)(https://docs.google.com/document/d/1PdJAd4q775jwnDoavJE_7XajXm0e7a5SGvP2k7DRJHc/edit#heading=h.5ildwmh2beeb)
+
+### Drawbacks and Limitations [optional]
+
+*Why should this RFC **not** be implemented?*
+
+### Prior Art [optional]
+
+*Share references to prior art to deepen community understanding of the RFC, such as learnings, adaptations from earlier designs, or community standards.*
+
+### Alternatives [optional]
+
+*Highlight other possible approaches to delivering the value proposed in this RFC. 
+What other designs were explored? What were their advantages? What was the rationale for rejecting alternatives?*
+
 *   Possible alternative/Synergistic solution: project or dataset bundles with rigidly defined bundle types
 *   Possible alternative/Synergistic solution: bundle lifecycle (unpublished/in progress vs. published/finished bundles)
 
 ## Definitions
+
 **Data modality**: A type of data in the HCA, for example NGS scRNA-seq or a particular type of imaging.
 
 **Unique Library Identifiers**: A unique identifier (string or numeric) that globally identifies each library preparation for sequencing data.
