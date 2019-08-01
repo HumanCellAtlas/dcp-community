@@ -109,16 +109,14 @@ The actual grouping of the files is to be performed by analysis via a search in 
 ## Example: Analysis Implementation for a *data group* 
 This section outlines an example implementation for a *data group* through-out it's lifecycle.
 
-- The wranglers prepare a submission and submit via ingest.
+- The wranglers prepare a submission and submit via ingest
 - Ingest places the data in data bundles
-- Data bundle notifications are fired but _NOBODY LISTENS FOR THEM_
+- Data bundle notifications are fired but analysis does not listen to these events
 - After all the data is confirmed to be available and correct a *data set* bundle is created in the DSS of scope *PROJECT_SUBMISSION* is created. This consititues the signal for analysis initiation
 - Analysis receives a bundle notifiation for the *data set*
 - Analysis recovers the metadata for all the bundles in the *data set*
 - Analysis maintains a list of registed *data set* handlers and executes each handler (this is for future extensibility)
 - The default handler executes as follows:
-
-{NB to MD: This algorithm works fine for primary data bundles but will not work as well for higher level bundles and more complex analysis. The original idea was to have handlers that would capture data as they see fit. Should be codify this here? Also, what if in a dataset we need to define specific parameters or attributes to each input. For example we have an analysis that maps ss RNA-seq onto spatial transcriptomics but we need to have a way of saying 'map dataset X to dataset Y'. I have described above extenstion to metadata in the *data group* that would allow that, but what at what level should be give flexibility to capture datasets for downstream differently. I would propose top level i.e. all of the following is the default handler, but other handlers can be registered and they can have very different implementation. what are your thoughts?}
 
 ```
 Partition the datasets by data modality (MR1)
@@ -128,7 +126,7 @@ For each data modality:
         order the data as required (MR3) and launch pipeline invocation
 ```
 
-Note that the above approach does not require all the data in a submitted *data group* to be of the same modality to be processed correctly. For example a *data group* at the project level can contain imaging and 10X datasets and these will be correctly processed in an independent manner, by initiating separate pipeline invocations.
+Note that the above approach does not require all the data  in a submitted *data group* to be of the same modality to be processed correctly. For example a *data group* at the project level can contain imaging and 10X datasets and these will be correctly processed in an independent manner, by initiating separate pipeline invocations. This satisfies an existing need, for example the dataset named "Reconstructing the human first trimester fetal-maternal interface using single cell transcriptomics" contains data of different modalities.
 
 Furthermore if part of the data submitted in a *data group* has already been processed the Analysis infrastructure can only re-process the parts that have not been modified. The outputs of each pipeline must reference the *data group* that triggered tha analysis of the given set for providence purposes.
 
