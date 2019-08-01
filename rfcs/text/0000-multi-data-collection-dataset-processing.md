@@ -95,12 +95,12 @@ The imposition of specific requirements to metadata is part of this RFC proposal
 
 This approach provides a generalized signaling mechanism suitable for all foreseeable data types while accounting for data type-specific requirements.
 
-## Metadata Requirements 
-Using *data groups* analysis pipelines will receive a group of bundles that _potentially_ need to be co-processed. As aforementioned, this signal will not explicitly identify the bundles that need to be co-processed in a single pipeline, instead, it will serve as a notification **indicating that any co-processing is to be done only within the boundaries of this set of files.**
+## Metadata Requirements
+When analysis receives an incoming *data group* it needs to identify how many pipelines it needs to launch and which bundles should be included in each analysis. This is because the *data group* only indicates that the groups of bundles needs to be _potentially_ co-processed, i.e. that co-processing is to be done within the given set of files.
 
-Analysis can initiate multiple pipeline invocations as a result of a single *data group* being submitted, depending on what actually needs to be co-processed within the *data group* and what pipelines are available. For example if a *data group* contains multiple SSII bundles that are all part of a single plate a pipeline for plate processing exists, only one pipeline invocation per plate would be initiated.
+Analysis can initiate multiple pipeline invocations as a result of a single *data group* being submitted, depending on what actually needs to be co-processed within the *data group* and what pipelines are available. For example if a *data group* contains multiple SSII bundles that are all part of a single plate a pipeline for plate processing exists, only one pipeline invocation per plate would be initiated. If only pipelines for one cell anaysis exist then one pipeline invocation per run will be actuated.
 
-The actual grouping of the files is to be performed by analysis via a search in the metadata of the bundles submitted following well-defined modality-specific set of rules. For this reason, the metadata must satisfy the following metadata requirements (MR). These requirements are general and abstract, however if specific instances of these exist for a given modality analysis will be able to process the datasets correctly.
+The actual grouping of the files is to be performed by analysis via a search in the metadata of the bundles submitted following well-defined modality-specific set of rules. Here we provide an abstract algorithm and defined metadata requirement (MRs) that will allows analysis to identify the pipelines that need to be triggered. The metadata requirements are as follows:
 
 - MR1: The data modality of each data file included in the *data group* must be clearly identifiable
 - MR2: Data that need to be processed together must be clearly identifiable by a modality-specific set of metadata variables that will group the files according to processing requirements
