@@ -70,6 +70,8 @@ A new schema *data_group* will be created that contains the fields:
 
 The *data_group* implementation shall be flexible so as to allow addition of further fields for future use without breaking current functionality.
 
+Ingest is responsible for creating *data groups* after the relevant bundles have been created. A *data group* that references bundles that do no exist is invalid and analysis is not required to process it.
+
 [TODO add diagram here]
 
 #### Proposed *data group* scopes
@@ -103,12 +105,6 @@ The actual grouping of the files is to be performed by analysis via a search in 
 - MR1: The data modality of each data file included in the *data group* must be clearly identifiable
 - MR2: Data that need to be processed together must be clearly identifiable by a modality-specific set of metadata variables that will group the files according to processing requirements
 - MR3: Among the data that needs to be processed together, the metadata must provide sufficient information to correctly order, pair or otherwise establish correspondence and type of the input files.
-
-## Signalling Implementation
-*Data groups* will be implemented as data store system (DSS) bundles of a specific type. The existing seach-based notification system will be modified so as to listen for bundles of this specific type only. This implementation has two major advantages: (1) the *data groups* are permanently saved at the main storage site for the HCA project (DSS) (2) The existing notification mechanisms are reused, avoiding the need for implementation of a new out-of-band notification system.
-{markd: I think this is redundant to the description in design}
-
-We propose that as an initial implementation approach *data groups* are used at set data aggregation levels (e.g. sample, project) but critically the implementation must be flexible to arbitrary data aggregation levels to accommodate future project needs. Ingest is responsible for creating *data groups* after the relevant bundles have been created. A *data group* that references bundles that do not exist is invalid and analysis is not required to process it.
 
 ## Example: Analysis Implementation for a *data group* 
 This section outlines an example implementation for a *data group* through-out it's lifecycle.
