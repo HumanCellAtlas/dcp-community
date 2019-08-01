@@ -24,7 +24,9 @@ The current bundle grouping under consideration is a submission to a project.  H
 
 *Describe the user or technical need in detail [with alignment to the DCP roadmap priorities where possible]. Link prior community discussions to demonstrate support for this RFC.*
 
-The current DCP model of processing has a scope of one bundle, which contain a single assay or analysis.  There is no mechanism to know when a group of bundles that need to be processed together have been ingested or to trigger that processing.  This restriction that data processing is linear and based on ingestion packaging causes multiple problems, as outlined in this section.
+The current DCP model of processing has a scope of one bundle, which contain a single assay or analysis. The bundle concept is itself not well defined. (link)[https://github.com/HumanCellAtlas/dcp-community/blob/mfreeberg-rfc-bundle-definitions/rfcs/text/0000-bundle-definition.md].
+
+There is no mechanism to know when a group of bundles that need to be processed together have been ingested or to trigger that processing.  This restriction that data processing is linear and based on ingestion packaging causes multiple problems, as outlined in this section.
 
 #### Multi-input analysis 
 Analysis pipelines may require input from multiple different assays. In order to perform such analyses, they must be triggered only when all input data is available. The current mechanism of bundle notifications is not effective when data spans multiple bundles because there is no clear set of rules to identify the bundles that need to be co-processed.  Limiting the downstream process to the scope of a single bundle requires the ingest process to define the scope of the processing without any foreknowledge of future processes needs.
