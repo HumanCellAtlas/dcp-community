@@ -83,7 +83,8 @@ The *data_group* implementation shall be flexible so as to allow addition of fur
 
 Ingest is responsible for creating *data groups* after the relevant bundles have been created. A *data group* that references bundles that do not exist is invalid and analysis is not required to process it.
 
-[TODO add diagram here]
+
+![Figure 1](/rfcs/images/0000-multi-data-collection-data-processing-images/figure_1-project-submission-in-project.png)
 
 #### Proposed *data group* scopes
 Different *data group* scopes will have different life-cycles, processing requirements, as well as criteria for completeness. We initially propose the use of two types of scopes. Further types can be added in the future as required.
@@ -118,7 +119,7 @@ The actual grouping of the files is to be performed by analysis via a search in 
 ## Example: Analysis Implementation for a *data group* 
 This section outlines an example implementation for a *data group* through-out it's lifecycle.
 
-![Figure 1](/rfcs/images/0000-multi-data-collection-data-processing-images/figure_2-flow-of-information.png)
+![Figure 2](/rfcs/images/0000-multi-data-collection-data-processing-images/figure_2-flow-of-information.png)
 
 - The wranglers prepare a submission and submit via ingest
 - Ingest places the data in data bundles
