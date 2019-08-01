@@ -118,7 +118,7 @@ The actual grouping of the files is to be performed by analysis via a search in 
 ## Example: Analysis Implementation for a *data group* 
 This section outlines an example implementation for a *data group* through-out it's lifecycle.
 
-[ Consider a figure here ]
+![Figure 1](/rfcs/images/0000-multi-data-collection-data-processing-images/figure_2-flow-of-information.png)
 
 - The wranglers prepare a submission and submit via ingest
 - Ingest places the data in data bundles
