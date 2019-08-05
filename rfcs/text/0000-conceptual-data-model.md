@@ -26,15 +26,15 @@ This document described the conceptual model of the HCA DCP experimental data an
 ## Motivation
 The goal of the experimental metadata is to capture a detailed, accurate representation of the experimental process and the scientific data within the DCP.  The experimental metadata is closely coupled to the experimental data and expected to evolve as experimental methods and consumer needs evolve.
 
-The full scientific data content of the DCP is represented by the experimental metadata model, including all versions of data and metadata instances.  Programmatic access to all versions of metadata is needed to allow for exploration and analysis of the provenance of HCA data.
+The full scientific data content of the DCP is represented by the experimental metadata model, including all versions of data and metadata instances.  Programmatic access to all versions of metadata is supports the exploration and analysis of the provenance of HCA data.
 
-The addition of data and metadata update functionality (AUDR) has increased the complexity of the data model. A rigorous definition of the full data model is need to be able to both communicate about and to interpret the versioned graph in a consistent and accurate manner.
+The addition of data and metadata update functionality (AUDR) has increased the complexity of the data model. A rigorous definition of the full data model is need to communicate about and to interpret the versioned graph in a consistent and accurate manner.
 
 
 ### User Stories
 
 As a DCP developer, in order to develop software to manage versioned data,
-I would like to understand how to interpret the data and communicate with other developers in an precise manner.
+I would like to understand how to interpret the data and communicate with other developers in a clear and precise manner.
 
 As a data operations engineer, in order to construct a data release, I would like to understand what specific data and metadata instances to include.
 
