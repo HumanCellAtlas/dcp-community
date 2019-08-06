@@ -7,7 +7,7 @@
 # Processing Datasets that Span Multiple Bundles
 
 ## Summary
-This RFC proposes a solution to allow processing of datasets that span multiple bundles. It addresses the general problem that the current DCP data model contains no representation of data set grouping and completeness beyond that of individual data bundles.  This results in a restriction that all data processing within the DCP is a linear set of steps deriving one bundle from another.
+This RFC proposes a solution to allow processing of datasets that span multiple bundles. It addresses the general problem that the current DCP data model contains no representation of data set grouping and completeness beyond that of individual data bundles.  This results in a restriction that all data processing within the DCP is a one-to-one linear set of steps deriving one bundle from another.
 
 However, there are use cases where a giving processing step can require input from multiple input bundles,
 resulting in a full DAG rather than a linear graph. The DAG sub-graph must be defined and all data available to initiate processing.  The notion of data completeness is required to support the implementation of DAG processing.
