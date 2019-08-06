@@ -115,12 +115,6 @@ Oversight MUST provide an annual Science Roadmap to Project Leads to be reviewed
 
 Project Leads MUST clarify outstanding questions about the Science Roadmap with Oversight within two weeks.
 
-#### Technical Architecture Objectives 
-
-Through a process of their own choosing, the Technical Architecture team MUST document critical architectural issues and technical debt in a Technical Objectives Informational RFC for consideration during each Release. The RFC SHOULD outline technical strategies and estimate cost (such as two engineers at 20%) to realize its objectives. 
-
-The RFC MUST be approved prior to [Clarifying the Next Release](#clarifying-the-next-release) for consideration.
-
 #### DCP User Survey
 
 User Experience (UX) MUST create a DCP user survey on an annual basis to collect input for the Product Roadmap. The audience for the survey are the Users of the DCP.
@@ -251,6 +245,13 @@ The `<type of user>` MUST be specific and reference [HCA Personas](https://docs.
 *Deliverable that can be demonstrated to Oversight*
 
 ...
+
+### Technical Architecture Objectives 
+
+Through a process of their own choosing, the Technical Architecture team MUST document critical architectural issues and technical debt in a Technical Objectives Informational RFC for consideration during each Release. The RFC SHOULD outline technical strategies and estimate cost (such as two engineers at 20%) to realize its objectives. 
+
+The RFC MUST be approved prior to [Clarifying the Next Release](#clarifying-the-next-release) for consideration.
+
 
 ### Planning and Executing a Release
 
