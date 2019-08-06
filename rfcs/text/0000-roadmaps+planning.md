@@ -89,6 +89,7 @@ Day 1 in the Roadmap timeline begins in the third quarter.
 
 * **Day 1 - Day 25: [Gathering and reviewing input](#gathering-and-reviewing-input)**
   * Prerequisite: Science Roadmap
+  * Prerequisite: Technical Objectives RFC
   * Day 1-25: DCP User Survey 
   * Day 1-10: Roadmap Retrospective
 * **Day 1 - Day 40: [Drafting the roadmap](#drafting-the-roadmap)**
@@ -114,6 +115,10 @@ Day 1 in the Roadmap timeline begins in the third quarter.
 Oversight MUST provide an annual Science Roadmap to Project Leads to be reviewed at the next Oversight meeting following its receipt.
 
 Project Leads MUST clarify outstanding questions about the Science Roadmap with Oversight within two weeks.
+
+#### Technical Objectives RFC
+
+Project Leads MUST review the [Technical Objectives RFC](#technical-architecture-objectives) from the most recent quarter to understand outstanding technical concerns.
 
 #### DCP User Survey
 
@@ -247,6 +252,7 @@ The `<type of user>` MUST be specific and reference [HCA Personas](https://docs.
 ...
 
 ### Technical Architecture Objectives 
+[Technical Architecture Objectives]:#technical-architecture-objectives
 
 Through a process of their own choosing, the Technical Architecture team MUST document critical architectural issues and technical debt in a Technical Objectives Informational RFC for consideration during each Release. The RFC SHOULD outline technical strategies and estimate cost (such as two engineers at 20%) to realize its objectives. 
 
