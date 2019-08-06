@@ -49,7 +49,8 @@ To submit an updated analysis, Analysis will:
 3. For other files that need updating, also add them to the envelope with the same provenance.document_id as their previous versions.
 4. For files that only exist in the new analysis, add them to the envelope with a new provenance.document_id.
 5. For files that exist only in the older analysis, delete them by posting an HTTP DELETE to their endpoint in this envelope.
-6. For files that are in both old and new analysis but don’t need updating, do nothing.
+6. For files that are in both old and new analysis but don’t need updating, do nothing. These files will have the same
+UUID and version in both the old and new analyses.
 
 Note that a submission envelope is a transaction that can add, delete or update any number of files in a project.
 
