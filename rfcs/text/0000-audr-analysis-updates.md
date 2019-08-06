@@ -23,7 +23,7 @@ This covers [use cases](https://docs.google.com/document/d/1rI8PCASomdAHznyWQceR
 * Fix incorrect analysis using a corrected pipeline.
 * **Add better analysis using an improved pipeline.**
 
-Wranglers consider the **bolded** use cases in red to be critical for general availability.
+Wranglers consider the **bolded** use cases in red to be of greater importance than the other use cases.
 
 ## Detailed Design
 A primary metadata update triggers a datastore notification. Per pipeline, Analysis determines what should happen:
