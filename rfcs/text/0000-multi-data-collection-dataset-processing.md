@@ -10,7 +10,7 @@
 This RFC proposes a solution to allow processing of datasets that span multiple bundles. It addresses the general problem that the current DCP data model contains no representation of data set grouping and completeness beyond that of individual data bundles.  This results in a restriction that all data processing within the DCP is a one-to-one linear set of steps deriving one bundle from another.
 
 However, there are use cases where a giving processing step can require input from multiple input bundles,
-resulting in a full DAG rather than a linear graph. The DAG sub-graph must be defined and all data available to initiate processing.  The notion of data completeness is required to support the implementation of DAG processing.
+resulting in a full DAG rather than a linear graph. The DAG sub-graph must be defined and all data available to initiate processing.  A notion of data completeness is required to support the implementation of DAG processing.
 
 This RFC defines a general mechanism for grouping bundles, called *data groups*, to allow bundles to be grouped in new ways.   By providing a general method for grouping bundles, this proposal provides a mechanism for addressing various tasks that cross bundle boundaries.  This impacts analysis pipelines, algorithmic complexity, data consistency, data set quality control and data releases.  The current bundle grouping under consideration is a submission to a project.  However, the concept generalizes in a manner that other groupings can be defined to accommodate future needs.
 
