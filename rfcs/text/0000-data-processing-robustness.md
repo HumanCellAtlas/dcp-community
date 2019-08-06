@@ -1,4 +1,4 @@
-### DCP PR:
+p### DCP PR:
 
 ***Leave this blank until the RFC is approved** then the **Author(s)** must create a link between the assigned RFC number and this pull request in the format:*
 
@@ -50,17 +50,12 @@ In order to create a robust and resilient system, it is critical that DCP compon
 
 As part of normal operations, all components in the system are responsible for:
 - Skipping the processing of experimental data when it is erroneous or unexpected, rather than failing.
-- Capturing errors in a way that can be analyzed and corrected at a later date.
-- Supporting mechanisms to reprocessing data that was skipped when the problems are corrected.
-- Ensuring the completeness and consistency of data produced.
-
-These requirements can be summarized as:
-1. *log and continue*
-2. *recover after repair*
-3. *define completeness*
+- Capturing errors in a way that can be analyzed and corrected, ensuring prompt reporting of problems to system operators.
+- Supporting mechanisms to reprocess data that was skipped when the problems are corrected.
+- Completed data and metadata must be committed in an atomic manner.
+- Ensuring the completeness and consistency of data produced.  Incompletely processed data sets must be clearly identified, even when subsets are completed successfully.
 
 
 ### Unresolved Questions
 
-- *What aspects of the design do you expect to clarify further through the RFC review process?*
-- *What aspects of the design do you expect to clarify later during iterative development of this RFC?*
+As a principles RFC, there is no direct implementation.  However, we expect the review process to hone the criteria and identify problem areas that need to be address.
