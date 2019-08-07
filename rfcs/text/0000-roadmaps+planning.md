@@ -87,25 +87,26 @@ Timeboxes with a range of days indicate that the work MAY be completed at any po
 
 Day 1 in the Roadmap timeline begins in the third quarter.
 
-* **Day 1 - Day 25: [Gathering and reviewing input](#gathering-and-reviewing-input)**
+* **Day 1 - Day 30: [Gathering and reviewing input](#gathering-and-reviewing-input)**
   * Prerequisite: Science Roadmap
   * Prerequisite: Technical Objectives RFC
-  * Day 1-25: DCP User Survey 
+  * Day 1-30: DCP User Survey 
   * Day 1-10: Roadmap Retrospective
-* **Day 1 - Day 40: [Drafting the roadmap](#drafting-the-roadmap)**
+* **Day 1 - Day 45: [Drafting the roadmap](#drafting-the-roadmap)**
   * Day 1-10: Identify a Roadmap Shepherd
-  * Day 25-30: Create themes
-  * Day 31: Collate themes
-  * Day 32-40: Refine themes
-* **Day 40 - Day 55: Receiving feedback**
-  * Day 40: Publish draft Roadmap
-  * Day 41-50: Community Review period 
-  * Day 51-55: Complete final edits
-* **Day 55 - Day 65 : [Iterating with Oversight](#iterating-with-oversight)**
-  * Day 55: Send Roadmap to Oversight
-  * Day 56-65: Review and edit roadmap with Oversight
-  * Day 65: Receive Roadmap approval from Oversight
-  * Day 65: Communicate approved Roadmap 
+  * Day 30-35: Create themes
+  * Day 36: Collate themes
+  * Day 37-45: Refine themes
+* **Day 45 - Day 60: Receiving feedback**
+  * Day 45: Publish draft Roadmap
+  * Day 46-55: Community Review period 
+  * Day 56-60: Complete final edits
+* **Day 60 - Day 70: [Iterating with Oversight](#iterating-with-oversight)**
+  * Day 60: Send Roadmap to Oversight
+  * Day 61-70: Review and edit roadmap with Oversight
+  * Day 70: Receive Roadmap approval from Oversight
+  * Day 70: Communicate approved Roadmap 
+
 
 ### Gathering and Reviewing Input
 [Gathering and Reviewing Input]:#gathering-and-reviewing-input
