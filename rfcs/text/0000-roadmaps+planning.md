@@ -120,7 +120,7 @@ Project Leads MUST clarify outstanding questions about the Science Roadmap with 
 
 Project Leads MUST review the [Technical Objectives RFC](#technical-architecture-objectives) from the most recent quarter to understand outstanding technical concerns.
 
-#### DCP User Survey
+#### DCP User Survey and UX Insights
 
 User Experience (UX) MUST create a DCP user survey on an annual basis to collect input for the Product Roadmap. The audience for the survey are the Users of the DCP.
 
@@ -129,6 +129,8 @@ UX MUST review the proposed survey with the DCP community and incorporate sugges
 The survey MUST be announced to the membership of the Human Cell Atlas (through its the Registration mailing list) with a minimum of a two week last call for responses.
 
 At the conclusion, UX MUST summarize insights from the survey and present at the next DCP PM meeting. Following a one week review to incorporate feedback, the survey MUST be shared by UX with the membership of the Human Cell Atlas and announced on the *HumanCellAtlas #dcp* slack channel.
+
+UX MAY also share critical UX insights from other sources independent of the Survey for consideration by the Project Leads during the creation of the Roadmap.
 
 #### Roadmap Retrospective
 
@@ -149,7 +151,7 @@ The Shepherd is responsible for:
 ### Drafting the Roadmap
 [Drafting the Roadmap]:#drafting-the-roadmap
 
-Project Leads MUST independently create Themes by utilizing the input provided in the Science Roadmap, DCP User Survey, and Roadmap Retrospective.
+Project Leads MUST independently create Themes by utilizing the input provided in the Science Roadmap, Technical Objectives RFC, DCP User Survey and UX Insights, and Roadmap Retrospective.
 
 To create the draft Product Roadmap, the Roadmap Shepherd:
 - Forks the *HumanCellAtlas dcp-community* repository
