@@ -104,10 +104,12 @@ An analysis pipeline event handler component will be created that is responsible
 Updates to PROJECT_SUBMISSIONS must result in updating of the associated *data groups* to trigger reprocessing. When part or the entirety of a project submission is updated the associated data group must be identified and updated with the new bundle versions if bundles have been replaced and/or with additional new bundles if bundles have been added. This is the responsibility of Ingest. Analysis must handle the update to the *data group* by initiating only the pipelines that have been affected by the update and ensure that the output bundles of this analysis are updates to existing bundles.
 
 ### Unresolved Questions
+* *Data group* concept relates directly to the planned UX on on *experiment data sets*.  This RFC and that work should be unified.
 * Since the bundle type RFC is not complete, it is unclear if creating a *data group* bundle types is consistent with the DCP design.
-* Could a *data group* be a DSS collection?
-* Could a *data group* be a bundle that contains the *data group* files rather than a list of them?
+* Could a *data group* be a DSS collection?  Collections are poorly document, so it is unclear if they can fit the needs.
+* Could a *data group* be a bundle that contains the *data group* files rather than a list of bundles?  Can the DSS handle 1
 * How does this framework interact with new modalities we are likely to encounter in the future. A good example of this is imaging data?
+* The term *complete* causes a lot of confusion, because data sets can be updated.
 
 ## Dependencies
 
