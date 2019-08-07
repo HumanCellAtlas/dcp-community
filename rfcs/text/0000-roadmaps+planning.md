@@ -318,7 +318,7 @@ If an Objective requires further exploration or design before it can be estimate
 1. Create a new ZenHub issue and label it as a Spike.
 1. Assign one (and only one) Owner responsible for completing the Spike.
 1. Document and monitor the *work-in-progress*. If an RFC is required, a reference to the draft RFC in the *dcp-community* repo is required; otherwise a reference to other documentation is appropriate.
-(For designs, it is RECOMMENDED that a temporary working group channel be created in *HumanCellAtlas* Slack and documented in the Spike to ensure that the *state of play* is visible to the DCP community.)
+(For designs, it is RECOMMENDED that a temporary public working group channel be created in *HumanCellAtlas* Slack and documented in the Spike to ensure that the *state of play* is visible to the DCP community.)
 1. Document its Acceptance Criteria such as an approved RFC. 
 1. Add the Spike to its related Epic.
 1. Add the Spike as a blocking dependency in its related Epic.
