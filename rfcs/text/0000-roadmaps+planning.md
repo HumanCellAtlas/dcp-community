@@ -282,7 +282,7 @@ Release planning begins in the third Week of the third Milestone of the current 
 
 ***Previous Release Milestone 3 Week 3.*** The Roadmap Shepherd schedules a two-hour meeting with DCP PM and the Technical Leads to review any incomplete Objectives in the Release, the next Objectives in the DCP Roadmap, and the Technical Objectives RFC.
 
-Incomplete Objectives are the highest priority for the next Release unless emerging conditions have altered the priorities for the previous Release plan.
+Incomplete Objectives are the highest priority for the next Release unless emerging conditions, as identified by the Project Leads, have altered the priorities for the previous Release plan.
 
 The outcome from this meeting is the proposed set of Product and Technical Objectives for the next Release. One (and only one) Product Owner MUST be assigned to each proposed Objective. This Product Owner is responsible for refining and driving the Objective to on-time closure in coordination with Technical Leads and other collaborators.
 
