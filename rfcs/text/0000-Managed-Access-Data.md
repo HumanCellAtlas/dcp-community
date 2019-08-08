@@ -21,16 +21,16 @@ controlling access to managed access data.
 *Recommended format for Authors:*
 
 \[Kevin
-Osborn\]([[mailto:kosborn2\@ucsc.edu]{.underline}](mailto:kosborn2@ucsc.edu))
+Osborn\]([[mailto:kosborn2\@ucsc.edu]](mailto:kosborn2@ucsc.edu))
 
 \[Trent
-Smith\]([[mailto:trent.smith\@chanzuckerberg.com]{.underline}](mailto:trent.smith@chanzuckerberg.com))
+Smith\]([[mailto:trent.smith\@chanzuckerberg.com]](mailto:trent.smith@chanzuckerberg.com))
 
 \[Brian
-Hannafious\]([[mailto:bhannafi\@ucsc.edu]{.underline}](mailto:bhannafi@ucsc.edu))
+Hannafious\]([[mailto:bhannafi\@ucsc.edu]](mailto:bhannafi@ucsc.edu))
 
 \[Brian
-O'Connor\]([[mailto:broconno\@ucsc.edu]{.underline}](mailto:broconno@ucsc.edu))
+O'Connor\]([[mailto:broconno\@ucsc.edu]](mailto:broconno@ucsc.edu))
 
 **Shepherd**
 ------------
@@ -143,7 +143,7 @@ data for a set period of time.
 ------------------------------
 
 This plan will be reviewed by members of the \[Compliance working
-group\]([[https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/Compliance-WG/charter.md]{.underline}](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/Compliance-WG/charter.md))
+group\]([[https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/Compliance-WG/charter.md]](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/Compliance-WG/charter.md))
 who will ensure the proposed design meets their guidelines for
 responsible handling of managed access genomic data.
 
@@ -201,8 +201,7 @@ APIs that will be impacted.
 
 <!-- -->
 
--   Azul API (this is the browser back end API, which is not currently
-    > public)
+-   Azul API (this is the browser back end API, which is not currently public)
 
 -   Query service
 
@@ -308,39 +307,39 @@ good starting point for other controls from other nations.
 
 [[Analysis of five years of controlled access and data sharing
 compliance at the International Cancer Genome
-Consortium]{.underline}](https://www.nature.com/articles/ng.3499?proof=true&draft=journal)
+Consortium]](https://www.nature.com/articles/ng.3499?proof=true&draft=journal)
 : Good article about running a DAC
 
 [[Data Sharing in the Post-Genomic World: The Experience of the
 International Cancer Genome Consortium (ICGC) Data Access Compliance
 Office
-(DACO)]{.underline}](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002549)
+(DACO)]](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002549)
 : A good reference on creating a tiered access data repository.
 
 [[DUO
-overview]{.underline}](https://docs.google.com/presentation/d/1B4jsqnZIqwxLjL8Y1q41kYFNN8BsmmiEC6I9_WZZPt0/edit#slide=id.p)
+overview]](https://docs.google.com/presentation/d/1B4jsqnZIqwxLjL8Y1q41kYFNN8BsmmiEC6I9_WZZPt0/edit#slide=id.p)
 from GA4GH Basel presentation
 
 [[Data Use & Researcher
-Identities]{.underline}](https://www.ga4gh.org/work_stream/data-use-researcher-identities-duri-2/)
+Identities]](https://www.ga4gh.org/work_stream/data-use-researcher-identities-duri-2/)
 Effort to standardize and automate the granting of access based on data
 use and researcher identity patterns.
 
 [[DCP User
-stories]{.underline}](https://docs.google.com/document/d/1uYdNEnBjl_tMJdGSh8f3VFDd0aw_hhhs2egyvkIfOeg/edit)
+stories]](https://docs.google.com/document/d/1uYdNEnBjl_tMJdGSh8f3VFDd0aw_hhhs2egyvkIfOeg/edit)
 (note controlled access user stories missing)
 
-[[NIST-800-53]{.underline}](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53Ar4.pdf)
+[[NIST-800-53]](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53Ar4.pdf)
 FedRAMP
 
 [[Fusillade
-RFC]{.underline}](https://docs.google.com/document/d/1qD4bgnO684GtcLBErxYNZ5gvMaQPF8DsIdUBua5ZDBs/edit#heading=h.x01v6l5tv57z)
+RFC]](https://docs.google.com/document/d/1qD4bgnO684GtcLBErxYNZ5gvMaQPF8DsIdUBua5ZDBs/edit#heading=h.x01v6l5tv57z)
 describes the architecture for access control as implemented in the DCP
 
 ### **Alternatives** 
 
 [[Near-term strategy for Managed Access in the
-DCP]{.underline}](https://docs.google.com/document/d/1g_20xRCshmr5gmgr0OY64wW34r0DYxVRFpo6MhlXWkM/edit?pli=1#heading=h.hld7rftpusci).
+DCP]](https://docs.google.com/document/d/1g_20xRCshmr5gmgr0OY64wW34r0DYxVRFpo6MhlXWkM/edit?pli=1#heading=h.hld7rftpusci).
 This approach uses a pre-existing external archive (data store) that
 already supports controlled access data. Identifiable data would be
 stored there with the derived non-identifiable data (expression data)
