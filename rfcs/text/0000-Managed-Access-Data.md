@@ -4,7 +4,7 @@
 create a link between the assigned RFC number and this pull request in
 the format:*
 
-\[dcp-community/rfc\#\](https://github.com/HumanCellAtlas/dcp-community/pull/\<PR\#\>)
+[dcp-community/rfc\#](https://github.com/HumanCellAtlas/dcp-community/pull/\<PR\#\>)
 
 **Informational RFC: Managed Access Data in the Datas Control Platform**
 ========================================================================
@@ -20,22 +20,22 @@ controlling access to managed access data.
 
 *Recommended format for Authors:*
 
-\[Kevin
-Osborn\]([[mailto:kosborn2\@ucsc.edu]](mailto:kosborn2@ucsc.edu))
+[Kevin
+Osborn]([[mailto:kosborn2\@ucsc.edu]](mailto:kosborn2@ucsc.edu))
 
-\[Trent
-Smith\]([[mailto:trent.smith\@chanzuckerberg.com]](mailto:trent.smith@chanzuckerberg.com))
+[Trent
+Smith]([[mailto:trent.smith\@chanzuckerberg.com]](mailto:trent.smith@chanzuckerberg.com))
 
-\[Brian
-Hannafious\]([[mailto:bhannafi\@ucsc.edu]](mailto:bhannafi@ucsc.edu))
+[Brian
+Hannafious]([[mailto:bhannafi\@ucsc.edu]](mailto:bhannafi@ucsc.edu))
 
-\[Brian
-O'Connor\]([[mailto:broconno\@ucsc.edu]](mailto:broconno@ucsc.edu))
+[Brian
+O'Connor]([[mailto:broconno\@ucsc.edu]](mailto:broconno@ucsc.edu))
 
 **Shepherd**
 ------------
 
-\[Name\](mailto:username\@example.com)
+[Name](mailto:username\@example.com)
 
 **Motivation**
 --------------
@@ -142,8 +142,8 @@ data for a set period of time.
 **Scientific \"guardrails\"** 
 ------------------------------
 
-This plan will be reviewed by members of the \[Compliance working
-group\]([[https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/Compliance-WG/charter.md]](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/Compliance-WG/charter.md))
+This plan will be reviewed by members of the [Compliance working
+group]([[https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/Compliance-WG/charter.md]](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/Compliance-WG/charter.md))
 who will ensure the proposed design meets their guidelines for
 responsible handling of managed access genomic data.
 
