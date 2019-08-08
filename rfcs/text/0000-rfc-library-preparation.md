@@ -8,6 +8,8 @@
 
 ## Summary
 
+**2019-08-15: Last call for oversight review**
+
 The current HCA DCP metadata model explicitly represents cell suspensions (single cells or multiple cells suspended in some media) but not the sequencing library preparations derived from them. This is creating challenges for contributors, consumers, and DCP implementation teams when submitting, processing, and interpreting sequencing data. Here we propose a solution for explicitly identifying library preparation biomaterials in a sequencing experiment by making them a first-class biomaterial type entity in the metadata standard.
 
 ## Author(s)
