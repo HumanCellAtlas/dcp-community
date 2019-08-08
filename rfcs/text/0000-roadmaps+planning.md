@@ -365,7 +365,7 @@ Over-communication is strongly RECOMMENDED.
 
 The Release Shepherd MUST send a status update to the Project Leads on the DCP PM mailing list that captures action items for participants, documents slips in schedule, and/or requests clarification as needed.
 
-As required, the Release Shepherd SHOULD schedule time on the next DCP PM call to address issues pending resolution. The Project Leads MUST never be surprised by the *state of play*.
+As required, the Release Shepherd SHOULD add an agenda item to the recurring DCP PM meeting to address issues pending resolution. The Project Leads MUST never be surprised by the *state of play*.
 
 ***At Milestone Completion***. The Project Leads MUST update Oversight on the progress of the Release to ensure appropriate accountability.
 
