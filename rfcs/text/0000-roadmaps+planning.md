@@ -135,9 +135,9 @@ UX MAY also share critical UX insights from other sources independent of the Sur
 
 #### Roadmap Retrospective
 
-Project Leads MUST independently review the prior year’s Product Roadmap, Release Retrospective summaries, and appropriate supporting documentation.
+The Roadmap Retrospective occurs during the recurring Project Leads meeting and not in a special session. The Roadmap Shepherd MUST add the Retrospective to the agenda and faciliate.
 
-Project Leads MUST share their significant findings and learnings during the Retrospective. 
+In preparation, the Project Leads MUST independently review the prior year’s Product Roadmap, Release Retrospective summaries, and appropriate supporting documentation and then share their significant findings and learnings with their peers during the Retrospective.
 
 Findings may include: Themes that were incomplete and the accompanying reason, incorrectly sized work in the Engineering Plan, etc. These findings SHOULD be utilized as a reference class for the next Product Roadmap.
 
