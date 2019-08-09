@@ -13,9 +13,9 @@ This RFC proposes a strategy which will enable the DCP to distribute standard pr
 
 ## Author(s)
 
-[Laura Clarke](mailto:laura@ebi.ac.uk)
-[Emily Kirby] (mailto:ekirby@p3g.org)
-[Timothy Tickle] (mailto:ttickle@broadinstitute.org)
+[Laura Clarke](mailto:laura@ebi.ac.uk)  
+[Emily Kirby](mailto:ekirby@p3g.org)   
+[Timothy Tickle](mailto:ttickle@broadinstitute.org)   
 
 ## Shepherd
 
@@ -29,15 +29,15 @@ Many researchers collecting cellular resolution genomic data are doing so using 
 
 **Definitions**
 
-**_Managed access data _**- Raw and processed genomic and phenotypic data from individuals whose consent agreements authorise data release only for specific research use to bona fide researchers.
+**Managed access data** Raw and processed genomic and phenotypic data from individuals whose consent agreements authorise data release only for specific research use to bona fide researchers.
 
-**_Open access data_** - Raw and processed genomic and phenotypic data from individuals whose consent agreement authorise unrestricted sharing and summary level data generated from both open and managed access raw and processed genomic data.
+**Open access data** Raw and processed genomic and phenotypic data from individuals whose consent agreement authorise unrestricted sharing and summary level data generated from both open and managed access raw and processed genomic data.
 
-**_European Genome Phenome Archive (EGA)_** - EMBL-EBI archive established to support the distribution of managed access data, providing data contributors a secure storage mechanism for their genomic data and a toolset which enables data contributors to manage access rights to their own data.
+**European Genome Phenome Archive (EGA)** [EMBL-EBI archive](https://www.ebi.ac.uk/ega/) established to support the distribution of managed access data, providing data contributors a secure storage mechanism for their genomic data and a toolset which enables data contributors to manage access rights to their own data.
 
-**_HCA Data Contributor Agreement _** - an agreement entered into between the Data Contributor and the HCA, prior to contribution and upload of data to the HCA DCP.  
+**HCA Data Contributor Agreement** an agreement entered into between the Data Contributor and the HCA, prior to contribution and upload of data to the HCA DCP.  
 
-### User Stories
+## User Stories
 
 As a **Researcher with a keyboard**, I want to find data that is similar to my own.  I download an expression matrix for that data, then analyze/visualize it locally using my own workflow. I would like this to work irrespective of the access permissions for the raw data and alignments for the data.
 
@@ -63,25 +63,21 @@ Figure 1: Proposed managed access data flow though DCP. 1. Managed access data c
     
 #### Metadata changes
 
-
 This design change brings a requirement to annotate what data usage is acceptable for a particular project. We propose this is done using the [GA4GH recommended Data Use Ontology]([https://github.com/EBISPOT/DUO](https://github.com/EBISPOT/DUO)) which allows us to annotate a particular project if it is suitable for such things as [not for profit use only]([https://www.ebi.ac.uk/ols/ontologies/duo/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FDUO_0000018](https://www.ebi.ac.uk/ols/ontologies/duo/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FDUO_0000018)) or [health or medical or biomedical use only]([https://www.ebi.ac.uk/ols/ontologies/duo/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FDUO_0000006#](https://www.ebi.ac.uk/ols/ontologies/duo/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FDUO_0000006#)). Initially these terms will allow users to restrict their searches to projects whose data use matches their needs. Eventually the presence of these codes will facilitate automated access decisions being made.
-
 
 #### Data Access Committee (DAC) establishment and operation
 
 The EGA model has each data contributor operating their own data access committee and making their own decisions about authorizing access to their own managed-access data. The DCP will work with the HCA Ethics working group to provide data contributors who don’t already have an established DAC with template data access agreements and best practice for DAC operation.
 
-
 #### DCP team member permissions to process data from the EGA
 
 DCP team members won’t automatically gain access to data we broker into the EGA. A process will need to be established to gain official permission for named members of the DCP who need to be able to access the data to run the data processing pipelines in Terra to view the data. A possible solution to this challenge for new data will be to add a clause to the HCA data contributor agreement which states that by submitting managed access data to the HCA DCP you give permission for specific pipelines to be run in the Terra by DCP team members.
-
 
 #### Data import and export to Terra for secure data processing
 
 The pipeline execution service for both the HCA DCP and Terra are compatible and so all pipelines developed for or ran in the DCP will be able to run in the Terra environment. The process of import and export to and from the system will need to be evaluated by DevSecOps in order to be operated in a secure manner and potentially brought into the security perimeter of the secure analysis system. There are opportunities for manual and automatically triggered runs of data depending on the needs of the solution. In either case, the actor managing the execution of the analysis will be authenticated and needs the authority from the data generator to access and process the data.
 
-### Acceptance Criteria 
+## Acceptance Criteria 
 
 *A data consumer can download a matrix file which contains results for a mixture of open and managed access datasets
 
@@ -94,9 +90,9 @@ An implementation of this proposal can be considered successful if
 *   The total volume of data in the DCP increases at a higher rate than previously in the two quarters after delivery of this feature. This should be true as the DCP can now accept a broader range of datasets than it could previously
 *   The ratio of managed access to open access data in the system increases over time until it reflects the general ratio of managed to open human cellular resolution genomic data available in the sequence archives. 
 
-### Unresolved Questions
+## Unresolved Questions
 
-### Design questions which should be resolved during the RFC process
+#### Design questions which should be resolved during the RFC process
 
 *   Does ingest need to support any additional security features on top of https to accept submission of managed access data? What does the security perimeter for this data look like and which components will need to be in that security perimeter?
 *   What assumptions does the lack of fastq files and BAM files in the DSS break?
@@ -114,7 +110,7 @@ An implementation of this proposal can be considered successful if
 *   Are there other qualitative metrics than the count matrices that should be fed back to the DCP that would otherwise be derived from the BAM files
 *   Are there other archives of controlled access data that should be considered as part of this design process (dbGAP)?
 
-### Drawbacks and Limitations [optional]
+## Drawbacks and Limitations [optional]
 
 This proposal will mean that the HCA DCP cannot provide researchers with access to the raw and aligned sequencing data from cellular resolution experiments which are consented for managed access distribution. This will limit researchers ability to ask questions of the data relating to how genetics of the individual or population affect the identity and state of the cells studied. This is functionality that could be enabled in further iterations of the managed access strategy but should not be expected in initial offerings described here.
 
@@ -122,7 +118,7 @@ This proposal represents a compromise solution to allow us to combine the growin
 
 This work will not allow us to support distribution of managed access data directly from the DCP. A strategic decision is needed if that is a desirable functionality for the DCP to service and an understanding of the technical and logistical requirements of that work versus the DCP implementation team starting to implement a full complement of the functionality required to support redistribution of managed access data. We should also consider if we will need to implement this plan REGARDLESS of if we have our own controlled access implementation. There may always be a need for supporting this data pathway.
 
-### Prior Art [optional]
+## Prior Art 
 
 [Analysis of five years of controlled access and data sharing compliance at the International Cancer Genome Consortium]([https://www.nature.com/articles/ng.3499?proof=true&draft=journal](https://www.nature.com/articles/ng.3499?proof=true&draft=journal)) : Good article about running a DAC
 
@@ -136,7 +132,7 @@ Effort to standardize and automate the granting of access based on data use and 
 
 [DCP User stories]([https://docs.google.com/document/d/1uYdNEnBjl_tMJdGSh8f3VFDd0aw_hhhs2egyvkIfOeg/edit](https://docs.google.com/document/d/1uYdNEnBjl_tMJdGSh8f3VFDd0aw_hhhs2egyvkIfOeg/edit)) (note controlled access user stories missing)
 
-### Alternatives [optional]
+## Alternatives 
 
 [Managed access data WIP]([https://github.com/HumanCellAtlas/dcp-community/pull/98](https://github.com/HumanCellAtlas/dcp-community/pull/98))
 
