@@ -6,17 +6,13 @@
 
 # HCA DCP Data Citation Plan
 
-*Replace "RFC Name" above with the name of your RFC. Keep it short and descriptive.*
-
 ## Summary
 
-Data Contributors and Data Consumers need to be able to cite data in the DCP that is used in scientifc publications.
+Data Contributors and Data Consumers need to be able to cite data in the DCP that is referenced in scientific publications.
 Data Contributors need to be able to cite data sets that they have contributed to the DCP.
-Data Consumers need to be able to cite the DCP data that they used in their research projects.
+Data Consumers need to be able to cite the DCP data that they have used in their research projects.
 
 ## Author(s)
-
-*Recommended format for Authors:*
 
  [Trevor Heathorn](mailto:theathor@ucsc.edu)
 
@@ -33,14 +29,14 @@ There is currently no clear and agreed upon definition of the requirements for D
 Key issues that need to be resolved are:
   - What is the minimum feature set required for a first release (Phase 1)?
   - What are the discrete set of features that make sense for subsequent releases (e.g. Phase 2, Phase 3, etc.)
-  - In which phase is support for a formal digital object identifier (DOI) required, if any?
+  - In which phase, if any, is support for a formal digital object identifier ([DOI](https://en.wikipedia.org/wiki/Digital_object_identifier)) required?
 
 ### User Stories
 
 1. As a data contributor (e.g. researcher with a pipette), it is essential to have a unique way for my project (consisting of primary and secondary analysis data files and associated metadata files) to be identified so that others can properly cite my work when using my data, and that this citation identifier is available in the DCP Data Portal. Note: This will discourage but not prevent others from using my data without attribution.
 2. As a data consumer (e.g. researcher with a keyboard), I want to be able to view and share a unique citation identifier so that a reader of my manuscript can obtain the data needed to reproduce my results. Anyone can use the citation identifier to view and download all the original cited data and metadata files for a project from the DCP.
 3. As a data consumer, I need a simple way to reference a project in the DCP so that I can fulfill the requirements of a Creative Commons attribution license (CC-BY).
-4. As a data contributor or consumer, I need a way to use the citation identifier to access the output produced by the DCP Matrix Service.
+4. As a data contributor or consumer, I need a way to use the citation identifier to access the output produced by the DCP Matrix Service for the data being cited.
 5. As a data contributor or consumer, I want to be able to update my project and provide versioned views of the data being cited.
 
 ## Scientific "guardrails" [optional]
@@ -49,40 +45,46 @@ Key issues that need to be resolved are:
 
 ## Detailed Design
 
-It is proposed to split the initial implementaton into three phases:
+It is proposed to split the initial implementation into three phases:
 
 ### Phase 1
-This is designed to satisfy the minimal set of requirements for User Stories 1-4 by allowing "per-project" citations.
+This is designed to satisfy the minimal set of requirements for User Stories #1 through #4 by providing only "per-project" citations.
 The Data Browser project details page will add a "To cite this project please copy this link" item.
 This "stable URL" will link back to the production site project page using the project's UUID (e.g. https://data.humancellatlas.org/explore/projects/cc95ff89-2e68-4a08-a234-480eca21ce79).
-The URL refers to the “live’ view of the project and is therefore subject to additions and updates (e.g. corrections) of data and metadata. However these are expected to be infrequent and should not affect existing primary data.
-See the "Unresoled Questions" section as to whether or not a formal DOI is required for Phase 1.
+The URL refers to the “live" view of the project and is therefore subject to additions and updates (e.g. corrections) of data and metadata. However, these are expected to be infrequent and should not affect existing primary data.
+If an existing project is deleted and re-ingested then the cited project UUID would become invalid. If such re-ingestion is allowed then a means must be provided to redirect the original "stable URL" to the new version of the project.
+Note: Scientists are *already* citing such project based URLs in publications.
+
+See the "Unresolved Questions" section as to whether or not a formal DOI is required for Phase 1.
 
 ### Phase 2
-This is designed to satisfy the data contributor requirements for User Story 5.
+This is designed to satisfy the data contributor requirements for User Story #5.
 This allows the Data Operations team to make a “Data Release” (i.e. a curated data set) where the data release itself and/or the projects contained within are citable.
 A Data Release must be immutable.
 The Data Browser must provide users with access to each Data Release (i.e. immutable version of data) in addition to the “live/latest” view.
 The Data Browser must be able to provide users with a means to download the data and metadata associated with a Data Release.
 Since the Matrix Service does not support the ability to process older versions of input files, the output files from the Matrix Service *must* be stored as part of the immutable data set.
+The Data Store "collections" API provides a suitable means for recording the contents of a Data Release.
 
 ### Phase 3
-This is designed to satisfy the data consumer requirements for User Story 5.
+This is designed to satisfy the data consumer requirements for User Story #5.
 This also fully satisfies User Story #2 by allowing a data consumer to cite an arbitrary set of data which spans multiple projects.
-The data consumer msut be able to create discrete versions of their selected data and the Data Browser must provide user access to each version.
+The data consumer must be able to create discrete versions of their selected data and the Data Browser must provide users access to each version.
+The data consumer must be able to share a citable link to any of the versions they have created.
 
 ### Implementation notes for DOI support
-A DOI provides a link of the form https://doi.org/xxxx which resolves to the hosting Registration Agency.
+A DOI provides a link of the form https://doi.org/xxxx which resolves via the hosting [Registration Agency](https://www.doi.org/registration_agencies.html) or [open-access repository](https://en.wikipedia.org/wiki/Open-access_repository).
+A DOI is the most commonly accepted means for citing documents and data in scientific publications.
 
-It would seem acceptable for a DOI to resolve to an external Registration Agency (e.g. BioStudies, Zenodo, etc.) which could then provide a URL to the project in the Data Browser as well as the ability to store point-in-time copies (i.e. versions) of relevant files such as the download manifest, metadata tsv, matrix output file, etc.
-The stored manifest file could then be used in the HCA CLI to download the exact versions of the data+metadata for that version of the project.
+It is acceptable for a DOI to resolve to an external website (e.g. BioStudies, Zenodo, etc.) which could then provide a URL to the project in the Data Browser as well as the ability to store point-in-time copies (i.e. versions) of relevant files such as the download manifest, metadata tsv, matrix output file, etc.
+The stored manifest file could then be used in the HCA CLI to download the exact versions of the data and metadata for that version of the project. It is a requirement that the DCP never deletes older versions of cited data files, except for the special case of retraction of unconsented data.
 
-#### Possible DOI Registration Agencies that provide the ability to "mint' DOIs:
-  - BioStudies
-  - Zenodo
-  - Figshare
-  - Crossref
-  - HCA DCP mints its own DOIs by becoming a Registration Agency
+#### Possible DOI Registration Agencies and open-access repositories that provide the ability to assign DOIs:
+  - [BioStudies](https://www.ebi.ac.uk/biostudies/)
+  - [Zenodo](https://en.wikipedia.org/wiki/Zenodo)
+  - [Figshare](https://en.wikipedia.org/wiki/Figshare)
+  - [Crossref](https://en.wikipedia.org/wiki/Crossref)
+  - HCA DCP assigns its own DOIs by becoming a member of the International DOI Foundation (IDF)
 
 #### DOI Versioning
 Most DOI repositories appear to provide support for versioning (i.e. multiple versions of a single citation available e.g. via a drop-down selection),
@@ -94,14 +96,14 @@ Examining how both Figshare and Zenodo do DOIs, as the group minting DOIs contro
 The Data Browser would contain a reference to the base DOI for each project. Clicking on the DOI link would redirect the user to the (external) DOI repository where the user could see all the versions of that project and download the associated manifest and metadata.tsv files for a specific version. 
 
 #### DOI Creation/Update Process
-Embedding a DOI in the metadata (e.g. biostiudies_doi) during ingest would provide per-project citability.
+Embedding a DOI in the metadata (e.g. biostudies_doi) during ingest would provide per-project citability.
 Provided the DOI repository supports versioning the metadata DOI field could be updated automatically by Ingest to a new version whenever a project update is processed.
-So using a formal DOI may be the simplest way to provide project versioning.
+Using a DOI may be the simplest way to provide versioned views of a project.
 
 The creation/update process would perform the following steps:
   - Ingest creates a new DOI (new project) or a new version of an existing DOI (updated project) when the submission is deemed “complete”.
   - Upload the corresponding metadata tsv and manifest file for this version of the project to the DOI repository (need to wait for these to be generated).
-  - Optionally upload the matrix output file(s) for this version of the project to the DOI repository?
+  - Upload the matrix output file(s) for this version of the project to the DOI repository.
   - Update a project description to the DOI repository (e.g. what’s in this version?).
   - Create a link in the DOI repository back to the project details page in the Data Browser.
 
@@ -115,9 +117,11 @@ Must a data citation provide an *immutable* view of a project? Or is acceptable 
   - a project's primary data
   - a project's secondary analysis outputs
   - a project's expression matrix outputs, generated by the Matrix Service
-  - A project's metadata
+  - a project's metadata
+  
+If an *immutable* view of the cited data is a requirement, is this technically feasible before a full implementation of support for versioned files (i.e. the AUDR RFC)?
 
-Must a data citation provide a DOI or is a "stable URL" sufficient for Phase 1?
+For Phase 1 must a data citation provide a DOI or is a "stable URL" sufficient?
 
 For Phase 2 & 3 does the Data Browser need to provide a view of the cited data on which further faceted searches can be performed?
 
