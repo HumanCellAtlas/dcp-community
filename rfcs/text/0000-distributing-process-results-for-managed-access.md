@@ -124,7 +124,7 @@ This work will not allow us to support distribution of managed access data direc
 
 [Data Sharing in the Post-Genomic World: The Experience of the International Cancer Genome Consortium (ICGC) Data Access Compliance Office (DACO)](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002549) This is a good reference on creating a tiered access data repository
 
-[DUO overview]([https://docs.google.com/presentation/d/1B4jsqnZIqwxLjL8Y1q41kYFNN8BsmmiEC6I9_WZZPt0/edit#slide=id.p](https://docs.google.com/presentation/d/1B4jsqnZIqwxLjL8Y1q41kYFNN8BsmmiEC6I9_WZZPt0/edit#slide=id.p)) from GA4GH Basel presentation
+[DUO overview](https://docs.google.com/presentation/d/1B4jsqnZIqwxLjL8Y1q41kYFNN8BsmmiEC6I9_WZZPt0/edit#slide=id.p)) from GA4GH Basel presentation
 
 [Data Use & Researcher Identities](https://www.ga4gh.org/work_stream/data-use-researcher-identities-duri-2/) This are GA4GH led effort to standardize and automate the granting of access based on data use and researcher identity patterns.
 
@@ -136,6 +136,6 @@ This work will not allow us to support distribution of managed access data direc
 
 ## Alternatives 
 
-[Managed access data WIP](https://github.com/HumanCellAtlas/dcp-community/pull/98](https://github.com/HumanCellAtlas/dcp-community/pull/98)
+[Managed access data WIP](https://github.com/HumanCellAtlas/dcp-community/pull/98)
 
  
