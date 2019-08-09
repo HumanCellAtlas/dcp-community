@@ -132,6 +132,10 @@ Effort to standardize and automate the granting of access based on data use and 
 
 [DCP User stories]([https://docs.google.com/document/d/1uYdNEnBjl_tMJdGSh8f3VFDd0aw_hhhs2egyvkIfOeg/edit](https://docs.google.com/document/d/1uYdNEnBjl_tMJdGSh8f3VFDd0aw_hhhs2egyvkIfOeg/edit)) (note controlled access user stories missing)
 
+[EGA DAC Account Management 2016](https://drive.google.com/open?id=1_XjKzWQVjF9_tT97LYyKqsz58vnVv6Ta)
+
+[EGA DAC Support 2019](https://drive.google.com/open?id=10uEcRilASh0YvfxqiLLm5VMNgTpKBbP0)
+
 ## Alternatives 
 
 [Managed access data WIP]([https://github.com/HumanCellAtlas/dcp-community/pull/98](https://github.com/HumanCellAtlas/dcp-community/pull/98))
