@@ -120,7 +120,7 @@ This work will not allow us to support distribution of managed access data direc
 
 ## Prior Art 
 
-[Analysis of five years of controlled access and data sharing compliance at the International Cancer Genome Consortium](https://www.nature.com/articles/ng.3499?proof=true&draft=journal](https://www.nature.com/articles/ng.3499?proof=true&draft=journal) This is a good article about running a DAC
+[Analysis of five years of controlled access and data sharing compliance at the International Cancer Genome Consortium](https://www.nature.com/articles/ng.3499?proof=true&draft=journal) This is a good article about running a DAC
 
 [Data Sharing in the Post-Genomic World: The Experience of the International Cancer Genome Consortium (ICGC) Data Access Compliance Office (DACO)](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002549) This is a good reference on creating a tiered access data repository
 
