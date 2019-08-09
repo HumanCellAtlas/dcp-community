@@ -79,9 +79,9 @@ The pipeline execution service for both the HCA DCP and Terra are compatible and
 
 ## Acceptance Criteria 
 
-*A data consumer can download a matrix file which contains results for a mixture of open and managed access datasets
+* A data consumer can download a matrix file which contains results for a mixture of open and managed access datasets
 
-*A data contributor with a dataset that has been collected using a mixture of open and managed donor consent (e.g a combination of dead and alive donors) can submit the whole dataset to via the DCP ingest system and be confident that all data will be responsibly shared under the terms of the consent it was collected.
+* A data contributor with a dataset that has been collected using a mixture of open and managed donor consent (e.g a combination of dead and alive donors) can submit the whole dataset to via the DCP ingest system and be confident that all data will be responsibly shared under the terms of the consent it was collected.
 
 #### Success Criteria
 
@@ -128,7 +128,7 @@ This work will not allow us to support distribution of managed access data direc
 
 [Data Use & Researcher Identities](https://www.ga4gh.org/work_stream/data-use-researcher-identities-duri-2/) This are GA4GH led effort to standardize and automate the granting of access based on data use and researcher identity patterns.
 
-[DCP User stories]([https://docs.google.com/document/d/1uYdNEnBjl_tMJdGSh8f3VFDd0aw_hhhs2egyvkIfOeg/edit](https://docs.google.com/document/d/1uYdNEnBjl_tMJdGSh8f3VFDd0aw_hhhs2egyvkIfOeg/edit)) (note controlled access user stories missing)
+[DCP User stories](https://docs.google.com/document/d/1uYdNEnBjl_tMJdGSh8f3VFDd0aw_hhhs2egyvkIfOeg/edit) (note managed access user stories represents edits based on those contained within here)
 
 [EGA DAC Account Management 2016](https://drive.google.com/open?id=1_XjKzWQVjF9_tT97LYyKqsz58vnVv6Ta)
 
