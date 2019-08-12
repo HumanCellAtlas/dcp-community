@@ -18,24 +18,18 @@ controlling access to managed access data.
 **Author(s)**
 -------------
 
-*Recommended format for Authors:*
+[Kevin Osborn](mailto:kosborn2@ucsc.edu)
 
-[Kevin
-Osborn]([[mailto:kosborn2\@ucsc.edu]](mailto:kosborn2@ucsc.edu))
+[Trent Smith](mailto:trent.smith@chanzuckerberg.com)
 
-[Trent
-Smith]([[mailto:trent.smith\@chanzuckerberg.com]](mailto:trent.smith@chanzuckerberg.com))
+[Brian Hannafious](mailto:bhannafi@ucsc.edu)
 
-[Brian
-Hannafious]([[mailto:bhannafi\@ucsc.edu]](mailto:bhannafi@ucsc.edu))
-
-[Brian
-O'Connor]([[mailto:broconno\@ucsc.edu]](mailto:broconno@ucsc.edu))
+[Brian O'Connor](mailto:broconno@ucsc.edu)
 
 **Shepherd**
 ------------
 
-[Name](mailto:username\@example.com)
+[Brian O'Connor](mailto:broconno@ucsc.edu)
 
 **Motivation**
 --------------
@@ -52,11 +46,12 @@ by the Data Coordination Platform (DCP).
 
 The processing of genetic and genomic information necessarily raises
 questions as to what information is 'identified or identifiable' (and
-thus subject to GDPR) and what information is 'anonymous or anonymized'
-(and thus not subject to GDPR). These difficulties are both legal (for
-the purposes of determining GDPR's scope of application) and scientific
--- for the purposes of determining what data is sensitive for data
-subjects, for the purposes of determining what information the data can
+thus subject to General Data Protection Regulation ([GDPR](https://eugdpr.org/)) 
+and what information is 'anonymous or anonymized' (and thus not 
+subject to GDPR). These difficulties are both legal, for the purposes 
+of determining GDPR's scope of application) and scientific, for 
+the purposes of determining what data is sensitive for data subjects, 
+for the purposes of determining what information the data can
 reveal about the data subject (either alone or in combination with other
 datasets). Scientific difficulties also inhere, for the purposes of
 determining what external data can be combined with the data subject's
@@ -75,9 +70,15 @@ necessary before controlled access data can be stored in the system.
 
 ### **Definitions**
 
+***Data Access Committee (DAC) -*** A committee responsible for deciding
+who should be able to access data from a study, and what use the
+researcher can make of that data. Each researcher submits a request of
+who they are, which data they want, and what they will use it for. Each
+type of use requires a separate request to the DAC.
+
 ***Managed access data*** - Raw and processed genomic and phenotypic
 data from individuals whose consent agreements authorise data release
-only for specific research use to bona fide researchers.
+only for specific research use to researchers approved by the DAC.
 
 ***Open access data*** - Raw and processed genomic and phenotypic data
 from individuals whose consent agreement authorise unrestricted sharing
@@ -88,48 +89,34 @@ and processed genomic data.
 the Data Contributor and the HCA, prior to contribution and upload of
 data to the HCA DCP.
 
-***Data Access Committee (DAC) -*** A committee responsible for deciding
-who should be able to access data from a study, and what use the
-researcher can make of that data. Each researcher submits a request of
-who they are, which data they want, and what they will use it for. Each
-type of use requires a separate request to the DAC.
+***Data Use Ontology*** - a standard set of terms used to characterize different ypes of data use.
 
 ### **User Stories**
 
-As a Researcher with a keyboard, I want to find data that is similar to
+1. As a Researcher with a keyboard, I want to find data that is similar to
 my own. I download an expression matrix for that data, then
 analyze/visualize it locally using my own workflow. I would like this to
 work while enforcing the access permissions for the data, returning
 results for which I have permission.
-
-As a Researcher with a pipette, I want to use the Data Browser and/or
+1. As a Researcher with a pipette, I want to use the Data Browser and/or
 tertiary analysis portals to look for interesting patterns of a gene or
 cell type expression. For example, I might look for all the tissues
 where my gene of interest is expressed, or try to find a combination of
 gene expressions to identify a pathway in my disease of interest. I
 would like this to work while enforcing the access permissions for the
 data, returning results for which I have permission.
-
-As a Researcher with a pipette, I would like to be able to share all my
+1. As a Researcher with a pipette, I would like to be able to share all my
 cellular resolution, human genomic data with the HCA DCP, including data
 which needs to be distributed via managed access as well as data which
 can be openly released. I want this to support the aim to build an atlas
 of all human cells.
-
-As a researcher with a pipette, I would like to manage a Data Access
+1 As a researcher with a pipette, I would like to manage a Data Access
 Committee (DAC) so that I can control access to individuals and groups
 as follows: (NOTE: this is the researcher-run DAC model, which is the
 least burden to the DCP, but the highest burden to the researcher)
-
-1.  (Submitter/Wrangler role) I would like to grant or revoke read-write
-    > access to individuals or groups for data submission purposes
-
-2.  (Consumer role) I would like to grant or revoke read-only access to
-    > individuals or groups based on the type of use they are requesting
-
-3.  (Admin role) I would like to grant or revoke read-write access to
-    > individuals or groups for data management purposes (including
-    > possible redaction of data)
+   1.  (Submitter/Wrangler role) I would like to grant or revoke read-write access to individuals or groups for data submission purposes
+   1.  (Consumer role) I would like to grant or revoke read-only access to individuals or groups based on the type of use they are requesting
+   1.  (Admin role) I would like to grant or revoke read-write access to individuals or groups for data management purposes (including possible redaction of data)
 
 The objects being controlled are files, bundles, and collections, as
 well as setting permissions for all objects related to a project.
@@ -143,8 +130,8 @@ data for a set period of time.
 ------------------------------
 
 This plan will be reviewed by members of the [Compliance working
-group]([[https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/Compliance-WG/charter.md]](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/Compliance-WG/charter.md))
-who will ensure the proposed design meets their guidelines for
+group](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/Compliance-WG/charter.md)
+who must ensure the proposed design meets their guidelines for
 responsible handling of managed access genomic data.
 
 **Detailed Design**
@@ -157,17 +144,11 @@ is the primary use case for the DCP. Users will not be required to log
 in to gain access to any openly consented data. Searches executed for
 unauthenticated users will only return open access data.
 
-**Controlled Access**: To access controlled data the user will have to
-log in to the system to identify themselves. Authentication will happen
-via OIDC mechanisms. Once authenticated, the user's searches will return
-open access data as well as controlled access data to which they have
-access.
+**Controlled Access**: To access controlled data the user will have to log in to the system to identify themselves. Authentication will happen via OpenID Connect ([OIDC](https://openid.net/connect/)) mechanisms. The DCP authentication and authorization system is designed to allow federation with other OIDC providers by way of OIDC and SAML federation in Auth0. This allows us to map between the users in the Data Coordination Platform and the user identities used by the DAC. Once authenticated, the user's searches will return open access data as well as controlled access data to which they have access.
 
 **Controlled Objects:** Access can be controlled on files, bundles and
 collections. Individuals and groups will be granted access via DAC
-approval. This process will follow the DUOS model (see link below) being
-defined by GA4GH where the types of uses are categorized. This allows
-the DAC to answer some or all access requests programmatically.
+approval. This process will follow the DUO model (see link below) being defined by GA4GH where the types of uses are categorized. This allows the DAC to answer some or all access requests programmatically.
 
 **Not supported:** We will not provide a notification mechanism to let
 users know when permissions have been changed.
@@ -181,8 +162,8 @@ interface to this permissions repository. Each service will need to
 consult Fusillade to determine access before returning results to a
 user. For instance, to access controlled data through the DSS API will
 first require a user to login (using the login command). Then the API
-will use the identity as a token passed in with command like \`hca dss
-get-file \--uuid \<UUID here\> ...\`. The DSS will then check with
+will use the identity as a token passed in with command like `hca dss
+get-file \--uuid \<UUID here\> ...`. The DSS will then check with
 Fusillade to see if that user has permission to read the file that
 matches that UUID. If so then the user will receive the file, and if not
 then they will receive a permissions error code. All DCP modules will
@@ -288,8 +269,6 @@ It should be noted again that though these controls are specific to
 access control requirements in the USA, they are expected to represent a
 good starting point for other controls from other nations.
 
-### **Unresolved Questions**
-
 ### Design questions which should be resolved during the RFC process
 
 -   Are search results filtered by access control?
@@ -302,44 +281,48 @@ good starting point for other controls from other nations.
 
 -   Should we have the researchers run the DAC? Perhaps providing them
     > with a template?
+    
+-   How do we implement revocation of access for a authenticated user? From comments: "When access is revoked by a federated IdP, Auth0 would receive a logout request and the user's tokens (access credentials) would be invalidated." but "This creates a requirement that authorization is federated. It is not clear how many DACs use a federated authorization system. This was not the case many years ago with NCI. One large project just had a TSV file of eRA commons ids available on an FTP site. The DCP may have to be responsible for managing the authorization lists."
+
+
 
 ### **Prior Art** 
 
-[[Analysis of five years of controlled access and data sharing
+[Analysis of five years of controlled access and data sharing
 compliance at the International Cancer Genome
-Consortium]](https://www.nature.com/articles/ng.3499?proof=true&draft=journal)
+Consortium](https://www.nature.com/articles/ng.3499?proof=true&draft=journal)
 : Good article about running a DAC
 
-[[Data Sharing in the Post-Genomic World: The Experience of the
+[Data Sharing in the Post-Genomic World: The Experience of the
 International Cancer Genome Consortium (ICGC) Data Access Compliance
 Office
-(DACO)]](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002549)
+(DACO)](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002549)
 : A good reference on creating a tiered access data repository.
 
-[[DUO
-overview]](https://docs.google.com/presentation/d/1B4jsqnZIqwxLjL8Y1q41kYFNN8BsmmiEC6I9_WZZPt0/edit#slide=id.p)
+[DUO
+overview](https://docs.google.com/presentation/d/1B4jsqnZIqwxLjL8Y1q41kYFNN8BsmmiEC6I9_WZZPt0/edit#slide=id.p)
 from GA4GH Basel presentation
 
-[[Data Use & Researcher
-Identities]](https://www.ga4gh.org/work_stream/data-use-researcher-identities-duri-2/)
+[Data Use & Researcher
+Identities](https://www.ga4gh.org/work_stream/data-use-researcher-identities-duri-2/)
 Effort to standardize and automate the granting of access based on data
 use and researcher identity patterns.
 
-[[DCP User
-stories]](https://docs.google.com/document/d/1uYdNEnBjl_tMJdGSh8f3VFDd0aw_hhhs2egyvkIfOeg/edit)
+[DCP User
+stories](https://docs.google.com/document/d/1uYdNEnBjl_tMJdGSh8f3VFDd0aw_hhhs2egyvkIfOeg/edit)
 (note controlled access user stories missing)
 
-[[NIST-800-53]](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53Ar4.pdf)
+[NIST-800-53](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53Ar4.pdf)
 FedRAMP
 
-[[Fusillade
-RFC]](https://docs.google.com/document/d/1qD4bgnO684GtcLBErxYNZ5gvMaQPF8DsIdUBua5ZDBs/edit#heading=h.x01v6l5tv57z)
+[Fusillade
+RFC](https://docs.google.com/document/d/1qD4bgnO684GtcLBErxYNZ5gvMaQPF8DsIdUBua5ZDBs/edit#heading=h.x01v6l5tv57z)
 describes the architecture for access control as implemented in the DCP
 
 ### **Alternatives** 
 
-[[Near-term strategy for Managed Access in the
-DCP]](https://docs.google.com/document/d/1g_20xRCshmr5gmgr0OY64wW34r0DYxVRFpo6MhlXWkM/edit?pli=1#heading=h.hld7rftpusci).
+[Near-term strategy for Managed Access in the
+DCP](https://docs.google.com/document/d/1g_20xRCshmr5gmgr0OY64wW34r0DYxVRFpo6MhlXWkM/edit?pli=1#heading=h.hld7rftpusci).
 This approach uses a pre-existing external archive (data store) that
 already supports controlled access data. Identifiable data would be
 stored there with the derived non-identifiable data (expression data)
