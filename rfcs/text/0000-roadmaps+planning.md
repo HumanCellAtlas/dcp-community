@@ -274,6 +274,7 @@ Release planning begins in the third Week of the third Milestone of the current 
 
 * Prerequisite: Product Roadmap
 * Prerequisite: Technical Objectives RFC
+* Prerequisite: UX Insights
 * Previous Release Milestone 3 Week 3: [Clarifying the Next Release](#clarifying-the-next-release)
 * Next Release Milestone 1 Week 1: [Sketching the Release](#sketching-the-release)
 * Next Release Milestone 1 Week 2: [Creating the Engineering Plan](#creating-the-engineering-plan)
@@ -281,7 +282,7 @@ Release planning begins in the third Week of the third Milestone of the current 
 #### Clarifying the Next Release
 [Clarifying the Next Release]:#clarifying-the-next-release
 
-***Previous Release Milestone 3 Week 3.*** The Roadmap Shepherd schedules a two-hour meeting with DCP PM and the Technical Leads to review any incomplete Objectives in the Release, the next Objectives in the DCP Roadmap, and the Technical Objectives RFC.
+***Previous Release Milestone 3 Week 3.*** The Roadmap Shepherd schedules a two-hour meeting with DCP PM and the Technical Leads to review any incomplete Objectives in the Release, the next Objectives in the DCP Roadmap, critical UX Insights, and the Technical Objectives RFC.
 
 Incomplete Objectives are the highest priority for the next Release unless emerging conditions, as identified by the Project Leads, have altered the priorities for the previous Release plan.
 
