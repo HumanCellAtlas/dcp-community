@@ -129,7 +129,7 @@ User Experience (UX) MUST create a DCP user survey on an annual basis to collect
 
 UX MUST review the proposed survey with the DCP community and incorporate suggestions as appropriate.
 
-The survey MUST be announced to the membership of the Human Cell Atlas (through its the Registration mailing list) with a minimum of a two week last call for responses.
+The survey MUST be announced to the membership of the Human Cell Atlas (through its Registration mailing list) with a minimum of a two week last call for responses.
 
 At the conclusion, UX MUST summarize insights from the survey and present at the next DCP PM meeting. Following a one week review to incorporate feedback, the survey MUST be shared by UX with the membership of the Human Cell Atlas and announced on the *HumanCellAtlas #dcp* slack channel.
 
