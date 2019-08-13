@@ -57,6 +57,8 @@ To best serve our users and address the concerns of HCA Science Governance, this
 
 **Science Roadmaps** communicate a high-level vision of the goals of the single-cell community and a trajectory of progress towards those goals. It identifies both use cases for the constructed Atlas and open scientific questions that must be solved to build it.
 
+**UX Insights** are summaries from research activities performed by User Experience that document concrete and actionable recommendations to help DCP teams make user-centered decisions during planning and design.
+
 **[User Stories](http://agiledictionary.com/277/user-story/)** are requirements "stated as a sentence or two of plain English. A user story is often expressed from the user’s point of view, and describes a unit of desired functionality."
 
 **[Epics](http://agiledictionary.com/309/epic/)** 
@@ -131,7 +133,7 @@ The survey MUST be announced to the membership of the Human Cell Atlas (through 
 
 At the conclusion, UX MUST summarize insights from the survey and present at the next DCP PM meeting. Following a one week review to incorporate feedback, the survey MUST be shared by UX with the membership of the Human Cell Atlas and announced on the *HumanCellAtlas #dcp* slack channel.
 
-UX MAY also share critical UX insights from other sources independent of the Survey for consideration by the Project Leads during the creation of the Roadmap.
+UX MAY also share critical UX Insights from other sources independent of the Survey for consideration by the Project Leads during the creation of the Roadmap.
 
 #### Roadmap Retrospective
 
