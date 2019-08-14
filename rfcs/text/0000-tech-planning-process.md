@@ -110,7 +110,9 @@ to Slack **#tech-architecture** so that folks are aware that the planning proces
 weeks after the individual components have started working on their individual components’ objectives, respectively.
 
 3) If the meetings aren't separately scheduled, by default it will occur during the two consecutive Tech Architecture
-meetings starting one week after components have been told to begin work on enumerating their objectives.
+meetings starting one week after components have been told to begin work on enumerating their objectives. To avoid this
+scenario, the Shepherd should try to schedule the calls at least two weeks in advance to prevent as many scheduling
+conflicts as possible.
 
 4) Transform the document produced at the TL Prioritization meeting into an RFC and publish.
 
