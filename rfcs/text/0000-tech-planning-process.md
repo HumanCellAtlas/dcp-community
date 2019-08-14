@@ -42,16 +42,13 @@ knowing that the work will facilitate quicker development of feature requests in
 the roadmap themes.
 
 ## Definitions
-**Quarter:** One quarter is equal to 13 weeks. Generally the quarters have the following timeline:
-
-- Quarter 1 (Q1): first Monday of January -> last Friday of March
-- Quarter 2 (Q2): first Monday of April -> last Friday of June
-- Quarter 3 (Q3): first Monday of July -> last Friday of September
-- Quarter 4 (Q4): first Monday of October -> last Friday of December (before the holidays)
 
 **Milestone:** a four week timeline/duration in a Release (sometimes five when a holiday is involved).
 
 **Release:** composed of three Milestones and occur on a quarterly cadence.
+
+**Technical Objective:** a high level goal that encapsulates a general area of DCP technical work that can be flexibly
+broken up by specific sub-tasks. Sub-tasks are usually represented as Epics.  
 
 **TL Roadmapping Shepherd:** Each quarter one TL acts as the “Shepherd” to make sure the TL planning process takes place
 in time to produce the expected Technical Objectives RFC for presentation to the TL+PM planning meeting. The Shepherd
