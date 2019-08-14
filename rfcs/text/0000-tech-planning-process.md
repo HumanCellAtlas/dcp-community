@@ -122,6 +122,10 @@ conflicts as possible.
 6) Shepherd along the TL Coalescing/Prioritizing meetings such that we get to a final set of priorities. Also act as the
 primary representative of the TLs during the TL+PM meeting when needed.
 
+7) To maintain the flexibility of this RFC and ensure that this process is iterative, if the shepherd notices that the
+process detailed in this RFC is not working, the shepherd MUST adapt the process as needed during that planning cycle to
+generate the required input into the roadmap. This adaptation MUST be documented and this process should be edited.
+
 \* If a TL is unable to attend the meeting due to unavoidable conflicts, a representative may attend instead.
 
 ### Unresolved Questions
