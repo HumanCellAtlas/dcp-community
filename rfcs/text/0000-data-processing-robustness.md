@@ -48,14 +48,18 @@ To create a robust and resilient system, it is critical that DCP components are 
 
 ## Detailed Design
 
+As a principles RFC, this document does not recommend specific technologies or implementations, only general concepts that MUST be achieved.
+
 As part of normal operations, all components in the system are responsible for:
 - Skipping the processing of experimental data when it is erroneous or unexpected, rather than failing.
 - Capturing errors in a way that they can be analyzed and corrected, ensuring prompt reporting of problems to system operators.
 - Supporting mechanisms to reprocess data that was skipped when the problems are corrected.
-- Completed data and metadata must be committed in an atomic manner.
-- Ensuring the completeness and consistency of data produced.  Incompletely processed data sets must be identified, even when subsets are completed successfully.
+- Results of processing must be committed to storage in an atomic manner.  The results available to downstream consumers must be complete or must not exist.
+- Ensuring the completeness and consistency of data produced across an entire experiment set.  Incompletely processed data sets must be identified to users, even when subsets are completed successfully.
 
 
 ### Unresolved Questions
 
-As a principles RFC, there is no direct implementation.  However, we expect the review process to hone the criteria and identify problem areas that need to be addressed.
+- It is expected that this RFC to raise questions that require more details specification of the requirements.
+- The most each component determine and reports compliance to these principles need to be defined.
+
