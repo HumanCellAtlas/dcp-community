@@ -29,8 +29,9 @@ This proposed TL Quarterly Planning Process is **owned by the collection of TLs 
 be a live process that iterates over time as required. The first iteration of the planning process is detailed below.  
 
 Note: The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT
-RECOMMENDED" "MAY", and "OPTIONAL" in this document are to be interpreted as described in BCP 14, RFC2119, and RFC8174
-when, and only when, they appear in all capitals, as shown here.
+RECOMMENDED" "MAY", and "OPTIONAL" in this document are to be interpreted as described in BCP 14, 
+[RFC2119](https://www.rfc-editor.org/rfc/rfc2119.txt), and [RFC8174](https://www.rfc-editor.org/rfc/rfc8174.txt) when,
+and only when, they appear in all capitals, as shown here.
 
 ### User Stories
 
