@@ -98,7 +98,8 @@ represents all the components’ objectives, please use:
 Once the consolidation has taken place, as well as the TL meeting in Week 9, the TL Roadmapping Shepherd MUST turn the
 document into an Informational RFC and publish. The template for crafting an RFC for this purpose is 
 [here](https://github.com/HumanCellAtlas/dcp-community/blob/4bb18c65af5b244460cf404465b1dbc4ee0cc65e/rfcs/roadmap-template.md) 
-but should be tailored such that Themes are removed and replaced with the technical priorities.
+but should be tailored such that Themes are removed and replaced with the technical priorities. The Scientific
+Guardrails and User Stories sections also do not need to be filled out.
 
 ### Specific Shepherd Tasks
 
