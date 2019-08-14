@@ -107,8 +107,7 @@ Guardrails and User Stories sections also do not need to be filled out.
 to Slack **#tech-architecture** so that folks are aware that the planning process has begun and expectations are set.
 
 2) Schedule a 1 hour TL Coalescing Meeting and a 1 hour TL Prioritization Meeting, including all TLs\*, one and two
-weeks after the individual components have been assigned to start working on their individual components’ objectives,
-respectively.
+weeks after the individual components have started working on their individual components’ objectives, respectively.
 
 3) If the meetings aren't separately scheduled, by default it will occur during the two consecutive Tech Architecture
 meetings starting one week after components have been told to begin work on enumerating their objectives.
