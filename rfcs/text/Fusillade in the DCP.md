@@ -16,7 +16,7 @@ Define a series of process for managing fusillade across the components of the D
 
 *Recommended format for Authors:*
 
- `[Trent Smitg](mailto:trent.smith@chanzuckerberg.com)`
+ `[Trent Smith](mailto:trent.smith@chanzuckerberg.com)`
 
 ## Shepherd
 ***Leave this blank.** This role is assigned by DCP PM to guide the **Author(s)** through the RFC process.*
@@ -102,6 +102,8 @@ For all stages other than production follow this naming scheme.
 DCP Components should use the Fusillade staging environment to test their dev code. This is to ensure relative 
 stability when developing for the DCP. Follow the naming convention for groups and roles to prevent name collision 
 between dev and staging deployments.
+
+Alternatively a new fusillade deployment cloud be made just for component Dev Testing.
 
 **Note:** The fusillade managed group `user_default` and user `public` will be modified for both your components 
 staging and dev environment.
@@ -220,17 +222,25 @@ that role as the principal in the request.
 
 ### Unresolved Questions
 
-- *What aspects of the design do you expect to clarify further through the RFC review process?*
+- Does this process work for all of the existing components deployment process?
+- Does this provide enough guidance for components to being integrating fusillade?
+- What environment should be used for Component development testing? Should a new one be created? 
 - *What aspects of the design do you expect to clarify later during iterative development of this RFC?*
 
 ### Drawbacks and Limitations [optional]
 
-*Why should this RFC **not** be implemented?*
+- This will add additional process and impose additional conventions on the DCP.
+- Component roles and DCP groups live in separate repositories. This will require two PR add a new role, but only one
+ PR to modify an existing role.
+ 
+- Having components use both fusillade staging to test thier dev and staging environments could be problematic.
 
 ### Prior Art [optional]
 
 *Share references to prior art to deepen community understanding of the RFC, such as learnings, adaptations from earlier designs, or community standards.*
 
 ### Alternatives [optional]
-
 *Highlight other possible approaches to delivering the value proposed in this RFC. 
+
+- Manage fusillade configuration in each component repo. Components will need to be careful to interfere with other 
+components permissions.
