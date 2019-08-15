@@ -27,12 +27,13 @@ Define a series of process for managing fusillade across the components of the D
 
 ## Motivation
 
-Fusillade is responsible for providing a uniform authentication and authorization experiance across the DCP. As the DCP 
+Fusillade is responsible for providing a uniform authentication and authorization experience across the DCP. As the DCP 
 moves forward with integrating fusillade into the DCP, processes needs to be put into place to prevent excessive 
 breaking of the system due to permission errors. By agreeing on a process for managing the permission in Fusillade, 
-errors relating to permissioning can be avoided, and will be easier to track down when they occur. 
+errors relating to permissions can be avoided, and will be easier to track down when they occur. 
 
-The goal of have an agreed process is to simplify the manage of Fusillade Roles, Groups, Users, Service Accounts across 
+The goal of having an agreed process is to simplify the manage of Fusillade Roles, Groups, Users, Service Accounts 
+across 
 the DCP.
  
 [fusillade:#226](https://github.com/HumanCellAtlas/fusillade/issues/226)
@@ -56,7 +57,7 @@ We need to define some basic groups for assigning our users, this list of groups
 
 ### Component Organization Convention
 Components will have a directory at the top level of their code base named */roles*. This directory will contain all 
-of the roles define for this components. This the directory structure:
+of the roles defined for this component. This the directory structure:
 
 ```
 project
@@ -128,7 +129,7 @@ All fields in **bold** must be used. All other fields are free to use by the com
 $ DCPRole.py --help
 
     Use to add or modify roles in fusillade for the DCP.
-    
+     
     --file      "path to a {role}.json file"
     --component "name of the component" 
     --stage     "current deployment stage" 
@@ -161,10 +162,11 @@ $ DCPGroup.py --help
 1. Create a file **{role}.json** for each user type, where `{role}` is the name of your role. Using the resource and actions previously define, write a policy in the AWS IAM policy format that express what each role can do. If it isn't explicitly stated, it is assumed the user with this role does not have permission. For the resource field, `*` can be used as a wild card in the same way it's used in AWS IAM policies.
 
 1. Run the script `DCPRole.py` to add your roles to fusillade. The role that is added to fusillade will be named `{component}-{stage}-{role}`. 
-The stage is not included for *prod* deployments. If the role already exists an error will be thrown. Use the 
+The stage is not included for *prod* deployments. If the role already existed an error will be thrown. Use the 
 parameter `--force` to overwrite the existing role. 
 
-1. Users can now be assigned to this role. However the preferred method of adding users to a role is to assign this role to a group. In the DCP, groups are manage in dcpinfra repo. 
+1. Users can now be assigned to this role. However the preferred method of adding users to a role is to assign this 
+role to a group. In the DCP, groups are managed in dcpinfra repo. 
 
 #### As a DCP operator how do I had groups to the DCP?
 A service account with permission to create and modify fusillade groups is required to perform this process.
@@ -185,11 +187,10 @@ A service account with permission to create and modify fusillade groups is requi
 ``` 
 
 1. In DCP infra run the script `DCPGroup.py` to add your group to Fusillade. If any roles 
-specified in the group do not exists, an error will be thrown, and that group will not be create if it did not 
+specified in the group do not exist, an error will be thrown, and that group will not be created if it did not 
 previously exist, or it will not be updated if previously existed. Any member not in the group will be added to the 
 group. The group added will be named `{group}-{stage}`. `{stage}` is excluded from name when deployment is 
-`prod`. For all deployments
-  the group named `user_default` does is not contain the deployment.
+`prod`. The group named `user_default` will not contain the deployment stage when it is add/modified.
 
 #### As a DCP operator how do I remove a role from a group?
 1. With an authenticated user or service account with permissions to modify groups, use the PUT 
