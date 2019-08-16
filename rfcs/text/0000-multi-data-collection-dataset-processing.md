@@ -4,17 +4,15 @@
 
 `[dcp-community/rfc#](https://github.com/HumanCellAtlas/dcp-community/pull/<PR#>)`
 
-# Processing Datasets that Span Multiple Bundles
+# RFC: Processing Datasets that Span Multiple Bundles
 
 ## Summary
-This RFC proposes a solution to allow processing of datasets that span multiple bundles. It addresses the general problem that the current DCP data model contains no representation of data set grouping and completeness beyond that of individual data bundles.  This results in a restriction that all data processing within the DCP is a one-to-one linear set of steps deriving one bundle from another.
+This RFC proposes a solution to allow processing of datasets that span multiple bundles. It addresses the general problem that the current DCP data model contains no representation of data set grouping and version-completeness beyond that of individual data bundles.  This results in a restriction that all data processing within the DCP is a one-to-one linear set of steps deriving one bundle from another.
 
 However, there are use cases where a giving processing step can require input from multiple input bundles,
 resulting in a full DAG rather than a linear graph. The DAG sub-graph must be defined and all data available to initiate processing.  A notion of data completeness is required to support the implementation of DAG processing.
 
 This RFC defines a general mechanism for grouping bundles, called *data groups*, to allow bundles to be grouped in new ways.   By providing a general method for grouping bundles, this proposal provides a mechanism for addressing various tasks that cross bundle boundaries.  This impacts analysis pipelines, algorithmic complexity, data consistency, data set quality control and data releases.  The current bundle grouping under consideration is a submission to a project.  However, the concept generalizes in a manner that other groupings can be defined to accommodate future needs.
-
-
 
 ## Author(s)
 - [Nick Barkas](mailto:barkasn@broadinstitute.org)
@@ -42,7 +40,7 @@ One approach to addressing this is to just queue all data bundle events, however
 This impacts the data browser creating project metadata TSVs and normalized JSON files, and the matrix service creating pre-built project matrices.
 
 #### Data consistency
-Consistency and completeness across a data set is an important attribute of an atlas.  An incomplete data set may result in misinterpretation of data or missed discoveries.  Currently, the DCP has no way to indicate data completeness beyond a bundle. The consumer API and data browser don't have the information indicate a project submission is incomplete.  This information is only available within ingest, with no way to communicate submission status to other components.
+Consistency and completeness across a data set is an important attribute of an atlas.  An incomplete data set may result in misinterpretation of data or missed discoveries.  While a data set can be updated in the future, there is a need that to know when the current version of a data set is fully available.  This is refered to as *version-completeness*. Currently, the DCP has no way to indicate version-completeness beyond a bundle. The data browser and a consumer API and  don't have the information indicate a project submission is incomplete.  This information is only available within ingest, with no way to communicate submission status to other components.
 
 #### Data set quality control
 An approach to quality control (QC) is to run a partial or full analysis on a subset of the data before doing a full analysis.  This requires defining an analyzable subset of the data to pass on to the processing pipelines. A QC data subset must meet the criteria that allow the QC analysis to run.
@@ -66,7 +64,7 @@ As a data consumer, I want to be able to find all data files that need to be pro
 
 As a data consumer, I want to be confident that the HCA DCP has correctly processed all data files that belong together so that I know the matrices I receive have been generated correctly.
 
-As a data consumer, I need to know that a data set is incomplete so that I don't download and use it until it is complete.
+As a data consumer, I need to know that a data set is done so that I don't download and use it until it is version-complete.
 
 ## Detailed Design
 A new concept of *data group* is added to the DCP data model to address these issues.  A data group is defined as a set of specific versions of metadata and data that is complete and consistent by specified criteria.  A *data group* is not created until all its contents are complete.  Events are generated when a *data group* is created, updated, or deleted.
@@ -80,7 +78,7 @@ A new schema *data_group* will be created that contains the fields:
 - *bundle_fqids* - List of FQIDs of bundles that are in the group.
 
 
-Initially, only the *PROJECT_SUBMISSION* scope will be implemented. *PROJECT_SUBMISSION* will indicate that the entirety of single project submission is complete and will be generated by ingesting on after all data bundles are committed to the DSS.  This is indicated that data in the project submission should be processed by downstream components.  Ingest is responsible for creating *PROJECT_SUBMISSION* *data groups* after the relevant bundles have been created.  Figure 1 shows a diagram of a project with multiple *data groups*.
+Initially, only the *PROJECT_SUBMISSION* scope will be implemented. *PROJECT_SUBMISSION* will indicate that the entirety of single project submission is version-complete and will be generated by ingesting on after all data bundles are committed to the DSS.  This is indicated that data in the project submission should be processed by downstream components.  Ingest is responsible for creating *PROJECT_SUBMISSION* *data groups* after the relevant bundles have been created.  Figure 1 shows a diagram of a project with multiple *data groups*.
 
 ![Figure 1](/rfcs/images/0000-multi-data-collection-data-processing-images/project-submission-in-project.png)
 
@@ -94,7 +92,8 @@ Pipelines that require grouping data from multiple sequencing assays (co-process
 
 For full background and a detailed proposal on how these libraries are represented in the metadata see the RFC (Representing sequencing library preparations in the HCA DCP metadata standard)[https://github.com/HumanCellAtlas/dcp-community/blob/mfreeberg-rfc-bundle-definitions/rfcs/text/0000-bundle-definition.md].
 
-The *data group* submission event does not define bundles to be co-processed, it indicates that data to be co-processed is contained within the *data group* and that that group fulfills completeness requirements. Co-processing will be initiated by pipelines based on a well-defined set of rules that is data modality-specific.  The partition of a submission *data group* into co-processing units may require multiple parameters. For instance, with 10X V2 3’ scRNA-seq is grouped by library, however, a submission my contain non-10X data modalities that need to be processed separately.
+The *data group* submission event does not define bundles to be co-processed, it indicates that data to be co-processed is contained within the *data group* and that that group fulfills version-completeness requirements. Co-processing will be initiated by pipelines based on a well-defined set of rules that is data modality-specific.  The partition of a submission *data group* into co-processing units may require multiple parameters. For instance, with 10X V2 3’ scRNA-seq is grouped by library, however, a submission my contain non-10X data modalities that need to be processed separately.
+
 An analysis pipeline event handler component will be created that is responsible for partitioning a *data group* into co-processing units, dispatching the pipelines, and tracking completion. 
 
 
@@ -105,13 +104,12 @@ Updates to PROJECT_SUBMISSIONS must result in updating of the associated *data g
 
 ### Unresolved Questions
 * *Data group* concept relates directly to the planned UX on on *experiment data sets*.  This RFC and that work should be unified.
-* Since the bundle type RFC is not complete, it is unclear if creating a *data group* bundle types is consistent with the DCP design.
+* How *data groups* are to used group results in secondary analysis has not yet been defined.
 * Could a *data group* be a DSS collection?  Collections are poorly document, so it is unclear if they can fit the needs.
-* Could a *data group* be a bundle that contains the *data group* files rather than a list of bundles?  Can the DSS handle 1
+* Could a *data group* be a bundle that contains the *data group* files rather than a list of bundles?  Can the DSS handle bundles with a very large number of files?
 * How does this framework interact with new modalities we are likely to encounter in the future. A good example of this is imaging data?
-* The term *complete* causes a lot of confusion, because data sets can be updated.
 
 ## Dependencies
 
-Implementation of this RFC is dependent on RFC (https://github.com/HumanCellAtlas/dcp-community/blob/mfreeberg-rfc-bundle-definitions/rfcs/text/0000-bundle-definition.md)[https://github.com/HumanCellAtlas/dcp-community/blob/mfreeberg-rfc-bundle-definitions/rfcs/text/0000-bundle-definition.md].
+Implementation of this RFC is dependent on (RFC: Bundle Types)[https://github.com/HumanCellAtlas/dcp-community/pull/86].
 
