@@ -394,7 +394,7 @@ When all changes are verified in [Production](https://allspark.dev.data.humancel
 
 ### Release Demonstration and Retrospective
 
-***At Release Completion***. The Release Shepherd MUST schedule and faciliate a Release Demonstration and Retrospective meeting with the DCP Community and Oversight. It is RECOMMENDED that this occur during a DCP F2F when schedules align. 
+***At Release Completion***. The Release Shepherd MUST schedule and faciliate a Release Demonstration and Retrospective meeting with the DCP Community and Oversight. 
 
 The intent of the meeting is to demonstrate the Release deliverables as documented in the Roadmap Objectives, to share learnings, and identify opportunities to improve the planning process for future Releases. 
 
