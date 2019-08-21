@@ -90,7 +90,7 @@ While this RFC proposes a general mechanism, it was developed in response to the
 ### Identifying data to co-process
 Pipelines that require grouping data from multiple sequencing assays (co-processing) subscribe to *PROJECT_SUBMISSIONS* events instead of per-bundle events. Unlike with the assay bundle per pipeline run, this makes the pipeline framework responsible for collecting assay bundles into pipeline runs.  Pipelines that do not require co-processing continue to subscribe to assay bundle events and are unaffected.
 
-For full background and a detailed proposal on how these libraries are represented in the metadata see the RFC (Representing sequencing library preparations in the HCA DCP metadata standard)[https://github.com/HumanCellAtlas/dcp-community/blob/mfreeberg-rfc-bundle-definitions/rfcs/text/0000-bundle-definition.md].
+For full background and a detailed proposal on how these libraries are represented in the metadata see the RFC [Representing sequencing library preparations in the HCA DCP metadata standard](https://github.com/HumanCellAtlas/dcp-community/blob/mfreeberg-rfc-bundle-definitions/rfcs/text/0000-bundle-definition.md).
 
 The *data group* submission event does not define bundles to be co-processed, it indicates that data to be co-processed is contained within the *data group* and that that group fulfills version-completeness requirements. Co-processing will be initiated by pipelines based on a well-defined set of rules that is data modality-specific.  The partition of a submission *data group* into co-processing units may require multiple parameters. For instance, with 10X V2 3’ scRNA-seq is grouped by library, however, a submission my contain non-10X data modalities that need to be processed separately.
 
@@ -111,5 +111,5 @@ Updates to PROJECT_SUBMISSIONS must result in updating of the associated *data g
 
 ## Dependencies
 
-Implementation of this RFC is dependent on (RFC: Bundle Types)[https://github.com/HumanCellAtlas/dcp-community/pull/86].
+Implementation of this RFC is dependent on [RFC: Bundle Types](https://github.com/HumanCellAtlas/dcp-community/pull/86).
 
