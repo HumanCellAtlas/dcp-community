@@ -170,9 +170,9 @@ Project Leads MUST review the Themes as a collective and distill the revised lis
 * Update the Roadmap to reflect revised content
 * Resolve outstanding questions and concerns
 
-If the Project Leads fail to reach consensus within the specified timebox, then the draft MUST be escalated to Oversight for consultation.
+If the Project Leads fail to reach [rough consensus](https://tools.ietf.org/html/rfc7282) within the specified timebox, then the draft MUST be escalated to Oversight for consultation.
 
-When rough consensus is reached, the Roadmap is submitted as a pull request to the *dcp-community* repo and follows the DCP RFC process for a *Governance* RFC starting with [community review](https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0001-rfc-process.md#reviewing-rfcs). 
+When consensus is reached, the Roadmap is submitted as a pull request to the *dcp-community* repo and follows the DCP RFC process for a *Governance* RFC starting with [community review](https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0001-rfc-process.md#reviewing-rfcs). 
 
 The Roadmap Shepherd MUST be assigned as the Shepherd for the RFC and ensure that the Project Leads (Authors) respond to comments, answer questions, and update the Roadmap RFC as required.
 
