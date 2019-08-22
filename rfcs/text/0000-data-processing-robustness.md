@@ -48,14 +48,24 @@ To create a robust and resilient system, it is critical that DCP components are 
 
 ## Detailed Design
 
-As a principles RFC, this document does not recommend specific technologies or implementations, only general concepts that MUST be achieved.
+In this RFC, we require two main strategies for making changes across the DCP that will ensure greater reliability and predictability of data processing. These strategies will reduce coupling between components, providing the opportunity for development teams to react in a controlled, planned manner whenever data is encountered that fails to meet the assumptions or expectations of DCP software components.
 
-As part of normal operations, all components in the system are responsible for:
-- Skipping the processing of experimental data when it is erroneous or unexpected, rather than failing.
-- Capturing errors in a way that they can be analyzed and corrected, ensuring prompt reporting of problems to system operators.
-- Supporting mechanisms to reprocess data that was skipped when the problems are corrected.
-- Results of processing must be committed to storage in an atomic manner.  The results available to downstream consumers must be complete or must not exist.
-- Ensuring the completeness and consistency of data produced across an entire experiment set.  Incompletely processed data sets must be identified to users, even when subsets are completed successfully.
+The proposed strategies are:
+1. *Log and Continue*
+2. *Repair and Recover*
+
+### Log and Continue
+
+- DCP components define their expectations of any data they receive (see Arathi's metadata RFC)
+- DCP components ignore data they retrieve if it is mismatched against their expectations (e.g. bundles contain unrecognised file formats such as PDFs)
+- DCP components skip processing of data and fail gracefully when they encounter an error, rather than crashing out.
+- DCP components report correct error statuses (e.g. via HTTP response codes) to dependent
+
+
+### Repair and Recover
+
+- DCP components include operator admin functions to manually trigger automated steps that may have failed
+- In case of errors that causes some data to be skipped, DCP components ensure that all data expected to be handled together (e.g. all data from a single project) complete before making some of the data available
 
 
 ### Unresolved Questions
