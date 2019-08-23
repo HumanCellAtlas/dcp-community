@@ -313,7 +313,16 @@ If an Objective is *well-understood*, then the Product Owner, in consultation wi
 
 Based on rough costing, Technical Leads and their engineering teams SHOULD provide an initial assessment for "fit" - whether any proposed Epics need to be cut or reduced in scope for the Release.
 
-It is strongly RECOMMENDED that engineering teams buffer a **minimum of 15%** capacity for responding to emerging issues during a Release, supporting DCP community reviews for RFC(s), time-off, regular DCP meetings, transitioning developers on or off a team, etc.
+It is strongly RECOMMENDED that engineering teams reserve a **minimum of 30%** capacity during a Release to account for:
+
+*  Emerging security or operational issues 
+* Contributions to community reviews for DCP RFC(s)
+* Integration between components
+* Regular DCP meetings
+* Vacations, holidays, and sick days
+* Interviewing and staff transitions
+
+This **minimum of 30%** also incorporates guidance from the [pending] **HCA DCP Hotfix Process** that manages *"security vulnerabilities and other high-level risks arise outside of the regular planning cadence"*. It recommends that engineering teams reserve an additional 15% in the Q4 2019 and Q1 2020 Releases. This recommended percentage will be tuned in the future based on metrics collected.
 
 #### Modeling Objectives Requiring Further Research
 
