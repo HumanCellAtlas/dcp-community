@@ -441,4 +441,4 @@ and goals, collections, stakeholder requirements, long-term, and discrete. Furth
 
 ### Alternatives
 
-There are many potential methodologies and alternatives for project management. This RFC defines a minimal framework and avoids radical departures from current community practice.
+There are many potential methodologies and alternatives for project management. This RFC defines a minimal framework based on the experience of the authors.
