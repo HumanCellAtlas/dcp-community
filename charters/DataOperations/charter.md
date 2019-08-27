@@ -5,7 +5,7 @@
 
 The Data Coordination Platform (DCP) Data Operations Team is responsible for providing the scientific community with effective tools and resources which maximize the value and use of HCA data. This involves identifying the value added for the HCA consumers from various DCP components and the needs and expectations of the consumers, and connecting these communities through useful, fully vetted products and their distribution.
 
-## Definitions [Optional]
+## Definitions
 
 Data submission: a set of raw data derived from the same experimental process, and the metadata describing that process
 Data release: the point at which metadata and data from a single data submission become publicly available
@@ -24,7 +24,7 @@ The objective of the Data Operations is to provide the scientific community with
   - Establish and integrate into the DCP roadmap a reproducible plan that includes the specifications for and the timing of iterative data distribution to the community
   - Monitor the status of data submissions at each step in the DCP data workflow from initial identification of suitability through data release and potential inclusion in additional data distribution
   - Engage with Governance Group and Analysis Work Group to identify data quality standards which dictate data eligible to be released and data eligible to be included in data distributions
-  - Engage with compliance to ensure that the data release and data distribution processes are facilitating appropriate data access to all of the types of consumers
+  - Engage with the [Compliance Working Group](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/Compliance-WG/charter.md) to ensure that the data release and data distribution processes are facilitating appropriate data access to all of the types of consumers
   - Ensure released data are useable to tertiary portals and users can easily cross-reference across portals
   - Determine best practices for when and how changes are made to DCP outputs after release
 
@@ -40,7 +40,7 @@ The objective of the Data Operations is to provide the scientific community with
 
 
 
-### Scientific "guardrails" [Optional]
+### Scientific "guardrails"
 
 In order to meet the needs of the communities of scientific consumers, the DataOps team requires input from the Governance Group as to where curated data distribution will add value for the researcher.
 
