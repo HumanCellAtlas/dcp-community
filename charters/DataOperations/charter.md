@@ -7,9 +7,9 @@ The Data Coordination Platform (DCP) Data Operations Team is responsible for pro
 
 ## Definitions
 
-Data submission: a set of raw data derived from the same experimental process, and the metadata describing that process
-Data release: the point at which metadata and data from a single data submission become publicly available
-Data distribution: the packaging of metadata and data from multiple data submissions in meaningful ways and any announcements or documentation supporting it
+Data contribution: a set of raw data derived from the same experimental process, and the metadata describing that process
+Data release: the point at which metadata and data from a single data contribution become publicly available
+Data distribution: the packaging of metadata and data from multiple data contributions in meaningful ways and any announcements or documentation supporting it
 
 ## Objectives
 
@@ -22,7 +22,7 @@ The objective of the Data Operations is to provide the scientific community with
   - Coordinate DCP-wide end-to-end testing pre-release and continued QC checks post-release to ensure data and data resource integrity and useability through component updates
   - Identify data release- and data distribution-associated engineering needs of all DCP components and participate in crafting technical specifications
   - Establish and integrate into the DCP roadmap a reproducible plan that includes the specifications for and the timing of iterative data distribution to the community
-  - Monitor the status of data submissions at each step in the DCP data workflow from initial identification of suitability through data release and potential inclusion in additional data distribution
+  - Monitor the status of data contributions at each step in the DCP data workflow from initial identification of suitability through data release and potential inclusion in additional data distribution
   - Engage with Governance Group and Analysis Work Group to identify data quality standards which dictate data eligible to be released and data eligible to be included in data distributions
   - Engage with the [Compliance Working Group](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/Compliance-WG/charter.md) to ensure that the data release and data distribution processes are facilitating appropriate data access to all of the types of consumers
   - Ensure released data are useable to tertiary portals and users can easily cross-reference across portals
@@ -54,7 +54,7 @@ As many of the features and requirements for data release and data distribution 
 
 2019 Q3
 - Follow a dataset through the entire data workflow in order to understand each step and assess the current process. 
-- Organize incentivized data submission program in conjunction with the HCA General Meeting in Barcelona in order to encourage pre-publication data submission. 
+- Organize incentivized data contribution program in conjunction with the HCA General Meeting in Barcelona in order to encourage pre-publication data contribution. 
 - Establish ZenDesk ticket triage procedure.
 
 2019 Q4
