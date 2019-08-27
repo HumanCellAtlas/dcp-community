@@ -82,8 +82,11 @@ As many of the features and requirements for data release and data distribution 
 [J. Seth Strattan](mailto:jseth@stanford.edu)
 
 ## Communication
-### Slack Channels
+### Slack Channel
 [HumanCellAtlas/data-ops](https://humancellatlas.slack.com/messages/data-ops)
+
+### Slack Group
+@dataops
 
 ### Mailing List
 Team email: data-operations-team@data.humancellatlas.org
