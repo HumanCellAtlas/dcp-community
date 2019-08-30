@@ -369,12 +369,16 @@ The Release Shepherd MUST validate accurate modeling of Objectives for the Relea
 
 This Epic represents the Engineering Plan which MUST be sent to the DCP PM mailing list for review and approval, noting any Objectives that were cut or reduced in scope due to engineering capacity. The Project Leads MUST respond to the original message within two days and MAY negotiate changes to the Engineering Plan. 
 
-***Next Release Milestone 1 Week 3***. Further refinements for Milestone 2 are completely modeled. All Milestone 1 issues that will slip to Milestone 2 MUST be identified.
+During a Release, if an issue that models a Roadmap Objective in the Engineering Plan slips from its original or previously updated Milestone, it MUST be identified and a reason for the change MUST be documented in the top-level summary comment of that issue. This information is required by the Project Leads for their updates to Oversight. 
 
-***Next Release Milestone 2 Week 3***. Further refinements for Milestone 3 are completely modeled. All Milestone 2 issues that will slip to Milestone 3 MUST be identified.
+To illustrate, imagine an Epic modeling _DCP Support for 10X and SS2 Mouse data_ assigned to Quarter 3 Milestone 3. A child issue of this Epic slips from Milestone 1 to Milestone 2, but there is no impact on delivering the Epic in Milestone 3 as planned. No harm. No need to document. If the child issue slipped to a Milestone when it would impact the Epic - such as Quarter 4 Milestone 1, then it must be identified and documented because the Epic will be delivered late.
+
+***Next Release Milestone 1 Week 3***. Further refinements for Milestone 2 are completely modeled. All Milestone 1 issues modeling Roadmap Objectives which are slipping to future Milestones MUST be identified and documented.
+
+***Next Release Milestone 2 Week 3***. Further refinements for Milestone 3 are completely modeled. All Milestone 2 issues modeling Roadmap Objectives which are slipping to future Milestones MUST be identified and documented.
 
 ***Next Release Milestone 3 Week 3***.
-All Milestone 3 issues that will slip to the next Release MUST be identified.
+All Milestone 3 issues modeling Roadmap Objectives which are slipping to future Milestones MUST be identified and documented.
 
 #### Tracking Release Progress
 Product Owners for each Objective MUST ensure that their Epics and child issues are kept up-to-date with current status.
