@@ -325,7 +325,8 @@ Based on rough costing, Technical Leads and their engineering teams SHOULD provi
 
 It is strongly RECOMMENDED that engineering teams reserve a **minimum of 30%** capacity during a Release to account for:
 
-*  Emerging security or operational issues 
+* Responsibilities as a Release Engineer or Manager
+* Emerging security or operational issues 
 * Contributions to community reviews for DCP RFC(s)
 * Integration between components
 * Regular DCP meetings
