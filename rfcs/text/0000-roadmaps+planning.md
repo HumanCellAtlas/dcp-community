@@ -172,7 +172,7 @@ Project Leads MUST review the Themes as a collective and distill the revised lis
 
 If the Project Leads fail to reach [rough consensus](https://tools.ietf.org/html/rfc7282) within the specified timebox, then the draft MUST be escalated to Oversight for consultation.
 
-When consensus is reached, the Roadmap is submitted as a pull request to the *dcp-community* repo and follows the DCP RFC process for a *Governance* RFC starting with [community review](https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0001-rfc-process.md#reviewing-rfcs). 
+When consensus is reached, the Roadmap is submitted as a pull request to the *dcp-community* repository and follows the DCP RFC process for a *Governance* RFC starting with [community review](https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0001-rfc-process.md#reviewing-rfcs). 
 
 The Roadmap Shepherd MUST be assigned as the Shepherd for the RFC and ensure that the Project Leads (Authors) respond to comments, answer questions, and update the Roadmap RFC as required.
 
@@ -205,7 +205,7 @@ If consensus is reached, the Roadmap Shepherd MUST refresh the Roadmap and send 
 
 Oversight MUST review the changes and approve.
 
-The Roadmap Shepherd MUST update the previously published Roadmap RFC in the *dcp-community* repo and announce its approval in a similar fashion to the original RFC approval.
+The Roadmap Shepherd MUST update the previously published Roadmap RFC in the *dcp-community* repository and announce its approval in a similar fashion to the original RFC approval.
 
 ## Detailed Design for Planning and Execution
 
@@ -217,21 +217,21 @@ DCP SHOULD NOT duplicate the ZenHub DCP Board in other documents or spreadsheets
 
 ### DCP Product Backlog
 
-The DCP ZenHub board is the Product Backlog for DCP. All DCP component repos that will assign items to a DCP Release and Milestone MUST be added to the ZenHub *DCP Backlogs* workspace. The [DCP PM Team](https://github.com/orgs/HumanCellAtlas/teams/dcp-pm-team) in the Human Cell Atlas GitHub organization MUST have write access to all the repo(s) in the *DCP workspace*.
+The DCP ZenHub board is the Product Backlog for DCP. All DCP component repositories that will assign items to a DCP Release and Milestone MUST be added to the ZenHub *DCP Backlogs* workspace. The [DCP PM Team](https://github.com/orgs/HumanCellAtlas/teams/dcp-pm-team) in the Human Cell Atlas GitHub organization MUST have write access to all the repositories in the *DCP workspace*.
 
-The top-level *dcp* repo MUST contain **all** significant work that is important to the DCP community and requires visibility and prioritization. This includes Roadmap objectives and product-wide technical requirements (e.g. “components should have logs...“). 
+The top-level *dcp* repository MUST contain **all** significant work that is important to the DCP community and requires visibility and prioritization. This includes Roadmap objectives and product-wide technical requirements (e.g. “components should have logs...“). 
 
 If Institutions are using other project management applications such as Jira for internal requirements and reporting, then all DCP related issues in a Release MUST be *projected* into ZenHub for transparency and finer granularity for tracking progress.
 
-To avoid maintenance overhead due to duplicate or incomplete issues, the creation of new items in the *dcp* repo SHOULD be limited to the PM Team or a facilitator from the Architecture Team.
+To avoid maintenance overhead due to duplicate or incomplete issues, the creation of new items in the *dcp* repository SHOULD be limited to the PM Team or a facilitator from the Architecture Team.
 
 DCP Product Backlog items are modeled as User Stories, Epics, and Spikes. 
  
 #### Owners
 
-A DCP owner MUST be assigned to each issue in the Product Backlog in the *dcp* repo to coordinate progress and drive the issue to on-time closure. This owner is responsible for ensuring that related issues are created in component repo(s) and linked to Epics within the *dcp* repo.
+A DCP owner MUST be assigned to each issue in the Product Backlog in the *dcp* repository to coordinate progress and drive the issue to on-time closure. This owner is responsible for ensuring that related issues are created in component repositories and linked to Epics within the *dcp* repository.
 
-For example, an implementation task for a specific component resides in its own repo and is linked to the relevant Epic in the *dcp* repo.
+For example, an implementation task for a specific component resides in its own repository and is linked to the relevant Epic in the *dcp* repository.
 
 #### User Stories
 
@@ -297,7 +297,7 @@ DCP PM MUST assign a rotating Release Shepherd to help the Product Owners and Te
 #### Sketching the Release
 [Sketching the Release]:#sketching-the-release
 
-***Next Release Milestone 1 Week 1.*** For each Objective in the Release, its Product Owner MUST create one or more Epics in the *dcp* repo that document User Stories, Acceptance Criteria, and the Deliverable to Demonstrate.
+***Next Release Milestone 1 Week 1.*** For each Objective in the Release, its Product Owner MUST create one or more Epics in the *dcp* repository that document User Stories, Acceptance Criteria, and the Deliverable to Demonstrate.
 
 If an Objective is *well-understood*, then the Product Owner, in consultation with the relevant Technical Leads, MUST assign either a Milestone or a T-Shirt Size label for rough costing and capacity planning to the issue. Pre-defined T-Shirt Sizes are:
 
@@ -330,7 +330,7 @@ If an Objective requires further exploration or design before it can be estimate
 
 1. Create a new ZenHub issue and label it as a Spike.
 1. Assign one (and only one) Owner responsible for completing the Spike.
-1. Document and monitor the *work-in-progress*. If an RFC is required, a reference to the draft RFC in the *dcp-community* repo is required; otherwise a reference to other documentation is appropriate.
+1. Document and monitor the *work-in-progress*. If an RFC is required, a reference to the draft RFC in the *dcp-community* repository is required; otherwise a reference to other documentation is appropriate.
 (For designs, it is RECOMMENDED that a temporary public working group channel be created in *HumanCellAtlas* Slack and documented in the Spike to ensure that the *state of play* is visible to the DCP community.)
 1. Document its Acceptance Criteria such as an approved RFC. 
 1. Add the Spike to its related Epic.
@@ -355,7 +355,7 @@ Milestones MUST be assigned to all issues assigned to the Release not blocked by
 
 It is RECOMMENDED that caution be exercised when scheduling issues in a dependency chain in the same Milestone. Historically, this has been the source of slips in DCP schedules.
 
-The Release Shepherd MUST validate accurate modeling of Objectives for the Release in ZenHub and create a Release epic named “Q#YYYY” such as “Q42019” which contains all the related *dcp* Epics and issues for the Release. This will automatically include all child issues in other component repo(s).
+The Release Shepherd MUST validate accurate modeling of Objectives for the Release in ZenHub and create a Release epic named “Q#YYYY” such as “Q42019” which contains all the related *dcp* Epics and issues for the Release. This will automatically include all child issues in other component repositories.
 
 This Epic represents the Engineering Plan which MUST be sent to the DCP PM mailing list for review and approval, noting any Objectives that were cut or reduced in scope due to engineering capacity. The Project Leads MUST respond to the original message within two days and MAY negotiate changes to the Engineering Plan. 
 
@@ -381,17 +381,17 @@ As required, the Release Shepherd SHOULD add an agenda item to the recurring DCP
 
 ***At Milestone Completion***. The Project Leads MUST update Oversight on the progress of the Release to ensure appropriate accountability.
 
-#### Modeling progress with ZenHub Pipelines [*dcp* repo]
+#### Modeling progress with ZenHub Pipelines [*dcp* repository]
 
-New items in the *dcp* repo appear in the ZenHub *New* pipeline and MUST be triaged into the *Product Backlog* pipeline, the *Icebox* pipeline, or the *Closed* pipeline by the Release Shepherd or Product Owners.
+New items in the *dcp* repository appear in the ZenHub *New* pipeline and MUST be triaged into the *Product Backlog* pipeline, the *Icebox* pipeline, or the *Closed* pipeline by the Release Shepherd or Product Owners.
 
-The ZenHub *Icebox* pipeline SHOULD be used with great restraint in the *dcp* repo. Its explicit purpose is to queue up potential futures from the DCP roadmap such as pending DevSecOps issues. Individual component repo(s)  MAY use the *Icebox* pipeline in a manner of their own choosing.
+The ZenHub *Icebox* pipeline SHOULD be used with great restraint in the *dcp* repository. Its explicit purpose is to queue up potential futures from the DCP roadmap such as pending DevSecOps issues. Individual component repositories  MAY use the *Icebox* pipeline in a manner of their own choosing.
 
-No issues in the *dcp* repo MUST be assigned to the *Epic* or *Sprint Backlog* pipelines. Individual component repo(s) MAY use these pipelines in a manner of their own choosing.
+No issues in the *dcp* repository MUST be assigned to the *Epic* or *Sprint Backlog* pipelines. Individual component repositories MAY use these pipelines in a manner of their own choosing.
 
-At the level of the *dcp* repo, a subset of ZenHub pipelines are used to track progress. All Epics or issues in a Release are initially assigned to the *Product Backlog* pipeline. Once the Epic (or any of its children) is started, then its *dcp* issue is moved to the *In Progress* pipeline. When all the children of the Epic are in the *Closed* pipeline, then the *dcp* issue is moved to the *Closed* pipeline.
+At the level of the *dcp* repository, a subset of ZenHub pipelines are used to track progress. All Epics or issues in a Release are initially assigned to the *Product Backlog* pipeline. Once the Epic (or any of its children) is started, then its *dcp* issue is moved to the *In Progress* pipeline. When all the children of the Epic are in the *Closed* pipeline, then the *dcp* issue is moved to the *Closed* pipeline.
 
-#### Modeling progress with ZenHub Pipelines [component repo]
+#### Modeling progress with ZenHub Pipelines [component repository]
 
 When an issue is started, it is moved to the *In Progress* pipeline.
 
