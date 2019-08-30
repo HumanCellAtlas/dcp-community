@@ -213,6 +213,14 @@ The Roadmap Shepherd MUST update the previously published Roadmap RFC in the *dc
 
 The [ZenHub](https://www.zenhub.com/) project management application has been partially adopted in the DCP community. This RFC fully commits the community to ZenHub as our *one source of truth* for project management and engineering plans.
 
+All DCP component repositories that will have issues contained in Epics in the _dcp_ repository and assign items to a DCP Release and Milestone MUST be connected to the ZenHub *DCP* Workspace. 
+
+What are [ZenHub Workspaces](https://help.zenhub.com/support/solutions/articles/43000504792-workspaces-overview-what-s-new-)?
+
+> A Workspace is how you bundle GitHub repositories into a single view and can consist of a single or multiple GitHub repositories. With Workspaces we have removed the 1-1 mapping of Board-to-Repo, allowing a repository to be added to multiple Boards. In other words, Issues and Epics can be added and updated in different Workspaces at the same time yet have an independent pipeline allocation for each Workspace.
+
+The [DCP PM Team](https://github.com/orgs/HumanCellAtlas/teams/dcp-pm-team) in the Human Cell Atlas GitHub organization MUST have write access to all the repositories in the *DCP* Workspace to permit the creation of Releases, Milestones, and child issues for Epics.
+
 DCP SHOULD NOT duplicate the ZenHub DCP Board in other documents or spreadsheets. The Board and its reports represent the definitive list of DCP work items for a Release and their current state. 
 
 ### DCP Product Backlog
@@ -383,23 +391,61 @@ As required, the Release Shepherd SHOULD add an agenda item to the recurring DCP
 
 #### Modeling progress with ZenHub Pipelines [*dcp* repository]
 
-New items in the *dcp* repository appear in the ZenHub *New* pipeline and MUST be triaged into the *Product Backlog* pipeline, the *Icebox* pipeline, or the *Closed* pipeline by the Release Shepherd or Product Owners.
+The Zenhub [*DCP* Workspace](https://app.zenhub.com/workspaces/dcp-5ac7bcf9465cb172b77760d9) restricts its workflow to a minimal set of Pipelines:
 
-The ZenHub *Icebox* pipeline SHOULD be used with great restraint in the *dcp* repository. Its explicit purpose is to queue up potential futures from the DCP roadmap such as pending DevSecOps issues. Individual component repositories  MAY use the *Icebox* pipeline in a manner of their own choosing.
+- New
+- Icebox
+- Product Backlog
+- In Progress
+- Closed
 
-No issues in the *dcp* repository MUST be assigned to the *Epic* or *Sprint Backlog* pipelines. Individual component repositories MAY use these pipelines in a manner of their own choosing.
+No other pipelines are available.
 
-At the level of the *dcp* repository, a subset of ZenHub pipelines are used to track progress. All Epics or issues in a Release are initially assigned to the *Product Backlog* pipeline. Once the Epic (or any of its children) is started, then its *dcp* issue is moved to the *In Progress* pipeline. When all the children of the Epic are in the *Closed* pipeline, then the *dcp* issue is moved to the *Closed* pipeline.
+New items in the *dcp* repository appear in the *New* pipeline and MUST be triaged into the *Product Backlog* pipeline, the *Icebox* pipeline, or the *Closed* pipeline by the Release Shepherd or Product Owners.
+
+The ZenHub *Icebox* pipeline SHOULD be used with great restraint in the *dcp* repository. It's being _grandfathered in_ only due to historical reasons. 
+
+All Epics or issues included in a specific Release are initially assigned to the *Product Backlog* pipeline. Once the Epic (or any of its children) starts, then its *dcp* issue is assigned to the *In Progress* pipeline. When all the children of the Epic are in the *Closed* pipeline (meaning validated in Production), then its *dcp* issue is assigned to the *Closed* pipeline.
 
 #### Modeling progress with ZenHub Pipelines [component repository]
 
-When an issue is started, it is moved to the *In Progress* pipeline.
+In addition to the *DCP* workspace, component repositories MAY also be connected to a second [ZenHub Workspace with a customized set of Pipelines](https://www.zenhub.com/blog/announcing-zenhub-workspaces-personalized-workflows-for-every-team/) that more closely models the workflow or preferences of an institution or team. Repositories that are currently connected to the _DCP_ workspace can easily be connected to a second Workspace using the ZenHub UI [with no loss of state](https://help.zenhub.com/support/solutions/articles/43000484539-issue-placement-when-adding-repos-to-a-workspace-) such as the current set of Pipelines and the order of issues within a specific Pipeline.
 
-When a pull request is filed and in review for an *In Progress* item, the issue is moved to the *Review* pipeline.
+This second Workspace MUST include a minimal set of common ZenHub Pipelines:
 
-If the pull request is rejected, the issue returns to *In Progress*; otherwise, it is merged and the related issue moves to the *Merged* Pipeline.
+- New
+- Product Backlog
+- In Progress
+- Closed
 
-When all changes are verified in [Production](https://allspark.dev.data.humancellatlas.org/dcp-ops/docs/wikis/SOP:%20Releasing%20new%20Versions%20of%20DCP%20Software), the issue is moved to the *Closed* pipeline.
+When an issue in a component repository is contained in an Epic in the _dcp_ repository the custom Pipelines in the second Workspace need to be mapped to the restricted set of Pipelines in the _DCP_ Workspace to allow progress to be tracked. 
+
+To illustrate _mapping_, imagine that UCSC prefers finer granularity for tracking progress. A _UCSC_ Workspace is created and several Pipelines are added:
+
+- _In Progress_ (being implemented)
+- _Review_ (being reviewed)
+- _Dev_ (observable in the `dev` deployment of the component)
+- _Integration_ (observable in the `integration` deployment)
+- _Staging_ (observable in the `staging` deployment)
+- _Prod_ (observable in the `prod` deployment)
+
+Since UCSC follows the Scrum process, a _Sprint Backlog_ Pipeline is also added.
+
+For this case, the owner would assign its child issue of the _dcp_ Epic to the following Pipelines per Workspace as the issue progressed through the workflow:
+
+| DCP Workspace Pipeline | UCSC Workspace Pipeline |
+| -----------: | ---- |
+| Product Backlog | Product Backlog |
+| Product Backlog | Sprint Backlog |
+| In Progress | In Progress |
+| In Progress | Review |
+| In Progress | Dev |
+| In Progress | Integration |
+| In Progress | Staging |
+| In Progress | Prod |
+| Closed | Closed |
+
+UCSC has created this [Orange Workspace](https://app.zenhub.com/workspaces/orange-5d680d7e3eeb5f1bbdf5668f/board?milestones=Q3%202019%20Milestone%203%232019-09-23&releases=5ccb269f364bad566f9542d0&repos=139095537,124946326,124946282,130759918,198898884,93565055,168172092,142053167).
 
 ### Release Demonstration and Retrospective
 
