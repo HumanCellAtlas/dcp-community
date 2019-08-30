@@ -4,6 +4,8 @@
 number and this pull request in the format:*
 `[dcp-community/rfc#](https://github.com/HumanCellAtlas/dcp-community/pull/<PR#>)`
 
+2019-08-30: Rex and Saman requested more time to raise questions. Extended by a week.
+
 # AUDR Analysis Updates
 
 ## Summary
