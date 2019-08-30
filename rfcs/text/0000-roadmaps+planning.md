@@ -321,10 +321,11 @@ If an Objective is *well-understood*, then the Product Owner, in consultation wi
 
 Based on rough costing, Technical Leads and their engineering teams SHOULD provide an initial assessment for "fit" - whether any proposed Epics need to be cut or reduced in scope for the Release.
 
-It is strongly RECOMMENDED that engineering teams reserve a **minimum of 30%** capacity during a Release to account for:
+It is strongly RECOMMENDED that engineering teams reserve a **minimum of 30%** capacity during a Release including but not limited to:
 
-* Responsibilities as a Release Engineer or Manager
-* Emerging security or operational issues 
+* Responsibilities as a Release Engineer or Release Manager when [releasing new versions of software](https://allspark.dev.data.humancellatlas.org/dcp-ops/docs/wikis/SOP:%20Releasing%20new%20Versions%20of%20DCP%20Software)
+* Reserving time during Milestone 3 to concentrate on stability and *bug bashing* activities
+* Emerging critical security or operational issues 
 * Contributions to community reviews for DCP RFC(s)
 * Integration between components
 * Regular DCP meetings
