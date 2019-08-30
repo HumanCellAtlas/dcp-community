@@ -229,6 +229,8 @@ The DCP ZenHub board is the Product Backlog for DCP. All DCP component repositor
 
 The top-level *dcp* repository MUST contain **all** significant work that is important to the DCP community and requires visibility and prioritization. This includes Roadmap objectives and product-wide technical requirements (e.g. “components should have logs...“). 
 
+[**High Priority** status](https://help.zenhub.com/support/solutions/articles/43000495285-setting-issues-as-high-priority) MUST only be assigned by DevSecOps to issues in the *dcp* repository deemed critical or high-severity. 
+
 If Institutions are using other project management applications such as Jira for internal requirements and reporting, then all DCP related issues in a Release MUST be *projected* into ZenHub for transparency and finer granularity for tracking progress.
 
 To avoid maintenance overhead due to duplicate or incomplete issues, the creation of new items in the *dcp* repository SHOULD be limited to the PM Team or a facilitator from the Architecture Team.
