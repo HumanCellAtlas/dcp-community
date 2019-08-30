@@ -71,6 +71,16 @@ are a collection of User Stories required to complete an objective.
 
 **Releases** are composed of three milestones and occur on a quarterly cadence.
 
+## DCP User Experience (UX) Activities and Insights
+
+User Experience (UX) Research, Design and Evaluation activities SHOULD be a part of every aspect of the product life cycle, informing the overall DCP strategy, Product Roadmap, Epics and user stories.
+
+It is the responsibility of the respective teams to engage in UX activities throughout the product lifecycle. The UX team MUST either lead or provide training and consultancy for some of these activities.
+
+Insights and recommendations from UX activities SHOULD be shared and acted upon throughout the product life cycle. A summary of the insights from various UX activities SHOULD be delivered at each iteration of the Product Roadmap to inform decisions about future changes or developments.
+
+The UX team MAY also create a wider DCP user survey on an annual basis to collect additional attitudes from the scientific community.
+
 ## Detailed Design for Roadmaps
 
 The Product Roadmap creates a shared understanding across the DCP community and Users of the DCP for investments and direction for the next year. The Roadmap process MUST occur on an annual basis. 
@@ -122,18 +132,6 @@ Project Leads MUST clarify outstanding questions about the Science Roadmap with 
 #### Technical Objectives RFC
 
 Project Leads MUST review the [Technical Objectives RFC](#technical-architecture-objectives) from the most recent quarter to understand outstanding technical concerns.
-
-#### DCP User Survey and UX Insights
-
-User Experience (UX) MUST create a DCP user survey on an annual basis to collect input for the Product Roadmap. The audience for the survey are the Users of the DCP.
-
-UX MUST review the proposed survey with the DCP community and incorporate suggestions as appropriate.
-
-The survey MUST be announced to the membership of the Human Cell Atlas (through its Registration mailing list) with a minimum of a two week last call for responses.
-
-At the conclusion, UX MUST summarize insights from the survey and present at the next DCP PM meeting. Following a one week review to incorporate feedback, the survey MUST be shared by UX with the membership of the Human Cell Atlas and announced on the *HumanCellAtlas #dcp* slack channel.
-
-UX MAY also share critical UX Insights from other sources independent of the Survey for consideration by the Project Leads during the creation of the Roadmap.
 
 #### Roadmap Retrospective
 
