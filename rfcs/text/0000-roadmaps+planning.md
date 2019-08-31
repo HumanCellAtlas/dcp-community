@@ -341,11 +341,12 @@ If an Objective requires further exploration or design before it can be estimate
 1. Create a new ZenHub issue and label it as a Spike.
 1. Assign one (and only one) Owner responsible for completing the Spike.
 1. Document and monitor the *work-in-progress*. If an RFC is required, a reference to the draft RFC in the *dcp-community* repository is required; otherwise a reference to other documentation is appropriate. In both cases, the reference SHOULD be documented in the top-level summary comment of the Spike for _at a glance_ review.
-1. For collaborative designs, it is RECOMMENDED that a temporary public working group channel be created in *HumanCellAtlas* Slack and documented in the top-level summary comment of the Spike to ensure that the *state of play* is visible to the DCP community.
 1. Document its Acceptance Criteria such as an approved RFC. 
 1. Add the Spike to its related Epic.
 1. Add the Spike as a blocking dependency in its related Epic.
 1. Assign the Spike to a specific Milestone in the Release. Spikes have a finite duration. If the Acceptance Criteria for the Spike is an RFC, then the Milestone SHOULD reflect when the RFC is expected to be approved.
+
+For collaborative designs, it is RECOMMENDED that a temporary public working group channel be created in *HumanCellAtlas* Slack and documented in the top-level summary comment of the Spike to ensure that the *state of play* is visible to the DCP community.
 
 The related Epic cannot be estimated and refined until the completion of its blocking Spike. Once the Spike is closed, then its Epic MUST be modeled as outlined in [Creating the Engineering Plan](#creating-the-engineering-plan).
 
