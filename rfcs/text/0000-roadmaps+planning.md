@@ -345,7 +345,7 @@ If an Objective requires further exploration or design before it can be estimate
 1. Document its Acceptance Criteria such as an approved RFC. 
 1. Add the Spike to its related Epic.
 1. Add the Spike as a blocking dependency in its related Epic.
-1. Assign the Spike to a specific Milestone in the Release. Spikes have a finite duration.
+1. Assign the Spike to a specific Milestone in the Release. Spikes have a finite duration. If the Acceptance Criteria for the Spike is an RFC, then the Milestone SHOULD reflect when the RFC is expected to be approved.
 
 The related Epic cannot be estimated and refined until the completion of its blocking Spike. Once the Spike is closed, then its Epic MUST be modeled as outlined in [Creating the Engineering Plan](#creating-the-engineering-plan).
 
