@@ -255,8 +255,9 @@ e) All the problems with long planning before implementation above.
 
 This makes people afraid to write RFCs and makes technical decision making very slow, in addition to the crawl of the planning process.
 
-I'm not sure I have a great solution here. I don't advocate getting rid of RFCs entirely because they do spur 
-discussion, at the very least. But I do think that a) the bar to creating them should be a *lot* lower and b) the
+I'm not sure I have a great solution here. I certainly don't advocate getting rid of RFCs because they do spur 
+discussion where large parts of the DCP critically need to be involved. This very document is an informational RFC. 
+But I do think that a) the bar to creating them should be a *lot* lower and b) the
 presumption should be that you *don't* need an RFC. Get together the smallest possible group and get on and do something.
 Of course, the latter is hard and can lead to real disruption. This is where you need a well-designed system, both 
 in process and software, that can accommodate change without breaking down. We're taking some steps towards this, such
