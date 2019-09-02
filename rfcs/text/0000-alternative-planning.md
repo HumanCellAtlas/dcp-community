@@ -278,9 +278,9 @@ information but avoid obscuring details.
 Waterfall development is an understandable approach to the constraints of the DCP as listed previously but I 
 don't think that it's the right one. There's no question that agility in these circumstances is hard and may require
 some novel solutions. And the approaches I've outlined will undoubtedly themselves have considerable flaws and risks.
-But I think the costs of rigidity in this project will be very high and I decades of 
-software practice have shown that it rarely works. I urge us to consider more radical solutions to our problems before
-instituting further restrictions on change.  
+But I think the costs of rigidity in this project will be very high and the world has moved away from waterfall
+practices. I urge us to consider more radical solutions to our problems before
+accepting further restrictions on change.  
 
 ### Acceptance Criteria [optional]
 
