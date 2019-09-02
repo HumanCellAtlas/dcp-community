@@ -94,7 +94,7 @@ by a newer design or process.
 gone from being in a review status to a "pre-rfc" status and should not be reviewed further until designated so.
 
 "rfc-withdrawn" : This tag is applied when an RFC has not finished the review process (and therefore has not been 
-explicitly rejected) but has been voluntarily withdrawn due to extenuating circumstances.
+explicitly rejected) but has been voluntarily withdrawn.
 
 Much like the existing RFC process, any change of state to the RFC must be announced on the DCP slack channel.
 
