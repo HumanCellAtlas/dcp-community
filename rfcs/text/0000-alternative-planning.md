@@ -8,8 +8,8 @@
 
 ## Summary
 
-This informational RFC describes problems with the roadmaps and planning RFC where it concerns software
-development. It then proposes alternative approaches. This is the author's own point of view.
+This informational RFC describes issues from the author's point of view with the Roadmaps and Planning RFC when it comes to software development
+in the the DCP. It then proposes alternative approaches to the problems that this RFC is looking to tackle.
 
 Please note: the list of reviewers chosen is somewhat arbitrary based on my memory of who concerns themselves with this
 stuff. And Github limits the number to 15. Apologies if I left you out - guaranteed I'd like you to read this even/esepcially 
@@ -30,34 +30,36 @@ if you strongly disagree.
 
 Roadmaps and planning are the crankshaft of the DCP. If we don't create a crankshaft suitable for the engine of development 
 then the DCP will run inefficiently or not at all. I'm concerned that the proposed process for creating these roadmaps and plans, as 
-described in the Roadmaps and Planning RFC and as an evolution of the current process, does not fit DCP organizational and development realities.
+described in the Roadmaps and Planning RFC and as an evolution of the current process, will not fit DCP organizational and development realities.
 
-This RFC describes the problems and promotes alternative solutions, as a response to being asked to write these up. It's 
-nowhere near as comprehensive, well-written or referenced as I would like - unfortunately I've had many other priorities
-to attend to. Nonetheless, I hope it can help spur constructive discussion on these topics. It is the author's personal
-point of view as a technical lead and someone with long experience in highly distributed open-source projects that require co-operation
-between peer organizations and individuals.
+This RFC tries to concisely describe those problems and propose alternative solutions. It comes as a result of being
+asked to write these alternatives up. Due to time constraints it's 
+nowhere near as comprehensive, well-written or referenced as I would like. Nonetheless, I hope it can help spur 
+constructive discussion.
+
+This RFC is the author's own point of view as a technical lead and someone with long experience in highly distributed 
+open-source projects that require co-operation between peer organizations and individuals.
 
 ## Detailed Design
 
-From my understanding, the roadmaps and planning RFC details a 70 day process where scientists, project leads, product owners, user experience
+From my understanding, the roadmaps and planning RFC describes a 70 day process where scientists, project leads, product owners, user experience
 experts and technical leads create a roadmap consisting of themes, each theme having one of more objectives. These 
 objectives are further described by user stories. Each objective is represented in the DCP Zenhub board as an epic with
 user stories represented by an item attached to the epic. Further items can be created as spikes to spend time clarifying
 the user stories and/or performing design work prior to implementation. Each item is assigned a milestone where there are
 3 milestones of equal length in a quarter.
 
-In my experience of the existing planning process almost all spikes are cross-component issues. DCP culture practically
+In my experience of the existing planning process almost all spikes are cross-component issues. DCP culture pretty much
  mandates that these require an RFC. An RFC
 takes a minimum of 3 weeks from inception to approval, though realistically RFCs of any complexity require considerably
 more time to understand the problem and align with other planned and existing technical work.
 
-Again in my real-world experience on the DCP thus far, if an RFC is required this means that it will take a minimum of 2 milestones (8 weeks)
+From my experience so far, if an RFC is required this means that it will take a minimum of 2 milestones (8 weeks)
 before it can be considered complete. A T-shirt estimate is only possible once the RFC is approved and there is a
 strong chance that estimate will be more than the remainder of the quarter (4 weeks). Which means it takes an entire
 quarter to plan work and you can only start it in the next quarter at the earliest. Even then, the roadmap process for
-that next quarter will have started long before so in the worst case it could be *up to 9 months between planning and implementation*.
-In other words, we have a waterfall of roadmapping, planning and implementation with an extremely long cycle time.
+that next quarter will have started long before so I fear that in the very worst case it could be *up to 9 months between planning and implementation*.
+In other words, we will have a waterfall of roadmapping, planning and implementation with an extremely long cycle time.
 
 ![](../images/0000-process-cartoon.png)
 
@@ -89,12 +91,15 @@ In my experience, the last scenario is the rarest case. To me, this is a big rea
 first place - from the need to be adaptable to customer requirements and to fail fast so we can find what does work. A 
 process where major work takes a half a year or longer to get from planning to execution is not an agile process. 
   
-It's such an orthodoxy nowadays that nobody does waterfall unless they must (a contentious statement perhaps
-though I've seen that sentiment in RFC reviews). So why is it being proposed here? From my perspective it's because of
-these challenges:
+Nowadays it's pretty much orthodoxy that nobody does waterfall unless they must (a contentious statement perhaps
+though I've seen that sentiment in RFC reviews). So why is it being proposed by the Planning and Roadmaps RFC? From my 
+perspective it's because of these challenges:
 
-* **High complexity** - the DCP feels highly complex. This makes for a very difficult management problem.
-* **Siloed teams** - A team works on and owns its own components. Getting other teams to act means negotiation.
+* **High complexity** - the DCP feels highly complex. This makes for a very difficult management problem. Everything is
+connected.
+* **Siloed teams** - A team works on and owns its own components. Getting other teams to act means negotiation. It's
+ much easier to do a local solution that is sub-optimal for the DCP as a whole than a global one where some teams may 
+ need to change their chosen design.
 * **Constrained communication** - plenary voice communication is tightly constrained to an hour per day. This constrains
 communication both between DCP groups with the same role (e.g. ingest, analysis, azul dev groups) and up and down
 the objective to implementation work stack (e.g. between developers and product owners, between product owners and 
@@ -102,12 +107,9 @@ project leads).
 * **No overall control** - no organization is in overall control.
 * **Cultural variation** - organization's planning and development culture varies.
 
-Cross-component dependencies are hard to manage
-and time-consuming. It is easier to do a very sub-optimal local implementation rather than an extensive, time-consuming, 
-stretched out and possibly unsuccessful simultaneous negotiation with many other teams.
-
-All these encourage an approach that is waterfall, negotiation and tight alignment where design and implementation
-are separated by long stretches of time. But I think that this falls foul of my earlier proposed tenets - prediction is hard and science is unpredictable.
+The response in the Roadmaps and Planning RFC, for me, is a waterfall one of long negotiation and tight alignment. 
+As a result, if one strictly follows the process then design and implementation become separated by long stretches of time.
+Software suffers from the problems of waterfall described above.
 
 When reality meets an ill-fitting process something has to give. As a practical consequence, I think that agile will take place
 "under the covers". It will happen because it has to in order to get things done but despite the process rather than
@@ -117,14 +119,14 @@ knowledge about whether the approach will really work. With work such as reliabi
 sense until we do other work first - it's just not possible to plan a long time in advance if you don't want to waste
 time confabulating detailed written plans that you know aren't worth the pixels they're displayed on.
 
-I am not saying that planning and RFCs are not worthwhile. There is no question that we face complex problems
-that need advance thinking. But I feel that we're heading towards a place where there are simultaneously too many RFCs for
+I am definitely not saying that planning and RFCs are not worthwhile. There is no question that we face complex problems
+that need advance thinking. But I think that the generally feeling is that we're heading towards a place where there are simultaneously too many RFCs for
 anybody to review and not enough to tackle the complex problems that we face.
 
 ### Alternatives
 
 So what could be the alternatives? I am going to propose several actions which I think could be implemented separately but
- may be most powerful if they are all implemented together.
+ may be most powerful if they were all to be implemented together.
 
 #### Management by aims and indicators
 
@@ -136,7 +138,7 @@ and developers. The quarter by quarter roadmap still exists but is more theme th
 by product owners aided by project managers. Success is judged on how well we meet the indicators over time, *not* by whether the DCP fulfilled a specific
 objective.
 
-This is to preserve agility - the ability to adapt objectives over short timeframes, ideally days or even less. This is for 
+This is to preserve agility - the ability to adapt objectives over short timeframes, as short as days or even less. This is for 
 [core agile reasons](https://agilemanifesto.org/); individuals and interactions, working software over documentation, 
 customer collaboration over contract negotiation, responding to change over following a plan. Especially in this 
 project, we uncover new information all the time, we realize on contact with constantly evolving scientific reality that 
@@ -163,7 +165,8 @@ They also have cons:
 recognized and changed.
 2) It may not be possible to create metrics for some objectives. This could mean the objective is not clear enough.
 
-Nonetheless, I believe that management by aims and indicators is a management framework that we need to try.
+Nonetheless, I believe that management by aims and indicators is a management framework that it would be very valuable
+to try.
 
 #### Theme teams
 
@@ -174,18 +177,24 @@ interfaces between them which reduces the need for communication, tackling the *
 
 In practice, the touch points between teams are much more extensive than the APIs. It encompasses the whole data model -
 a change in a bundle (e.g. adding library entities in ingest) will need preparation and agreement by all downstream
-components. The data model is largely undefined, having emerged de facto from the implementation. This makes it brittle.
+components. The data model is largely undefined, having emerged de facto from the implementation. This makes it 
+extremely brittle. Everything gets tangled together where tackling any significant problem seems to drag in every other
+problem.
 
-The by-component split also means that all big changes (e.g. AUDR) need extensive negotiation between teams. 
+The split of components by institution also means that all big changes (e.g. AUDR) need extensive negotiation between teams. 
 Charters have benefits but also encourage a culture of "not our problem" because a particular requirement isn't in a 
-charter. It is often easier to do a local sub-optimal implementation than engage in negotiation which may not be successful.
+charter. It is often easier to do a local sub-optimal implementation than engage in negotiation which may not be successful
+for an overall better global solution. We create
+local databases because it's easier than trying to get cross-DCP co-operation. We contort ourselves to match
+other component's APIs and data models because trying to get other component designs to change is just too difficult.
+These local sub-optimal choices keep piling up and introduce lots of unnecessary additional complexity to the architecture.
 
 An alternative approach is a radical reorganization of the DCP into theme teams drawn from annual roadmap
 objectives rather than per component group. A theme team is now responsible for their roadmap theme and the features
 that derive from it. They can make
 changes in any component. Each team is responsible for both their feature and the working of the DCP as a whole.
 
-Make no mistake, there are considerable challenges with this approach. It requires more communication, which will be 
+There's no question there are considerable challenges with this approach. It requires more communication, which will be 
 a particular problem for the EBI to CZI and UCSC. I think this is surmountable - community open-source projects often have a 
 very wide distribution but can still co-ordinate decisions. Often this is through tools such as mailing lists rather 
 than real time, which will require a development culture change.
@@ -193,12 +202,8 @@ than real time, which will require a development culture change.
 There is also an argument that the knowledge required by feature teams, teams that cross component boundaries, is 
 simply too great - the DCP is just too complex to be understood by a single person. But I think that with the current
 DCP organization, complexity is high *because of* component boundaries rather than in spite of them. Not because
-partitioning complexity isn't a good idea, it absolutely is. Rather the correspondence of institutions to components
+partitioning complexity isn't a good idea, it absolutely is. Rather the alignment of institutions to components
 mean that the incentives (local camaraderie and reward) of sticking to your component are very high.
-
-Hence we often adopt solutions that are local maxima but are very poor solutions for the DCP as a whole. We create
-local databases because it's easier than trying to get cross-DCP co-operation. We contort ourselves to match
-other component's APIs and data models because attempting change is just too difficult.
  
 A theme team that's considering the DCP as a whole may be able to make decisions
 that optimize across the whole of the DCP rather than for an individual component at the greater expense of others.
@@ -221,7 +226,8 @@ would have to avoid per-theme silos emerging.
 
 Cons:
 1) Communication has to become more asynchronous and/or the overlap between UK and US West Coast day has to be increased
-as much as possible bearing in mind cultural variation and work-life balance.
+as much as possible bearing in mind cultural variation and work-life balance. Otherwise, more theme teams may
+mean even more pressure on limited communication bandwidth.
 2) Theme teams may be smaller than per-component teams - developers moving teams may be a political challenge.
 3) Theme teams may be more isolated. For example, if 3 members are in the US and only 1 in the UK.
 4) It's a risky change that requires commitment and adapation across the entire DCP. To reduce the risk it could be
@@ -253,17 +259,19 @@ c) Going to generate a metric ton of discussion that will take weeks to understa
 d) Get approved but then sit around because implementing it isn't a priority. 
 e) All the problems with long planning before implementation above.
 
-This makes people afraid to write RFCs and makes technical decision making very slow, in addition to the crawl of the planning process.
+This makes people afraid to write RFCs, yet RFCs are the de facto tool to use for any major change. As a result, 
+technical decision becomes very slow.
 
 I'm not sure I have a great solution here. I certainly don't advocate getting rid of RFCs because they do spur 
-discussion where large parts of the DCP critically need to be involved. This very document is an informational RFC. 
+discussion where large parts of the DCP critically need to be involved. This very document is an informational RFC for
+that reason. 
 But I do think that a) the bar to creating them should be a *lot* lower and b) the
 presumption should be that you *don't* need an RFC. Get together the smallest possible group and get on and do something.
 Of course, the latter is hard and can lead to real disruption. This is where you need a well-designed system, both 
 in process and software, that can accommodate change without breaking down. We're taking some steps towards this, such
-as with the ability to perform metadata changes that are temporarily held back from consuming components, but we need
-to think of this as a systematic design construct, both going forward and in revisiting existing major architectural
-decisions. We need to invest in these areas.
+as with the ability to perform metadata changes that are temporarily held back from consuming components, but I think that 
+we need to regard as as a critical architectual construct, both for new design and in revisiting existing major architectural
+decisions. We need to invest resources in these areas.
 
 #### A culture of writing just enough
 On the one hand, we have processes such as RFCs which have become practically mandatory for cross-component change. On
@@ -274,13 +282,12 @@ writing down the critical details both before implementation and shortly after t
 autonomy (fewer reviewers of unimportant details) and understanding across the DCP with documents that cover critical 
 information but avoid obscuring details.
 
-#### A final plea for agility
-Waterfall development is an understandable approach to the constraints of the DCP as listed previously but I 
-don't think that it's the right one. There's no question that agility in these circumstances is hard and may require
-some novel solutions. And the approaches I've outlined will undoubtedly themselves have considerable flaws and risks.
-But I think the costs of rigidity in this project will be very high and the world has moved away from waterfall
-practices. I urge us to consider more radical solutions to our problems before
-accepting further restrictions on change.  
+#### A plea for agility
+The Roadmaps and Planning RFC is an understandable approach to the problems of development given the constraints of the 
+DCP. In this context, maintaining agility is hard and could require us to take some risks on novel and/or radical
+solutions. Moreover, the approaches I've outlined will undoubtedly themselves have considerable flaws and risks.
+But I fear that the costs of a waterfall approach to our problems will be very high. I urge us to consider solutions to
+increasing our agility before going down a road that requires more restrictions on adaptability.
 
 ### Acceptance Criteria [optional]
 
@@ -290,11 +297,11 @@ this process is giving users more value than our previous processes?
 
 ### Unresolved Questions
 
-Lots more I'm sure.
+Lots.
 
 ### Drawbacks and Limitations [optional]
 
-Lots more I'm sure.
+Probably lots.
 
 ### Prior Art [optional]
 
@@ -304,5 +311,5 @@ explicit way?
 ### Alternatives [optional]
 
 Approve and continue with the roadmaps and planning RFC as written. This proposal can still be kept as one source of radical
-alternatives if that RFC fails to meet its goals, though I strongly suggest thinking very carefully as to whether 
-doubling down on a waterfall-like process is going to fix the problems with DCP development.
+alternatives if that RFC fails to meet its goals. However, I would far rather we take a hard look at these problems and
+ alternative solutions right now instead of maybe another 6 months down the road.
