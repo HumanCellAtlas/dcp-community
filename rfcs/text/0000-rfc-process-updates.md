@@ -1,5 +1,7 @@
 ### DCP PR:
 
+PLEASE DO NOT REVIEW! THIS RFC IS NOT COMPLETE AND IS STILL ACITVELY BEING WORKED ON.
+
 ***Leave this blank until the RFC is approved** then the **Author(s)** must create a link between the assigned RFC number and this pull request in the format:*
 
 `[dcp-community/rfc#](https://github.com/HumanCellAtlas/dcp-community/pull/<PR#>)`
@@ -9,6 +11,8 @@
 *Replace "RFC Name" above with the name of your RFC. Keep it short and descriptive.*
 
 ## Summary
+
+PLEASE DO NOT REVIEW! THIS RFC IS NOT COMPLETE AND IS STILL ACITVELY BEING WORKED ON.
 
 The Data Coordination Platform (DCP) established the Request For Comments (RFC) process on 
 [September 17th 2018](https://github.com/HumanCellAtlas/dcp-community/pull/26) in order to address the gap of having a
@@ -32,6 +36,8 @@ DCP community's needs.
  `[Name](mailto:username@example.com)`
 
 ## Motivation
+
+PLEASE DO NOT REVIEW! THIS RFC IS NOT COMPLETE AND IS STILL ACITVELY BEING WORKED ON.
 
 Over the last year since the original RFC process was accepted, the DCP project has grown both in size and complexity.
 As of this writing, 11 RFCs have been accepted in addition to many charters. Not so unexpectedly, there have been pain
@@ -68,6 +74,8 @@ completion which also weakens the implication of the RFC.
 *Share the [User Stories](https://www.mountaingoatsoftware.com/agile/user-stories) motivating this RFC.*
 
 ## Detailed Design
+
+PLEASE DO NOT REVIEW! THIS RFC IS NOT COMPLETE AND IS STILL ACITVELY BEING WORKED ON.
 
 We propse the following edits to the RFC process to address 1-4 above.
 
