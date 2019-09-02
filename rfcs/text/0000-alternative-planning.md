@@ -12,7 +12,8 @@ This informational RFC describes problems with the roadmaps and planning RFC whe
 development. It then proposes alternative approaches. This is the author's own point of view.
 
 Please note: the list of reviewers chosen is somewhat arbitrary based on my memory of who concerns themselves with this
-stuff. Apologies if I left you out - guaranteed I'd like you to read this even if you strongly disagree.
+stuff. And Github limits the number to 15. Apologies if I left you out - guaranteed I'd like you to read this even/esepcially 
+if you strongly disagree.
 
 ## Author(s)
 
