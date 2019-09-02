@@ -55,7 +55,7 @@ quarter to plan work and you can only start it in the next quarter at the earlie
 that next quarter will have started long before so in the worst case it could be *up to 9 months between planning and implementation*.
 In other words, we have a waterfall of roadmapping, planning and implementation with an extremely long cycle time.
 
-![](../images/0000-process_cartoon.png)
+![](../images/0000-process-cartoon.png)
 
 I have grave doubts about doing down this road for two reasons:
 
