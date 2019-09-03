@@ -102,7 +102,7 @@ These sections collect various use cases to illustrate how they are represented 
 
 - How should the re-analysis not change results be modeled?
 
-- Is the graph external to the metadata entities, allowing them to be shared by multiple nodes in a global graph, or are the entity instances the nodes?  That is, are the entity attributes of the nodes or the nodes themselves?  The current implementation with links.json supports both models, however, this needs to be explicitly defined.
+- Is the graph external to the metadata entities, allowing them to be shared by multiple nodes in a global graph, or are the entity instances the nodes?  That is, are the entity instances attributes of the nodes or the nodes themselves?  The current implementation with links.json supports both models, however, this needs to be explicitly defined.
 
 - How are projects versioned? Currently, the only project version is the version of the metadata instance, which doesn't reflect the contained data.  Is project versioning need beyond releases?
 
