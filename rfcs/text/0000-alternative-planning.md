@@ -12,7 +12,7 @@ This informational RFC describes issues from the author's point of view with the
 in the the DCP. It then proposes alternative approaches to the problems that this RFC is looking to tackle.
 
 Please note: the list of reviewers chosen is somewhat arbitrary based on my memory of who concerns themselves with this
-stuff. And Github limits the number to 15. Apologies if I left you out - guaranteed I'd like you to read this even/esepcially 
+stuff. And Github limits the number to 15. Apologies if I left you out - guaranteed I'd like you to read this even/especially 
 if you strongly disagree.
 
 ## Author(s)
@@ -66,7 +66,7 @@ In other words, we will have a waterfall of roadmapping, planning and implementa
 I have grave doubts about doing down this road for two reasons:
 
 * **Prediction is hard** - predicting what software you need to create is hard. It's harder the further out you try. 
-Suprisingly soon even the roughest prediction is impossible.
+Surprisingly soon even the roughest prediction is impossible.
 * **Science is unpredictable** - the requirements for the HCA shift. The science changes unpredictably.
 
 Let's say we've gone through the process of planning shown above. Or less provocatively, let's say it takes just (!) 3 
@@ -154,7 +154,7 @@ Project leads can still act as product owners but need to be very clear, both to
 wearing this hat and when they are wearing the product owner hat. When they're acting in their product owner role
 they should be careful not to overrule other product owners whether consciously or not. 
 
-Naturally, aims and indicators are likely not a paerfect solution. Whilst they have pros:
+Naturally, aims and indicators are likely not a perfect solution. Whilst they have pros:
 
 1) Allows teams to adapt quickly to changing circumstances without a formal planning cycle and communication up and down
 the planning stack, as long as the metric is still valid.
@@ -230,14 +230,14 @@ as much as possible bearing in mind cultural variation and work-life balance. Ot
 mean even more pressure on limited communication bandwidth.
 2) Theme teams may be smaller than per-component teams - developers moving teams may be a political challenge.
 3) Theme teams may be more isolated. For example, if 3 members are in the US and only 1 in the UK.
-4) It's a risky change that requires commitment and adapation across the entire DCP. To reduce the risk it could be
+4) It's a risky change that requires commitment and adaptation across the entire DCP. To reduce the risk it could be
 done first on an experimental basis with a single team, or even done partially with smaller 'maintainer' teams still
 nurturing the individual components.
 
 #### Best practice is evangelized rather than mandated
 This approach recognizes that there is *cultural variation* between teams. It assumes that imposing a process will not bring
 alignment because there is *no overall control*. Teams also face different circumstances which means one size will not
-fit all. Alignment is valuable but comes about through evangalization, discussion of shared problems and spontaneous convergence.
+fit all. Alignment is valuable but comes about through evangelization, discussion of shared problems and spontaneous convergence.
 
 Pros:
 1) Teams can adapt their workflow to fit their circumstances, both at the present time and as those circumstances 
@@ -270,7 +270,7 @@ presumption should be that you *don't* need an RFC. Get together the smallest po
 Of course, the latter is hard and can lead to real disruption. This is where you need a well-designed system, both 
 in process and software, that can accommodate change without breaking down. We're taking some steps towards this, such
 as with the ability to perform metadata changes that are temporarily held back from consuming components, but I think that 
-we need to regard as as a critical architectual construct, both for new design and in revisiting existing major architectural
+we need to regard as as a critical architectural construct, both for new design and in revisiting existing major architectural
 decisions. We need to invest resources in these areas.
 
 #### A culture of writing just enough
