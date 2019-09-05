@@ -1,6 +1,6 @@
 ### DCP PR:
 
-PLEASE DO NOT REVIEW! THIS RFC IS NOT COMPLETE AND IS STILL ACITVELY BEING WORKED ON.
+PLEASE DO NOT REVIEW! THIS RFC IS NOT COMPLETE AND IS STILL ACTIVELY BEING WORKED ON.
 
 ***Leave this blank until the RFC is approved** then the **Author(s)** must create a link between the assigned RFC number and this pull request in the format:*
 
@@ -12,7 +12,7 @@ PLEASE DO NOT REVIEW! THIS RFC IS NOT COMPLETE AND IS STILL ACITVELY BEING WORKE
 
 ## Summary
 
-PLEASE DO NOT REVIEW! THIS RFC IS NOT COMPLETE AND IS STILL ACITVELY BEING WORKED ON.
+PLEASE DO NOT REVIEW! THIS RFC IS NOT COMPLETE AND IS STILL ACTIVELY BEING WORKED ON.
 
 The Data Coordination Platform (DCP) established the Request For Comments (RFC) process on 
 [September 17th 2018](https://github.com/HumanCellAtlas/dcp-community/pull/26) in order to address the gap of having a
@@ -37,7 +37,7 @@ DCP community's needs.
 
 ## Motivation
 
-PLEASE DO NOT REVIEW! THIS RFC IS NOT COMPLETE AND IS STILL ACITVELY BEING WORKED ON.
+PLEASE DO NOT REVIEW! THIS RFC IS NOT COMPLETE AND IS STILL ACTIVELY BEING WORKED ON.
 
 Over the last year since the original RFC process was accepted, the DCP project has grown both in size and complexity.
 As of this writing, 11 RFCs have been accepted in addition to many charters. Not so unexpectedly, there have been pain
@@ -69,15 +69,21 @@ Today, there is no requirement that RFCs must be related to any existing ticket 
 determining critical work to be done in a quarter. This means that RFCs are published with no clear roadmap to
 completion which also weakens the implication of the RFC. 
 
+5 . Status and authorship of the RFCs could be more clearly indicated:
+
+In the current state, there is not a common practice of RFC authors assigning themselves the RFC PR in Github. This makes one have to open the RFC to see who is driving it and makes it difficult to filter by author.
+
+Additionally, the status of the RFCs is maintained by tags rather than by a Zenhub column making the backlog of each type of RFC more difficult to see at a glance. 
+
 ### User Stories
 
 *Share the [User Stories](https://www.mountaingoatsoftware.com/agile/user-stories) motivating this RFC.*
 
 ## Detailed Design
 
-PLEASE DO NOT REVIEW! THIS RFC IS NOT COMPLETE AND IS STILL ACITVELY BEING WORKED ON.
+PLEASE DO NOT REVIEW! THIS RFC IS NOT COMPLETE AND IS STILL ACTIVELY BEING WORKED ON.
 
-We propse the following edits to the RFC process to address 1-4 above.
+We propose the following edits to the RFC process to address 1-4 above.
 
 1 . Limited states of an RFC:
 
@@ -90,7 +96,7 @@ draft state, and readers should **not** comment on the RFC yet.
 "rfc-deprecated" : This indicates that the design is no longer implemented or executed in the DCP and has been usurped
 by a newer design or process.
 
-"rfc-paused" : This indicates that an RFC has been paused for further refinement. This roughly implys that an RFC has
+"rfc-paused" : This indicates that an RFC has been paused for further refinement. This roughly implies that an RFC has
 gone from being in a review status to a "pre-rfc" status and should not be reviewed further until designated so.
 
 "rfc-withdrawn" : This tag is applied when an RFC has not finished the review process (and therefore has not been 
@@ -121,6 +127,14 @@ ticket. Such a ticket should be linked to a timeline for RFC completion.
 
 In addition, we propose adding an additional **optional** section to the RFC template: Timeline. This will allow the 
 authors to propose a timeline for the work to be completed thus informing others of any conflicting priorities.
+
+
+5 . Status and authorship of the RFCs could be more clearly indicated:
+
+We propose to explicitly request that authors claim their RFCs by assigning themselves as authors in Github. 
+
+Additionally it is proposed to setup setup a custom Zenhub board with columns for each RFC state while maintaining tags to indicate the disposition at the terminal (closed) state. 
+
 
  
 
