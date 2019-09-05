@@ -81,129 +81,100 @@ Insights and recommendations from UX activities SHOULD be shared and acted upon 
 
 The UX team MAY also create a wider DCP user survey on an annual basis to collect additional attitudes from the scientific community.
 
-## Detailed Design for Roadmaps
+## Science Roadmap
 
-The Product Roadmap creates a shared understanding across the DCP community and Users of the DCP for investments and direction for the next year. The Roadmap process MUST occur on an annual basis. 
+At minimum, the Oversight Committee MUST provide an annual Science Roadmap to Project Leads to be reviewed at the next Oversight Committee meeting following its receipt.
 
-Themes and Objectives from the Roadmap are the primary source of priorities for planning Releases each quarter.
+Project Leads MUST clarify outstanding questions about the Science Roadmap with the Oversight Committee within two weeks of its receipt.
 
-### Timebox for Roadmaps
+## Detailed Design for Product Roadmaps
 
-All timeboxes are noted as business days. Business days are included regardless of national holidays.
+The Product Roadmap creates a shared understanding across the DCP community and Users of the DCP about our investments and product direction for multiple quarters.
 
-Overlapping timeboxes denote concurrent work.
+Themes and Objectives from the Product Roadmap are the primary source of priorities for planning Releases each quarter.
 
-Timeboxes with a range of days indicate that the work MAY be completed at any point during the timebox, but MUST be completed no later than the final day of the timebox.
+### Timeline for Roadmaps
 
-**Note**: *Input from the Technical Architecture team is integrated on a quarterly basis during Release planning.*
+Work MAY be completed earlier at any point during the timelines below but MUST be completed no later than the final day of the timebox. For example, the Technical Objectives may be refreshed during M1W3. 
 
-Day 1 in the Roadmap timeline begins in the third quarter.
+| Milestone+Week | Deliverable for Next Release |
+|:--:|-|
+|M2W1|[Refreshing Technical Objectives](#refreshing-technical-objectives)|
+|M2W2|[Refreshing the Product Roadmap](#refreshing-the-product-roadmap)|
+|M2W3|[Reviewing the Product Roadmap with HCA Community](#reviewing-the-product-roadmap-with-hca-community)|
+|M2W4|[Addressing Comments from HCA Community Review](#addressing-comments-from-hca-community-review)|
+|M3W1|[Reviewing the Product Roadmap with the Oversight Committee](#reviewing-the-product-roadmap-with-the-oversight-committee)|
+|M3W2|[Approving and Publishing the Product Roadmap](#approving-and-publishing-the-product-roadmap)|
+|M3W3|[Clarifying the Next Release](#clarifying-the-next-release)|
+|M3W4|... |
 
-* **Day 1 - Day 30: [Gathering and reviewing input](#gathering-and-reviewing-input)**
-  * Prerequisite: Science Roadmap
-  * Prerequisite: Technical Objectives RFC
-  * Day 1-30: DCP User Survey 
-  * Day 1-10: Roadmap Retrospective
-* **Day 1 - Day 45: [Drafting the roadmap](#drafting-the-roadmap)**
-  * Day 1-10: Identify a Roadmap Shepherd
-  * Day 30-35: Create themes
-  * Day 36: Collate themes
-  * Day 37-45: Refine themes
-* **Day 45 - Day 60: Receiving feedback**
-  * Day 45: Publish draft Roadmap
-  * Day 46-55: Community Review period 
-  * Day 56-60: Complete final edits
-* **Day 60 - Day 70: [Iterating with Oversight](#iterating-with-oversight)**
-  * Day 60: Send Roadmap to Oversight
-  * Day 61-70: Review and edit roadmap with Oversight
-  * Day 70: Receive Roadmap approval from Oversight
-  * Day 70: Communicate approved Roadmap 
+### Shepherding the Roadmap Process
 
-
-### Gathering and Reviewing Input
-[Gathering and Reviewing Input]:#gathering-and-reviewing-input
-
-#### Science Roadmap
-
-Oversight MUST provide an annual Science Roadmap to Project Leads to be reviewed at the next Oversight meeting following its receipt.
-
-Project Leads MUST clarify outstanding questions about the Science Roadmap with Oversight within two weeks.
-
-#### Technical Objectives RFC
-
-Project Leads MUST review the [Technical Objectives RFC](#technical-architecture-objectives) from the most recent quarter to understand outstanding technical concerns.
-
-#### Roadmap Retrospective
-
-The Roadmap Retrospective occurs during the recurring Project Leads meeting and not in a special session. The Roadmap Shepherd MUST add the Retrospective to the agenda and faciliate.
-
-In preparation, the Project Leads MUST independently review the prior year’s Product Roadmap, Release Retrospective summaries, and appropriate supporting documentation and then share their significant findings and learnings with their peers during the Retrospective.
-
-Findings may include: Themes that were incomplete and the accompanying reason, incorrectly sized work in the Engineering Plan, etc. These findings SHOULD be utilized as a reference class for the next Product Roadmap.
-
-Project Leads MUST identify a Roadmap Shepherd during the Retrospective. The Shepherd MUST NOT be a Project Lead, to ensure the neutrality of the content for the Roadmap.
+Project Leads MUST identify a Roadmap Shepherd (Project Manager). The Shepherd MUST NOT be a Project Lead, to ensure the neutrality of the content for the Product Roadmap.
 
 The Shepherd is responsible for:
-* Managing the timeline for the creation of the draft Roadmap
-* Facilitating all meetings related to the creation of the draft Roadmap 
+* Managing the timeline and facilitating all meetings for the refresh of the Product Roadmap
 * Documenting important decisions, discussions, and questions 
-* Assigning action items to move toward the creation of the Roadmap, should no Project Lead volunteer, and following up with them through completion
+* Assigning action items to move toward the publication of the Product Roadmap, should no Project Lead volunteer, and following up with them through completion
 
-### Drafting the Roadmap
-[Drafting the Roadmap]:#drafting-the-roadmap
+### Refreshing Technical Objectives 
+[Refreshing Technical Objectives]:#refreshing-technical-objectives
 
-Project Leads MUST independently create Themes by utilizing the input provided in the Science Roadmap, Technical Objectives RFC, DCP User Survey and UX Insights, and Roadmap Retrospective.
+Through a process of their own choosing, the Technical Architecture team MUST refresh critical architectural priorities and technical debt in their *living* Technical Objectives Informational RFC 
+as input to each iteration of the Product Roadmap. The RFC SHOULD outline technical strategies and estimate cost (such as two engineers at 20%) to realize its objectives. 
 
-To create the draft Product Roadmap, the Roadmap Shepherd:
-- Forks the *HumanCellAtlas dcp-community* repository
-- Copies `rfcs/roadmap-template.md` to `rfcs/text/0000-roadmap-YYYY.md` - where "YYYY" is the target year for the roadmap. 
+The RFC MUST be approved prior to [Refreshing the Product Roadmap](#refreshing-the-product-roadmap) for consideration.
 
-The Roadmap Shepherd MUST collate all themes into the draft which is an Informational RFC. 
+### Refreshing the Product Roadmap 
+[Refreshing the Product Roadmap]:#refreshing-the-product-roadmap
 
-Project Leads MUST review the Themes as a collective and distill the revised list to a lesser number of themes. This is achieved through a consensus building process, which is implemented by the Roadmap Shepherd and occurs during specifically noted Project Lead meetings, outlined below:
+* Prerequisite: Science Roadmap
+* Prerequisite: Technical Objectives RFC
+* Prerequisite: UX Insights
 
-* Explore the Themes, search for commonalities, and document concerns and issues 
-* Identify potential consolidated or alternative Themes, resolution for concerns and issues, and action items required for further understanding
-* Prioritize the Themes within the Roadmap
-* Update the Roadmap to reflect revised content
-* Resolve outstanding questions and concerns
+In preparation, Project Leads MUST independently review the prerequisites and document their proposed _"diffs"_ to the *living* Product Roadmap Informational RFC including but not limited to:
 
-If the Project Leads fail to reach [rough consensus](https://tools.ietf.org/html/rfc7282) within the specified timebox, then the draft MUST be escalated to Oversight for consultation.
+* Selecting and integrating Technical Objectives into the Product Roadmap 
+* Adding, Deleting, Revising, Re-prioritizing Themes and Objectives with a documented rationale
 
-When consensus is reached, the Roadmap is submitted as a pull request to the *dcp-community* repository and follows the DCP RFC process for a *Governance* RFC starting with [community review](https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0001-rfc-process.md#reviewing-rfcs). 
+Additions or Revisions MUST use the Roadmap Template format. 
 
-The Roadmap Shepherd MUST be assigned as the Shepherd for the RFC and ensure that the Project Leads (Authors) respond to comments, answer questions, and update the Roadmap RFC as required.
+Project Leads MUST review these proposed _"diffs"_ as a collective and **decisively** distill into a draft. This is achieved through a consensus building process, which is implemented by the Roadmap Shepherd.
 
-### Iterating with Oversight
-[Iterating with Oversight]: #iterating-with-oversight
+The Roadmap Shepherd MUST then update the Product Roadmap Informational RFC to reflect the revised content from the draft.
 
-Roadmaps MUST be approved by Oversight rather than DCP PM which is a minor variation from the current RFC Approval process for Governance RFC(s).
+When consensus is reached, the Product Roadmap is submitted as a pull request to the *dcp-community* repository.
 
-The Roadmap Shepherd MUST send the draft Roadmap to Oversight a week in advance of a review meeting between the Project Leads and Oversight.
+If the Project Leads fail to reach [rough consensus](https://tools.ietf.org/html/rfc7282) by the specified deadline, then the Roadmap Shepherd MUST:
 
-The Project Leads MUST iterate with Oversight to review and revise the draft Roadmap until it meets with Oversight approval.
+* Export the markdown version of the incomplete, draft Product Roadmap to Google Docs and and annotate areas of conflict
+* Forward this incomplete draft to the Oversight Committee for escalation and resolution
 
-Once approved, the Roadmap Shepherd will follow the normal RFC process for [approved RFC(s)](https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0001-rfc-process.md#approving-rfcs).
+### Reviewing the Product Roadmap with HCA Community
+[Reviewing the Product Roadmap with HCA Community]:#reviewing-the-product-roadmap-with-hca-community
 
-### Updating the Roadmap
+The Roadmap Shepherd MUST export the markdown version of the draft Product Roadmap to Google Docs for HCA community review. This community may be unfamiliar with GitHub.
 
-The Roadmap MAY be updated with Project Lead consensus and Oversight approval for a number of reasons including but not limited to:
+The Roadmap Shepherd MUST announce the draft Product Roadmap to the membership of the Human Cell Atlas (through its the Registration mailing list) with a minimum of a one week last call for responses.
 
-* A Theme is to be added or deleted.
-* Additions or revision to Objectives change the original intent of the Theme.
-* Emerging conditions require substantive changes to the original Roadmap direction.
+#### Addressing Comments from HCA Community Review
+[Addressing Comments from HCA Community Review]:#addressing-comments-from-hca-community-review
 
-Requests to update the Roadmap MUST be forwarded to the Roadmap Shepherd with a detailed description of the proposed changes, including the rationale for the updates, a timeline, and priority.
+The Roadmap Shepherd MUST ensure that the Project Leads (Authors) respond to comments, answer questions, and update the draft Product Roadmap as required.
 
-The Roadmap Shepherd MUST add the request to the next Project Leads meeting agenda for review.
+### Reviewing the Product Roadmap with the Oversight Committee
+[Reviewing the Product Roadmap with the Oversight Committee]: #reviewing-the-product-roadmap-with-the-oversight-committee
 
-The Roadmap Shepherd and Project Leads MUST review the update request and determine if there is rough consensus.
+The Roadmap Shepherd MUST export the markdown version of the draft Product Roadmap to Google Docs and forward to the Oversight Committee for review. This Committee may be unfamiliar with GitHub.
 
-If consensus is reached, the Roadmap Shepherd MUST refresh the Roadmap and send to Oversight. 
+The Project Leads MUST iterate with the Oversight Committee and revise the draft Product Roadmap until it meets with the approval of the Committee.
 
-Oversight MUST review the changes and approve.
+The Product Roadmap MUST be approved by the Oversight Committee approved prior to [Clarifying the Engineering Plan](#clarifying-the-engineering-plan). 
 
-The Roadmap Shepherd MUST update the previously published Roadmap RFC in the *dcp-community* repository and announce its approval in a similar fashion to the original RFC approval.
+#### Approving and Publishing the Product Roadmap
+[Approving and Publishing the Product Roadmap]: #approving-and-publishing-the-product-roadmap
+
+Once approved, the Roadmap Shepherd MUST merge the update to the Product Roadmap Informational RFC in the *dcp-community* repository and announce its approval on the HumanCellAtlas *dcp* slack channel.
 
 ## Detailed Design for Planning and Execution
 
@@ -249,7 +220,7 @@ User stories are often in the form of simple templates such as:
 I want to <action>
 so that <result>`
 
-DCP issues SHOULD include a User Story, Acceptance Criteria ("Definition of Done"), and a Deliverable to be demonstrated during the Release Retrospective to Oversight.
+DCP issues SHOULD include a User Story, Acceptance Criteria ("Definition of Done"), and a Deliverable to be demonstrated during the Release Retrospective to the Oversight Committee.
 
 The `<type of user>` MUST be specific and reference [HCA Personas](https://docs.google.com/presentation/d/1bsu8q9CzRXv3Y8c1p8NENi3p8KlxC4scp2tJkHO3Jeo/edit#slide=id.g3cf4e46e8f_0_38) when appropriate.
 
@@ -260,30 +231,21 @@ The `<type of user>` MUST be specific and reference [HCA Personas](https://docs.
 - *[ ] That*
 - *[ ] And one more thing*
 
-*Deliverable that can be demonstrated to Oversight*
+*Deliverable that can be demonstrated to the Oversight Committee*
 
 ...
-
-### Technical Architecture Objectives 
-[Technical Architecture Objectives]:#technical-architecture-objectives
-
-Through a process of their own choosing, the Technical Architecture team MUST document critical architectural issues and technical debt in a Technical Objectives Informational RFC for consideration during each Release. The RFC SHOULD outline technical strategies and estimate cost (such as two engineers at 20%) to realize its objectives. 
-
-The RFC MUST be approved prior to [Clarifying the Next Release](#clarifying-the-next-release) for consideration.
-
 
 ### Planning and Executing a Release
 
 The DCP community members SHOULD respond to requests related to Release planning and execution in a timely manner. If there is a failure to engage and be responsive, then a gentle escalation to the DCP PM slack channel is RECOMMENDED to ensure that progress occurs and the schedule does not slip. 
 
-#### Timebox for Planning and Execution
+#### Timeline for Planning and Execution
 
-Work MAY be completed at any point during the timeboxes below but MUST be completed no later than the final day of the timebox.
+Work MAY be completed at any point during the timelines below but MUST be completed no later than the final day of the timebox.
 
 Release planning begins in the third Week of the third Milestone of the current Release. For example Q4 planning begins in Q3M3W3 and continues into Q4M1. To reiterate, Planning continues into Milestone 1 of a Release as needed.
 
 * Prerequisite: Product Roadmap
-* Prerequisite: Technical Objectives RFC
 * Prerequisite: UX Insights
 * Previous Release Milestone 3 Week 3: [Clarifying the Next Release](#clarifying-the-next-release)
 * Next Release Milestone 1 Week 1: [Sketching the Release](#sketching-the-release)
@@ -292,7 +254,7 @@ Release planning begins in the third Week of the third Milestone of the current 
 #### Clarifying the Next Release
 [Clarifying the Next Release]:#clarifying-the-next-release
 
-***Previous Release Milestone 3 Week 3.*** The Roadmap Shepherd schedules a two-hour meeting with DCP PM and the Technical Leads to review any incomplete Objectives in the Release, the next Objectives in the DCP Roadmap, critical UX Insights, and the Technical Objectives RFC.
+***Previous Release Milestone 3 Week 3.*** The Roadmap Shepherd schedules a two-hour meeting with DCP PM and the Technical Leads to review any incomplete Objectives in the Release, the next Objectives in the DCP Roadmap, and critical UX Insights.
 
 Incomplete Objectives are the highest priority for the next Release unless emerging conditions, as identified by the Project Leads, have altered the priorities for the previous Release plan.
 
@@ -374,7 +336,7 @@ During a Release, if an issue that models a Roadmap Objective in the Engineering
 
 For issues that have not been assigned a Milestone due to a blocking dependency on a Spike, if the Spike slips from its original or previously updated Milestone, it MUST be identified and a reason for the change MUST be documented in the top-level summary comment of its blocked Epic.
 
-This information is required by the Project Leads for their updates to Oversight. 
+This information is required by the Project Leads for their updates to the Oversight Committee. 
 
 To illustrate, imagine an Epic modeling _DCP Support for 10X and SS2 Mouse data_ assigned to Quarter 3 Milestone 3. A child issue of this Epic slips from Milestone 1 to Milestone 2, but there is no impact on delivering the Epic in Milestone 3 as planned. No harm. No need to document. If the child issue slipped to a Milestone when it would impact the Epic - such as Quarter 4 Milestone 1, then it must be identified and documented because the Epic will be delivered late.
 
@@ -398,7 +360,7 @@ The Release Shepherd MUST send a status update to the Project Leads on the DCP P
 
 As required, the Release Shepherd SHOULD add an agenda item to the recurring DCP PM meeting to address issues pending resolution. The Project Leads MUST never be surprised by the *state of play*.
 
-***At Milestone Completion***. The Project Leads MUST update Oversight on the progress of the Release to ensure appropriate accountability.
+***At Milestone Completion***. The Project Leads MUST update the Oversight Committee on the progress of the Release to ensure appropriate accountability.
 
 #### Modeling progress with ZenHub Pipelines [*dcp* repository]
 
@@ -460,13 +422,13 @@ UCSC has created this [Orange Workspace](https://app.zenhub.com/workspaces/orang
 
 ### Release Demonstration and Retrospective
 
-***At Release Completion***. The Release Shepherd MUST schedule and faciliate a Release Demonstration and Retrospective meeting with the DCP Community and Oversight. 
+***At Release Completion***. The Release Shepherd MUST schedule and faciliate a Release Demonstration and Retrospective meeting with the DCP Community and the Oversight Committee. 
 
 The intent of the meeting is to demonstrate the Release deliverables as documented in the Roadmap Objectives, to share learnings, and identify opportunities to improve the planning process for future Releases. 
 
 ### Acceptance Criteria
 
-This process will be under continuous community introspection and improvement through Retrospectives. If the process fails to deliver product increments with high confidence after three quarters with an annual Roadmap, then more radical alternatives SHOULD be pursued that satisfy the requirements from Oversight. We SHOULD also assess whether ZenHub is meeting our needs for a common project management application. 
+This process will be under continuous community introspection and improvement through Retrospectives. If the process fails to deliver product increments with high confidence after three quarters with an annual Roadmap, then more radical alternatives SHOULD be pursued that satisfy the requirements from the Oversight Committee. We SHOULD also assess whether ZenHub is meeting our needs for a common project management application. 
 
 ### Unresolved Questions
 
