@@ -12,8 +12,6 @@ PLEASE DO NOT REVIEW! THIS RFC IS NOT COMPLETE AND IS STILL ACTIVELY BEING WORKE
 
 ## Summary
 
-PLEASE DO NOT REVIEW! THIS RFC IS NOT COMPLETE AND IS STILL ACTIVELY BEING WORKED ON.
-
 The Data Coordination Platform (DCP) established the Request For Comments (RFC) process on 
 [September 17th 2018](https://github.com/HumanCellAtlas/dcp-community/pull/26) in order to address the gap of having a
 coordinated, standardized, and repeatable process by which decisions could be made. Since this time, the DCP has evolved
@@ -37,43 +35,10 @@ DCP community's needs.
 
 ## Motivation
 
-PLEASE DO NOT REVIEW! THIS RFC IS NOT COMPLETE AND IS STILL ACTIVELY BEING WORKED ON.
-
 Over the last year since the original RFC process was accepted, the DCP project has grown both in size and complexity.
 As of this writing, 11 RFCs have been accepted in addition to many charters. Not so unexpectedly, there have been pain
-points along the way of which we try to address a few via edits to the RFC process.
+points along the way of which we try to address a few via edits to the RFC process defined below.
 
-1 . Limited states of an RFC:
-
-Currently the states of an RFC is one of "rfc-community-review", "rfc-oversight-review", 
-"rfc-approved", or "rfc-declined." In reality, there have been cases where an RFC is no longer implemented (i.e. 
-"deprecated") or an RFC has been withdrawn due to either incompleteness or having been published too early. 
-Additionally, with the encouraged behavior of submitting draft pull requests prior to RFC readiness for review, there
-is no way to clearly designate the fact that the RFC should not be reviewed at all until the PR is no longer a draft.
-
-2 . Minimum review period is too long:
-
-The process today requires a minimum of 2 weeks in DCP Community Review followed by 1 week of DCP Oversight Review.
-While the intention of the "Community" review was to receive feedback not from other DCP team members, but rather the 
-scientific community, in practice, most RFCs are reviewed as a free-for-all during the community review period followed
-by one week of radio silence since the conflicts have been resolved. 
-
-3 . Uncertainty around "trivial" edits to published RFCs:
-
-The original RFC process does not explicitly mention that minor edits (i.e. typos, re-wordings, etc.) are free to be
-pushed whenever needed. 
-
-4 . Lack of followup post RFC publication:
-
-Today, there is no requirement that RFCs must be related to any existing ticket in Zenhub which is usually a proxy for
-determining critical work to be done in a quarter. This means that RFCs are published with no clear roadmap to
-completion which also weakens the implication of the RFC. 
-
-5 . Status and authorship of the RFCs could be more clearly indicated:
-
-In the current state, there is not a common practice of RFC authors assigning themselves the RFC PR in Github. This makes one have to open the RFC to see who is driving it and makes it difficult to filter by author.
-
-Additionally, the status of the RFCs is maintained by tags rather than by a Zenhub column making the backlog of each type of RFC more difficult to see at a glance. 
 
 ### User Stories
 
@@ -81,30 +46,44 @@ Additionally, the status of the RFCs is maintained by tags rather than by a Zenh
 
 ## Detailed Design
 
-PLEASE DO NOT REVIEW! THIS RFC IS NOT COMPLETE AND IS STILL ACTIVELY BEING WORKED ON.
 
-We propose the following edits to the RFC process to address 1-4 above.
+### 1. Add additional RFC states
 
-1 . Limited states of an RFC:
+Currently the states of an RFC is one of:
+ 
+ 1. "rfc-community-review",
+ 1. "rfc-oversight-review", 
+ 1. "rfc-approved", or
+ 1. "rfc-declined." 
 
-We proposed adding the tags "pre-rfc-do-not-comment", "rfc-deprecated", "rfc-paused", and "rfc-withdrawn" as new tags with the following 
-semantics:
+In practice, there have been cases where an RFC is no longer implemented (i.e. 
+"deprecated") or an RFC has been withdrawn due to either incompleteness or having been published too early. 
 
-"pre-rfc-do-not-comment" : This indicates that the authors are still actively working on the RFC, that the RFC is in a
-draft state, and readers should **not** comment on the RFC yet. 
+Additionally, with the encouraged behavior of submitting draft pull requests prior to RFC readiness for review, there is no way to clearly designate the fact that the RFC should not be reviewed at all until the PR is no longer a draft.
 
-"rfc-deprecated" : This indicates that the design is no longer implemented or executed in the DCP and has been usurped
+
+We propose adding the following new tags: 
+ 
+
+**pre-rfc-draft** : This indicates that the authors are still actively working on the RFC, that the RFC is in a draft state, and readers should **not** comment on the RFC yet. Additionally this state serves to indicate more clearly the backlog of RFCs in development to avoid duplication of effort of overlapping RFCs and to help elicit offers of co-authorship.
+
+**rfc-deprecated** : This indicates that the design is no longer implemented or executed in the DCP and has been usurped
 by a newer design or process.
 
-"rfc-paused" : This indicates that an RFC has been paused for further refinement. This roughly implies that an RFC has
+**rfc-paused** : This indicates that an RFC has been paused for further refinement. This roughly implies that an RFC has
 gone from being in a review status to a "pre-rfc" status and should not be reviewed further until designated so.
 
-"rfc-withdrawn" : This tag is applied when an RFC has not finished the review process (and therefore has not been 
+**rfc-withdrawn** : This tag is applied when an RFC has not finished the review process (and therefore has not been 
 explicitly rejected) but has been voluntarily withdrawn.
 
-Much like the existing RFC process, any change of state to the RFC must be announced on the DCP slack channel.
+Like the existing RFC process, any change of state to the RFC must be announced on the DCP slack channel.
 
-2 . Minimum review period is too long:
+### 2. Reduce the RFC minimum review time
+
+The current RFC process requires a minimum of 2 weeks in DCP Community Review followed by 1 week of DCP Oversight Review. The intention of the "Community" review is to receive feedback not from other DCP team members, but rather the 
+scientific community. 
+
+In practice, most RFCs are reviewed as a free-for-all during the community review period followed by one week of radio silence since the conflicts have been resolved. 
 
 We propose removing Oversight review altogether. A two week minimum community review period still exists but the 
 "community" refers to all members of the DCP working on any of the chartered organizations instead of the scientific
@@ -113,23 +92,27 @@ community only. This largely reflects the behavior of the review process today.
 Extensions to the two week minimum will remain the same as dictated by the existing RFC process at the discretion of
 the author(s) of the RFC.
 
-3 . Uncertainty around "trivial" edits to published RFCs:
+### 3. Add an explicit process to make "trivial" edits to published RFCs
 
-We propose to explicitly state that if there are minor/trivial edits to the RFC, such edits may occur at any time by
-the author(s) of the RFC without announcement.
+The original RFC process does not explicitly mention that minor edits (i.e. typos, re-wordings, etc.) are free to be pushed whenever needed. 
 
-4 . Lack of followup post RFC publication:
+We propose to explicitly state that if there are minor/trivial edits to the RFC, such edits may occur at any time by the author(s) of the RFC without announcement.
 
-In order to ensure that RFCs are created based on critical tickets that are prioritized based on quarterly and yearly
-roadmaps and ensure that RFCs are followed up to completion, we propose that all 
-[*non informational RFCs*](https://github.com/HumanCellAtlas/dcp-community/issues/30) be linked to an existing Zenhub
-ticket. Such a ticket should be linked to a timeline for RFC completion.
-
-In addition, we propose adding an additional **optional** section to the RFC template: Timeline. This will allow the 
-authors to propose a timeline for the work to be completed thus informing others of any conflicting priorities.
+### 4. Make the implementation status of RFCs more explicit
 
 
-5 . Status and authorship of the RFCs could be more clearly indicated:
+Today, there is no requirement that RFCs must be related to any existing ticket in Zenhub which is usually a proxy for determining critical work to be done in a quarter. This means that, at times,  RFCs are published/approved with no clear roadmap to completion which also weakens the implication of the RFC. 
+
+We propose that, in order to ensure that RFCs are created based on critical tickets that are prioritized based on quarterly and yearly roadmaps and ensure that RFCs are followed up to completion, that all 
+[*non informational RFCs*](https://github.com/HumanCellAtlas/dcp-community/issues/30) be linked to an existing Zenhub ticket. Such a ticket should be linked to a timeline for RFC completion.
+
+In addition, we propose adding an additional **optional** section to the RFC template: Timeline. This will allow the authors to propose a timeline for the work to be completed thus informing others of any conflicting priorities.
+
+
+### 5. Make RFC authorship and RFC status more explicit in Zenhub
+Currently, some RFC authors assign themselves the RFC PR in Github. This makes have to open the RFC to see who is driving it and makes it difficult to filter by author.
+
+Additionally, the status of the RFCs is maintained by tags rather than by a Zenhub column making the backlog of each type of RFC more difficult to see at a glance. 
 
 We propose to explicitly request that authors claim their RFCs by assigning themselves as authors in Github. 
 
@@ -137,7 +120,6 @@ Additionally it is proposed to setup setup a custom Zenhub board with columns fo
 
 
  
-
 ### Unresolved Questions
 
 - *What aspects of the design do you expect to clarify further through the RFC review process?*
