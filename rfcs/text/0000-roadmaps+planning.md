@@ -97,7 +97,7 @@ Themes and Objectives from the Product Roadmap are the primary source of priorit
 
 Work MAY be completed earlier at any point during the timelines below but MUST be completed no later than the final day of the timebox. For example, the Technical Objectives may be refreshed during M1W3. 
 
-| Milestone+Week | Deliverable for Next Release |
+| Milestone+Week (Current Release) | Deliverable |
 |:--:|-|
 |M2W1|[Refreshing Technical Objectives](#refreshing-technical-objectives)|
 |M2W2|[Refreshing the Product Roadmap](#refreshing-the-product-roadmap)|
@@ -241,20 +241,31 @@ The DCP community members SHOULD respond to requests related to Release planning
 
 #### Timeline for Planning and Execution
 
-Work MAY be completed at any point during the timelines below but MUST be completed no later than the final day of the timebox.
+Work MAY be completed earlier at any point during the timelines below but MUST be completed no later than the final day of the timebox.
+
+| Milestone+Week (Current Release) | Deliverable |
+|:--:|-|
+|M3W3|[Clarifying the Next Release](#clarifying-the-next-release)|
+
+---
+
+| Milestone+Week (Next Release) | Deliverable |
+|:--:|-|
+|M1W1|[Sketching the Release](#sketching-the-release)|
+|M1W2|[Creating the Engineering Plan](#creating-the-engineering-plan)|
+|M1W3|[Checkpoint for Milestone 1](#checkpoint-for-milestone-1)|
+|M2W3|[Checkpoint for Milestone 2](#checkpoint-for-milestone-2)|
+|M3W3|[Checkpoint for Milestone 3](#checkpoint-for-milestone-3)|
 
 Release planning begins in the third Week of the third Milestone of the current Release. For example Q4 planning begins in Q3M3W3 and continues into Q4M1. To reiterate, Planning continues into Milestone 1 of a Release as needed.
-
-* Prerequisite: Product Roadmap
-* Prerequisite: UX Insights
-* Previous Release Milestone 3 Week 3: [Clarifying the Next Release](#clarifying-the-next-release)
-* Next Release Milestone 1 Week 1: [Sketching the Release](#sketching-the-release)
-* Next Release Milestone 1 Week 2: [Creating the Engineering Plan](#creating-the-engineering-plan)
 
 #### Clarifying the Next Release
 [Clarifying the Next Release]:#clarifying-the-next-release
 
-***Previous Release Milestone 3 Week 3.*** The Roadmap Shepherd schedules a two-hour meeting with DCP PM and the Technical Leads to review any incomplete Objectives in the Release, the next Objectives in the DCP Roadmap, and critical UX Insights.
+* Prerequisite: Product Roadmap
+* Prerequisite: UX Insights
+
+The Roadmap Shepherd schedules a two-hour meeting with DCP PM and the Technical Leads to review any incomplete Objectives in the Release, the next Objectives in the DCP Product Roadmap, and critical UX Insights.
 
 Incomplete Objectives are the highest priority for the next Release unless emerging conditions, as identified by the Project Leads, have altered the priorities for the previous Release plan.
 
@@ -267,7 +278,7 @@ DCP PM MUST assign a rotating Release Shepherd to help the Product Owners and Te
 #### Sketching the Release
 [Sketching the Release]:#sketching-the-release
 
-***Next Release Milestone 1 Week 1.*** For each Objective in the Release, its Product Owner MUST create one or more Epics in the *dcp* repository that document User Stories, Acceptance Criteria, and the Deliverable to Demonstrate.
+For each Objective in the Release, its Product Owner MUST create one or more Epics in the *dcp* repository that document User Stories, Acceptance Criteria, and the Deliverable to Demonstrate.
 
 If an Objective is *well-understood*, then the Product Owner, in consultation with the relevant Technical Leads, MUST assign either a Milestone or a T-Shirt Size label for rough costing and capacity planning to the issue. Pre-defined T-Shirt Sizes are:
 
@@ -322,7 +333,7 @@ An RFC is strongly RECOMMENDED for Objectives that require multiple releases to 
 #### Creating the Engineering Plan
 [Creating the Engineering Plan]:#creating-the-engineering-plan
 
-***Next Release Milestone 1 Week 2***. In consultation with their relevant Technical Leads and collaborators, the Product Owner MUST complete the refinement and modeling for *well-understood* Epics, including the addition of child issues for product readiness and the surfacing of dependencies between software components using ZenHub Dependencies.
+In consultation with their relevant Technical Leads and collaborators, the Product Owner MUST complete the refinement and modeling for *well-understood* Epics, including the addition of child issues for product readiness and the surfacing of dependencies between software components using ZenHub Dependencies.
 
 Milestones MUST be assigned to all issues assigned to the Release not blocked by a Spike.
 
@@ -332,6 +343,8 @@ The Release Shepherd MUST validate accurate modeling of Objectives for the Relea
 
 This Epic represents the Engineering Plan which MUST be sent to the DCP PM mailing list for review and approval, noting any Objectives that were cut or reduced in scope due to engineering capacity. The Project Leads MUST respond to the original message within two days and MAY negotiate changes to the Engineering Plan. 
 
+#### Changes to the Engineering Plan
+
 During a Release, if an issue that models a Roadmap Objective in the Engineering Plan slips from its original or previously updated Milestone, it MUST be identified and a reason for the change MUST be documented in the top-level summary comment of that issue. 
 
 For issues that have not been assigned a Milestone due to a blocking dependency on a Spike, if the Spike slips from its original or previously updated Milestone, it MUST be identified and a reason for the change MUST be documented in the top-level summary comment of its blocked Epic.
@@ -340,11 +353,19 @@ This information is required by the Project Leads for their updates to the Overs
 
 To illustrate, imagine an Epic modeling _DCP Support for 10X and SS2 Mouse data_ assigned to Quarter 3 Milestone 3. A child issue of this Epic slips from Milestone 1 to Milestone 2, but there is no impact on delivering the Epic in Milestone 3 as planned. No harm. No need to document. If the child issue slipped to a Milestone when it would impact the Epic - such as Quarter 4 Milestone 1, then it must be identified and documented because the Epic will be delivered late.
 
-***Next Release Milestone 1 Week 3***. Further refinements for Milestone 2 are completely modeled. All Milestone 1 issues modeling Roadmap Objectives which are slipping to future Milestones MUST be identified and documented.
+#### Checkpoint for Milestone 1
+[Checkpoint for Milestone 1]: #check-point-for-milestone-1
 
-***Next Release Milestone 2 Week 3***. Further refinements for Milestone 3 are completely modeled. All Milestone 2 issues modeling Roadmap Objectives which are slipping to future Milestones MUST be identified and documented.
+ Further refinements for Milestone 2 are completely modeled. All Milestone 1 issues modeling Roadmap Objectives which are slipping to future Milestones MUST be identified and documented.
 
-***Next Release Milestone 3 Week 3***.
+#### Checkpoint for Milestone 2
+[Checkpoint for Milestone 2]: #check-point-for-milestone-2
+
+ Further refinements for Milestone 3 are completely modeled. All Milestone 2 issues modeling Roadmap Objectives which are slipping to future Milestones MUST be identified and documented.
+
+#### Checkpoint for Milestone 3
+[Checkpoint for Milestone 3]: #check-point-for-milestone-3
+
 All Milestone 3 issues modeling Roadmap Objectives which are slipping to future Milestones MUST be identified and documented.
 
 #### Tracking Release Progress
