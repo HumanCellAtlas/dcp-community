@@ -441,11 +441,13 @@ For this case, the owner would assign its child issue of the _dcp_ Epic to the f
 
 UCSC has created this [Orange Workspace](https://app.zenhub.com/workspaces/orange-5d680d7e3eeb5f1bbdf5668f/board?milestones=Q3%202019%20Milestone%203%232019-09-23&releases=5ccb269f364bad566f9542d0&repos=139095537,124946326,124946282,130759918,198898884,93565055,168172092,142053167).
 
-### Release Demonstration and Retrospective
+### Release Demonstration
 
-***At Release Completion***. The Release Shepherd MUST schedule and faciliate a Release Demonstration and Retrospective meeting with the DCP Community and the Oversight Committee. 
+***At Release Completion***. The Project Leads MUST schedule and lead a Release Demonstration with the DCP Community and the Oversight Committee. The intent of the meeting is to demonstrate the Release deliverables as documented in the Roadmap Objectives.
 
-The intent of the meeting is to demonstrate the Release deliverables as documented in the Roadmap Objectives, to share learnings, and identify opportunities to improve the planning process for future Releases. 
+### Quarterly Retrospective
+
+The Project Leads MUST schedule and faciliate a Retrospective meeting with the DCP Community to share learnings and identify opportunities to improve the Roadmap and Planning process.
 
 ### Acceptance Criteria
 
