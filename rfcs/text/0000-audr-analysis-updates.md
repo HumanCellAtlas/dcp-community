@@ -9,6 +9,9 @@ number and this pull request in the format:*
 ## Summary
 Enable analysis to update previous analyses and add new analyses alongside existing analyses.
 
+**This RFC is paused. It requires a reconsideration of whether it's correct to specify analysis version through 
+bundle versioning. This is placing high demands on analysis and issues surrounding concurrency in ingest.**
+
 ## Author(s)
 [Justin Clark-Casey](mailto:justincc@ebi.ac.uk)
 
