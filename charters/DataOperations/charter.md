@@ -63,7 +63,7 @@ As many of the features and requirements for the data workflow and data distribu
 - Establish ZenDesk ticket triage procedure.
 
 2019 Q4
-- Write actional RFCs aimed to improve the data workflow.
+- Write actionable RFCs aimed to improve the data workflow.
 - Establish an MVP of features and improvements that are the prerequisite to a first Data Distribution
 
 2020 Q1
