@@ -30,7 +30,7 @@ The objective of the Data Operations is to connect the scientific community to t
   - Identify processes in the data workflow that require improved monitoring, streamlined troubleshooting, automation, etc. towards a more scalable and efficient workflow with increased data contribution bandwidth
   - Engage with Governance Group and Analysis Work Group to identify data quality standards which dictate data eligible to be released and data eligible to be included in data distributions
   - Ensure proper checks of data quality standards are put in place within the data workflow
-  - Engage with the [Compliance Working Group](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/Compliance-WG/charter.md) to ensure that the data workflow and data distribution process are facilitating appropriate data access to all of the types of consumers
+  - Engage with the [Compliance Working Group](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/Compliance-WG/charter.md) to ensure the our data release and distribution processes ensure responsible HCA data sharing to all types of consumers
   - Ensure released data that are used on tertiary portals can be easily cross-reference across portals
   - Determine best practices for when and how changes are made to DCP outputs after release
 
