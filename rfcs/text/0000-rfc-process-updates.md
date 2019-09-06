@@ -35,6 +35,8 @@ DCP community's needs.
 
 ## Motivation
 
+PLEASE DO NOT REVIEW! THIS RFC IS NOT COMPLETE AND IS STILL ACTIVELY BEING WORKED ON.
+
 Over the last year since the original RFC process was accepted, the DCP project has grown both in size and complexity.
 As of this writing, 11 RFCs have been accepted in addition to many charters. Not so unexpectedly, there have been pain
 points along the way of which we try to address a few via edits to the RFC process defined below.
@@ -46,6 +48,7 @@ points along the way of which we try to address a few via edits to the RFC proce
 
 ## Detailed Design
 
+PLEASE DO NOT REVIEW! THIS RFC IS NOT COMPLETE AND IS STILL ACTIVELY BEING WORKED ON.
 
 ### 1. Add additional RFC states
 
