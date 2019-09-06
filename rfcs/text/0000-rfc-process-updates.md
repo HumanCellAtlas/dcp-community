@@ -67,6 +67,11 @@ We propose adding the following new tags:
 **rfc-draft** : This indicates that the authors are still actively working on the RFC, that the RFC is in a draft state,
 and readers should **not** comment on the RFC yet. Additionally this state serves to indicate more clearly the backlog
 of RFCs in development to avoid duplication of effort of overlapping RFCs and to help elicit offers of co-authorship.
+ 
+Currently "pre-RFCs" are often worked on in private Google Docs. To indicate more clearly the to the community the
+backlog of RFCs in development, avoid duplication of effort of overlapping RFCs and to help encourage co-authorship and
+early collaboration, draft RFCs should post a title and problem statement or motivation. They need not be full fledged
+RFCs with every section populated.
 
 **rfc-deprecated** : This indicates that the design is no longer implemented or executed in the DCP and has been usurped
 by a newer design or process. Note that the deprecated tag is not standalone; it may be used in conjunction with 
