@@ -7,13 +7,13 @@ The Data Coordination Platform (DCP) Data Operations Team (DataOps) is a user-fo
 
 ## Definitions
 
-Data contribution: a set of raw data derived from the same experimental process, and the metadata describing that process
+*Data contribution*: a set of raw data derived from the same experimental process, and the metadata describing that process
 
-Release (verb): to make metadata and data openly accessible
+*Release* (verb): to make metadata and data openly accessible
 
-Data distribution: the packaging of metadata and data from multiple data contributions in meaningful ways, along with relevant analysis pipelines, possible integrative analysis results, user vignettes, access features, and any announcements or documentation supporting it
+*Data distribution*: the packaging of metadata and data from multiple data contributions in meaningful ways, along with relevant analysis pipelines, possible integrative analysis results, user vignettes, access features, and any announcements or documentation supporting it
 
-HCA Snapshot: a type of data distribution that occurs on a regular cadence containing all HCA data currently available that meets predetermined criteria, such as quality standards
+*HCA Snapshot*: a type of data distribution that occurs on a regular cadence containing all HCA data currently available that meets predetermined criteria, such as quality standards
 
 ## Objectives
 
