@@ -115,7 +115,7 @@ roadmap to completion which also weakens the implication of the RFC.
 
 We propose that, in order to ensure that RFCs are created based on critical tickets that are prioritized based on
 the quarterly and yearly roadmaps and ensure that RFCs are followed up to completion, that all 
-[*non informational RFCs*](https://github.com/HumanCellAtlas/dcp-community/issues/30) be linked to an existing Zenhub
+[*non-informational RFCs*](https://github.com/HumanCellAtlas/dcp-community/issues/30) be linked to an existing Zenhub
 ticket. Such a ticket should be linked to a timeline for RFC completion.
 
 In addition, we propose adding an additional *optional* section to the RFC template: Timeline. This will allow the
@@ -131,7 +131,7 @@ type of RFC making it more difficult to see at a glance.
 
 We propose to explicitly request that authors claim their RFCs by assigning themselves as authors in Github. 
 
-Additionally it is proposed to setup setup a custom Zenhub board with columns for each RFC state while maintaining tags
+Additionally we propose setting up a custom Zenhub board with columns for each RFC state while maintaining tags
 to indicate the disposition at the terminal (closed) state. 
 
 ### Unresolved Questions
