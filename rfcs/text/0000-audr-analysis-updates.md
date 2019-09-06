@@ -4,15 +4,15 @@
 number and this pull request in the format:*
 `[dcp-community/rfc#](https://github.com/HumanCellAtlas/dcp-community/pull/<PR#>)`
 
-2019-08-30: Rex and Saman requested more time to raise questions. Extended by a week.
+**2019-09-06: This RFC is paused. It requires a reconsideration of whether it's correct to specify analysis version through 
+bundle versioning. This is placing high demands on analysis and issues surrounding concurrency in ingest.**
 
 # AUDR Analysis Updates
 
 ## Summary
 Enable analysis to update previous analyses and add new analyses alongside existing analyses.
 
-**This RFC is paused. It requires a reconsideration of whether it's correct to specify analysis version through 
-bundle versioning. This is placing high demands on analysis and issues surrounding concurrency in ingest.**
+
 
 ## Author(s)
 [Justin Clark-Casey](mailto:justincc@ebi.ac.uk)
