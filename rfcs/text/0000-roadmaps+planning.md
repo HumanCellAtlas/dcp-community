@@ -460,7 +460,6 @@ This process will be under continuous community introspection and improvement th
 The authors are seeking recommendations for:
 * Improving the accountability and confidence for on-time delivery of Roadmap Objectives during a Release. (In other words, what are the consequences for slipping the original Milestone or Release assigned to an Objective? This should not be friction-less)
 * Assigning owners to Release Objectives with appropriate load balancing
-* Identifying the minimal set of ZenHub pipelines (workflow) to be adopted across teams
 
 ### Drawbacks and Limitations
 
