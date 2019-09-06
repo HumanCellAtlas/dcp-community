@@ -65,7 +65,9 @@ Additionally, with the encouraged behavior of submitting draft pull requests pri
 We propose adding the following new tags: 
  
 
-**pre-rfc-draft** : This indicates that the authors are still actively working on the RFC, that the RFC is in a draft state, and readers should **not** comment on the RFC yet. Additionally this state serves to indicate more clearly the backlog of RFCs in development to avoid duplication of effort of overlapping RFCs and to help elicit offers of co-authorship.
+**pre-rfc-draft** : This indicates that the authors are still actively working on the RFC, that the RFC is in a draft state, and readers should **not** comment on the RFC yet.
+ 
+ Currently pre-rfcs are often worked on in private google docs. To indicate more clearly the to the community the backlog of RFCs in development, avoid duplication of effort of overlapping RFCs and to help encourage co-authorship and early collaboration we propose to require pre-rfcs to at least post a title and public problem statement/motivation.  
 
 **rfc-deprecated** : This indicates that the design is no longer implemented or executed in the DCP and has been usurped
 by a newer design or process.
