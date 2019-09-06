@@ -451,7 +451,15 @@ The Project Leads MUST schedule and faciliate a Retrospective meeting with the D
 
 ### Acceptance Criteria
 
-This process will be under continuous community introspection and improvement through Retrospectives. If the process fails to deliver product increments with high confidence after three quarters with an annual Roadmap, then more radical alternatives SHOULD be pursued that satisfy the requirements from the Oversight Committee. We SHOULD also assess whether ZenHub is meeting our needs for a common project management application. 
+This process will be under continuous community introspection and improvement through Retrospectives. 
+
+The Oversight Committee MAY use learnings from Milestone Reviews and Retrospectives to encourage accountability and facilitate positive actions within their institutions - pursuing adoption of best practices and reducing future occurrences for common patterns of failure.
+
+Teams SHOULD also demonstrate learning from difficulties to avoid future occurrences of common patterns of failure. 
+
+If this process fails to deliver product increments with high confidence after three quarters with a multiple-quarter Roadmap, then more radical alternatives SHOULD be pursued that satisfy requirements from the Oversight Committee.
+
+The DCP Community MUST also assess whether ZenHub is meeting our requirements as our common project management application. 
 
 ### Unresolved Questions
 
