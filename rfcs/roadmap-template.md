@@ -27,10 +27,6 @@
 
  `[Name](mailto:username@example.com)`
 
-## User Survey
-
-*Summarize the overall alignment with the User Survey and include a reference to the Survey*
-
 ## Scientific "guardrails"
 
 *Summarize the overall alignment with the Science Roadmap and include a reference to the Roadmap*
