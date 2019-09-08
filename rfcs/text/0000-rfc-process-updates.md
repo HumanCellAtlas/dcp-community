@@ -1,7 +1,5 @@
 ### DCP PR:
 
-PLEASE DO NOT REVIEW! THIS RFC IS NOT COMPLETE AND IS STILL ACTIVELY BEING WORKED ON.
-
 ***Leave this blank until the RFC is approved** then the **Author(s)** must create a link between the assigned RFC number and this pull request in the format:*
 
 `[dcp-community/rfc#](https://github.com/HumanCellAtlas/dcp-community/pull/<PR#>)`
@@ -35,20 +33,19 @@ DCP community's needs.
 
 ## Motivation
 
-PLEASE DO NOT REVIEW! THIS RFC IS NOT COMPLETE AND IS STILL ACTIVELY BEING WORKED ON.
-
 Over the last year since the original RFC process was accepted, the DCP project has grown both in size and complexity.
 As of this writing, 11 RFCs have been accepted in addition to many charters. Not so unexpectedly, there have been pain
-points along the way of which we try to address a few via edits to the RFC process defined below.
+points along the way of which we try to address a few via edits to the RFC process defined below. The edits are also
+made directly in original
+[RFC Process RFC](https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0001-rfc-process.md).
 
 
 ### User Stories
 
-*Share the [User Stories](https://www.mountaingoatsoftware.com/agile/user-stories) motivating this RFC.*
+* As a member of a chartered organization of the DCP, I would like to reduce the amount of time I spend writing up an RFC
+and move more quickly to execution while still ensuring that I receive actionable feedback and advice for improvement.
 
 ## Detailed Design
-
-PLEASE DO NOT REVIEW! THIS RFC IS NOT COMPLETE AND IS STILL ACTIVELY BEING WORKED ON.
 
 ### 1. Add additional RFC states
 
@@ -118,7 +115,7 @@ author(s) of the RFC without announcement.
 ### 4. Elucidate RFCs' implementation status
 
 Today, there is no requirement that RFCs must be related to any existing ticket in Zenhub which is usually a proxy for
-determining critical work to be done in a quarter. This means that, at times,  RFCs are published/approved with no clear
+determining critical work to be done in a quarter. This means that, at times, RFCs are published/approved with no clear
 roadmap to completion which also weakens the implication of the RFC.
 
 We propose that, in order to ensure that RFCs are created based on critical tickets that are prioritized based on
@@ -144,8 +141,8 @@ to indicate the disposition at the terminal (closed) state.
 
 ### Unresolved Questions
 
-- *What aspects of the design do you expect to clarify further through the RFC review process?*
-- *What aspects of the design do you expect to clarify later during iterative development of this RFC?*
+- What aspects of the design do you expect to clarify further through the RFC review process?
+- What aspects of the design do you expect to clarify later during iterative development of this RFC?
 
 ### Prior Art
 

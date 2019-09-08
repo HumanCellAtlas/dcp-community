@@ -41,6 +41,14 @@
 
 *Explain the design in sufficient detail such that the implementation and (if appropriate) the interaction with existing DCP software are both reasonably clear.*
 
+**ADDITION BEGINS**
+
+### Timeline [optional]
+
+*Propose a rough timeline to implementation completion for the above proposed design.*
+
+**ADDITION ENDS**
+
 ### Acceptance Criteria [optional]
 
 *Acceptance criteria are the conditions that a RFC must satisfy to be accepted by users or other stakeholders.* 
