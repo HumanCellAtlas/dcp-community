@@ -10,7 +10,7 @@
 
 Data Contributors need to be able to cite data sets that they have contributed to the DCP.
 Data Consumers need to be able to cite the DCP data that they have used in their research projects.
-Authors of scientific publications need to be able to cite data in the DCP - most scientists will reference the publication and not directly link to the DCP.
+Providing citable records for the DCP will enable all contributors and consumers to reference the data stored in the DCP that they used in their scientific publications
 
 ## Author(s)
 
