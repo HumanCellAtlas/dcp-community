@@ -26,7 +26,7 @@ Providing citable records for the DCP will enable all contributors and consumers
 ## Motivation
 
 There is currently no clear and agreed upon definition of the requirements for Data Citation in the DCP.
-Key issues that need to be resolved are:
+Key issues that this RFC seeks to resolve are:
   - What is the minimum feature set required for a first release (Phase 1)?
   - What are the discrete set of features that make sense for subsequent releases (e.g. Phase 2, Phase 3, etc.)
   - In which phase, if any, is support for a formal digital object identifier ([DOI](https://en.wikipedia.org/wiki/Digital_object_identifier)) required?
@@ -58,12 +58,13 @@ A formal DOI is *not* required for Phase 1.
 
 ### Phase 2
 This is designed to satisfy the data contributor requirements for User Story #5.
-This allows the Data Operations team to make a “Data Release” (i.e. a curated data set) where the data release itself and/or the projects contained within are citable.
+This allows the Data Operations team to make a “Data Release” (i.e. a curated data set) in which the specific versions of projects within the Data Release itself are citable.
 A Data Release must be immutable.
 The Data Browser must provide users with access to each Data Release (i.e. immutable version of data) in addition to the “live/latest” view.
 The Data Browser must be able to provide users with a means to download the data and metadata associated with a Data Release.
-Since the Matrix Service does not support the ability to process older versions of input files, the output files from the Matrix Service *must* be stored as part of the immutable data set.
+Since the Matrix Service does not support the ability to process older versions of input files, the per-project output files from the Matrix Service *must* be stored as part of the immutable data set.
 The Data Store "collections" API provides a suitable means for recording the contents of a Data Release.
+A formal DOI is required for this phase as is provides a standardized method for specifying specific versions of data objects.
 
 ### Phase 3
 This is designed to satisfy the data consumer requirements for User Story #5.
