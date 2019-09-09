@@ -50,12 +50,11 @@ It is proposed to split the initial implementation into three phases:
 ### Phase 1
 This is designed to satisfy the minimal set of requirements for User Stories #1 through #4 by providing only "per-project" citations.
 The Data Browser project details page will add a "To cite this project please copy this link" item.
-This "stable URL" will link back to the production site project page using the project's UUID (e.g. https://data.humancellatlas.org/explore/projects/cc95ff89-2e68-4a08-a234-480eca21ce79).
+This "stable non-versioned project URL" will link back to the production site project page using the project's UUID (e.g. https://data.humancellatlas.org/explore/projects/cc95ff89-2e68-4a08-a234-480eca21ce79).
 The URL refers to the “live" view of the project and is therefore subject to additions and updates (e.g. corrections) of data and metadata. However, these are expected to be infrequent and should not affect existing primary data.
-If an existing project is deleted and re-ingested then the cited project UUID would become invalid. If such re-ingestion is allowed then a means must be provided to redirect the original "stable URL" to the new version of the project.
+If an existing project is deleted and re-ingested then the cited project UUID would become invalid. If such re-ingestion occurs then a means will be provided to redirect the original "stable project URL" to the new version of the project (e.g. by providing a landing page which states something similar to "This project has been updated with corrected data and/or analyses. For the current version of this project click *here*", where *here* is a link to the new project page).
 Note: Scientists are *already* citing such project based URLs in publications.
-
-See the "Unresolved Questions" section as to whether or not a formal DOI is required for Phase 1.
+A formal DOI is *not* required for Phase 1.
 
 ### Phase 2
 This is designed to satisfy the data contributor requirements for User Story #5.
