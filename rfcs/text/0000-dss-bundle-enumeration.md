@@ -36,8 +36,9 @@ emphasizing consistency and scalability.
 
 ## Detailed Design
 
-A new bundle enumeration endpoint, `GET /bundles`, will be introduced, taking replica and prefix parameters. These
-parameters will be used to return a paginated listing of bundles directly from object storage. Pagination semantics
-and all other semantics of this route will be in line with the established conventions of the DSS API.
+A new bundle enumeration endpoint, `GET /bundles`, will be introduced, taking replica and prefix parameters. A listing
+all all bundles having UUIDs beginning with `prefix` will be returned directly from object storage. The prefix
+parameter is intended to facilitate parallelized listings. Pagination semantics and all other semantics of this route
+will be in line with the established conventions of the DSS API.
 
 ### Unresolved Questions
