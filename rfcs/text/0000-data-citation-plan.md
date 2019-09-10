@@ -77,7 +77,7 @@ A data consumer must be able to share a citable DOI link to any of the collectio
 A DOI provides a link of the form https://doi.org/xxxx which resolves via the hosting [Registration Agency](https://www.doi.org/registration_agencies.html) or [open-access repository](https://en.wikipedia.org/wiki/Open-access_repository).
 A DOI is the most commonly accepted means for citing documents and data in scientific publications.
 
-It is acceptable for a DOI to resolve to an external website (e.g. BioStudies, Zenodo, etc.) which could then provide a URL to the project in the Data Browser as well as the ability to store point-in-time copies (i.e. versions) of relevant files such as the download manifest, metadata tsv, matrix output file, etc.
+It is an Unresolved Question as to whether a DOI may resolve to an external website (e.g. BioStudies, Zenodo, etc). Such an external web page could then provide a URL to the project in the Data Browser as well as the ability to store point-in-time copies (i.e. versions) of relevant files such as the download manifest, metadata tsv, matrix output file, etc.
 The stored manifest file could then be used in the HCA CLI to download the exact versions of the data and metadata for that version of the project. It is a requirement that the DCP never deletes older versions of cited data files, except for the special case of retraction of unconsented data.
 
 #### Possible DOI Registration Agencies and open-access repositories that provide the ability to assign DOIs:
@@ -125,6 +125,8 @@ If an *immutable* view of the cited data is a requirement, is this technically f
 For Phase 1 must a data citation provide a DOI or is a "stable URL" sufficient?
 
 For Phase 2 & 3 does the Data Browser need to provide a view of the cited data on which further faceted searches can be performed?
+
+Can a DOI for the DCP resolve to an external website? We will work with the UX team to come up with pros and cons of using an external authority vs setting up the DCP as a DOI assigning entity and then, if that effort doesn't give us a clear answer, we will ask the Oversight Committee for their view.
 
 ### Drawbacks and Limitations [optional]
 
