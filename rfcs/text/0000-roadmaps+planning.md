@@ -53,7 +53,7 @@ To best serve our users and address the concerns of HCA Science Governance, this
 
 **Roadmap Objectives** are the concrete elements of an overarching Theme.
 
-**Product Roadmaps** identify and express user needs modeled as high-level Themes that capture user priorities. Roadmaps align the DCP community around a common set of Themes and get scientists excited about future releases.
+**Product Roadmaps** identify and express user needs modeled as high-level Themes that capture user priorities. Roadmaps align the DCP community around a common set of Themes and get Users of the DCP excited about future releases.
 
 **Science Roadmaps** communicate a high-level vision of the goals of the single-cell community and a trajectory of progress towards those goals. It identifies both use cases for the constructed Atlas and open scientific questions that must be solved to build it.
 
@@ -73,7 +73,7 @@ are a collection of User Stories required to complete an objective.
 
 ## DCP User Experience (UX) Activities and Insights
 
-User Experience (UX) Research, Design and Evaluation activities SHOULD be a part of every aspect of the product life cycle, informing the overall DCP strategy, Product Roadmap, Epics and user stories.
+User Experience (UX) Research, Design and Evaluation activities SHOULD be a part of every aspect of the product life cycle, informing the overall DCP strategy, Product Roadmap, Epics and User Stories.
 
 It is the responsibility of the respective teams to engage in UX activities throughout the product lifecycle. The UX team MUST either lead or provide training and consultancy for some of these activities.
 
@@ -147,7 +147,7 @@ When consensus is reached, the Product Roadmap is submitted as a pull request to
 
 If the Project Leads fail to reach [rough consensus](https://tools.ietf.org/html/rfc7282) by the specified deadline, then the Roadmap Shepherd MUST:
 
-* Export the markdown version of the incomplete, draft Product Roadmap to Google Docs and and annotate areas of conflict
+* Export the markdown version of the incomplete, draft Product Roadmap to Google Docs and annotate areas of conflict
 * Forward this incomplete draft to the Oversight Committee for escalation and resolution
 
 ### Reviewing the Product Roadmap with HCA Community
@@ -169,7 +169,7 @@ The Roadmap Shepherd MUST export the markdown version of the draft Product Roadm
 
 The Project Leads MUST iterate with the Oversight Committee and revise the draft Product Roadmap until it meets with the approval of the Committee.
 
-The Product Roadmap MUST be approved by the Oversight Committee approved prior to [Clarifying the Engineering Plan](#clarifying-the-engineering-plan). 
+The Product Roadmap MUST be approved by the Oversight Committee prior to [Clarifying the Engineering Plan](#clarifying-the-engineering-plan). 
 
 #### Approving and Publishing the Product Roadmap
 [Approving and Publishing the Product Roadmap]: #approving-and-publishing-the-product-roadmap
@@ -194,9 +194,7 @@ DCP SHOULD NOT duplicate the ZenHub DCP Board in other documents or spreadsheets
 
 ### DCP Product Backlog
 
-The DCP ZenHub board is the Product Backlog for DCP. All DCP component repositories that will assign items to a DCP Release and Milestone MUST be added to the ZenHub *DCP Backlogs* workspace. The [DCP PM Team](https://github.com/orgs/HumanCellAtlas/teams/dcp-pm-team) in the Human Cell Atlas GitHub organization MUST have write access to all the repositories in the *DCP workspace*.
-
-The top-level *dcp* repository MUST contain **all** significant work that is important to the DCP community and requires visibility and prioritization. This includes Roadmap objectives and product-wide technical requirements (e.g. “components should have logs...“). 
+The DCP ZenHub board is the Product Backlog for DCP. The top-level *dcp* repository MUST contain **all** significant work that is important to the DCP community and requires visibility and prioritization. This includes Roadmap Objectives and product-wide technical requirements (e.g. “components should have logs...“). 
 
 [**High Priority** status](https://help.zenhub.com/support/solutions/articles/43000495285-setting-issues-as-high-priority) MUST only be assigned by DevSecOps to issues in the *dcp* repository deemed critical or high-severity. 
 
@@ -220,7 +218,7 @@ User stories are often in the form of simple templates such as:
 I want to <action>
 so that <result>`
 
-DCP issues SHOULD include a User Story, Acceptance Criteria ("Definition of Done"), and a Deliverable to be demonstrated during the Release Retrospective to the Oversight Committee.
+DCP issues SHOULD include a User Story, Acceptance Criteria ("Definition of Done"), and a Deliverable to be demonstrated during the Release Demonstration to the Oversight Committee.
 
 The `<type of user>` MUST be specific and reference [HCA Personas](https://docs.google.com/presentation/d/1bsu8q9CzRXv3Y8c1p8NENi3p8KlxC4scp2tJkHO3Jeo/edit#slide=id.g3cf4e46e8f_0_38) when appropriate.
 
@@ -333,7 +331,7 @@ An RFC is strongly RECOMMENDED for Objectives that require multiple releases to 
 #### Creating the Engineering Plan
 [Creating the Engineering Plan]:#creating-the-engineering-plan
 
-In consultation with their relevant Technical Leads and collaborators, the Product Owner MUST complete the refinement and modeling for *well-understood* Epics, including the addition of child issues for product readiness and the surfacing of dependencies between software components using ZenHub Dependencies.
+In consultation with their relevant Technical Leads and collaborators, the Product Owner MUST complete the refinement and modeling for *well-understood* Epics, including the addition of child issues for product readiness and the surfacing of dependencies between software components using [ZenHub Dependencies](https://help.zenhub.com/support/solutions/articles/43000010349-create-github-issue-dependencies).
 
 Milestones MUST be assigned to all issues assigned to the Release not blocked by a Spike.
 
@@ -447,7 +445,7 @@ UCSC has created this [Orange Workspace](https://app.zenhub.com/workspaces/orang
 
 ### Quarterly Retrospective
 
-The Project Leads MUST schedule and faciliate a Retrospective meeting with the DCP Community to share learnings and identify opportunities to improve the Roadmap and Planning process.
+The Project Leads MUST schedule and faciliate a Retrospective meeting with the DCP Community to share learnings and identify opportunities to improve the Product Roadmap and Planning process.
 
 ### Acceptance Criteria
 
@@ -457,9 +455,9 @@ The Oversight Committee MAY use learnings from Milestone Reviews and Retrospecti
 
 Teams SHOULD also demonstrate learning from difficulties to avoid future occurrences of common patterns of failure. 
 
-If this process fails to deliver product increments with high confidence after three quarters with a multiple-quarter Roadmap, then more radical alternatives SHOULD be pursued that satisfy requirements from the Oversight Committee.
+If this process fails to deliver product increments with high confidence after three quarters with a multiple-quarter Product Roadmap, then more radical alternatives SHOULD be pursued that satisfy requirements from the Oversight Committee.
 
-The DCP Community MUST also assess whether ZenHub is meeting our requirements as our common project management application. 
+The DCP Community MUST also assess whether ZenHub is meeting requirements as our common project management application. 
 
 ### Unresolved Questions
 
