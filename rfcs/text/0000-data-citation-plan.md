@@ -69,8 +69,9 @@ A formal DOI is required for this phase as is provides a standardized method for
 ### Phase 3
 This is designed to satisfy the data consumer requirements for User Story #5.
 This also fully satisfies User Story #2 by allowing a data consumer to cite an arbitrary set of data which spans multiple projects.
-The data consumer must be able to create discrete versions of their selected data and the Data Browser must provide users access to each version.
-The data consumer must be able to share a citable link to any of the versions they have created.
+The data consumer must be able to create a discrete collection of their selected data with the ability to update that collection (i.e. create a new version of the collection).
+The Data Browser must provide users access to each version of their collections.
+A data consumer must be able to share a citable DOI link to any of the collection versions that they have created.
 
 ### Implementation notes for DOI support
 A DOI provides a link of the form https://doi.org/xxxx which resolves via the hosting [Registration Agency](https://www.doi.org/registration_agencies.html) or [open-access repository](https://en.wikipedia.org/wiki/Open-access_repository).
