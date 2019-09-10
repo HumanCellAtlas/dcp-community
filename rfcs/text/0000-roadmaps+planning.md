@@ -276,7 +276,7 @@ DCP PM MUST assign a rotating Release Shepherd to help the Product Owners and Te
 #### Sketching the Release
 [Sketching the Release]:#sketching-the-release
 
-For each Objective in the Release, its Product Owner MUST create one or more Epics in the *dcp* repository that document User Stories, Acceptance Criteria, and the Deliverable to Demonstrate.
+For each Objective in the Release, its Product Owner MUST create one or more [ZenHub Epics](https://help.zenhub.com/support/solutions/articles/43000010341-an-intro-to-zenhub-epics) in the *dcp* repository that document User Stories, Acceptance Criteria, and the Deliverable to Demonstrate.
 
 If an Objective is *well-understood*, then the Product Owner, in consultation with the relevant Technical Leads, MUST assign either a Milestone or a T-Shirt Size label for rough costing and capacity planning to the issue. Pre-defined T-Shirt Sizes are:
 
