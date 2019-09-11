@@ -9,7 +9,8 @@
 ## Summary
 
 This RFC proposes a set of key performance metrics to be introduced and tracked as a summary measure of performance by
-which the utility of the Data Store can be evaluated, and by which informed data-driven improvement and/or regression decisions may be made.
+which the utility of the Data Store can be evaluated, and by which informed data-driven improvement and/or regression
+decisions may be made.
 
 ## Author(s)
 
@@ -24,6 +25,14 @@ which the utility of the Data Store can be evaluated, and by which informed data
 Today, the DSS only tracks latency and error rates, which alone, does not provide a full picture of its utility.
 quantify higher level performance metrics that reflect the Data Store's ability to make HCA data accessible, computable,
 and durable.
+
+This RFC introduces a first iteration of DSS-specific key performance indicators (KPIs) that can be used to make DSS
+performance more measurable, and changes more observable and actionable. The suggested set of metrics is intended to be
+mutable; the service team should be empowered to adjust and expand the set as long as observability is not negatively
+impacted.
+
+The RFC is also intended as a model for establishing service-specific key performance indicators (KPIs) and preparing
+them for roll-up into DCP-wide KPIs.
 
 ### User Stories
 
