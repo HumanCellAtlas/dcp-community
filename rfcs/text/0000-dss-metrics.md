@@ -70,7 +70,7 @@ performance metrics in 3 categories:
 
   Units: US$/GB
 
-Measure the above metrics on both AWS and GCP, separately and in composite.
+Measure the above metrics on both AWS and GCP, separately and in composite (weighted average).
 
 A blend of these metrics can be thought of as the key performance indicator (KPI) for the Data Store to optimize. More
 metrics can be added or changed in each category over time, provided that observability of the system is not reduced.
