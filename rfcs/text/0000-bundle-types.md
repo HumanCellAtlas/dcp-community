@@ -61,14 +61,14 @@ manifest string fields.
 
 Introduce a registry of bundle types to be maintained by the Metadata team. The initial contents of the registry are:
 
-| Bundle Type              | Example `bundle-type` value                               |
-|--------------------------|-----------------------------------------------------------|
-| Project Metadata Bundle  | `hca/project`                                             |
-| Primary Sequence Bundle  | `hca/primary-data; hca-data-type:SmartSeq2`               |
-| Primary Imaging Bundle   | `hca/primary-data; hca-data-type:sptx`                    |
-| Secondary Analysis Bundle| `hca/analysis-output; hca-pipeline:snap-atac`             |
-| Reference Resource Bundle| `hca/analysis-support; hca-resource-type:reference-genome`|
-| Expression Matrix Bundle | `hca/analysis-output; hca-resource-type:expression-matrix`|
+| Bundle Type              | Example `bundle-type` value                                 |
+|--------------------------|-------------------------------------------------------------|
+| Project Metadata Bundle  | `hca/project`                                               |
+| Primary Sequence Bundle  | `hca/primary-data; hca-data-type:SmartSeq2`                 |
+| Primary Imaging Bundle   | `hca/primary-data; hca-data-type:sptx`                      |
+| Secondary Analysis Bundle| `hca/analysis-output; hca-pipeline:snap-atac`               |
+| Reference Resource Bundle| `hca/analysis-reference; hca-resource-type:reference-genome`|
+| Expression Matrix Bundle | `hca/analysis-output; hca-resource-type:expression-matrix`  |
 
 ### Unresolved Questions
 
