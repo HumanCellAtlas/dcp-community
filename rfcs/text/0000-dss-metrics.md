@@ -48,24 +48,31 @@ them for roll-up into DCP-wide KPIs.
 ## Detailed Design
 
 Introduce infrastructure (such as logging, instrumentation, offline log analytics, etc.) to measure the following DSS
-performance metrics:
+performance metrics in 3 categories:
 
-- Measure TTFB (time to first byte) along with any dimensions that affect checkout service behavior (file type, size,
-  etc.), User Agent string, and other relevant request data. Time to first byte is defined here as the time from the
-  first request to access a bundle or file to the time of the first request that returns a pre-signed or direct object
-  storage access URL. (This may require an opaque session identifier to be returned when serving responses with a
-  Retry-After header.)
+- *API performance metrics*: Measure TTFB (time to first byte) along with any dimensions that affect checkout service
+  behavior (file type, size, etc.), User Agent string, and other relevant request data. Time to first byte is defined
+  here as the time from the first request to access a bundle or file to the time of the first request that returns a
+  pre-signed or direct object storage access URL. (This may require an opaque session identifier to be returned when
+  serving responses with a Retry-After header.)
 
-- Measure unrecoverable error rate, i.e. the rate of error that caused the client to stop trying and cause a client-side
-  error to be raised. (This may require instrumentation in the HCA CLI.)
+  Units: seconds
 
-- Measure "all-in" cost per GB stored (the total cost of DSS services provided divided by the number of GB stored in
-  each replica). (Other metrics or breakout categories could be needed here, such as breaking out and tracking transfer
-  or subscription notification costs separately, but only if and when it is shown that such costs are a significant
-  component of the overall cost footprint.)
+- *Error metrics*: Measure unrecoverable error rate, i.e. the rate of error that caused the client to stop trying and
+  cause a client-side error to be raised. (This may require instrumentation in the HCA CLI.)
+
+  Units: rate (number of API requests raising ultimate error (rolled up with their retries) / total API requests)
+
+- *Costing metrics*: Measure "all-in" cost per GB stored (the total cost of DSS services provided divided by the number
+  of GB stored in each replica). (Other metrics or breakout categories could be needed here, such as breaking out and
+  tracking transfer or subscription notification costs separately, but only if and when it is shown that such costs are
+  a significant component of the overall cost footprint.)
+
+  Units: US$/GB
 
 Measure the above metrics on both AWS and GCP, separately and in composite.
 
-A blend of these metrics can be thought of as the key indicator for the Data Store to optimize.
+A blend of these metrics can be thought of as the key performance indicator (KPI) for the Data Store to optimize. More
+metrics can be added or changed in each category over time, provided that observability of the system is not reduced.
 
 ### Unresolved Questions
