@@ -45,7 +45,7 @@ about how the data and metadata in the DCP are structured and organized.
 1. As an Azul or Query Service developer I want to be able to distinguish between different types of bundles in order to
    know which bundle to index, link, etc. or to provide bundle types to users as a search criterion.
 
-1. As a computational biologist, I would like to know where the reference data is.
+1. As a computational biologist, I would like to use the same references that the HCA DCP uses in their analysis.
 
 ## Detailed Design
 
