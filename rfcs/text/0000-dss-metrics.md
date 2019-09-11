@@ -9,7 +9,7 @@
 ## Summary
 
 This RFC proposes a set of key performance metrics to be introduced and tracked as a summary measure of performance by
-which the utility of the Data Store can be evaluated, including improvements and regressions.
+which the utility of the Data Store can be evaluated, and by which informed data-driven improvement and/or regression decisions may be made.
 
 ## Author(s)
 
