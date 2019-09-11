@@ -21,7 +21,7 @@ which the utility of the Data Store can be evaluated, and by which informed data
 
 ## Motivation
 
-Beyond latency and error rates, the DSS lacks a clear focus on quantifiable assessment of usability. We would like to
+Today, the DSS only tracks latency and error rates, which alone, does not provide a full picture of its utility.
 quantify higher level performance metrics that reflect the Data Store's ability to make HCA data accessible, computable,
 and durable.
 
