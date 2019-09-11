@@ -16,11 +16,8 @@ which the utility of the Data Store can be evaluated, and by which informed data
 * [Andrey Kislyuk](mailto:akislyuk@chanzuckerberg.com)
 
 ## Shepherd
-***Leave this blank.** This role is assigned by DCP PM to guide the **Author(s)** through the RFC process.*
 
-*Recommended format for Shepherds:*
-
- `[Name](mailto:username@example.com)`
+* [Andrey Kislyuk](mailto:akislyuk@chanzuckerberg.com)
 
 ## Motivation
 
