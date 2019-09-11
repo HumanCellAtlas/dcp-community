@@ -19,11 +19,8 @@ confidence among DCP developers when working with the DCP data model.
 * [Andrey Kislyuk](mailto:akislyuk@chanzuckerberg.com)
 
 ## Shepherd
-***Leave this blank.** This role is assigned by DCP PM to guide the **Author(s)** through the RFC process.*
 
-*Recommended format for Shepherds:*
-
- `[Name](mailto:username@example.com)`
+* [Andrey Kislyuk](mailto:akislyuk@chanzuckerberg.com)
 
 ## Motivation
 
