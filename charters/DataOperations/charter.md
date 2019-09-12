@@ -26,7 +26,7 @@ The objective of the Data Operations is to connect the scientific community to t
   - Coordinate DCP-wide end-to-end testing before being released and continued QC checks after being released to ensure data and data resource integrity and useability through component updates
   - Identify data workflow- and data distribution-associated engineering needs of all DCP components and participate in crafting technical specifications
   - Establish and integrate into the DCP roadmap a reproducible plan that includes the specifications for and the timing of iterative data distribution to the community
-  - Monitor the status of data contributions at each step in the DCP data workflow from initial identification of suitability and shepherd all the way through release and potential inclusion on tertiary portals and/or in additional data distribution
+  - Monitor the status of data contributions at each step in the DCP data workflow from initial project notification and shepherd all the way through release and potential inclusion on tertiary portals and/or in additional data distribution
   - Identify processes in the data workflow that require improved monitoring, streamlined troubleshooting, automation, etc. towards a more scalable and efficient workflow with increased data contribution bandwidth
   - Engage with Governance Group and Analysis Work Group to identify data quality standards which dictate data eligible to be released and data eligible to be included in data distributions
   - Ensure proper checks of data quality standards are put in place within the data workflow
