@@ -91,13 +91,13 @@ The stored manifest file could then be used in the HCA CLI to download the exact
 Most open access repositories that provide DOI minting services appear to provide support for versioning (i.e. multiple versions of a single citation available e.g. via a drop-down selection), the ability to store accompanying files in the repository (this would be useful for storing versions of manifest and metadata tsv files, etc.), and the ability to store URL references (useful for linking back to a page in the Data Browser).
 Examining how both Figshare and Zenodo do DOIs, as the group minting DOIs controls everything after the prefix, it is possible to have a main DOI which points to the most recent version and then versioned URLs which point to specific versions.
 
-#### Data Browser
-The Data Browser would contain a reference to the base DOI for each project. Clicking on the DOI link would redirect the user to the (external) DOI repository where the user could see all the versions of that project and download the associated manifest and metadata.tsv files for a specific version. 
+#### Data Browser support for DOIs
+The Data Browser could contain a reference to the base DOI for each project. Clicking on the DOI link would then redirect the user to the (external) DOI repository where the user could see all the versions of that project and download the associated manifest and metadata.tsv files for a specific version. 
 
 #### DOI Creation/Update Process
 Embedding a DOI in the metadata (e.g. biostudies_doi) during ingest would provide per-project citability.
 Provided the DOI repository supports versioning the metadata DOI field could be updated automatically by Ingest to a new version whenever a project update is processed.
-Using a DOI may be the simplest way to provide versioned views of a project.
+Using a DOI that links to an external repository that can store a manifest for each version of a project may be the simplest way to provide access to versions of the data for a project.
 
 The creation/update process would perform the following steps:
   - Ingest creates a new DOI (new project) or a new version of an existing DOI (updated project) when the submission is deemed “complete”.
