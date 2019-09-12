@@ -108,7 +108,20 @@ The creation/update process would perform the following steps:
 
 ### Acceptance Criteria [optional]
 
-*Acceptance criteria are the conditions that a RFC must satisfy to be accepted by users or other stakeholders.* 
+#### Phase 1
+  - A citation link is provided in the Data Browser for each project
+  - The citation link remains valid for the lifetime of the DCP
+  - The citation link is a URL which resolves to the latest version of the project details page for the specified project
+  - The citation URL is used in publications by scientists to cite DCP project data
+#### Phase 2 (in addition to Phase 1 criteria)
+  - The Data Operations team is able to create an immutable citation reference for each project in a Data Release
+  - The citation reference consists of a versioned DOI
+  - The Data Operations team can update the version of the project's DOI in a later Data Release
+  - The Data Browser provides a means of downloading the data associated with a specific version of a project from a Data Release
+#### Phase 3 (in addition to Phase 1 and 2 criteria)
+  - An authorized user may create a citation for an arbitrary set of versioned data selected via the Data Browser
+  - An authorized user may update a previously versioned set of data to a new version and update the version of the corresponding citation
+   - An authorized user may share a citation which they have created with others users who can then access the specific version of the data referenced by the citation
 
 ### Unresolved Questions
 
