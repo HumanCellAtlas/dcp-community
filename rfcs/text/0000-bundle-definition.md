@@ -123,7 +123,6 @@ Describe here...
 
 *Acceptance criteria are the conditions that a RFC must satisfy to be accepted by users or other stakeholders.* 
 
-1. Data consumers can make use of data from the DCP without knowing what a bundle is.
 1. DCP developers have a shared understanding of what a bundle is, including what is in a bundle and how bundles relate to one another.
 
 ### Unresolved Questions
