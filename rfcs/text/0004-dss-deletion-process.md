@@ -83,7 +83,7 @@ request will return the bundles that will be **logically deleted**
 as a side effect and a confirmation code. The second request must include the confirmation code in order to begin the
 deletion process. The request follows this swagger document:
 
-**Path**: `DELETE /file/{uuid}`
+**Path**: `DELETE /files/{uuid}`
 
 | Parameter | Description |
 |-----------|------------|
@@ -112,7 +112,7 @@ by the logical deletion of a bundle. For a **physical deletion** a list of affec
 The second request must include the confirmation code in order to begin the deletion process. A deletion request applies
 across all replicas. The following table describes the request:
 
-**Path**: `DELETE /bundle/{uuid}`
+**Path**: `DELETE /bundles/{uuid}`
 
 | Parameter | Description |
 |-----------|------------|
@@ -188,7 +188,7 @@ to restore the file associated with this bundle and fail if it cannot.
 ### Get Deleted Bundle API
 
 The following table proposes modification of the existing path 
-[/bundle/{uuid}](https://github.com/HumanCellAtlas/data-store/blob/3d73935692f2030e7c19e4ec3b074a15361d33ca/dss-api.yml#L1189-L1449).
+[/bundles/{uuid}](https://github.com/HumanCellAtlas/data-store/blob/3d73935692f2030e7c19e4ec3b074a15361d33ca/dss-api.yml#L1189-L1449).
 to communicate the deletion of a bundle:
 
 **Path**: `GET /bundles/{uuid}`
@@ -206,16 +206,16 @@ to communicate the deletion of a bundle:
 ### Get Deleted File API
 
 The following proposes modification of the existing path 
-[/file/{uuid}](https://github.com/HumanCellAtlas/data-store/blob/3d73935692f2030e7c19e4ec3b074a15361d33ca/dss-api.yml#L237-L547)
+[/files/{uuid}](https://github.com/HumanCellAtlas/data-store/blob/3d73935692f2030e7c19e4ec3b074a15361d33ca/dss-api.yml#L237-L547)
 to communicate the deletion of a file:
 
-**Path**: `HEAD /file/{uuid}`
+**Path**: `HEAD /files/{uuid}`
 
 |Response Code| Description|
 |--------------|------------|
 |410| The file has been deleted. The reason and details for the deletion are returned. |
 
-**Path**: `GET /file/{uuid}`
+**Path**: `GET /files/{uuid}`
 
 |Response Code| Description|
 |--------------|------------|
@@ -256,10 +256,10 @@ procedures takes place:
    }
    ```
    
-   A versioned bundle tombstone will cause `GET /bundle/{uuid}` to return a 410 status code for that bundle version. If the tombstoned
-   bundle is the latest version then a request for `GET /bundle/{uuid}` without a version will
-   also return a 410 status code. If bundle tombstone does not specify a bundle version then all requests for `GET /bundle/{uuid}` will
-   return 410 status code even if version is specified in the request. The same applies to `HEAD /bundle/{uuid}` requests, both versioned and
+   A versioned bundle tombstone will cause `GET /bundles/{uuid}` to return a 410 status code for that bundle version. If the tombstoned
+   bundle is the latest version then a request for `GET /bundles/{uuid}` without a version will
+   also return a 410 status code. If bundle tombstone does not specify a bundle version then all requests for `GET /bundles/{uuid}` will
+   return 410 status code even if version is specified in the request. The same applies to `HEAD /bundles/{uuid}` requests, both versioned and
    unversioned. The same applies for `GET /files/{uuid}` and `HEAD /files/{uuid}`. Bundles that have an 
    associated tombstone are inaccessible through the API and are considered **logically deleted**. Files with an 
    associated tombstone are not considered logically deleted, because user with a direct URL to the file can still access the data.
@@ -348,7 +348,7 @@ tiered storage system such as AWS glacier.
 
 ### Undoing Deletions
 
-A bundle can be restored using `PUT restore/bundle/{uuid}` if bundle has been logically 
+A bundle can be restored using `PUT /restore/bundle/{uuid}` if bundle has been logically 
 deleted. Physically deleted bundles and files can be restored using the restore API if the grace period for the data 
 has not elapsed. Subscribers of bundles will receive a notification that a new bundle has arrived when a bundle is restored.
 
