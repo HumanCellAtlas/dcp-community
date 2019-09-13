@@ -89,7 +89,7 @@ The *Project* metadata entity is as a container for all metadata and data that i
 ### Example use cases
 These sections collect various use cases to illustrate how they are represented or are problematic for this model.
 
-- Contributed discovers the wrong FASTQ was uploaded or a FASTQ is missing.  An update to the primary bundle is submitted with a replacement or new FASTQ.  This is a consequential change to analysis and will result in a new provenance graph.
+- Contributor discovers the wrong FASTQ was uploaded or a FASTQ is missing.  An update to the primary bundle is submitted with a replacement or new FASTQ.  This is a consequential change to analysis and will result in a new provenance graph.
 
 - Change in B1 in a metadata field that is used to parameterize the analysis so analysis is triggered but the outputs (F3) from analysis & re-analysis checksums are identical.  It would be desirable for the user to know the results are not changed with the new parameters.  This is not currently representable.  The users would have to detect themselves.
 
