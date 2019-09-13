@@ -25,7 +25,7 @@ The objective of the Data Operations is to connect the scientific community to t
 
 - Data operations
   - Engage with all DCP components to identify deliverables, including data, pipelines, metadata, standards, and user features, which maximize the value and consistency of HCA data
-  - Coordinate DCP-wide end-to-end testing before being released and continued QC checks after being released to ensure data and data resource integrity and useability through component updates
+  - Ensure thorough DCP-wide end-to-end testing for features and components involved in the data workflow before being released and continued QC checks after being released to ensure data and data resource integrity and useability through component updates
   - Identify data workflow- and data distribution-associated engineering needs of all DCP components and participate in crafting technical specifications
   - Establish and integrate into the DCP roadmap a reproducible plan that includes the specifications for and the timing of iterative data distribution to the community
   - Monitor the status of data contributions at each step in the DCP data workflow from initial project notification and shepherd all the way through release and potential inclusion on tertiary portals and/or in additional data distribution
