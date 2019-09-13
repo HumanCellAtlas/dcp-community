@@ -133,6 +133,7 @@ Must a data citation that provides a DOI provide an *immutable* view of all the 
   - a project's metadata
   
 For Phase 2 & 3 does the Data Browser need to provide a view of the cited data on which further faceted searches can be performed?
+Currently the Data Browser provides only a view of the latest data and metadata. It may be desirable to add another "facet" such as "Release Version" which would enable the user to view a particular point-in-time Data Release and then perform further faceted searches within that view.
 
 Can a DOI for the DCP resolve to an external website? The author(s) will work with the UX team to come up with pros and cons of using an external authority vs setting up the DCP as a DOI assigning entity and then, if that effort doesn't give us a clear answer, we will ask the Oversight Committee for their view.
 
