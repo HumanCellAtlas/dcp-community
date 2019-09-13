@@ -89,7 +89,7 @@ We propose explicitly stating that if an RFC warrants minor/trivial edits, such 
 
 Today, there is no requirement that RFCs must be related to any existing ticket in Zenhub which is usually a proxy for determining critical work to be done in a quarter. This means that, at times, RFCs are published/approved with no clear timeline to implementation completion which also weakens the implication of the RFC.
 
-We propose that, in order to ensure that RFCs are created based on critical tickets that are prioritized based on the quarterly and yearly roadmaps and ensure that RFCs are followed up to completion, that all [*non-informational RFCs*](https://github.com/HumanCellAtlas/dcp-community/issues/30) be linked to an existing Zenhub ticket. Such a ticket should be linked to a timeline for RFC completion.
+We propose that, in order to ensure that RFCs are created based on critical tickets that are prioritized based on the long term product roadmap and ensure that RFCs are followed up to completion, that all [*non-informational RFCs*](https://github.com/HumanCellAtlas/dcp-community/issues/30) be linked to an existing Zenhub ticket. Such a ticket should be linked to a timeline for RFC completion.
 
 In addition, we propose adding an additional *optional* section to the RFC template: Timeline. This will allow the authors to propose a timeline for the work to be completed thus informing others of any conflicting priorities.
 
