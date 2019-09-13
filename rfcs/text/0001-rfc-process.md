@@ -276,7 +276,7 @@ Once the RFC has been filled out to the Author's satisfaction, an RFC may be _pr
 **ADDITION BEGINS**
 ### Pausing RFCs
 
-#### Approvers:
+#### Author(s):
 
 - If via various discussions, it is decided that the RFC must be "paused" until further information can be obtained, and rough consensus has been met to pause rather than reject or withdraw, replace "rfc-community-review" with "rfc-paused" and comment in the PR with the rationale.
 
@@ -290,7 +290,7 @@ Once the RFC has been filled out to the Author's satisfaction, an RFC may be _pr
   
 ### Withdrawing RFCs
 
-#### Approvers:
+#### Author(s):
 
 - Authors may decide to withdraw an RFC at any point in time. The difference between a withdrawl and a rejection is that the rejected RFC has fully completed the review period and addressed all comment with the rough consensus being a rejection whereas a withdrawl has not yet fully completed the review process. Replace "rfc-community-review" with "rfc-withdrawn" and close the pull request with the rationale in the comment.
 
@@ -301,6 +301,15 @@ Once the RFC has been filled out to the Author's satisfaction, an RFC may be _pr
   **EXAMPLE**
 
   ***@channel**: Authors have withdrawn the RFC for the RFC Process - https://github.com/HumanCellAtlas/dcp-community/pull/27*
+
+### Deprecating RFCs
+
+#### Author(s):
+
+- If at any point in time an RFC is no longer implemented within the DCP (either Governance or Technical), the author should add the tag "rfc-deprecated" to the original RFC.
+- In addition, it is recommended that a short paragraph or note be added in the Summary section of the RFC indicating the deprecated nature of RFC contents with a short explanation of why.
+- No announcement is needed and the change should be considered as "trivial" and therefore can be made without going through any formal review process.
+
 
 **ADDITION ENDS**
 
