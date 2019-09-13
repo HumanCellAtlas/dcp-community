@@ -102,7 +102,7 @@ Updates to *PROJECT_SUBMISSIONS* must result in updating of the associated *data
 *Data group* updates may result from creating new bundles to add additional types of data to a project, or updating bundles to change metadata or append data to data files (e.g. FASTQ top-up).
 
 ### Unresolved Questions
-* *Data group* concept relates directly to the UX dissuasion on *experiment data sets*.  This RFC and that work could be unified and replace PROJECT_SUBMISSIONS
+* *Data group* concept relates directly to the UX discussion on *experiment data sets*.  This RFC and that work could be unified and replace PROJECT_SUBMISSIONS
 * How *data groups* are to be used group results in secondary analysis has not yet been defined.
 * Could a *data group* be a DSS collection?  Collections are poorly document, so it is unclear if they can fit the needs.
 * Could a *data group* be a bundle that contains the *data group* files rather than a list of bundles?  Can the DSS handle bundles with a very large number of files?
