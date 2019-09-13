@@ -10,7 +10,7 @@
 
 Data Contributors need to be able to cite data sets that they have contributed to the DCP.
 Data Consumers need to be able to cite the DCP data that they have used in their research projects.
-Providing citable records for the DCP will enable all contributors and consumers to reference the data stored in the DCP that they used in their scientific publications
+Providing citable records for the DCP will enable all contributors and consumers to reference the data stored in the DCP that they have used in their scientific publications.
 
 ## Author(s)
 
@@ -90,7 +90,7 @@ The stored manifest file could then be used in the HCA CLI to download the exact
 
 #### DOI Versioning
 Most open access repositories that provide DOI minting services appear to provide support for versioning (i.e. multiple versions of a single citation available e.g. via a drop-down selection), the ability to store accompanying files in the repository (this would be useful for storing versions of manifest and metadata tsv files, etc.), and the ability to store URL references (useful for linking back to a page in the Data Browser).
-Examining how both Figshare and Zenodo do DOIs, as the group minting DOIs controls everything after the prefix, it is possible to have a main DOI which points to the most recent version and then versioned URLs which point to specific versions.
+Examining how both Figshare and Zenodo implement DOIs, as the group minting DOIs controls everything after the prefix, it is possible to have a main DOI which points to the most recent version and then versioned URLs which point to specific versions.
 
 #### Data Browser support for DOIs
 The Data Browser could contain a reference to the base DOI for each project. Clicking on the DOI link would then redirect the user to the (external) DOI repository where the user could see all the versions of that project and download the associated manifest and metadata.tsv files for a specific version. 
