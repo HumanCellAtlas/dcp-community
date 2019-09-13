@@ -87,7 +87,7 @@ We propose explicitly stating that if an RFC warrants minor/trivial edits, such 
 
 ### 4. Elucidate RFCs' implementation status
 
-Today, there is no requirement that RFCs must be related to any existing ticket in Zenhub which is usually a proxy for determining critical work to be done in a quarter. This means that, at times, RFCs are published/approved with no clear roadmap to completion which also weakens the implication of the RFC.
+Today, there is no requirement that RFCs must be related to any existing ticket in Zenhub which is usually a proxy for determining critical work to be done in a quarter. This means that, at times, RFCs are published/approved with no clear timeline to implementation completion which also weakens the implication of the RFC.
 
 We propose that, in order to ensure that RFCs are created based on critical tickets that are prioritized based on the quarterly and yearly roadmaps and ensure that RFCs are followed up to completion, that all [*non-informational RFCs*](https://github.com/HumanCellAtlas/dcp-community/issues/30) be linked to an existing Zenhub ticket. Such a ticket should be linked to a timeline for RFC completion.
 
