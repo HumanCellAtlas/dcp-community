@@ -15,9 +15,11 @@ The Data Coordination Platform (DCP) Data Operations Team (DataOps) is a user-fo
 
 *HCA Snapshot*: a type of data distribution that occurs on a regular cadence containing all HCA data currently available that meets predetermined criteria, such as quality standards
 
+*Data workflow*: the sequence of tasks executed by the DCP for each data contribution beginning with first notification of a dataset (typically contact with the data generator or identification of data in a data archive or in scientific literature) all the way through data analysis by the DCP and continued through usability by data consumers
+
 ## Objectives
 
-The objective of the Data Operations is to connect the scientific community to tools and resources from the DCP which maximize the value and use of HCA data such as data, metadata, analysis tools, and data access features. Data Operations aims to maintain a reliable and efficient data workflow and shepherds data through the workflow.
+The objective of the Data Operations is to connect the scientific community to tools and resources from the DCP which maximize the value and use of HCA data such as data, metadata, analysis tools, and data access features. Data Operations aims to maintain a reliable and efficient data workflow and shepherds data through the data workflow.
 
 ## In-scope
 
@@ -27,7 +29,7 @@ The objective of the Data Operations is to connect the scientific community to t
   - Identify data workflow- and data distribution-associated engineering needs of all DCP components and participate in crafting technical specifications
   - Establish and integrate into the DCP roadmap a reproducible plan that includes the specifications for and the timing of iterative data distribution to the community
   - Monitor the status of data contributions at each step in the DCP data workflow from initial project notification and shepherd all the way through release and potential inclusion on tertiary portals and/or in additional data distribution
-  - Identify processes in the data workflow that require improved monitoring, streamlined troubleshooting, automation, etc. towards a more scalable and efficient workflow with increased data contribution bandwidth
+  - Identify processes in the data workflow that require improved monitoring, streamlined troubleshooting, automation, etc. towards a more scalable and efficient data workflow with increased data contribution bandwidth
   - Engage with Governance Group and Analysis Work Group to identify data quality standards which dictate data eligible to be released and data eligible to be included in data distributions
   - Ensure proper checks of data quality standards are put in place within the data workflow
   - Engage with the [Compliance Working Group](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/Compliance-WG/charter.md) to ensure the our data release and distribution processes ensure responsible HCA data sharing to all types of consumers
