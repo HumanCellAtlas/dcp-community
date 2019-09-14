@@ -95,11 +95,12 @@ deletion process. The request follows this swagger document:
 
 |Response Code| Description|
 |--------------|------------|
-|200| Deletion pending. A confirmation code is returned to confirm the deletion in the second request. A list of affect files and bundles is also returned |
-|201| Deletion Confirmed with confirmation code. |
+|200| Deletion pending. A confirmation code is returned to confirm the deletion in the second request. A list of affected files is also returned. |
+|202| Confirmation code accepted, physical deletion pending. |
 |403| Unauthorized user it attempting this action.|
-|404| The files has already been deleted.|
+|404| The file does not exist. |
 |409| The confimation code used is invalid. Either the confirmation code was incorrect, or an effected bundle has changed state since the original request.|
+|410| The file has already been deleted.
 
 A user must have explicit permission to perform the file deletion operation.
 
