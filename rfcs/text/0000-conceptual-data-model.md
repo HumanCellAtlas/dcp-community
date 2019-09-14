@@ -61,26 +61,26 @@ The knowledge if an update will result in a new or amended analysis is not known
 Figures 1-4 are some examples to illustrate the graph interpretation issues.  In each of these drawings, the graph node labels starting with B are biomaterials, those with P are processes, and with F are files.  The first number is the unique id, which is a UUID in practice.  The number after the dot is the version, which is represented as a timestamp.  Red squiggles indicate an outdated metadata instance.
 
 
-![Figure 1: MISSING](../images/0000-basic-graph.png)
+![Figure 1: MISSING](../images/0000-conceptual-data-model/basic-graph.png)
 
 Figure 1: Basic graph of sequencing and analysis.  This is a basic experimental pipeline with no updates. The head graph is obtained by traversing the graph from the root to the leaves.  The provenance of a given leaf is achieved by reverse traversing the edges.
 
 
-![Figure 2: MISSING](../images/0000-updated-analysis-graph.png)
+![Figure 2: MISSING](../images/0000-conceptual-data-model/updated-analysis-graph.png)
 
-Figure 2: Graph with an updated analysis.  In this case, an analysis is rerun for a reason other than an upstream change.  For example, this could be due to a bug be discovered in the analysis software.  The head graph is obtained by traversing the graph, ignoring the outdated nodes.  The provenance graph is obtained by reverse traversing the edges shown in red.
+Figure 2: Graph with an updated analysis.  In this case, an analysis is rerun for a reason other than an upstream change.  For example, this could be due to a bug be discovered in the analysis software.  The head graph is obtained by traversing the graph, ignoring the outdated nodes.  The provenance graph is for the new analysis is obtained by reverse traversing the edges shown in red and for the outdated analysis from the edges in black.
 
-![Figure 3: MISSING](../images/0000-new-analysis-graph.png)
+![Figure 3: MISSING](../images/0000-conceptual-data-model/new-analysis-graph.png)
 
 Figure 3: Graph with a new analysis:  In this case, a second, independent analysis is run.  This might be the case when a new different analysis algorithm is being used.  The head graph includes both analysis results.   The provenance graph is obtained by reverse traversing the edges shown in red.
 
 
-![Figure 4: MISSING](../images/0000-reanalysis-graph.png)
+![Figure 4: MISSING](../images/0000-conceptual-data-model/reanalysis-graph.png)
 
 Figure 4: Graph with an upstream consequential metadata change that triggers a reanalysis.  This is the case where there is an error in a metadata field that is used to parameterize the analysis. Here the sequencing didn't change, however, the downstream analysis was triggered by a change in the biomaterial metadata (B1).  The provenance graph reverse traverses the edges shown in red, going to B1.2 even though the process metadata P1.1 has not changed.
 
 
-![Figure 5: MISSING](../images/0000-amended-graph.png)
+![Figure 5: MISSING](../images/0000-conceptual-data-model/amended-graph.png)
 
 Figure 5: Graph with an upstream inconsequential metadata change that does not trigger a reanalysis.  Correcting natural-language descriptions or migrating the metadata schema are examples of this type of update.  Reverse-traversing the red edges gives the amended provenance graph.
 
