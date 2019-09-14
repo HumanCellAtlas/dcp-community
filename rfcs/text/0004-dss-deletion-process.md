@@ -101,7 +101,7 @@ deletion process. The request follows this Swagger document:
 |202| Confirmation code accepted, physical deletion pending. |
 |403| Unauthorized user is attempting this action.|
 |404| The file does not exist. |
-|409| The confimation code used is invalid. Either the confirmation code was incorrect, or an affected bundle has changed state since the original request.|
+|409| The confimation code used is invalid. Either the confirmation code is incorrect, or an affected bundle has changed state since the original request.|
 |410| The file has already been deleted or is queued for deletion.
 
 A user must have explicit permission to perform the file deletion operation.
@@ -124,15 +124,17 @@ across all replicas. The following table describes the request:
 |physical| Determines if the deletion is physical or logical.|
 |reason| the reason for the deletion.|
 |details| User-friendly reason for the bundle or timestamp-specfic bundle deletion.|
-|Confirmation Code| A code used to confirm a deletion operation.|
+|confirmation_code| A code used to confirm a deletion operation.|
 
 |Response Code| Description|
 |--------------|------------|
 |200| Deletion pending. A confirmation code is returned to confirm the deletion in the second request. A list of affected files and bundles is also returned. |
-|201| Deletion confirmed with confirmation code. |
+|201| The requested logical deletion has been completed. |
+|202| The requested physical deletion order has been confirmed and is pending. |
 |403| Unauthorized user is attempting this action.|
 |404| The bundle has already been deleted.|
-|409| The confirmation code used is invalid. Either the confirmation code was incorrect, or an affected bundle has changed state since the original request.|
+|409| The confirmation code used is invalid. Either the confirmation code is incorrect, or an affected bundle has changed state since the original request.|
+|410| The bundle has already been deleted. |
 
 A user must have explicit permission to perform a **logical deletion** of a bundle. For a **physical deletion** of a
 bundle, the user must have explicit permission to **physically delete** files and bundles.
@@ -152,14 +154,16 @@ deleted from the DSS. The restoration will apply across all replicas.
 |-----------|------------|
 |uuid| An RFC4122-compliant ID for the file.|
 |version|Timestamp of file creation in DSS_VERSION format.|
-|Confirmation Code| A code used to confirm a deletion operation.|
+|confirmation_code| A code used to confirm a deletion operation.|
 
 |Response Code| Description|
 |--------------|------------|
 |200| Restore delete file possible. A confirmation code is returned to confirm the deletion in the second request.|
 |201| Restoration confirmed with confirmation code. |
 |403| Unauthorized user is attempting this action.|
-|404| The file cannot be restored because it was never deleted or it has been permanently deleted.|
+|409| The file cannot be restored because it still exists. |
+|410| The file cannot be restored because it has been permanently deleted.|
+
 
 A user must have explicit permission to perform a restore files request. This endpoint does not restore
 the bundles that were associated with that file.
@@ -176,14 +180,15 @@ endpoint added to the DSS API.
 |-----------|------------|
 |uuid| An RFC4122-compliant ID for the bundle.|
 |version|Timestamp of bundle creation in DSS_VERSION format.|
-|Confirmation Code| A code used to confirm a deletion operation.|
+|confirmation_code| A code used to confirm a deletion operation.|
 
 |Response Code| Description|
 |--------------|------------|
 |200| The deleted bundle and associated files can be restored. A confirmation code is returned to confirm the deletion in the second request.|
 |201| Restoration confirmed with confirmation code. |
 |403| Unauthorized user is attempting this action.|
-|404| the bundle cannot be restored because it was never deleted, or was logically deleted. This can also occur if the restoration cannot be completed succesfully because some of the files associated with the bundle have been deleted. |
+|409| The bundle cannot be restored because it still exists. This can also occur if the restoration cannot be completed succesfully because some of the files associated with the bundle have been deleted. |
+|410| The bundle cannot be restored because it was physically deleted. |
 
 A user must have explicit permission to restore file and bundles. This endpoint will attempt
 to restore the file associated with this bundle and fail if it cannot.
