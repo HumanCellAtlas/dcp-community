@@ -100,7 +100,7 @@ These sections collect various use cases to illustrate how they are represented 
 
 - Does this present a clear and rigorous model for interpreting multiple version of data for developers and advanced users? 
 
-- How should the re-analysis not change results be modeled?
+- How should the re-analysis not changing results be modeled?
 
 - Is the graph external to the metadata entities, allowing them to be shared by multiple nodes in a global graph, or are the entity instances the nodes?  That is, are the entity instances attributes of the nodes or the nodes themselves, forcing them to be in only one graph?  The current implementation with links.json supports both models, however, this needs to be explicitly defined.
 
