@@ -59,7 +59,8 @@ manifest string fields.
 
 ### Registry of Bundle Types
 
-Introduce a registry of bundle types to be maintained by the Metadata team. The initial contents of the registry are:
+Introduce a registry of bundle types to be maintained by the Data Store team with specification input from the Metadata
+team. The initial contents of the registry are:
 
 | Bundle Type              | Example `bundle-type` value                                 |
 |--------------------------|-------------------------------------------------------------|
