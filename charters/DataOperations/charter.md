@@ -15,23 +15,23 @@ The Data Coordination Platform (DCP) Data Operations Team (DataOps) is a user-fo
 
 *HCA Snapshot*: a type of data distribution that occurs on a regular cadence containing all HCA data currently available that meets predetermined criteria, such as quality standards
 
-*Data workflow*: the sequence of tasks executed by the DCP for each data contribution beginning with first notification of a dataset (typically contact with the data generator or identification of data in a data archive or in scientific literature) all the way through data analysis by the DCP and continued through usability by data consumers
+*Data lifecycle*: the sequence of tasks executed by the DCP that each data contribution goes through beginning with first notification of a dataset (typically contact with the data generator or identification of data in a data archive or in scientific literature) all the way through data analysis by the DCP and continued through usability by data consumers
 
 ## Objectives
 
-The objective of the Data Operations is to connect the scientific community to tools and resources from the DCP which maximize the value and use of HCA data such as data, metadata, analysis tools, and data access features. Data Operations aims to maintain a reliable and efficient data workflow and shepherds data through the data workflow.
+The objective of the Data Operations is to connect the scientific community to tools and resources from the DCP which maximize the value and use of HCA data such as data, metadata, analysis tools, and data access features. Data Operations aims to maintain a reliable and efficient data lifecycle and shepherds data through the data lifecycle.
 
 ## In-scope
 
 - Data operations
   - Engage with all DCP components to identify deliverables, including data, pipelines, metadata, standards, and user features, which maximize the value and consistency of HCA data
-  - Ensure thorough DCP-wide end-to-end testing for features and components involved in the data workflow before being released and continued QC checks after being released to ensure data and data resource integrity and useability through component updates
-  - Identify data workflow- and data distribution-associated engineering needs of all DCP components and participate in crafting technical specifications
+  - Ensure thorough DCP-wide end-to-end testing for features and components involved in the data lifecycle before being released and continued QC checks after being released to ensure data and data resource integrity and useability through component updates
+  - Identify data lifecycle- and data distribution-associated engineering needs of all DCP components and participate in crafting technical specifications
   - Establish and integrate into the DCP roadmap a reproducible plan that includes the specifications for and the timing of iterative data distribution to the community
-  - Monitor the status of data contributions at each step in the DCP data workflow from initial project notification and shepherd all the way through release and potential inclusion on tertiary portals and/or in additional data distribution
-  - Identify processes in the data workflow that require improved monitoring, streamlined troubleshooting, automation, etc. towards a more scalable and efficient data workflow with increased data contribution bandwidth
+  - Monitor the status of data contributions at each step in the DCP data lifecycle from initial project notification and shepherd all the way through release and potential inclusion on tertiary portals and/or in additional data distribution
+  - Identify processes in the data lifecycle that require improved monitoring, streamlined troubleshooting, automation, etc. towards a more scalable and efficient data lifecycle with increased data contribution bandwidth
   - Engage with Governance Group and Analysis Work Group to identify data quality standards which dictate data eligible to be released and data eligible to be included in data distributions
-  - Ensure proper checks of data quality standards are put in place within the data workflow
+  - Ensure proper checks of data quality standards are put in place within the data lifecycle
   - Engage with the [Compliance Working Group](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/Compliance-WG/charter.md) to ensure the our data release and distribution processes ensure responsible HCA data sharing to all types of consumers
   - Ensure released data that are used on tertiary portals can be easily cross-reference across portals
   - Determine best practices for when and how changes are made to DCP outputs after release
@@ -39,7 +39,7 @@ The objective of the Data Operations is to connect the scientific community to t
 - Community engagement
   - Define data use policy and citation instructions for HCA data users
   - Define mechanism(s) for which the community is notified when DCP products are updated after being released
-  - Partner with Content and Portal Development to ensure clear, findable, and current documentation describing the data workflow and data distribution
+  - Partner with Content and Portal Development to ensure clear, findable, and current documentation describing the data lifecycle and data distribution
   - Ensure effective communication of HCA data updates and user features to the scientific community
   - Partner with UX to assess curation added value of data distribution through communities’ feedback, and better understand their expectations and needs
   - Onboard staff to DCP ZenDesk ticketing system
@@ -55,17 +55,17 @@ In order to meet the needs of the communities of scientific consumers, the DataO
 
 The Data Operations is not responsible for determining what data or data types are made available through the DCP.
 
-As many of the features and requirements for the data workflow and data distribution will be implemented through other components, the majority of technical aspects pertaining to the data workflow and data distribution will be implemented by the appropriate component, and not Data Operations.
+As many of the features and requirements for the data lifecycle and data distribution will be implemented through other components, the majority of technical aspects pertaining to the data lifecycle and data distribution will be implemented by the appropriate component, and not Data Operations.
 
 ## Milestones and Deliverables
 
 2019 Q3
-- Follow a dataset through the entire data workflow in order to understand each step and assess the current process. 
+- Follow a dataset through the entire data lifecycle in order to understand each step and assess the current process.
 - Organize incentivized data contribution program in conjunction with the HCA General Meeting in Barcelona in order to encourage pre-publication data contribution. 
 - Establish ZenDesk ticket triage procedure.
 
 2019 Q4
-- Write actionable RFCs aimed to improve the data workflow.
+- Write actionable RFCs aimed to improve the data lifecycle.
 - Establish an MVP of features and improvements that are the prerequisite to a first Data Distribution
 
 2020 Q1
