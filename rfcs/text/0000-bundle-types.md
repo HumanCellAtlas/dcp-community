@@ -104,11 +104,14 @@ team. The initial contents of the registry are:
 | Reference Resource Bundle| Utility bundle      | `hca/analysis-reference; hca-resource-type:reference-genome`|
 | Expression Matrix Bundle | Analysis data bundle| `hca/analysis-output; hca-resource-type:expression-matrix`  |
 
+The registry would be maintained either as part of this git repository (HumanCellAtlas/dcp-community) or as part of a
+repository chosen by the Data Store team, subject to a pull request-based contribution model.
+
 ### Unresolved Questions
 
-- Bundle degrees: Useful? Who assigns them? Who uses them?
-- Is there actually added value to not having to update all bundles when e.g. the project is updated?
-- Versioned/unversioned references?
+- What defines a "correct" bundle type?
+
+- Is the level of detail for the operational requirements of a bundle registry sufficient?
 
 ### Prior Art
 
