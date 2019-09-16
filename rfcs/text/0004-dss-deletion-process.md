@@ -80,9 +80,13 @@ restoration of data from the DCP.
 
 This is a new addition to the DSS API.
 
-Only **physical deletes** exist for the file deletion API. The file deletion API is a two part process. The first
-request will return the bundles that will be **logically deleted**
-as a side effect and a confirmation code. The second request must include the confirmation code in order to begin the
+While a user can only opt to **physically delete** a file with the file deletion
+API, a file can be considered **logically deleted** in the grace period before
+the file is erased.
+
+The file deletion API is a two part process. The first request returns the bundles
+that will be **logically deleted** as a side effect and a confirmation
+code. The second request must include the confirmation code in order to begin the
 deletion process. The request follows this Swagger document:
 
 **Path**: `DELETE /files/{uuid}`
@@ -95,14 +99,14 @@ deletion process. The request follows this Swagger document:
 | details   | User-friendly reason for the file deletion.|
 | confirmation_code | A code used to confirm a deletion operation.|
 
-|Response Code| Description|
-|--------------|------------|
-|200| Deletion pending. A confirmation code is returned to confirm the deletion in the second request. A list of affected files and bundles is also returned. |
-|202| Confirmation code accepted, physical deletion pending. |
-|403| Unauthorized user is attempting this action.|
-|404| The file does not exist. |
-|409| The confimation code used is invalid. Either the confirmation code is incorrect, or an affected bundle has changed state since the original request.|
-|410| The file has already been deleted or is queued for deletion.
+| Response Code | Description |
+|---------------|-------------|
+| 200 | Deletion pending. A confirmation code is returned to confirm the deletion in the second request. A list of affected files and bundles is also returned. |
+| 202 | Confirmation code accepted, physical deletion pending. |
+| 403 | Unauthorized user is attempting this action.|
+| 404 | The file does not exist. |
+| 409 | The confimation code used is invalid. Either the confirmation code is incorrect, or an affected bundle has changed state since the original request.|
+| 410 | The file has already been deleted or is queued for deletion.
 
 A user must have explicit permission to perform the file deletion operation.
 
