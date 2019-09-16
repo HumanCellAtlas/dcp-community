@@ -151,7 +151,7 @@ proposed based on data consumer needs and are described in more detail below.
 
 - Will contain project-level metadata only. 
 
-- Can be used to group data for presentation to data consumers.
+- Can be used to group data for presentation to data consumers and DCP services.
 
 #### New Resource/Reference bundle
 
