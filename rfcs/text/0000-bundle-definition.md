@@ -53,7 +53,7 @@ they are, what they contain, or who they support. Lack of clarity causes confusi
 developers) about how the data and metadata in the DCP are structured and organized. At the June 2019 DCP F2F meeting in
 Cambridge, a breakout session was held to discuss "What is a bundle?", and a lot of useful discussion occurred. This RFC
 will formally document what a bundle is, anchoring the definition on how bundles support HCA DCP data consumers. This
-RFC will also describe new bundles types that could be supported by the HCA DCP.
+RFC will also describe new bundle types that could be supported by the HCA DCP.
 
 ### User Stories
 
@@ -131,7 +131,8 @@ supported by a specific bundle type.
 | Resource/Reference bundle* | A bundle that contains reference data files used by the Data Processing Pipelines(?) and all related metadata files. This bundle type does not contain data files or metadata files related to biomaterials, protocols, processes(, or projects?). | computational biologists; Data Processing Pipelines; | 2, 3, 5 |
 | DAPS bundle* | Definition discussion ongoing in [PR #88](https://github.com/HumanCellAtlas/dcp-community/pull/88). | ? | ? |
 
-> Asterisk (*) indicates bundles types that do not currently exist in the DCP but have been discussed as potential future bundle types to support data consumers.
+> Asterisk (*) indicates bundle types that do not currently exist in the DCP but have been discussed as potential future
+> bundle types to support data consumers.
 
 ### New bundle types and their definitions
 
