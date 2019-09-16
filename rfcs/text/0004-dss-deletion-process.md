@@ -136,7 +136,7 @@ across all replicas. The following table describes the request:
 |201| The requested logical deletion has been completed. |
 |202| The requested physical deletion order has been confirmed and is pending. |
 |403| Unauthorized user is attempting this action.|
-|404| The bundle has already been deleted.|
+|404| The bundle does not exist.|
 |409| The confirmation code used is invalid. Either the confirmation code is incorrect, or an affected bundle has changed state since the original request.|
 |410| The bundle has already been deleted. |
 
@@ -165,6 +165,7 @@ deleted from the DSS. The restoration will apply across all replicas.
 |200| Restore delete file possible. A confirmation code is returned to confirm the deletion in the second request.|
 |201| Restoration confirmed with confirmation code. |
 |403| Unauthorized user is attempting this action.|
+|404| The file does not exist. |
 |409| The file cannot be restored because it still exists. |
 |410| The file cannot be restored because it has been permanently deleted.|
 
@@ -191,6 +192,7 @@ endpoint added to the DSS API.
 |200| The deleted bundle and associated files can be restored. A confirmation code is returned to confirm the deletion in the second request.|
 |201| Restoration confirmed with confirmation code. |
 |403| Unauthorized user is attempting this action.|
+|404| The bundle does not exist.|
 |409| The bundle cannot be restored because it still exists. This can also occur if the restoration cannot be completed succesfully because some of the files associated with the bundle have been deleted. |
 |410| The bundle cannot be restored because it was physically deleted. |
 
