@@ -41,7 +41,7 @@ The objective of the Data Operations is to connect the scientific community to t
   - Define mechanism(s) for which the community is notified when DCP products are updated after being released
   - Partner with Content and Portal Development to ensure clear, findable, and current documentation describing the data lifecycle and data distribution
   - Ensure effective communication of HCA data updates and user features to the scientific community
-  - Partner with UX to assess curation added value of data distribution through communities’ feedback, and better understand their expectations and needs
+  - Partner with UX to assess the added value of data distribution through communities’ feedback, and better understand their expectations and needs
   - Onboard staff to DCP ZenDesk ticketing system
   - Take ownership of establishing process and interfacing with DCP components for assigning, responding, and integrating ZenDesk tickets
   - Compile feedback gained from consumers through ZenDesk queries and comments, and report back to the DCP in order to facilitate system improvement 
