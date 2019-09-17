@@ -12,7 +12,7 @@ This RFC proposes a process of releasing a contribution, or project, only after 
 
 ## Author(s)
 
- `[Jason Hilton](mailto:jahilton@stanford.edu)
+ [Jason Hilton](mailto:jahilton@stanford.edu)
 
 ## Shepherd
 ***Leave this blank.** This role is assigned by DCP PM to guide the **Author(s)** through the RFC process.*
@@ -23,13 +23,13 @@ This RFC proposes a process of releasing a contribution, or project, only after 
 
 ## Motivation
 
-Display only completed data
+**Display only completed data:**
 Any project that contains raw data with a corresponding analysis pipeline should be considered in progress until all downstream analysis is complete, validated, and available. Currently, a contributed project is made accessible to the public as soon as raw data & metadata are submitted. The trickling in of data can lead to data consumer confusion as to if/when more data will be added to the project. The proposed solution allows the DCP to complete the project with DCP outputs before the project becomes publicly accessible.
 
-More thorough data validation
+**More thorough data validation:**
 The downstream services of the DCP have the potential to uncover metadata and data errors. Viewing the completed project as the user will view it can also identify errors. A solution to this is a setting on projects allowing signed-in DCP members to access the data in order to perform a final ‘sanity check’.
 
-Support data contributors (possibly 2nd phase)
+**Support data contributors (possibly 2nd phase):**
 Allowing data contributors to view the final product in their collaboration with the DCP before it is released adds yet another validation step (after all, who knows their data better?) and is a valuable step in good faith data sharing. The inclusion of a data lifecycle tracker on the project page keeps the contributor up-to-date on their submission and ensures a transparent process.
 
 ### User Stories
