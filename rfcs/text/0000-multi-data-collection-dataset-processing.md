@@ -26,7 +26,7 @@ The current DCP model of processing has the scope of a single data bundle, which
 #### Multi-input analysis 
 Analysis pipelines may require input from multiple different assays. To perform such analyses, they must be triggered only when all input data is available. The current mechanism of bundle notifications is not effective when data spans multiple bundles because there is no clear set of rules to identify the bundles that need to be co-processed.  This limits the downstream process to the scope of a single bundle and requires Ingest to define the scope of all subsequent processing without foreknowledge of future needs.
 
-An immediate need for analysis pipelines to process 10X V2 scRNA-seq datasets that span multiple bundles exists. The need for co-processing multiple bundles is not however limited to this scenario and extends to any other assay modality that involves repeated sequencing of the same library. Furthermore, the need to co-process data may extend to other data modalities that the project will accept in the future.
+An immediate need for analysis pipelines to process 10X V2 scRNA-seq datasets that span multiple bundles exists. The need for co-processing multiple bundles is not however limited to this scenario and extends to any other assay modality that involves repeated sequencing of the same library. Furthermore, the need to co-process data may extend to other data modalities that the DCP will accept in the future.
 
 In the future, a need to run analysis processes where input sets span multiple projects may arise. A mechanism to specify processing data collections that are not restricted to a single project or submissions will be required to support this functionality.
 
