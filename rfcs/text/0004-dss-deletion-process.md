@@ -87,7 +87,7 @@ the file is erased.
 The file deletion API is a two part process. The first request returns the bundles
 that will be **logically deleted** as a side effect and a confirmation
 code. The second request must include the confirmation code in order to begin the
-deletion process. The request follows this Swagger document:
+deletion process. The endpoint follows this API specification:
 
 **Path**: `DELETE /files/{uuid}`
 
