@@ -9,7 +9,7 @@
 ## Summary
 This RFC proposes a solution to allow processing of datasets that span multiple bundles. It addresses the general problem that the current DCP data model contains no representation of data set grouping and version-completeness beyond that of individual data bundles.  The current DCP model is restricted in that all data processing can be a one-to-one linear sequence of steps deriving one bundle from another.
 
-However, there are use cases where a given processing step can require input from multiple input bundles, resulting in a full directed acyclic graph (DAG) rather than a linear graph. The relevant DAG sub-graph must be defined and all of it's associated data available to correctly initiate processing.  A notion and implemented representation of data completeness is required to support DAG processing.
+However, there are use cases where a given processing step can require input from multiple input bundles, resulting in a full directed acyclic graph (DAG) rather than a linear graph. The relevant DAG sub-graph must be defined and all of its associated data available to correctly initiate processing.  A notion and implemented representation of data completeness is required to support DAG processing.
 
 This RFC defines a general mechanism for grouping bundles, here called *data groups*. By providing a general method for grouping bundles, this proposal provides a mechanism for addressing various tasks that cross bundle boundaries.  This has impact on analysis ,pipelines, algorithmic complexity of data processing, data consistency, and data set quality control.  The current bundle grouping, described in detail here, is a submission to a project.  However, the concept generalizes in a manner that other groupings can be defined to accommodate future needs.
 
@@ -24,7 +24,7 @@ This RFC defines a general mechanism for grouping bundles, here called *data gro
 The current DCP model of processing has the scope of a single data bundle, which contains a single assay or analysis.  There is no mechanism to know when a group of bundles that need to be processed together is complete and available for further processing.  This results in the limitation that data processing is linear and is entirely based on ingestion packaging resulting in multiple problems, as outlined below.
 
 #### Multi-input analysis 
-Analysis pipelines may require input from multiple different assays. To perform such analyses, they must be triggered only when all input data are available. The current mechanism of bundle notifications is not effective when data spans multiple bundles because there is no clear set of rules to identify the bundles that need to be co-processed.  This limits the downstream process to the scope of a single bundle and requires the Ingest to define the scope of all subsequent processing without foreknowledge of future processes needs.
+Analysis pipelines may require input from multiple different assays. To perform such analyses, they must be triggered only when all input data are available. The current mechanism of bundle notifications is not effective when data spans multiple bundles because there is no clear set of rules to identify the bundles that need to be co-processed.  This limits the downstream process to the scope of a single bundle and requires Ingest to define the scope of all subsequent processing without foreknowledge of future needs.
 
 An immediate need for analysis pipelines to process 10X V2 scRNA-seq datasets that span multiple bundles exists. The need for co-processing multiple bundles is not however limited to this scenario and extends to any other NGS modality that involves repeated sequencing of the same library. Furthermore, the need to co-process data may extend to other data modalities that the project will accept in the future.
 
@@ -58,7 +58,7 @@ As a data consumer, I want to be confident that the HCA DCP has correctly proces
 As a data consumer, I need to know that a data set is done so that I don't download and use it until it is version-complete.
 
 ## Detailed Design
-A new concept of *data group* is added to the DCP data model to address these issues. A data group is defined as a set of specific versions of metadata and data that is complete and consistent by specified criteria. A *data group* is not created until all its contents are complete and submitted to the DSS.  Events are generated when a *data group* is created, updated, or deleted.
+A new concept of *data group* is added to the DCP data model to address these issues. A data group is defined as a set of specific versions of metadata and data that is complete and consistent by a pre-specified set of criteria. A *data group* is not created until all its contents are complete and submitted to the DSS.  Events are generated when a *data group* is created, updated, or deleted.
 
 A data group has a symbolic scope type that specifies what is represented by the group, as well a the set of criteria by which it is complete.  Most of the above use cases will require a *project submission* scope that indicates submission to a project is complete.
 
