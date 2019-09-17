@@ -31,7 +31,7 @@ An immediate need for analysis pipelines to process 10X V2 scRNA-seq datasets th
 In the future, a need to run analysis processes where input sets span multiple projects may arise. A mechanism to specify processing data collections that are not restricted to a single project or submissions will be required to support this functionality.
 
 #### Algorithmic complexity and performance
-Producing combined metadata or data from multiple assay bundles using the bundle event system results in O(N^2) algorithmic complexity, where N is the number of data bundles in some grouping. As each bundle event arrives, it must be combined with accumulated metadata from previous bundles. Additionally, there is a race condition on reading and writing the accumulated the results that must be handled as the order of event receipts is not guaranteed.
+Producing combined metadata or data from multiple assay bundles using the bundle event system results in O(N^2) algorithmic complexity, where N is the number of data bundles in some grouping. As each bundle event arrives, it must be combined with accumulated metadata from previous bundles. Additionally, there is a race condition on reading and writing the accumulated results that must be handled as the order of event receipts is not guaranteed.
 
 One approach to addressing this is to merely queue all data bundle events. This, however, requires knowledge of completion so that process can be triggered, which is not addressed by the use of a queue. The algorithmic complexity of combining incoming notifications, impacts the data browser when creating project metadata TSVs and normalized JSON files, as well as the matrix service when generating pre-built project matrices.
 
