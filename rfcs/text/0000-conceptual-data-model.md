@@ -4,9 +4,7 @@
 
 `[dcp-community/rfc#](https://github.com/HumanCellAtlas/dcp-community/pull/<PR#>)`
 
-# RFC Name
-
-Versioned Experimental Data Structure Conceptual Model
+# RFC: Versioned Experimental Data Structure Conceptual Model
 
 ## Summary
 
