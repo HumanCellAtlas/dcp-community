@@ -62,7 +62,7 @@ A new concept of *data group* is added to the DCP data model to address these is
 
 A data group has a symbolic scope type that specifies what is represented by the group, as well a the set of criteria by which it is complete.  Most of the above use cases will require a *project submission* scope that indicates submission to a project is complete.
 
-Data groups are implemented as a new bundle type that contains a JSON file listing the FQIDs (UUIDs with versions) of all bundles in the data group. The existing DSS subscription mechanism is used for notifications.  DSS collections were considered as a possible implementation, however they don't support subscriptions and are not indexed, so they are not a sufficient mechanism for implementing *data groups*.
+Data groups are implemented as a new bundle type that contains a JSON file listing the FQIDs (UUIDs with versions) of all bundles in the data group. The existing DSS subscription mechanism is used for notifications. 
 
 A new schema *data_group* will be created that contains the fields:
 - *scope* - Symbolic name of the scope, for example, *PROJECT_SUBMISSION*.
@@ -114,3 +114,7 @@ Updates to *PROJECT_SUBMISSIONS* must result in updating of the associated *data
 ## Dependencies
 
 Implementation of this RFC is partly dependent on (RFC: Bundle Types)[https://github.com/HumanCellAtlas/dcp-community/pull/86], but approaches that prevent blocking are possible.
+
+### Alternatives
+
+- DSS collections were considered as a possible implementation, however they don't support subscriptions and are not indexed, so they are not a sufficient mechanism for implementing *data groups*.
