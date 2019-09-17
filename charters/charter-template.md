@@ -1,7 +1,6 @@
 
 # Project Name
 
-
 ## Description
 
 _Describe the vision of the project in **2-3** sentences. Consider this section as your "elevator pitch" to new community members. For software charters, indicate whether the project is specific to HCA DCP or has the potential for reuse by other communities: "The Data Store is designed to be reused in multiple projects, with HCA being the first user."_
@@ -33,7 +32,9 @@ _Describe the major milestones and their deliverables which allow the Architectu
 
 ## Roles
 
-Recommended format for Roles: `[Name](mailto:username@example.com)`
+_Recommended format for Roles:_
+
+`[Name](mailto:username@example.com)`
 
 ### Project Lead
 
@@ -41,9 +42,22 @@ Recommended format for Roles: `[Name](mailto:username@example.com)`
 
 ### Technical Lead
 
-
 ## Communication
 
-_List the Slack Channels, Mailing Lists, and/or Discussion Forums for the Project and describe their purpose._
+### Slack Channels
+
+_Recommended format for Channels:_
+
+`[HumanCellAtlas/channel](https://humancellatlas.slack.com/messages/channel): Purpose of channel`
+
+### Mailing Lists
+
+_Recommended format for Mailing Lists:_
+
+`[Name](mailto:team@data.humancellatlas.org): Purpose of mailing list`
 
 ## Github repositories
+
+Recommended format for Repositories:
+
+`[Name](https://github.com/HumanCellAtlas/repository): Purpose of repository`

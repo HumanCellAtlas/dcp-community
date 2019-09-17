@@ -49,10 +49,14 @@ __2020:__ Generalized and reusable service infrastructure
 
 ## Communication
 
-Team email: pipelines-team@data.humancellatlas.org 
- 
+### Slack Channels
+
 [HumanCellAtlas/data-pipelines-team](https://humancellatlas.slack.com/messages/data-pipelines-team): team discussions, a place to directly communicate to the team that works on the execution service and scientific pipelines  
 [HumanCellAtlas/data-pipelines-ci](https://humancellatlas.slack.com/messages/data-pipelines-ci): Pipeline Execution Service continuous integration status  
+
+### Mailing Lists
+
+Team email: pipelines-team@data.humancellatlas.org 
 
 ## Github repositories
 
