@@ -26,13 +26,13 @@ The objective of the Data Operations is to connect the scientific community to t
 - Data operations
   - Engage with all DCP components to identify deliverables, including data, pipelines, metadata, standards, and user features, which maximize the value and consistency of HCA data
   - Ensure the scientific community is connected with the identified deliverables from the DCP through data distributions or other means, as required by the community
-  - Ensure thorough DCP-wide end-to-end testing for features and components involved in the data lifecycle before being released and continued QC checks after being released to ensure data and data resource integrity and useability through component updates
-  - Identify data lifecycle- and data distribution-associated engineering needs of all DCP components and participate in crafting technical specifications
+  - Partner with all DCP componeents to ensure thorough DCP-wide end-to-end testing for features and components involved in the data lifecycle before being released and continued QC checks after being released to ensure data and data resource integrity and useability through component updates
+  - Identify data lifecycle- and data distribution-associated engineering needs of all DCP components and participate with other components in crafting technical specifications
   - Establish and integrate into the DCP roadmap a reproducible plan that includes the specifications for and the timing of iterative data distribution to the community
   - Monitor the status of data contributions at each step in the DCP data lifecycle from initial project notification and shepherd all the way through release and potential inclusion on tertiary portals and/or in additional data distribution
   - Identify processes in the data lifecycle that require improved monitoring, streamlined troubleshooting, automation, etc. towards a more scalable and efficient data lifecycle with increased data contribution bandwidth
   - Engage with Analysis Work Group to identify data quality control standards for each data distribution
-  - Ensure proper checks of data quality standards are put in place within the data lifecycle
+  - Engage with all DCP components to ensure proper checks of data quality standards are put in place within the appropriate components throughout the data lifecycle
   - Engage with the [Compliance Working Group](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/Compliance-WG/charter.md) to ensure the our data release and distribution processes ensure responsible HCA data sharing to all types of consumers
   - Ensure released data that are used on tertiary portals can be easily cross-reference across portals
   - Determine best practices for when and how changes are made to DCP outputs after release
