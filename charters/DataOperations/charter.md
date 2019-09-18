@@ -31,7 +31,7 @@ The objective of the Data Operations is to connect the scientific community to t
   - Establish and integrate into the DCP roadmap a reproducible plan that includes the specifications for and the timing of iterative data distribution to the community
   - Monitor the status of data contributions at each step in the DCP data lifecycle from initial project notification and shepherd all the way through release and potential inclusion on tertiary portals and/or in additional data distribution
   - Identify processes in the data lifecycle that require improved monitoring, streamlined troubleshooting, automation, etc. towards a more scalable and efficient data lifecycle with increased data contribution bandwidth
-  - Engage with Analysis Work Group to identify data quality standards which dictate data eligible to be released and data eligible to be included in data distributions
+  - Engage with Analysis Work Group to identify data quality control standards for each data distribution
   - Ensure proper checks of data quality standards are put in place within the data lifecycle
   - Engage with the [Compliance Working Group](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/Compliance-WG/charter.md) to ensure the our data release and distribution processes ensure responsible HCA data sharing to all types of consumers
   - Ensure released data that are used on tertiary portals can be easily cross-reference across portals
