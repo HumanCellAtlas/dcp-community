@@ -50,7 +50,7 @@ The objective of the Data Operations is to connect the scientific community to t
 
 ### Scientific "guardrails"
 
-In order to meet the needs of the communities of scientific consumers, the DataOps team requires input from the Governance Group as to where curated data distribution will add value for the researcher.
+In order to meet the needs of the communities of scientific consumers, the DataOps team requires input from the Analysis Working Group as to where curated data distribution will add value for the researcher.
 
 ## Out-of-scope
 
