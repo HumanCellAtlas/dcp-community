@@ -61,7 +61,7 @@ As a contributor whose name is associated with the project, I want to be allowed
 As a contributor, I am curious where my submission is in the DCP’s data lifecycle after I have provided the metadata spreadsheet all the way until it is released. (possibly 2nd phase)
 
 
-## Detailed Design
+## Functional Specifications
 
 - A mechanism for DCP members to sign-in to the DataBrowser and DataStore.
 - A mechanism for a project to be visible only for a user that is signed-in.
