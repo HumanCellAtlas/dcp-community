@@ -51,10 +51,15 @@ As a member of the DCP, I cannot do a comprehensive final check on data on the D
 As a member of the DCP, I do not want inaccurate metadata or products of incorrect data analysis being shown to the public. 
 Examples of inaccuracies that were/are publicly accessible:
 - Optimus results on Smart-seq2 data ([#2314](https://github.com/HumanCellAtlas/data-store/issues/2314))
+  - Impact: Incorrect analysis results are accessible to the user. Resulted in breaking data permanency as the data were removed with no record of provenance.
 - ‘Homo sapiens’ vs ‘homo sapiens’ ([ZD ticket 158](https://humancellatlas.zendesk.com/agent/tickets/158))
+  - Impact: Inconsistent access experience across projects (a user specifying one value will get results, but not all desired results).
 - Project ingested at the wrong schema version ([#2421](https://github.com/HumanCellAtlas/data-store/issues/2421))
-- Project Metadata tsv download threw an error
+  - Impact: Inconsistent access experience across projects. Resulted in breaking data permanency as the data were removed and re-submitted with new uuids and project page url with no record of provenance.
+- Project page Metadata tsv download threw an error
+  - Impact: A non-functioning user-accessible link. Inconsistent access experience across projects if the metadata tsv is not available for all projects.
 - Contributor name misspelled ("Tom Mithcell")
+  - Impact: A (rather personal) contributor-facing error will put DCP credibility at risk.
 
 As a contributor whose name is associated with the project, I want to be allowed time to review the full details of my contribution as for accuracy before it becomes publicly available. I want this review to be through the vantage of a potential user. (possibly 2nd phase)
 
