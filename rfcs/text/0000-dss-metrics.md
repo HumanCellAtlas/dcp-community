@@ -22,13 +22,13 @@ decisions may be made.
 
 ## Motivation
 
-Today, the DSS only tracks latency and error rates, which alone, does not provide a full picture of its utility.
-quantify higher level performance metrics that reflect the Data Store's ability to make HCA data accessible, computable,
-and durable.
+Today, the DSS only tracks latency and error rates, which alone, do not provide a full picture of its utility nor allow
+us to quantify higher level performance metrics that reflect the Data Store's ability to make HCA data accessible,
+computable, and durable.
 
 This RFC introduces a first iteration of DSS-specific key performance indicators (KPIs) that can be used to make DSS
 performance more measurable, and changes more observable and actionable. The suggested set of metrics is intended to be
-mutable; the service team should be empowered to adjust and expand the set as long as observability is not negatively
+mutable; the service team should adjust and expand the set over time while ensuring observability is not negatively
 impacted.
 
 The RFC is also intended as a model for establishing service-specific key performance indicators (KPIs) and preparing
@@ -64,15 +64,15 @@ performance metrics in 3 categories:
   Units: rate (number of API requests raising ultimate error (rolled up with their retries) / total API requests)
 
 - *Costing metrics*: Measure "all-in" cost per GB stored (the total cost of DSS services provided divided by the number
-  of GB stored in each replica). (Other metrics or breakout categories could be needed here, such as breaking out and
+  of GB stored in each replica). Other metrics or breakout categories could be needed here, such as breaking out and
   tracking transfer or subscription notification costs separately, but only if and when it is shown that such costs are
-  a significant component of the overall cost footprint.)
+  a significant component of the overall cost footprint.
 
   Units: US$/GB
 
 Measure the above metrics on both AWS and GCP, separately and in composite (weighted average).
 
 A blend of these metrics can be thought of as the key performance indicator (KPI) for the Data Store to optimize. More
-metrics can be added or changed in each category over time, provided that observability of the system is not reduced.
+metrics shouldbe added or changed in each category over time, provided that observability of the system is not reduced.
 
 ### Unresolved Questions
