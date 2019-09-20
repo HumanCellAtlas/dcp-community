@@ -23,7 +23,7 @@ This RFC proposes a process of releasing a contribution, or project, only after 
 
 ## Definitions
 
-A contribution, or project, is considered to be **version-complete** when the contributor confirms (by way of the wrangler) that they have provided all of the metadata and raw data that they plan to submit at the current time, the wrangler submits those to ingest, and the DCP has delivered every possible product, given current DCP capabilities.
+A contribution, or project, is considered to be **version-complete** when the DCP has delivered every possible product, given current DCP capabilities, for a given submission.
 
 ## Motivation
 
