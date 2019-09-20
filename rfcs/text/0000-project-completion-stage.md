@@ -67,15 +67,18 @@ As a contributor, I am curious where my submission is in the DCP’s data lifecy
 
 
 ## Functional Specifications
-
+**Phase 1**
 - A mechanism for DCP members to sign-in to the DataBrowser and DataStore.
 - A mechanism for a project to be visible only for a user that is signed-in.
 - Ensure Secondary Analysis and Matrix Service are able to access the data hidden from signed-out users and to contribute their products back to the project
 - A mechanism for Data Operations to switch a project from not visible for signed-out users to visible for all users (data release).
 - A ‘checklist’ and validation procedure for Data Operations to perform on each project within a week of being deemed version-complete.
-- A mechanism for a data contributor to sign-in to the DataBrowser and DataStore, and be given access their own project before it is visible for all users. (possibly 2nd phase)
+
+**Phase 2**
+- Automation of the Data Operations validation procedure.
+- A mechanism for a data contributor to sign-in to the DataBrowser and DataStore, and be given access their own project before it is visible for all users.
   - This will be restricted to one contributor per project, as determined by the contributor and wrangler during the wrangling process.
   - This will be incorporated in the Data Operations validation checklist, and thus, restricted to same one-week timeframe.
-- A dashboard on the project page for signed-in users to track where a given project is in the data lifecycle. (possibly 2nd phase)
+- A dashboard on the project page for signed-in users to track where a given project is in the data lifecycle.
 
-*The portions of the proposal addressing contributor access to only their projects have been noted as “possibly 2nd phase”. In anticipation of a logical breakpoint in technical effort required, the implementation of DCP-only access should not be delayed by these additional requirements.*
+*The portions of the proposal addressing contributor access to only their projects have been noted as “Phase 2”. In anticipation of a logical breakpoint in technical effort required and priority of functionalities, the implementation of DCP-only access should not be delayed by these additional requirements.*
