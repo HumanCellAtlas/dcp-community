@@ -23,11 +23,11 @@ This RFC proposes a process of releasing metadata and data from an HCA project o
 
 ## Definitions
 
-**Data submission**: a set of raw data derived from the same experimental process, and the metadata describing that process
+**HCA submission**: a set of raw data derived from the same experimental process, and the metadata describing that process
 
-**HCA project**: a data submission plus any DCP products derived from that submission
+**HCA project**: an HCA submission plus any DCP products derived from that HCA submission
 
-An HCA project is considered to be **version-complete** when the DCP has delivered every possible product, given current DCP capabilities, for a given submission.
+An HCA project is considered to be **version-complete** when the DCP has delivered every possible product, given current DCP capabilities, for a given HCA submission.
 
 ## Motivation
 
@@ -37,8 +37,8 @@ Any HCA project with a corresponding analysis pipeline should be considered in p
 **More thorough data validation:**
 The downstream services of the DCP have the potential to uncover metadata and data errors. Viewing the version-complete HCA project as the user will view it can also identify errors. A solution to this is a setting on HCA projects allowing signed-in DCP members to access the data in order to perform a final ‘sanity check’.
 
-**Support data submitter (possibly 2nd phase):**
-Allowing data submitters to view the final product in their collaboration with the DCP before it is released adds yet another validation step (after all, who knows their data better?) and is a valuable step in good faith data sharing. The inclusion of a data lifecycle tracker on the HCA project page keeps the submitter up-to-date on their submission and ensures a transparent process.
+**Support HCA submitters (possibly 2nd phase):**
+Allowing HCA submitters to view the final product in their collaboration with the DCP before it is released adds yet another validation step (after all, who knows their data better?) and is a valuable step in good faith data sharing. The inclusion of a data lifecycle tracker on the HCA project page keeps the HCA submitter up-to-date on their HCA submission and ensures a transparent process.
 
 ### User Stories
 
@@ -62,12 +62,12 @@ Examples of inaccuracies that were/are publicly accessible:
   - Impact: Inconsistent access experience across HCA projects. Resulted in breaking data permanency as the data were removed and resubmitted with new uuids and HCA project page url with no record of provenance.
 - HCA Project page Metadata tsv download threw an error
   - Impact: A non-functioning user-accessible link. Inconsistent access experience across HCA projects if the metadata tsv is not available for all HCA projects.
-- Submitter name misspelled ("Tom Mithcell")
-  - Impact: A (rather personal) submitter-facing error will put DCP credibility at risk.
+- HCA submitter name misspelled ("Tom Mithcell")
+  - Impact: A (rather personal) HCA submitter-facing error will put DCP credibility at risk.
 
-As a submitter whose name is associated with the HCA project, I want to be allowed time to review the full details of my submission as for accuracy before it becomes publicly available. I want this review to be through the vantage of a potential user. (possibly 2nd phase)
+As an HCA submitter whose name is associated with the HCA project, I want to be allowed time to review the full details of my HCA submission as for accuracy before it becomes publicly available. I want this review to be through the vantage of a potential user. (possibly 2nd phase)
 
-As a submitter, I am curious where my submission is in the DCP’s data lifecycle after I have provided the metadata spreadsheet all the way until it is released. (possibly 2nd phase)
+As an HCA submitter, I am curious where my HCA submission is in the DCP’s data lifecycle after I have provided the metadata spreadsheet all the way until it is released. (possibly 2nd phase)
 
 
 ## Functional Specifications
@@ -80,9 +80,9 @@ As a submitter, I am curious where my submission is in the DCP’s data lifecycl
 
 **Phase 2**
 - Automation of the Data Operations validation procedure.
-- A mechanism for a data submitter to sign-in to the DataBrowser and DataStore, and be given access their own HCA project before it is visible for all users.
-  - This will be restricted to one submitter per HCA project, as determined by the submitter and wrangler during the wrangling process.
+- A mechanism for an HCA submitter to sign-in to the DataBrowser and DataStore, and be given access their own HCA project before it is visible for all users.
+  - This will be restricted to one HCA submitter per HCA project, as determined by the submitting group and wrangler during the wrangling process.
   - This will be incorporated in the Data Operations validation checklist, and thus, restricted to same one-week timeframe.
 - A dashboard on the HCA project page for signed-in users to track where a given HCA project is in the data lifecycle.
 
-*The portions of the proposal addressing submitter access to only their HCA projects have been noted as “Phase 2”. In anticipation of a logical breakpoint in technical effort required and priority of functionalities, the implementation of DCP-only access should not be delayed by these additional requirements.*
+*The portions of the proposal addressing HCA submitter access to only their HCA projects have been noted as “Phase 2”. In anticipation of a logical breakpoint in technical effort required and priority of functionalities, the implementation of DCP-only access should not be delayed by these additional requirements.*
