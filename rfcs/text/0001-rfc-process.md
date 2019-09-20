@@ -70,7 +70,7 @@ When a design is no longer relevant to or implemented in the DCP, the closed PR 
 
 **ADDITION BEGINS**
 
-- **DCP Community Members** are the union of all members of the DCP working on any of the chartered organizations.
+- **DCP Community Members** are the union of all members of the technical team of the DCP, all members of the DCP PM team and all DCP Users.
 
 **ADDITION ENDS**
 
