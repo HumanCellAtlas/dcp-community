@@ -15,6 +15,8 @@ As DCP continues to mature and scale, our community can more easily contribute a
 ## Author(s)
 *DCP PM*
 
+Arathi Mani + Dave Rogers (updated as of DD-MM-YYYY) 
+
 **NOTE:** *This proposal is based on ideas from the **HCA DCP Technical Decision-Making** white paper written by Bruce Martin with contributions from Tony Burdett, Laura Clarke, Brian O’Connor, Brian Raymor, and Tim Tickle.*
 
 ## Shepherd
@@ -191,6 +193,14 @@ Once the RFC has been filled out to the Author's satisfaction, an RFC may be _pr
 
 ### Reviewing RFCs
 
+**ADDITION BEGINS**
+
+As a general guidance for reviewers, we recommend (but not require) the following rules of etiquette:
+
+- For Technical RFCs, w 
+
+**ADDITION ENDS**
+
 #### Approvers:
 - May assign specific reviewers in the RFC pull request
 
@@ -292,17 +302,19 @@ Once the RFC has been filled out to the Author's satisfaction, an RFC may be _pr
 
 #### Author(s):
 
-- Authors may decide to withdraw an RFC at any point in time. The difference between a withdrawl and a rejection is that the rejected RFC has fully completed the review period and addressed all comment with the rough consensus being a rejection whereas a withdrawl has not yet fully completed the review process. Replace "rfc-community-review" with "rfc-withdrawn" and close the pull request with the rationale in the comment.
+- Authors may decide to withdraw an RFC at any point in time. The difference between a withdrawal and a rejection is that the rejected RFC has fully completed the review period and addressed all comment with the rough consensus being a rejection whereas a withdrawal has not yet fully completed the review process. Replace "rfc-community-review" with "rfc-withdrawn" and close the pull request with the rationale in the comment.
 
 #### Shepherd:
 
-- Announce the withdrawl of the RFC on the HumanCellAtlas #dcp slack channel. Include a link to the RFC pull request:
+- Announce the withdrawal of the RFC on the HumanCellAtlas #dcp slack channel. Include a link to the RFC pull request:
 
   **EXAMPLE**
 
   ***@channel**: Authors have withdrawn the RFC for the RFC Process - https://github.com/HumanCellAtlas/dcp-community/pull/27*
 
 ### Deprecating RFCs
+
+Over time, it is expected that RFCs that are approved and implemented will eventually be replaced by newer processes or technologies. In this case, an RFC will be deprecated (note that the difference between Deprecated and Withdrawn is that in the former, the RFC has already been approved and implemented while in the latter, the RFC has not yet been approved).
 
 #### Author(s):
 
