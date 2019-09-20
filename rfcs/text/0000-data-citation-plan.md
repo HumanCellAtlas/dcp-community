@@ -17,11 +17,8 @@ Providing citable records for the DCP will enable all contributors and consumers
  [Trevor Heathorn](mailto:theathor@ucsc.edu)
 
 ## Shepherd
-***Leave this blank.** This role is assigned by DCP PM to guide the **Author(s)** through the RFC process.*
 
-*Recommended format for Shepherds:*
-
- `[Name](mailto:username@example.com)`
+ [Trevor Heathorn](mailto:theathor@ucsc.edu)
 
 ## Motivation
 
