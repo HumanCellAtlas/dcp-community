@@ -74,15 +74,20 @@ As an HCA submitter, I am curious where my HCA submission is in the DCP’s data
 **Phase 1**
 - A mechanism for DCP members to sign-in to the DataBrowser and DataStore.
 - A mechanism for an HCA project to be visible only for a user that is signed-in.
-- Ensure Secondary Analysis and Matrix Service are able to access the data hidden from signed-out users and to submit their products back to the HCA project
+- Ensure Secondary Analysis and Matrix Service are able to access the data hidden from signed-out users and to submit their products back to the HCA project.
 - A mechanism for Data Operations to switch an HCA project from not visible for signed-out users to visible for all users (data release).
 - A ‘checklist’ and validation procedure for Data Operations to perform on each HCA project within a week of being deemed version-complete.
 
 **Phase 2**
-- Automation of the Data Operations validation procedure.
 - A mechanism for an HCA submitter to sign-in to the DataBrowser and DataStore, and be given access their own HCA project before it is visible for all users.
   - This will be restricted to one HCA submitter per HCA project, as determined by the submitting group and wrangler during the wrangling process.
   - This will be incorporated in the Data Operations validation checklist, and thus, restricted to same one-week timeframe.
-- A dashboard on the HCA project page for signed-in users to track where a given HCA project is in the data lifecycle.
+*In anticipation of a logical breakpoint in technical effort required and priority of functionalities, the implementation of DCP-only access (Phase 1) should not be delayed by these additional requirements.*
 
-*The portions of the proposal addressing HCA submitter access to only their HCA projects have been noted as “Phase 2”. In anticipation of a logical breakpoint in technical effort required and priority of functionalities, the implementation of DCP-only access should not be delayed by these additional requirements.*
+**Phase 'Automation'**
+- Automation of the Data Operations validation procedure.
+*This can happen at any time within or after Phase 1*
+
+**Phase 'Dashboard'**
+- A dashboard on the HCA project page for signed-in users to track where a given HCA project is in the data lifecycle.
+*This can happen at any time within or after Phase 1, it adds little value until Phase 2 is implemented, given the DCP internal tracking*
