@@ -6,6 +6,8 @@
 
 # Roadmaps and Planning - an alternative perspective
 
+***Last call for overview: 2019-10-01***
+
 ## Summary
 
 This informational RFC describes issues from the author's point of view with the Roadmaps and Planning RFC when it comes to software development
