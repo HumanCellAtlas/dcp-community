@@ -7,15 +7,15 @@ The Data Coordination Platform (DCP) Data Operations Team (DataOps) is a user-fo
 
 ## Definitions
 
-*Data contribution*: a set of raw data derived from the same experimental process, and the metadata describing that process
+*HCA submission*: a set of raw data derived from the same experimental process, and the metadata describing that process
 
 *Release* (verb): to make metadata and data openly accessible
 
-*Data distribution*: the packaging of metadata and data from multiple data contributions in meaningful ways, along with relevant analysis pipelines, possible integrative analysis results, user vignettes, access features, and any announcements or documentation supporting it
+*Data distribution*: the packaging of metadata and data from multiple HCA submissions in meaningful ways, along with relevant analysis pipelines, possible integrative analysis results, user vignettes, access features, and any announcements or documentation supporting it
 
 *HCA Snapshot*: a type of data distribution that occurs on a regular cadence containing all HCA data currently available that meets predetermined criteria, such as quality standards
 
-*Data lifecycle*: the sequence of tasks executed by the DCP that each data contribution goes through beginning with first notification of a dataset (typically contact with the data generator or identification of data in a data archive or in scientific literature) all the way through data analysis by the DCP and continued through usability by data consumers
+*Data lifecycle*: the sequence of tasks executed by the DCP that each HCA submission goes through beginning with first notification of a dataset (typically contact with the data generator or identification of data in a data archive or in scientific literature) all the way through data analysis by the DCP and continued through usability by data consumers
 
 ## Objectives
 
@@ -29,8 +29,8 @@ The objective of the Data Operations is to connect the scientific community to t
   - Partner with all DCP componeents to ensure thorough DCP-wide end-to-end testing for features and components involved in the data lifecycle before being released and continued QA checks after being released to ensure data and data resource integrity and useability through component updates
   - Identify data lifecycle- and data distribution-associated engineering needs of all DCP components and participate with other components in crafting technical specifications
   - Establish and integrate into the DCP roadmap a reproducible plan that includes the specifications for and the timing of iterative data distribution to the community
-  - Monitor the status of data contributions at each step in the DCP data lifecycle from initial project notification and shepherd all the way through release and potential inclusion on tertiary portals and/or in additional data distribution
-  - Identify processes in the data lifecycle that require improved monitoring, streamlined troubleshooting, automation, etc. towards a more scalable and efficient data lifecycle with increased data contribution bandwidth
+  - Monitor the status of HCA submissions at each step in the DCP data lifecycle from initial project notification and shepherd all the way through release and potential inclusion on tertiary portals and/or in additional data distribution
+  - Identify processes in the data lifecycle that require improved monitoring, streamlined troubleshooting, automation, etc. towards a more scalable and efficient data lifecycle with increased HCA submission bandwidth
   - Engage with Analysis Work Group to identify data quality control standards for each data distribution
   - Engage with all DCP components to ensure proper checks of data quality standards are put in place within the appropriate components throughout the data lifecycle
   - Engage with the [Compliance Working Group](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/Compliance-WG/charter.md) to ensure the our data release and distribution processes ensure responsible HCA data sharing to all types of consumers
@@ -62,7 +62,7 @@ As many of the features and requirements for the data lifecycle and data distrib
 
 2019 Q3
 - Follow a dataset through the entire data lifecycle in order to understand each step and assess the current process.
-- Organize incentivized data contribution program in conjunction with the HCA General Meeting in Barcelona in order to encourage pre-publication data contribution. 
+- Organize incentivized HCA submission program in conjunction with the HCA General Meeting in Barcelona in order to encourage pre-publication HCA submissions. 
 - Establish ZenDesk ticket triage procedure.
 
 2019 Q4
