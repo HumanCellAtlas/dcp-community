@@ -82,7 +82,7 @@ As an HCA submitter, I am curious where my HCA submission is in the DCP’s data
 **Phase 2**
 *In anticipation of a logical breakpoint in technical effort required and priority of functionalities, the implementation of DCP-only access (Phase 1) should not be delayed by these additional requirements.*
 - A mechanism for an HCA submitter to sign-in to the DataBrowser and DataStore, and be given access their own HCA project before it is visible for all users.
-  - This will be restricted to one HCA submitter per HCA project, as determined by the submitting group and wrangler during the wrangling process.
+  - This will be restricted to named contributors on the project.
   - This will be incorporated in the Data Operations validation checklist, and thus, restricted to same one-week timeframe.
 
 **Phase 'Automation'**
