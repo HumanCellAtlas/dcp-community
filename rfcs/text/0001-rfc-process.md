@@ -96,9 +96,9 @@ When a design is no longer relevant to or implemented in the DCP, the closed PR 
 
 #### **Authors**:
 
-There are two types of RFCs that may be proposed: ***informational*** RFCs and ***non informational*** RFCs. Non informational RFCs are expected to be linked directly to an existing ticket in the DCP Zenhub board which will usually be labeled as a Spike. Informational RFCs are more speculative and need not directly reference an open ticket in the DCP Zenhub board.
+There are three types of RFCs that may be proposed: ***Software*** RFCs, ***Governance*** RFCs, and ***Informational*** RFCs. Software RFCs are expected to be linked directly to an existing ticket in the DCP Zenhub board which will usually be labeled as a Spike. Informational and Governance RFCs need not directly reference an open ticket in the DCP Zenhub board.
 
-To inform the DCP Community about the development of an RFC, with the intention of forming collaborations between people thinking about similar problems, it is recommended that a draft of an RFC be first published once the Problem Statement and Authors have been established. One possible process that is recommended is as follows:
+To inform the DCP Community about the development of an RFC, with the intention of forming collaborations between people thinking about similar problems, it is recommended that a draft of an RFC be first published once the Problem Statement and Authors have been established. The steps to begin are as follows:
 
    1. Fork the HumanCellAtlas `dcp-community` repository
    2. Copy `rfcs/rfc-template.md` to `rfcs/text/0000-my-feature.md`. Make `my-feature` descriptive but do not assign an RFC number yet.
