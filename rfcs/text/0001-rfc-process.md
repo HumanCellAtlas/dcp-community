@@ -108,7 +108,7 @@ To inform the DCP Community about the development of an RFC, with the intention 
 
 #### **Non-Authors**:
 
-When an RFC _Draft_ PR is created and furthermore labeled with "rfc-draft" commentary is not allowed since the RFC is under active development. This time period is specifically an opportunity for collaboration on authorship so if an RFC sparks interest and you would like to collaborate on it (especially if you have been thinking about the problem statement yourself), reach out the Author(s) directly and offline. Specific commentary whether agreement or disagreement on the RFC is discouraged until the Author(s) is/are ready for the PR to be proposed/reviewed.
+When an _Draft_ RFC PR is published and labeled with "rfc-draft," specific commentary is discouraged (negative or positive) until the Authors(s) propose the RFC for community review. If the draft RFC sparks interest, reach out to the Author(s) offline to suggest a collaboration.
 
 **ADDITION ENDS**
 
