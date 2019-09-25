@@ -30,7 +30,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ## Motivation
 
-Over the last year since the original RFC process was accepted, the DCP project has grown both in size and complexity. As of this writing, 11 RFCs have been accepted in addition to many charters. Not so unexpectedly, there have been pain points along the way of which we try to address a few via edits to the RFC process defined below. The edits are also made directly in original [RFC Process RFC](https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0001-rfc-process.md).
+Over the last year since the original RFC process was accepted, the DCP project has grown both in size and complexity. As of this writing, 11 RFCs have been accepted in addition to many charters. Not so unexpectedly, there have been pain points along the way of which we try to address a few via edits to the RFC process defined below. The edits are also made directly in the original [RFC Process RFC](https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0001-rfc-process.md).
 
 
 ### User Stories
@@ -41,12 +41,12 @@ Over the last year since the original RFC process was accepted, the DCP project 
 
 ### 1. Add additional RFC states
 
-Currently the states of an RFC is one of:
+The current possible states of an RFC are:
  
- 1. "rfc-community-review",
- 2. "rfc-oversight-review", 
- 3. "rfc-approved", or
- 4. "rfc-declined." 
+ 1. "rfc-community-review"
+ 2. "rfc-oversight-review" 
+ 3. "rfc-approved"
+ 4. "rfc-declined" 
 
 In practice, there have been cases where an RFC is no longer implemented (i.e. "deprecated") or an RFC has been withdrawn due to either incompleteness or having been published too early. 
 
