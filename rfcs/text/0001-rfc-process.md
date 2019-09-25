@@ -293,9 +293,11 @@ When a _Draft_ RFC PR is published and labeled with "rfc-draft," specific commen
   
 ### Withdrawing RFCs
 
+What is the difference between a withdrawn and a rejected RFC? A rejected RFC has successfully completed review, but is subsequently rejected during its approval stage. A withdrawn RFC is withdrawn from review by its Author(s) prior to the approval stage.
+
 #### Author(s):
 
-- Authors may decide to withdraw an RFC at any point in time. The difference between a withdrawal and a rejection is that the rejected RFC has fully completed the review period and addressed all comment with the rough consensus being a rejection whereas a withdrawal has not yet fully completed the review process. Replace "rfc-community-review" with "rfc-withdrawn" and close the pull request with the rationale in the comment.
+- Replace "rfc-community-review" with "rfc-withdrawn" and close the pull request with the rationale in the comment.
 
 #### Shepherd:
 
