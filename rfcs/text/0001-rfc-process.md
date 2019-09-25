@@ -64,7 +64,7 @@ Minor and trivial changes made be made freely, with no announcement by the autho
 
 #### Deprecated RFCs 
 
-When a design is no longer relevant to or implemented in the DCP, the closed PR should be tagged with "rfc-deprecated." Optionally, the **Summary** section of the RFC may be updated to reflect the deprecated status.
+When a design is no longer relevant to or implemented in the DCP, the closed PR should be labeled with "rfc-deprecated." Optionally, the **Summary** section of the RFC may be updated to reflect the deprecated status.
 
 **ADDITION ENDS**
 
@@ -96,7 +96,7 @@ When a design is no longer relevant to or implemented in the DCP, the closed PR 
 
 #### **Authors**:
 
-There are two types of RFCs that may be proposed: ***informational*** RFCs and ***non informational*** RFCs. Non informational RFCs are expected to be linked directly to an existing ticket in the DCP Zenhub board which will usually be tagged as a Spike. Informational RFCs are more speculative and need not directly reference an open ticket in the DCP Zenhub board.
+There are two types of RFCs that may be proposed: ***informational*** RFCs and ***non informational*** RFCs. Non informational RFCs are expected to be linked directly to an existing ticket in the DCP Zenhub board which will usually be labeled as a Spike. Informational RFCs are more speculative and need not directly reference an open ticket in the DCP Zenhub board.
 
 To inform the DCP Community about the development of an RFC, with the intention of forming collaborations between people thinking about similar problems, it is recommended that a draft of an RFC be first published once the Problem Statement and Authors have been established. One possible process that is recommended is as follows:
 
@@ -104,7 +104,7 @@ To inform the DCP Community about the development of an RFC, with the intention 
    2. Copy `rfcs/rfc-template.md` to `rfcs/text/0000-my-feature.md`. Make `my-feature` descriptive but do not assign an RFC number yet.
    3. Fill out the Problem Statement and Author(s) sections.
    4. Push the changes to your branch and create a _Draft_ PR.
-   5. Tag the PR with the "rfc-draft" label.
+   5. Label the PR with the "rfc-draft" label.
 
 #### **Non-Authors**:
 
@@ -320,7 +320,7 @@ Over time, it is expected that RFCs that are approved and implemented will event
 
 #### Author(s):
 
-- If at any point in time an RFC is no longer implemented within the DCP (either Governance or Technical), the author should add the tag "rfc-deprecated" to the original RFC.
+- If at any point in time an RFC is no longer implemented within the DCP (either Governance or Technical), the author should add the label "rfc-deprecated" to the original RFC.
 - In addition, it is recommended that a short paragraph or note be added in the Summary section of the RFC indicating the deprecated nature of RFC contents with a short explanation of why.
 - No announcement is needed and the change should be considered as "trivial" and therefore can be made without going through any formal review process.
 

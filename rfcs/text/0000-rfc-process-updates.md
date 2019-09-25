@@ -50,19 +50,19 @@ In practice, there have been cases where an RFC is no longer implemented (i.e. "
 
 Additionally, with the encouraged behavior of submitting draft pull requests prior to RFC readiness for review, there is no way to clearly designate the fact that the RFC should not be reviewed at all until the PR is no longer a draft.
 
-We propose adding the following new tags: 
+We propose adding the following new labels: 
 
 **rfc-draft** : This indicates that the authors are still actively working on the RFC, that the RFC is in a draft state, and readers should **not** comment on the RFC yet. Additionally this state serves to indicate more clearly the backlog of RFCs in development to avoid duplication of effort of overlapping RFCs and to help elicit offers of co-authorship.
  
 Currently "pre-RFCs" are often worked on in private Google Docs. To indicate more clearly the to the community the backlog of RFCs in development, avoid duplication of effort of overlapping RFCs and to help encourage co-authorship and early collaboration, draft RFCs should post a title and problem statement or motivation. They need not be full fledged RFCs with every section populated.
 
-**rfc-deprecated** : This indicates that the design is no longer implemented or executed in the DCP and has been usurped by a newer design or process. Note that the deprecated tag is not standalone; it may be used in conjunction with  "rfc-approval" tag for example.
+**rfc-deprecated** : This indicates that the design is no longer implemented or executed in the DCP and has been usurped by a newer design or process. Note that the deprecated label is not standalone; it may be used in conjunction with  "rfc-approval" label for example.
 
 **rfc-paused** : This indicates that an RFC has been paused for further refinement. This roughly implies that an RFC has gone from being in a review status to a "pre-rfc" status and should not be reviewed further until designated so.
 
-**rfc-withdrawn** : This tag is applied when an RFC has not finished the review process (and therefore has not been  explicitly rejected) but has been voluntarily withdrawn.
+**rfc-withdrawn** : This label is applied when an RFC has not finished the review process (and therefore has not been  explicitly rejected) but has been voluntarily withdrawn.
 
-Like the existing RFC process, any change of state to the RFC must be announced on the DCP slack channel. Also note that tagging an RFC has no implications on whether the PR is open or closed. Generally, RFCs in a terminal state (i.e. "approved", "declined", or "withdrawn").
+Like the existing RFC process, any change of state to the RFC must be announced on the DCP slack channel. Also note that labeling an RFC has no implications on whether the PR is open or closed. Generally, RFCs in a terminal state (i.e. "approved", "declined", or "withdrawn").
 
 ### 2. Reduce the RFC minimum review time
 
@@ -91,11 +91,11 @@ In order to ensure that RFCs are created based on critical tickets that are prio
 
 Currently, very few RFC authors assign themselves the RFC PR in Github. This means that folks glancing though the current open RFCs must open the RFC to see who is driving it. Furthermore, it makes it difficult to filter by author.
 
-Additionally, the status of the RFCs is maintained by tags rather than by a Zenhub column making the backlog of each type of RFC making it more difficult to see at a glance. 
+Additionally, the status of the RFCs is maintained by labels rather than by a Zenhub column making the backlog of each type of RFC making it more difficult to see at a glance. 
 
 We propose to explicitly request that authors claim their RFCs by assigning themselves as authors in Github. 
 
-Additionally we propose setting up a custom Zenhub board with columns for each RFC state while maintaining tags to indicate the disposition at the terminal (closed) state. 
+Additionally we propose setting up a custom Zenhub board with columns for each RFC state while maintaining labels to indicate the disposition at the terminal (closed) state. 
 
 ### Unresolved Questions
 
