@@ -58,7 +58,7 @@ To address these needs, the DCP RFC process defines a transparent and standard m
 
 Where necessary, existing RFCs can be revised using the same process (a proposed change submitted as a RFC pull request and subject to community review and approval). **Major changes should result in a new RFC.**
 
-Minor and trivial changes made be made freely, with no announcement by the author(s) of the RFCs. Such changes include correcting typos, re-wordings, and the like.
+Minor and trivial changes may be made freely, with no announcement by the author(s) of the RFCs. Such changes include correcting typos, re-wordings, and the like.
 
 #### Deprecated RFCs 
 
