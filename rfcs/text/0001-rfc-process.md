@@ -12,6 +12,8 @@ This early *lightweight* approach enabled the DCP to achieve rapid velocity and 
 
 As DCP continues to mature and scale, our community can more easily contribute and learn when there is a formal and consensus-driven **Request for Comments (RFC)** process to propose enhancements to software or governance which are then maintained in a central repository.
 
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED" "MAY", and "OPTIONAL" in this document are to be interpreted as described in BCP 14, [RFC2119](https://www.rfc-editor.org/rfc/rfc2119.txt), and [RFC8174](https://www.rfc-editor.org/rfc/rfc8174.txt) when, and only when, they appear in all capitals, as shown here.
+
 ## Author(s)
 *DCP PM*
 
@@ -46,23 +48,23 @@ To address these needs, the DCP RFC process defines a transparent and standard m
 
 ### When is an RFC required?
 
-- An RFC is required for **substantial** additions, deletions, or changes to system behavior or semantics (API, major features, data model, protocols,​ ​service guarantees, architecture). In [semver](https://semver.org/) terms, *major* changes require an RFC, while *minor* changes are often candidates (new API addition).
+- An RFC is REQUIRED for **substantial** additions, deletions, or changes to system behavior or semantics (API, major features, data model, protocols,​ ​service guarantees, architecture). In [semver](https://semver.org/) terms, *major* changes require an RFC, while *minor* changes are often candidates (new API addition).
 
     **NOTE**: *Internal-only implementation decisions, bug fixes, refactoring, and performance optimization are not substantial changes and can continue to be documented and tracked using github issues.*
 
-- An RFC is required if a design impacts multiple DCP projects.
+- An RFC is REQUIRED if a design impacts multiple DCP projects.
 
-- An RFC is required for all changes to the DCP formal governance, including but not limited to oversight, decision-making, conflict resolution, and community processes such as charters and RFCs. For more background on governance, see the **Model C: Delegated Governance** section in [Organization & Structure of Open Source Software Development Initiatives](https://dash.harvard.edu/bitstream/handle/1/30805146/2017-03-24_governance.pdf).  
+- An RFC is REQUIRED for all changes to the DCP formal governance, including but not limited to oversight, decision-making, conflict resolution, and community processes such as charters and RFCs. For more background on governance, see the **Model C: Delegated Governance** section in [Organization & Structure of Open Source Software Development Initiatives](https://dash.harvard.edu/bitstream/handle/1/30805146/2017-03-24_governance.pdf).  
 
 ### Revising RFCs
 
-Where necessary, existing RFCs can be revised using the same process (a proposed change submitted as a RFC pull request and subject to community review and approval). **Major changes should result in a new RFC.**
+Where necessary, existing RFCs MAY be revised using the same process (a proposed change submitted as a RFC pull request and subject to community review and approval). **Major changes SHOULD result in a new RFC.**
 
-Minor and trivial changes may be made freely, with no announcement by the author(s) of the RFCs. Such changes include correcting typos, re-wordings, and the like.
+Minor and trivial changes MAY be made freely, with no announcement by the author(s) of the RFCs. Such changes include correcting typos, re-wordings, and the like.
 
 #### Deprecated RFCs 
 
-When a design is no longer relevant to or implemented in the DCP, the closed PR should be labeled with "rfc-deprecated." Optionally, the **Summary** section of the RFC may be updated to reflect the deprecated status.
+When a design is no longer relevant to or implemented in the DCP, the closed PR SHOULD be labeled with "rfc-deprecated." The **Summary** section of the RFC SHOULD be updated to reflect the deprecated status.
 
 ### What are the roles in the RFC process?
 
@@ -86,9 +88,9 @@ When a design is no longer relevant to or implemented in the DCP, the closed PR 
 
 #### **Authors**:
 
-There are three types of RFCs that may be proposed: ***Software*** RFCs, ***Governance*** RFCs, and ***Informational*** RFCs. Software RFCs are expected to be linked directly to an existing ticket in the DCP Zenhub board which will usually be labeled as a Spike. Informational and Governance RFCs need not directly reference an open ticket in the DCP Zenhub board.
+There are three types of RFCs that may be proposed: ***Software***, ***Governance***, and ***Informational***. Software RFCs are expected to be linked to an Objective that is prioritized in the DCP Product Roadmap, tracked by linking directly to an existing ticket in the DCP Zenhub board (usually labeled as a Spike). Informational and Governance RFCs need not directly reference an open ticket in the DCP Zenhub board.
 
-To inform the DCP Community about the development of an RFC, with the intention of forming collaborations between people thinking about similar problems, it is recommended that a draft of an RFC be first published once the Problem Statement and Authors have been established. The steps to begin are as follows:
+To inform the DCP Community about the development of an RFC, with the intention of forming collaborations between people thinking about similar problems, it is RECOMMENDED that a draft of the RFC be published as soon as the Problem Statement and Authors have been established. The steps to begin are as follows:
 
    1. Fork the HumanCellAtlas `dcp-community` repository
    2. Copy `rfcs/rfc-template.md` to `rfcs/text/0000-my-feature.md`. Make `my-feature` descriptive but do not assign an RFC number yet.
@@ -98,7 +100,7 @@ To inform the DCP Community about the development of an RFC, with the intention 
 
 #### **Non-Authors**:
 
-When a _Draft_ RFC PR is published and labeled with "rfc-draft," specific commentary is discouraged (negative or positive) until the Authors(s) propose the RFC for community review. If the draft RFC sparks interest, reach out to the Author(s) offline to suggest a collaboration.
+When a _Draft_ RFC PR is published and labeled with "rfc-draft," specific commentary is NOT RECOMMENDED (negative or positive) until the Authors(s) propose the RFC for community review. If the draft RFC sparks interest, it is RECOMMENDED that one reach out to the Author(s) offline to suggest a collaboration.
 
 ### Proposing RFCs
 
@@ -139,23 +141,26 @@ When a _Draft_ RFC PR is published and labeled with "rfc-draft," specific commen
     - Send an FYI to the HumanCellAtlas **#dcp-project-mgmt** Slack channel. Include a link to the RFC pull request and the last call deadline.
 
 #### DCP PM:
-- Assign a **Shepherd** by completing the *Shepherd* section in the RFC template and pushing the commit. The **Shepherd** guides the RFC and its **Author(s)** through the process.
+  - Assign a **Shepherd** by completing the *Shepherd* section in the RFC template and pushing the commit. The **Shepherd** guides the RFC and its **Author(s)** through the process.
 
-- If there is a *Scientific "guardrails"* section in the RFC:
-  - Assign the **Science Reviewer** as a reviewer of the pull request
-  - Add the "science-review-required" label
-  - Add a two week _last call_ for the completion of the Science review to the top-level summary comment in the RFC pull request.
+  - If there is a *Scientific "guardrails"* section in the RFC:
+  
+    - Assign the **Science Reviewer** as a reviewer of the pull request
+
+    - Add the "science-review-required" label
+
+    - Add a two week _last call_ for the completion of the Science review to the top-level summary comment in the RFC pull request.
 
     **EXAMPLE** 
 
     **April 5**: Last call for science review
 
-   **NOTE**: *The Science review occurs in parallel to the Community review.* 
+**NOTE**: *The Science review occurs in parallel to the Community review.* 
 
 ### Reviewing RFCs
 
 #### Approvers:
-- May assign specific reviewers in the RFC pull request.
+- MAY assign specific reviewers in the RFC pull request.
 
 #### Reviewers:
 - Add feedback to the RFC pull request comment thread.
@@ -264,13 +269,13 @@ Over time, it is expected that RFCs that are approved and implemented will event
 
 #### Author(s):
 
-- If at any point in time an RFC is no longer implemented within the DCP (either Governance or Technical), the author should add the label "rfc-deprecated" to the original RFC.
-- In addition, it is recommended that a short paragraph or note be added in the Summary section of the RFC indicating the deprecated nature of RFC contents with a short explanation of why.
+- If at any point in time an RFC is no longer implemented within the DCP (either Governance or Technical), the author SHOULD add the label "rfc-deprecated" to the original RFC.
+- In addition, it is RECOMMENDED that a short paragraph or note be added in the Summary section of the RFC indicating the deprecated nature of RFC contents with a short explanation of why.
 - No announcement is needed and the change should be considered as "trivial" and therefore can be made without going through any formal review process.
 
 ### Appealing RFC Decisions
 
-Any DCP community member may appeal all RFC decisions by **Approvers** (approval, changes requested, or rejection) by sending a message to the *DCP PM* mailing list (pm-team@data.humancellatlas.org).
+Any DCP community member MAY appeal all RFC decisions by **Approvers** (approval, changes requested, or rejection) by sending a message to the *DCP PM* mailing list (pm-team@data.humancellatlas.org).
 
 The message should demonstrate a clear rationale for the appeal, referencing community discussion as needed to support the position.
 
