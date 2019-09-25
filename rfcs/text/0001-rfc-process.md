@@ -15,7 +15,9 @@ As DCP continues to mature and scale, our community can more easily contribute a
 ## Author(s)
 *DCP PM*
 
-Arathi Mani + Dave Rogers (updated as of DD-MM-YYYY) 
+[Arathi Mani](mailto:arathi.mani@chanzuckerberg.com)
+ 
+[Dave Rogers](mailto:dave@clevercanary.com)
 
 **NOTE:** *This proposal is based on ideas from the **HCA DCP Technical Decision-Making** white paper written by Bruce Martin with contributions from Tony Burdett, Laura Clarke, Brian O’Connor, Brian Raymor, and Tim Tickle.*
 

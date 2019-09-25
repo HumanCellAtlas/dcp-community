@@ -18,13 +18,13 @@ DCP community's needs.
 
 *Recommended format for Authors:*
 
- [Arathi Mani](mailto:arathi.mani@chanzuckerberg.com)
+[Arathi Mani](mailto:arathi.mani@chanzuckerberg.com)
  
- [Dave Rogers](mailto:dave@clevercanary.com)
+[Dave Rogers](mailto:dave@clevercanary.com)
 
 ## Shepherd
 
- [Arathi Mani](mailto:arathi.mani@chanzuckerberg.com)
+[Arathi Mani](mailto:arathi.mani@chanzuckerberg.com)
 
 ## Motivation
 
