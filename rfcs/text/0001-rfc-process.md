@@ -28,7 +28,7 @@ As DCP continues to mature and scale, our community can more easily contribute a
 
 There are a number of limitations with our current process which need to be addressed:
 
-- For community members who want to propose enhancements to either technical software or governance, it is often unclear where to start - *for example, which HCA slack channel or project member to approach with a proposal.*
+- For community members who want to propose enhancements to either technical software or governance, it is often unclear where to start - *for example, which HCA Slack channel or project member to approach with a proposal.*
 
   - There is no common template for design proposal submissions.
 
@@ -58,23 +58,15 @@ To address these needs, the DCP RFC process defines a transparent and standard m
 
 Where necessary, existing RFCs can be revised using the same process (a proposed change submitted as a RFC pull request and subject to community review and approval). **Major changes should result in a new RFC.**
 
-**ADDITION BEGINS**
-
 Minor and trivial changes made be made freely, with no announcement by the author(s) of the RFCs. Such changes include correcting typos, re-wordings, and the like.
 
 #### Deprecated RFCs 
 
 When a design is no longer relevant to or implemented in the DCP, the closed PR should be labeled with "rfc-deprecated." Optionally, the **Summary** section of the RFC may be updated to reflect the deprecated status.
 
-**ADDITION ENDS**
-
 ### What are the roles in the RFC process?
 
-**ADDITION BEGINS**
-
 - **DCP Community Members** are the union of all members of the technical team of the DCP, all members of the DCP PM team and all DCP Users.
-
-**ADDITION ENDS**
 
 - **Authors** are DCP community members.
 
@@ -89,8 +81,6 @@ When a design is no longer relevant to or implemented in the DCP, the closed PR 
 - **Science Reviewer** is the *DCP Science PM* in coordination with *HCA Science Governance*.
 
 ## Detailed Design
-
-**ADDITION BEGINS**
 
 ### Drafting RFCs
 
@@ -110,73 +100,43 @@ To inform the DCP Community about the development of an RFC, with the intention 
 
 When a _Draft_ RFC PR is published and labeled with "rfc-draft," specific commentary is discouraged (negative or positive) until the Authors(s) propose the RFC for community review. If the draft RFC sparks interest, reach out to the Author(s) offline to suggest a collaboration.
 
-**ADDITION ENDS**
-
 ### Proposing RFCs
 
 #### **Authors**:
 
-**UPDATE BEGINS**
-
-~~*Before proposing, always engage the DCP community to build consensus and assess whether your proposal sparks interest and addresses a need. You may even discover potential collaborators.*~~
-
-  ~~- Fork the HumanCellAtlas dcp-community repository~~
-  
-  ~~- Copy `rfcs/rfc-template.md` to `rfcs/text/0000-my-feature.md` where "my-feature" is descriptive. Don't assign an RFC number yet.~~
-
-**UPDATE ENDS**
-  
   - Fill in the RFC with attention to detail
   
-  - Submit a pull request.
+  - Submit a pull request. If the PR was originally in a draft state, remove the "rfc-draft" label.
   
-      For software RFCs, it is strong recommended that:
-
-      - An FYI be sent to the HumanCellAtlas #tech-architecture slack channel. Include a link to the RFC pull request and the last call deadline.
-      - The RFC is added as an agenda item to the next DCP Architecture meeting for spirited discussion
-      - Add the "rfc-community-review" and the appropriate software project name _(such as "Data Store")_ labels. When the RFC impacts multiple DCP software projects, then the "Architecture" label **MUST** be the project name. *If uncertain about the appropriate project name, then **_Ask a PM_** on the HCA **#dcp-project-mgmt** slack channel*
-
-      For governance RFCs:
-        
-      - Add the "rfc-community-review" and the "Governance" labels.
-      
-      **ADDITION BEGINS**
-      
-      - If the "rfc-draft" label was attached to the PR, remove it.
-      
-      - Find the created ticket in the Zenhub board under `dcp-community` and assign all Author(s) to the ticket.
-      
-      - If the RFC is a Software RFC, link the PR ticket to the open ticket that the RFC addresses.
-      
-      **ADDITION ENDS**
-
-- Add a minimum two week _last call_ for the completion of the Community review to the top-level summary comment in the RFC pull request.
+  - Add the "rfc-community-review" label.
+  
+  - Find the auto-generated ticket in the Zenhub `dcp-community` board and assign all Author(s) to the ticket.
+  
+  - Add a minimum two week _last call_ for the completion of the Community review to the top-level Summary section in the RFC pull request.
 
     **EXAMPLE** 
 
     **April 1**: Last call for community review
 
-- Request a Community review of the RFC on the HumanCellAtlas **#dcp** slack channel. Include a link to the RFC pull request and the last call deadline:
+  - Request a Community review of the RFC on the HumanCellAtlas **#dcp** Slack channel. Include a link to the RFC pull request and the last call deadline:
 
     **EXAMPLE** 
   
-     ***@channel**: Call for community review of the RFC process - https://github.com/HumanCellAtlas/dcp-community/pull/27 - Last call is April 1.*
-
-**ADDITION BEGINS**
-
-- For software RFCs, it is recommended that an FYI be sent to the HumanCellAtlas **#tech-architecture** slack channel. Include a link to the RFC pull request and the last call deadline.
-
-  **Recommended:** Add the RFC as an agenda item to the next *DCP Architecture* meeting for spirited discussion
-
-- For governance RFCs, it is recommended that an FYI be sent to the HumanCellAtlas **#dcp-project-mgmt** slack channel. Include a link to the RFC pull request and the last call deadline.
+    ***@channel**: Call for community review of the RFC process - https://github.com/HumanCellAtlas/dcp-community/pull/27 - Last call is April 1.*
+  
+  - For **Software RFCs**:
     
-  **Recommended:** Add the RFC as an agenda item to the next *DCP PM* meeting for spirited discussion
-
-**Example Slack Channel Message** 
-
- ***@channel**: Call for community review of the RFC process - https://github.com/HumanCellAtlas/dcp-community/pull/27 - Last call is April 22.*
-
-**ADDITION ENDS**
+    - Add the appropriate software component name label to the RFC OR if the RFC impacts multiple DCP software components, add the "Architecture" label instead. If uncertain about the appropriate project name, then ask on the **#dcp-project-mgmt** Slack channel.
+    
+    - Link the ticket that was auto-generated in the `dcp-community` Zenhub board to an open ticket in the `dcp` repo. RFCs generally fulfill a deliverable for a Spike ticket and linking the open ticket in the `dcp` repo to the auto-generated PR ticket guarantees a paper-trail of the work.
+    
+    - Send an FYI to the HumanCellAtlas **#tech-architecture** Slack channel. Include a link to the RFC pull request and the last call deadline.
+  
+  - For **Governance RFCs**:
+  
+    - Add the "Governance" label to the PR.
+    
+    - Send an FYI to the HumanCellAtlas **#dcp-project-mgmt** Slack channel. Include a link to the RFC pull request and the last call deadline.
 
 #### DCP PM:
 - Assign a **Shepherd** by completing the *Shepherd* section in the RFC template and pushing the commit. The **Shepherd** guides the RFC and its **Author(s)** through the process.
@@ -195,37 +155,29 @@ When a _Draft_ RFC PR is published and labeled with "rfc-draft," specific commen
 ### Reviewing RFCs
 
 #### Approvers:
-- May assign specific reviewers in the RFC pull request
+- May assign specific reviewers in the RFC pull request.
 
 #### Reviewers:
-- Add feedback to the RFC pull request comment thread
+- Add feedback to the RFC pull request comment thread.
 
 #### Science Reviewer:
 - When the feedback from the Science review is addressed, replace the "science-review-required" label with "science-review-completed".
 
 #### Author: 
-- Revise the RFC pull request in response to feedback and push new commits
+- Revise the RFC pull request in response to feedback and push new commits.
 
 ### Shepherding RFCs
 [Shepherding RFCs]: #shepherding-rfcs
 #### Shepherd:
 - Monitor the community review and ensure that issues are addressed by the **Author(s)** in a reasonable time period.
 
+- For Software RFCs, add the RFC as an agenda item to the next *DCP Architecture* meeting.
+
+- For Governance RFCs, add the RFC as an agenda item to the next *DCP PM* meeting.
+
 - When all issues are addressed and any required Science reviews are complete:
-  - Summarize the review discussion for the **Approvers** in the top-level summary comment in the RFC pull request
-  
-  **REDACTION HERE**
-  ~~- Add a minimum one week _last call_ for the completion of the Oversight review to the top-level summary comment in the RFC pull request.~~
 
-    ~~**EXAMPLE**~~ 
-
-    ~~**April 1**: Last call for community review~~
-
-    ~~**April 22**: Last call for oversight review~~
-
-  ~~- Replace "rfc-community-review" with "rfc-oversight-review"~~
-
-  ~~**NOTE**: *Oversight review is limited to **Approvers**. Further community reviews during this period may be disregarded by the **Author(s)**.*~~
+  - Summarize the review discussion for the **Approvers** in the top-level summary comment in the RFC pull request.
 
 ### Approving RFCs
 
@@ -246,7 +198,7 @@ When a _Draft_ RFC PR is published and labeled with "rfc-draft," specific commen
 
 - Validate that the RFC pull request was successfully updated and merged
 
-- Announce the approval of the RFC on the HumanCellAtlas #dcp slack channel. Include a link to the merged RFC:
+- Announce the approval of the RFC on the HumanCellAtlas **#dcp** Slack channel. Include a link to the merged RFC:
 
   **EXAMPLE**
 
@@ -270,13 +222,12 @@ When a _Draft_ RFC PR is published and labeled with "rfc-draft," specific commen
 
 #### Shepherd:
 
-- Announce the rejection of the RFC on the HumanCellAtlas #dcp slack channel. Include a link to the RFC pull request:
+- Announce the rejection of the RFC on the HumanCellAtlas **#dcp** Slack channel. Include a link to the RFC pull request:
 
   **EXAMPLE**
 
   ***@channel**: DCP PM declined the RFC for the RFC Process - https://github.com/HumanCellAtlas/dcp-community/pull/27*
 
-**ADDITION BEGINS**
 ### Pausing RFCs
 
 #### Author(s):
@@ -285,7 +236,7 @@ When a _Draft_ RFC PR is published and labeled with "rfc-draft," specific commen
 
 #### Shepherd:
 
-- Announce the pausing of the RFC on the HumanCellAtlas #dcp slack channel. Include a link to the RFC pull request:
+- Announce the pausing of the RFC on the HumanCellAtlas **#dcp** Slack channel. Include a link to the RFC pull request:
 
   **EXAMPLE**
 
@@ -301,7 +252,7 @@ What is the difference between a withdrawn and a rejected RFC? A rejected RFC ha
 
 #### Shepherd:
 
-- Announce the withdrawal of the RFC on the HumanCellAtlas #dcp slack channel. Include a link to the RFC pull request:
+- Announce the withdrawal of the RFC on the HumanCellAtlas **#dcp** Slack channel. Include a link to the RFC pull request:
 
   **EXAMPLE**
 
@@ -316,9 +267,6 @@ Over time, it is expected that RFCs that are approved and implemented will event
 - If at any point in time an RFC is no longer implemented within the DCP (either Governance or Technical), the author should add the label "rfc-deprecated" to the original RFC.
 - In addition, it is recommended that a short paragraph or note be added in the Summary section of the RFC indicating the deprecated nature of RFC contents with a short explanation of why.
 - No announcement is needed and the change should be considered as "trivial" and therefore can be made without going through any formal review process.
-
-
-**ADDITION ENDS**
 
 ### Appealing RFC Decisions
 
