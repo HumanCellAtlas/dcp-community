@@ -146,7 +146,7 @@ When a _Draft_ RFC PR is published and labeled with "rfc-draft," specific commen
       
       - Find the created ticket in the Zenhub board under `dcp-community` and assign all Author(s) to the ticket.
       
-      - If the RFC is "non-informational," link the PR ticket to the open ticket that the RFC addresses.
+      - If the RFC is a Software RFC, link the PR ticket to the open ticket that the RFC addresses.
       
       **ADDITION ENDS**
 

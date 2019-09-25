@@ -86,7 +86,7 @@ We propose explicitly stating that if an RFC warrants minor/trivial edits, such 
 
 Today, there is no requirement that RFCs must be related to any existing ticket in Zenhub which is usually a proxy for determining critical work to be done in a quarter. This means that, at times, RFCs are published/approved with no clear timeline to implementation completion which also weakens the implication of the RFC.
 
-In order to ensure that RFCs are created based on critical tickets that are prioritized in the Product Roadmap and ensure that RFCs are followed up to completion, that all [*non-informational RFCs*](https://github.com/HumanCellAtlas/dcp-community/issues/30) PRs be linked to an existing open Zenhub ticket. An RFC is an acceptable deliverable for fulfilling a Spike ticket and as described in the [Roadmaps and Planning Process](https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0012-roadmaps%2Bplanning.md), will be connected to an Engineering Plan to track the follow-through on implementation.
+In order to ensure that RFCs are created based on critical tickets that are prioritized in the Product Roadmap and ensure that RFCs are followed up to completion, that all Software RFC PRs be linked to an existing open Zenhub ticket. An RFC is an acceptable deliverable for fulfilling a Spike ticket and as described in the [Roadmaps and Planning Process](https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0012-roadmaps%2Bplanning.md), will be connected to an Engineering Plan to track the follow-through on implementation.
 
 
 ### 5. Make RFC authorship and RFC status more explicit in Zenhub
