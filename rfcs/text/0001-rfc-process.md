@@ -108,7 +108,7 @@ To inform the DCP Community about the development of an RFC, with the intention 
 
 #### **Non-Authors**:
 
-When an _Draft_ RFC PR is published and labeled with "rfc-draft," specific commentary is discouraged (negative or positive) until the Authors(s) propose the RFC for community review. If the draft RFC sparks interest, reach out to the Author(s) offline to suggest a collaboration.
+When a _Draft_ RFC PR is published and labeled with "rfc-draft," specific commentary is discouraged (negative or positive) until the Authors(s) propose the RFC for community review. If the draft RFC sparks interest, reach out to the Author(s) offline to suggest a collaboration.
 
 **ADDITION ENDS**
 
@@ -119,10 +119,6 @@ When an _Draft_ RFC PR is published and labeled with "rfc-draft," specific comme
 **UPDATE BEGINS**
 
 ~~*Before proposing, always engage the DCP community to build consensus and assess whether your proposal sparks interest and addresses a need. You may even discover potential collaborators.*~~
-
-Once the RFC has been filled out to the Author's satisfaction, an RFC may be _proposed_ for comment.
-
-
 
   ~~- Fork the HumanCellAtlas dcp-community repository~~
   
