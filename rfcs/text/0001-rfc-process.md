@@ -130,7 +130,10 @@ When a _Draft_ RFC PR is published and labeled with "rfc-draft," specific commen
   
   - Submit a pull request.
   
-      For software RFCs:
+      For software RFCs, it is strong recommended that:
+
+      - An FYI be sent to the HumanCellAtlas #tech-architecture slack channel. Include a link to the RFC pull request and the last call deadline.
+      - The RFC is added as an agenda item to the next DCP Architecture meeting for spirited discussion
       - Add the "rfc-community-review" and the appropriate software project name _(such as "Data Store")_ labels. When the RFC impacts multiple DCP software projects, then the "Architecture" label **MUST** be the project name. *If uncertain about the appropriate project name, then **_Ask a PM_** on the HCA **#dcp-project-mgmt** slack channel*
 
       For governance RFCs:
@@ -190,14 +193,6 @@ When a _Draft_ RFC PR is published and labeled with "rfc-draft," specific commen
    **NOTE**: *The Science review occurs in parallel to the Community review.* 
 
 ### Reviewing RFCs
-
-**ADDITION BEGINS**
-
-As a general guidance for reviewers, we recommend (but not require) the following rules of etiquette:
-
-- For Technical RFCs, w 
-
-**ADDITION ENDS**
 
 #### Approvers:
 - May assign specific reviewers in the RFC pull request

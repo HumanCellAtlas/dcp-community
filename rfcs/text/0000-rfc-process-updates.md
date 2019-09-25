@@ -12,7 +12,9 @@ The Data Coordination Platform (DCP) established the Request For Comments (RFC) 
 [September 17th 2018](https://github.com/HumanCellAtlas/dcp-community/pull/26) in order to address the gap of having a
 coordinated, standardized, and repeatable process by which decisions could be made. Since this time, the DCP has evolved
 and likewise the RFC process is in need of some fine tuning. This RFC proposes some changes in order to reflect the new
-DCP community's needs.  
+DCP community's needs.
+
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED" "MAY", and "OPTIONAL" in this document are to be interpreted as described in BCP 14, [RFC2119](https://www.rfc-editor.org/rfc/rfc2119.txt), and [RFC8174](https://www.rfc-editor.org/rfc/rfc8174.txt) when, and only when, they appear in all capitals, as shown here.
 
 ## Author(s)
 
