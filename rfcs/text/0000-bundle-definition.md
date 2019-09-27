@@ -158,9 +158,11 @@ proposed based on data consumer needs and are described in more detail below.
 
 #### New Resource/Reference bundle
 
-- Should we call it "Resource" or "Reference" bundle?
+This is a type of bundle that supports reference genomes and other accessory inputs to analysis pipelines. They should
+be represented in the DCP Data Store to achieve completeness and durability of analysis inputs, which in turn is
+necessary for analysis reproducibility.
 
-- Who will generate/maintain these? Data Processing Pipelines?
+- The Data Processing Pipelines team is responsible for generating these.
 
 ### When is a new bundle type needed?
 
