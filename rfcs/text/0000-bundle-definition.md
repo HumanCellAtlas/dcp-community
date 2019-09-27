@@ -102,6 +102,9 @@ between a set of files for utility purposes.
 * Utility bundles exist to organize (group) data bundles and represent data of non-DCP origin (such as reference data)
   that is used in the course of analysis.
 
+Bundles are units of discoverability in the DCP Data Store, and the Data Store supports transactional operations on
+bundles as part of its feature set.
+
 ### How are bundle types defined?
 
 Operationally, bundle types can be defined like file types or media types: they are used as a data type identifier for
@@ -200,9 +203,7 @@ team. The initial contents of the registry are:
 The registry would be maintained either as part of this git repository (HumanCellAtlas/dcp-community) or as part of a
 repository chosen by the Data Store team, subject to a pull request-based contribution model.
 
-### Acceptance Criteria [optional]
-
-*Acceptance criteria are the conditions that a RFC must satisfy to be accepted by users or other stakeholders.* 
+### Acceptance Criteria
 
 1. DCP developers have a shared understanding of what a bundle is, including what is in a bundle and how bundles relate
    to one another.
@@ -226,19 +227,13 @@ repository chosen by the Data Store team, subject to a pull request-based contri
 
 1. Is the level of detail for the operational requirements of a bundle registry sufficient?
 
-### Drawbacks and Limitations [optional]
-
-*Why should this RFC **not** be implemented?*
-
-### Prior Art [optional]
-
-*Share references to prior art to deepen community understanding of the RFC, such as learnings, adaptations from earlier designs, or community standards.*
+### Prior Art
 
 - [Submission to bundles SOP (Apr 2018)](https://docs.google.com/document/d/1x8mYLU8ubpZtTrzkwJrft1heqReX-pJLjJfb2X0fd2w)
 
 - [Bundle metadata schema update ticket](https://github.com/HumanCellAtlas/metadata-schema/issues/986)
 
-### Alternatives [optional]
+### Alternatives
 
 *Highlight other possible approaches to delivering the value proposed in this RFC. 
 What other designs were explored? What were their advantages? What was the rationale for rejecting alternatives?*
