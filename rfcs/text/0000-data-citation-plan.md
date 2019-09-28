@@ -44,7 +44,7 @@ Key issues that this RFC seeks to resolve are:
 
 It is proposed to split the initial implementation into three phases:
 
-### Phase 1
+### Phase 1 - Stable non-versioned citable project URLs
 This is designed to satisfy the minimal set of requirements for User Stories #1 through #4 by providing only "per-project" citations.
 The Data Browser project details page will add a "To cite this project please copy this link" item.
 This "stable non-versioned project URL" will link back to the production site project page using the project's UUID (e.g. https://data.humancellatlas.org/explore/projects/cc95ff89-2e68-4a08-a234-480eca21ce79).
@@ -54,7 +54,7 @@ If an existing project is deleted and re-ingested then the cited project UUID wo
 Note: Scientists are *already* citing such project based URLs in publications.
 A formal DOI is *not* required for Phase 1.
 
-### Phase 2
+### Phase 2 - Versioned data release citations
 This is designed to satisfy the data contributor requirements for User Story #5.
 This allows the Data Operations team to make a “Data Release” (i.e. a curated data set) in which the specific versions of projects within the Data Release itself are citable.
 A Data Release must be immutable.
@@ -64,7 +64,7 @@ Since the Matrix Service does not support the ability to process older versions 
 The Data Store "collections" API provides a suitable means for recording the contents of a Data Release.
 A formal DOI is required for this phase as is provides a standardized method for specifying specific versions of data objects.
 
-### Phase 3
+### Phase 3 - Enabling citation of user defined collections of data
 This is designed to satisfy the data consumer requirements for User Story #5.
 This also fully satisfies User Story #2 by allowing a data consumer to cite an arbitrary set of data which spans multiple projects.
 The data consumer must be able to create a discrete collection of their selected data with the ability to update that collection (i.e. create a new version of the collection).
