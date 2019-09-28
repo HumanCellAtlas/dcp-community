@@ -99,7 +99,7 @@ Provided the DOI repository supports versioning the metadata DOI field could be 
 Using a DOI that links to an external repository that can store a manifest for each version of a project may be the simplest way to provide access to versions of the data for a project.
 
 The creation/update process would perform the following steps:
-  - Ingest creates a new DOI (new project) or a new version of an existing DOI (updated project) when the submission is deemed “complete”.
+  - Ingest creates a new DOI (new project) or a new version of an existing DOI (project has been updated) when a project data submission has been determined by the Data Operations team as ready for public consumption.
   - Upload the corresponding metadata tsv and manifest file for this version of the project to the DOI repository (need to wait for these to be generated).
   - Upload the matrix output file(s) for this version of the project to the DOI repository.
   - Update a project description to the DOI repository (e.g. what’s in this version?).
