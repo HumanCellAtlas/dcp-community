@@ -37,10 +37,6 @@ Key issues that this RFC seeks to resolve are:
 5. As a member of the Data Operations team I want to be able to create citations for each of the projects that I include in a Data Release (which is defined as a point-in-time selection of specific verions of data from the DCP).
 6. As a data contribuor or data consumer I want to be able to update my research project (consisting of an arbitrary selection of data that I have selected) and have a versioned citation identifier that can be used to reference discrete point-in-time versions of my research project.
 
-## Scientific "guardrails" [optional]
-
-*Describe recommended or mandated review from HCA Science governance to ensure that the RFC addresses the needs of the scientific community.*
-
 ## Detailed Design
 
 It is proposed to split the initial implementation into three phases:
@@ -133,16 +129,3 @@ For Phase 2 & 3 does the Data Browser need to provide a view of the cited data o
 Currently the Data Browser provides only a view of the latest data and metadata. It may be desirable to add another "facet" such as "Release Version" which would enable the user to view a particular point-in-time Data Release and then perform further faceted searches within that view.
 
 Can a DOI for the DCP resolve to an external website? The author(s) will work with the UX team to come up with pros and cons of using an external authority vs setting up the DCP as a DOI assigning entity. If the results of the UX and Browser team research does not provide sufficient clarity we will present our prefered option and evidence to the Oversight Committee and ask for their feedback.
-
-### Drawbacks and Limitations [optional]
-
-*Why should this RFC **not** be implemented?*
-
-### Prior Art [optional]
-
-*Share references to prior art to deepen community understanding of the RFC, such as learnings, adaptations from earlier designs, or community standards.*
-
-### Alternatives [optional]
-
-*Highlight other possible approaches to delivering the value proposed in this RFC. 
-What other designs were explored? What were their advantages? What was the rationale for rejecting alternatives?*
