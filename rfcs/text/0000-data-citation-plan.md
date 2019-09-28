@@ -96,7 +96,7 @@ Using a DOI that links to an external repository that can store a manifest for e
 
 The creation/update process would perform the following steps:
   - Ingest creates a new DOI (new project) or a new version of an existing DOI (project has been updated) when a project data submission has been determined by the Data Operations team as ready for public consumption.
-  - Upload the corresponding metadata tsv and manifest file for this version of the project to the DOI repository (need to wait for these to be generated).
+  - Upload the corresponding metadata tsv and manifest file for this version of the project to the DOI repository.
   - Upload the matrix output file(s) for this version of the project to the DOI repository.
   - Update a project description to the DOI repository (e.g. what’s in this version?).
   - Create a link in the DOI repository back to the project details page in the Data Browser.
