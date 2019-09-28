@@ -34,7 +34,8 @@ Key issues that this RFC seeks to resolve are:
 2. As a data consumer (e.g. researcher with a keyboard), I want to be able to view and share a unique citation identifier so that a reader of my manuscript can obtain the data needed to reproduce my results. Anyone can use the citation identifier to view and download all the original cited data and metadata files for a project from the DCP.
 3. As a data consumer, I need a simple way to reference a project in the DCP so that I can fulfill the requirements of a Creative Commons attribution license (CC-BY).
 4. As a data contributor or consumer, I need a way to use the citation identifier to access the output produced by the DCP Matrix Service for the data being cited.
-5. As a data contributor or consumer, I want to be able to update my project and provide versioned views of the data being cited.
+5. As a member of the Data Operations team I want to be able to create citations for each of the projects that I include in a Data Release (which is defined as a point-in-time selection of specific verions of data from the DCP).
+6. As a data contribuor or data consumer I want to be able to update my research project (consisting of an arbitrary selection of data that I have selected) and have a versioned citation identifier that can be used to reference discrete point-in-time versions of my research project.
 
 ## Scientific "guardrails" [optional]
 
@@ -55,7 +56,7 @@ Note: Scientists are *already* citing such project based URLs in publications.
 A formal DOI is *not* required for Phase 1.
 
 ### Phase 2 - Versioned data release citations
-This is designed to satisfy the data contributor requirements for User Story #5.
+This is designed to satisfy the requirements for User Story #5.
 This allows the Data Operations team to make a “Data Release” (i.e. a curated data set) in which the specific versions of projects within the Data Release itself are citable.
 A Data Release must be immutable.
 The Data Browser must provide users with access to each Data Release (i.e. immutable version of data) in addition to the “live/latest” view.
@@ -65,9 +66,9 @@ The Data Store "collections" API provides a suitable means for recording the con
 A formal DOI is required for this phase as is provides a standardized method for specifying specific versions of data objects.
 
 ### Phase 3 - Enabling citation of user defined collections of data
-This is designed to satisfy the data consumer requirements for User Story #5.
-This also fully satisfies User Story #2 by allowing a data consumer to cite an arbitrary set of data which spans multiple projects.
-The data consumer must be able to create a discrete collection of their selected data with the ability to update that collection (i.e. create a new version of the collection).
+This is designed to satisfy the requirements for User Story #6.
+This phase allows a data contribuor or data consumer to cite an arbitrary set of data which may span multiple projects.
+The user must be able to create a discrete collection of their selected data with the ability to update that collection (i.e. create a new version of the collection).
 The Data Browser must provide users access to each version of their collections.
 A data consumer must be able to share a citable DOI link to any of the collection versions that they have created.
 
@@ -104,17 +105,16 @@ The creation/update process would perform the following steps:
   - Update a project description to the DOI repository (e.g. what’s in this version?).
   - Create a link in the DOI repository back to the project details page in the Data Browser.
 
-### Acceptance Criteria [optional]
+### Acceptance Criteria
 
 #### Phase 1
   - A citation link is provided in the Data Browser for each project
   - The citation link remains valid for the lifetime of the DCP
   - The citation link is a URL which resolves to the latest version of the project details page for the specified project
-  - The citation URL is used in publications by scientists to cite DCP project data
 #### Phase 2 (in addition to Phase 1 criteria)
   - The Data Operations team is able to create an immutable citation reference for each project in a Data Release
   - The citation reference consists of a versioned DOI
-  - The Data Operations team can update the version of the project's DOI in a later Data Release
+  - The Data Operations team can update the version of a project's DOI in a later Data Release, for example when updates have been made to that project's data since the previous Data Release.
   - The Data Browser provides a means of downloading the data associated with a specific version of a project from a Data Release
 #### Phase 3 (in addition to Phase 1 and 2 criteria)
   - An authorized user may create a citation for an arbitrary set of versioned data selected via the Data Browser
