@@ -343,7 +343,7 @@ Data consumers will benefit from the metadata model now aligning with INSDC expe
     
 ---
     
-![Figure 6](/rfcs/images/0000-lib_prep_rfc_fig6.png)
+![Figure 6](/rfcs/images/0010-lib_prep_rfc_fig6.png)
 
 **Figure 6: Diagram of how protocol linking will change with new library preparation entity**. A) Current metadata model showing that links to Sequencing protocol and Library preparation protocol entities are generated from the last process (arrow) in the graph. B) New metadata model showing that a link to the Sequencing protocol is generated from the ultimate process (process_0) in the graph, and a link to the Library preparation protocol is generated from the penultimate process (process_1) in the graph.
 
