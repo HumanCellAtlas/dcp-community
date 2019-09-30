@@ -82,7 +82,7 @@ Assuming a data wrangler or data contributor has filled in the `process_id` fiel
 
 ---
 
-<img src="/rfcs/images/0000-lib_prep_rfc_fig3.png" align="left" height="300" />
+<img src="/rfcs/images/0010-lib_prep_rfc_fig3.png" align="left" height="300" />
 
 **Figure 3: Current and ideal grouping of logical units**. A) Logical unit is anchored on ultimate process in the experimental graph, resulting in two bundles which each contain a subset of the data files produced from the same library preparation (not ideal). B) Logical unit is anchored on the library preparation entity, resulting in one logical unit that contains all the data files produced from the same library preparation (ideal).\
 <br/>
