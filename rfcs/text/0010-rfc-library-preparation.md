@@ -36,7 +36,7 @@ From a cell suspension, one (Fig. 1A) or more (Fig. 1B) libraries can be prepare
 
 ---
 
-![Figure 1](/rfcs/images/0000-lib_prep_rfc_fig1.png)
+![Figure 1](/rfcs/images/0010-lib_prep_rfc_fig1.png)
 
 **Figure 1: Possible droplet-based sequencing experimental designs**. A) An experiment where one library preparation was made from a cell suspension and then sequenced once. B) An experiment where two library preparations were made from the same cell suspension and then each library preparation was sequenced once. C) An experiment where two library preparations were made from the same cell suspension and then each library preparation was sequenced twice. Red boxes indicate the set of data files that need to be processed together.
 
