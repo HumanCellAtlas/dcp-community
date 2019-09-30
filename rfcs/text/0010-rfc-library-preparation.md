@@ -1,14 +1,10 @@
 ### DCP PR:
 
-***Leave this blank until the RFC is approved** then the **Author(s)** must create a link between the assigned RFC number and this pull request in the format:*
-
-`[dcp-community/rfc0010](https://github.com/HumanCellAtlas/dcp-community/pull/87)`
+[dcp-community/rfc10](https://github.com/HumanCellAtlas/dcp-community/pull/87)
 
 # Representing sequencing library preparations in the HCA DCP metadata standard
 
 ## Summary
-
-**2019-08-15: Last call for oversight review**
 
 The current HCA DCP metadata model explicitly represents cell suspensions (single cells or multiple cells suspended in some media) but not the sequencing library preparations derived from them. This is creating challenges for contributors, consumers, and DCP implementation teams when submitting, processing, and interpreting sequencing data. Here we propose a solution for explicitly identifying library preparation biomaterials in a sequencing experiment by making them a first-class biomaterial type entity in the metadata standard.
 
@@ -132,12 +128,6 @@ As a data contributor, I would like to be able to indicate which data files were
 As a data consumer, I would like to be able to identify which data files are from the same library preparation so that I can process all sequencing files which belong together at the same time.
 
 As a data consumer, I would like to be confident that data files from the same library preparation were processed together so that I know the expression matrices are accurate.
-
-## Scientific "guardrails" [optional]
-
-*Describe recommended or mandated review from HCA Science governance to ensure that the RFC addresses the needs of the scientific community.*
-
-TBD
 
 ## Detailed Design
 
@@ -389,7 +379,7 @@ Data consumers will benefit from the metadata model now aligning with INSDC expe
 - Will queries be made more difficult under this proposal?
 
 
-### Acceptance Criteria [optional]
+### Acceptance Criteria
 
 - Data processing pipelines workflows can successfully be started and run on all data files from the same library preparation.
 - Data consumers can find all data files associated with the same sequencing library preparation.
@@ -407,19 +397,19 @@ Data consumers will benefit from the metadata model now aligning with INSDC expe
 - Could this approach work in an analogous way for imaging experiments? I.e. anchor the logical unit on imaged specimen? It sounds like we do not yet know yet what the "logical" unit is for image-based experiments. One option to anchor on the imaged specimen, but there are also other options.
 - What are the naming conventions for user-supplied IDs and system-supplied, globally unique UUIDs? What are the rules for the names of the fields themselves? What are the rules for what values are valid for these fields? Related to metadata-schema issue [#733](https://github.com/HumanCellAtlas/metadata-schema/issues/733).
 
-### Drawbacks and Limitations [optional]
+### Drawbacks and Limitations
 
 Implementing the proposed design would require updating the current sequencing datasets in the production DSS to include a library preparation entity. This update would be a bundle structure update and would not be doable using the simple AUDR mechanism, but could possibly be done with complex AUDR. Updating primary bundles might affect downstream products (e.g. secondary bundles, matrices).
 
 This RFC is based on the current bundle structure and DCP design. If bundle structure or DCP design changes in the future (e.g. data processing pipelines can process more than one bundle with one workflow), the impact on library preparation modelling should be considered. Related to this [pre-RFC](https://docs.google.com/document/d/1akc8WrjxllNRkIAKcFD-8H3PsbrZQZjTZfgTI8KWuOI/edit#heading=h.s8wrvv1ovoyj). 
 
-### Prior Art [optional]
+### Prior Art
 
 - Previous [Library preparation entity RFC draft](https://docs.google.com/document/d/15-UkjbAlGDGhOPw1Zu09YdoaGw2Zeq5Y3uDlGsrz6pw/edit)
 - [Slides](https://drive.google.com/open?id=1vyw6N7qn24qBFAMoKL3nXLHcqpqYFq3Y) from June 2019 DCP F2F meeting outlining library preparation issue from data processing pipelines perspective.
 - [Slides](https://docs.google.com/presentation/d/1aV7Lrq8SWNxp3Jy98RxUh2SJrLiFPO4Y6AyaH3F1EUI/edit#slide=id.g599322258d_0_8) from June 2019 DCP F2F meeting outlining what is contained in bundles (logical units).
 
-### Alternatives [optional]
+### Alternatives
 
 The first attempt to clarify where library preparations fit in the experimental design was to add the optional `sequence_file.library_prep_id` field to the metadata standard. Having this field can “get the job done”, but at a high cost to consumers for needing to find it and difficulty for DCP components to use it to define “logical units” for co-processing.
 
