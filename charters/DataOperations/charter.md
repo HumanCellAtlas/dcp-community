@@ -45,7 +45,8 @@ The objective of the Data Operations is to connect the scientific community to t
   - Partner with UX to assess the added value of data distribution through communities’ feedback, and better understand their expectations and needs
   - Onboard staff to DCP ZenDesk ticketing system
   - Take ownership of establishing process and interfacing with DCP components for assigning, responding, and integrating ZenDesk tickets
-  - Compile feedback gained from consumers through discussions at scientific conferences and ZenDesk queries and comments. Report feedback to the DCP, at large, and the specific components pertaining to the feedback, in order to facilitate system improvement
+  - Compile feedback gained from consumers through discussions at scientific conferences and ZenDesk queries and comments. 
+  - Report feedback to the DCP, at large, and the specific components pertaining to the feedback, in order to facilitate system improvement. The mechanism for reporting may be DataOps creating a feature ticket in the appropriate repo and/or presenting findings at a PM call and/or a feature proposal in the form of an RFC. DataOps will follow-up on outcomes, and whenever possible, keep the community reporter engaged throughout the follow-up process, ideally through direct interaction with the appropriate compoenent(s).
 
 
 ### Scientific "guardrails"
