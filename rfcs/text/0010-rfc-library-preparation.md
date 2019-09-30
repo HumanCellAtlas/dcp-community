@@ -150,7 +150,7 @@ Figure 5 below shows the current metadata model representing a plate-based exper
 
 ---
 
-<img src="/rfcs/images/0000-lib_prep_rfc_fig5.png" align="left" height="460" />
+<img src="/rfcs/images/0010-lib_prep_rfc_fig5.png" align="left" height="460" />
 
 **Figure 5: Determining logical units from plate-based experimental designs**. A) An experiment modeled using the current metadata model which depicts six sequence files derived from three single cell suspension. Logical units are indicated (red, blue, and magenta outlines). B) An experiment modeled using the proposed metadata model which depicts six sequence files derived from three single cell library preparations. Logical units are indicated (red, blue, and magenta outlines). Arrows in graphs represent processes. 
  
