@@ -46,7 +46,7 @@ From a cell suspension, one (Fig. 1A) or more (Fig. 1B) libraries can be prepare
 
 ---
 
-![Figure 2](/rfcs/images/0000-lib_prep_rfc_fig2.png)
+![Figure 2](/rfcs/images/0010-lib_prep_rfc_fig2.png)
 
 **Figure 2: Processing data files separately inflates UMI counts**. A) Two transcripts - each with a unique UMI barcode - for gene A are amplified during library preparation, and the library preparation is sequenced twice to produce two sets of files. B) Files are processed together, and UMI barcodes are collapsed to produce a count of 2 for gene A. C) Files are processed separately, and UMI barcodes are collapsed separately to produce a count of 1 for gene A in the first set of files and 2 for gene A in the second set of files, resulting in an overall count of 3 for gene A (overestimation).
 
