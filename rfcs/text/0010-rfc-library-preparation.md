@@ -139,7 +139,7 @@ For cellular resolution experiments, the library preparation entity will have a 
 
 ---
 
-<img src="/rfcs/images/0000-lib_prep_rfc_fig4.png" align="left" height="500" />
+<img src="/rfcs/images/0010-lib_prep_rfc_fig4.png" align="left" height="500" />
 
 **Figure 4: Determining logical units from droplet-based experimental designs**. A) An experiment modeled using the current metadata model which depicts four sequence files derived from one cell suspension. It is unclear what the logical units are. B) An experiment modeled using the proposed metadata model which depicts four sequence files derived from one library preparation. It is clear that the four files represent one logical unit (red outline). C) An experiment modeled using the proposed metadata model which depicts four sequence files derived from two library preparations. It is clear that the four files represent two logical units. Arrows in graphs represent processes. Note that in B), two processes were used to derive the two sets of files. Both processes belong to this one logical unit.
 
