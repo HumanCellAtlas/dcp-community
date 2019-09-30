@@ -1,5 +1,5 @@
 ### DCP PR:
-`[dcp-community/rfc10](https://github.com/HumanCellAtlas/dcp-community/pull/88)`
+`[dcp-community/rfc13](https://github.com/HumanCellAtlas/dcp-community/pull/88)`
 
 
 # RFC: Data Groups: Processing Datasets that Span Multiple Bundles
