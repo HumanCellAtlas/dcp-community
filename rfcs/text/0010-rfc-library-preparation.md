@@ -1,14 +1,10 @@
 ### DCP PR:
 
-***Leave this blank until the RFC is approved** then the **Author(s)** must create a link between the assigned RFC number and this pull request in the format:*
-
-`[dcp-community/rfc0010](https://github.com/HumanCellAtlas/dcp-community/pull/87)`
+[dcp-community/rfc10](https://github.com/HumanCellAtlas/dcp-community/pull/87)
 
 # Representing sequencing library preparations in the HCA DCP metadata standard
 
 ## Summary
-
-**2019-08-15: Last call for oversight review**
 
 The current HCA DCP metadata model explicitly represents cell suspensions (single cells or multiple cells suspended in some media) but not the sequencing library preparations derived from them. This is creating challenges for contributors, consumers, and DCP implementation teams when submitting, processing, and interpreting sequencing data. Here we propose a solution for explicitly identifying library preparation biomaterials in a sequencing experiment by making them a first-class biomaterial type entity in the metadata standard.
 
@@ -40,7 +36,7 @@ From a cell suspension, one (Fig. 1A) or more (Fig. 1B) libraries can be prepare
 
 ---
 
-![Figure 1](/rfcs/images/0000-lib_prep_rfc_fig1.png)
+![Figure 1](/rfcs/images/0010-lib_prep_rfc_fig1.png)
 
 **Figure 1: Possible droplet-based sequencing experimental designs**. A) An experiment where one library preparation was made from a cell suspension and then sequenced once. B) An experiment where two library preparations were made from the same cell suspension and then each library preparation was sequenced once. C) An experiment where two library preparations were made from the same cell suspension and then each library preparation was sequenced twice. Red boxes indicate the set of data files that need to be processed together.
 
@@ -50,7 +46,7 @@ From a cell suspension, one (Fig. 1A) or more (Fig. 1B) libraries can be prepare
 
 ---
 
-![Figure 2](/rfcs/images/0000-lib_prep_rfc_fig2.png)
+![Figure 2](/rfcs/images/0010-lib_prep_rfc_fig2.png)
 
 **Figure 2: Processing data files separately inflates UMI counts**. A) Two transcripts - each with a unique UMI barcode - for gene A are amplified during library preparation, and the library preparation is sequenced twice to produce two sets of files. B) Files are processed together, and UMI barcodes are collapsed to produce a count of 2 for gene A. C) Files are processed separately, and UMI barcodes are collapsed separately to produce a count of 1 for gene A in the first set of files and 2 for gene A in the second set of files, resulting in an overall count of 3 for gene A (overestimation).
 
@@ -86,7 +82,7 @@ Assuming a data wrangler or data contributor has filled in the `process_id` fiel
 
 ---
 
-<img src="/rfcs/images/0000-lib_prep_rfc_fig3.png" align="left" height="300" />
+<img src="/rfcs/images/0010-lib_prep_rfc_fig3.png" align="left" height="300" />
 
 **Figure 3: Current and ideal grouping of logical units**. A) Logical unit is anchored on ultimate process in the experimental graph, resulting in two bundles which each contain a subset of the data files produced from the same library preparation (not ideal). B) Logical unit is anchored on the library preparation entity, resulting in one logical unit that contains all the data files produced from the same library preparation (ideal).\
 <br/>
@@ -133,12 +129,6 @@ As a data consumer, I would like to be able to identify which data files are fro
 
 As a data consumer, I would like to be confident that data files from the same library preparation were processed together so that I know the expression matrices are accurate.
 
-## Scientific "guardrails" [optional]
-
-*Describe recommended or mandated review from HCA Science governance to ensure that the RFC addresses the needs of the scientific community.*
-
-TBD
-
 ## Detailed Design
 
 ### Overview
@@ -149,7 +139,7 @@ For cellular resolution experiments, the library preparation entity will have a 
 
 ---
 
-<img src="/rfcs/images/0000-lib_prep_rfc_fig4.png" align="left" height="500" />
+<img src="/rfcs/images/0010-lib_prep_rfc_fig4.png" align="left" height="500" />
 
 **Figure 4: Determining logical units from droplet-based experimental designs**. A) An experiment modeled using the current metadata model which depicts four sequence files derived from one cell suspension. It is unclear what the logical units are. B) An experiment modeled using the proposed metadata model which depicts four sequence files derived from one library preparation. It is clear that the four files represent one logical unit (red outline). C) An experiment modeled using the proposed metadata model which depicts four sequence files derived from two library preparations. It is clear that the four files represent two logical units. Arrows in graphs represent processes. Note that in B), two processes were used to derive the two sets of files. Both processes belong to this one logical unit.
 
@@ -160,7 +150,7 @@ Figure 5 below shows the current metadata model representing a plate-based exper
 
 ---
 
-<img src="/rfcs/images/0000-lib_prep_rfc_fig5.png" align="left" height="460" />
+<img src="/rfcs/images/0010-lib_prep_rfc_fig5.png" align="left" height="460" />
 
 **Figure 5: Determining logical units from plate-based experimental designs**. A) An experiment modeled using the current metadata model which depicts six sequence files derived from three single cell suspension. Logical units are indicated (red, blue, and magenta outlines). B) An experiment modeled using the proposed metadata model which depicts six sequence files derived from three single cell library preparations. Logical units are indicated (red, blue, and magenta outlines). Arrows in graphs represent processes. 
  
@@ -353,7 +343,7 @@ Data consumers will benefit from the metadata model now aligning with INSDC expe
     
 ---
     
-![Figure 6](/rfcs/images/0000-lib_prep_rfc_fig6.png)
+![Figure 6](/rfcs/images/0010-lib_prep_rfc_fig6.png)
 
 **Figure 6: Diagram of how protocol linking will change with new library preparation entity**. A) Current metadata model showing that links to Sequencing protocol and Library preparation protocol entities are generated from the last process (arrow) in the graph. B) New metadata model showing that a link to the Sequencing protocol is generated from the ultimate process (process_0) in the graph, and a link to the Library preparation protocol is generated from the penultimate process (process_1) in the graph.
 
@@ -389,7 +379,7 @@ Data consumers will benefit from the metadata model now aligning with INSDC expe
 - Will queries be made more difficult under this proposal?
 
 
-### Acceptance Criteria [optional]
+### Acceptance Criteria
 
 - Data processing pipelines workflows can successfully be started and run on all data files from the same library preparation.
 - Data consumers can find all data files associated with the same sequencing library preparation.
@@ -407,19 +397,19 @@ Data consumers will benefit from the metadata model now aligning with INSDC expe
 - Could this approach work in an analogous way for imaging experiments? I.e. anchor the logical unit on imaged specimen? It sounds like we do not yet know yet what the "logical" unit is for image-based experiments. One option to anchor on the imaged specimen, but there are also other options.
 - What are the naming conventions for user-supplied IDs and system-supplied, globally unique UUIDs? What are the rules for the names of the fields themselves? What are the rules for what values are valid for these fields? Related to metadata-schema issue [#733](https://github.com/HumanCellAtlas/metadata-schema/issues/733).
 
-### Drawbacks and Limitations [optional]
+### Drawbacks and Limitations
 
 Implementing the proposed design would require updating the current sequencing datasets in the production DSS to include a library preparation entity. This update would be a bundle structure update and would not be doable using the simple AUDR mechanism, but could possibly be done with complex AUDR. Updating primary bundles might affect downstream products (e.g. secondary bundles, matrices).
 
 This RFC is based on the current bundle structure and DCP design. If bundle structure or DCP design changes in the future (e.g. data processing pipelines can process more than one bundle with one workflow), the impact on library preparation modelling should be considered. Related to this [pre-RFC](https://docs.google.com/document/d/1akc8WrjxllNRkIAKcFD-8H3PsbrZQZjTZfgTI8KWuOI/edit#heading=h.s8wrvv1ovoyj). 
 
-### Prior Art [optional]
+### Prior Art
 
 - Previous [Library preparation entity RFC draft](https://docs.google.com/document/d/15-UkjbAlGDGhOPw1Zu09YdoaGw2Zeq5Y3uDlGsrz6pw/edit)
 - [Slides](https://drive.google.com/open?id=1vyw6N7qn24qBFAMoKL3nXLHcqpqYFq3Y) from June 2019 DCP F2F meeting outlining library preparation issue from data processing pipelines perspective.
 - [Slides](https://docs.google.com/presentation/d/1aV7Lrq8SWNxp3Jy98RxUh2SJrLiFPO4Y6AyaH3F1EUI/edit#slide=id.g599322258d_0_8) from June 2019 DCP F2F meeting outlining what is contained in bundles (logical units).
 
-### Alternatives [optional]
+### Alternatives
 
 The first attempt to clarify where library preparations fit in the experimental design was to add the optional `sequence_file.library_prep_id` field to the metadata standard. Having this field can “get the job done”, but at a high cost to consumers for needing to find it and difficulty for DCP components to use it to define “logical units” for co-processing.
 
