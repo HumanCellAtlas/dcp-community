@@ -1,8 +1,6 @@
 ### DCP PR:
+`[dcp-community/rfc10](https://github.com/HumanCellAtlas/dcp-community/pull/88)`
 
-***Leave this blank until the RFC is approved** then the **Author(s)** must create a link between the assigned RFC number and this pull request in the format:*
-
-`[dcp-community/rfc#](https://github.com/HumanCellAtlas/dcp-community/pull/<PR#>)`
 
 # RFC: Data Groups: Processing Datasets that Span Multiple Bundles
 
