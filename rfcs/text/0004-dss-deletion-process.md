@@ -182,10 +182,10 @@ endpoint added to the DSS API.
 **Path**: `PUT /restore/bundle/{uuid}`
 
 | Parameter | Description |
-|-----------|------------|
-|uuid| An RFC4122-compliant ID for the bundle.|
-|version|Timestamp of bundle creation in DSS_VERSION format.|
-|confirmation_code| A code used to confirm a deletion operation.|
+|-----------|-------------|
+| uuid      | An RFC4122-compliant ID for the bundle. |
+| version   | Timestamp of bundle creation in DSS_VERSION format. |
+| confirmation_code | A code used to confirm a restoration operation. |
 
 |Response Code| Description|
 |--------------|------------|
