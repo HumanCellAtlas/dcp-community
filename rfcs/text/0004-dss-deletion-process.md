@@ -258,11 +258,12 @@ procedures takes place:
 
 3) The users makes a second request that included the confirmation code. This starts the deletion process.
 
-4) After the deletion request has been confirmed the DSS places **tombstones** in the
-   underlying storage system(S3 or GCP bucket). For a **logical deletion** request, tombstones are placed for all bundles
-   mentioned in the requests response. For **physical deletion** requests, tombstones are placed for all files and
-   bundles mentioned in the request response. The tombstone's content is
-   as follows:
+4) After the deletion request has been confirmed, the DSS places **tombstones** in the
+   underlying storage system (S3 or GCP bucket). For a **logical deletion** request,
+   tombstones are placed for all bundles mentioned in the response to the deletion request.
+   For **physical deletion** requests, tombstones are placed for all files and bundles
+   mentioned in the response to the deletion request. The tombstone's content is as follows:
+
    ```JSON
    { "reason": "<reason>",
      "details": "<additional info>",
