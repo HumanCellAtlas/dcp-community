@@ -423,7 +423,7 @@ data that was permanently deleted over the previous 24 hours.
 
 * This introduces the ability to permanently destroy data from the DSS.
 * There is no limit on the amount of data that can be rapidly permanently deleted.
-* Permanently deletion does not occur until after the grace period has elapsed. This could
+* Permanent deletion does not occur until after the grace period has elapsed. This could
   be problematic if files need to be removed sooner.
 * If two bundles share files and only one bundle is deleted, this causes the remaining bundle to be incomplete.
 * the ability to search for bundles that contain a files is depended on maintaining a current index of bundles and files.
