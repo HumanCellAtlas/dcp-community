@@ -34,8 +34,8 @@ Key issues that this RFC seeks to resolve are:
 2. As a data consumer (e.g. researcher with a keyboard), I want to be able to view and share a unique citation identifier so that a reader of my manuscript can obtain the data needed to reproduce my results. Anyone can use the citation identifier to view and download all the original cited data and metadata files for a project from the DCP.
 3. As a data consumer, I need a simple way to reference a project in the DCP so that I can fulfill the requirements of a Creative Commons attribution license (CC-BY).
 4. As a data contributor or consumer, I need a way to use the citation identifier to access the output produced by the DCP Matrix Service for the data being cited.
-5. As a member of the Data Operations team I want to be able to create citations for each of the projects that I include in a Data Release (which is defined as a point-in-time selection of specific verions of data from the DCP).
-6. As a data contribuor or data consumer I want to be able to update my research project (consisting of an arbitrary selection of data that I have selected) and have a versioned citation identifier that can be used to reference discrete point-in-time versions of my research project.
+5. As a member of the Data Operations team I want to be able to create citations for each of the projects that I include in a Data Distribution (which is defined as a point-in-time selection of specific verions of data from the DCP).
+6. As a data contributor or data consumer I want to be able to update my research project (consisting of an arbitrary selection of data that I have selected) and have a versioned citation identifier that can be used to reference discrete point-in-time versions of my research project.
 
 ## Detailed Design
 
@@ -51,14 +51,14 @@ If an existing project is deleted and re-ingested then the cited project UUID wo
 Note: Scientists are *already* citing such project based URLs in publications.
 A formal DOI is *not* required for Phase 1.
 
-### Phase 2 - Versioned data release citations
+### Phase 2 - Versioned Data Distribution citations
 This is designed to satisfy the requirements for User Story #5.
-This allows the Data Operations team to make a “Data Release” (i.e. a curated data set) in which the specific versions of projects within the Data Release itself are citable.
-A Data Release must be immutable.
-The Data Browser must provide users with access to each Data Release (i.e. immutable version of data) in addition to the “live/latest” view.
-The Data Browser must be able to provide users with a means to download the data and metadata associated with a Data Release.
-The per-project output files from the Matrix Service *must* be stored as part of the immutable data set since these files, along with the primary data and secondary analysis files, are all part of a Data Release.
-The Data Store "collections" API provides a suitable means for recording the contents of a Data Release.
+This allows the Data Operations team to make a “Data Distribution” in which the specific versions of projects within the Data Distribution itself are citable.
+A Data Distribution must be immutable.
+The Data Browser must provide users with access to each Data Distribution (i.e. immutable version of data) in addition to the “live/latest” view.
+The Data Browser must be able to provide users with a means to download the data and metadata associated with a Data Distribution.
+The per-project output files from the Matrix Service *must* be stored as part of the immutable data set since these files, along with the primary data and secondary analysis files, are all part of a Data Distribution.
+The Data Store "collections" API provides a suitable means for recording the contents of a Data Distribution.
 A formal DOI is required for this phase as is provides a standardized method for specifying specific versions of data objects.
 
 ### Phase 3 - Enabling citation of user defined collections of data
@@ -95,11 +95,11 @@ Provided the DOI repository supports versioning the metadata DOI field could be 
 Using a DOI that links to an external repository that can store a manifest for each version of a project may be the simplest way to provide access to versions of the data for a project.
 
 The creation/update process would perform the following steps:
-  - Ingest creates a new DOI (new project) or a new version of an existing DOI (project has been updated) when a project data submission has been determined by the Data Operations team as ready for public consumption.
-  - Upload the corresponding metadata tsv and manifest file for this version of the project to the DOI repository.
-  - Upload the matrix output file(s) for this version of the project to the DOI repository.
-  - Update a project description to the DOI repository (e.g. what’s in this version?).
-  - Create a link in the DOI repository back to the project details page in the Data Browser.
+  - Ingest creates a new DOI (new project) or a new version of an existing DOI (project has been updated) when a project data submission has been determined by the Data Operations team as ready for public consumption
+  - Upload the corresponding metadata tsv and manifest file for this version of the project to the DOI repository
+  - Upload the matrix output file(s) for this version of the project to the DOI repository
+  - Update a project description to the DOI repository (e.g. what’s in this version?)
+  - Create a link in the DOI repository back to the project details page in the Data Browser
 
 ### Acceptance Criteria
 
@@ -108,10 +108,10 @@ The creation/update process would perform the following steps:
   - The citation link remains valid for the lifetime of the DCP
   - The citation link is a URL which resolves to the latest version of the project details page for the specified project
 #### Phase 2 (in addition to Phase 1 criteria)
-  - The Data Operations team is able to create an immutable citation reference for each project in a Data Release
+  - The Data Operations team is able to create an immutable citation reference for each project in a Data Distribution
   - The citation reference consists of a versioned DOI
-  - The Data Operations team can update the version of a project's DOI in a later Data Release, for example when updates have been made to that project's data since the previous Data Release.
-  - The Data Browser provides a means of downloading the data associated with a specific version of a project from a Data Release
+  - The Data Operations team can update the version of a project's DOI in a later Data Distribution, for example when updates have been made to that project's data since the previous Data Distribution
+  - The Data Browser provides a means of downloading the data associated with a specific version of a project from a Data Distribution
 #### Phase 3 (in addition to Phase 1 and 2 criteria)
   - An authorized user may create a citation for an arbitrary set of versioned data selected via the Data Browser
   - An authorized user may update a previously versioned set of data to a new version and update the version of the corresponding citation
@@ -126,6 +126,6 @@ Must a data citation that provides a DOI provide an *immutable* view of all the 
   - a project's metadata
   
 For Phase 2 & 3 does the Data Browser need to provide a view of the cited data on which further faceted searches can be performed?
-Currently the Data Browser provides only a view of the latest data and metadata. It may be desirable to add another "facet" such as "Release Version" which would enable the user to view a particular point-in-time Data Release and then perform further faceted searches within that view.
+Currently the Data Browser provides only a view of the latest data and metadata. It may be desirable to add another "facet" such as "Data Distribution Version" which would enable the user to view a particular point-in-time Data Distribution and then perform further faceted searches within that view.
 
 Can a DOI for the DCP resolve to an external website? The author(s) will work with the UX team to come up with pros and cons of using an external authority vs setting up the DCP as a DOI assigning entity. If the results of the UX and Browser team research does not provide sufficient clarity we will present our prefered option and evidence to the Oversight Committee and ask for their feedback.
