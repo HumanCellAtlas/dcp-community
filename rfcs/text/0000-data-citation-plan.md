@@ -56,7 +56,7 @@ This is designed to satisfy the requirements for User Story #5.
 This allows the Data Operations team to make a “Data Distribution” in which the specific versions of projects within the Data Distribution itself are citable.
 A Data Distribution must be immutable.
 The Data Browser must provide users with access to each Data Distribution (i.e. immutable version of data) in addition to the “live/latest” view.
-The Data Browser must be able to provide users with a means to download the data and metadata associated with a Data Distribution.
+The Data Browser must be able to provide users with a means to download the cited data associated with a Data Distribution.
 The per-project output files from the Matrix Service *must* be stored as part of the immutable data set since these files, along with the primary data and secondary analysis files, are all part of a Data Distribution.
 The Data Store "collections" API provides a suitable means for recording the contents of a Data Distribution.
 A formal DOI is required for this phase as is provides a standardized method for specifying specific versions of data objects.
