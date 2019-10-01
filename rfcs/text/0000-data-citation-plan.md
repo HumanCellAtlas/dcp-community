@@ -35,7 +35,7 @@ Key issues that this RFC seeks to resolve are:
 3. As a data consumer, I need a simple way to reference a project in the DCP so that I can fulfill the requirements of a Creative Commons attribution license (CC-BY).
 4. As a data contributor or consumer, I need a way to use the citation identifier to access the output produced by the DCP Matrix Service for the data being cited.
 5. As a member of the Data Operations team I want to be able to create citations for each of the projects that I include in a Data Distribution (which is defined as a point-in-time selection of specific verions of data from the DCP).
-6. As a data contributor or data consumer I want to be able to update my research project (consisting of an arbitrary selection of data that I have selected) and have a versioned citation identifier that can be used to reference discrete point-in-time versions of my research project.
+6. As an authorized data consumer (a user who has been granted Data Portal login credentials) I want to be able to update my research project (consisting of an arbitrary selection of HCA data that I have selected) and have a versioned citation identifier that can be used to reference discrete point-in-time versions of my research project.
 
 ## Detailed Design
 
