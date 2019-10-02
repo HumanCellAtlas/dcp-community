@@ -65,7 +65,7 @@ The Upload Service enables fast, cost-effective upload, staging, and validation 
 [Matt Weiden](mailto:mweiden@chanzuckerberg.com)
 
 ### Technical Lead
-[Sam Pierson](mailto:spierson@chanzuckerberg.com)
+[Parth Shah](mailto:pshah@chanzuckerberg.com)
 
 ## Communication
 
