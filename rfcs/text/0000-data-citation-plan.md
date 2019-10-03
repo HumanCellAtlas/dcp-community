@@ -34,7 +34,7 @@ Key issues that this RFC seeks to resolve are:
 2. As a data consumer (e.g. researcher with a keyboard), I want to be able to view and share a unique citation identifier so that a reader of my manuscript can obtain the data needed to reproduce my results. Anyone can use the citation identifier to view and download all the original cited data and metadata files for a project from the DCP.
 3. As a data consumer, I need a simple way to reference a project in the DCP so that I can fulfill the requirements of a Creative Commons attribution license (CC-BY).
 4. As a data contributor or consumer, I need a way to use the citation identifier to access the output produced by the DCP Matrix Service for the data being cited.
-5. As a member of the Data Operations team I want to be able to create citations for data that I include in a Data Distribution (which is defined as a point-in-time selection of specific verions of data from the DCP).
+5. As a member of the Data Operations team I want to ensure that a versioned citation identifier is created for each discrete version of a project in the DCP.
 6. As an authorized data consumer (a user who has been granted Data Portal login credentials) I want to be able to update my research project (consisting of an arbitrary selection of HCA data that I have selected) and have a versioned citation identifier that can be used to reference discrete point-in-time versions of my research project.
 
 ## Detailed Design
@@ -53,7 +53,7 @@ A formal DOI is *not* required for Phase 1.
 
 ### Phase 2 - Versioned Data Citations
 This is designed to satisfy the requirements for User Story #5.
-This allows the Data Operations team to make a “Data Distribution” in which specific versions of data are citable.
+This allows the Data Operations team to ensure that each discrete version of a project is citable.
 The Data Browser must provide users with access to each immutable version of data in addition to the “live/latest” view.
 The Data Browser provides a means of downloading the cited data associated with a specific version of a project.
 The per-project output files from the Matrix Service *must* be stored as part of the immutable data set since these files, along with the primary data and secondary analysis files, are all part of a versioned project.
@@ -125,6 +125,6 @@ Must a data citation that provides a DOI provide an *immutable* view of all the 
   - a project's metadata
   
 For Phase 2 & 3 does the Data Browser need to provide a view of the cited data on which further faceted searches can be performed?
-Currently the Data Browser provides only a view of the latest data and metadata. It may be desirable to add another "facet" such as "Data Distribution Version" which would enable the user to view a particular point-in-time version of the DCP data and then perform further faceted searches within that view.
+Currently the Data Browser provides only a view of the latest data and metadata. It may be desirable to add another "facet" such as "Version" which would enable the user to view a particular point-in-time version of the DCP data and then perform further faceted searches within that view.
 
 Can a DOI for the DCP resolve to an external website? The author(s) will work with the UX team to come up with pros and cons of using an external authority vs setting up the DCP as a DOI assigning entity. If the results of the UX and Browser team research does not provide sufficient clarity we will present our prefered option and evidence to the Oversight Committee and ask for their feedback.
