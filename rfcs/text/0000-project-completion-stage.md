@@ -37,7 +37,7 @@ Any HCA project with a corresponding analysis pipeline should be considered in p
 **More thorough data validation:**
 The downstream services of the DCP have the potential to uncover metadata and data errors. Viewing the version-complete HCA project as the user will view it can also identify errors. A solution to this is a setting on HCA projects allowing signed-in DCP members to access the data in order to perform a final ‘sanity check’.
 
-**Support HCA submitters (possibly 2nd phase):**
+**Support HCA submitters (Phase 2):**
 Allowing HCA submitters to view the final product in their collaboration with the DCP before it is released adds yet another validation step (after all, who knows their data better?) and is a valuable step in good faith data sharing. The inclusion of a data lifecycle tracker on the HCA project page keeps the HCA submitter up-to-date on their HCA submission and ensures a transparent process.
 
 ### User Stories
@@ -65,9 +65,9 @@ Examples of inaccuracies that were/are publicly accessible:
 - HCA submitter name misspelled ("Tom Mithcell")
   - Impact: A (rather personal) HCA submitter-facing error will put DCP credibility at risk.
 
-As an HCA submitter whose name is associated with the HCA project, I want to be allowed time to review the full details of my HCA submission as for accuracy before it becomes publicly available. I want this review to be through the vantage of a potential user. (possibly 2nd phase)
+As an HCA submitter whose name is associated with the HCA project, I want to be allowed time to review the full details of my HCA submission as for accuracy before it becomes publicly available. I want this review to be through the vantage of a potential user. (Phase 2)
 
-As an HCA submitter, I am curious where my HCA submission is in the DCP’s data lifecycle after I have provided the metadata spreadsheet all the way until it is released. (possibly 2nd phase)
+As an HCA submitter, I am curious where my HCA submission is in the DCP’s data lifecycle after I have provided the metadata spreadsheet all the way until it is released. (Phase 2 + Phase 'Dashboard')
 
 
 ## Functional Specifications
