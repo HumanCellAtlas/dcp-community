@@ -62,7 +62,7 @@ A formal DOI is required for this phase as is provides a standardized method for
 
 ### Phase 3 - Enabling citation of user defined collections of data
 This is designed to satisfy the requirements for User Story #6.
-This phase allows a data contribuor or data consumer to cite an arbitrary set of data which may span multiple projects.
+This phase allows a data contributor or data consumer to cite an arbitrary set of data which may span multiple projects.
 The user must be able to create a discrete collection of their selected data with the ability to update that collection (i.e. create a new version of the collection).
 The Data Browser must provide users access to each version of their collections.
 A data consumer must be able to share a citable DOI link to any of the collection versions that they have created.
@@ -109,7 +109,7 @@ The creation/update process would perform the following steps:
 #### Phase 2 (in addition to Phase 1 criteria)
   - The Data Operations team is able to create an immutable citation reference for each project
   - The citation reference consists of a versioned DOI
-  - The Data Operations team can update the version of a project's DOI, for example when updates have been made to that project's data since the previous veruon of the DOI was assigned
+  - The Data Operations team can update the version of a project's DOI, for example when updates have been made to that project's data since the previous version of the DOI was assigned
   - The Data Browser provides a means of downloading the data associated with a specific version of a project
 #### Phase 3 (in addition to Phase 1 and 2 criteria)
   - An authorized user may create a citation for an arbitrary set of versioned data selected via the Data Browser
@@ -127,4 +127,4 @@ Must a data citation that provides a DOI provide an *immutable* view of all the 
 For Phase 2 & 3 does the Data Browser need to provide a view of the cited data on which further faceted searches can be performed?
 Currently the Data Browser provides only a view of the latest data and metadata. It may be desirable to add another "facet" such as "Version" which would enable the user to view a particular point-in-time version of the DCP data and then perform further faceted searches within that view.
 
-Can a DOI for the DCP resolve to an external website? The author(s) will work with the UX team to come up with pros and cons of using an external authority vs setting up the DCP as a DOI assigning entity. If the results of the UX and Browser team research does not provide sufficient clarity we will present our prefered option and evidence to the Oversight Committee and ask for their feedback.
+Can a DOI for the DCP resolve to an external website? The author(s) will work with the UX team to come up with pros and cons of using an external authority vs setting up the DCP as a DOI assigning entity. If the results of the UX and Browser team research does not provide sufficient clarity we will present our preferred option and evidence to the Oversight Committee and ask for their feedback.
