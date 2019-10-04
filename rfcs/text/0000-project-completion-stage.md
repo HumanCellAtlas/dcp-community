@@ -69,7 +69,6 @@ As an HCA submitter whose name is associated with the HCA project, I want to be 
 
 As an HCA submitter, I am curious where my HCA submission is in the DCP’s data lifecycle after I have provided the metadata spreadsheet all the way until it is released. (Phase 2 + Phase 'Dashboard')
 
-
 ## Functional Specifications
 **Phase 1**
 *MVP requirements*
@@ -92,3 +91,31 @@ As an HCA submitter, I am curious where my HCA submission is in the DCP’s data
 **Phase 'Dashboard'**
 *This can happen at any time within or after Phase 1, it adds little value until Phase 2 is implemented, given the DCP internal tracking*
 - A dashboard on the HCA project page for signed-in users to track where a given HCA project is in the data lifecycle.
+
+### Acceptance Criteria
+
+**Phase 1**
+- A project's metadata and data can be fully accessible to each individual DCP member via the DataBrowser and DataStore while fully inaccessible to users outside of the DCP.
+- A project's metadata and data are fully accessible to Secondary Analysis and Matrix Service while fully inaccessible to a user outside of the DCP.
+- A Data Operation member is able to switch an HCA project from inaccessible to accessible for users outside of the DCP.
+- Data Operations has published a QA checklist and validation procedure and carries out the procedure for each HCA project within a week of being deemed version-complete.
+
+**Phase 2**
+- A project's metadata and data can be fully accessible to each named contributor on the project, as well as each individual DCP member, via the DataBrowser and DataStore while fully inaccessible to users outside of the DCP.
+
+**Phase 'Automation'**
+- 75% of the Data Operations validation procedure is automated.
+
+**Phase 'Dashboard'**
+- A project that is inaccessible to users outside of the DCP displays a dashboard with the current status of the project in the data lifecycle, viewable by a DCP member (and, after Phase 2, a named contributor on the project).
+
+### Unresolved Questions
+
+**Aspects of the design to discuss and clarify later during iterative development of this RFC**
+- How to distinguish 'unreleased' from 'released' projects
+- A mechanism to gain access to 'unreleased' projects on the DataBrowser
+- A mechanism to gain access to 'unreleased' projects in the DataStore
+
+### Drawbacks and Limitations
+
+This postpones the delivery of experimental metadata, raw data, and Secondary Analysis products as a project continues through the DCP data lifecycle. It is believed that data consumers will accept this minimal delay because it provides them with more confidence in their data access (they encounter fewer errors and there is no uncertainty as to whether more products will be delivered in the near future for a given project). 
