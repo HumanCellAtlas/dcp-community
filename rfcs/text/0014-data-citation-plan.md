@@ -1,8 +1,7 @@
 ### DCP PR:
 
-***Leave this blank until the RFC is approved** then the **Author(s)** must create a link between the assigned RFC number and this pull request in the format:*
+[dcp-community/rfc14](https://github.com/HumanCellAtlas/dcp-community/pull/103)
 
-`[dcp-community/rfc#](https://github.com/HumanCellAtlas/dcp-community/pull/<PR#>)`
 
 # HCA DCP Data Citation Plan
 
