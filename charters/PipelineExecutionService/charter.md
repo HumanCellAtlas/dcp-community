@@ -60,9 +60,10 @@ Team email: pipelines-team@data.humancellatlas.org
 
 ## Github repositories
 
-[Cromwell Tools](https://github.com/broadinstitute/cromwell-tools): A collection of Python clients and accessory scripts for interacting with the [Cromwell workflow execution engine](https://github.com/broadinstitute/cromwell) - a scientific workflow engine designed for simplicity and scalability  
-[Falcon](https://github.com/HumanCellAtlas/falcon): Queueing system that (after launching) throttles and inititates workflows  
-[Lira](https://github.com/HumanCellAtlas/lira): Listens to storage service notifications and launches workflows  
-[Pipeline Tools](https://github.com/HumanCellAtlas/pipeline-tools): Contains Data Coordination Platform adapter pipelines and associated tools  
-[Secondary Analysis](https://github.com/HumanCellAtlas/secondary-analysis): Integration test scripts and other automation for the Pipeline Execution Service (contains all tickets for the prioritized work for the implementation team)  
-[Secondary Analysis Deploy](https://github.com/HumanCellAtlas/secondary-analysis-deploy): Contains the deployment configuration and scripts for the Pipeline Execution Service 
+- [Adapter Pipelines](https://github.com/HumanCellAtlas/adapter-pipelines): Contains (adapter) pipelines and other static files used by the HCA DCP Pipelines Execution Service to interface the other services in the DCP.
+- [Cromwell Tools](https://github.com/broadinstitute/cromwell-tools): A collection of Python clients and accessory scripts for interacting with the [Cromwell workflow execution engine](https://github.com/broadinstitute/cromwell) - a scientific workflow engine designed for simplicity and scalability
+- [Falcon](https://github.com/HumanCellAtlas/falcon): Queueing system that (after launching) throttles and inititates workflows
+- [Lira](https://github.com/HumanCellAtlas/lira): Listens to storage service notifications and launches workflows
+- [Pipeline Tools](https://github.com/HumanCellAtlas/pipeline-tools): Contains Python package for interacting with and running data processing pipelines in the Human Cell Atlas Data Coordination Platform
+- [Secondary Analysis](https://github.com/HumanCellAtlas/secondary-analysis): Integration test scripts and other automation for the Pipeline Execution Service (contains all tickets for the prioritized work for the implementation team)
+- [Secondary Analysis Deploy](https://github.com/HumanCellAtlas/secondary-analysis-deploy): Contains the deployment configuration and scripts for the Pipeline Execution Service
