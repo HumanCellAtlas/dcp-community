@@ -235,11 +235,11 @@ to communicate the deletion of a file:
 |--------------|------------|
 |410| The file has been deleted. The reason and details for the deletion are returned. |
 
-**Path**: `PUT /bundles/{uuid}`
+**Path**: `PUT /files/{uuid}`
 
-|Response Code| Description|
-|--------------|------------|
-|409| Returned when a file or file tombstone with the same UUID and/or version already exists.|
+| Response Code | Description |
+|---------------|-------------|
+| 409 | Returned when a file or file tombstone with the same UUID and/or version already exists. |
 
 
 ## Deletion Process
