@@ -256,7 +256,7 @@ procedures takes place:
 2) The user makes a request to the appropriate API to retrieve the confirmation code. A list of bundles and/or files
    affected is also returned in the request.
 
-3) The users makes a second request that included the confirmation code. This starts the deletion process.
+3) The users makes a second request that includes the confirmation code. This starts the deletion process.
 
 4) After the deletion request has been confirmed, the DSS places **tombstones** in the
    underlying storage system (S3 or GCP bucket). For a **logical deletion** request,
