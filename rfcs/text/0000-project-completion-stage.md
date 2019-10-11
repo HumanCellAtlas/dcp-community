@@ -116,6 +116,8 @@ As an HCA submitter, I am curious where my HCA submission is in the DCP’s data
 - A mechanism to gain access to 'unreleased' projects on the DataBrowser
 - A mechanism to gain access to 'unreleased' projects in the DataStore
 
+**Future considerations**: There will have cases in the future where a project will have more raw data and/or analysis data and/or matrix products to a project after it has been released. The new data should bee inaccessible to the public until version-complete and validated, while all of the released metadata and data should remain released. This will likely trigger a new project-version (although a concepet not yet realized). Therefore, the unreleased/released distinction should be at the _prroject-version_ level. Another option would be to put the unreleased/released distinction at the file level.
+
 ### Drawbacks and Limitations
 
 This postpones the delivery of experimental metadata, raw data, and Secondary Analysis products as a project continues through the DCP data lifecycle. It is believed that data consumers will accept this minimal delay because it provides them with more confidence in their data access (they encounter fewer errors and there is no uncertainty as to whether more products will be delivered in the near future for a given project). 
