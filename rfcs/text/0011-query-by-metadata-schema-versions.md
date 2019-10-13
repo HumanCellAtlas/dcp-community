@@ -45,7 +45,7 @@ eagerly surface incompatibilities.
 ### User Stories
 
 *Share the [User Stories](https://www.mountaingoatsoftware.com/agile/user-stories) motivating this RFC.*
-* As a data wrangle, I would like to be able to push new data adhering to the latest metadata schema without having to
+* As a data wrangler, I would like to be able to push new data adhering to the latest metadata schema without having to
 wait for every single component to be compatible with the new schema versions.
 * As a DCP developer working on a downstream component (e.g. Matrix Service, Secondary Analysis, etc.) I would like to
 receive notification about new data adhering to new metadata schema versions as soon as I am ready without having to
