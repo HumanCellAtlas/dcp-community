@@ -62,9 +62,9 @@ Where necessary, existing RFCs MAY be revised using the same process (a proposed
 
 Minor and trivial changes MAY be made freely, with no announcement by the author(s) of the RFCs. Such changes include correcting typos, re-wordings, and the like.
 
-#### Deprecated RFCs 
+### Deprecated RFCs 
 
-When a design is no longer relevant to or implemented in the DCP, the closed PR SHOULD be labeled with "rfc-deprecated." The **Summary** section of the RFC SHOULD be updated to reflect the deprecated status.
+When a design is no longer relevant to or implemented in the DCP, the closed pull request SHOULD be labeled with "rfc-deprecated." The **Summary** section of the RFC SHOULD be updated to reflect the deprecated status.
 
 ### What are the roles in the RFC process?
 
@@ -88,19 +88,19 @@ When a design is no longer relevant to or implemented in the DCP, the closed PR 
 
 #### **Authors**:
 
-There are three types of RFCs that may be proposed: ***Software***, ***Governance***, and ***Informational***. Software RFCs are expected to be linked to an Objective that is prioritized in the DCP Product Roadmap, tracked by linking directly to an existing ticket in the DCP Zenhub board (usually labeled as a Spike). Informational and Governance RFCs need not directly reference an open ticket in the DCP Zenhub board.
+There are three types of RFCs that may be proposed: ***Software***, ***Governance***, and ***Informational***. Software RFCs SHOULD be linked to an Objective that is prioritized in the DCP Product Roadmap by [linking the open pull request to an existing ticket in the DCP Zenhub board](https://help.zenhub.com/support/solutions/articles/43000010350-connecting-pull-requests-to-github-issues) (usually labeled as a Spike). Informational and Governance RFCs need not directly reference an open ticket in the DCP Zenhub board.
 
-To inform the DCP Community about the development of an RFC, with the intention of forming collaborations between people thinking about similar problems, it is RECOMMENDED that a draft of the RFC be published as soon as the Problem Statement and Authors have been established. The steps to begin are as follows:
+To inform the DCP Community about the development of an RFC, it is RECOMMENDED that a draft of the RFC be published as soon as the Problem Statement and Authors have been established. The steps to begin are as follows:
 
    1. Fork the HumanCellAtlas `dcp-community` repository
    2. Copy `rfcs/rfc-template.md` to `rfcs/text/0000-my-feature.md`. Make `my-feature` descriptive but do not assign an RFC number yet.
    3. Fill out the Problem Statement and Author(s) sections.
-   4. Push the changes to your branch and create a _Draft_ PR.
-   5. Label the PR with the "rfc-draft" label.
+   4. Push the changes to your branch and create a [_Draft_ Pull Request](https://github.blog/2019-02-14-introducing-draft-pull-requests/).
+   5. Add the "rfc-draft" label to the pull request.
 
 #### **Non-Authors**:
 
-When a _Draft_ RFC PR is published and labeled with "rfc-draft," specific commentary is NOT RECOMMENDED (negative or positive) until the Authors(s) propose the RFC for community review. If the draft RFC sparks interest, it is RECOMMENDED that one reach out to the Author(s) offline to suggest a collaboration.
+When a _Draft_ RFC pull request is opened and labeled with "rfc-draft," specific commentary is NOT RECOMMENDED (negative or positive) until the Authors(s) propose the RFC for community review. If the draft RFC sparks interest, it is RECOMMENDED that one reach out to the Author(s) offline to suggest a collaboration.
 
 ### Proposing RFCs
 
@@ -108,11 +108,11 @@ When a _Draft_ RFC PR is published and labeled with "rfc-draft," specific commen
 
   - Fill in the RFC with attention to detail
   
-  - Submit a pull request. If the PR was originally in a draft state, remove the "rfc-draft" label.
+  - Submit a pull request. If the pull request was originally in a draft state, remove the "rfc-draft" label.
   
   - Add the "rfc-community-review" label.
   
-  - Find the auto-generated ticket in the Zenhub `dcp-community` board and assign all Author(s) to the ticket.
+  - Find the pull request on the Zenhub `dcp-community` board and assign all Author(s) to the ticket.
   
   - Add a minimum two week _last call_ for the completion of the Community review to the top-level Summary section in the RFC pull request.
 
@@ -130,13 +130,13 @@ When a _Draft_ RFC PR is published and labeled with "rfc-draft," specific commen
     
     - Add the appropriate software component name label to the RFC OR if the RFC impacts multiple DCP software components, add the "Architecture" label instead. If uncertain about the appropriate project name, then ask on the **#dcp-project-mgmt** Slack channel.
     
-    - Link the ticket that was auto-generated in the `dcp-community` Zenhub board to an open ticket in the `dcp` repo. RFCs generally fulfill a deliverable for a Spike ticket and linking the open ticket in the `dcp` repo to the auto-generated PR ticket guarantees a paper-trail of the work.
+    - Link the pull request from the `dcp-community` Zenhub board to the associated open ticket in the `dcp` repo.
     
     - Send an FYI to the HumanCellAtlas **#tech-architecture** Slack channel. Include a link to the RFC pull request and the last call deadline.
   
   - For **Governance RFCs**:
   
-    - Add the "Governance" label to the PR.
+    - Add the "Governance" label to the pull request.
     
     - Send an FYI to the HumanCellAtlas **#dcp-project-mgmt** Slack channel. Include a link to the RFC pull request and the last call deadline.
 
@@ -183,6 +183,8 @@ When a _Draft_ RFC PR is published and labeled with "rfc-draft," specific commen
 - When all issues are addressed and any required Science reviews are complete:
 
   - Summarize the review discussion for the **Approvers** in the top-level summary comment in the RFC pull request.
+  
+  [**EXAMPLE**](https://github.com/HumanCellAtlas/dcp-community/pull/92#issue-301661364)
 
 ### Approving RFCs
 
@@ -237,7 +239,7 @@ When a _Draft_ RFC PR is published and labeled with "rfc-draft," specific commen
 
 #### Author(s):
 
-- If via various discussions, it is decided that the RFC must be "paused" until further information can be obtained, and rough consensus has been met to pause rather than reject or withdraw, replace "rfc-community-review" with "rfc-paused" and comment in the PR with the rationale.
+- If via various discussions, it is decided that the RFC must be "paused" until further information can be obtained, and rough consensus has been met to pause rather than reject or withdraw, replace "rfc-community-review" with "rfc-paused" and comment in the pull request with the rationale.
 
 #### Shepherd:
 
