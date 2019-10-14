@@ -16,7 +16,7 @@ this PR is not ready for review.
   - *For governance RFCs*: Add the "rfc-community-review" and the "Governance" labels.
 - [ ] **April 1**: Community Review Last Call <!--Should be at least 2 weeks-->
 - [ ] Request review on Slack channel [#dcp](https://humancellatlas.slack.com/messages/C51A8EDQQ).
-- [ ] **Shepard**: Summarize the review discussion for the Approvers in the top-level summary comment in the RFC pull 
+- [ ] **Shepherd**: Summarize the review discussion for the Approvers in the top-level summary comment in the RFC pull 
 request
 
 ### Oversight Review
