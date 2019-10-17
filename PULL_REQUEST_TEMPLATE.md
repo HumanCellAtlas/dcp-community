@@ -16,21 +16,17 @@ this PR is not ready for review.
   - *For governance RFCs*: Add the "rfc-community-review" and the "Governance" labels.
 - [ ] **April 1**: Community Review Last Call <!--Should be at least 2 weeks-->
 - [ ] Request review on Slack channel [#dcp](https://humancellatlas.slack.com/messages/C51A8EDQQ).
+- [ ] Send an FYI to the appropriate HumanCellAtlas Slack channel. Include a link to the RFC pull request and the last call deadline.
+  - For *Software RFCs*: [#tech-architecture](https://humancellatlas.slack.com/messages/C6SGU0R3J)
+  - For *Governance RFCs*: [#dcp-project-mgmt](https://humancellatlas.slack.com/messages/C53S0GBS7)
+- [ ] **Shepherd**: Add RFC as an agenda item to next meeting:
+  - For *Software RFCS*: DCP Architecture meeting
+  - For *Governance RFCs*: DCP PM meeting
 - [ ] **Shepherd**: Summarize the review discussion for the Approvers in the top-level summary comment in the RFC pull 
-request
-
-### Oversight Review
-- [ ] **April 8**: Oversight Review Last Call <!--Should be at least 1 weeks-->
-- [ ] Replace "rfc-community-review" with "rfc-oversight-review"
-- [ ] Request Review on Slack Channels. Include a link to the PR, and the last call date.
-  - For *software RFCs*: [#tech-architecture ](https://humancellatlas.slack.com/messages/C6SGU0R3J)
-  - For *governance RFCs*: [#dcp-project-mgmt](https://humancellatlas.slack.com/messages/C53S0GBS7)
-- [ ] Add RFC as an agenda item to next meeting:
-  - DCP Architecture meeting for *software RFCs*
-  - DCP PM meeting for *governance RFCs*
+request  
   
 ### Approval
-- [ ] Replace "rfc-oversight-review" with "rfc-approved"
+- [ ] Replace "rfc-community-review" with "rfc-approved"
 - [ ] Rename the RFC from 0000-my-feature.md to ####-my-feature.md (with leading zeros) where #### is the next 
  available RFC number
 - [ ] Create a link between the approved RFC and its pull request by updating the DCP PR section in the RFC template 
