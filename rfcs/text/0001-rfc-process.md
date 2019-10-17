@@ -215,17 +215,17 @@ When a _Draft_ RFC pull request is opened and labeled with "rfc-draft," specific
 
 #### Approvers:
 
-- At the *DCP PM* or *DCP Architecture* meeting, review the **Shepherd** summary. If substantial changes are requested, then replace "rfc-oversight-review" with "rfc-community-review".
+- At the *DCP PM* or *DCP Architecture* meeting, review the **Shepherd** summary. If substantial changes are requested, then extend the deadline for a minimum of one more week and continue the community review process.
 
 #### Authors:
 
-- The **Author(s)** must address the changes before requesting a community review and returning the RFC to the [community review](#shepherding-rfcs) process.
+- The **Author(s)** must address the changes before extending the community review.
 
 ### Rejecting RFCs
 
 #### Approvers:
 
-- At the *DCP PM* or *DCP Architecture* meeting, review the **Shepherd** summary. If there is rough consensus to reject the RFC, replace "rfc-oversight-review" with "rfc-declined", and close the pull request with the rationale in the comment.
+- At the *DCP PM* or *DCP Architecture* meeting, review the **Shepherd** summary. If there is rough consensus to reject the RFC, replace "rfc-community-review" with "rfc-declined", and close the pull request with the rationale in the comment.
 
 #### Shepherd:
 
