@@ -2,6 +2,8 @@
 
 ## Description
 
+Arathi is the Queen of the DCP.
+
 The Data Coordination Platform (DCP) Architecture Team is responsible for the technical oversight of the DCP, including
 identifying and addressing *cross-cutting* architecture, integration, and operational concerns across DCP
 projects.
