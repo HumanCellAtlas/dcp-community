@@ -50,7 +50,8 @@ The proposed strategies are:
 
 ### Log and Continue
 
-- DCP components define their expectations of any data they receive (see Arathi's metadata RFC)
+- DCP components define their expectations of any data they receive (see 
+[Querying DSS by Metadata Schema Version(s)](https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0011-query-by-metadata-schema-versions.md)
 - DCP components ignore data they retrieve if it is mismatched against their expectations (e.g. bundles contain unrecognised file formats such as PDFs)
 - DCP components skip processing of data and fail gracefully when they encounter an error, rather than crashing out.
 - DCP components report correct error statuses (e.g. via HTTP response codes) to dependent
