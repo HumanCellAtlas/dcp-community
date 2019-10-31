@@ -53,8 +53,9 @@ The proposed strategies are:
 - DCP components define their expectations of any data they receive (see 
 [Querying DSS by Metadata Schema Version(s)](https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0011-query-by-metadata-schema-versions.md)
 - DCP components ignore data they retrieve if it is mismatched against their expectations (e.g. bundles contain unrecognised file formats such as PDFs)
-- DCP components skip processing of data and fail gracefully when they encounter an error, rather than crashing out.
-- DCP components report correct error statuses (e.g. via HTTP response codes) to dependent
+- DCP components skip processing of data and fail gracefully when they encounter an error, rather than crashing or producing incorrect results.
+_ DCP components log all errors in a manner that allows them to be detected and addressed.  See [Monitoring for production systems](https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0002-monitoring-for-production-systems.md).
+- DCP components report correct error statuses (e.g. via HTTP response codes) to clients as appropriate.
 
 
 ### Repair and Recover
@@ -66,7 +67,7 @@ The proposed strategies are:
 ### Unresolved Questions
 
 - It is expected that this RFC to raise questions that require more detailed specification of the requirements.
-- The most each component determine and reports compliance to these principles need to be defined.
+- How each component determines and reports compliance to these principles needs to be defined.
 
 ### Prior work:
 - [The Harmful Consequences of the Robustness Principle](https://tools.ietf.org/html/draft-iab-protocol-maintenance-03) - Despite the name, this IETF draft very much supports a premise of this RFC, which is to not attempt process unexpected data, rather skip and move on in a principled manner.
