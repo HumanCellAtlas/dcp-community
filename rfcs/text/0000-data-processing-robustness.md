@@ -73,3 +73,5 @@ The proposed strategies are:
 - It is expected that this RFC to raise questions that require more details specification of the requirements.
 - The most each component determine and reports compliance to these principles need to be defined.
 
+### Prior work:
+- [The Harmful Consequences of the Robustness Principle](https://tools.ietf.org/html/draft-iab-protocol-maintenance-03) Despite the name, this IETF draft very much supports a premise of this RFC, which is to not attempt process unexpected data, rather skip and move on.
