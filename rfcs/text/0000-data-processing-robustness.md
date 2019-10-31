@@ -10,7 +10,7 @@ DCP data processing robustness principles
 
 ## Summary
 
-This document describes requirements for individual DCP components related to robust against incorrect, corrupt, or unexpected data.  It also lays out expectations for data integrity and error handling for DCP software.  It does not specify implementation details or technology.
+This document describes requirements for individual DCP components related to robustness against incorrect, corrupt, or unexpected data.  It also lays out expectations for data integrity and error handling for DCP software.  It does not specify implementation details or technology.
 
 ## Author(s)
 
