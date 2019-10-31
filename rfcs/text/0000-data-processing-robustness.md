@@ -54,7 +54,7 @@ The proposed strategies are:
 [Querying DSS by Metadata Schema Version(s)](https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0011-query-by-metadata-schema-versions.md)
 - DCP components ignore data they retrieve if it is mismatched against their expectations (e.g. bundles contain unrecognised file formats such as PDFs)
 - DCP components skip processing of data and fail gracefully when they encounter an error, rather than crashing or producing incorrect results.
-_ DCP components log all errors in a manner that allows them to be detected and addressed.  See [Monitoring for production systems](https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0002-monitoring-for-production-systems.md).
+- DCP components log all errors in a manner that allows them to be detected and addressed.  See [Monitoring for production systems](https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0002-monitoring-for-production-systems.md).
 - DCP components report correct error statuses (e.g. via HTTP response codes) to clients as appropriate.
 
 
