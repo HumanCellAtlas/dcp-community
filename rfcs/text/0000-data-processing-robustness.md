@@ -4,9 +4,7 @@
 
 `[dcp-community/rfc#](https://github.com/HumanCellAtlas/dcp-community/pull/<PR#>)`
 
-# RFC Name
-
-DCP data processing robustness principles
+# RFC DCP data processing robustness principles
 
 ## Summary
 
@@ -66,7 +64,7 @@ The proposed strategies are:
 
 ### Unresolved Questions
 
-- It is expected that this RFC to raise questions that require more details specification of the requirements.
+- It is expected that this RFC to raise questions that require more detailed specification of the requirements.
 - The most each component determine and reports compliance to these principles need to be defined.
 
 ### Prior work:
