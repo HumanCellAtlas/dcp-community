@@ -16,7 +16,7 @@ This document describes requirements for individual DCP components related to ro
 [Tony Burdett](mailto:tburdett@ebi.ac.uk)
 
 ## Shepherd
- `[Tony Burdett](mailto:tburdett@ebi.ac.uk)`
+[Tony Burdett](mailto:tburdett@ebi.ac.uk)
 
 ## Motivation
 
