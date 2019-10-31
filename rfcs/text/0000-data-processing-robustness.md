@@ -18,11 +18,7 @@ This document describes requirements for individual DCP components related to ro
 [Tony Burdett](mailto:tburdett@ebi.ac.uk)
 
 ## Shepherd
-***Leave this blank.** This role is assigned by DCP PM to guide the **Author(s)** through the RFC process.*
-
-*Recommended format for Shepherds:*
-
- `[Name](mailto:username@example.com)`
+ `[Tony Burdett](mailto:tburdett@ebi.ac.uk)`
 
 ## Motivation
 
@@ -74,4 +70,4 @@ The proposed strategies are:
 - The most each component determine and reports compliance to these principles need to be defined.
 
 ### Prior work:
-- [The Harmful Consequences of the Robustness Principle](https://tools.ietf.org/html/draft-iab-protocol-maintenance-03) Despite the name, this IETF draft very much supports a premise of this RFC, which is to not attempt process unexpected data, rather skip and move on.
+- [The Harmful Consequences of the Robustness Principle](https://tools.ietf.org/html/draft-iab-protocol-maintenance-03) - Despite the name, this IETF draft very much supports a premise of this RFC, which is to not attempt process unexpected data, rather skip and move on in a principled manner.
