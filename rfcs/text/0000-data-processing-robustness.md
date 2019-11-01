@@ -28,11 +28,11 @@ The single-cell community is part of a new field, and the optimal experimental d
 
 Likely, most consumers of DCP data will only be interested in some of the experimental metadata. In some cases, this will be confined to a subset of the available metadata (e.g. "which dissociation protocol was used in this experiment?") and in other cases, it will be confined to certain experimental designs ("how was the organoid created in this experiment?"). In both scenarios, we will observe differences. Over time, the set of fields needed to adequately define dissociation protocols will likely change, and not all experimental designs make use of organoids.
 
-Given the manually created nature of experimental metadata, it's high variability, and the needs of consumers, it is likely that errors and mismatches will occur. Assumptions of data consumers will be invalid, highly unusual experimental designs that had never been considered when writing software components will be submitted, and metadata that is not backward compatible or simply incorrect, will all end up in the DCP.
+Given the manually created nature of experimental metadata, its high variability, and the needs of consumers, it is likely that errors and mismatches will occur. Assumptions of data consumers will be invalid, highly unusual experimental designs that had never been considered when writing software components will be submitted, and metadata that is not backward compatible or simply incorrect, will all end up in the DCP.
 
-Data integrity for biological data sets goes beyond simply ensuring the integrity of individual files, however. All files in a coherent data set (e.g. all FASTQ files from a single sequencing experiment) must be valid to the same standard, and the experimental metadata that references these files must correctly describe which files were generated from which technique, for example. The partitioned nature of many single-cell experiments, along with the continuous processing design of the DCP, makes it hard to even define a *complete data set*, let alone ensure it's integrity.
+Data integrity for biological data sets goes beyond simply ensuring the integrity of individual files, however. All files in a coherent data set (e.g. all FASTQ files from a single sequencing experiment) must be valid to the same standard, and the experimental metadata that references these files must correctly describe which files were generated from which technique, for example. The partitioned nature of many single-cell experiments, along with the continuous processing design of the DCP, makes it hard to even define a *complete data set*, let alone ensure its integrity.
 
-To create a robust and resilient system, it is critical that DCP components are engineered with a liberal attitude to data and experimental metadata, being highly tolerant to errors in data and metadata, integrity problems, and unexpected content. This is likely to mean that DCP components encounter data that they cannot handle, and this is an acceptable compromise as long as these cases are highly visible. This RFC proposes several strategies to engineer data processing systems for robustness and data integrity.
+To create a robust and resilient system, DCP components must be engineered with a liberal attitude to data and experimental metadata, being highly tolerant of errors in data and metadata, integrity problems, and unexpected content. This is likely to mean that DCP components encounter data that they cannot handle, and this is an acceptable compromise as long as these cases are highly visible. This RFC proposes several strategies to engineer data processing systems for robustness and data integrity.
 
 ### User Stories
 
@@ -52,7 +52,7 @@ The proposed strategies are:
 
 - DCP components define their expectations of any data they receive (see 
 [Querying DSS by Metadata Schema Version(s)](https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0011-query-by-metadata-schema-versions.md)
-- DCP components ignore data they retrieve if it is mismatched against their expectations (e.g. bundles contain unrecognised file formats such as PDFs)
+- DCP components ignore data they retrieve if it is mismatched against their expectations (e.g. bundles contain unrecognized file formats such as PDFs)
 - DCP components skip processing of data and fail gracefully when they encounter an error, rather than crashing or producing incorrect results.
 - DCP components log all errors in a manner that allows them to be detected and addressed.  See [Monitoring for production systems](https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0002-monitoring-for-production-systems.md).
 - DCP components report correct error statuses (e.g. via HTTP response codes) to clients as appropriate.
@@ -61,13 +61,13 @@ The proposed strategies are:
 ### Repair and Recover
 
 - DCP components include operator admin functions to manually trigger automated steps that may have failed
-- In case of errors that causes some data to be skipped, DCP components ensure that all data expected to be handled together (e.g. all data from a single project) complete before making some of the data available
+- In case of errors that cause some data to be skipped, DCP components ensure that all data expected to be handled together (e.g. all data from a single project) complete before making some of the data available
 
 
 ### Unresolved Questions
 
-- It is expected that this RFC to raise questions that require more detailed specification of the requirements.
-- How each component determines and reports compliance to these principles needs to be defined.
+- It is expected that this RFC to raise questions that require a more detailed specification of the requirements.
+- How each component determines and reports compliance with these principles needs to be defined.
 
 ### Prior work:
 - [The Harmful Consequences of the Robustness Principle](https://tools.ietf.org/html/draft-iab-protocol-maintenance-03) - Despite the name, this IETF draft very much supports a premise of this RFC, which is to not attempt process unexpected data, rather skip and move on in a principled manner.
