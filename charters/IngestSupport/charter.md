@@ -99,7 +99,7 @@ The Ingest Support team will identify data type priorities in collaboration with
 
 ### Process Lead
 
-[Mallory Freeberg](mailto:mfreeberg@ebi.ac.uk)
+[Christopher Villarreal](mailto:cjvillar@ucsc.edu)
 
 ## Communication
 

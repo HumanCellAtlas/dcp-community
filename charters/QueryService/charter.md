@@ -73,7 +73,7 @@ Query Service features will be developed with use cases of the following users i
 [Matt Weiden](mailto:mweiden@chanzuckerberg.com)
 
 ### Technical Lead
-[Andrey Kislyuk](mailto:akislyuk@chanzuckerberg.com)
+[Madison Dunitz](mailto:madison.dunitz@chanzuckerberg.com)
 
 
 ## Communication
