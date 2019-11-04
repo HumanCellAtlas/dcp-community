@@ -40,7 +40,7 @@ As a developer on the DCP, I am able to allocate enough time to work on high pri
 
 ### What is a Technical Objective?
 
-A Techincal Objective is a body of work for the DCP, usually cross-cutting, related to:
+A Technical Objective is a body of work for the DCP, usually cross-cutting, related to:
 
 1) Scalability and Performance
 2) Reduction of code debt to improve reliability
