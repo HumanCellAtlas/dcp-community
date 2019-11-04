@@ -8,8 +8,7 @@
 
 ## Summary
 
-This document details the a quarterly process by which TLs (Technical Leads) will contribute to the overall DCP
-quarterly roadmapping process via a Technical Objectives RFC, presented during the TL+PM Planning Call.
+This document details the a quarterly process by which TLs (Technical Leads) will contribute to the overall DCP quarterly Product Roadmap refresh process via a Technical Objectives RFC.
 
 ## Author and Shepherd
 
@@ -17,124 +16,66 @@ quarterly roadmapping process via a Technical Objectives RFC, presented during t
 
 ## Motivation
 
-The new Roadmaps and Planning Process, detailed in the RFC [here](https://github.com/HumanCellAtlas/dcp-community/blob/4bb18c65af5b244460cf404465b1dbc4ee0cc65e/rfcs/text/0000-roadmaps%2Bplanning.md),
-defines a process for annual roadmaps that inform quarterly release planning. TLs (Technical Leads) should contribute
-“grassroots” knowledge about the technical requirements of the DCP on a quarterly basis to guide the 
-[quarterly Release process](https://github.com/HumanCellAtlas/dcp-community/blob/4bb18c65af5b244460cf404465b1dbc4ee0cc65e/rfcs/text/0000-roadmaps%2Bplanning.md#planning-and-executing-a-release)
-via a Technical Objectives RFC. This document details the contents of the Technical Objectives RFC as well as the
-process that must occur such that this artifact is drafted and curated according to a timeline that will allow us to
-present the artifact to the quarterly TL+PM objective curation meeting.
+The Roadmaps and Planning Process, detailed [here](https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0012-roadmaps%2Bplanning.md#refreshing-technical-objectives), defines a process for the development of an annual Product Roadmap in order to deliver product increments on the DCP. This Product Roadmap is refreshed on a quarterly process by the Product Management (PM) team to reflect any emerging requirements and as part of the refresh cycle, the Technical Leads (TLs) are [required to contribute a set of objectives](https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0012-roadmaps%2Bplanning.md#refreshing-technical-objectives) that reflect critical architectural and technical priorities that should be worked on in the upcoming quarter. This document details the contents of the Technical Objectives RFC as well as the process that must occur such that this artifact is updated each quarter in time for the refresh.
 
-This proposed TL Quarterly Planning Process is **owned by the collection of TLs in the DCP** and is intended to
-be a live process that iterates over time as required. The first iteration of the planning process is detailed below.  
-
-Note: The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT
-RECOMMENDED" "MAY", and "OPTIONAL" in this document are to be interpreted as described in BCP 14, 
-[RFC2119](https://www.rfc-editor.org/rfc/rfc2119.txt), and [RFC8174](https://www.rfc-editor.org/rfc/rfc8174.txt) when,
-and only when, they appear in all capitals, as shown here.
+Note: This proposed TL Quarterly Planning Process is **owned by the collection of TLs in the DCP** and is intended to be a live process that iterates over time as required. The first iteration of the planning process is detailed below.
 
 ### User Stories
 
-As a TL of the DCP, I am able to surface important technical priorities to Product Management that will be incorporated
-into the yearly roadmap. 
+As a TL of the DCP, I am able to surface important technical priorities to Product Management that will be incorporated into the yearly roadmap.
 
-As a developer on the DCP, I am able to allocate enough time to work on high priority technical architectural issues
-knowing that the work will facilitate quicker development of feature requests in the long term as informed by
-the roadmap themes.
+As a developer on the DCP, I am able to allocate enough time to work on high priority technical architectural issues knowing that the work will facilitate quicker development of feature requests in the long term as informed by the roadmap themes.
 
 ## Definitions
 
-**Milestone:** a four week timeline/duration in a Release (sometimes five when a holiday is involved).
+**Milestones** represent a four week timeline/duration in a Release.
 
-**Release:** composed of three Milestones and occur on a quarterly cadence.
+**Releases** are composed of three milestones and occur on a quarterly cadence.
 
-**Technical Objective:** a high level goal that encapsulates a general area of DCP technical work that can be flexibly
-broken up by specific sub-tasks. Sub-tasks are usually represented as Epics.  
+**Technical Objective:** a high level goal that encapsulates a general area of DCP technical work that can be flexibly broken up by specific sub-tasks. Sub-tasks are usually represented as Epics. More details on the definition is below.
 
-**TL Roadmapping Shepherd:** Each quarter one TL acts as the “Shepherd” to make sure the TL planning process takes place
-in time to produce the expected Technical Objectives RFC for presentation to the TL+PM planning meeting. The Shepherd
-role will rotate once a quarter according to a spreadsheet drawn up post the approval of this RFC. 
-
-**Technical Objectives RFC:** The final artifact that will be presented to the TL+PM planning call as a representation
-of what TL would like to prioritize work on in the following quarter.
-
-**Component:** Also known as a “Box” or a *chartered component*; represents a piece of the DCP led by a TL and worked on
-by a team of software engineers. The list of chartered components are maintained
-[here](https://github.com/HumanCellAtlas/dcp-community/tree/master/charters).
-
+**Technical Objectives RFC:** The final artifact that will be consulted by the PM team for the roadmap refresh, with the expectation that the objectives will be prioritized for the following quarter, following spirited discussion as needed. 
 
 ## Detailed Design
 
-### Input to the TL Planning Process
+### What is a Technical Objective?
 
-1) Date of TL+PM planning call (information to be gathered by the TL Roadmapping Shepherd).
+A Techincal Objective is a body of work for the DCP, usually cross-cutting, related to:
 
-2) Epics/Objectives from previous quarter that will slip the release and rollover into the next.
+1) Scalability and Performance
+2) Reduction of code debt to improve reliability
+3) Deprecation (or migration) of technologies used in the DCP
+4) Refactoring work in order to make modifications to the DCP Architecture (usually related to points 1 or 2).
 
-### Timeline
+A Technical Objective is NOT:
 
-Per the Roadmaps and Planning Process, a TL+PM call is expected to take place during the third week of Milestone 3 in a
-Release quarter.
+1) A “feature” related to the DCP product. If a TL deems that some feature is missing from the Product Roadmap, it is the responsibility of the TL to communicate with someone on the PM team to ensure that the feature's need is brought up in PM discussions.
+2) Related to DevSecOps or Compliance. Objectives that fall under either of these categories include anything related to CI/CD, security, and Legal (e.g. GDPR). The DevSecOps team and the Compliance working groups are responsible for establishing these objectives for the Product Roadmap.
 
-| &nbsp;&nbsp;Week in Milestone (Week in Quarter) &nbsp;&nbsp;| Deliverables |
+### Process
+
+Per the [Roadmaps and Planning Process Timeline](https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0012-roadmaps%2Bplanning.md#timeline-for-roadmaps), a the Technical Objectives RFC is expected to be completed by the end of Milestone 2, Week 1 (M2W1) which informs the timeline detailed below.
+
+| Week in Milestone | Deliverables |
 |           :----:                    | :--- |
-| **M2W3 (Week 7)**  | - Each component MUST enumerate the work they believe the DCP should prioritize in the following quarter, along with rough estimates of time (sized using T-shirt sizes) and specify any other activities that will also occur (e.g. onboarding new team members) and rough estimates of time. |
-| **M2W4 (Week 8)**  | - A 1 hour TL meeting (the TL Coalescing meeting) MUST occur to consolidate the objectives that have been individually presented and any projects involving multiple components will be sized. |
-|                    | - After the objectives have been coalesced, the union of all presented objectives (minus any objectives that were removed due to low priority) will be sent out to TLs to individually rank in priority. |
-| **M3W1 (Week 9)**  | - A second 1 hour TL meeting (the TL Prioritizing meeting) will take place to bring together all TLs rankings to narrow down the objectives list to objectives that are high priority and feasible. |
-| **M3W2 (Week 10)** | - The TL Planning Shepherd will turn the objectives agreed upon as representative of the TL priorities in the TL Prioritization meeting into an Information RFC and publish. This represents the final artifact: the **Technical Objectives RFC**. There will be no review period as the key stakeholders (the TLs) have already agreed upon the list. |
-| **M3W3 (Week 11)** | - A 2 hour meeting MUST occur with TLs and PMs “to review any incomplete Objectives in the Release, the next Objectives in the DCP Roadmap, and the ***Technical Objectives RFC***.” |
+| **M1W1**  | A Google Doc is sent out (either the previous document used from a previous quarter or a fresh document) to the Technical Architecture team in order to solicit input on what are deemed to be important technical areas of improvement that should be prioritized in the upcoming quarter. The input to this document is free-form and TLs may or may not choose to participate, with the understanding that if no participation is given, no objectives will be generated. |
+| **M1W2** | The Technical Architecture Chairperson (Chair) will spend the week coalescing the free-form text into concrete objectives that will be presented in the Technical Architecture meeting. A discussion will ensue to form consensus around the objectives and if no consensus is met, the entire set of objectives will be included in the RFC for further debate during the RFC's community review. |
+| **M1W3** | The Technical Objectives RFC is updated by the Chair and sent out for the required 2 week community review, following which the changes may be pushed and the RFC may be used as final by the PM team. |
 
 **Note: MXWY is equal to “week Y in milestone X.”
 
-**Note: this schedule may differ based on the holiday schedule each quarter. The responsibility is on the Shepherd of
-the quarter to make sure the timeline is clear (especially the date of the TL+PM call) prior to the process commencing.
+**Note: This schedule may differ based on the holiday schedule each quarter. The responsibility belongs to the Chair to ensure that the timeline is clear (especially the due date of the TL Objectives RFC) prior to beginning the process.
 
-### Templates
+### Specific Chair Tasks
 
-For the purpose of curating the individual component objectives and for the consolidation of objectives into one that
-represents all the components’ objectives, please use: 
-[TL Objectives Template](https://docs.google.com/document/d/1jUo9Y7y9BJhVe8qpgljI45W7JpNlq3ownVBLA3wK0Qw/edit).
+1) Find out the due date/week of the TL Objectives RFC and post a timeline on when tasks are expected to be completed to Slack **#tech-architecture** so that folks are aware that the planning process has begun and expectations are set.
 
-Once the consolidation has taken place, as well as the TL meeting in Week 9, the TL Roadmapping Shepherd MUST turn the
-document into an Informational RFC and publish. The template for crafting an RFC for this purpose is 
-[here](https://github.com/HumanCellAtlas/dcp-community/blob/4bb18c65af5b244460cf404465b1dbc4ee0cc65e/rfcs/roadmap-template.md) 
-but should be tailored such that Themes are removed and replaced with the technical priorities. The Scientific
-Guardrails and User Stories sections also do not need to be filled out.
+2) Post the Google Doc for Technical Architecture free-form input to the **#tech-architecture** Slack channel.
 
-### Specific Shepherd Tasks
+3) Coalesce the free-form text into meaningful and achievable Technical Objectives. Present the objectives during the following Technical Architecture meeting.
 
-1) Find out the date/week of the TL+PM planning call and post a timeline on when artifacts are expected to be completed
-to Slack **#tech-architecture** so that folks are aware that the planning process has begun and expectations are set.
+4) Update the Technical Objectives RFC with the debated/curated objectives and shepherd the RFC process to completion. 
 
-2) Schedule a 1 hour TL Coalescing Meeting and a 1 hour TL Prioritization Meeting, including all TLs\*, one and two
-weeks after the individual components have started working on their individual components’ objectives, respectively.
+5) Once the RFC is published, act as the POC to answer any questions the PM team might have around the objectives.
 
-3) If the meetings aren't separately scheduled, by default it will occur during the two consecutive Tech Architecture
-meetings starting one week after components have been told to begin work on enumerating their objectives. To avoid this
-scenario, the Shepherd should try to schedule the calls at least two weeks in advance to prevent as many scheduling
-conflicts as possible.
-
-4) Transform the document produced at the TL Prioritization meeting into an RFC and publish.
-
-5) **Annoyingly** send reminders about the timeline and expected artifacts and communicate consistently and frequently.
-*If you aren’t annoying, you didn’t send out enough reminders.*
-
-6) Shepherd along the TL Coalescing/Prioritizing meetings such that we get to a final set of priorities. Also act as the
-primary representative of the TLs during the TL+PM meeting when needed.
-
-7) To maintain the flexibility of this RFC and ensure that this process is iterative, if the shepherd notices that the
-process detailed in this RFC is not working, the shepherd MUST adapt the process as needed during that planning cycle to
-generate the required input into the roadmap. This adaptation MUST be documented and this process should be edited.
-
-\* If a TL is unable to attend the meeting due to unavoidable conflicts, a representative may attend instead.
-
-### Unresolved Questions
-
-- What do we do if the timeline slips and the TLs are not able to produce an artifact on time for the TL+PM call?
-  - One suggested consequence: the roadmaps+planning RFC defines the outcome regardless of whether TL is contribute on
-  time or not.
-    
-- How do we hold each component accountable to make sure they contribute to the planning process? The minimum
-contribution expectation is that each component fills out the TL Objectives Template by the time the TL Coalescing
-Meeting takes place.
+6) To maintain the flexibility iterability of this process, if the Chair notices that the process detailed in this RFC is not working, the Chair is free to adapt the process as needed during that quarter to generate the required input into the roadmap. This adaptation should be documented and this process should be edited accordingly.
