@@ -12,6 +12,7 @@ This RFC details a table of contents containing pointers to previous, relevant d
 ## Author(s)
 
 [Arathi Mani](mailto:arathi.mani@chanzuckerberg.com)
+[Andrey Kislyuk](mailto:akislyuk@chanzuckerberg.com)
 
 ## Shepherd
 
