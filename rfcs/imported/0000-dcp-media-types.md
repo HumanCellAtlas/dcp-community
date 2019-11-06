@@ -5,7 +5,7 @@
 
 # DCP Media Types
 
-Please note that this RFC has been imported its original Google Doc and went through a design review process prior to the RFC Process implementation. The original document is [here](https://docs.google.com/document/d/1TqihrgXjct9aDmTJO52_gE2WlpFysB1OkG9C8exmWTw/edit#heading=h.87ix45a71erf). Please be aware that the contents below may potentially be out-of-date as the last-modified date is October 20th, 2017. 
+DISCLAIMER: Please note that this RFC has been imported its original Google Doc and went through a design review process prior to the implementation of the current [RFC Process](https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0001-rfc-process.md). The original document is [here](https://docs.google.com/document/d/1TqihrgXjct9aDmTJO52_gE2WlpFysB1OkG9C8exmWTw/edit#heading=h.87ix45a71erf). Please be aware that the contents below may potentially be out-of-date as the last-modified date of the original Google Document is October 20th, 2017. 
 
 ## Summary
 
