@@ -58,9 +58,10 @@ Per the [Roadmaps and Planning Process Timeline](https://github.com/HumanCellAtl
 
 | Week in Milestone | Deliverables |
 |           :----:                    | :--- |
-| **M1W1**  | A Google Doc is sent out (either the previous document used from a previous quarter or a fresh document) to the Technical Architecture team in order to solicit input on what are deemed to be important technical areas of improvement that should be prioritized in the upcoming quarter. The input to this document is free-form and TLs may or may not choose to participate, with the understanding that if no participation is given, no objectives will be generated. |
-| **M1W2** | The Technical Architecture Chairperson (Chair) will spend the week coalescing the free-form text into concrete objectives that will be presented in the Technical Architecture meeting. A discussion will ensue to form consensus around the objectives and if no consensus is met, the entire set of objectives will be included in the RFC for further debate during the RFC's community review. |
-| **M1W3** | The Technical Objectives RFC is updated by the Chair and sent out for the required 2 week community review, following which the changes may be pushed and the RFC may be used as final by the PM team. |
+| **M4W4**  | A Google Doc is sent out (either the previous document used from a previous quarter or a fresh document) to the Technical Architecture team in order to solicit input on what are deemed to be important technical areas of improvement that should be prioritized in the upcoming quarter. The input to this document is free-form and TLs may or may not choose to participate, with the understanding that if no participation is given, no objectives will be generated. |
+| **M1W1** | The Technical Architecture Chairperson (Chair) will spend the week coalescing the free-form text into concrete objectives that will be presented in the Technical Architecture meeting. A discussion will ensue to form consensus around the objectives and if no consensus is met, the entire set of objectives will be included in the RFC for further debate during the RFC's community review. |
+| **M1W2** | If no consensus was formed in the previous week, a second Technical Architecture meeting will used in order to form consensus around the objectives. The RFC will continue to remain in community review. |
+| **M1W3** | The Technical Objectives RFC is continuously updated by the Chair and approved during the Technical Architecture meeting, following which the changes may be pushed and the RFC may be used as final by the PM team. |
 
 **Note: MXWY is equal to “week Y in milestone X.”
 
