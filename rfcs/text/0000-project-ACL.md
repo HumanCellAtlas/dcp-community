@@ -68,7 +68,9 @@ wants to modify an existing project, ingest must first check with fusillade to s
 analysis will have permissions to submit a analysis bundle for a project on behalf of the owner.
  
 ### Data Store
-Data store will consult fusillade before giving a user access to download a bundles in a project.
+Data store will consult fusillade before giving a user access to download project data. This will require modifying 
+the get-file and get-bundle to check project association and access level before allowing
+ access. Data store can use query service for this.
 
 ### Query Service
 Query service will build an index associating project with bundles. This will be used in combination with fusillade 
@@ -100,6 +102,7 @@ Affected components agree to implement the changes needed to support project bas
 ### Unresolved Questions
 
 - What actions can be performed on a project?
+- Should owners be able to physically delete, or just tombstone?
 - *What aspects of the design do you expect to clarify later during iterative development of this RFC?*
 
 ### Drawbacks and Limitations [optional]
