@@ -32,8 +32,7 @@ DCP’s storage and evaluation of project ACL using the described implementation
 
 ### User Stories
 
-1. See user stories in [HCA Project Complete Stage RFC](https://github
-.com/HumanCellAtlas/dcp-community/blob/3ce2d4e786432d16a8540da599fb2f72a89f8c5c/rfcs/text/0015-project-completion-stage.md).
+1. See user stories in [HCA Project Complete Stage RFC](https://github.com/HumanCellAtlas/dcp-community/blob/3ce2d4e786432d16a8540da599fb2f72a89f8c5c/rfcs/text/0015-project-completion-stage.md).
 
 1. As a data submitter, I need to limit access to my project, so that I can't ensure it is version-complete before 
  making public.
@@ -60,6 +59,18 @@ DCP’s storage and evaluation of project ACL using the described implementation
 *Describe recommended or mandated review from HCA Science governance to ensure that the RFC addresses the needs of the scientific community.*
 
 ## Detailed Design
+In order to limit access to a project we must know how to identify the project, and 
+who has what level of access. The project uuid will be used to uniquely identify the project across the DCP. 
+
+### Authorization Service
+Authorization Service will be the place of record for who has what level of access to which projects. It will offer 
+APIs to allow services to lookup what projects a users has access, and to modify the level of access a user has to a project.
+
+All internal services will have access to the Authorization Service API. Ingest will populate the Authorization 
+Service database when new project are created.
+
+For porject already in the Data Store, the project.json can be used to add those projects to the Authoerization 
+service.
 
 ### Ingest
 Ingest is where a project is first created and therefore is where ACL must first be applied to project. When a user 
@@ -105,6 +116,7 @@ Affected components agree to implement the changes needed to support project bas
 
 - What actions can be performed on a project?
 - Should owners be able to physically delete, or just tombstone?
+- Who should be the owner of project imported from data store?
 - *What aspects of the design do you expect to clarify later during iterative development of this RFC?*
 
 ### Drawbacks and Limitations [optional]
