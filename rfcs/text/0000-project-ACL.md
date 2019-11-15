@@ -79,19 +79,21 @@ to determine if a user has access to a bundle.
 ### Project Ownership
 
 As the owner of a project you can assign ownership or remove ownership, as well as add data to the project, 
-remove data from the project or delete the project. The owner can also make the project, "Project Complete" and visible to other users.
+remove data from the project or delete the project. The owner can also make the project, version-complete and visible
+ to the public.
 
 ### Access levels
 Several different access levels will be defined for a project. They are:
  - *Read* - a principal can read all data associated with this project
  - *ReadWrite* - a principal can read all data associated with this project and modify data associated with this 
- project. Writing data will involve minting new versions of the data, not removing data.
+ project. Writing data will involve minting new versions of the data, not removing data. The most common use case of 
+ this is secondary analysis submitting data to the project on behalf of the owners.
  - *Owner* - a principal can read, write, and share the project. Sharing grant other users access to the 
  project. Deleting, removes the project from the DCP.
  
 ### Hiding Project
 Not all project should be visible to users. By default all new project are hidden and only viewable to the owner. The
- owner can make the project visible by make its access level public in fusillade.
+ owner can make the project visible by making its access level public, or version-complete.
 
 ### Acceptance Criteria [optional]
 
