@@ -79,7 +79,7 @@ to determine if a user has access to a bundle.
 ### Project Ownership
 
 As the owner of a project you can assign ownership or remove ownership, as well as add data to the project, 
-remove data from the project or delete the project. The owner can also make the project public.
+remove data from the project or delete the project. The owner can also make the project, "Project Complete" and visible to other users.
 
 ### Access levels
 Several different access levels will be defined for a project. They are:
