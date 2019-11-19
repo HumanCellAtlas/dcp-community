@@ -335,13 +335,13 @@ The Matrix Service supports additions for new bundles and projects by executing 
 
 Currently, this process initiated manually by DataOps notifying a Matrix Service developer when secondary analysis for a project has completed and the results are validated. A ticket is opened by DataOps in the Matrix Service board to track 1) project ingestion and 2) availability via the Data Browser. These two steps must also be kicked off manually by a Matrix Service developer which requires 1-2 days of engineering attention per project. A [design proposal](https://docs.google.com/document/d/1RCJo_QTeP9dysqrE2JEeI2NH7f5VTLZtB7wnC2kjo1c/edit?usp=sharing) to automate all steps and enable a DataOps or Matrix Service member to kick off the process via an API endpoint is available and [slated for completion by EOQ4 2019](https://app.zenhub.com/workspaces/dcp-5ac7bcf9465cb172b77760d9/issues/humancellatlas/matrix-service/352). When an implementation of project-complete notifications is available, the new endpoint may act as a hook to enable E2E DCP automation.
 
-The team guarantees to a 1-week processing period to make available a project following secondary analysis completion with the current manual process. Following automation, this period will be updated to 24 hours to index the project and 48 hours for availability via the Data Browser. 
+The team agrees to a 1-week processing period to make available a project following secondary analysis completion with the current manual process. Following automation, this period will be updated to 24 hours to index the project and 48 hours for availability via the Data Browser.
 
 #### Update
 
 The Matrix Service does not respond to bundle updates in real-time as the service does not subscribe to DSS notifications. This is primarily due to the Matrix cache and the loss in performance when invalidating entries when the index is updated. The cache provides constant time delivery of matrices with respect to matrix size for previously requested matrices, however, not responding to bundle updates risks data consistency across DCP services and data availability to users.
 
-To balance these competing motivations, the proposed SOP being discussed with the DataOps team is that bundle updates will occur on a monthly basis in which the Matrix Service will respond to on the same cadence. While this poses a limitation on the rate of data updates through the system, the team proposes that the Matrix Service continue this patten and therefore guarantee support for DCP-wide data consistency for "Release Views" but not "Live Views".
+To balance these competing motivations, the proposed SOP being discussed with the DataOps team is that bundle updates will occur on a monthly basis in which the Matrix Service will respond to on the same cadence. While this poses a limitation on the rate of data updates through the system, the team proposes that the Matrix Service continue this pattern and therefore guarantee support for DCP-wide data consistency for "Release Views" but not "Live Views".
 
 The Matrix Service also does not have a migration strategy for its index and requires a full re-index to respond to metadata schema changes.
 
@@ -351,7 +351,7 @@ Deletion and redaction are handled the same way and are straightforward processe
 
 1. Remove all data from Redshift that is associated with bundle FQIDs from a given project UUID
 2. Delete project matrices from Data Brower's S3 bucket
-3. Clear the Matrix cache (see [Availability and Reproducibility](#availability-and-reproducibility) for details on the cache)
+3. Clear the [Matrix cache](#matrix-cache)
 
 This process is performed manually by a Matrix Service developer to ensure correct execution; it is anticipated that this process will occur infrequently. On project redaction, DataOps will open a Matrix Service ticket to request and track the process. The team adheres to a 1-week period to purge all associated data with redacted/deleted projects.
 
@@ -363,7 +363,7 @@ The `request_id` returned by `POST /matrix` is valid for 30 days following the s
 
 #### Matrix cache
 
-Matrices are cached in S3 according to a hash of a [request's input parameters](#post-/matrix). Specifically, the hash encodes the set of `cellkey`s selected by the user's `filter` object, the list of metadata `fields` exported, the output `format`, and `feature`. During a request, matching hashes short-circuit the matrix generation process, a new copy of the existing matrix is created for this request, and the request is completed. This enables constant time delivery with respect to matrix size for cache hits compared to linear time for cache misses.
+Matrices are cached in S3 according to a hash of a [request's input parameters](#post-matrix). Specifically, the hash encodes the set of `cellkey`s selected by the user's `filter` object, the list of metadata `fields` exported, the output `format`, and `feature`. During a request, matching hashes short-circuit the matrix generation process, a new copy of the existing matrix is created for this request, and the request is completed. This enables constant time delivery with respect to matrix size for cache hits compared to linear time for cache misses.
 
 Matrices are cached for 30 days following the most recent cache hit. The cache is cleared when data in the index is updated (e.g. project reingestion, bundle updates).
 
