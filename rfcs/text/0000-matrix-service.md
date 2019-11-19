@@ -30,7 +30,7 @@ As a data consumer, I would like to access gene expression data from the DCP so 
 - I would like to receive metadata providing the experimental and scientific context about the cells in my matrix.
 - I would like to receive my matrix in a format that is compatible with standard single-cell analysis tools.
 
-## Scientific "guardrails" [optional]
+## Scientific "guardrails"
 
 *Describe recommended or mandated review from HCA Science governance to ensure that the RFC addresses the needs of the scientific community.*
 
@@ -79,7 +79,7 @@ To request a matrix, users must supply a metadata filter expression for which ma
 }
 ```
 
-**Filter**
+#### Filter
 
 The filter object is inspired by the [GDC Search and Retrieval API](https://docs.gdc.cancer.gov/API/Users_Guide/Search_and_Retrieval/#filters-specifying-the-query). To enable users the ability to express complex metadata queries, the object supports nested composition of base filter objects to create a tree of AND/OR statements. The API deviates from the GDC API specification by defining two types of base filter objects:
 
@@ -122,25 +122,25 @@ Ex. Select all cells from the "Single cell transcriptome analysis of human pancr
 }
 ```
 
-**Fields**
+#### Fields
 
 Users may supply a list of metadata `field`s to be exported with their generated matrix. For `loom` formats, metadata is made available within the `loom` file itself via an adjacent attribute matrix; `mtx` and `csv` formats provide a separate CSV file to serve user requested metadata. The full list of available metadata fields is available at the [/fields endpoint](https://matrix.data.humancellatlas.org/v1/fields). More information about a specific metadata field such as a description and a set of valid values is available at the `/fields/<field>` endpoint. See [Auxiliary Endpoints](#auxiliary-endpoints) for more details on these.
 
-**Format**
+#### Format
 
 The API generates expression matrices in three formats: `loom`, `mtx` and `csv`. From the [loom](http://loompy.org/) documentation page, the format is "an efficient file format for large omics datasets", enabling the storage of large expression matrices with metadata and also supports many popular data processing programming languages. For these reasons, `loom` is the service's default and most performant format. The `mtx` format adheres to the [10x feature-barcode matrix specification](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/output/matrices) to enable compatibility with `scanpy` and `seurat` 10X methods. `csv` is supported as a raw text format for which performance may not be optimized for.
 
-**Feature**
+#### Feature
 
 Users are also able to specify the expression feature type, i.e. the matrix's axis label, as `gene` (default) or `transcript` names.
 
-**Species (proposed)**
+#### Species (proposed)
 
 `species` is a potential fifth parameter that the endpoint may accept. Currently, `species` is not a top-level parameter and is rather specified within `filter` via the `cell_suspension.genus_species.ontology` and `cell_suspension.genus_species.ontology_label` filters. Since a distinct matrix is generated for each `species` requested, it may be a more intuitive user experience for it to be a top-level parameter. Additionally, it requires non-trivial logic for the Matrix Service to parse a complex `filter` object to determine which species are requested, i.e. which species to generate a matrix for. In order to simplify the user's mental model of the API as well as the service's logic complexity, `species` is proposed as a fifth request body parameter.
 
 *Note: Currently, supported species are Homo Sapiens and Mus Musculus.*
 
-**Response**
+#### Response
 
 The response object returns a `request_id` that users can use to retrieve the status and results of a request by supplying it to the `GET` `/matrix` endpoint. A `status` and `message` field are also supplied to inform the user whether the request started successfully or not.
 
@@ -160,7 +160,7 @@ If a request selects cells from multiple species, the Matrix Service will genera
 
 A `request_id` returned by the `POST` endpoint can be supplied as a URL parameter to this endpoint to retrieve the status and results of the request.
 
-**Response**
+#### Response
 
 ```
 {
@@ -292,7 +292,7 @@ In anticipation of the scale of HCA data, the index is built on Amazon Redshift,
 
 The index is populated via an ETL job that extracts expression data and metadata from analysis bundles in the DSS and transforms them into the cell-based schema defined above. Additionally, feature data such as genes and transcripts are retrieved for supported species from [public GENCODE annotation files](https://www.gencodegenes.org/human/). These three data sources, expression data, metadata and feature data, distinguish three processes that make up the ETL job.
 
-**Expression data**
+#### Expression data
 
 *Related tables:* `cell`, `expression`
 
@@ -305,7 +305,7 @@ Data for cell and expression tables are derived from [Secondary Analysis Pipelin
 | SS2               | `cell_suspension_*.json`<br />`*.isoforms.results`<br />`*.genes.results` | For SS2 pipelines, expression counts are parsed for both gene and transcript IDs from `*.genes.results` and `*.isoforms.results` files. | Since SS2 bundles conventionally contain one cell per bundle, the `cell_suspension.provenance.document_id` is used as a cell's unique identifier within the index. |
 | Optimus           | `*zarr*`<br />`empty_drops_result.csv`                       | For Optimus pipelines, expression data is parsed from the pipeline generated `zarr` according to this [specification](https://github.com/HumanCellAtlas/skylab/blob/master/docs/matrix_format_spec.md) maintained by Secondary Analysis and Matrix teams. However, a large majority of the barcodes represented in the `zarr`do not represent genuine cells according to `empty_drops_result.csv`  (in one example bundle, only ~1% of rows are suggested to be real cells). To enable users to perform their own filtering on a reasonable set of barcodes while not delivering an abundance of low-quality data, a barcode is included in the index if the UMI count reported in `empty_drops_result.csv` is greater than 100, as entires with less are almost certainly artifactual. Additionally, users may still interact with these parameters via the `cell` table fields `barcode`, `total_umis` and `empty_drops_iscell`. | Within the index, cells are identified by a unique `cellkey` deterministically generated and managed by the Matrix Service. The current algorithm for generating an Optimus `cellkey` is the MD5 hash of the `bundle_uuid` and `barcode`. To ensure uniqueness and deterministic generation, the following assumptions must be true:<br /><br />1. A `bundle_uuid` must be preserved across updates and revisions to the bundle.<br />2. Barcodes are unique within a bundle.<br /><br />It should be noted that the event of a project reingestion does not maintain assumption (1) since bundle UUIDs are regenerated which results in generating a different `cellkey` for the same cell. The current response to this is to rebuild the index for the reingested project. |
 
-**Metadata**
+#### Metadata
 
 *Related tables:* `analysis`, `donor`, `specimen`, `cell_suspension`, `library_preparation`, `project`, `publication`, `contributor`
 
@@ -319,7 +319,7 @@ Metadata entities are identified by their `*.provenance.document_id` (DIDs) whic
 
 A discussion should be had with the DCP regarding the feasibility of DIDs meeting these assumptions. (1) is potentially at risk as it is possible for the same metadata entity to have different DIDs in separate projects. (2) may be true and requires confirmation from Wranglers/Ingest. Work to satisfy (3) is ongoing and tracked [here](https://github.com/HumanCellAtlas/ingest-central/issues/598).
 
-**Feature data**
+#### Feature data
 
 *Populated tables:* `feature`
 
@@ -329,7 +329,7 @@ Feature data is not parsed from files in primary or analysis bundles. Rather, th
 
 The Matrix Service does not subscribe to DSS notifications favoring correctness and completeness of data over real-time availability. In practice, this translates to updating its index at a regular schedule or following significant events in the DCP such as the completion and validation of secondary analysis of a project. Outlined below are the current SOPs for AUDR operations:
 
-**Add**
+#### Add
 
 The Matrix Service supports additions for new bundles and projects by executing an ETL job for new bundle FQIDs and project UUIDs. Following indexing of a project, a project matrix for each format will be generated via the service and uploaded to the Data Browser-managed `project-assets.data.humancellatlas.org` S3 bucket at the `project-assets/project-matrices/<project_uuid>.<genus_species>.<format>` prefix. This enables the direct download of project matrices via the Data Browser.
 
@@ -337,13 +337,15 @@ Currently, this process initiated manually by DataOps notifying a Matrix Service
 
 The team guarantees to a 1-week processing period to make available a project following secondary analysis completion with the current manual process. Following automation, this period will be updated to 24 hours to index the project and 48 hours for availability via the Data Browser. 
 
-**Update**
+#### Update
 
-The Matrix Service does not respond to bundle updates in real-time as the service does not subscribe to DSS notifications. This is primarily due to the Matrix cache and the loss in performance when invalidating entries when the index is updated. The cache provides constant time delivery of matrices with respect to matrix size for previously requested matrices, however, not responding to bundle updates risks data consistency across DCP services. To balance these competing motivations, the proposed SOP being discussed with the DataOps team is that bundle updates will occur on a monthly basis in which the Matrix Service will respond to on the same cadence. This is not ideal as it impairs the rate of data flow through the system. The team recognizes this limitation and is looking for a better solution.
+The Matrix Service does not respond to bundle updates in real-time as the service does not subscribe to DSS notifications. This is primarily due to the Matrix cache and the loss in performance when invalidating entries when the index is updated. The cache provides constant time delivery of matrices with respect to matrix size for previously requested matrices, however, not responding to bundle updates risks data consistency across DCP services and data availability to users.
 
-The Matrix Service also does not have a migration strategy for its index and requires a full re-index on metadata schema changes.
+To balance these competing motivations, the proposed SOP being discussed with the DataOps team is that bundle updates will occur on a monthly basis in which the Matrix Service will respond to on the same cadence. While this poses a limitation on the rate of data updates through the system, the team proposes that the Matrix Service continue this patten and therefore guarantee support for DCP-wide data consistency for "Release Views" but not "Live Views".
 
-**Delete/Redact**
+The Matrix Service also does not have a migration strategy for its index and requires a full re-index to respond to metadata schema changes.
+
+#### Delete/Redact
 
 Deletion and redaction are handled the same way and are straightforward processes for the Matrix Service:
 
@@ -355,50 +357,47 @@ This process is performed manually by a Matrix Service developer to ensure corre
 
 ### Availability
 
-**Request ID**
+#### Request ID
 
 The `request_id` returned by `POST /matrix` is valid for 30 days following the successful completion of the request. Specifically, this refers to the S3 download URL to retrieve the generated matrix will be valid for 30 days. Following this time, matrices are deleted from S3 and `GET /matrix/request_id` will notify clients that the request has expired.
 
-**Matrix cache**
+#### Matrix cache
 
 Matrices are cached in S3 according to a hash of a [request's input parameters](#post-/matrix). Specifically, the hash encodes the set of `cellkey`s selected by the user's `filter` object, the list of metadata `fields` exported, the output `format`, and `feature`. During a request, matching hashes short-circuit the matrix generation process, a new copy of the existing matrix is created for this request, and the request is completed. This enables constant time delivery with respect to matrix size for cache hits compared to linear time for cache misses.
 
 Matrices are cached for 30 days following the most recent cache hit. The cache is cleared when data in the index is updated (e.g. project reingestion, bundle updates).
 
-**Project matrices**
+#### Project matrices
 
 Project matrices served via the Data Browser are regenerated and updated when projects are reingested or relevant bundle updates are applied to the index.
 
 ### Reproducibility
 
-The Matrix Service will maintain a single version of a bundle for which will be the latest version that belongs to a version-complete project. The following reproducibility implications apply:
+The Matrix Service will maintain a single version of a bundle for which will be the latest version that belongs to a [version-complete](https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0015-project-completion-stage.md#definitions) project. The following reproducibility implications apply:
 
 1. Matrices for historical versions of bundles/projects can not be generated.
 2. The Matrix Service is non-deterministic over time. Identical parameters supplied to the Matrix Service at two different times does not guarantee identical outputs. 
 3. The current Matrix Service does not support an implementation for Citations or Snapshots.
 
-Given (2), (3) is true. As an on-demand service, the Matrix Service itself does not guarantee the reproducibility requirements to support Snapshots or Citations. It is proposed here that an external solution to store matrices generated by the service in the DSS should satisfy these requirements.
+Given (2), (3) is true. As an on-demand service, the Matrix Service itself does not guarantee the reproducibility requirements to support Citations or Snapshots. It is proposed that an external solution to [store matrices generated by the service in the DSS](https://github.com/HumanCellAtlas/dcp-community/blob/master/rfcs/text/0014-data-citation-plan.md#phase-2---versioned-data-citations) should satisfy these requirements.
 
 ### Unresolved Questions
 
-- Matrix preservability i.e. Snapshot/Citation support?
-- Revised SOP on responding to updates
-- Migration strategy?
+- Snapshot/Citation support
+- Undefined metadata schema migration strategy
 
 ### Prior Art
 
 *Share references to prior art to deepen community understanding of the RFC, such as learnings, adaptations from earlier designs, or community standards.*
 
-- v0 (now internal use only)
-  - reading expression data from DSS directly
-    - now, maintain own index
-  - bundles exposed in API interface
-    - users don't know what bundles are
-    - want to define matrices according to metadata fields of interest
-  - no metadata exported with matrices
-    - metadata provides invaluable experiment context
-  - zarr previously supported as default
-    - why are we not doing zarr anymore?
+- [Motivation Aug 2018](https://github.com/HumanCellAtlas/matrix-service/blob/d797cc96c645f90df8fcb4bb9252074931ecd108/MOTIVATION.md)
+- [Use Cases Feb 2018](https://docs.google.com/document/d/12gfF3UEgRZ0YJiBoScLMtcW6Cthv0_MZHQwj4WMYKPA/edit#)
+- [API v0](https://github.com/HumanCellAtlas/matrix-service/blob/1c43b9f3d757ffcb9111b5a13d46691249435f36/README.md)
+  - Issues:
+    - Read expression data directly from DSS which posed significant performance limitations
+    - Exposed bundles via API which caused confusion and data access limitations
+    - Metadata was not exported with matrices
+    - `zarr` previously supported as default
 
 ### Alternatives
 
