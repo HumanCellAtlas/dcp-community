@@ -8,11 +8,12 @@
 
 ## Summary
 
-The existing Matrix Service is a prototype of a DCP product that is capable of enabling third party data consumers to perform integrative analysis across HCA experiments. In its current implementation, this is achieved by 1) delivering a RESTful API that enables data consumers to generate expression matrices defined by a metadata query against an index of cells, and 2) an index of cells in the HCA that belong to projects for which a secondary analysis pipeline is available and complete. This RFC details and requests community review on the prototype's major design decisions surrounding i) the Matrix Service API and ii) the service's cell-centric data model.
+The existing Matrix Service is a prototype of a Data Coordination Platform (DCP) feature that enables data consumers to perform integrative analysis across Human Cell Atlas (HCA) projects. In its current implementation, this is achieved by delivering a RESTful API that enables data consumers to generate expression matrices defined by a metadata query against an index of cells. This RFC details the prototype's major design decisions surrounding i) the Matrix Service API and ii) the service's cell-centric data model.
 
 ## Authors
 
 [Calvin Nhieu](cnhieu@chanzuckerberg.com)
+
 [Marcus Kinsella](mkinsella@chanzuckerberg.com)
 
 ## Shepherd
@@ -20,15 +21,16 @@ The existing Matrix Service is a prototype of a DCP product that is capable of e
 
 ## Motivation
 
-The Human Cell Atlas (HCA) Data Coordination Platform (DCP) ingests, processes, and stores single-cell data, making that data easily available to a wide audience of researchers. The single-cell data type of greatest interest to most researchers is the expression matrix, the cell-by-gene expression values that are the starting point for many downstream analyses. To support this most commonly requested data type, the DCP offers a specialized interface, the DCP matrix service, which enables investigators to easily access and perform integrative analysis across HCA expression data.
+The HCA DCP ingests, processes, and stores single-cell data, making that data easily available to a wide audience of researchers. The single-cell data type of greatest interest to most researchers is the expression matrix, the cell-by-gene expression values that are the starting point for many downstream analyses (e.g. cell type annotation, differential expression, etc.). To support this most commonly requested data type, the DCP offers a specialized interface, the DCP Matrix Service, which enables investigators to easily access and perform integrative analysis across HCA expression data.
 
 ### User Stories
 
-As a data consumer, I would like to access gene expression data from the DCP so that I can perform downstream integrative analysis across HCA experiments.
+As a user with a keyboard, I would like gene expression data from the DCP so that I can perform downstream integrative analysis across HCA experiments.
 
-- I would like to be able to receive an expression matrix comprised of cells that satisfy a set of metadata conditions.
-- I would like to receive metadata providing the experimental and scientific context about the cells in my matrix.
-- I would like to receive my matrix in a format that is compatible with standard single-cell analysis tools.
+- I would like to generate an expression matrix comprised of cells that satisfy a set of metadata conditions.
+- I would like to generate metadata providing the experimental and scientific context about the cells in my matrix.
+- I would like to generate my matrix in a format that is compatible with standard single-cell analysis tools.
+- I would like to generate my matrix in a reasonable amount of time (< 24 hrs).
 
 ## Scientific "guardrails"
 
@@ -38,9 +40,16 @@ As a data consumer, I would like to access gene expression data from the DCP so 
 
 ### Overview
 
-The Matrix Service enables on-the-fly expression matrix generation via a [RESTful API](https://matrix.data.humancellatlas.org/). Through user studies and iterative development over the past year, four major requirements of matrices have been identified and must be met. One, matrices must enable integrative analysis across data in the HCA and the Matrix Service determines that this integration should be at the granularity of individual cells. Second, matrices should include rich metadata that users are interested in so that they can better understand the data they're working with. Third, matrices should be compatible with downstream single cell analysis tools, for example in `Python` and `R`, to further enable downstream analysis of HCA data by the wider community. Finally, performance of serving matrices should be prioritized as the scale of HCA data is anticipated to reach or exceed the order of 10<sup>7</sup> cells. The Matrix Service API is designed to fulfill these requirements in order to provide access to HCA data in a format that enables and encourages downstream integrative analysis.
+The Matrix Service enables on-the-fly expression matrix generation via a [RESTful API](https://matrix.data.humancellatlas.org/). Through user studies and iterative development over the past year, four major requirements of matrices have been identified and must be met:
 
-The default and recommended file format for matrices generated by the service is [loom](http://loompy.org/), an HDF5 file format that is optimized for storing large omics datasets such as expression matrices and designed for consumability, for example, by exporting metadata with matrices. The Matrix Service achieves its first three goals by delivering matrices in `loom`, and other supporting formats, via an expressive API that enables users the ability to specify individual cells and desired metadata to generate a matrix for. For a detailed example, see [this user vignette](https://nbviewer.jupyter.org/github/HumanCellAtlas/matrix-service/blob/master/docs/HCA%20Matrix%20Service%20to%20Scanpy.ipynb#HCA-Matrix-Service-Loom-Output) describing a `loom` matrix generated by the service. The fourth requirement is satisfied by a lazy cache of matrices providing constant time delivery of previously requested matrices.
+1. Matrices must enable cell-level granularity integrative analysis across data in the HCA.
+1. Matrices must include rich metadata that users are interested in so that they can better understand the data they're working with.
+1. Matrices must be compatible with downstream single cell analysis tools, for example in `scanpy` and `Seurat`, to further enable downstream analysis of HCA data by the wider community.
+1. Performance of serving matrices must be prioritized as the scale of HCA data is anticipated to reach or exceed the order of tens of millions of cells.
+
+The Matrix Service API is designed to fulfill these requirements in order to provide access to HCA data in a format that enables and encourages downstream integrative analysis.
+
+The default and recommended file format for matrices generated by the service is [loom](http://loompy.org/), an HDF5 file format that is optimized for storing large omics datasets such as expression matrices and designed for consumability, for example, by exporting metadata with matrices. The Matrix Service achieves its first three goals by delivering matrices in `loom`, and other supporting formats, via an expressive API that enables users the ability to specify individual cells and desired metadata to generate a matrix for. For a detailed example, see [this user vignette](https://nbviewer.jupyter.org/github/HumanCellAtlas/matrix-service/blob/master/docs/HCA%20Matrix%20Service%20to%20Scanpy.ipynb#HCA-Matrix-Service-Loom-Output) describing a `loom` matrix generated by the service. The fourth requirement is satisfied by a lazy cache of matrices providing constant time delivery, with respect to matrix size, of previously requested matrices.
 
 ### API
 
@@ -81,7 +90,7 @@ To request a matrix, users must supply a metadata filter expression for which ma
 
 #### Filter
 
-The filter object is inspired by the [GDC Search and Retrieval API](https://docs.gdc.cancer.gov/API/Users_Guide/Search_and_Retrieval/#filters-specifying-the-query). To enable users the ability to express complex metadata queries, the object supports nested composition of base filter objects to create a tree of AND/OR statements. The API deviates from the GDC API specification by defining two types of base filter objects:
+The filter object is inspired by the [Genomics Data Commons (GDC) API](https://docs.gdc.cancer.gov/API/Users_Guide/Search_and_Retrieval/#filters-specifying-the-query). To enable users the ability to express complex metadata queries, the object supports nested composition of base filter objects to create a tree of AND/OR statements. The API deviates from the GDC API specification by defining two types of base filter objects:
 
 *Table 1.3 Base filter object types*
 
@@ -128,7 +137,7 @@ Users may supply a list of metadata `field`s to be exported with their generated
 
 #### Format
 
-The API generates expression matrices in three formats: `loom`, `mtx` and `csv`. From the [loom](http://loompy.org/) documentation page, the format is "an efficient file format for large omics datasets", enabling the storage of large expression matrices with metadata and also supports many popular data processing programming languages. For these reasons, `loom` is the service's default and most performant format. The `mtx` format adheres to the [10x feature-barcode matrix specification](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/output/matrices) to enable compatibility with `scanpy` and `seurat` 10X methods. `csv` is supported as a raw text format for which performance may not be optimized for.
+The API generates expression matrices in three formats: `loom`, `mtx` and `csv`. From the [loom](http://loompy.org/) documentation page, the format is "an efficient file format for large omics datasets", enabling the storage of large expression matrices with metadata and also supports many popular data processing programming languages. For these reasons, `loom` is the service's default and most performant format. The `mtx` format adheres to the [10x feature-barcode matrix specification](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/output/matrices) to enable compatibility with 10X methods from `scanpy` and `Seurat`. `csv` is supported as a raw text format for which performance may not be optimized.
 
 #### Feature
 
@@ -309,7 +318,7 @@ Data for cell and expression tables are derived from [Secondary Analysis Pipelin
 
 *Related tables:* `analysis`, `donor`, `specimen`, `cell_suspension`, `library_preparation`, `project`, `publication`, `contributor`
 
-The majority of metadata is parsed directly from metadata JSON files available in primary bundles. These fields are identifiable as fields with a valid _Canonical Metadata Names_ mapping in _Table 2.1_. The exceptions are "derived fields" such as `derived_organ_*` that require a degree of intellectual reasoning of the experiment to determine an accurate value. For example, the value of `derived_organ_ontology` may differ from the value of `organ_ontology`, which is read directly from `specimen_from_organism.organ.ontology`, as it is determined by the presence of organoids and/or cell lines in the experiment.
+Metadata are parsed directly from metadata JSON files available in primary and analysis bundles. These fields are identifiable as fields with a valid _Canonical Metadata Names_ mapping in _Table 2.1_. The exceptions are "derived fields" such as `derived_organ_*` that require a degree of intellectual reasoning of the experiment to determine an accurate value. For example, the value of `derived_organ_ontology` may differ from the value of `organ_ontology`, which is read directly from `specimen_from_organism.organ.ontology`, as it is determined by the presence of organoids and/or cell lines in the experiment.
 
 Metadata entities are identified by their `*.provenance.document_id` (DIDs) which are consistently used as primary keys in the schema defined in *Table 2.1*. A similar set of assumptions applied to _Cell IDs_ described in *Table 2.2* apply to these IDs as well:
 
@@ -398,9 +407,4 @@ Given (2), (3) is true. As an on-demand service, the Matrix Service itself does 
     - Exposed bundles via API which caused confusion and data access limitations
     - Metadata was not exported with matrices
     - `zarr` previously supported as default
-
-### Alternatives
-
-*Highlight other possible approaches to delivering the value proposed in this RFC. 
-What other designs were explored? What were their advantages? What was the rationale for rejecting alternatives?*
 
