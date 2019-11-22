@@ -25,14 +25,14 @@ The HCA DCP ingests, processes, and stores single-cell data, making that data ea
 
 ### User Stories
 
-As a user with a keyboard, I would like gene expression data from the DCP so that I can perform downstream integrative analysis across HCA experiments.
+As a user with a keyboard, I would like gene expression data from the DCP so that I can perform downstream integrative analysis across HCA projects.
 
 - I would like to generate an expression matrix comprised of cells that satisfy a set of metadata conditions.
 - I would like to generate metadata providing the experimental and scientific context about the cells in my matrix.
 - I would like to generate my matrix in a format that is compatible with standard single-cell analysis tools.
 - I would like to generate my matrix in a reasonable amount of time; in general, on the order of minutes, not hours.
 
-As a user with a pipette, I would like gene expression data from the DCP.
+As a user with a pipette, I would like gene expression data for HCA projects.
 
 - To support this set of users, an interface via the HCA Data Browser will leverage the API to provide static matrix products.
 
