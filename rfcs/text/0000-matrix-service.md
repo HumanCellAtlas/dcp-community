@@ -406,8 +406,9 @@ Given (2), (3) is true. As an on-demand service, the Matrix Service itself does 
 
 *Share references to prior art to deepen community understanding of the RFC, such as learnings, adaptations from earlier designs, or community standards.*
 
-- [Motivation Aug 2018](https://github.com/HumanCellAtlas/matrix-service/blob/d797cc96c645f90df8fcb4bb9252074931ecd108/MOTIVATION.md)
 - [Use Cases Feb 2018](https://docs.google.com/document/d/12gfF3UEgRZ0YJiBoScLMtcW6Cthv0_MZHQwj4WMYKPA/edit#)
+- [Motivation Aug 2018](https://github.com/HumanCellAtlas/matrix-service/blob/d797cc96c645f90df8fcb4bb9252074931ecd108/MOTIVATION.md)
+- [Charter Aug 2018](https://github.com/HumanCellAtlas/dcp-community/blob/master/charters/ExpressionMatrixService/charter.md)
 - [API v0](https://github.com/HumanCellAtlas/matrix-service/blob/1c43b9f3d757ffcb9111b5a13d46691249435f36/README.md)
   - Issues:
     - Read expression data directly from DSS which posed significant performance limitations
