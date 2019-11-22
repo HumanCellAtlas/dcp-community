@@ -111,7 +111,7 @@ Ex. Select all full length cells:
 
 ```
 "filter": {
-  "op": ">=",
+  "op": "=",
   "value": "full length",
   "field": "library_preparation_protocol.end_bias"
 }
@@ -186,7 +186,7 @@ A `request_id` returned by the `POST` endpoint can be supplied as a URL paramete
 }
 ```
 
-The response returns the `request_id`, a `status` and `message` similar to the response of the `POST /matrix` endpoint. If the `status` of the request is `Complete`, then `matrix_url` will be populated with the public S3 download URL to the generated matrix. Otherwise, an empty string will be returned and a message explaining the status or an error that interrupted the request.
+The response returns the `request_id`, a `status` and `message` similar to the response of the `POST /matrix` endpoint. If the `status` of the request is `Complete`, then `matrix_url` will be populated with the public S3 download URL to the generated matrix. Otherwise, an empty string will be returned and a message explaining the status or an error that interrupted the request. For information on expired requests, see [Availability](#availability).
 
 ### Auxiliary Endpoints
 
