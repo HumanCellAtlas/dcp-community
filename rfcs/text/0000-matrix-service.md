@@ -30,7 +30,7 @@ As a user with a keyboard, I would like gene expression data from the DCP so tha
 - I would like to generate an expression matrix comprised of cells that satisfy a set of metadata conditions.
 - I would like to generate metadata providing the experimental and scientific context about the cells in my matrix.
 - I would like to generate my matrix in a format that is compatible with standard single-cell analysis tools.
-- I would like to generate my matrix in a reasonable amount of time (< 24 hrs).
+- I would like to generate my matrix in a reasonable amount of time; in general, on the order of minutes, not hours.
 
 ## Scientific "guardrails"
 
@@ -149,7 +149,7 @@ Users are also able to specify the expression feature type, i.e. the matrix's ax
 
 `species` is a potential fifth parameter that the endpoint may accept. Currently, `species` is not a top-level parameter and is rather specified within `filter` via the `cell_suspension.genus_species.ontology` and `cell_suspension.genus_species.ontology_label` filters. Since a distinct matrix is generated for each `species` requested, it may be a more intuitive user experience for it to be a top-level parameter. Additionally, it requires non-trivial logic for the Matrix Service to parse a complex `filter` object to determine which species are requested, i.e. which species to generate a matrix for. In order to simplify the user's mental model of the API as well as the service's logic complexity, `species` is proposed as a fifth request body parameter.
 
-*Note: Currently, supported species are Homo Sapiens and Mus Musculus.*
+Note: Currently, supported species are _Homo Sapiens_ and _Mus Musculus_.
 
 #### Response
 
