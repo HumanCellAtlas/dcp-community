@@ -342,7 +342,7 @@ Feature data is not parsed from files in primary or analysis bundles. Rather, th
 
 ### AUDR
 
-The Matrix Service does not subscribe to DSS notifications favoring correctness and completeness of data over real-time availability. In practice, this translates to updating its index at a regular schedule or following significant events in the DCP such as the completion and validation of secondary analysis of a project. Outlined below are the current SOPs for AUDR operations:
+This section details how the service responds to new project additions, bundle updates and data deletion/redaction events in the DCP. The Matrix Service does not subscribe to DSS notifications favoring correctness and completeness of data over real-time availability. In practice, this translates to updating its index at a regular schedule or following significant events in the DCP such as the completion and validation of secondary analysis of a project. Outlined below are the current SOPs for AUDR operations:
 
 #### Add
 
