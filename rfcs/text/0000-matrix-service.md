@@ -32,6 +32,10 @@ As a user with a keyboard, I would like gene expression data from the DCP so tha
 - I would like to generate my matrix in a format that is compatible with standard single-cell analysis tools.
 - I would like to generate my matrix in a reasonable amount of time; in general, on the order of minutes, not hours.
 
+As a user with a pipette, I would like gene expression data from the DCP.
+
+- To support this set of users, an interface via the HCA Data Browser will leverage the API to provide static matrix products.
+
 ## Scientific "guardrails"
 
 *Describe recommended or mandated review from HCA Science governance to ensure that the RFC addresses the needs of the scientific community.*
