@@ -5,8 +5,10 @@
 `[dcp-community/rfc#](https://github.com/HumanCellAtlas/dcp-community/pull/<PR#>)`
 
 # Research Data Legal Bases and Safeguards
+<b>The contents of this informational RFC are a current-state draft and subject to change.</B> Authors of this Informational RFC are confident that the majority of the guidance is appropriate and acceptable, but additional cycles of review by internal and external stakeholders and regulatory experts may require that the guidance provided herein be updated.
+
 ## Summary
-This document summarizes the GDPR compliance approach for the HCA DCP’s processing of Donor Research Data (defined as scRNA seq, associated metadata, and gene count and expression matrices). <b>The contents of this informational RFC are a current-state draft and subject to change.</B> Authors of this Informational RFC are confident that the majority of the guidance is appropriate and acceptable, but additional cycles of review by internal and external stakeholders and regulatory experts may require that the guidance provided herein be updated.
+This document summarizes the GDPR compliance approach for the HCA DCP’s processing of Donor Research Data (defined as scRNA seq, associated metadata, and gene count and expression matrices).
 
 The audiences for this document are the people on the HCA team working on GDPR compliance, specifically, (1) the Compliance Working Group, (2) the GDPR Advisory Group consisting of reps from Broad, Wellcome, Sanger, EMBL, CZI, and McGill, and (3) any DCP development team members whose partnership groups (1) and (2) will need in order to execute the recommended compliance approach.
 
