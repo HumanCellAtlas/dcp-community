@@ -17,7 +17,7 @@ The analysis and recommendations in this document will contain and/or inform oth
 Below are links to related and supporting documents that form a baseline for this document:
 - [Glossary, including current positions regarding identifiability of data types](https://docs.google.com/document/d/1kAx8F5e0wHTKNKzIb1n01OIAZfslUfreJXBp38p0n1c/edit#)
 -   [DPIA draft](https://docs.google.com/document/d/1ircWN3s-OY-1g9BFZEEB18e8NgNycNY6gnG-Vv7f7Mg/edit?ts=5d4995e1#heading=h.qr9larxbh9ql)
--   [Data diagram (draft)](https://drive.google.com/drive/u/0/folders/19_5_DNitRBTHGAJ1dkx-KOHhIkL3dwyL)
+-   [Data diagram (draft)](https://drive.google.com/open?id=19B8CeydB5SBCq9y6qQmsTLhqf2_lGmOY)
 
 ## Author(s)
 [Shawn Liu](mailto:sliu@chanzuckerberg.com)
